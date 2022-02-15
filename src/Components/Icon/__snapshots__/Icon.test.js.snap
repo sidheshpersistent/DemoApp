@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`icon @deprecated prop(variant) - renders defaultPlaceholderIcon with console error when incorrect variant prop is passed 1`] = `
+<View
+  iconSize={24}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderColor": "#b8b8b8",
+        "borderRadius": 12,
+        "borderStyle": "dashed",
+        "borderWidth": 1,
+        "height": 24,
+        "justifyContent": "center",
+        "lineHeight": 24,
+        "width": 24,
+      },
+    ]
+  }
+>
+  <Text
+    bold={false}
+    color="grey200"
+    fontSize={16}
+    style={
+      Array [
+        Object {
+          "color": "#b8b8b8",
+          "fontFamily": "Roboto",
+          "fontSize": 16,
+        },
+      ]
+    }
+    testID="placeHolderIconText"
+  >
+    ?
+  </Text>
+</View>
+`;
+
+exports[`icon @deprecated(variant) - renders regular icon when primary icon is not found with given name when it ignores the given variant 1`] = `
+<SvgMock
+  accentColor="#707070"
+  accessibilityLabel="Plus"
+  data-icon-variant="primary"
+  height={24}
+  primaryColor="#707070"
+  role="img"
+  style={
+    Object {
+      "fill": "#707070",
+    }
+  }
+  testID="IconPlus"
+  width={24}
+/>
+`;
+
+exports[`icon render the icon with given color when noTheme is set to true 1`] = `
+<SvgMock
+  accentColor="#ffcb05"
+  accessibilityLabel="Bag"
+  data-icon-variant="gray"
+  height={24}
+  primaryColor="#707070"
+  role="img"
+  style={
+    Object {
+      "fill": "#707070",
+    }
+  }
+  testID="IconBag"
+  width={24}
+/>
+`;
+
+exports[`icon render the icon with iconStyle prop 1`] = `
+<SvgMock
+  accentColor="#707070"
+  accessibilityLabel="Bag"
+  data-icon-variant="gray"
+  height={24}
+  primaryColor="#707070"
+  role="img"
+  style={
+    Object {
+      "fill": "#707070",
+      "marginLeft": 10,
+    }
+  }
+  testID="Icon-Bag"
+  width={24}
+/>
+`;
+
+exports[`icon renders defaultPlaceholderIcon with console error when given name has primary suffix and not having the accentColor prop 1`] = `
+<View
+  iconSize={24}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "borderColor": "#b8b8b8",
+        "borderRadius": 12,
+        "borderStyle": "dashed",
+        "borderWidth": 1,
+        "height": 24,
+        "justifyContent": "center",
+        "lineHeight": 24,
+        "width": 24,
+      },
+    ]
+  }
+>
+  <Text
+    bold={false}
+    color="grey200"
+    fontSize={16}
+    style={
+      Array [
+        Object {
+          "color": "#b8b8b8",
+          "fontFamily": "Roboto",
+          "fontSize": 16,
+        },
+      ]
+    }
+    testID="placeHolderIconText"
+  >
+    ?
+  </Text>
+</View>
+`;
+
+exports[`icon renders primary icon when given name has primary suffix and also has the accentColor prop 1`] = `
+<SvgMock
+  accentColor="#9d1d27"
+  accessibilityLabel="OthersPrimary"
+  data-icon-variant="gray"
+  height={24}
+  primaryColor="#707070"
+  role="img"
+  style={
+    Object {
+      "fill": "#707070",
+    }
+  }
+  testID="IconOthersPrimary"
+  width={24}
+/>
+`;
+
+exports[`icon renders regular icon when primary icon is not found with given name and it ignores the accentColor prop 1`] = `
+<SvgMock
+  accentColor="#d10000"
+  accessibilityLabel="Plus"
+  data-icon-variant="gray"
+  height={24}
+  primaryColor="#707070"
+  role="img"
+  style={
+    Object {
+      "fill": "#707070",
+    }
+  }
+  testID="IconPlus"
+  width={24}
+/>
+`;
+
+exports[`icon renders with different sizes 1`] = `
+<SvgMock
+  accentColor="#707070"
+  accessibilityLabel="Bag"
+  data-icon-variant="gray"
+  height={16}
+  primaryColor="#707070"
+  role="img"
+  style={
+    Object {
+      "fill": "#707070",
+    }
+  }
+  testID="IconBag"
+  width={16}
+/>
+`;
+
+exports[`icon renders with different sizes 2`] = `
+<SvgMock
+  accentColor="#707070"
+  accessibilityLabel="Bag"
+  data-icon-variant="gray"
+  height={20}
+  primaryColor="#707070"
+  role="img"
+  style={
+    Object {
+      "fill": "#707070",
+    }
+  }
+  testID="IconBag"
+  width={20}
+/>
+`;
+
+exports[`icon renders with different sizes 3`] = `
+<SvgMock
+  accentColor="#707070"
+  accessibilityLabel="Bag"
+  data-icon-variant="gray"
+  height={24}
+  primaryColor="#707070"
+  role="img"
+  style={
+    Object {
+      "fill": "#707070",
+    }
+  }
+  testID="IconBag"
+  width={24}
+/>
+`;
+
+exports[`icon renders with different sizes 4`] = `
+<SvgMock
+  accentColor="#707070"
+  accessibilityLabel="Bag"
+  data-icon-variant="gray"
+  height={48}
+  primaryColor="#707070"
+  role="img"
+  style={
+    Object {
+      "fill": "#707070",
+    }
+  }
+  testID="IconBag"
+  width={48}
+/>
+`;
+
+exports[`icon renders with different sizes 5`] = `
+<SvgMock
+  accentColor="#707070"
+  accessibilityLabel="Bag"
+  data-icon-variant="gray"
+  height={144}
+  primaryColor="#707070"
+  role="img"
+  style={
+    Object {
+      "fill": "#707070",
+    }
+  }
+  testID="IconBag"
+  width={144}
+/>
+`;
+
+exports[`icon should render the icon 1`] = `
+<SvgMock
+  accentColor="#707070"
+  accessibilityLabel="Bag"
+  data-icon-variant="gray"
+  height={24}
+  primaryColor="#707070"
+  role="img"
+  style={
+    Object {
+      "fill": "#707070",
+    }
+  }
+  testID="IconBag"
+  width={24}
+/>
+`;
+
+exports[`icon should render the icon with given accessibilityLabel 1`] = `
+<SvgMock
+  accentColor="#707070"
+  accessibilityLabel="Money Bag"
+  data-icon-variant="gray"
+  height={24}
+  primaryColor="#707070"
+  role="img"
+  style={
+    Object {
+      "fill": "#707070",
+    }
+  }
+  testID="IconBag"
+  width={24}
+/>
+`;
+
+exports[`icon should render the icon with primaryColor and accentColor 1`] = `
+<SvgMock
+  accentColor="#d10000"
+  accessibilityLabel="Bag"
+  data-icon-variant="gray"
+  height={24}
+  primaryColor="#050505"
+  role="img"
+  style={
+    Object {
+      "fill": "#050505",
+    }
+  }
+  testID="IconBag"
+  width={24}
+/>
+`;

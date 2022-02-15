@@ -1,0 +1,1628 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button/> should match snapshot 1`] = `
+<View
+  accessibilityLabel="customButton"
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#9d1d27",
+      "borderRadius": 25,
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 250,
+    }
+  }
+  testID="customButton"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <Text
+      bold={true}
+      color="white"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot 2`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#ffffff",
+      "borderColor": "#b8b8b8",
+      "borderRadius": 25,
+      "borderWidth": 2,
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 250,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <Text
+      bold={true}
+      color="maroon"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#9d1d27",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot 3`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#ffffff",
+      "borderColor": "#b8b8b8",
+      "borderRadius": 25,
+      "borderWidth": 0,
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 250,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <Text
+      bold={true}
+      color="maroon"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#9d1d27",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot 4`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#ffffff",
+      "borderColor": "#b8b8b8",
+      "borderRadius": 25,
+      "borderWidth": 2,
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 100,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <Text
+      bold={true}
+      color="maroon"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#9d1d27",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot 5`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#ffffff",
+      "borderColor": "#b8b8b8",
+      "borderRadius": 25,
+      "borderWidth": 2,
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": "70%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <Text
+      bold={true}
+      color="maroon"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#9d1d27",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot 6`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": true,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#b8b8b8",
+      "borderRadius": 25,
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 250,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <Text
+      bold={true}
+      color="grey400"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#707070",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot 7`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": true,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#b8b8b8",
+      "borderRadius": 25,
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 250,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "marginRight": 8,
+          },
+        ]
+      }
+    >
+      <SvgMock
+        accentColor="#707070"
+        accessibilityLabel="Send"
+        data-icon-variant="gray"
+        height={20}
+        primaryColor="#707070"
+        role="img"
+        style={
+          Object {
+            "fill": "#707070",
+          }
+        }
+        testID="IconSend"
+        width={20}
+      />
+    </View>
+    <Text
+      bold={true}
+      color="grey400"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#707070",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot 8`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#9d1d27",
+      "borderRadius": 3,
+      "height": 80,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <Text
+      bold={true}
+      color="white"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot 9`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#ffffff",
+      "borderColor": "#b8b8b8",
+      "borderRadius": 3,
+      "borderWidth": 2,
+      "height": 80,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "marginRight": 8,
+          },
+        ]
+      }
+    >
+      <SvgMock
+        accentColor="#9d1d27"
+        accessibilityLabel="Send"
+        data-icon-variant="gray"
+        height={20}
+        primaryColor="#9d1d27"
+        role="img"
+        style={
+          Object {
+            "fill": "#9d1d27",
+          }
+        }
+        testID="IconSend"
+        width={20}
+      />
+    </View>
+    <Text
+      bold={true}
+      color="maroon"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#9d1d27",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot 10`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#9d1d27",
+      "borderRadius": 3,
+      "height": 80,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "marginRight": 8,
+          },
+        ]
+      }
+    >
+      <SvgMock
+        accentColor="#ffffff"
+        accessibilityLabel="Send"
+        data-icon-variant="gray"
+        height={20}
+        primaryColor="#ffffff"
+        role="img"
+        style={
+          Object {
+            "fill": "#ffffff",
+          }
+        }
+        testID="IconSend"
+        width={20}
+      />
+    </View>
+    <Text
+      bold={true}
+      color="white"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot 11`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": true,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#b8b8b8",
+      "borderRadius": 3,
+      "height": 80,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "marginRight": 8,
+          },
+        ]
+      }
+    >
+      <SvgMock
+        accentColor="#707070"
+        accessibilityLabel="Send"
+        data-icon-variant="gray"
+        height={20}
+        primaryColor="#707070"
+        role="img"
+        style={
+          Object {
+            "fill": "#707070",
+          }
+        }
+        testID="IconSend"
+        width={20}
+      />
+    </View>
+    <Text
+      bold={true}
+      color="grey400"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#707070",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot for dark mode 1`] = `
+<View
+  accessibilityLabel="customButton"
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#be2330",
+      "borderRadius": 25,
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 250,
+    }
+  }
+  testID="customButton"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <Text
+      bold={true}
+      color="white"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot for dark mode button with type primary and disabled prop 1`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": true,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#222222",
+      "borderRadius": 25,
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 250,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <Text
+      bold={true}
+      color="grey300"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#7d7d7d",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot for dark mode button with type primary and disabled prop 2`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": true,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#222222",
+      "borderRadius": 25,
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 250,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "marginRight": 8,
+          },
+        ]
+      }
+    >
+      <SvgMock
+        accentColor="#707070"
+        accessibilityLabel="Send"
+        data-icon-variant="gray"
+        height={20}
+        primaryColor="#707070"
+        role="img"
+        style={
+          Object {
+            "fill": "#707070",
+          }
+        }
+        testID="IconSend"
+        width={20}
+      />
+    </View>
+    <Text
+      bold={true}
+      color="grey300"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#7d7d7d",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot for dark mode button with type secondary 1`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#050505",
+      "borderColor": "#222222",
+      "borderRadius": 25,
+      "borderWidth": 2,
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 250,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <Text
+      bold={true}
+      color="maroonBright"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#dd4652",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot for dark mode button with type secondary and custom width 1`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#050505",
+      "borderColor": "#222222",
+      "borderRadius": 25,
+      "borderWidth": 2,
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 100,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <Text
+      bold={true}
+      color="maroonBright"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#dd4652",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot for dark mode button with type secondary and custom width in percentage 1`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#050505",
+      "borderColor": "#222222",
+      "borderRadius": 25,
+      "borderWidth": 2,
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": "70%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <Text
+      bold={true}
+      color="maroonBright"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#dd4652",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot for dark mode button with type secondary and noBorder 1`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#050505",
+      "borderColor": "#222222",
+      "borderRadius": 25,
+      "borderWidth": 0,
+      "height": 50,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 250,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <Text
+      bold={true}
+      color="maroonBright"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#dd4652",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot for dark mode large prop 1`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#be2330",
+      "borderRadius": 3,
+      "height": 80,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <Text
+      bold={true}
+      color="white"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot for dark mode large prop with iconName 1`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#050505",
+      "borderColor": "#222222",
+      "borderRadius": 3,
+      "borderWidth": 2,
+      "height": 80,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "marginRight": 8,
+          },
+        ]
+      }
+    >
+      <SvgMock
+        accentColor="#be2330"
+        accessibilityLabel="Send"
+        data-icon-variant="gray"
+        height={20}
+        primaryColor="#be2330"
+        role="img"
+        style={
+          Object {
+            "fill": "#be2330",
+          }
+        }
+        testID="IconSend"
+        width={20}
+      />
+    </View>
+    <Text
+      bold={true}
+      color="maroonBright"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#dd4652",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Button/> should match snapshot for dark mode large prop with iconName and disabled 1`] = `
+<View
+  accessibilityState={
+    Object {
+      "disabled": true,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  nativeID="animatedComponent"
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#222222",
+      "borderRadius": 3,
+      "height": 80,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 20,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "marginRight": 8,
+          },
+        ]
+      }
+    >
+      <SvgMock
+        accentColor="#707070"
+        accessibilityLabel="Send"
+        data-icon-variant="gray"
+        height={20}
+        primaryColor="#707070"
+        role="img"
+        style={
+          Object {
+            "fill": "#707070",
+          }
+        }
+        testID="IconSend"
+        width={20}
+      />
+    </View>
+    <Text
+      bold={true}
+      color="grey300"
+      fontSize={14}
+      numberOfLines={1}
+      style={
+        Array [
+          Object {
+            "color": "#7d7d7d",
+            "fontFamily": "Roboto-Bold",
+            "fontSize": 14,
+          },
+          Object {
+            "fontSize": 14,
+          },
+        ]
+      }
+    >
+      Custom Button
+    </Text>
+  </View>
+</View>
+`;

@@ -1,0 +1,315 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Box /> Should not have padding 1`] = `
+<View
+  disabled={false}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#ffffff",
+        "borderRadius": 5,
+        "elevation": 5,
+        "marginHorizontal": 0,
+        "marginVertical": 0,
+        "shadowColor": "#050505",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 0,
+        },
+        "shadowOpacity": 0.22,
+        "shadowRadius": 2,
+      },
+    ]
+  }
+>
+  <View
+    noPadding={true}
+    style={
+      Array [
+        Object {
+          "borderRadius": 5,
+          "paddingHorizontal": 0,
+          "paddingVertical": 0,
+        },
+      ]
+    }
+  >
+    <Text>
+      Sample Text
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Box /> Should render Clickable Box component 1`] = `
+<View
+  disabled={false}
+  onPress={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#ffffff",
+        "borderRadius": 5,
+        "elevation": 5,
+        "marginHorizontal": 0,
+        "marginVertical": 0,
+        "shadowColor": "#050505",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 0,
+        },
+        "shadowOpacity": 0.22,
+        "shadowRadius": 2,
+      },
+    ]
+  }
+>
+  <View
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    nativeID="animatedComponent"
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#ffffff",
+        "borderRadius": 5,
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      noPadding={false}
+      paddingHorizontal={20}
+      paddingVertical={20}
+      style={
+        Array [
+          Object {
+            "borderRadius": 5,
+            "paddingHorizontal": 20,
+            "paddingVertical": 20,
+          },
+        ]
+      }
+    >
+      <Text>
+        Sample Text
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`<Box /> Should render Clickable Box component with testID and accessibilityLabel 1`] = `
+<View
+  accessibilityLabel="box-wrapper"
+  disabled={false}
+  onPress={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#ffffff",
+        "borderRadius": 5,
+        "elevation": 5,
+        "marginHorizontal": 0,
+        "marginVertical": 0,
+        "shadowColor": "#050505",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 0,
+        },
+        "shadowOpacity": 0.22,
+        "shadowRadius": 2,
+      },
+    ]
+  }
+  testID="box-wrapper"
+>
+  <View
+    accessibilityState={
+      Object {
+        "disabled": false,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    nativeID="animatedComponent"
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#ffffff",
+        "borderRadius": 5,
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      noPadding={false}
+      paddingHorizontal={20}
+      paddingVertical={20}
+      style={
+        Array [
+          Object {
+            "borderRadius": 5,
+            "paddingHorizontal": 20,
+            "paddingVertical": 20,
+          },
+        ]
+      }
+    >
+      <Text>
+        Sample Text
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`<Box /> Should render default padding Box component 1`] = `
+<View
+  disabled={false}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#ffffff",
+        "borderRadius": 5,
+        "elevation": 5,
+        "marginHorizontal": 0,
+        "marginVertical": 0,
+        "shadowColor": "#050505",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 0,
+        },
+        "shadowOpacity": 0.22,
+        "shadowRadius": 2,
+      },
+    ]
+  }
+>
+  <View
+    noPadding={false}
+    style={
+      Array [
+        Object {
+          "borderRadius": 5,
+          "paddingHorizontal": 10,
+          "paddingVertical": 10,
+        },
+      ]
+    }
+  >
+    <Text>
+      Sample Text
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Box /> Should render non-Clickable Box component 1`] = `
+<View
+  accessibilityLabel="box-wrapper"
+  disabled={false}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#ffffff",
+        "borderRadius": 5,
+        "elevation": 5,
+        "marginHorizontal": 0,
+        "marginVertical": 0,
+        "shadowColor": "#050505",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 0,
+        },
+        "shadowOpacity": 0.22,
+        "shadowRadius": 2,
+      },
+    ]
+  }
+  testID="box-wrapper"
+>
+  <View
+    noPadding={false}
+    paddingHorizontal={20}
+    paddingVertical={20}
+    style={
+      Array [
+        Object {
+          "borderRadius": 5,
+          "paddingHorizontal": 20,
+          "paddingVertical": 20,
+        },
+      ]
+    }
+  >
+    <Text>
+      Sample Text
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Box /> Should render non-Clickable Box component in dark theme 1`] = `
+<View
+  accessibilityLabel="box-wrapper"
+  disabled={false}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#111111",
+        "borderRadius": 5,
+        "elevation": 5,
+        "marginHorizontal": 0,
+        "marginVertical": 0,
+        "shadowColor": "#050505",
+        "shadowOffset": Object {
+          "height": 1,
+          "width": 0,
+        },
+        "shadowOpacity": 0.22,
+        "shadowRadius": 2,
+      },
+    ]
+  }
+  testID="box-wrapper"
+>
+  <View
+    noPadding={false}
+    paddingHorizontal={20}
+    paddingVertical={20}
+    style={
+      Array [
+        Object {
+          "borderRadius": 5,
+          "paddingHorizontal": 20,
+          "paddingVertical": 20,
+        },
+      ]
+    }
+  >
+    <Text>
+      Sample Text
+    </Text>
+  </View>
+</View>
+`;
