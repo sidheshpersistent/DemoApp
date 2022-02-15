@@ -1,0 +1,80 @@
+{
+  "BTN_TITLE_ADD_OTHER_DOB": "+ Add Another Birthday",
+  "PLACEHOLDER_DOB": "Date of birth*",
+  "ERR_DATE_OF_BIRTH": "Please select date of birth",
+  "ERR_VEHICLE_MODEL": "Please enter vehicle model",
+  "ERR_COMPANY_NAME": "Please enter company name",
+  "ERR_ENTER_EMAIL": "Please enter Email ID",
+  "ERR_ENTER_VALID_EMAIL": "Please enter valid Email ID",
+  "ERR_VEHICLE_MAKE": "Please enter vehicle manufacturer",
+  "ERR_ADDR_TYPE": "Please select address type",
+  "ERR_PROPERTY_TYPE": "Please select property type",
+
+  "SURVEY_HEADING": "Before you \ndo product selection",
+  "MUTUAL_FUND": "Mutual\nFunds",
+  "FIXED_DEPOSITE": "Fixed\nDeposits",
+  "GOLD": "Gold",
+  "PMS_AIF": "PMS\nAIF",
+  "SKIP": "Skip",
+  "HINT_WORK_EMAIL": "Work email address",
+  "COMMUNICATION_TEXT": "All communications will be sent to your personal email id",
+
+  "HINT_VEHICLE_MAKE": "Vehicle manufacturer*",
+  "HINT_VEHICLE_MODEL": "Vehicle model*",
+  "NOMINEE_DATE_BIRTH": " Select anniversary date*",
+
+
+  "HINT_ADDRESS_TYPE": "Address type*",
+  "HINT_RESI_PROPERTY_TYPE": "Residential property type*",
+  "HINT_EDUCATIONAL_QUALIFICATION": "Educational qualification*",
+  "COMMUNICATION_ADDRESS_HEADER": "Your communication address:",
+  "SPANABLE_TELL_MORE_LBL": "Tell us more about your ",
+  "SPANABLE_COMM_ADDR_LBL": "communication address",
+  "SPANABLE_QUALIFICATION_REGULAR": "What is your ",
+  "SPANABLE_QUALIFICATION_BOLD": "educational qualification?",
+
+  "SPANABLE_VOUCHER_FIRST": "Unlock voucher ",
+  "SPANABLE_VOUCHER_BOLD" : "worth ₹250 ",
+  "SPANABLE_VOUCHER_LAST" : "by sharing a bit about you & helping us personalise your experience.",
+
+  "SPANABLE_ANNIVERSARY_REGULAR": "When is your ",
+  "SPANABLE_ANNIVERSARY_BOLD": "anniversary?",
+
+  "SPANABLE_PROFESSION_REGULAR": "Tell us more about your ",
+  "SPANABLE_PROFESSION_BOLD": "self-employed profession",
+  "HINT_PROFESSION_TYPE": "Profession type",
+  
+  "OPTION_WALK": "Nope, I walk",
+  "OPTION_TWO_WHEELER": "Yes, a 2-wheeler",
+  "OPTION_CAR": "Yes, a car",
+
+  "MONTHS": "Months",
+  "YEARS": "Years",
+  "MONTHSLIST": [
+    {"label": "January", "value": "January"},
+    {"label": "February", "value": "February"},
+    {"label": "March", "value": "March"},
+    {"label": "April", "value": "April"},
+    {"label": "May", "value": "May"},
+    {"label": "June", "value": "June"},
+    {"label": "July", "value": "July"},
+    {"label": "August", "value": "August"},
+    {"label": "September", "value": "September"},
+    {"label": "October", "value": "October"},
+    {"label": "November", "value": "November"},
+    {"label": "December", "value": "December"}
+  ],
+  "YEARSLIST": [
+    {"label": "2021", "value": "2021"},
+    {"label": "2022", "value": "2022"},
+    {"label": "2023", "value": "2023"},
+    {"label": "2024", "value": "2024"},
+    {"label": "2025", "value": "2025"},
+    {"label": "2026", "value": "2026"},
+    {"label": "2027", "value": "2027"},
+    {"label": "2028", "value": "2028"},
+    {"label": "2029", "value": "2029"},
+    {"label": "2030", "value": "2030"},
+    {"label": "2031", "value": "2031"}
+  ]
+}

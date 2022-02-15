@@ -1,0 +1,10 @@
+{
+  "LINKED_ACCOUNT": "Linked A/c",
+  "NAME_ON_CARD": "Name on Card",
+  "SUCCESS_MESSAGE_LINE_1": "We’ve placed a request for converting your",
+  "SUCCESS_MESSAGE_LINE_2_VIRTUAL_CARD": "Virtual Card",
+  "SUCCESS_MESSAGE_LINE_2_PHYSICAL_CARD": "Physical Card",
+  "SUCCESS_MESSAGE_LINE_2": "{0} to a {1} successfully.",
+  "GENERATE_PHYSICAL_CARD_CONFIRM": "Confirm",
+  "GENERATE_PHYSICAL_CARD_SUCCESS": "Done"
+}

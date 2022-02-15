@@ -1,0 +1,227 @@
+{
+  "SELECT_OD_LIMIT": "Selected OD limit",
+  "CREATE_OD_AGAINST_FD": "Create OD against FD",
+  "OD_MORE_THAN_MAX_AMOUNT_VALIDATION": "Maximum eligible OD limit reached",
+  "AVG_ROI_OF_SELECTED_FDS": "Average ROI of selected FDs",
+  "AVG_ROI": "Average ROI",
+  "AVG_INTEREST": "Average interest",
+  "NOT_APPLICABLE_INTEREST": "NA",
+  "ENABLE_AUTO_RENEWAL": "All your FDs with auto-renewal enabled",
+  "FD_VALUE_SELECTED": "FD value selected",
+  "ELIGIBLE_OD_LIMIT": "Eligible OD limit",
+  "I_CONFIRM_TO_HAVE_READ": "I confirm to have read and agreed to the",
+  "TERMS_AND_CONDITION": "Terms and Conditions.",
+  "AGREE": "Agree",
+  "CURRENT_ACCOUNT_LINKED_TO_OD_LIMIT": "Current account linked to OD limit",
+  "SAVINGS_ACCOUNT_LINKED_TO_OD_LIMIT": "Account linked to OD limit",
+  "MANAGE_ACCOUNT": "Change",
+  "APPLICABLE_INTEREST": "Applicable interest",
+  "FEE": "fee",
+  "NOT_APPLICABLE": "Not applicable",
+  "MAX_ELIGIBLE_OD_LIMIT": "Maximum eligible OD limit:",
+  "HELP_TEXT_MAX_ELIGIBLE_LIMIT_1": "Maximum eligible limit is",
+  "HELP_TEXT_MAX_ELIGIBLE_LIMIT_2": "of the total deposit amount in all your FDs, with auto-renewal enabled",
+  "LEARN_MORE_ABOUT_IDFC": "Learn more about IDFC FIRST Bank’s OD facility",
+  "HERE": "here",
+  "SELECT_MAX_OD_LIMIT_BTN": "Select this OD limit",
+  "PLEASE_ACCEPT_T_C": "Please accept terms & conditions to proceed",
+  "RISK_DISCLOSURE": "Risk Disclosure",
+  "OD_LIMIT_INFO_1": "Selected limit is only",
+  "OD_LIMIT_INFO_2": "of",
+  "OD_LIMIT_INFO_3": "i.e. the OD limit you’re eligible for, based on selected FDs.",
+  "MAX_FD_SELECTION_LIMIT_WARNING": "You can only select upto 20 FDs to create an OD",
+  "APPLY_FOR_QUICK_OD": {
+    "UP_TO_AMOUNT": "You are eligible for an unsecured pre-approved overdraft of ",
+    "AVAIL_OD_AMOUNT": "* You can avail OD limit up to the maximum amount",
+    "DIGITAL": "Digital\nprocess",
+    "BLOCK": "Collateral\nfree limit",
+    "TIME": "Quick\nset-up",
+    "NO_DOC": "Minimal\ndocumentation",
+    "BENEFITS_OF_OD": "Benefits of OD FIRST",
+    "BUTTONS": {
+      "NOT_INTERESTED": "Not interested",
+      "APPLY_NOW": "Apply now"
+    },
+    "REVIEW_T_AND_C": "Please review the \"Terms and conditions\" first by clicking on the link before accepting.",
+    "FORM": {
+      "ROI": "Rate of interest",
+      "TENURE": "Tenure",
+      "INPUT_LABEL": "Pre-approved OD limit",
+      "MIN_MAX": "Min: {minOfferAmount}, Max: {maxOfferAmount}",
+      "ERROR_MESSAGE1": "Select an OD limit of {minOfferAmount} or higher",
+      "ERROR_MESSAGE2": "Maximum eligible OD limit: {maxOfferAmount}",
+      "DISCLAIMER": "In case of default, there will be a penal rate of interest of {interest}% over and above the declared/offered ROI.",
+      "T_AND_C_LINE1": "I accept the Rate of interest, Schedule of charges, declarations and ",
+      "T_AND_C": "Terms & Conditions ",
+      "T_AND_C_LINE2": "of IDFC FIRST Bank.",
+      "PROCESSING_FEE": "Processing fee",
+      "NIL":"Nil"
+    },
+    "ERROR": {
+      "DEFAULT": {
+        "TITLE": "Technology can be difficult sometimes!",
+        "MESSAGE": "Our systems were unable to fetch your offer details. Please try again in some time."
+      },
+      "ERR_QUICK_OD_OFFER_CONVERTED_ALREADY": {
+        "TITLE": "Oops!",
+        "MESSAGE": "It looks like you have already utilized the OD FIRST offer."
+      },
+      "ERR_QUICK_OD_OFFER_NOT_FOUND": {
+        "TITLE": "Oops!",
+        "MESSAGE": "There are currently no offers available, please contact RM/Branch for more details."
+      },
+      "FAILED": {
+        "TITLE": "Technology can be difficult sometimes!",
+        "MESSAGE": "Our systems were unable to process your request. Please try again in some time."
+      },
+      "CLOSE": "Close"
+    },
+    "SUCCESS": {
+      "TITLE": "Success!",
+      "DESCRIPTION": "Your request to create OD has been received and will be processed in 1 working day.",
+      "REFERENCE": "You can check its status with the reference number:",
+      "DONE": "Done"
+    }
+  },
+  "FD_SELECTION_ERRORS": {
+    "SELECT_MORE_FDS": "Select more FDs to be eligible for your selected OD limit, or change selected OD limit",
+    "NO_FD_SELECTED_ERROR_1": "Please select FDs worth",
+    "NO_FD_SELECTED_ERROR_2": "or more to proceed",
+    "MORE_THAN_MAX_FD_AMOUNT_SELECTED_1": "Please select FDs worth a total of",
+    "MORE_THAN_MAX_FD_AMOUNT_SELECTED_2": "or less to proceed",
+    "FD_SELECTION_LIMIT_REACHED": "You have reached the maximum of {select_fd_limit} FDs permitted for OD creation"
+  },
+  "OD_LIMIT_INPUT_ERRORS": {
+    "OD_LESS_THAN_MIN_AMOUNT_VALIDATION": "Please select an OD limit of {amount} or higher",
+    "OD_MORE_THAN_MAX_AMOUNT_VALIDATION": "Maximum eligible OD limit is",
+    "MAX_ELIGIBLE_OD_LIMIT": "Maximum eligible OD limit:",
+    "SELECTED_LIMIT_IS_HIGHER_THAN_ELIGIBLE_LIMIT": "Selected OD limit is higher than Eligible OD limit",
+    "AVAILED_OD_LIMIT_LESS_THAN_OD_UTILIZED_BALANCE": "Availed OD limit is less than utilized OD balance of"
+  },
+  "OD_HELP_TEXT_1": "Sorry, you do not have any eligible FDs to create OD against them",
+  "OD_HELP_TEXT_2": "View FD eligibility criteria here",
+  "OD_HELP_TEXT_3": "Sorry, you do not have any eligible account to create OD against them",
+  "CONGRATULATIONS": "Success!",
+  "SUCCESSFUL": {
+    "LINE_1": "Your OD for {amount} has been created.",
+    "LINE_2": "Details of overdraft will be available under Manage OD within 2 hours."
+  },
+  "SENT_FOR_APPROVAL": "Your OD for {amount} has been sent for approval.",
+  "SYSTEM_REJECTED": "Sorry, this amount exceeds your remaining transaction limit. Please try again tomorrow.",
+  "SYSTEM_REJECTED_DUE_TO_EXCEEDING_LIMIT": "Sorry, this amount exceeds your remaining transaction limit. Please try again tomorrow.",
+  "SYSTEM_REJECTED_DUE_TO_APPROVERS_NOT_AVAILABLE": "Sorry, this transaction could not be processed. Please enter an amount lower than the maximum company-level limit and retry.",
+  "DOWNLOAD": "Download",
+  "FD_ADVICE": "FD Advice",
+  "EMAIL": "Email",
+  "HELP_TEXTS": {
+    "FOR_ELIGIBLE_LIMIT": "Eligible OD limit is {percentage_of_fd_eligible_for_od}% of the FD amounts selected below (rounded off value)"
+  },
+  "MANAGE": {
+    "APPLICABLE_INTEREST_BASED_ON": "Applicable interest (based on liened FDs)",
+    "AVAILED_OD_LIMIT": "Availed OD limit",
+    "FROM": "From",
+    "TO": "To",
+    "FD_VALUE_LIENED": "FD value liened",
+    "CONFIRM": "Confirm",
+    "CONFIRM_CHANGES": "Confirm changes",
+    "THE_BELOW_LIST_FDS_WERE_LIENED": "The below listed FDs were liened at the time of OD creation.",
+    "UNLIENED": "Unliened",
+    "MODIFIED": "Modified",
+    "MANAGE_OD_AGAINST_FD": "Manage OD against FD",
+    "OVERDRAFT_LIMIT": "Overdraft limit",
+    "DETAILS": "Details",
+    "APPLICABLE_ROI_HEADING": "Applicable interest (Average ROI + margin)",
+    "CURRENT_LINKED_ACCOUNT": "Current account linked to OD limit",
+    "LINKED_ACCOUNT": "Account linked to OD limit",
+    "CURRENT_LINKED_ACCOUNT_DETAIL": "{0} - {1}",
+    "FD_LIENED_FOR_OD": "FDs liened for OD",
+    "VIEW_FDS": "View FDs",
+    "DEPOSIT_AMOUNT": "Deposit amount in selected FDs",
+    "VIEW_FD_LIST": {
+      "LIENED_FOR_OD": "FDs liened for OD",
+      "FD_VALUE_SELECTED": "FD value selected",
+      "AVERAGE_ROI": "Average interest"
+    },
+    "PERCENTAGE_VALUE": "{0}%",
+    "CLOSE_OD": "Close OD",
+    "DONE": "Done",
+    "CLOSE": "Done",
+    "CLOSE_OD_ERROR_MSG": {
+      "HEADING": "Error",
+      "PAGE_LOAD_ERROR": "Sorry, due to technical reasons we couldn’t load this page.",
+      "PLEASE_TRY_AGAIN": "Please try again."
+    },
+    "CLOSE_OD_SUCCESS_MSG": {
+      "LINE_1": "OD will be closed in 2 working days.",
+      "LINE_2": "Please maintain enough available balance towards accrued interest payable to the bank.",
+      "LINE_3": "You can check its status with the service request number",
+      "SENT_FOR_APPROVAL": "Request to close OD for {account_number} has been sent for approval.",
+      "SENT_FOR_APPROVAL_TITLE": "Sent for approval"
+    },
+    "CLOSE_OD_TERMS_AND_CONDITIONS": {
+      "INTEREST": "I authorise the bank to recover outstanding interest towards OD utilisation from above current account, at time of closing the OD.",
+      "AGREEMENT": "I confirm to have read and agreed to the ",
+      "TERMS_AND_CONDITION": "Terms and Conditions."
+    },
+    "CLOSE_OD_LABELS": {
+      "CURRENT_ACCOUNT_LINKED_TO_OD_LIMIT": "Current account linked to OD limit",
+      "OVERDRAFT_LIMIT": "Overdraft limit",
+      "ACCRUED_INTEREST_PAYABLE": "Accrued interest payable"
+    },
+    "ACCRUED_INTEREST_HELP_TEXT": "Interest accrued for the current month as of yesterday and will be calculated on actual basis while closing the OD.",
+    "ALERT_RECEIVED_REQUEST":"Alert",
+    "ERR_OVERDRAFT_SERVICE_REQUEST_DUPLICATE_ERROR": "Your request to modify or close existing OD is already in process. Thank you for your patience.",
+    "ERR_OVERDRAFT_NIL_BALANCE_CHECK": "Please ensure you have nil OD utilised if you wish to close the OD."
+  },
+  "REJECTION_ERROR": "Sorry, this amount exceeds your remaining transaction limit. Please try again tomorrow.",
+  "ERROR": "Error",
+  "SELECT_C_ACCOUNT": "Select current account",
+  "SELECT_S_ACCOUNT": "Select savings account",
+  "SORRY": "Sorry",
+  "ERR_DESCRIPTION": "Something went wrong. Please try again in some time.",
+  "BENEFITS": "Benefits",
+  "BENEFITS_DESCRIPTION": "Unforeseen events and emergencies warrant immediate cash flow, which is why some investors may consider liquidating their FD investments before maturity.",
+  "WITH_AN_ODAFD_YOU_CAN": "With an OD against FD you can…",
+  "TEND_TO_EMERGENCIES": "Tend to emergencies without breaking your FD(s)",
+  "ONLY_PAY_INTEREST_FOR_THE_AMOUNT": "Only pay interest for the amount you use, for as long as you use it",
+  "FEATURES": "Features",
+  "INTEREST_PAYABLE": "Interest payable",
+  "AVERAGE_ROI_OF_FD": "2% + Average ROI of FDs",
+  "THE": "The",
+  "AVERAGE_ROI": "average ROI",
+  "AVERAGE_DESCRIPTION": "(return on investment) is the aggregate rate of interest received on selected FDs. \n\nThis percentage is calculated by aggregating all interest disbursed in the measurement period, and dividing that by the total number of FDs selected.",
+  "ON_AMOUNT_USED": "On amount used, for duration of use",
+  "MAX_OD_LIMIT": "Maximum OD Limit",
+  "MIN_OD_LIMIT": "Minimum OD Limit",
+  "ELIGIBILITY": "Eligibility",
+  "TO_CREATE_AN_OD_AGAINST_YOUR_FD": "To create an OD against your FDs, you will need FDs which",
+  "HAVE_RE_INVESTMENT_ENABLED": "have re-investment enabled",
+  "ARE_WORTH_MORE_THAN": "are worth more than ₹12,500 cumulatively",
+  "ARE_WORTH_LESS_THAN_5_LAKH": "are worth less than ₹5,00,00,000 cumulatively",
+  "OD_AGAINST_FC": "OD against FD",
+  "MODIFY_OD_LIMIT": "Modify OD \n limit",
+  "MODIFY_OD_LIMIT_HEADING": "Modify OD limit",
+  "MODIFY_OD_HELP_TEXT": "Increase availed OD limit up to maximum eligible OD limit or unlien FDs to reduce the eligible OD limit",
+  "AVAILED_OD_LIMIT": "Availed OD limit",
+  "EDIT_OD_INFO": {
+    "LINE_1": "The below listed FDs were liened at the time of OD creation.",
+    "LINE_2": "Please unselect to unlien FDs and to reduce the availed OD limit."
+  },
+  "MODIFY_OD_AGAINST_FD": "Modify OD against FD",
+  "EDIT_OD_AGAINST_FD" : {
+    "SUCCESSFULLY_CREATED": {
+      "LINE_1": "Request to modify OD limit has been submitted and will be closed in 2 working days.",
+      "LINE_2": "You can check its status with the service request number: "
+    },
+    "SENT_FOR_APPROVAL": "Request to modify OD limit for {accountNumber} has been sent for approval."
+  },
+  "ACCOUNT_NUMBER": "A/c {account_number}",
+  "PERMISSION_TITLE": "permission title",
+  "PERMISSION_MESSAGE": "permission message",
+  "PERMISSION_NEUTRAL": "permission neutral label",
+  "PERMISSION_NEGATIVE": "permission negative label",
+  "PERMISSION_POSITIVE": "permission positive label",
+  "STORAGE_PERMISSION_DENIED": "WRITE_EXTERNAL_STORAGE permission denied",
+  "OD_TNC": "OVERDRAFT_TNC_",
+  "OD_ERROR_DES": "Our systems were unable to fetch the T&C content.\nPlease try again in some time."
+}

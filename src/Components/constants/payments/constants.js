@@ -1,0 +1,675 @@
+import { translate } from 'l10n';
+
+export const UPI_PERMISSION = 'UPI';
+
+export const DISPUTE_DESCRIPTION_REGEX = /^[a-z0-9\s][a-z0-9\s]*$/i;
+export const INDIAN_MOBILE_NUMBER_REGEXES = [/^((0)|(91)|(\+91))(\d{10})$/, /^[1-9](\d{9})$/];
+
+export const MIME_TYPES = {
+  EXCEL: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+  JPEG: 'image/jpg',
+};
+
+export const INTENT_RESPONSE = {
+  INTENT_VALIDATION_ERROR_CODE: 'U09',
+  SUCCESS: 'SUCCESS',
+  FAILURE: 'FAILURE',
+};
+
+export const RUPEE_SYMBOL = '\u20B9';
+export const NONE = 'none';
+export const PAYMENT_MODE = {
+  IFT: 'IFT',
+  NEFT: 'NEFT',
+  UPI: 'UPI',
+  RTGS: 'RTGS',
+  IMPS: 'IMPS',
+  ERROR: 'error',
+  CREDIT_CARD: 'CREDIT_CARD',
+};
+export const UPI_INITIATION_MODES = {
+  SEND_MONEY: '00',
+  SCAN_QR: '01',
+  SECURE_SCAN_QR: '02',
+  BHARAT_QR: '03',
+  INTENT_URL: '04',
+  SECURE_INTENT_URL: '05',
+};
+
+export const SCAN_QR_INITIATION_MODES = [
+  UPI_INITIATION_MODES.SCAN_QR,
+  UPI_INITIATION_MODES.SECURE_SCAN_QR,
+  UPI_INITIATION_MODES.BHARAT_QR,
+];
+export const INTENT_INITIATION_MODES = [UPI_INITIATION_MODES.INTENT_URL, UPI_INITIATION_MODES.SECURE_INTENT_URL];
+
+export const UPI_SCAN_QR = {
+  SAVE_QR: 'Scan QR Save Details and Verify VPA',
+  GET_RAIL_ROAD: 'Scan QR Get Railroad',
+  UPI_MIN_LIMIT: '1',
+  UPI_MAX_LIMIT: '25000',
+};
+
+export const EVM_KEY = {
+  ANDROID: 'android',
+  WINDOW: 'window',
+  MOBILE: 'mobile',
+};
+export const PAYMENT_LITERALS = {
+  IDFC_FIRST_BANK: 'IDFC FIRST Bank',
+  IDFC: 'idfc',
+  NO_LIMIT: 'No limit',
+  TWENTY_FOUR_BY_SEVEN: '24x7',
+  CONFIRM_THRESHOLD_AMT: 'CONFIRM_THRESHOLD_AMT',
+  DYNAMIC_QR_THRESHOLD: 'DYNAMIC_QR_THRESHOLD',
+  COLLECT_MONEY_THRESHOLD: 'COLLECT_MONEY_THRESHOLD',
+  GIFT_CARD_URL: 'GIFT_CARD_URL',
+  TAX_PAY_URL: 'TAX_PAY_URL',
+  DONE: 'done',
+  NEW_PAYEE: 'newPayee',
+  IDFC_IFSC_START: 'IDFB',
+  FSS_VMN: 'FSS_VMN',
+  INSTANT_AND_FREE: 'Instant & Free ',
+  ADD_FUNDS_COLLECT_MONEY_THRESHOLD: 'ADD_FUNDS_COLLECT_MONEY_THRESHOLD',
+};
+export const SET_OR_FORGOT_PIN = {
+  CARD_NUMBER_LENGTH: 7,
+  EXPIRY_DATE_LENGTH: 5,
+  CARD_NUMBER_PREFIX: 'XXXX XXXX XX',
+};
+export const PAYMENT_CHANNEL_WEB = '07';
+export const PAYMENT_CHANNEL_MOBILE = '06';
+export const PAYMENT_TRANSFER_STATUS = {
+  FAILED: 'failure',
+  SUCCESS: 'success',
+  TIMEOUT: 'timeout',
+  INITIATED: 'INITIATED',
+  IN_PROGRESS: 'IN-PROGRESS',
+};
+export const STATUS_CODES = {
+  BAD_REQUEST: 400,
+  INTERNAL_SERVER_ERROR: 500,
+  SUCCESS: 200,
+  TIMEOUT: 503,
+};
+export const STATUS = {
+  FAILED: 'failure',
+  SUCCESS: 'success',
+  TIMEOUT: 'timeout',
+  NETWORK_ERROR: 'Network Error',
+  IN_PROGRESS: 'IN-PROGRESS',
+};
+export const DEFAULT_ERROR_KEY = 'DEFAULT_ERROR';
+
+export const TIMEOUT_ERROR_KEY = 'TIMEOUT_ERROR';
+
+export const ERROR_CODE = {
+  VPA_NOT_FOUND: 'VPA_NOT_FOUND',
+  IDFC_VPA_NOT_FOUND: 'IDFC_VPA_NOT_FOUND',
+  IDFC_VERIFY_VPA_TECHNICAL_ERROR: 'IDFC_VERIFY_VPA_TECHNICAL_ERROR',
+  ERR_PAY_VPA_NOT_FOUND_FOR_MOBILE_NUMBER: 'ERR_PAY_VPA_NOT_FOUND_FOR_MOBILE_NUMBER',
+  ERR_PAY_BGL_ACCOUNT_UNAUTHORIZED: 'ERR_PAY_BGL_ACCOUNT_UNAUTHORIZED',
+};
+
+export const NEW_PAYEE_TYPE = {
+  UPI: 'vpa',
+  ACCOUNT_NO: 'account',
+  CREDIT_CARD: 'creditCard',
+};
+
+export const NPCI_VPA_SUFFIX = '.ifsc.npci';
+export const NPCI_LIB_INIT_TYPE = 'initial';
+export const DEFAULT_REQUEST_VALIDITY = '24h';
+export const BRANCHES_BATCH_LIMIT = 20;
+export const VPA_LENGTH = 60;
+export const REMARKS_LENGTH = 35;
+
+export const INPUT_VALIDATION_STATUS = {
+  SUCCESS: 'success',
+  ERROR: 'error',
+};
+export const UPI_OPERATIONS = {
+  SET_OTP_ATM_AND_PIN: {
+    android: 'A',
+    ios: 3,
+  },
+  SET_OTP_AND_PIN: {
+    android: 'B',
+    ios: 1,
+  },
+  CHANGE_PIN: {
+    android: 'C',
+    ios: 2,
+  },
+  CHECK_BALANCE: {
+    android: 'M',
+    ios: 0,
+  },
+  SEND_MONEY: {
+    android: 'M',
+    ios: 0,
+  },
+  CONFIRM_COLLECT: {
+    android: 'M',
+    ios: 0,
+  },
+  TRANSACTION_ID_PREFIX: 'IDFOP',
+};
+export const UPI_OPERATION_NAMES = {
+  SEND_MONEY_OPERATION: 'SEND_MONEY',
+  CONFIRM_COLLECT_OPERATION: 'CONFIRM_COLLECT',
+  CHECK_BALANCE_OPERATION: 'CHECK_BALANCE',
+  SET_PIN_OPERATION: 'SET_PIN',
+  FORGOT_PIN_OPERATION: 'FORGOT_PIN',
+  CHANGE_PIN_OPERATION: 'CHANGE_PIN',
+  RAISE_COLLECT_REQUEST_OPERATION: 'RAISE_COLLECT_REQUEST',
+};
+export const NPCI_PUBLIC_KEYS_TRANSACTION_TYPES = {
+  LIST_KEYS: 'ListKeys',
+  GET_TOKEN: 'GetToken',
+  TOKEN_AND_CHALLENGE_SAVED_DATE: 'GetTokenSavedDate',
+  LIST_KEYS_SAVED_DATE: 'ListKeysSavedDate',
+  IS_SDK_REGISTERED: 'IsSDKRegistered',
+  CHALLENGE_STRING: 'ChallengeString',
+};
+
+export const NPCI_SDK_DEFAULTS = {
+  PAYER_VPA: '-',
+  PAYEE_VPA: '-',
+  AMOUNT: '0.00',
+  REMARKS: '',
+};
+
+export const PAYEE_ERROR_KEYS = {
+  PAYEE_ALREADY_EXISTS: 'ERR_BEN_PAYEE_ALREADY_EXISTS',
+  NICKNAME_ALREADY_EXISTS: 'ERR_BEN_NICKNAME_ALREADY_EXISTS',
+  ERR_BEN_ADD_PAYEE_LIMIT_EXCEEDED: 'ERR_BEN_ADD_PAYEE_LIMIT_EXCEEDED',
+};
+
+export const PAYMENT_ERROR_KEYS = {
+  NO_SUPPORTED_RAILROAD: 'ERR_PAY_NO_SUPPORTED_RAILROAD',
+};
+
+export const ALL_MODES = [PAYMENT_MODE.IMPS, PAYMENT_MODE.RTGS, PAYMENT_MODE.NEFT, PAYMENT_MODE.UPI];
+
+export const PAYMENT_FREQUENCY = {
+  OPTIONS: [
+    {
+      id: '01',
+      displayText: translate('PAY.SCHEDULED_TRANSFER.PAYMENT_FREQUENCY_DAY'),
+      value: 'DAILY',
+    },
+    {
+      id: '02',
+      displayText: translate('PAY.SCHEDULED_TRANSFER.PAYMENT_FREQUENCY_WEEK'),
+      value: 'WEEKLY',
+    },
+    {
+      id: '03',
+      displayText: translate('PAY.SCHEDULED_TRANSFER.PAYMENT_FREQUENCY_MONTH'),
+      value: 'MONTHLY',
+    },
+    {
+      id: '04',
+      displayText: translate('PAY.SCHEDULED_TRANSFER.PAYMENT_FREQUENCY_QUARTER'),
+      value: 'QUARTERLY',
+    },
+    {
+      id: '05',
+      displayText: translate('PAY.SCHEDULED_TRANSFER.PAYMENT_FREQUENCY_HALF_YEAR'),
+      value: 'HALF_YEARLY',
+    },
+    {
+      id: '06',
+      displayText: translate('PAY.SCHEDULED_TRANSFER.PAYMENT_FREQUENCY_YEAR'),
+      value: 'YEARLY',
+    },
+  ],
+  DEFAULT_FREQUENCY_INDEX: 2,
+};
+
+export const SCHEDULE_FREQUENCY = {
+  OPTIONS: [
+    {
+      frequency: 'DAILY',
+      displayText: translate('PAY.SCHEDULED_TRANSFER.SCHEDULE_FREQUCENY_DAILY_TITLE'),
+    },
+    {
+      frequency: 'WEEKLY',
+      displayText: translate('PAY.SCHEDULED_TRANSFER.SCHEDULE_FREQUCENY_WEEKLY_TITLE'),
+    },
+    {
+      frequency: 'MONTHLY',
+      displayText: translate('PAY.SCHEDULED_TRANSFER.SCHEDULE_FREQUCENY_MONTHLY_TITLE'),
+    },
+    {
+      frequency: 'QUARTERLY',
+      displayText: translate('PAY.SCHEDULED_TRANSFER.SCHEDULE_FREQUCENY_QUARTERLY_TITLE'),
+    },
+    {
+      frequency: 'HALF_YEARLY',
+      displayText: translate('PAY.SCHEDULED_TRANSFER.SCHEDULE_FREQUCENY_HALF_YEARLY_TITLE'),
+    },
+    {
+      frequency: 'YEARLY',
+      displayText: translate('PAY.SCHEDULED_TRANSFER.SCHEDULE_FREQUCENY_YEARLY_TITLE'),
+    },
+  ],
+};
+
+export const PAYMENT_DATE_SUBTITLE = {
+  DAILY: translate('PAY.SCHEDULED_TRANSFER.PAYMENT_DAILY_TITLE'),
+  WEEKLY: translate('PAY.SCHEDULED_TRANSFER.PAYMENT_WEEKLY_TITLE'),
+  MONTHLY: translate('PAY.SCHEDULED_TRANSFER.PAYMENT_MONTHLY_TITLE'),
+  QUARTERLY: translate('PAY.SCHEDULED_TRANSFER.PAYMENT_QUARTERLY_TITLE'),
+  HALF_YEARLY: translate('PAY.SCHEDULED_TRANSFER.PAYMENT_HALF_YEARLY_TITLE'),
+  YEARLY: translate('PAY.SCHEDULED_TRANSFER.PAYMENT_YEARLY_TITLE'),
+};
+
+export const SYMBOL = {
+  DOT: ' • ',
+  HYPHEN: ' - ',
+  PLUS: ' + ',
+};
+
+export const UPI_REQUEST_STATUS = {
+  ACTIVE: 'ACTIVE',
+  INACTIVE: 'INACTIVE',
+  ALL: 'ALL',
+};
+
+export const INCOMING_REQUEST_TYPE = {
+  COLLECT: 'COLLECT',
+  MANDATE: 'MANDATE',
+};
+
+export const COLLECT_MONEY_REQUEST_STATUS = {
+  ACTIVE: 'ACTIVE',
+  INACTIVE: 'INACTIVE',
+};
+
+export const UPI_VALID_URL = {
+  SCHEME_HOST: 'upi://pay',
+};
+
+export const TIMESTAMP_FORMAT = 'h:mm a • D MMM, YYYY';
+
+export const CONFIRM_COLLECT = {
+  DECLINE: 'DECLINE',
+  APPROVED: 'APPROVED',
+};
+
+export const OperatingSystems = {
+  ANDROID: 'android',
+  IOS: 'ios',
+};
+
+export const VPA_OPERATIONS = {
+  BLOCK: 'BLOCK',
+  UNBLOCK: 'UNBLOCK',
+};
+
+export const DEVICE_BINDING = {
+  BINDING: 'BINDING',
+  DEFAULT_DEVICE_ID: 'DEVICE0000',
+  DEVICE_NOT_BOUND_ERRORS: [
+    'ERR_PAY_UNABLE_TO_REGISTER_DEVICE',
+    'ERR_PAY_DEVICE_FINGERPRINT_MISMATCH',
+    'ERR_PAY_DEVICE_REGISTRATION_FAILED',
+  ],
+};
+
+export const SIM_SELECTION = {
+  SELECTED_SIM: 'SELECTED_SIM',
+  NO_SELECTED_SIM: '999',
+};
+
+export const ACCOUNT_RESIDENCY_TYPE = {
+  NRE: 'NRE',
+  NRO: 'NRO',
+  RI: 'RI',
+};
+
+export const INR_CURRENCY = 'INR';
+
+export const DEVICE_BINDING_REQUIRED_OPERATIONS = [
+  UPI_OPERATION_NAMES.CHANGE_PIN_OPERATION,
+  UPI_OPERATION_NAMES.SET_PIN_OPERATION,
+  UPI_OPERATION_NAMES.FORGOT_PIN_OPERATION,
+  UPI_OPERATION_NAMES.RAISE_COLLECT_REQUEST_OPERATION,
+];
+
+export const BILLER_TYPE = {
+  BILLER: 'BILLER',
+  BOTH: 'BOTH',
+  PAYEE: 'PAYEE',
+};
+
+export const BILL_PAYMENT_CHANNEL = {
+  MOBILE_BANKING: 'MobileBanking',
+  INTERNET_BANKING: 'InternetBanking',
+};
+
+export const BILL_PAYMENT_METHODS = {
+  BANK_ACCOUNT: 'BankAccount',
+};
+
+export const LIMIT_OPERATION_MODE = {
+  INTENT_CALL: 'INTENT_CALL',
+  QR: 'QR',
+  SEND_MONEY: 'SEND_MONEY',
+};
+
+export const TRANSACTION_TYPES_FOR_STATUS = {
+  SEND_MONEY: 'SEND_MONEY',
+  ADD_FUNDS: 'ADD_FUNDS',
+  REQUEST_MONEY: 'REQUEST_MONEY',
+};
+
+export const FUND_TRANSFER_TYPES = {
+  FUND_TRANSFER: 'FUND_TRANSFER',
+  BGL: 'BGL',
+};
+
+export const PROFILE_ROLE = {
+  SOLE: 'SOLE',
+  RETAIL: 'RETAIL',
+  MAKER: 'MAKER',
+  AUS: 'AUS',
+};
+
+export const PROFILE_TYPE = {
+  BUSINESS: 'BIB',
+  RETAIL: 'RIB',
+  CREDIT_CARD: 'CREDITCARD',
+};
+
+export const PAYMENT_TILES_NOT_ALLOWED_PROFILE_TYPES = ['CREDITCARD', 'RIB - Asset Only'];
+
+export const KEY_CODE_FOR_IDFC_ACCOUNT = 'KeyCode';
+export const KEY_INDEX_FOR_IDFC_ACCOUNT = 'KeyIndex';
+
+export const APPROVAL_STATUS_DISPLAY_STRING = {
+  INITIATED: 'Pending',
+  'IN-PROGRESS': 'Pending',
+  APPROVED: 'Approved',
+  REJECTED: 'Rejected',
+  EXPIRED: 'Expired',
+};
+
+export const ACM_ACTIONS = {
+  CREDIT_CARD: 'CREDIT_CARD',
+  FUND_TRANSFER: 'FUND_TRANSFER',
+  BILL_PAYMENT: 'BILL_PAYMENT',
+  VIEW_BILL_PAYMENT: 'VIEW_BILL_PAYMENT',
+  COLLECT_MONEY: 'COLLECT_MONEY',
+  ADD_FUNDS: 'ADD_FUNDS',
+  PAY_ABROAD: 'PAY_ABROAD',
+  INITIATE_INWARD_REMITTANCE: 'INITIATE_INWARD_REMITTANCE', // Permission check Constant
+  NRO_TO_NRE_TRANSFER: 'NRO_TO_NRE_TRANSFER', // Permission check for tile NRO to NRE
+};
+
+export const TRANSACTION_TYPES = {
+  FUND_TRANSFER: 'FUND_TRANSFER',
+  BILL_PAYMENT: 'BILL_PAYMENT',
+  RECHARGE: 'RECHARGE',
+  BILL_PAY_ENABLE_AUTOPAY: 'BILL_PAY_ENABLE_AUTOPAY',
+  BILL_PAY_DISABLE_AUTOPAY: 'BILL_PAY_DISABLE_AUTOPAY',
+  CREATE_OD: 'CREATE_OD',
+  CLOSE_OD: 'CLOSE_OD',
+  OPEN_FD: 'OPEN_FD',
+  OPEN_RD: 'OPEN_RD',
+  CLOSE_FD: 'CLOSE_FD',
+  CLOSE_RD: 'CLOSE_RD',
+  BULK_TRANSFER: 'BULK_TRANSFER',
+  STOP_CHEQUE_SINGLE: 'STOP_CHEQUE_SINGLE',
+  STOP_CHEQUE_MULTIPLE: 'STOP_CHEQUE_MULTIPLE',
+  STOP_CHEQUE_REVOKE_SINGLE: 'STOP_CHEQUE_REVOKE_SINGLE',
+  UPDATE_GSTN_SINGLE: 'UPDATE_GSTN_SINGLE',
+  DISCONTINUE_STANDING_INSTRUCTION: 'DISCONTINUE_STANDING_INSTRUCTION',
+  BILL_PAY_MODIFY_AUTOPAY: 'BILL_PAY_MODIFY_AUTOPAY',
+  EDIT_OD: 'EDIT_OD',
+};
+
+export const APPROVAL_TRANSACTION_STATUS = {
+  FAILURE: 'FAILURE',
+  FAILED: 'FAILED',
+  SUCCESS: 'SUCCESS',
+  SUCCEEDED: 'SUCCEEDED',
+  TIMEOUT: 'TIMEOUT',
+  FULFILMENT_INITIATED: 'FULFILMENT_INITIATED',
+  REJECTED: 'REJECTED',
+  PROCESSING: 'PROCESSING',
+  PROCESSED: 'PROCESSED',
+  APPROVED: 'APPROVED',
+  PENDING: 'PENDING',
+};
+
+export const BULK_TRANSFER_TRANSACTION_STATUS = {
+  FAILURE: 'Failed',
+  PROCESSING: 'Processing',
+  PROCESSED: 'Processed',
+};
+
+export const AUTOPAY_STATUS = {
+  SUCCESS: 'SUCCESS',
+  FAILED: 'FAILED',
+};
+
+export const noop = () => {};
+export const API_STATUS = {
+  SUCCESS: 'SUCCESS',
+  PENDING: 'PENDING',
+  FAILED: 'FAILED',
+};
+
+export const TIME = {
+  SHOW_TOAST: 5000,
+};
+
+export const NEW_PAYEE = {
+  SEND_MONEY: 'SEND_MONEY',
+  MANAGE_PAYEE: 'MANAGE_PAYEE',
+};
+
+export const BILL_TYPE = {
+  CATEGORY: 'CATEGORY',
+  RECHARGE: 'RECHARGE',
+};
+
+export const TRACE_ACTIONS = {
+  SEND_MONEY_BUTTON: 'Pay send money flow',
+  CONFIRM_AND_SEND_MONEY: 'Pay confirm and send money',
+  ADD_NEW_PAYEE: 'Pay add new payee',
+  REQUEST_MONEY_BUTTON: 'Pay request money flow',
+  REQUEST_MONEY_TAB: 'Collect money requests',
+  ADD_FUNDS: 'Collect money - add funds requests',
+  COLLECT_MONEY_TO_ADD_FUNDS: 'Collect money - Add funds',
+  CONFIRM_AND_REQUEST_MONEY: 'Confirm and request money',
+  PAYMENT_SCHEDULED_TRANSACTION: 'Payments Scheduled Transactions',
+  EXTERNAL_FUND_TRANSFER: 'External fund transfer',
+  CONFIRM_COLLECT_IDFC: 'Approve confirm collect IDFC account',
+  CONFIRM_COLLECT_EXTERNAL: 'Approve confirm collect external account',
+  LINK_ACCOUNT: 'Link account to VPA',
+  DELETE_PAYEE: 'Delete payee',
+  RAISE_DISPUTE: 'Raise dispute',
+  DELETE_TRANSACTION: 'Delete scheduled transaction',
+  MFA_DISABLE_AUTOPAY: 'Multi Factor Authentication - Disable Auto Pay',
+  DISABLE_AUTOPAY_BILLER: 'Pay Bill - Disable Auto Pay',
+  PAYMENT_CONFIG: 'Fetch payment configuration',
+  OWN_ACCOUNTS: 'Fetch own Accounts',
+  CHECK_FUND_TRANSFER: 'Check fund transfer allowed',
+  UPDATE_PAYEES: 'Update payee',
+  GET_PAYEES: 'Fetch payee',
+  CHANGE_PIN: 'UPI - Change PIN',
+  FETCH_PUBLIC_KEYS: 'UPI - Fetch NPCI public keys',
+  INITIATE_BINDING: 'UPI - Initiate device binding',
+  CHECK_BALANCE: 'UPI - Check balance',
+  GENERATE_OTP: 'UPI - Generate OTP',
+  SET_FORGOT_PIN: 'UPI - Set or Forgot PIN',
+  SILENT_SMS: 'UPI - Silent SMS',
+  LINKED_BANK_ACCOUNTS: 'UPI - Fetch linked accounts',
+  FETCH_BANK_ACCOUNTS: 'UPI - Fetch bank accounts',
+  SET_PRIMARY: 'UPI - Set primary account',
+  REMOVE_ACCOUNT: 'UPI - Remove account from VPA',
+  GET_VPA: 'UPI - Get User VPA',
+  SETUP_VPA: 'UPI - Create VPA',
+  BLOCKED_VPA_LIST: 'UPI - Fetch blocked VPA list',
+  UNBLOCK_VPA: 'UPI - Unblock UPI ID',
+  BLOCK_VPA: 'UPI - block UPI ID',
+  UPI_INCOMING_REQUESTS: 'UPI - Incoming Requests',
+  FETCH_VPA_HANDLES: 'Fetch VPA Handles',
+  FETCH_CATEGORIES: 'Pay Bill - Get All Categories',
+  UPI_HISTORY: 'UPI history',
+  SAVE_NEW_PAYEE_DETAILS: 'Save New Payee Details',
+  MOBILE_VERIFICATION: 'UPI - Mobile verification',
+  VALIDATE_PER_TRANSACTION: 'Upi - Validate Per Transaction Limit',
+  VALIDATE_PER_DAY: 'Upi - Validate Per Day Limit',
+  GET_UPI_RAILROAD_DETAILS: 'UPI- railroad details',
+  VERIFY_VPA: 'UPI - Verify VPA',
+  GET_BANKS: 'UPI - Get all Banks',
+  GET_UPI_TRANSACTIONS: 'UPI - Get upi transactions',
+  VALIDATE_DEVICE_BINDING: 'UPI - Validate device binding',
+  GET_DISPUTE_OPTIONS: 'Get dispute options - ',
+  FETCH_IDFC_FIRST_ACCOUNT: 'New Payee - Fetch IDFC First account',
+  FETCH_NON_IDFC_FIRST_ACCOUNT: 'New Payee - Fetch Non-IDFC First account',
+  VALIDATE_UPI_24_HOUR_LIMIT: 'Upcoming collect request - Validate 24 hour limit for UPI transaction',
+  VALIDATE_NUMBER_OF_TRANSACTIONS_LIMIT: `UPI - Validate Number of transactions limit for UPI transaction`,
+  FETCH_VPA: 'UPI - Fetch VPA',
+  GET_PAYEE_LIMIT: 'Transaction - Get Payee Limit',
+  ADD_PAYEE_LIMIT: 'Transaction - Add Payee Limit',
+  GET_BHARAT_QR_TRANSACTION_DETAILS: 'Transaction - Get Bharat QR Details',
+  FUND_TRANSFER_CREDIT_CARD: 'Fund transfer with Credit Card',
+};
+
+export const SEARCH_CONTACT_HEADER_TITLES = {
+  MobilePrepaidRecharge: translate('PAY.RECHARGE.RECHARGE_NEW_NUMBER'),
+  BillerDetails: translate('PAY.RECHARGE.SELECT_OR_ENTER_NUMBER'),
+};
+
+export const IP_ADDRESSES = {
+  DEFAULT: '100.100.100.100',
+};
+
+export const DISABLE_AUTOPAY_STATUS = {
+  SUCCESS: 'success',
+  INITIATED: 'initiated',
+  IN_PROGRESS: 'in-progress',
+};
+
+export const PAYMENTS_SEARCH_CONFIG = {
+  LIMIT: 20,
+  API_RESULT_STATUS: {
+    SUCCESS: 'success',
+    FAILURE: 'failure',
+  },
+};
+
+export const SEARCH_CONTACT_CONFIG = {
+  SHOW_LOADER_WHILE_FETCHING: true,
+  BATCH_SIZE: 40,
+  INITIAL_PAGE_NUMBER: 1,
+  INITIAL_INDEX: 0,
+  RENDER_AHEAD_OFFSET: 2000,
+  ON_END_REACHED_THRESHOLD: 20,
+  ITEM_HEIGHT: 60,
+  LAYOUT_TYPE: 1,
+  SCROLL_VIEW_PROPS: {
+    DECELERATION_RATE: 0.9,
+    TOP: 0,
+    LEFT: 0,
+    BOTTOM: 0,
+    RIGHT: -3,
+  },
+};
+
+export const UPI_TRANSACTION_TYPE = {
+  CREDIT: 'CREDIT',
+  DEBIT: 'DEBIT',
+};
+
+export const QR_CODE = {
+  TOAST: {
+    DURATION_IN_MS: 5000,
+    DOWNLOADING: {
+      message: translate('PAY.QR_CODE.DOWNLOADING_QR_CODE'),
+      iconVariant: 'callToAction',
+      iconName: 'Info',
+      iconPosition: 'left',
+      inlineLoader: true,
+    },
+    DOWNLOADED: {
+      message: translate('PAY.QR_CODE.DOWNLOADED_QR_CODE'),
+      iconVariant: 'success',
+      iconName: 'Tick',
+      iconPosition: 'left',
+      inlineLoader: false,
+    },
+  },
+  OPEN_FILE_AFTER_DOWNLOAD: true,
+};
+
+export const PAYMENT_METHOD = {
+  CREDIT_CARD: 'CreditCard',
+  BANK_ACCOUNT: 'BankAccount',
+};
+
+export const UPI_DEVICE_MOBILE = 'MOB';
+
+export const CHANNEL = {
+  SMS: 'SMS',
+  EMAIL: 'EMAIL',
+  EMAIL_AND_SMS: 'EMAIL_AND_SMS',
+};
+
+export const SAVINGS_PRODUCT_CODE = '2000';
+
+export const SUB_PRODUCT_CODE = {
+  PIS: '1036',
+  SETTLEMENT: '1037',
+};
+
+export const ANDROID_API_29 = 29;
+
+export const BHARATPAY_QR_TYPE = {
+  UPI: 'UPI',
+  CC: 'CC',
+  UPI_CC: 'UPI_CC',
+};
+
+export const MAX_TRANSACTION_AMOUNT = '99999999.99';
+export const READABLE_PAYMENT_METHODS = {
+  CREDIT_CARD: 'Credit Card',
+};
+
+export const AMOUNT_VALIDATION_ERRORS = {
+  SET_AMOUNT_AS_QR_AMOUNT: 'SET_AMOUNT_AS_QR_AMOUNT',
+  SCAN_QR_VALIDATION_BETWEEN_AMOUNT: 'SCAN_QR_VALIDATION_BETWEEN_AMOUNT',
+  SCAN_QR_VALIDATION_BEYOND_MAX_LIMIT: 'SCAN_QR_VALIDATION_BEYOND_MAX_LIMIT',
+  SET_AMOUNT_AS_UPI_MAX_LIMIT: 'SET_AMOUNT_AS_UPI_MAX_LIMIT',
+  SET_AMOUNT_AS_UPI_MIN_LIMIT: 'SET_AMOUNT_AS_UPI_MIN_LIMIT',
+  SCAN_QR_VALIDATION_BETWEEN_AMOUNT_AND_UPI_MIN_AMOUNT: 'SCAN_QR_VALIDATION_BETWEEN_AMOUNT_AND_UPI_MIN_AMOUNT',
+  INSUFFICIENT_BALANCE: 'INSUFFICIENT_BALANCE',
+  ERROR_MESSAGE_CLEANUP: 'ERROR_MESSAGE_CLEANUP',
+  SCAN_QR_VALIDATION_BETWEEN_UPI_MAX_AMOUNT_AND_UPI_MIN_AMOUNT:
+    'SCAN_QR_VALIDATION_BETWEEN_UPI_MAX_AMOUNT_AND_UPI_MIN_AMOUNT',
+  SCAN_QR_VALIDATION_BETWEEN_MINIMUM_AMOUNT_AND_UPI_MAX_AMOUNT:
+    'SCAN_QR_VALIDATION_BETWEEN_MINIMUM_AMOUNT_AND_UPI_MAX_AMOUNT',
+  SCAN_QR_VALIDATION_LESSER_THAN_MIN_AMOUNT: 'SCAN_QR_VALIDATION_LESSER_THAN_MIN_AMOUNT',
+  SCAN_QR_MAX_TRANSACTION_AMOUNT_EXCEEDED: 'SCAN_QR_MAX_TRANSACTION_AMOUNT_EXCEEDED',
+  SCAN_QR_VALIDATION_BETWEEN_MIN_AMOUNT_CURRENT_BALANCE: 'SCAN_QR_VALIDATION_BETWEEN_MIN_AMOUNT_CURRENT_BALANCE',
+  SCAN_QR_VALIDATION_BETWEEN_MIN_LIMIT_CURRENT_BALANCE: 'SCAN_QR_VALIDATION_BETWEEN_MIN_LIMIT_CURRENT_BALANCE',
+  SET_AMOUNT_AS_CURRENT_BALANCE: 'SET_AMOUNT_AS_CURRENT_BALANCE',
+  SCAN_QR_UPI_MAX_LIMIT_ERROR: 'SCAN_QR_UPI_MAX_LIMIT_ERROR',
+  SCAN_QR_VALIDATION_AMOUNT_LESS_THAN_MINIMUM_AMOUNT: 'SCAN_QR_VALIDATION_AMOUNT_LESS_THAN_MINIMUM_AMOUNT',
+};
+
+export const PAYEE_SOURCE = {
+  ELASTICSEARCH: 'ES',
+  DATABASE: 'DB',
+};
+
+export const TALLY = 'TALLY';
+export const VENDOR_PAYMENT = 'Vendor Payment';
+export const CONNECTED_BANKING = 'Connected banking';
+export const BULK_TRANSFER_TXN_TYPE = 'Bulk transfer';

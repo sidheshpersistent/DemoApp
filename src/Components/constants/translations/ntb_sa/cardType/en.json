@@ -1,0 +1,6 @@
+{
+  "CLASSIC": {"name": "CLASSIC", "amount": 10000},
+  "SIGNATURE": {"name": "SIGNATURE", "amount": 25000},
+  "SIGNATURE_CARD": "Savings Account with\nVisa Signature Card",
+  "PLATINUM_CARD": "Savings Account with\nVisa Classic Card"
+}

@@ -1,0 +1,20 @@
+{
+  "PAGE_MESSAGE_WITH_MOBILE_WITHOUT_RETRY": "Please enter code sent to your mobile number ending {0}. OTP will expire in 5 mins.",
+  "PAGE_MESSAGE_WITH_MOBILE_WITH_RETRY": "Please enter code sent to your mobile number ending {0}. You have {1} attempt(s) left. OTP will expire in 5 mins.",
+  "PAGE_MESSAGE_WITH_EMAIL_WITH_RETRY": "Please enter code sent to your email ID {0}. You have {1} resend attempt(s) left. OTP will expire in 5 mins.",
+  "PAGE_MESSAGE_WITH_EMAIL_WITHOUT_RETRY": "Please enter code sent to your email ID {0}. OTP will expire in 5 mins.",
+  "PAGE_MESSAGE_WITH_EMAIL_AND_SMS_WITHOUT_RETRY": "Please enter code sent to your mobile number ending {0} and email id {1}. OTP will expire in 5 mins.",
+  "PAGE_MESSAGE_WITH_EMAIL_AND_SMS_WITH_RETRY": "Please enter code sent to your mobile number ending {0} and email id {1}. You have {2} resend attempt(s) left. OTP will expire in 5 mins.",
+  "RESEND_OTP_ON_SMS": "Resend OTP on SMS",
+  "RESEND_OTP_ON_EMAIL": "Resend OTP to my registered email ID",
+  "PAGE_TITLE": "Please enter OTP",
+  "RESEND_OTP_ON_SMS_AND_EMAIL": "Resend OTP on SMS and email",
+  "MOBILE_NUMBER": "Mobile number",
+  "EMAIL": "Email",
+  "OTP_SENT_TO_MOBILE": "OTP has been sent to your registered mobile number. OTP will expire in {expire_time} minutes.",
+  "OTP_SENT_TO_MOBILE_WITH_RETRY": "OTP has been sent to your registered mobile number. OTP will expire in {expire_time} minutes. You have {attemptLeft} resend attempt(s) left.",
+  "OTP_SENT_TO_EMAIL": "OTP has been sent to your registered email ID. OTP will expire in {expire_time} minutes.",
+  "OTP_SENT_TO_EMAIL_WITH_RETRY": "OTP has been sent to your registered email ID. OTP will expire in {expire_time} minutes. You have {attemptLeft} resend attempt(s) left.",
+  "OTP_SENT_TO_EMAIL_AND_MOBILE": "OTP has been sent to your registered mobile number and email ID. OTP will expire in {expire_time} minutes.",
+  "OTP_SENT_TO_EMAIL_AND_MOBILE_WITH_RETRY": "OTP has been sent to your registered mobile number and email ID. OTP will expire in {expire_time} minutes. You have {attemptLeft} resend attempt(s) left."
+}

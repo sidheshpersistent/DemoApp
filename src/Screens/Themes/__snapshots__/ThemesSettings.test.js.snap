@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeSettings screen should render component 1`] = `
+<View
+  accessibilityIgnoresInvertColors={true}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#f0f0f0",
+      },
+      Object {
+        "flex": 1,
+        "padding": 0,
+      },
+    ]
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "SvgMock",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "height": undefined,
+          "width": undefined,
+        },
+        Object {
+          "resizeMode": "cover",
+        },
+      ]
+    }
+    testID="default-background-image"
+  />
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "paddingTop": 50,
+        }
+      }
+    >
+      <RCTSafeAreaView
+        emulateUnlessSupported={true}
+        style={
+          Array [
+            Object {
+              "flexBasis": 0,
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "justifyContent": "space-between",
+              "marginBottom": 0,
+              "paddingHorizontal": 20,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "marginTop": 40,
+              },
+            ]
+          }
+        >
+          <View
+            align="center"
+            color="grey500"
+            fontSize={16}
+            lineHeight={24}
+            style={
+              Array [
+                Object {
+                  "paddingBottom": 10,
+                  "paddingLeft": 10,
+                  "paddingRight": 10,
+                  "paddingTop": 10,
+                },
+              ]
+            }
+          >
+            Choose between light and dark mode or set it up automatically, based on your device system settings.
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "display": "flex",
+                  "flexDirection": "row",
+                  "justifyContent": "space-around",
+                  "marginTop": 32,
+                  "paddingHorizontal": 16,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                  },
+                ]
+              }
+            >
+              <SvgMock
+                height={170}
+                width={79}
+              />
+              <View
+                checked={true}
+                id={0}
+                onChange={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "paddingTop": 16,
+                    },
+                  ]
+                }
+                testID="0-LIGHT"
+                value="LIGHT"
+              />
+              <View
+                align="center"
+                fontSize={16}
+                lineHeight={24}
+              >
+                Light
+              </View>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                  },
+                ]
+              }
+            >
+              <SvgMock
+                height={170}
+                width={79}
+              />
+              <View
+                checked={false}
+                id={1}
+                onChange={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "paddingTop": 16,
+                    },
+                  ]
+                }
+                testID="1-DARK"
+                value="DARK"
+              />
+              <View
+                align="center"
+                fontSize={16}
+                lineHeight={24}
+              >
+                Dark
+              </View>
+            </View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                  },
+                ]
+              }
+            >
+              <SvgMock
+                height={170}
+                width={79}
+              />
+              <View
+                checked={false}
+                id={2}
+                onChange={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "paddingTop": 16,
+                    },
+                  ]
+                }
+                testID="2-SYSTEM"
+                value="SYSTEM"
+              />
+              <View
+                align="center"
+                fontSize={16}
+                lineHeight={24}
+              >
+                System
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          onPress={[Function]}
+          testID="themeChange"
+          title="Save"
+        />
+      </RCTSafeAreaView>
+    </View>
+  </RCTSafeAreaView>
+</View>
+`;

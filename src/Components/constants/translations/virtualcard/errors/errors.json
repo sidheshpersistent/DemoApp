@@ -1,0 +1,11 @@
+{
+  "en": {
+    "ERR_RAS_CARD_IS_ALREADY_A_PHYSICAL_CARD" : "Card is Already a Physical Card",
+    "ERR_RAS_CHANGE_VIRTUAL_TO_PHYSICAL_CARD_GENERAL" : "Converting Virtual to Physical Card Failed",
+    "ERR_RAS_CARD_IS_NOT_A_VIRTUAL_CARD": "Card is Not a Virtual Card",
+    "ERR_RAS_CARD_NUMBER_IS_NOT_NUMERIC": "Card Number is Not Numeric",
+    "ERR_RAS_CARD_IS_NOT_VALID": "Card is Not Valid",
+    "ERR_RAS_CARD_GENERATION_IN_PROGRESS": "Physical Card Generation in Progress",
+    "ERR_RAS_CARD_REISSUED_WITH_NEW_NUMBER": "Card is ReIssued With New Number"
+  }
+}

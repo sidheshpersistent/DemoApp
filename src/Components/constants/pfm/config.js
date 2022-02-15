@@ -1,0 +1,4 @@
+import Config from 'config';
+
+const DOWNLOAD_TRANSACTIONS_TAKE = Config.FETCH_TRANSACTIONS_COUNT();
+export default DOWNLOAD_TRANSACTIONS_TAKE;

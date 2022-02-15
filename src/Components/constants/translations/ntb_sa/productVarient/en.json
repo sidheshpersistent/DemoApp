@@ -1,0 +1,37 @@
+{
+  "ERR_AC_NO": "Please enter account number.",
+  "ERR_AC_NO_VALID": "Please enter valid account number.",
+  "ERR_IFSC_NO": "Please enter IFSC code.",
+  "ERR_IFSC_NO_VALID": "Please enter valid IFSC code.",
+  "ERR_FUND_AMOUNT": "Enter valid fund amount.",
+
+  "HINT_AC_NUM": "Funding Account Number*",
+  "HINT_IFSC_CODE": "IFSC Code*",
+  "HINT_FUND_AMOUNT_PLACEHOLDER": "Fund Amount*",
+  "HINT_FUND_AMOUNT": "Enter funding amount*",
+
+  "FUND_ACCOUNT": "Fund Account",
+  "VIEW_SCHEDULE_OF_CHARGES": "View Schedule of Charges",
+  "PRODUCT_HEADING": "Before you \ndo product selection",
+  "SURVEY_TITLE": "Please share a bit more about you.",
+  "VERIFY": "Verify",
+  "VERIFIED": "Verified",
+
+  "PRODUCT_SPANNBLE": {
+    "CONCENT_LINE_ONE": "Now, let’s ",
+    "CONCENT_LINE_TWO": "enter the amount",
+    "CONCENT_LINE_THREE": " for the first time funding of your new IDFC FIRST Bank savings account",
+
+    "NOTE_TEXT_LINE_ONE": "Enter details of your ",
+    "NOTE_TEXT_LINE_TWO": "own bank account where you are the first/primary holder",
+    "NOTE_TEXT_LINE_THREE": ", for successful funding",
+
+    "CHECK_LINE_ONE": "I confirm that the funds are transferred from\n my own account.",
+
+    "CHECK_TERMS_LINE_ONE": "I accept all the ",
+    "CHECK_TERMS_LINE_TWO": "terms & conditions",
+    "CHECK_TERMS_LINE_THREE": " related to \n IDFC FIRST Bank",
+    "CHECK_TERMS_LINE_FOUR": " TransUnion CIBIL ",
+    "CHECK_TERMS_LINE_FIVE": " and authorize IDFC FIRST Bank to receive my CIBIL Score and Report."
+   }
+}

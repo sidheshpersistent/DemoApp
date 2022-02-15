@@ -1,0 +1,16 @@
+{
+  "en": {
+    "ERR_CRN_PASSWORD_INCORRECT": "CRN/Password Incorrect",
+    "ERR_IDP_USERNAME_PASSWORD_INCORRECT": "Username/Password Incorrect",
+    "ERR_IDP_INVALID_CREDENTIALS": "Invalid Credentials",
+    "ERR_MPIN_INCORRECT": "Mpin Incorrect",
+    "ERR_MPIN_EXPIRED": "Mpin has expired",
+    "ERR_MPIN_LOCKED": "Mpin is locked",
+    "ERR_USER_BLOCKED": "User is blocked",
+    "ERR_INTERNAL_SERVER_ERROR": "Something went wrong, Please try again!",
+    "ERR_BIOMETRIC_NOT_ENABLED": "Biometric is not enabled",
+    "ERR_INVALID_LOGIN_CHALLENGE": "Try the login flow again, url was tampered",
+    "ERR_USER_LOCKED": "Your account is locked",
+    "ERR_PASSWORD_EXPIRED": "Your password has been expired."
+  }
+}

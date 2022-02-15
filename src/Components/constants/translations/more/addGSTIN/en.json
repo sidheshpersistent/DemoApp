@@ -1,0 +1,75 @@
+{
+  "ADD_GST_TITLE": "Add GST Number",
+  "GST_INPUT_LABEL": "Enter the last 3 digits of your GST Number",
+  "INVALID_GST_NUMBER": "Please enter a valid GST Number",
+  "EXEMPTED_FROM_GST": "I am exempted from GST",
+  "RELATED_PARTY_TO_BANK": "I am a related party to IDFC First Bank",
+  "UPDATE": "Update",
+  "ENTER_GST_NUMBER": "Enter GST Number",
+  "SELECT_ACCOUNT_NUMBER": "Select account",
+  "ACCOUNT": "Account",
+  "ERROR_TITLE": "Error",
+  "SOMETHING_WENT_WRONG": "Something went wrong",
+  "ERROR_ACCOUNTS_CALL": "Sorry, due to a technical error,\n your request could not be processed.\n Please retry later",
+  "RELATED_PARTY_TO_BANK_INFO": {
+    "HEADING": "The following (including legal persons) are deemed as ‘related persons’:\n\n",
+    "CONTENT": [
+      "Officers or directors of one another’s businesses;\n",
+      "Legally recognised partners in business;\n",
+      "Employer and employee;\n",
+      "Any person who directly or indirectly owns, controls or holds twenty-five per cent or more of the outstanding voting stock or shares of both of them;\n",
+      "If one of them directly or indirectly controls the other;\n",
+      "Both of them are directly or indirectly controlled by a third person;\n",
+      "Together they directly or indirectly control a third person; or they are members of the same family;\n",
+      "Associated in the business of one another in that one is the sole agent or sole distributor or sole concessionaire of the other\n"
+    ]
+  },
+  "AGREE_CONDITIONS": {
+    "LINE_1": "By clicking on Update, I confirm to have read and agreed to the ",
+    "LINE_2": " & ",
+    "DECLARATION": "Declaration",
+    "TERMS_CONDITIONS": "Terms and Conditions."
+  },
+  "SUCCESS": {
+    "TITLE": "Request submitted",
+    "REQUEST_TO_UPDATE_GST": "Your request to update GST Number",
+    "GST_NUM": "({gst_number}) for",
+    "SUBMITTED": "has been submitted.",
+
+
+    "GSTN_AC_INFO": "Your request to update GST Number for {account_number} is received. Requests submitted between 10 AM and 8 PM are updated in next 3 hours or the next day.",
+    "GSTN": "\nGST number: {gst_number}",
+    "SR_NO": "\nService request number: {case_id}"
+  },
+  "SENT_FOR_APPROVAL": {
+    "TITLE": "Sent for approval",
+    "REQUEST_TO_UPDATE_GST": "Request to update GST Number",
+    "GST_NUM": "({gst_number}) for",
+    "SUBMITTED": "has been sent for approval.",
+
+
+    "GSTN_AC_INFO": "Request to update GST Number {gst_number} \n for A/c {account_number} has been ",
+    "SR_INFO": "sent for approval."
+  },
+  "ERROR": {
+    "TITLE": "Error",
+    "MESSAGE": "Sorry, due to a technical error,\n your request could not be processed.\n Please retry later"
+  },
+  "SR_FAILURE": {
+    "ERR_ADMIN_DUPLICATE_SERVICE_REQUEST": "We have already received and are processing your request for updating GST number",
+    "ERR_ADMIN_SERVICE_REQUEST_PROCESS_FAILURE": "Unable to update GST number. Please try after some time or reach out to a banker near you"
+  },
+  "UPDATE_PAN_ERROR": {
+    "HEADING_TEXT": "Please update PAN",
+    "BODY_TEXT": "GSTN cannot be updated because PAN number has not been updated. Please contact the branch to update PAN and then try again."
+  },
+  "DONE": "Done",
+  "CLOSE": "Close",
+  "IDFC_RELATED_PERSONS_GST": "IDFC related persons and GST exempt accounts will need additional documents to update GST number. Kindly contact your Relationship Manger or visit your nearest branch.",
+  "YES": "Yes",
+  "NO": "No",
+  "ARE_YOU_AN_IDFC_RELATED_PERSON": "Are you an IDFC Related Person? ",
+  "POP_OVER_MSG_FOR_RELATED_PERSON": "The following (including legal persons) are deemed as ‘related persons’: \n\n• Officers or directors of one another’s businesses;\n• Legally recognised partners in business;\n• Employer and employee;\n• Any person who directly or indirectly owns, controls or holds twenty-five per cent or more of the outstanding voting stock or shares of both of them;\n• If one of them directly or indirectly controls the other;\n• Both of them are directly or indirectly controlled by a third person;\n• Together they directly or indirectly control a third person; or they are members of the same family;\n• Associated in the business of one another in that one is the sole agent or sole distributor or sole concessionaire of the other",
+  "I_CONFIRM_THAT_A_C_NOT_EXEMPTED": "I confirm that the selected account is not exempted from GST",
+  "SUBMIT": "Submit"
+}

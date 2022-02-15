@@ -1,0 +1,22 @@
+{
+  "CONGRATULATIONS": "Congratulations!",
+  "ACCOUNT_DETAILS_LABEL": "Your account details",
+  "ACCOUNT_NUMBER": "Account Number",
+  "VIRTUAL_DEBIT_CARD": "Virtual Debit Card",
+  "VIEW_ACCOUNT": "View Account",
+  "CUSTOMER_ID": "Customer Id",
+  "IFSC_CODE": "IFSC Code",
+  "ADD_FUNDS": "Add Funds",
+  "VIRTUAL_CARD_TOOLTIP": "Virtual Debit card is an secured instant online card, which helps you to transact digitally. This cards can be converted to physical card upon request.",
+  "ADD_NOMINEE": "Add Nominee",
+  "CREATE_INSTRUCTION": "Create Standing Instruction",
+  "CREATE_INSTRUCTION_TOOL_TIP_MESSAGE": "You can seamlessly setup a recurring funds transfer instruction between bank accounts for a defined period.",
+  "INVEST_FUNDS": "Invest Funds",
+  "GET_INSURANCE": "Get Insurance",
+  "MANAGE_CARD_LIMITS": "Manage Card Limits",
+  "UPDATE_NOMINEE": "Update Nominee",
+  "ETB_SA_SUCCESS_MESSAGE_FOR_NEW_CARD_WITH_NOMINEE": "Your account has been created with the same nominee as your previous savings account. Your physical debit card will reach you on your communication address. You can change your personal details in the Profile section.",
+  "ETB_SA_SUCCESS_MESSAGE_FOR_NEW_CARD_WITH_NO_NOMINEE": "Your account has been created. Your physical debit card will reach you on your communication address. You can change your personal details in the Profile section.",
+  "ETB_SA_SUCCESS_MESSAGE_FOR_LINK_CARD_WITH_NO_NOMINEE": "Your account has been created. The account number is:",
+  "ETB_SA_SUCCESS_MESSAGE_FOR_LINK_CARD_WITH_NOMINEE": "Your account has been created with the same nominee as your previous savings account. The account number is:"
+}

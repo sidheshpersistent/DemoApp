@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeSettings screen should not render system theme option if appearance value is no-preference 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+        "marginTop": 32,
+        "paddingHorizontal": 16,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+        },
+      ]
+    }
+  >
+    <SvgMock
+      height={170}
+      width={79}
+    />
+    <View
+      checked={true}
+      id={0}
+      onChange={[Function]}
+      style={
+        Array [
+          Object {
+            "paddingTop": 16,
+          },
+        ]
+      }
+      testID="0-LIGHT"
+      value="LIGHT"
+    />
+    <View
+      align="center"
+      fontSize={16}
+      lineHeight={24}
+    >
+      Light
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+        },
+      ]
+    }
+  >
+    <SvgMock
+      height={170}
+      width={79}
+    />
+    <View
+      checked={false}
+      id={1}
+      onChange={[Function]}
+      style={
+        Array [
+          Object {
+            "paddingTop": 16,
+          },
+        ]
+      }
+      testID="1-DARK"
+      value="DARK"
+    />
+    <View
+      align="center"
+      fontSize={16}
+      lineHeight={24}
+    >
+      Dark
+    </View>
+  </View>
+</View>
+`;
+
+exports[`ThemeSettings screen should render component 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+        "marginTop": 32,
+        "paddingHorizontal": 16,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+        },
+      ]
+    }
+  >
+    <SvgMock
+      height={170}
+      width={79}
+    />
+    <View
+      checked={true}
+      id={0}
+      onChange={[Function]}
+      style={
+        Array [
+          Object {
+            "paddingTop": 16,
+          },
+        ]
+      }
+      testID="0-LIGHT"
+      value="LIGHT"
+    />
+    <View
+      align="center"
+      fontSize={16}
+      lineHeight={24}
+    >
+      Light
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+        },
+      ]
+    }
+  >
+    <SvgMock
+      height={170}
+      width={79}
+    />
+    <View
+      checked={false}
+      id={1}
+      onChange={[Function]}
+      style={
+        Array [
+          Object {
+            "paddingTop": 16,
+          },
+        ]
+      }
+      testID="1-DARK"
+      value="DARK"
+    />
+    <View
+      align="center"
+      fontSize={16}
+      lineHeight={24}
+    >
+      Dark
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+        },
+      ]
+    }
+  >
+    <SvgMock
+      height={170}
+      width={79}
+    />
+    <View
+      checked={false}
+      id={2}
+      onChange={[Function]}
+      style={
+        Array [
+          Object {
+            "paddingTop": 16,
+          },
+        ]
+      }
+      testID="2-SYSTEM"
+      value="SYSTEM"
+    />
+    <View
+      align="center"
+      fontSize={16}
+      lineHeight={24}
+    >
+      System
+    </View>
+  </View>
+</View>
+`;

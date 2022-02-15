@@ -1,0 +1,194 @@
+{
+  "PROCEED": "Proceed",
+  "MOBILE_NUMBER": "Mobile Number",
+  "VERSION": "Version",
+  "LETS_GET_STARTED": "Lets get started",
+  "GET_STARTED_WITH_THE_NEW_BANKING_EXPERIENCE": "Get started with the new banking experience",
+  "MOBILE_NUMBER_REQUIRED_ERR_MESSAGE": "Please enter a mobile number to proceed",
+  "OTP_REQUIRED_ERR_MESSAGE": "Please provide a OTP",
+  "VALID_MOBILE_NUMBER_ERR_MESSAGE": "Please enter a valid mobile number",
+  "OTP_NUMBER_ERR_MESSAGE": "Please enter the correct OTP",
+  "OTP_GENERATION_LIMIT_REACHED": "Maximum resend attempts exceeded.",
+  "OTP_EXPIRED_ERROR": "OTP entered has expired. Click on Resend OTP to receive a new OTP",
+  "CREATE_MPIN": "Create MPIN",
+  "ENTER_MPIN": "Enter MPIN",
+  "OLD_MPIN": "Old MPIN",
+  "CONFIRM_MPIN": "Confirm MPIN",
+  "CONFIRM": "Confirm",
+  "SORRY": "Sorry!",
+  "AW_SNAP": "Aw-snap!",
+  "SOMETHING_WENT_WRONG": "Something went wrong",
+  "SET_MPIN_UNSUCCESSFUL": "A technical error occurred during MPIN set up.",
+  "PLEASE_TRY_AGAIN": "Please try again.",
+  "RETRY": "Retry",
+  "LOGIN_SECURELY": "Login securely",
+  "MPIN": "MPIN",
+  "FORGOT_MPIN": "Forgot MPIN",
+  "CHANGE_MPIN": "Change MPIN",
+  "HI_MESSAGE": "Hi {0}",
+  "CONGRATULATIONS": "Congratulations!",
+  "START_YOUR_JOURNEY": "You’re all ready to start your journey.",
+  "LOGIN_NOW": "Login now",
+  "CLOSE": "Close",
+  "TRACK_LOAN_LABEL": "Track loan application status",
+  "ATM_BRANCH_LOCATOR_LABEL": "ATM branch locator",
+  "APPLY_FOR_LOAN_LABEL": "Apply for a Loan",
+  "GET_USERNAME": "Get username",
+  "FORGOT_PASSWORD": "Forgot password",
+  "BLOCK_NET_BANKING": "Block Netbanking",
+  "FEEDBACK": "Feedback",
+  "CANCEL_LABEL": "Cancel",
+  "NEW_REGISTRATION_FLOW":"New registration flow",
+  "HOW_DO_I_GET_STARTED": "How do I get started?",
+  "MPIN_TNC":{
+    "PROCEED":"By clicking on ‘Proceed’ you agree to the following ",
+    "TERMS_AND_CONDITION":"Terms & Conditions",
+    "SCHEDULE_OF_CHARGES":"Schedule of charges",
+    "BCSBI":"BCSBI",
+    "GOVERNING_OF_ACCOUNT":" governing usage of the account.",
+    "COMMA_SEPERATOR":", ",
+    "AND_SEPERATOR":" & "
+  },
+  "ERROR_POPUP": {
+    "TITLE": "Error",
+    "MESSAGE": "Sorry, due to a technical error, your request could not be processed. Please retry later.",
+    "CANCEL": "Cancel",
+    "DONE": "Done",
+    "CLOSE": "Close"
+  },
+  "INVALID_STATE_POPUP": {
+    "TITLE": "Aw-Snap!",
+    "MESSAGE": "Our systems were unable to process your request. Please try again.",
+    "CANCEL": "Cancel",
+    "DONE": "Done",
+    "CLOSE": "Close"
+  },
+  "SET_MPIN_POPUP": {
+    "TITLE": "Register MPIN",
+    "MESSAGE": "Your device isn't registered or MPIN hasn't been set up. Please set up MPIN to continue.",
+    "CLOSE": "Close"
+  },
+  "MPIN_EXPIRED_POPUP": {
+    "TITLE": "All good things come to an end!",
+    "MESSAGE": "Your current MPIN has expired in this duration to ensure your safety. Please reset your MPIN upon login.",
+    "SET_MPIN": "Set MPIN"
+  },
+  "OTP_VERIFY_POPUP": {
+    "MESSAGE": "Incorrect OTP. You have crossed the maximum attempts to enter correct OTP. Please restart your transaction."
+  },
+  "MPIN_LOCKED_POPUP": {
+    "TITLE": "Netbanking locked till midnight",
+    "MESSAGE": "Please try again later.",
+    "CLOSE": "Close"
+  },
+  "USER_LOCKED_POPUP": {
+    "TITLE": "Net banking blocked",
+    "MESSAGE": "Please unblock to access your Netbanking.",
+    "UNBLOCK_NET_BANKING": "Unblock netbanking"
+  },
+  "JOURNEY_ID_EXPIRED_POPUP": {
+    "TITLE": "Sorry!",
+    "MESSAGE": "Session timed out. Please start your journey again.",
+    "START_AGAIN": "Start again"
+  },
+  "RESET_MPIN_POPUP": {
+    "TITLE": "Sorry!",
+    "MESSAGE": "Sorry, you have entered the incorrect MPIN more than 5 times. To proceed, please reset MPIN",
+    "RESET_MPIN": "Reset MPIN"
+  },
+  "USER_CURRENTLY_IN_BACKBASE_POPUP": {
+    "TITLE": "Hi! Thank you for showing your interest!",
+    "MESSAGE": "This app is being launched in phases and will be available to you shortly. Please continue using our existing app until then",
+    "CLOSE": "Close",
+    "CLICK_HERE": "Take me to existing app"
+  },
+  "ENTITY_CURRENTLY_IN_BACKBASE_POPUP": {
+    "TITLE": "Net banking blocked",
+    "MESSAGE": "Your organisation has moved back to the old banking experience",
+    "CLOSE": "Close"
+  },
+  "USER_MIGRATION_IN_PROGRESS_POPUP": {
+    "TITLE": "Please wait…",
+    "MESSAGE": "We are migrating your information to\n our new banking experience.\nThis may take a few moment",
+    "CLOSE": "Close"
+  },
+  "SET_MPIN": {
+    "SET_UP_MPIN": "Set MPIN"
+  },
+  "BIOMETRIC": {
+    "ERROR_TITLE": "Error",
+    "ERROR_MESSAGE": "Sorry, your login using {0} could not be processed.",
+    "ERROR_LOCKOUT_TITLE": "Access locked",
+    "ERROR_LOCKOUT_MESSAGE": "Maximum attempts to login via biometric exceeded. Please login using MPIN.",
+    "PRIMARY_ACTION": "Login with MPIN",
+    "ENABLE": "Enable {0}",
+    "LOGIN": "Login with {0}",
+    "TOUCH_ID": "Touch ID",
+    "FACE_ID": "Face ID",
+    "FINGERPRINT": "Fingerprint",
+    "CANCEL": "Cancel",
+    "MPIN_ENABLE_BIOMETRIC": "Enter MPIN to enable {0}",
+    "ENABLED": "{0} is enabled",
+    "DISABLED": "{0} is disabled",
+    "ERROR_ENABLE_BIOMETRIC": "Sorry, due to a technical error, your {0} login could not be enabled. Please retry via Login/Settings.",
+    "ERROR_PERMISSION_DENIED_TITLE": "Permission",
+    "ERROR_PERMISSION_DENIED_MESSAGE": "Enable permissions to login using your {0}."
+  },
+  "INTERMEDIATE_SCREEN": {
+    "ERROR_TITLE": "Something went wrong",
+    "ERROR_MESSAGE_LINE_1": "Sorry, due to a technical error,",
+    "ERROR_MESSAGE_LINE_2": "your request could not be processed.",
+    "RETRY_LOGIN": "Retry login"
+  },
+  "VERIFICATION": "Verification",
+  "ENTER_OTP_MESSAGE": "Please enter OTP",
+  "OTP_SENT_TO_MOBILE_NUMBER": "OTP has been sent to your number ending with",
+  "OTP_SENT_TO_MOBILE_NUMBER_MSG": "OTP has been sent to your registered mobile number. OTP will expire in 5 minutes.",
+  "OTP_SENT_TO_MOBILE_NUMBER_LABEL": "Mobile number: ",
+  "OTP_SENT_TO_EMAIL_ID_MSG": "OTP has been sent to your registered email. OTP will expire in 5 minutes.",
+  "OTP_SENT_TO_EMAIL_ID_LABEL": "Email: ",
+  "RESEND_OTP_ON_SMS": "Resend OTP on SMS",
+  "RESEND_OTP_TO_EMAIL_LABEL": "Resend OTP to registered email",
+  "RESEND_OTP": "Resend OTP",
+  "VERIFY": "Verify",
+  "OTP": "OTP",
+  "CALL": "Call",
+  "REQUEST_PERMISSIONS_MESSAGE": "To use the app we would need a few permissions. Please visit your app settings and grant the IDFC FIRST Bank app the required permissions.",
+  "APP_SETTINGS": "App settings",
+  "ENTER_REGISTERED_NUMBER": "Please enter registered mobile number",
+  "LOGIN": "Login",
+  "NEW_MPIN_SET": "Your new MPIN has been set.",
+  "MOBILE_NUMBER_NOT_FOUND_ERR_MESSAGE": "Please retry with a mobile number that is registered with us. You may have entered one that is not.",
+  "AUTHENTICATE_BIOMETRIC": "Do you want to allow IDFCFIRST Bank to use {0}?",
+  "SKIP": "Skip",
+  "OK": "OK",
+  "BIOMETRIC_ERR_MESSAGE": "Sorry, your {0} access could not be enabled. Please enable permissions via Settings and retry.",
+  "OPEN_SETTINGS": "Go to Settings",
+  "OPEN_SAVINGS_ACCOUNT": "Open savings account",
+  "RECENTLY_USED_PIN": "You've entered a new MPIN which is same as the previous 3 MPINs. Please try again.",
+  "ACCOUNT_NUMBER_SCREEN": {
+    "SELECT_ONE": "Select one",
+    "AC_NUMBER": "A/c number",
+    "DEBIT_CARD_NUMBER": "Debit card number",
+    "CREDIT_CARD_NUMBER": "Credit card number (last 4 digits)",
+    "LOAN_NUMBER": "Loan number",
+    "AC_TOOLTIP_CONTENT": "Your 11 digit savings or current account number can be found on your welcome kit, welcome email, account statement or chequebook.",
+    "ENTER_VALID_AC_NO": "Please enter valid account number",
+    "ENTER_VALID_DC_NO": "Please enter valid debit card number",
+    "ENTER_VALID_CC_NO": "Please enter last 4 digits of your credit card number",
+    "ENTER_VALID_LOAN_NO": "Please enter valid loan number",
+    "INVALID_CC_NO": "You either do not have a credit card relationship or the credit card status is invalid. Please contact the bank.",
+    "LOAN_TOOLTIP_CONTENT": "Your loan number can be found in the welcome SMS, welcome email or any loan account statement sent to you."
+  },
+  "MINOR_ERROR_POPUP": {
+    "TITLE": "Error",
+    "MESSAGE": "Internet banking is accessible to individuals above the age of 10 years only.",
+    "CLOSE": "Close"
+  },
+  "ERR_IDP_USER_LOCKED_POPUP": {
+    "TITLE": "Safety FIRST!",
+    "MESSAGE_1": "You've reached 5 failed attempts to verify your password and your account has been temporarily blocked till midnight. Once unblocked, you can try to login to the app/net banking, or reset your password on app/net banking and try again.",
+    "MESSAGE_2": "Please call us on 1800 419 4332 for any queries.",
+    "RESET_PASSWORD": "Reset Password"
+  }
+}

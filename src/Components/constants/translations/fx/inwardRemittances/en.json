@@ -1,0 +1,30 @@
+{
+    "INWARD_REMITTANCE_TITLE": "Inward remittances",
+    "REMITANCE_EXPIRING_DAY": "EXPIRING IN",
+    "NO_REMITTANCES": "There is no active unprocessed remittances against this account",
+    "DAY": "day",
+    "DAYS": "days",
+    "SWIFT_COPY_DOWNLOAD": "Download swift copy",
+    "SWIFT_COPY_DOWNLOAD_SUCCESS": "Swift copy downloaded",
+    "SWIFT_COPY_DOWNLOAD_FAILURE": "Swift copy download failed",
+    "SWIFT_COPY_FILE_NAME": "MT103_{txn_reference_number}",
+    "PROCEED_WITH_FCNR_CREATION": "Proceed with FCNR deposit creation",
+    "REMITTER_NAME": "Remitter name",
+    "REMITTER_BANK": "Remittor's bank",
+    "PURPOSE": "Purpose",
+    "VALUE_DATE": "Value date",
+    "TXN_REF_NO": "Transaction reference no.",
+    "DISPOSAL_DETAILS_STATUS": {
+        "PENDING": "Pending",
+        "SUBMITTED": "Disposal instructions submitted",
+        "IN PROCESS": "In Process",
+        "CONTACT BRANCH": "In Process",
+        "STATUS UNAVAILABLE": "Status unavailable"
+    },
+    "FCNR_BOOKING": {
+        "FCNR_AMOUNT": "FCNR amount",
+        "DEPOSIT_TYPE": "Deposit type",
+        "CUMULATIVE_REINVEST": "Cumulative / Re-invest",
+        "RENEW_INFO_TEXT": "Your principal amount & interest will be re-invested in a new FCNR deposit after maturity"
+    }
+}
