@@ -1,86 +1,66 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
-import Box from '../../components/Box';
-import Card from '../../components/CardView';
-import CustomTextInput from '../../components/ntb_sa/Inputs/CustomTextInput';
+import {
+  UpperBoxContainer,
+  DashboardContainer,
+  Welcome,
+  AgentName,
+  AgentImage,
+  AgentGreetWrapper,
+  HighlightHeading,
+  header,
+  image,
+  highlightCard,
+} from './DashboardStyle';
 import ProfileHeaderContainer from '../../components/ProfileHeaderContainer';
 
-
+import Card from '../../components/CardView';
+import { COMMON_CONST } from '../../constants/constants';
 const Dashboard = props => {
+
+
+
+  
+
   return (
-    <View style={{flex: 1}}>
-      <Box>
-        <Text>Box container with default padding 10px</Text>
-      </Box>
-      <Card>
-        <Text>hello eorld</Text>
-        <Text>hello eorld</Text>
-        <Text>hello eorld</Text>
-        <Text>hello eorld</Text>
-        <Text>hello eorld</Text>
-      </Card>
-      <ProfileHeaderContainer
-        style={{
-          backgroundColor: 'gray',
-          marginTop: 5,
-          borderBottomLeftRadius: 0,
-          borderBottomRightRadius: 0,
-        }}
-        maxContainerHeight={200}
-        leftView={
-          <Image
-            style={{width: 20, height: 20}}
-            source={{
-              uri: 'https://www.industrialempathy.com/img/remote/ZiClJf-1280w.avif',
-            }}
-            resizeMode="contain"
-          />
-        }
-        rightView={<Text>Ayush bmbmnn</Text>}
-      />
-
-      <CustomTextInput
-        /* value={tintColorVal ? aadhaarNo.replace(/[0-9]/g, '•') : aadhaarNo} */
-        isActive={false}
-        isValue={false}
-        placeholder="user name"
-        spannableText="Hi i am aadhar"
-        keyboardType="numeric"
-        errorMessage=""
-        isError={false}
-        errorColor="red"
-        textColor="maroon"
-        maxLength={19}
-        // secureTextEntry={tintColorVal}
-        returnKeyType="done"
-        multiline={false}
-        editable={true}
-       /*  nextAction={iconConstants.IC_ARROW_FORWARD} */
-        /* onChangeText={} */
-        onKeyPress={() => {}}
-      />
-      <CustomTextInput
-        /* value={tintColorVal ? aadhaarNo.replace(/[0-9]/g, '•') : aadhaarNo} */
-        isActive={false}
-        isValue={false}
-        placeholder="user name"
-        spannableText="Hi i am aadhar"
-        keyboardType="numeric"
-        errorMessage=""
-        isError={false}
-        errorColor="red"
-        textColor="maroon"
-        maxLength={19}
-        // secureTextEntry={tintColorVal}
-        returnKeyType="done"
-        multiline={false}
-        editable={true}
-       /*  nextAction={iconConstants.IC_ARROW_FORWARD} */
-        /* onChangeText={} */
-        onKeyPress={() => {}}
-      />
-    </View>
-
+    <DashboardContainer>
+      <UpperBoxContainer>
+        <ProfileHeaderContainer
+          style={header}
+          maxContainerHeight={200}
+          leftView={
+            <View>
+              <Image
+                style={image}
+                source={require('./testImg.jpg')}
+              />
+            </View>
+          }
+          rightView={
+            <AgentGreetWrapper>
+              <Welcome>{COMMON_CONST.DROP_JOURNY_MODAL_TITLE}</Welcome>
+              <AgentName>Rajiv Kumar!</AgentName>
+            </AgentGreetWrapper>
+          }
+        />
+        <HighlightHeading>{COMMON_CONST.HIGHLIGHTS}</HighlightHeading>
+        <View style={{flexDirection:"row",justifyContent:"space-between"}}>
+        <Card style={highlightCard}>
+          <Text>ayush</Text>
+          <Text>mishra</Text>
+        </Card>
+        <Card style={highlightCard}>
+          <Text>ayush</Text>
+          <Text>mishra</Text>
+        </Card>
+        <Card style={highlightCard}>
+          <Text>ayush</Text>
+          <Text>mishra</Text>
+        </Card>
+        </View>
+      
+      </UpperBoxContainer>
+    </DashboardContainer>
   );
 };
 
