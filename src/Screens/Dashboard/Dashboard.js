@@ -1,26 +1,31 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, Image} from 'react-native';
 import {
   UpperBoxContainer,
   DashboardContainer,
   Welcome,
   AgentName,
-  AgentImage,
   AgentGreetWrapper,
   HighlightHeading,
   header,
   image,
-  highlightCard,
 } from './DashboardStyle';
 import ProfileHeaderContainer from '../../components/ProfileHeaderContainer';
 
-import Card from '../../components/CardView';
-import { COMMON_CONST } from '../../constants/constants';
+import {COMMON_CONST} from '../../constants/constants';
+import MonthlyHighlights from './MonthlyHighlights';
 const Dashboard = props => {
 
+  useEffect(()=>{
 
 
-  
+  },[])
+
+  const [monthlyHighlights, setMonthlyHighlights] = useState([
+    {id: 1, flag: 'total', value: 100, title: 'Total Applications'},
+    {id: 2, flag: 'success', value: 80, title: 'Successful Applications'},
+    {id: 3, flag: 'pending', value: 200, title: 'Application In Progress'},
+  ]);
 
   return (
     <DashboardContainer>
@@ -30,35 +35,18 @@ const Dashboard = props => {
           maxContainerHeight={200}
           leftView={
             <View>
-              <Image
-                style={image}
-                source={require('./testImg.jpg')}
-              />
+              <Image style={image} source={require('./testImg.jpg')} />
             </View>
           }
           rightView={
             <AgentGreetWrapper>
               <Welcome>{COMMON_CONST.DROP_JOURNY_MODAL_TITLE}</Welcome>
-              <AgentName>Rajiv Kumar!</AgentName>
+              <AgentName>Rajiv Kumar !</AgentName>
             </AgentGreetWrapper>
           }
         />
         <HighlightHeading>{COMMON_CONST.HIGHLIGHTS}</HighlightHeading>
-        <View style={{flexDirection:"row",justifyContent:"space-between"}}>
-        <Card style={highlightCard}>
-          <Text>ayush</Text>
-          <Text>mishra</Text>
-        </Card>
-        <Card style={highlightCard}>
-          <Text>ayush</Text>
-          <Text>mishra</Text>
-        </Card>
-        <Card style={highlightCard}>
-          <Text>ayush</Text>
-          <Text>mishra</Text>
-        </Card>
-        </View>
-      
+        <MonthlyHighlights monthlyHighlights={monthlyHighlights} />
       </UpperBoxContainer>
     </DashboardContainer>
   );
