@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import PropTypes from 'prop-types';
-import { CommonStyle } from 'styles/index';
+import {CommonStyle} from 'styles/index';
 
 const styles = StyleSheet.create({
   rightStyle: {
@@ -12,9 +12,9 @@ const styles = StyleSheet.create({
 });
 
 const ProfileHeaderContainer = props => {
-  const { leftView, rightView } = props;
+  const {leftView, rightView} = props;
   return (
-    <View style={ [CommonStyle.headerCardStyle,props.style]}>
+    <View style={[CommonStyle.headerCardStyle, props.style]}>
       <View>{leftView}</View>
       <View style={styles.rightStyle}>{rightView}</View>
     </View>
