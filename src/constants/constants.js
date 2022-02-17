@@ -1,6 +1,12 @@
 export const CARDTYPE = {
-  CLASSIC: { name: 'CLASSIC', amount: 10000 },
-  SIGNATURE: { name: 'SIGNATURE', amount: 25000 },
+  CLASSIC: {name: 'CLASSIC', amount: 10000},
+  SIGNATURE: {name: 'SIGNATURE', amount: 25000},
+};
+
+export const CUSTOMERDETAILS = {
+  CID_FORM_HEADING: 'Enter your customer details to proceed',
+  CID_LABEL_CUSTOMER_DETAILS: 'Customer Details',
+  CID_LABEL_PAN_MANDATORY: 'When is it mandatory to enter PAN?',
 };
 
 export const CONSTANTS = {
@@ -24,7 +30,7 @@ export const COMMON_CONST = {
   MOBILE: 'mobile',
   SENTENCES: 'sentences',
   CHARACTERS: 'characters',
-  HIGHLIGHTS:"THIS MONTH'S HIGHLIGHTS",
+  HIGHLIGHTS: "THIS MONTH'S HIGHLIGHTS",
   BANKING_PREFERENCES: 'Banking Preferences',
   FAMILY_DETAILS: 'Family Details',
   DROP_JOURNY_MODAL_TITLE: 'Welcome back, ',
@@ -91,14 +97,19 @@ export const PERSON_DETAILS = {
   COMMUNICATION_ADDRESS_NOTE: 'Communication address is same as my Aadhaar.',
   NOMINEE_ADDRESS_NOTE: 'Nominee address is same as my communication address',
   GUARDIAN_ADDRESS_TITLE_HEADER: "Guardian's Addresss",
-  GUARDIAN_ADDRESS_NOTE: "Guardian's address is same as my communication address",
-  NOMINEE_BELOW_18_NOTE: 'Since your Nominee is below 18 years of age, please enter guardian details',
-  COMMUNICATION_ALERT: 'Please ensure to update your complete address for successful delivery of your welcome kit',
+  GUARDIAN_ADDRESS_NOTE:
+    "Guardian's address is same as my communication address",
+  NOMINEE_BELOW_18_NOTE:
+    'Since your Nominee is below 18 years of age, please enter guardian details',
+  COMMUNICATION_ALERT:
+    'Please ensure to update your complete address for successful delivery of your welcome kit',
 
   INDIAN_CITIZEN_CHECK: 'I am an Indian citizen and pay taxes only in India',
-  INDIAN_CITIZEN_NOTE: 'I am a resident of India and pay taxes in countries in addition to India',
+  INDIAN_CITIZEN_NOTE:
+    'I am a resident of India and pay taxes in countries in addition to India',
 
-  DBT_CHECK: 'I do not wish to avail Direct Benefit Transfer (DBT) benefits in IDFC FIRST Bank Account',
+  DBT_CHECK:
+    'I do not wish to avail Direct Benefit Transfer (DBT) benefits in IDFC FIRST Bank Account',
 
   ERR_ENTER_EMAIL: 'Please enter Email ID',
   ERR_ENTER_VALID_EMAIL: 'Please enter valid Email ID',
@@ -132,7 +143,8 @@ export const PERSON_DETAILS = {
   ERR_ANUAL_INCOME: 'Please enter annual income.',
   ERR_INVALID_ANUAL_INCOME: 'Please enter valid annual income.',
   ERR_INVALID_ANUAL_INCOME1: 'Enter correct value.',
-  ERR_EDUCATIONAL_QUALIFICATION_SELECT: 'Please select educational qualification.',
+  ERR_EDUCATIONAL_QUALIFICATION_SELECT:
+    'Please select educational qualification.',
   ERR_NATIONALITY_SELECT: 'Please select nationality.',
   ERR_COUNTRY_TAX_RESI_SELECT: 'Please select country of tax residence.',
   ERR_TIN_NUMBER: 'Please enter TIN number.',
@@ -146,7 +158,8 @@ export const PERSON_DETAILS = {
   ERR_GUARDIAN_NAME_VALID: 'Please enter valid guardian name.',
   RESIDENTIAL_ADDRESS_NOTE: 'Residential address is same as my Aadhaar',
   DELETE_NOMINEE_HEADER_TXT: 'Are you sure you want to delete the nominee?',
-  DELETE_NOMINEE_HEADER_SUB_TXT: 'Please note that this action, if proceeded,\ncannot be undone.',
+  DELETE_NOMINEE_HEADER_SUB_TXT:
+    'Please note that this action, if proceeded,\ncannot be undone.',
   YES_I_WANT_TO_DELETE_NOMINEE: 'Yes, I want to delete this nominee',
   INDIA: 'India',
   PERSONAL_DETAILS: 'PERSONAL_DETAILS',

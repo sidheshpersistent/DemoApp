@@ -8,11 +8,10 @@
 
 import React from 'react';
 import Dashboard from './src/Screens/Dashboard/Dashboard';
+import CustomerDetails from './src/Screens/CustomerDetails/CustomerDetails';
 
-const App=()=>{
-  return(
-    <Dashboard />
-  )
-}
+const App = () => {
+  return <CustomerDetails />;
+};
 
 export default App;
