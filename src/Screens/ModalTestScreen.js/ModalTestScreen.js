@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, Image} from 'react-native';
-import Popup from '../../Components/Popup/Popup';
+import Popup from '../../components/Popup/Popup';
 
 
 const ModelTestScreen = props => {

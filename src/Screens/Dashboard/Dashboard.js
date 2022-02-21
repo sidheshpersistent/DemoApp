@@ -14,7 +14,7 @@ import ProfileHeaderContainer from 'components/ProfileHeaderContainer';
 
 import {COMMON_CONST} from '../../constants/constants';
 import MonthlyHighlights from './MonthlyHighlights';
-import Popup from '../../Components/Popup/Popup';
+import Popup from '../../components/Popup/Popup';
 const Dashboard = props => {
   useEffect(() => {}, []);
 
