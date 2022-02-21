@@ -5,41 +5,53 @@ import {
   StyleSheet,
   Dimensions,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import Modal from 'react-native-modal';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { CenteredView, ModalView, PopupHeading,SubTextContainer } from './PopupStyle';
+import {
+  CenteredView,
+  ModalView,
+  PopupHeading,
+  SubTextContainer,
+} from './PopupStyle';
 import CustomBlurView from './CustomBlurView';
-
+import { POPUP_GRADIENT } from '../../constants/colorCode';
 
 const Popup = props => {
-  const {isVisible,Heading,subText,ButtonText} = props;
+  const {isVisible, Heading, component, ButtonText, buttonPress, animationIn,popupIcon} =props;
+    
+
   return (
     <CenteredView>
       <Modal
-        animationIn={'bounceIn'}
+        animationIn={animationIn}
         isVisible={isVisible}
-        customBackdrop={
-          <CustomBlurView />
-        }>
+        customBackdrop={<CustomBlurView />}>
         <CenteredView>
           <ModalView>
             <LinearGradient
               start={{x: 0, y: 0}}
               end={{x: 1, y: 0}}
-              colors={['#d1451a', '#e9a56a']}
-              style={styles.linearGradient}></LinearGradient>
+              colors={[POPUP_GRADIENT.LEFT,POPUP_GRADIENT.RIGHT]}
+              style={styles.linearGradient}>
+                
+
+                <Image source={popupIcon} style={{width:48,height:48}}/>
+          
+              </LinearGradient>
             <View style={{paddingLeft: 24, paddingRight: 24, width: 416}}>
-              <PopupHeading>Popup Heading</PopupHeading>
-              <SubTextContainer>
-              <Text>ayush</Text>
-              </SubTextContainer>
-              
+              <PopupHeading>{Heading}</PopupHeading>
+              <SubTextContainer>{component}</SubTextContainer>
             </View>
-            <TouchableOpacity style={styles.Button}>
-              <Text style={styles.ButtonText}>Button Text</Text>
+            {/** this button may required to delete after getting ccl library */}
+            <TouchableOpacity
+              onPress={() => buttonPress()}
+              style={styles.Button}>
+              <Text style={styles.ButtonText}>{ButtonText}</Text>
             </TouchableOpacity>
+
           </ModalView>
         </CenteredView>
       </Modal>
@@ -47,16 +59,15 @@ const Popup = props => {
   );
 };
 
-
 const styles = StyleSheet.create({
-
-  
   linearGradient: {
     width: 64,
     height: 64,
     borderRadius: 32,
     top: -32,
     alignSelf: 'center',
+    justifyContent:"center",
+    alignItems:"center"
   },
   Button: {
     marginTop: 40,

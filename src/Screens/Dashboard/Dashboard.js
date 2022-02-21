@@ -24,9 +24,7 @@ const Dashboard = props => {
     {id: 3, flag: 'pending', value: 200, title: 'Application In Progress'},
   ]);
 
-  /** to delete start*/
-  const [isVisible, setIsvisible] = useState(false);
-  /** to delete end*/
+
 
   return (
     <DashboardContainer>
@@ -49,17 +47,11 @@ const Dashboard = props => {
         <HighlightHeading>{COMMON_CONST.HIGHLIGHTS}</HighlightHeading>
         <MonthlyHighlights monthlyHighlights={monthlyHighlights} />
       </UpperBoxContainer>
-
-      {/* to delete start */}
-
-      <Popup isVisible={isVisible} />
-
-      <TouchableOpacity onPress={()=>setIsvisible(true)}>
-        <Text>Show Modal</Text>
+{/** to delete later start */}
+      <TouchableOpacity onPress={()=>props.navigation.navigate("ModelTestScreen")}>
+        <Text>Model Test Screen</Text>
       </TouchableOpacity>
-
-      {/* to delete end */}
-
+{/** to delete later end */}
     </DashboardContainer>
   );
 };

@@ -11,7 +11,7 @@ const AppContainer = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-      /* initialRouteName='ModelTestScreen' */
+       
        screenOptions={{ headerShown: false}} >
         <Stack.Screen name={'Dashboard'} component={Dashboard} />
         <Stack.Screen name={'ModelTestScreen'} component={ModelTestScreen} />
