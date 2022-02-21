@@ -21,7 +21,7 @@ export const Welcome = styled.Text`
  lineHeight:36px;
  letterSpacing:-1px;
     color:#25243b;
-    
+    fontWeight:400
 `;
 
 export const AgentName = styled.Text`

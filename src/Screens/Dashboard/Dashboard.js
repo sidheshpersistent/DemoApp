@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {
   UpperBoxContainer,
   DashboardContainer,
@@ -10,22 +10,23 @@ import {
   header,
   image,
 } from './DashboardStyle';
-import ProfileHeaderContainer from '../../components/ProfileHeaderContainer';
+import ProfileHeaderContainer from 'components/ProfileHeaderContainer';
 
 import {COMMON_CONST} from '../../constants/constants';
 import MonthlyHighlights from './MonthlyHighlights';
+import Popup from '../../Components/Popup/Popup';
 const Dashboard = props => {
-
-  useEffect(()=>{
-
-
-  },[])
+  useEffect(() => {}, []);
 
   const [monthlyHighlights, setMonthlyHighlights] = useState([
     {id: 1, flag: 'total', value: 100, title: 'Total Applications'},
     {id: 2, flag: 'success', value: 80, title: 'Successful Applications'},
     {id: 3, flag: 'pending', value: 200, title: 'Application In Progress'},
   ]);
+
+  /** to delete start*/
+  const [isVisible, setIsvisible] = useState(false);
+  /** to delete end*/
 
   return (
     <DashboardContainer>
@@ -48,6 +49,17 @@ const Dashboard = props => {
         <HighlightHeading>{COMMON_CONST.HIGHLIGHTS}</HighlightHeading>
         <MonthlyHighlights monthlyHighlights={monthlyHighlights} />
       </UpperBoxContainer>
+
+      {/* to delete start */}
+
+      <Popup isVisible={isVisible} />
+
+      <TouchableOpacity onPress={()=>setIsvisible(true)}>
+        <Text>Show Modal</Text>
+      </TouchableOpacity>
+
+      {/* to delete end */}
+
     </DashboardContainer>
   );
 };

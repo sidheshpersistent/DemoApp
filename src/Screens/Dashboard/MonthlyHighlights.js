@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, Image} from 'react-native';
-import Card from '../../components/CardView';
+import Card from 'components/CardView';
 
 import {
   highlightCard,

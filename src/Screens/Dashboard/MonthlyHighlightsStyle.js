@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import Card from '../../components/CardView';
+
 import { DASHBOARD_CODE } from '../../constants/colorCode';
 const {PENDING_HIGHLIGHT,SUCCESS_HIGHLIGHT,TOTAL_HIGHLIGHT}=DASHBOARD_CODE
 export const HighLightContainer = styled.View`
