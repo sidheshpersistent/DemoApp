@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
-import {View, Text, Image, FlatList} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, Text, Image, TouchableOpacity, FlatList} from 'react-native';
 import {
   UpperBoxContainer,
   DashboardContainer,
   Welcome,
   AgentName,
-  AgentImage,
   AgentGreetWrapper,
   HighlightHeading,
   header,
@@ -17,10 +16,12 @@ import {
   CardDetailsView,
   MainCardStyle,
 } from './DashboardStyle';
-import ProfileHeaderContainer from '../../components/ProfileHeaderContainer';
+import ProfileHeaderContainer from 'components/ProfileHeaderContainer';
 
 import Card from '../../components/CardView';
 import {COMMON_CONST} from '../../constants/constants';
+import MonthlyHighlights from './MonthlyHighlights';
+import Popup from '../../components/Popup/Popup';
 
 const DATA = [
   {
@@ -50,8 +51,15 @@ const isEven = val => {
 };
 
 const Dashboard = props => {
+  useEffect(() => {}, []);
+
+  const [monthlyHighlights, setMonthlyHighlights] = useState([
+    {id: 1, flag: 'total', value: 100, title: 'Total Applications'},
+    {id: 2, flag: 'success', value: 80, title: 'Successful Applications'},
+    {id: 3, flag: 'pending', value: 200, title: 'Application In Progress'},
+  ]);
   const renderItem = (item, index) => {
-    alert(index)
+    alert(index);
     return (
       <Card
         key={item.key}
@@ -94,7 +102,7 @@ const Dashboard = props => {
           rightView={
             <AgentGreetWrapper>
               <Welcome>{COMMON_CONST.DROP_JOURNY_MODAL_TITLE}</Welcome>
-              <AgentName>Rajiv Kumar!</AgentName>
+              <AgentName>Rajiv Kumar !</AgentName>
             </AgentGreetWrapper>
           }
         />
@@ -113,6 +121,7 @@ const Dashboard = props => {
             <Text>mishra</Text>
           </Card>
         </View>
+        <MonthlyHighlights monthlyHighlights={monthlyHighlights} />
       </UpperBoxContainer>
 
       <LowerBoxContainer>
@@ -129,6 +138,13 @@ const Dashboard = props => {
           style={{padding: 16}}
         />
       </LowerBoxContainer>
+
+      {/** to delete later start */}
+      <TouchableOpacity
+        onPress={() => props.navigation.navigate('ModelTestScreen')}>
+        <Text>Model Test Screen</Text>
+      </TouchableOpacity>
+      {/** to delete later end */}
     </DashboardContainer>
   );
 };

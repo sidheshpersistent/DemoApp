@@ -6,12 +6,13 @@ export const DashboardContainer = styled.View`
 `;
 
 export const UpperBoxContainer = styled.View`
-  padding: 8.3% 6.7%;
+  padding: 8.8% 6.7%;
 
   height: 33.4%;
-  background-color: white;
-  border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
+  backgroundcolor: white;
+  borderbottomleftradius: 24px;
+  borderbottomrightradius: 24px;
+  elevation: 4;
 `;
 
 export const LowerBoxContainer = styled.View`
@@ -37,6 +38,7 @@ export const Welcome = styled.Text`
   lineheight: 36px;
   letterspacing: -1px;
   color: #25243b;
+  fontweight: 400;
 `;
 
 export const AgentName = styled.Text`
@@ -52,6 +54,10 @@ export const AgentGreetWrapper = styled.View`
 export const HighlightHeading = styled.Text`
   margintop: 12px;
   fontsize: 10px;
+  fontweight: 800;
+  letterspacing: 0.5px;
+  lineheight: 14px;
+  color: #686873;
 `;
 export const HighlightMainHeading = styled.Text`
   fontsize: 16px;
@@ -76,6 +82,6 @@ export const highlightCard = {
 export const MainCardStyle = {
   width: '45%',
   height: 253,
-  backgroundColor:'red',
-  margin:8
+  backgroundColor: 'red',
+  margin: 8,
 };

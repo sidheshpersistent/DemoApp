@@ -7,11 +7,12 @@
  */
 
 import React from 'react';
-import Dashboard from './src/Screens/Dashboard/Dashboard';
+import AppContainer from './src/app/AppContainer';
+
 
 const App=()=>{
   return(
-    <Dashboard />
+    <AppContainer />
   )
 }
 

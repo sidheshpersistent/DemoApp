@@ -37,6 +37,11 @@ allprojects {
             }
         }
         google()
+        jcenter() {
+            content {
+                includeModule("com.eightbitlab", "blurview")
+            }
+        }
         maven { url 'https://www.jitpack.io' }
     }
 }
