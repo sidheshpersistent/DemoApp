@@ -16,14 +16,15 @@ const ModelTestScreen = props => {
         animationIn="bounceIn"
         popupIcon={icon}
         isVisible={isVisible}
-        Heading="Popup Heading"
-        ButtonText="Ok"
+        Heading="When is it mandatory to enter PAN ?"
+        ButtonText="Okay, Got it!"
         buttonPress={() => buttonPress()}
         component={
-          <View>
-            <Text>ayush</Text>
-            <Text>ayush</Text>
-          </View>
+          <View style={{width:392}}>
+            <Text>•  Customer is below 60 years of age and gross annual 
+    income is above ₹2.5 lacs</Text>
+            </View>
+          
         }
       />
 

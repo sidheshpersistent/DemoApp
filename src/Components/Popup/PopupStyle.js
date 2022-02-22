@@ -29,7 +29,11 @@ export const PopupHeading = styled.Text`
 `;
 
 export const SubTextContainer = styled.Text`
-  margin-top: 20px;  
+  margin-top: 20px; 
+ 
+ 
+
+ 
 `;
 
 
