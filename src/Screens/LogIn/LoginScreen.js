@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TextInput, Button, TouchableOpacity } from 'react-native';
-import { styles } from './styles';
+import { LoginContainer, LoginTitle, styles } from './styles';
 import { userNameValidate, credentialMatch } from './Service/LoginService';
 
 const LoginScreen = (props) => {
@@ -24,13 +24,11 @@ const LoginScreen = (props) => {
     // testing git push
 
     return (
-        <View style={styles.container}>
-
-
+        <LoginContainer >
             <View style={styles.red}>
-                <View style={styles.loginTitle}>
+                <LoginTitle>
                     <Text style={{ fontSize: 40, color: 'white' }}>{`Login to your account`}</Text>
-                </View>
+                </LoginTitle>
                 <View style={styles.loginbox}>
                     <View style={{ flex: 1, justifyContent: 'center' }}>
                         <TextInput placeholder='user name' onChangeText={setUserName} style={{ backgroundColor: 'white', height: 50, marginHorizontal: 20, borderRadius: 10, fontSize: 30 }}>
@@ -52,7 +50,7 @@ const LoginScreen = (props) => {
                 </View>
             </View>
 
-        </View>
+        </LoginContainer>
     );
 }
 

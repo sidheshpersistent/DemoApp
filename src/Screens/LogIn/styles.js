@@ -1,17 +1,22 @@
 import { StyleSheet } from "react-native";
+import styled  from "styled-components/native";
+
+
+export const LoginContainer = styled.View`
+    flex:1;
+    backgroundColor: #02aecc;
+    justify-content: center;
+    align-items: center;
+`;
+export const LoginTitle = styled.View`
+    justify-content: center;
+    align-items: flex-start;
+
+`;
+
 export const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#02aecc',
-        justifyContent: 'center',
-        alignItems: 'center'
 
-    },
-    loginTitle: {
-        justifyContent: 'center',
-        alignItems: 'flex-start',
-
-    },
+    
     red: {
         width: 500,
         height: 400,
