@@ -1,7 +1,20 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TextInput, Button, TouchableOpacity } from 'react-native';
-import { LoginContainer, LoginTitle,LoginBox, styles } from './styles';
+import {
+     LoginContainer, 
+     LoginTitle,
+     LoginBox, 
+     LoginBoxContainer ,
+     LoginTitleText,
+     UserNameView,
+     PasswordView,
+     UserNametextInput,
+     PasswordtextInput,
+     ErrorMsgView, 
+     LoginButtonView
+} from './styles';
 import { userNameValidate, credentialMatch } from './Service/LoginService';
+import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
 
 
 const LoginScreen = (props) => {
@@ -25,33 +38,37 @@ const LoginScreen = (props) => {
     // testing git push
 
     return (
-        <LoginContainer source={require("../../assets/bg1.png")}>
-            <View style={styles.red}>
+        <BackgroundImage>
+            <LoginContainer>
+            <LoginBoxContainer>
                 <LoginTitle>
-                    <Text style={{ fontSize: 40, color: 'white' }}>{`Login to your account`}</Text>
+                    <LoginTitleText>{`Login to your account`}</LoginTitleText>
                 </LoginTitle>
                 <LoginBox>
-                    <View style={{ flex: 1, justifyContent: 'center' }}>
-                        <TextInput placeholder='user name' onChangeText={setUserName} style={{ backgroundColor: 'white', height: 50, marginHorizontal: 20, borderRadius: 10, fontSize: 30 }}>
+                    <UserNameView>
+                    {/* TODO: ccl textinput to be used here */}
+                        <UserNametextInput placeholder='User name' onChangeText={setUserName}>
                             {userName}
-                        </TextInput>
-                    </View>
-                    <View style={{ flex: 1, justifyContent: 'center' }}>
-                        <TextInput  placeholder='password' onChangeText={setPassword} style={{ backgroundColor: 'white', height: 50, marginHorizontal: 20, borderRadius: 10, fontSize: 30 }}>
+                        </UserNametextInput>
+                    </UserNameView>
+                    <PasswordView >
+                    {/* TODO: ccl textinput to be used here */}
+                        <PasswordtextInput  placeholder='Password' onChangeText={setPassword} >
                             {password}
-                        </TextInput>
-                    </View>
-                    {showInvalidMsg ? <View style={{ flex: 1, justifyContent: 'center' }}>
+                        </PasswordtextInput>
+                    </PasswordView>
+                    {showInvalidMsg ? <ErrorMsgView>
                         <Text style={{ marginHorizontal: 20 }}>{`invalid user name`}</Text>
                         <Text style={{ marginHorizontal: 20 }}>{`invalid password`}</Text>
-                    </View> : null}
-                    <View style={{ flex: 1, justifyContent: 'center' }}>
+                    </ErrorMsgView> : null}
+                    <LoginButtonView>
+                    {/* TODO: ccl Button to be used here */}
                         <TouchableOpacity testID={'signin'} onPress={loginAPiCall} style={{ backgroundColor: '#9b1e26', height: 50, marginHorizontal: 20, borderRadius: 10, fontSize: 40, justifyContent: 'center', alignItems: 'center' }}><Text style={{ fontSize: 30, color: 'white' }}>{'Login'}</Text></TouchableOpacity>
-                    </View>
+                    </LoginButtonView>
                 </LoginBox>
-            </View>
-
-        </LoginContainer>
+            </LoginBoxContainer>
+            </LoginContainer>
+        </BackgroundImage>
     );
 }
 
