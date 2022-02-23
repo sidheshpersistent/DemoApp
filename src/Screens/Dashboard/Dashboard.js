@@ -100,8 +100,10 @@ const Dashboard = props => {
     );
   };
 
+  
+
   return (
-    <BackgroundImage source={require('../../assets/bg1.png')}>
+    <BackgroundImage>
       <UpperBoxContainer>
         <ProfileHeaderContainer
           style={header}
