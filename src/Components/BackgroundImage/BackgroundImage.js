@@ -3,7 +3,7 @@ import {ImageBackground} from 'react-native';
 
 const BackgroundImage = props => {
   return (
-    <ImageBackground style={{flex: 1}} source={require('../../assets/bg1.png')}>
+    <ImageBackground style={[{flex: 1},props.style]} source={require('../../assets/bg1.png')}>
       {props.children}
     </ImageBackground>
   );
