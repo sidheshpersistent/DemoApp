@@ -3,9 +3,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
-import { StyleSheet, View, Text, TextInput } from 'react-native';
-import { Colors, Typography } from 'styles';
-import MaskedIcon from 'components/ntb_sa/common/MaskedIcon';
+import {StyleSheet, View, Text, TextInput} from 'react-native';
+import {Colors, Typography} from 'styles';
+// import MaskedIcon from 'components/ntb_sa/common/MaskedIcon';
 
 const styles = StyleSheet.create({
   customIconStyle: {
@@ -75,7 +75,7 @@ const CustomTextInput = props => {
           isValue={isValue}
         />
 
-        <MaskedIcon
+        {/* <MaskedIcon
           style={styles.customIconStyle}
           // (OnSubmit validate:- remove  value && value.length > 0 &&)
           gradientColor={
@@ -87,12 +87,12 @@ const CustomTextInput = props => {
           }
           iconName={fontName}
           size={48}
-        />
+        /> */}
       </InputContainer>
-      <SubHintText isError={isError} errorColor={errorColor}>
+      {/* <SubHintText isError={isError} errorColor={errorColor}>
         {' '}
         {errorMessage}
-      </SubHintText>
+      </SubHintText> */}
       <HorizontalLine isError={isError}>{}</HorizontalLine>
     </MainContainer>
   );

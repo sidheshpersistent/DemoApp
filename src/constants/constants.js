@@ -7,6 +7,12 @@ export const CUSTOMERDETAILS = {
   CID_FORM_HEADING: 'Enter your customer details to proceed',
   CID_LABEL_CUSTOMER_DETAILS: 'Customer Details',
   CID_LABEL_PAN_MANDATORY: 'When is it mandatory to enter PAN?',
+  CID_FIELD_MOBILE: 'Mobile Number*',
+  CID_FIELD_EMAIL: 'Email Address',
+  CID_FIELD_PAN: 'Permanent Account Number (PAN)',
+  CID_FIELD_AADHAAR: 'Aadhaar or virtual ID',
+  CID_FIELD_COMPANY: 'Company Name',
+  CID_FIELD_RANK: 'Rank*',
 };
 
 export const CONSTANTS = {
