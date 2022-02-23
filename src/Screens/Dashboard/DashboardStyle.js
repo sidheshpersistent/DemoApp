@@ -2,13 +2,13 @@ import styled from 'styled-components/native';
 
 export const DashboardContainer = styled.ImageBackground`
   flex: 1;
-  background-color:skyblue;
+ 
 `;
 
 export const UpperBoxContainer = styled.View`
-  padding: 84px 40px 0 40px;
+  padding: 60px 40px 0 40px;
 
-  height:337px;
+  height:330px;
   background-color: white;
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
@@ -46,7 +46,7 @@ export const HighlightHeading = styled.Text`
 
 export const LowerBoxContainer = styled.View`
 padding-horizontal:30px;
-padding-vertical:30px;
+padding-top:30px;
 flex:1;
 `;
 
@@ -72,6 +72,7 @@ font-weight: 600;
 line-height: 22px;
 letter-spacing: -0.5px;
 color: #ffffff;
+padding-left:10px
 `
 ;
 
@@ -101,7 +102,7 @@ export const image = {
   borderRadius: 24,
 };
 
-export const header = {elevation: 0, padding: 0, margin: 0};
+export const header = {elevation: 0, padding: 0, marginTop: 15};
 
 
 

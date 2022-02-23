@@ -1,5 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, Image, TouchableOpacity, FlatList, ImageBackground, Dimensions} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  FlatList,
+  ImageBackground,
+  Dimensions,
+} from 'react-native';
 import {
   UpperBoxContainer,
   DashboardContainer,
@@ -10,7 +18,6 @@ import {
   header,
   image,
   LowerBoxContainer,
-  
   CardDetailsView,
   WhatDoYouWantTo,
   Title,
@@ -18,14 +25,15 @@ import {
 } from './DashboardStyle';
 import ProfileHeaderContainer from 'components/ProfileHeaderContainer';
 
-import Card from '../../components/CardView';
+
 import {COMMON_CONST} from '../../constants/constants';
 import MonthlyHighlights from './MonthlyHighlights';
+import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const  lowerCardWidth = (windowWidth/2) - 60;
+const lowerCardWidth = windowWidth / 2 - 60;
 
 const DATA = [
   {
@@ -59,21 +67,23 @@ const Dashboard = props => {
     {id: 3, flag: 'pending', value: 200, title: 'Application In Progress'},
   ]);
   const renderItem = ({item, index}) => {
-   
     return (
-      
-          <ImageBackground 
-          key={item.key}
-          style={{
-            width: lowerCardWidth,
-            height: lowerCardWidth,
-            margin: 15,
-            
-          }}
-          source={index==0?require("../../assets/bg2.png"):
-          index==1?require("../../assets/bg3.png"):
-          index==2?require("../../assets/bg4.png"):
-          require("../../assets/bg5.png")}>
+      <ImageBackground
+        key={item.key}
+        style={{
+          width: lowerCardWidth,
+          height: lowerCardWidth,
+          margin: 15,
+        }}
+        source={
+          index == 0
+            ? require('../../assets/bg2.png')
+            : index == 1
+            ? require('../../assets/bg3.png')
+            : index == 2
+            ? require('../../assets/bg4.png')
+            : require('../../assets/bg5.png')
+        }>
         <CardDetailsView>
           <View>
             <Title>{item.title}</Title>
@@ -86,13 +96,12 @@ const Dashboard = props => {
             />
           </View>
         </CardDetailsView>
-        </ImageBackground>
-    
+      </ImageBackground>
     );
   };
 
   return (
-    <DashboardContainer source={require("../../assets/bg1.png")} >
+    <BackgroundImage source={require('../../assets/bg1.png')}>
       <UpperBoxContainer>
         <ProfileHeaderContainer
           style={header}
@@ -115,19 +124,16 @@ const Dashboard = props => {
       </UpperBoxContainer>
 
       <LowerBoxContainer>
-        <WhatDoYouWantTo>
-          {COMMON_CONST.MAIN_MENU_HEADER}
-        </WhatDoYouWantTo>
-
+        <WhatDoYouWantTo>{COMMON_CONST.MAIN_MENU_HEADER}</WhatDoYouWantTo>
+        
         <FlatList
           data={DATA}
           keyExtractor={item => item.key}
           renderItem={(item, index) => renderItem(item, index)}
           numColumns={2}
-          style={{marginTop: 16}}
         />
       </LowerBoxContainer>
-    </DashboardContainer>
+    </BackgroundImage>
   );
 };
 
