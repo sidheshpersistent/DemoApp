@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, Image, TouchableOpacity, FlatList, ImageBackground} from 'react-native';
+import {View, Text, Image, TouchableOpacity, FlatList, ImageBackground, Dimensions} from 'react-native';
 import {
   UpperBoxContainer,
   DashboardContainer,
@@ -21,6 +21,11 @@ import ProfileHeaderContainer from 'components/ProfileHeaderContainer';
 import Card from '../../components/CardView';
 import {COMMON_CONST} from '../../constants/constants';
 import MonthlyHighlights from './MonthlyHighlights';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
+const  lowerCardWidth = (windowWidth/2) - 60;
 
 const DATA = [
   {
@@ -60,14 +65,10 @@ const Dashboard = props => {
           <ImageBackground 
           key={item.key}
           style={{
-            width: 251,
-            height: 253,
-            marginRight: 20,
-            marginBottom: 15,
-            paddingTop: 16,
-            paddingLeft: 20,
-            paddingRight: 20,
-            borderRadius: 16,
+            width: lowerCardWidth,
+            height: lowerCardWidth,
+            margin: 15,
+            
           }}
           source={index==0?require("../../assets/bg2.png"):
           index==1?require("../../assets/bg3.png"):

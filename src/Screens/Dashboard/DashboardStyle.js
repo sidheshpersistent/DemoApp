@@ -45,14 +45,9 @@ export const HighlightHeading = styled.Text`
 
 
 export const LowerBoxContainer = styled.View`
-
-padding-left:40px;
-
-padding-top:26px;
-
-
+padding-horizontal:30px;
+padding-vertical:30px;
 flex:1;
-
 `;
 
 export const highlightMenuCard = styled.View`
@@ -63,14 +58,13 @@ export const highlightMenuCard = styled.View`
 export const CardDetailsView = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  
+  margin:20px;
 `;
 
 
 
 
 export const WhatDoYouWantTo =styled.Text`
-width: 226px;
 height: 22px;
 font-family: Inter;
 font-size: 16px;
