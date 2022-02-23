@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TextInput, Button, TouchableOpacity } from 'react-native';
-import { LoginContainer, LoginTitle, styles } from './styles';
+import { LoginContainer, LoginTitle,LoginBox, styles } from './styles';
 import { userNameValidate, credentialMatch } from './Service/LoginService';
+
 
 const LoginScreen = (props) => {
 
@@ -24,12 +25,12 @@ const LoginScreen = (props) => {
     // testing git push
 
     return (
-        <LoginContainer >
+        <LoginContainer source={require("../../assets/bg1.png")}>
             <View style={styles.red}>
                 <LoginTitle>
                     <Text style={{ fontSize: 40, color: 'white' }}>{`Login to your account`}</Text>
                 </LoginTitle>
-                <View style={styles.loginbox}>
+                <LoginBox>
                     <View style={{ flex: 1, justifyContent: 'center' }}>
                         <TextInput placeholder='user name' onChangeText={setUserName} style={{ backgroundColor: 'white', height: 50, marginHorizontal: 20, borderRadius: 10, fontSize: 30 }}>
                             {userName}
@@ -45,9 +46,9 @@ const LoginScreen = (props) => {
                         <Text style={{ marginHorizontal: 20 }}>{`invalid password`}</Text>
                     </View> : null}
                     <View style={{ flex: 1, justifyContent: 'center' }}>
-                        <TouchableOpacity testID={'signin'} onPress={loginAPiCall} style={{ backgroundColor: 'red', height: 50, marginHorizontal: 20, borderRadius: 10, fontSize: 40, justifyContent: 'center', alignItems: 'center' }}><Text style={{ fontSize: 30, color: 'white' }}>{'Login'}</Text></TouchableOpacity>
+                        <TouchableOpacity testID={'signin'} onPress={loginAPiCall} style={{ backgroundColor: '#9b1e26', height: 50, marginHorizontal: 20, borderRadius: 10, fontSize: 40, justifyContent: 'center', alignItems: 'center' }}><Text style={{ fontSize: 30, color: 'white' }}>{'Login'}</Text></TouchableOpacity>
                     </View>
-                </View>
+                </LoginBox>
             </View>
 
         </LoginContainer>
