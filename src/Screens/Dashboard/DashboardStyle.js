@@ -1,25 +1,58 @@
 import styled from 'styled-components/native';
 
-export const DashboardContainer = styled.View`
+export const DashboardContainer = styled.ImageBackground`
   flex: 1;
-  background-color: lightgrey;
+  background-color:skyblue;
 `;
 
 export const UpperBoxContainer = styled.View`
-  padding: 8.8% 6.7%;
+  padding: 84px 40px 0 40px;
 
-  height: 33.4%;
-  backgroundcolor: white;
-  borderbottomleftradius: 24px;
-  borderbottomrightradius: 24px;
+  height:337px;
+  background-color: white;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
   elevation: 4;
 `;
 
+export const Welcome = styled.Text`
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -1px;
+  color: #25243b;
+  font-weight: 400;
+`;
+export const AgentName = styled.Text`
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -1px;
+  font-weight: 600;
+  color: #25243b;
+`;
+
+export const AgentGreetWrapper = styled.View`
+  margin-left: 16px;
+`;
+
+export const HighlightHeading = styled.Text`
+  margin-top: 12px;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 14px;
+  letter-spacing: 0.5px;
+  color: #686873;
+`;
+
+
 export const LowerBoxContainer = styled.View`
-  padding: 0% 6.7%;
-  background-color: blue;
-  border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
+
+padding-left:40px;
+
+padding-top:26px;
+
+
+flex:1;
+
 `;
 
 export const highlightMenuCard = styled.View`
@@ -30,38 +63,43 @@ export const highlightMenuCard = styled.View`
 export const CardDetailsView = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  margin-left: 20px;
+  
 `;
 
-export const Welcome = styled.Text`
-  fontsize: 28px;
-  lineheight: 36px;
-  letterspacing: -1px;
-  color: #25243b;
-  fontweight: 400;
-`;
 
-export const AgentName = styled.Text`
-  fontsize: 28px;
-  lineheight: 36px;
-  letterspacing: -1px;
-  fontweight: 600;
-  color: #25243b;
-`;
-export const AgentGreetWrapper = styled.View`
-  marginleft: 16px;
-`;
-export const HighlightHeading = styled.Text`
-  margintop: 12px;
-  fontsize: 10px;
-  fontweight: 800;
-  letterspacing: 0.5px;
-  lineheight: 14px;
-  color: #686873;
-`;
-export const HighlightMainHeading = styled.Text`
-  fontsize: 16px;
-`;
+
+
+export const WhatDoYouWantTo =styled.Text`
+width: 226px;
+height: 22px;
+font-family: Inter;
+font-size: 16px;
+font-weight: 600;
+line-height: 22px;
+letter-spacing: -0.5px;
+color: #ffffff;
+`
+;
+
+export const Title = styled.Text`
+ width:118px;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 26px;
+
+ color:#25243b
+`
+
+export const SubTitle = styled.Text`
+ 
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 26px;
+ 
+ color:#25243b
+`
 
 export const image = {
   width: 48,
@@ -71,7 +109,7 @@ export const image = {
 
 export const header = {elevation: 0, padding: 0, margin: 0};
 
-// without percent sizes may causse conflict as in highlights card
+
 
 export const highlightCard = {
   width: '30%',
@@ -83,5 +121,5 @@ export const MainCardStyle = {
   width: '45%',
   height: 253,
   backgroundColor: 'red',
-  margin: 8,
+  
 };

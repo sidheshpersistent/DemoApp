@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, Image, TouchableOpacity, FlatList} from 'react-native';
+import {View, Text, Image, TouchableOpacity, FlatList, ImageBackground} from 'react-native';
 import {
   UpperBoxContainer,
   DashboardContainer,
@@ -9,30 +9,29 @@ import {
   HighlightHeading,
   header,
   image,
-  highlightCard,
   LowerBoxContainer,
-  highlightMenuCard,
-  HighlightMainHeading,
+  
   CardDetailsView,
-  MainCardStyle,
+  WhatDoYouWantTo,
+  Title,
+  SubTitle,
 } from './DashboardStyle';
 import ProfileHeaderContainer from 'components/ProfileHeaderContainer';
 
 import Card from '../../components/CardView';
 import {COMMON_CONST} from '../../constants/constants';
 import MonthlyHighlights from './MonthlyHighlights';
-import Popup from '../../components/Popup/Popup';
 
 const DATA = [
   {
     key: '1',
     title: 'Open a new',
-    subtitle: 'Savings Account',
+    subtitle: 'Savings \nAccount',
   },
   {
     key: '2',
     title: 'Open a new',
-    subtitle: 'Salary Account',
+    subtitle: 'Salary \nAccount',
   },
   {
     key: '3',
@@ -46,10 +45,6 @@ const DATA = [
   },
 ];
 
-const isEven = val => {
-  return val % 2 == 0;
-};
-
 const Dashboard = props => {
   useEffect(() => {}, []);
 
@@ -58,38 +53,45 @@ const Dashboard = props => {
     {id: 2, flag: 'success', value: 80, title: 'Successful Applications'},
     {id: 3, flag: 'pending', value: 200, title: 'Application In Progress'},
   ]);
-  const renderItem = (item, index) => {
-    alert(index);
+  const renderItem = ({item, index}) => {
+   
     return (
-      <Card
-        key={item.key}
-        style={{
-          width: 251,
-          height: 253,
-          backgroundColor: 'red',
-          marginRight: isEven(index + 1) ? 0 : 16,
-        }}>
+      
+          <ImageBackground 
+          key={item.key}
+          style={{
+            width: 251,
+            height: 253,
+            marginRight: 20,
+            marginBottom: 15,
+            paddingTop: 16,
+            paddingLeft: 20,
+            paddingRight: 20,
+            borderRadius: 16,
+          }}
+          source={index==0?require("../../assets/bg2.png"):
+          index==1?require("../../assets/bg3.png"):
+          index==2?require("../../assets/bg4.png"):
+          require("../../assets/bg5.png")}>
         <CardDetailsView>
           <View>
-            <Text>{item.item.title}</Text>
-            <Text>{item.item.subtitle}</Text>
+            <Title>{item.title}</Title>
+            <SubTitle>{item.subtitle}</SubTitle>
           </View>
           <View>
             <Image
-              style={{height: 20, width: 20, marginRight: 20, marginTop: 12}}
+              style={{height: 36, width: 36}}
               source={require('../../assets/icons_24_arrow_forward.png')}
             />
           </View>
         </CardDetailsView>
-        <Image
-          style={{height: 50, width: 120, alignSelf: 'flex-end'}}
-          source={require('../../assets/icons_24_arrow_forward.png')}></Image>
-      </Card>
+        </ImageBackground>
+    
     );
   };
 
   return (
-    <DashboardContainer>
+    <DashboardContainer source={require("../../assets/bg1.png")} >
       <UpperBoxContainer>
         <ProfileHeaderContainer
           style={header}
@@ -107,44 +109,23 @@ const Dashboard = props => {
           }
         />
         <HighlightHeading>{COMMON_CONST.HIGHLIGHTS}</HighlightHeading>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <Card style={highlightCard}>
-            <Text>ayush</Text>
-            <Text>mishra</Text>
-          </Card>
-          <Card style={highlightCard}>
-            <Text>ayush</Text>
-            <Text>mishra</Text>
-          </Card>
-          <Card style={highlightCard}>
-            <Text>ayush</Text>
-            <Text>mishra</Text>
-          </Card>
-        </View>
+
         <MonthlyHighlights monthlyHighlights={monthlyHighlights} />
       </UpperBoxContainer>
 
       <LowerBoxContainer>
-        <HighlightMainHeading>
+        <WhatDoYouWantTo>
           {COMMON_CONST.MAIN_MENU_HEADER}
-        </HighlightMainHeading>
+        </WhatDoYouWantTo>
 
-        {/* {list()} */}
         <FlatList
           data={DATA}
+          keyExtractor={item => item.key}
           renderItem={(item, index) => renderItem(item, index)}
-          keyExtractor={item => item.id}
           numColumns={2}
-          style={{padding: 16}}
+          style={{marginTop: 16}}
         />
       </LowerBoxContainer>
-
-      {/** to delete later start */}
-      <TouchableOpacity
-        onPress={() => props.navigation.navigate('ModelTestScreen')}>
-        <Text>Model Test Screen</Text>
-      </TouchableOpacity>
-      {/** to delete later end */}
     </DashboardContainer>
   );
 };

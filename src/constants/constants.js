@@ -4,6 +4,7 @@ export const CARDTYPE = {
 };
 
 export const COMMON_CONST = {
+  HIGHLIGHTS:"THIS MONTH'S HIGHLIGHTS",
   FAMILY_DETAILS: 'Family Details',
   DROP_JOURNY_MODAL_TITLE: 'Welcome back, ',
   DROP_JOURNY_MODAL_DESCRIPTION:
