@@ -33,4 +33,12 @@ export const SubTextContainer = styled.Text`
 
 `;
 
-
+export const TopIconView = styled.View`
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  top: -32px;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+`;

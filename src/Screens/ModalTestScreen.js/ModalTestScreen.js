@@ -72,7 +72,7 @@ const ModelTestScreen = props => {
         TextInputPlaceholder="Email"
         ButtonText="Submit"
         TextInputvalue={number}
-        onchangeText={(a)=>setNumber()}
+        onchangeText={()=>setNumber()}
         buttonPress={() => buttonPress2()}
       />
 
