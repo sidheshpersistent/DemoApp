@@ -4,7 +4,7 @@ import React from 'react';
 import Dashboard from '../Screens/Dashboard/Dashboard';
 import ModelTestScreen from '../Screens/ModalTestScreen.js/ModalTestScreen';
 import LoginScreen from '../Screens/LogIn/LoginScreen';
-import CustomerDetails from '../Screens/CustomerDetails/CustomerDetails';
+import CustomerIdentificationDetails from '../Screens/CustomerIdentificationDetails/CustomerIdentificationDetails';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +17,10 @@ const AppContainer = () => {
         <Stack.Screen name={'Dashboard'} component={Dashboard} />
         <Stack.Screen name={'LoginScreen'} component={LoginScreen} />
         <Stack.Screen name={'ModelTestScreen'} component={ModelTestScreen} />
-        <Stack.Screen name={'CustomerDetails'} component={CustomerDetails} />
+        <Stack.Screen
+          name={'CustomerIdentificationDetails'}
+          component={CustomerIdentificationDetails}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

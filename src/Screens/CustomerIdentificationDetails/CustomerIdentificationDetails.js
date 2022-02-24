@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, TouchableOpacity} from 'react-native';
+import {Image, TouchableOpacity, View} from 'react-native';
 import {
   Container,
   CustomerDetailsBG,
@@ -13,14 +13,16 @@ import {
   CardPadding,
   RightArrowImage,
   BackArrowView,
-} from './CustomerDetailsStyle';
+  InfoIconContainer,
+  infoIconStyle,
+} from './CustomerIdentificationDetailsStyle';
 import {CUSTOMERDETAILS} from '../../constants/constants';
 import Card from '../../components/CardView';
 import CustomTextInput from '../../components/ntb_sa/Inputs/CustomTextInput';
 import AutoCompleteTextInput from '../../components/AutoCompleteTextInput/AutoCompleteTextInput';
 import Icon from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
-const CustomerDetails = props => {
+const CustomerIdentificationDetails = props => {
   return (
     <Container>
       <BackgroundImage>
@@ -137,13 +139,23 @@ const CustomerDetails = props => {
                   </CardPadding>
                 </Card>
               </CardMargin>
-              <FormFieldText>
-                {CUSTOMERDETAILS.CID_LABEL_PAN_MANDATORY}
-              </FormFieldText>
+              <InfoIconContainer>
+                <FormFieldText>
+                  {CUSTOMERDETAILS.CID_LABEL_PAN_MANDATORY}
+                </FormFieldText>
+                <TouchableOpacity onPress={() => {}}>
+                  <Image
+                    style={infoIconStyle}
+                    source={require('../../assets/help.png')}
+                  />
+                </TouchableOpacity>
+              </InfoIconContainer>
               <CardMargin>
                 <Card>
                   <CardPadding>
                     <CustomTextInput
+                      isRightImage={true}
+                      rightImage={require('../../assets/icons_24_search.png')}
                       isActive={false}
                       isValue={false}
                       placeholder={CUSTOMERDETAILS.CID_FIELD_AADHAAR}
@@ -176,4 +188,4 @@ const CustomerDetails = props => {
   );
 };
 
-export default CustomerDetails;
+export default CustomerIdentificationDetails;

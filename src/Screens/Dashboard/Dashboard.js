@@ -69,7 +69,9 @@ const Dashboard = props => {
     return (
       <TouchableOpacity
         onPress={() =>
-          index == 0 ? props.navigation.navigate('CustomerDetails') : null
+          index == 0
+            ? props.navigation.navigate('CustomerIdentificationDetails')
+            : null
         }>
         <ImageBackground
           key={item.key}
