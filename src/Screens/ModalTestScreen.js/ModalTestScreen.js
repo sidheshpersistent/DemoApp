@@ -6,7 +6,7 @@ import PopupTextInput from '../../components/Popup/PopupTextInput';
 const ModelTestScreen = props => {
   const [isVisible, setIsvisible] = useState(false);
   const [isVisible2, setIsvisible2] = useState(false);
-  const [number,setNumber]=useState("")
+  const [number,setNumber]=useState("dad")
 
 
 
@@ -63,7 +63,7 @@ const ModelTestScreen = props => {
         <Text style={{fontSize: 40}}>PAN SALARY CHECK</Text>
       </TouchableOpacity>
 
-      {/* <PopupTextInput
+      <PopupTextInput
         animationIn="bounceIn"
         popupIcon={icon}
         isVisible={isVisible2}
@@ -72,13 +72,13 @@ const ModelTestScreen = props => {
         TextInputPlaceholder="Email"
         ButtonText="Submit"
         TextInputvalue={number}
-        onchangeText={(a)=>setNumber(a)}
+        onchangeText={(a)=>setNumber()}
         buttonPress={() => buttonPress2()}
       />
 
       <TouchableOpacity onPress={() => setIsvisible2(true)}>
         <Text style={{fontSize: 40}}>Popup with textInput</Text>
-      </TouchableOpacity> */}
+      </TouchableOpacity>
     </View>
   );
 };
