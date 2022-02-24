@@ -17,11 +17,18 @@ import {
   SubTextContainer,
 } from './PopupStyle';
 import CustomBlurView from './CustomBlurView';
-import { POPUP_GRADIENT } from '../../constants/colorCode';
+import {POPUP_GRADIENT} from '../../constants/colorCode';
 
 const Popup = props => {
-  const {isVisible, Heading, component, ButtonText, buttonPress, animationIn,popupIcon} =props;
-    
+  const {
+    isVisible,
+    Heading,
+    component,
+    ButtonText,
+    buttonPress,
+    animationIn,
+    popupIcon,
+  } = props;
 
   return (
     <CenteredView>
@@ -34,13 +41,10 @@ const Popup = props => {
             <LinearGradient
               start={{x: 0, y: 0}}
               end={{x: 1, y: 0}}
-              colors={[POPUP_GRADIENT.LEFT,POPUP_GRADIENT.RIGHT]}
+              colors={[POPUP_GRADIENT.LEFT, POPUP_GRADIENT.RIGHT]}
               style={styles.linearGradient}>
-                
-
-                <Image source={popupIcon} style={{width:48,height:48}}/>
-          
-              </LinearGradient>
+              <Image source={popupIcon} style={{width: 48, height: 48}} />
+            </LinearGradient>
             <View style={{paddingLeft: 24, paddingRight: 24, width: 416}}>
               <PopupHeading>{Heading}</PopupHeading>
               <SubTextContainer>{component}</SubTextContainer>
@@ -51,7 +55,6 @@ const Popup = props => {
               style={styles.Button}>
               <Text style={styles.ButtonText}>{ButtonText}</Text>
             </TouchableOpacity>
-
           </ModalView>
         </CenteredView>
       </Modal>
@@ -66,11 +69,12 @@ const styles = StyleSheet.create({
     borderRadius: 32,
     top: -32,
     alignSelf: 'center',
-    justifyContent:"center",
-    alignItems:"center"
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   Button: {
-    marginTop: 40,
+    alignSelf: 'center',
+    marginTop: 20,
     marginBottom: 40,
     alignItems: 'center',
     justifyContent: 'center',
@@ -85,7 +89,7 @@ const styles = StyleSheet.create({
     height: 24,
     fontFamily: 'Inter',
     fontSize: 17,
-
+    alignSelf: 'center',
     fontStyle: 'normal',
     lineHeight: 24,
     letterSpacing: -0.6,

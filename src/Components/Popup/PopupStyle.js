@@ -8,7 +8,7 @@ export const CenteredView = styled.View`
 
 export const ModalView = styled.View`
   justify-content: center;
-  align-items: center;
+  
   width: 464px;
   background-color: #ffffff;
   border-radius: 16px;
@@ -30,6 +30,7 @@ export const PopupHeading = styled.Text`
 
 export const SubTextContainer = styled.Text`
   margin-top: 20px;  
+
 `;
 
 
