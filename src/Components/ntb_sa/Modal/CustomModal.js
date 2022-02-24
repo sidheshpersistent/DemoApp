@@ -1,9 +1,9 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 import PropTypes from 'prop-types';
-import { ScrollView } from 'react-native-gesture-handler';
+import {ScrollView} from 'react-native-gesture-handler';
 import Modal from 'react-native-modal';
-import { Colors, Typography } from 'styles';
+import {Colors, Typography} from 'styles';
 import Labels from 'translations/ntb_sa/surveyConstant';
 import BlurBackdrop from './BlurBackdrop';
 import CustomIcon from '../common/CustomIcon';
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     paddingBottom: 10,
   },
-  closeText: { paddingTop: 10 },
+  closeText: {paddingTop: 10},
 });
 
 const CustomModal = props => {
@@ -75,19 +75,23 @@ const CustomModal = props => {
   }
 
   return (
-    <Modal isVisible={isVisible} style={styles.modal} customBackdrop={<BlurBackdrop />}>
+    <Modal
+      isVisible={isVisible}
+      style={styles.modal}
+      customBackdrop={<BlurBackdrop />}>
       <View
         style={[
           styles.modalContainer,
           {
             height: maxHeight,
           },
-        ]}
-      >
+        ]}>
         <View style={styles.mainheader}>
           <View style={styles.headerContainer}>
             <View style={styles.leftContent}>
-              <Text style={[{ ...popStyle, color: popColorText }]}>{popText}</Text>
+              <Text style={[{...popStyle, color: popColorText}]}>
+                {popText}
+              </Text>
               <If condition={popSubText}>
                 <Text style={styles.popSubText}>{popSubText}</Text>
               </If>
@@ -95,7 +99,11 @@ const CustomModal = props => {
             <View>
               <If condition={iconModal && iconModal !== ''}>
                 <Text style={styles.closeText} onPress={() => toggleCallback()}>
-                  <CustomIcon style={styles.iconLeft} name={iconModal} size={25} />
+                  <CustomIcon
+                    style={styles.iconLeft}
+                    name={iconModal}
+                    size={25}
+                  />
                 </Text>
               </If>
 

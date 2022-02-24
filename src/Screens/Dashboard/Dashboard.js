@@ -68,6 +68,8 @@ const Dashboard = props => {
   ]);
   const renderItem = ({item, index}) => {
     return (
+      <TouchableOpacity 
+      onPress={()=> index == 0 ? props.navigation.navigate('CustomerDetails') :null}>
       <ImageBackground
         key={item.key}
         style={{
@@ -97,6 +99,7 @@ const Dashboard = props => {
           </View>
         </CardDetailsView>
       </ImageBackground>
+      </TouchableOpacity>
     );
   };
 
