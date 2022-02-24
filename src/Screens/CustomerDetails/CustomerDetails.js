@@ -159,7 +159,7 @@ const CustomerDetails = props => {
               <FooterText>{CUSTOMERDETAILS.CID_LABEL_FOOTER}</FooterText>
               <RightArrowButton>
                 <Image
-                  source={require('../../../assets/RightArrow.png')}
+                  source={require('../../assets/RightArrow.png')}
                   style={RightArrowImage}
                 />
               </RightArrowButton>

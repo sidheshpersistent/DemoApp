@@ -7,14 +7,6 @@
  */
 
 import React from 'react';
-<<<<<<< HEAD
-import Dashboard from './src/Screens/Dashboard/Dashboard';
-import CustomerDetails from './src/Screens/CustomerDetails/CustomerDetails';
-
-const App = () => {
-  return <CustomerDetails />;
-};
-=======
 import AppContainer from './src/app/AppContainer';
 
 
@@ -23,6 +15,5 @@ const App=()=>{
     <AppContainer />
   )
 }
->>>>>>> main
 
 export default App;
