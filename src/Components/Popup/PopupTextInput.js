@@ -20,7 +20,6 @@ const PopupTextInput = (props) => {
     animationIn,
     popupIcon,
     TextInputPlaceholder,
-
     TextInputvalue,
     onchangeText
   } = props;
@@ -37,7 +36,7 @@ const PopupTextInput = (props) => {
               <TextInput 
                 placeholder={TextInputPlaceholder}
                 value={TextInputvalue}
-                onChangeText={()=>onchangeText()}
+                onChangeText={onchangeText}
               />
           </View>
         </View>

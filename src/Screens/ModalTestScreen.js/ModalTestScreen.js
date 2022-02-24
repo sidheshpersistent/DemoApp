@@ -38,7 +38,9 @@ const ModelTestScreen = props => {
   };
 
 
-
+  const onChangeText = (e) => {
+    alert(JSON.stringify(e));
+  }
 
 
   return (
@@ -63,7 +65,7 @@ const ModelTestScreen = props => {
         <Text style={{fontSize: 40}}>PAN SALARY CHECK</Text>
       </TouchableOpacity>
 
-      {/* <PopupTextInput
+      <PopupTextInput
         animationIn="bounceIn"
         popupIcon={icon}
         isVisible={isVisible2}
@@ -72,13 +74,13 @@ const ModelTestScreen = props => {
         TextInputPlaceholder="Email"
         ButtonText="Submit"
         TextInputvalue={number}
-        onchangeText={(a)=>setNumber(a)}
+        onchangeText={onChangeText}
         buttonPress={() => buttonPress2()}
       />
 
       <TouchableOpacity onPress={() => setIsvisible2(true)}>
         <Text style={{fontSize: 40}}>Popup with textInput</Text>
-      </TouchableOpacity> */}
+      </TouchableOpacity>
     </View>
   );
 };
