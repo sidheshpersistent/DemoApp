@@ -25,7 +25,6 @@ import {
 } from './DashboardStyle';
 import ProfileHeaderContainer from 'components/ProfileHeaderContainer';
 
-
 import {COMMON_CONST} from '../../constants/constants';
 import MonthlyHighlights from './MonthlyHighlights';
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
@@ -68,42 +67,42 @@ const Dashboard = props => {
   ]);
   const renderItem = ({item, index}) => {
     return (
-      <TouchableOpacity 
-      onPress={()=> index == 0 ? props.navigation.navigate('CustomerDetails') :null}>
-      <ImageBackground
-        key={item.key}
-        style={{
-          width: lowerCardWidth,
-          height: lowerCardWidth,
-          margin: 15,
-        }}
-        source={
-          index == 0
-            ? require('../../assets/bg2.png')
-            : index == 1
-            ? require('../../assets/bg3.png')
-            : index == 2
-            ? require('../../assets/bg4.png')
-            : require('../../assets/bg5.png')
+      <TouchableOpacity
+        onPress={() =>
+          index == 0 ? props.navigation.navigate('CustomerDetails') : null
         }>
-        <CardDetailsView>
-          <View>
-            <Title>{item.title}</Title>
-            <SubTitle>{item.subtitle}</SubTitle>
-          </View>
-          <View>
-            <Image
-              style={{height: 36, width: 36}}
-              source={require('../../assets/icons_24_arrow_forward.png')}
-            />
-          </View>
-        </CardDetailsView>
-      </ImageBackground>
+        <ImageBackground
+          key={item.key}
+          style={{
+            width: lowerCardWidth,
+            height: lowerCardWidth,
+            margin: 15,
+          }}
+          source={
+            index == 0
+              ? require('../../assets/bg2.png')
+              : index == 1
+              ? require('../../assets/bg3.png')
+              : index == 2
+              ? require('../../assets/bg4.png')
+              : require('../../assets/bg5.png')
+          }>
+          <CardDetailsView>
+            <View>
+              <Title>{item.title}</Title>
+              <SubTitle>{item.subtitle}</SubTitle>
+            </View>
+            <View>
+              <Image
+                style={{height: 36, width: 36}}
+                source={require('../../assets/icons_24_arrow_forward.png')}
+              />
+            </View>
+          </CardDetailsView>
+        </ImageBackground>
       </TouchableOpacity>
     );
   };
-
-  
 
   return (
     <BackgroundImage>
@@ -130,7 +129,7 @@ const Dashboard = props => {
 
       <LowerBoxContainer>
         <WhatDoYouWantTo>{COMMON_CONST.MAIN_MENU_HEADER}</WhatDoYouWantTo>
-        
+
         <FlatList
           data={DATA}
           keyExtractor={item => item.key}
