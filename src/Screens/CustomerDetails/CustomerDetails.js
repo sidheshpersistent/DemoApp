@@ -19,13 +19,19 @@ import Card from '../../components/CardView';
 import CustomTextInput from '../../components/ntb_sa/Inputs/CustomTextInput';
 import AutoCompleteTextInput from '../../components/AutoCompleteTextInput/AutoCompleteTextInput';
 import Icon from 'react-native-vector-icons/dist/MaterialCommunityIcons';
+import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 const CustomerDetails = props => {
   return (
     <Container>
+    <BackgroundImage>
       <CustomerDetailsBG>
         <BackArrowView>
+      <TouchableOpacity 
+      onPress={()=> props.navigation.goBack(null)}>
           <Icon name="arrow-left" size={30} color="#fff" />
-        </BackArrowView>
+                  </TouchableOpacity>
+          </BackArrowView>
         <HeadingText>{CUSTOMERDETAILS.CID_FORM_HEADING}</HeadingText>
         <Card>
           <CardInnerContainer>
@@ -167,6 +173,7 @@ const CustomerDetails = props => {
           </CardInnerContainer>
         </Card>
       </CustomerDetailsBG>
+      </BackgroundImage>
     </Container>
   );
 };

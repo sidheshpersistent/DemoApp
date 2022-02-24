@@ -94,7 +94,8 @@ const AutoCompleteTextInput = props => {
         {isRightImage && (
           <Pressable
             style={styles.imagePasswordview}
-            onPress={() => props.onPressRightImage(!props.isSecured)}>
+            // onPress={() => props.onPressRightImage(!props.isSecured)}
+            >
             <Image style={styles.imagePasswordview} source={rightImage} />
           </Pressable>
         )}

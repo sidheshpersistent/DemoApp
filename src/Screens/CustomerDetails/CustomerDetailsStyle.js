@@ -6,7 +6,6 @@ export const Container = styled.View`
 `;
 export const CustomerDetailsBG = styled.View`
   flex: 1;
-  background-color: #6c96c5;
   padding: 20px 40px 20px 40px;
 `;
 export const HeadingText = styled.Text`
