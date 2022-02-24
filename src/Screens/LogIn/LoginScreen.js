@@ -5,9 +5,11 @@ import {
      LoginTitle,
      LoginBox, 
      LoginBoxContainer ,
-     LoginTitleText,
+     LoginTitleTextBold,
+     LoginTitleTextRegular,
      UserNameView,
      PasswordView,
+     ForgotPassView,
      UserNametextInput,
      PasswordtextInput,
      ErrorMsgView, 
@@ -27,7 +29,6 @@ const LoginScreen = (props) => {
         let response = credentialMatch(userName, password);
         if (response) {
             setShowInvalidMsg(false)
-            // alert("login success done");
             props.navigation.navigate("Dashboard")
         } else {
             setShowInvalidMsg(true)
@@ -35,14 +36,17 @@ const LoginScreen = (props) => {
 
     }
 
-    // testing git push
+    const forgetPassword = () => {
+        alert("Forget Password screen is not available");
+    }
 
     return (
         <BackgroundImage>
             <LoginContainer>
             <LoginBoxContainer>
                 <LoginTitle>
-                    <LoginTitleText>{`Login to your account`}</LoginTitleText>
+                    {/*TODO: ccl text will be replaced here */}
+                    <LoginTitleTextBold>{`Login `}<LoginTitleTextRegular>{`to your account`}</LoginTitleTextRegular></LoginTitleTextBold>
                 </LoginTitle>
                 <LoginBox>
                     <UserNameView>
@@ -57,13 +61,17 @@ const LoginScreen = (props) => {
                             {password}
                         </PasswordtextInput>
                     </PasswordView>
+                    <ForgotPassView >
+                    {/* TODO: ccl textinput to be used here */}
+                    <TouchableOpacity testID={'forgotPassword'} onPress={forgetPassword} style={{ backgroundColor: 'transparent', height: 50, marginHorizontal: 20, borderRadius: 10, fontSize: 40, justifyContent: 'center', alignItems: 'center' }}><Text style={{ fontSize: 12, color: '#9b1e26' }}>{'Forgot password?'}</Text></TouchableOpacity>
+                    </ForgotPassView>
                     {showInvalidMsg ? <ErrorMsgView>
                         <Text style={{ marginHorizontal: 20 }}>{`invalid user name`}</Text>
                         <Text style={{ marginHorizontal: 20 }}>{`invalid password`}</Text>
                     </ErrorMsgView> : null}
                     <LoginButtonView>
                     {/* TODO: ccl Button to be used here */}
-                        <TouchableOpacity testID={'signin'} onPress={loginAPiCall} style={{ backgroundColor: '#9b1e26', height: 50, marginHorizontal: 20, borderRadius: 10, fontSize: 40, justifyContent: 'center', alignItems: 'center' }}><Text style={{ fontSize: 30, color: 'white' }}>{'Login'}</Text></TouchableOpacity>
+                        <TouchableOpacity testID={'signin'} onPress={loginAPiCall} style={{ backgroundColor: '#9b1e26', height: 56, marginHorizontal: 20, borderRadius: 27,  justifyContent: 'center', alignItems: 'center' }}><Text style={{ fontSize: 17, color: 'white' }}>{'Login'}</Text></TouchableOpacity>
                     </LoginButtonView>
                 </LoginBox>
             </LoginBoxContainer>
