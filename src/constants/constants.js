@@ -3,6 +3,7 @@ export const CARDTYPE = {
   SIGNATURE: {name: 'SIGNATURE', amount: 25000},
 };
 
+<<<<<<< HEAD
 export const CUSTOMERDETAILS = {
   CID_FORM_HEADING: 'Enter your customer details to proceed',
   CID_LABEL_CUSTOMER_DETAILS: 'Customer Details',
@@ -38,10 +39,15 @@ export const COMMON_CONST = {
   CHARACTERS: 'characters',
   HIGHLIGHTS: "THIS MONTH'S HIGHLIGHTS",
   BANKING_PREFERENCES: 'Banking Preferences',
+=======
+export const COMMON_CONST = {
+  HIGHLIGHTS:"THIS MONTH'S HIGHLIGHTS",
+>>>>>>> main
   FAMILY_DETAILS: 'Family Details',
   DROP_JOURNY_MODAL_TITLE: 'Welcome back, ',
   DROP_JOURNY_MODAL_DESCRIPTION:
     'As you are our existing user, we have saved your previous inputs. Please continue your savings account journey where you last left off.',
+<<<<<<< HEAD
 };
 
 export const PERSON_DETAILS = {
@@ -306,3 +312,7 @@ export const DBTvaluesArr = [
       'I currently receive benefits in my other bank account. I request you to change my NPCI mapping (DBT benefit account) to \nIDFC FIRST Bank.',
   },
 ];
+=======
+  MAIN_MENU_HEADER: 'What do you want to do today?',
+};
+>>>>>>> main

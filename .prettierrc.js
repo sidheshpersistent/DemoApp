@@ -4,5 +4,9 @@ module.exports = {
   singleQuote: true,
   trailingComma: 'all',
   arrowParens: 'avoid',
+<<<<<<< HEAD
   endOfLine:"auto"
+=======
+  endOfLine: 'auto'
+>>>>>>> main
 };

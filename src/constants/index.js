@@ -7,7 +7,11 @@
 /* import { productSelectionConstant } from './productSelectionConstant'; */
 import {keyboardTypes, keyboardConst} from './keyboard.constant';
 
+<<<<<<< HEAD
 import deviceConstants from './deviceConstants';
+=======
+
+>>>>>>> main
 
 import {
   COMMON_CONST,
@@ -31,7 +35,11 @@ export {
     DBTvaluesArr,
    // dropDownConstants,
     CONSTANTS,
+<<<<<<< HEAD
     deviceConstants,
+=======
+    
+>>>>>>> main
     FORM_FIELD_CONST,
    // spannableIterate,
     keyboardConst,

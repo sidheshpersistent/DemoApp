@@ -41,7 +41,7 @@ const CustomerDetails = props => {
                     invalid={false}
                     maxLength={40}
                     isRightImage={true}
-                    rightImage={require('../../../assets/icons_24_search.png')}
+                    rightImage={require('../../assets/icons_24_search.png')}
                     // errorMessage={errors?.cityBal?.message}
                     // data={businessCities}
                     value={'Indian Army - Defense'}
@@ -64,7 +64,7 @@ const CustomerDetails = props => {
                     invalid={false}
                     maxLength={40}
                     isRightImage={true}
-                    rightImage={require('../../../assets/icons_24_chevron_down.png')}
+                    rightImage={require('../../assets/icons_24_chevron_down.png')}
                     // errorMessage={errors?.cityBal?.message}
                     // data={businessCities}
                     value={''}
