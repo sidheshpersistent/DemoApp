@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import PropTypes from 'prop-types';
-import { useNavigation, StackActions } from '@react-navigation/native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { Colors, Typography } from 'styles';
-import { iconConstants } from 'constants/ntb_sa';
-import { isIosDeviceWithNotch } from 'utils/platform';
+import {useNavigation, StackActions} from '@react-navigation/native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import {Colors, Typography} from 'styles';
+import {iconConstants} from 'constants/ntb_sa';
+import {isIosDeviceWithNotch} from 'utils/platform';
 import Labels from 'translations/ntb_sa/common';
 import CustomIcon from '../common/CustomIcon';
 import HeaderTextInput from './HeaderTextInput';
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
 
 const SearchHeader = props => {
   const navigation = useNavigation();
-  const { searchFilterFunction, hasData } = props;
+  const {searchFilterFunction, hasData} = props;
 
   return (
     <View style={styles.headerContainer}>
@@ -63,12 +63,18 @@ const SearchHeader = props => {
         <TouchableOpacity
           onPress={() => {
             navigation.dispatch(StackActions.pop());
-          }}
-        >
-          <CustomIcon style={styles.customIconStyle} name={iconConstants.IC_ARROW_BACK} size={24} />
+          }}>
+          <CustomIcon
+            style={styles.customIconStyle}
+            name={iconConstants.IC_ARROW_BACK}
+            size={24}
+          />
         </TouchableOpacity>
       </View>
-      <HeaderTextInput hasData={hasData} searchFilterFunction={searchFilterFunction} />
+      <HeaderTextInput
+        hasData={hasData}
+        searchFilterFunction={searchFilterFunction}
+      />
     </View>
   );
 };
