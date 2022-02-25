@@ -1,5 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  FlatList,
+  ImageBackground,
+  Dimensions,
+} from 'react-native';
 import {
   UpperBoxContainer,
   DashboardContainer,
@@ -9,12 +17,46 @@ import {
   HighlightHeading,
   header,
   image,
+  LowerBoxContainer,
+  CardDetailsView,
+  WhatDoYouWantTo,
+  Title,
+  SubTitle,
 } from './DashboardStyle';
 import ProfileHeaderContainer from 'components/ProfileHeaderContainer';
 
 import {COMMON_CONST} from '../../constants/constants';
 import MonthlyHighlights from './MonthlyHighlights';
-import Popup from '../../components/Popup/Popup';
+import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
+const lowerCardWidth = windowWidth / 2 - 60;
+
+const DATA = [
+  {
+    key: '1',
+    title: 'Open a new',
+    subtitle: 'Savings \nAccount',
+  },
+  {
+    key: '2',
+    title: 'Open a new',
+    subtitle: 'Salary \nAccount',
+  },
+  {
+    key: '3',
+    title: 'Go to',
+    subtitle: 'Bank Use Section',
+  },
+  {
+    key: '4',
+    title: 'Resume',
+    subtitle: 'Application',
+  },
+];
+
 const Dashboard = props => {
   useEffect(() => {}, []);
 
@@ -23,11 +65,49 @@ const Dashboard = props => {
     {id: 2, flag: 'success', value: 80, title: 'Successful Applications'},
     {id: 3, flag: 'pending', value: 200, title: 'Application In Progress'},
   ]);
-
-
+  const renderItem = ({item, index}) => {
+    return (
+      <TouchableOpacity
+        onPress={() =>
+          index == 0
+            ? props.navigation.navigate('CustomerIdentificationDetails')
+            : null
+        }>
+        <ImageBackground
+          key={item.key}
+          style={{
+            width: lowerCardWidth,
+            height: lowerCardWidth,
+            margin: 15,
+          }}
+          source={
+            index == 0
+              ? require('../../assets/bg2.png')
+              : index == 1
+              ? require('../../assets/bg3.png')
+              : index == 2
+              ? require('../../assets/bg4.png')
+              : require('../../assets/bg5.png')
+          }>
+          <CardDetailsView>
+            <View>
+              <Title>{item.title}</Title>
+              <SubTitle>{item.subtitle}</SubTitle>
+            </View>
+            <View>
+              <Image
+                style={{height: 36, width: 36}}
+                source={require('../../assets/icons_24_arrow_forward.png')}
+              />
+            </View>
+          </CardDetailsView>
+        </ImageBackground>
+      </TouchableOpacity>
+    );
+  };
 
   return (
-    <DashboardContainer>
+    <BackgroundImage>
       <UpperBoxContainer>
         <ProfileHeaderContainer
           style={header}
@@ -45,14 +125,21 @@ const Dashboard = props => {
           }
         />
         <HighlightHeading>{COMMON_CONST.HIGHLIGHTS}</HighlightHeading>
+
         <MonthlyHighlights monthlyHighlights={monthlyHighlights} />
       </UpperBoxContainer>
-{/** to delete later start */}
-      <TouchableOpacity onPress={()=>props.navigation.navigate("ModelTestScreen")}>
-        <Text>Model Test Screen</Text>
-      </TouchableOpacity>
-{/** to delete later end */}
-    </DashboardContainer>
+
+      <LowerBoxContainer>
+        <WhatDoYouWantTo>{COMMON_CONST.MAIN_MENU_HEADER}</WhatDoYouWantTo>
+
+        <FlatList
+          data={DATA}
+          keyExtractor={item => item.key}
+          renderItem={(item, index) => renderItem(item, index)}
+          numColumns={2}
+        />
+      </LowerBoxContainer>
+    </BackgroundImage>
   );
 };
 
