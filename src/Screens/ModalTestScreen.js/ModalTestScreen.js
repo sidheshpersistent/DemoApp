@@ -3,9 +3,12 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 import Popup from '../../components/Popup/Popup';
 import styled from 'styled-components/native';
 import PopupTextInput from '../../components/Popup/PopupTextInput';
+import PopUpExistingCustomer from '../../components/Popup/PopUpExistingCustomer';
+
 const ModelTestScreen = props => {
   const [isVisible, setIsvisible] = useState(false);
   const [isVisible2, setIsvisible2] = useState(false);
+  const [isVisible3, setIsvisible3] = useState(false);
   const [number, setNumber] = useState('');
 
   //dzc
@@ -32,15 +35,21 @@ const ModelTestScreen = props => {
     setIsvisible2(false);
   };
 
+  const buttonPressed3 = () =>{
+    setIsvisible3(false);
+  }
+
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, backgroundColor:'grey'}}>
       <TouchableOpacity onPress={() => setIsvisible(true)}>
         <Text style={{fontSize: 40}}>PAN SALARY CHECK</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => setIsvisible2(true)}>
         <Text style={{fontSize: 40}}>Popup For Mobile Input</Text>
       </TouchableOpacity>
-
+      <TouchableOpacity onPress={() => setIsvisible3(true)}>
+        <Text style={{fontSize: 40}}>Popup with existing bank account details</Text>
+      </TouchableOpacity>
       {/** PAN SALARY CHECK */}
       <Popup
         animationIn="bounceIn"
@@ -59,7 +68,7 @@ const ModelTestScreen = props => {
 
       {/* Popup For Mobile Input */}
       
-      <PopupTextInput
+      {/* <PopupTextInput
         popupType="mobile"
         animationIn="bounceIn"
         popupIcon={alertIcon}
@@ -71,11 +80,47 @@ const ModelTestScreen = props => {
         TextInputvalue={number}
         onchangeText={setNumber}
         buttonPress={() => buttonPress2()}
+      /> */}
+            <PopUpExistingCustomer
+        animationIn="bounceIn"
+        popupIcon={icon}
+        isVisible={isVisible3}
+        heading="The application already has a banking relationship with us"
+        subText={`The following accounts exist under the Customer ID *****6471`}
+        popupInfo="The following account exist under the customer ID *****6471."
+        data={data}
+        ButtonText="Confirm"
+        TextInputvalue={number}
+        buttonPress={buttonPressed3}
       />
     </View>
   );
 };
 
+const data = {
+  "accountList":[
+    {
+      "accountType":"Type 1",
+      "accountNumber": "******5415"
+    },
+    {
+      "accountType":"Type 2",
+      "accountNumber": "******4579"
+    }
+  ],
+  "customerID": "****6471",
+  "mobileNumber": "+91 7085762345",
+  "offerList":[
+    {
+      "ID": "1",
+      "reason": "Better offers on Card"
+    },
+    {
+      "ID": "2",
+      "reason": "PPF account"
+    },
+  ],
+}
 const ComponentContainer = styled.View`
   flex-direction: row;
   width: 416px;
