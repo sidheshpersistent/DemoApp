@@ -6,7 +6,7 @@ export const Container = styled.View`
 `;
 export const CustomerDetailsBG = styled.View`
   flex: 1;
-  padding: 20px 40px 20px 40px;
+  padding: 20px 70px 20px 70px;
 `;
 export const HeadingText = styled.Text`
   margin: 40px 0px 20px 0px;
@@ -21,6 +21,7 @@ export const FormFieldText = styled.Text`
   line-height: 22px;
   letter-spacing: -0.5px;
   color: #25243b;
+  flex: 1;
 `;
 export const CardInnerContainer = styled.View`
   padding: 20px;
@@ -72,3 +73,11 @@ export const BackArrowView = styled.View`
   top: 20px;
   left: 20px;
 `;
+export const InfoIconContainer = styled.View`
+  flex-direction: row;
+`;
+export const infoIconStyle = {
+  width: 20,
+  height: 20,
+  marginRight: 20,
+};

@@ -3,7 +3,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
-import {StyleSheet, View, Text, TextInput} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  TextInput,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import {Colors, Typography} from 'styles';
 // import MaskedIcon from 'components/ntb_sa/common/MaskedIcon';
 
@@ -57,25 +64,28 @@ const CustomTextInput = props => {
     isError = false,
     errorMessage,
     handleChangeText,
+    isRightImage = false,
+    rightImage,
     ...remainingProps
   } = props;
 
   return (
     <MainContainer>
-      <InputContainer>
-        <Input
-          {...remainingProps}
-          contextMenuHidden
-          onSubmitEditing={props.onKeyPress}
-          placeholder={`${props.placeholder} `}
-          placeholderTextColor={Colors.DARK}
-          color={textColor}
-          underlineColorAndroid="transparent"
-          onChangeText={props.onChangeText}
-          isValue={isValue}
-        />
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <InputContainer style={{flex: 1}}>
+          <Input
+            {...remainingProps}
+            contextMenuHidden
+            onSubmitEditing={props.onKeyPress}
+            placeholder={`${props.placeholder} `}
+            placeholderTextColor={Colors.DARK}
+            color={textColor}
+            underlineColorAndroid="transparent"
+            onChangeText={props.onChangeText}
+            isValue={isValue}
+          />
 
-        {/* <MaskedIcon
+          {/* <MaskedIcon
           style={styles.customIconStyle}
           // (OnSubmit validate:- remove  value && value.length > 0 &&)
           gradientColor={
@@ -88,11 +98,20 @@ const CustomTextInput = props => {
           iconName={fontName}
           size={48}
         /> */}
-      </InputContainer>
-      {/* <SubHintText isError={isError} errorColor={errorColor}>
+        </InputContainer>
+        {/* <SubHintText isError={isError} errorColor={errorColor}>
         {' '}
         {errorMessage}
       </SubHintText> */}
+        {isRightImage && (
+          <TouchableOpacity onPress={() => {}}>
+            <Image
+              style={{width: 20, height: 20, marginRight: 10}}
+              source={require('../../../assets/help.png')}
+            />
+          </TouchableOpacity>
+        )}
+      </View>
       <HorizontalLine isError={isError}>{}</HorizontalLine>
     </MainContainer>
   );
