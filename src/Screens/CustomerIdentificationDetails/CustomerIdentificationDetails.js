@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Image, TouchableOpacity, View} from 'react-native';
 import {
   Container,
@@ -22,7 +22,25 @@ import CustomTextInput from '../../components/ntb_sa/Inputs/CustomTextInput';
 import AutoCompleteTextInput from '../../components/AutoCompleteTextInput/AutoCompleteTextInput';
 import Icon from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
+import Popup from '../../components/Popup/Popup';
+import styled from 'styled-components/native';
+const icon = require('../../assets/info.png');
+const HEADING = 'When is it mandatory to enter PAN?';
+const PAN_INCOME_CHECK = [
+  'Customer is below 60 years of age and gross annual income is above ₹2.5 lacs',
+  'Customer is between 60-79 years of age and gross annual income is above ₹3 lacs',
+  'Customer is aged 80 years or above and gross annual income is above ₹5 lacs',
+];
 const CustomerIdentificationDetails = props => {
+ 
+
+  const [panVisible,setPanVisible]=useState(false)
+
+
+  const buttonPress = () => {
+    console.log('i am pressed');
+    setPanVisible(false);
+  };
   return (
     <Container>
       <BackgroundImage>
@@ -143,7 +161,22 @@ const CustomerIdentificationDetails = props => {
                 <FormFieldText>
                   {CUSTOMERDETAILS.CID_LABEL_PAN_MANDATORY}
                 </FormFieldText>
-                <TouchableOpacity onPress={() => {}}>
+                {/** popup */}
+                <Popup
+                  animationIn="bounceIn"
+                  popupIcon={icon}
+                  isVisible={panVisible}
+                  Heading={HEADING}
+                  ButtonText="Ok"
+                  buttonPress={() => buttonPress()}
+                  component={PAN_INCOME_CHECK.map(item => (
+                    <ComponentContainer key={item}>
+                      <Bullet>•</Bullet>
+                      <ComponentText>{item}</ComponentText>
+                    </ComponentContainer>
+                  ))}
+                />
+                <TouchableOpacity onPress={() => setPanVisible(true)}>
                   <Image
                     style={infoIconStyle}
                     source={require('../../assets/help.png')}
@@ -187,5 +220,28 @@ const CustomerIdentificationDetails = props => {
     </Container>
   );
 };
+
+const ComponentContainer = styled.View`
+  flex-direction: row;
+  width: 416px;
+`;
+
+const Bullet = styled.Text`
+  font-size: 18px;
+  font-weight: bold;
+  color: #25243b;
+`;
+const ComponentText = styled.Text`
+  padding-left: 10px;
+  margin-bottom: 20px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 24px;
+
+  color: #25243b;
+`;
+
 
 export default CustomerIdentificationDetails;

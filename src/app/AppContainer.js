@@ -14,8 +14,9 @@ const AppContainer = () => {
       <Stack.Navigator
         /*  initialRouteName='ModelTestScreen'  */
         screenOptions={{headerShown: false}}>
-        <Stack.Screen name={'Dashboard'} component={Dashboard} />
         <Stack.Screen name={'LoginScreen'} component={LoginScreen} />
+        <Stack.Screen name={'Dashboard'} component={Dashboard} />
+
         <Stack.Screen name={'ModelTestScreen'} component={ModelTestScreen} />
         <Stack.Screen
           name={'CustomerIdentificationDetails'}
