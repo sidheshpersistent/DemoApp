@@ -8,13 +8,10 @@ export const CenteredView = styled.View`
 
 export const ModalView = styled.View`
   justify-content: center;
-  
-  width: 464px;
-  background-color: #ffffff;
+  width: 70%;
+  background-color: #f6f6f6;
   border-radius: 16px;
-
   shadow-color: black;
-
   elevation: 4;
 `;
 
