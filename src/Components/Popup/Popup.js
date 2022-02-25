@@ -27,6 +27,7 @@ const Popup = props => {
     buttonPress,
     animationIn,
     popupIcon,
+    style
   } = props;
 
   return (
@@ -36,7 +37,7 @@ const Popup = props => {
         isVisible={isVisible}
         customBackdrop={<CustomBlurView />}>
         <CenteredView>
-          <ModalView>
+          <ModalView style={style} >
             <TopIconView>
               <Image source={popupIcon} style={{width: 64, height: 64}} />
             </TopIconView>

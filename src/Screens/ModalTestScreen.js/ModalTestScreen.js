@@ -6,15 +6,11 @@ import PopupTextInput from '../../components/Popup/PopupTextInput';
 const ModelTestScreen = props => {
   const [isVisible, setIsvisible] = useState(false);
   const [isVisible2, setIsvisible2] = useState(false);
-  const [number,setNumber]=useState("dad")
-
-
-
-
-
+  const [number, setNumber] = useState('');
 
   //dzc
   const icon = require('../../assets/info.png');
+  const alertIcon = require('../../assets/alertIcon.png');
   const HEADING = 'When is it mandatory to enter PAN?';
   const PAN_INCOME_CHECK = [
     'Customer is below 60 years of age and gross annual income is above ₹2.5 lacs',
@@ -22,27 +18,30 @@ const ModelTestScreen = props => {
     'Customer is aged 80 years or above and gross annual income is above ₹5 lacs',
   ];
 
-
-
-
-
   const buttonPress = () => {
     console.log('i am pressed');
     setIsvisible(false);
   };
 
   const buttonPress2 = () => {
-    console.log('i am text input and popup and this is the phone number',number);
+    console.log(
+      'i am text input and popup and this is the phone number',
+      number,
+    );
 
     setIsvisible2(false);
   };
 
-
-
-
-
   return (
     <View style={{flex: 1}}>
+      <TouchableOpacity onPress={() => setIsvisible(true)}>
+        <Text style={{fontSize: 40}}>PAN SALARY CHECK</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => setIsvisible2(true)}>
+        <Text style={{fontSize: 40}}>Popup For Mobile Input</Text>
+      </TouchableOpacity>
+
+      {/** PAN SALARY CHECK */}
       <Popup
         animationIn="bounceIn"
         popupIcon={icon}
@@ -58,27 +57,21 @@ const ModelTestScreen = props => {
         ))}
       />
 
-      {/** to delete later */}
-      <TouchableOpacity onPress={() => setIsvisible(true)}>
-        <Text style={{fontSize: 40}}>PAN SALARY CHECK</Text>
-      </TouchableOpacity>
-
+      {/* Popup For Mobile Input */}
+      
       <PopupTextInput
+        popupType="mobile"
         animationIn="bounceIn"
-        popupIcon={icon}
+        popupIcon={alertIcon}
         isVisible={isVisible2}
         Heading="Please provide another mobile number to proceed further"
         popupInfo="The mobile number entered already exists in the Bank under the Customer ID: *****6471 Name: Vicky Patilas fetched from CBS/MDM."
-        TextInputPlaceholder="Email"
+        TextInputPlaceholder=""
         ButtonText="Submit"
         TextInputvalue={number}
-        onchangeText={()=>setNumber()}
+        onchangeText={setNumber}
         buttonPress={() => buttonPress2()}
       />
-
-      <TouchableOpacity onPress={() => setIsvisible2(true)}>
-        <Text style={{fontSize: 40}}>Popup with textInput</Text>
-      </TouchableOpacity>
     </View>
   );
 };
