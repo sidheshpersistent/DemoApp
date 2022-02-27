@@ -6,7 +6,7 @@ export const userNameValidate = () =>{
 }
 
 export const credentialMatch = (userName,password) =>{
-    if((userName === "Subrat") && (password === "password")){
+    if((userName === "IDFC") && (password === "password")){
         return true;
    }else{
         return false;
