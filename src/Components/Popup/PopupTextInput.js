@@ -8,7 +8,7 @@ import {
   Image,
   TextInput,
 } from 'react-native';
-
+import styled from 'styled-components/native';
 import Popup from '../../components/Popup/Popup';
 
 const PopupTextInput = props => {
@@ -66,7 +66,6 @@ const PopupTextInput = props => {
               backgroundColor: 'white',
               elevation: 3,
               shadowColor: '#d60b26',
-          
             }}>
             <Image
               style={{
@@ -76,7 +75,13 @@ const PopupTextInput = props => {
                 right: 16,
                 top: -15,
               }}
-              source={popupType=="mobile"?require('../../assets/mobileDedupe.png'):popupType=="mail"?require('../../assets/panCheck.png'):null}
+              source={
+                popupType == 'mobile'
+                  ? require('../../assets/mobileDedupe.png')
+                  : popupType == 'pan'
+                  ? require('../../assets/panCheck.png')
+                  : require('../../assets/emailCheck.png')
+              }
             />
             <View
               style={{
@@ -89,23 +94,31 @@ const PopupTextInput = props => {
                   overflow: 'hidden',
                   alignItems: 'center',
                 }}>
-                <Text
-                  style={{
-                    width: 46,
-                    height: 26,
-                    fontFamily: 'Inter',
-                    fontSize: 20,
-                    fontWeight: 'bold',
-                    fontStyle: 'normal',
-                    lineHeight: 26,
-                    letterSpacing: -0.5,
-                    color: '#9b1e26',
-                  }}>
-                  +91
-                </Text>
+                {popupType == 'mobile' ? (
+                  <Text
+                    style={{
+                      width: 46,
+                      height: 26,
+                      fontFamily: 'Inter',
+                      fontSize: 20,
+                      fontWeight: 'bold',
+                      fontStyle: 'normal',
+                      lineHeight: 26,
+                      letterSpacing: -0.5,
+                      color: '#9b1e26',
+                    }}>
+                    +91
+                  </Text>
+                ) : null}
 
                 <TextInput
-                  keyboardType="numeric"
+                  keyboardType={
+                    popupType == 'mobile'
+                      ? 'numeric'
+                      : popupType == 'pan'
+                      ? 'default'
+                      : 'email-address'
+                  }
                   style={{fontSize: 20, width: 380}}
                   placeholder={TextInputPlaceholder}
                   value={TextInputvalue}
@@ -113,21 +126,13 @@ const PopupTextInput = props => {
                 />
               </View>
 
-              <Text
-                style={{
-                  width: 201,
-                  height: 13,
-                  fontFamily: 'Inter',
-                  fontSize: 11,
-                  fontWeight: '500',
-                  fontStyle: 'normal',
-                  lineHeight: 13,
-                  letterSpacing: -0.3,
-                  color: '#d60b26',
-                  marginBottom: 12,
-                }}>
-                Please renter mobile number to proceed
-              </Text>
+              {popupType == 'mobile' ? (
+                <RedText>Please renter mobile number to proceed</RedText>
+              ) : popupType == 'mail' ? (
+                <RedText>Please re-enter email address to proceed</RedText>
+              ) : (
+                <RedText>Permanent Account Number (PAN)</RedText>
+              )}
             </View>
           </View>
         </View>
@@ -139,3 +144,17 @@ const PopupTextInput = props => {
 };
 
 export default PopupTextInput;
+
+const RedText = styled.Text`
+
+
+height: 13px;
+font-family: Inter;
+font-size: 10px;
+font-weight: 500,
+font-style: normal;
+line-height: 13px;
+letter-spacing: -0.3px;
+color: #d60b26;
+margin-bottom: 12px;
+`;

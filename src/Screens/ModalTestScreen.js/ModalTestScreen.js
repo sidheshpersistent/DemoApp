@@ -1,34 +1,37 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import Popup from '../../components/Popup/Popup';
 import styled from 'styled-components/native';
 import PopupTextInput from '../../components/Popup/PopupTextInput';
+const icon = require('../../assets/info.png');
+const alertIcon = require('../../assets/alertIcon.png');
+const HEADING ={
+  PAN_MANDATORY:"When is it mandatory to enter PAN?",
+  PAN_CHECK:"Sorry!  Customer must provide PAN to open account.",
+  MOBILE_CHECK:"Please provide another mobile number to proceed further",
+  EMAIL_CHECK:"Please provide another email address to proceed further"
+
+} 
+
+
+var PAN_INCOME_CHECK = [
+  'Customer is below 60 years of age and gross annual income is above ₹2.5 lacs',
+  'Customer is between 60-79 years of age and gross annual income is above ₹3 lacs',
+  'Customer is aged 80 years or above and gross annual income is above ₹5 lacs',
+];
+
 const ModelTestScreen = props => {
   const [isVisible, setIsvisible] = useState(false);
   const [isVisible2, setIsvisible2] = useState(false);
   const [number, setNumber] = useState('');
+  const [panIncomeInfo,setPanIncomeInfo]=useState(PAN_INCOME_CHECK)
 
-  //dzc
-  const icon = require('../../assets/info.png');
-  const alertIcon = require('../../assets/alertIcon.png');
-  const HEADING = 'When is it mandatory to enter PAN?';
-  const PAN_INCOME_CHECK = [
-    'Customer is below 60 years of age and gross annual income is above ₹2.5 lacs',
-    'Customer is between 60-79 years of age and gross annual income is above ₹3 lacs',
-    'Customer is aged 80 years or above and gross annual income is above ₹5 lacs',
-  ];
 
   const buttonPress = () => {
-    console.log('i am pressed');
     setIsvisible(false);
   };
 
   const buttonPress2 = () => {
-    console.log(
-      'i am text input and popup and this is the phone number',
-      number,
-    );
-
     setIsvisible2(false);
   };
 
@@ -46,10 +49,10 @@ const ModelTestScreen = props => {
         animationIn="bounceIn"
         popupIcon={icon}
         isVisible={isVisible}
-        Heading={HEADING}
+        Heading={HEADING.PAN_MANDATORY}
         ButtonText="Ok"
         buttonPress={() => buttonPress()}
-        component={PAN_INCOME_CHECK.map(item => (
+        component={panIncomeInfo.map(item => (
           <ComponentContainer key={item}>
             <Bullet>•</Bullet>
             <ComponentText>{item}</ComponentText>
@@ -58,14 +61,15 @@ const ModelTestScreen = props => {
       />
 
       {/* Popup For Mobile Input */}
-      
+
       <PopupTextInput
         popupType="mobile"
         animationIn="bounceIn"
         popupIcon={alertIcon}
         isVisible={isVisible2}
-        Heading="Please provide another mobile number to proceed further"
-        popupInfo="The mobile number entered already exists in the Bank under the Customer ID: *****6471 Name: Vicky Patilas fetched from CBS/MDM."
+        Heading={HEADING.MOBILE_CHECK} // Heading is assumed to be taken from constants
+        popupInfo="The mobile number entered already exists in the Bank 
+        under the Customer ID: *****6471 Name: Vicky Patilas fetched from CBS/MDM."
         TextInputPlaceholder=""
         ButtonText="Submit"
         TextInputvalue={number}
