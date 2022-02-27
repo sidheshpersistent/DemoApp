@@ -42,7 +42,7 @@ const PopupTextInput = props => {
             <Text
               style={{
                 width: 416,
-                height: 72,
+                //height: 72,
                 fontFamily: 'Inter',
                 fontSize: 16,
                 fontWeight: 'normal',
@@ -59,7 +59,6 @@ const PopupTextInput = props => {
             style={{
               width: 416,
               height: 100,
-
               paddingLeft: 16,
               paddingRight: 16,
               borderRadius: 8,
@@ -98,7 +97,7 @@ const PopupTextInput = props => {
                   <Text
                     style={{
                       width: 46,
-                      height: 26,
+                      //height: 26,
                       fontFamily: 'Inter',
                       fontSize: 20,
                       fontWeight: 'bold',
@@ -128,7 +127,7 @@ const PopupTextInput = props => {
 
               {popupType == 'mobile' ? (
                 <RedText>Please renter mobile number to proceed</RedText>
-              ) : popupType == 'mail' ? (
+              ) : popupType == 'email' ? (
                 <RedText>Please re-enter email address to proceed</RedText>
               ) : (
                 <RedText>Permanent Account Number (PAN)</RedText>
