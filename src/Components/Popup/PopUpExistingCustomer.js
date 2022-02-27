@@ -49,7 +49,8 @@ const PopUpExistingCustomer = props => {
               <View style={{backgroundColor:'#ffffff',width:'100%',paddingVertical:20, marginTop:10, borderRadius:10}}>
               {
                 data?.accountList?.map((account)=>{
-                   return <AccountDetailsCard account={account}/>
+                  /**TODO: added a key to avoid similar key issue */
+                   return <AccountDetailsCard key={account.accountType} account={account}/>
                 })
               }
               </View>
@@ -71,7 +72,7 @@ const PopUpExistingCustomer = props => {
 const AccountDetailsCard = (account)=>{
   console.log(account);
   return(
-    <View style={{ flexDirection:'row'}}>
+    <View  style={{ flexDirection:'row'}}>
 
       <View style={{flex:1, paddingBottom:5,paddingTop:10,paddingLeft:10,paddingRight:10}}>
         <Text style={{color:'#686873', fontSize:10, lineHeight:14, letterSpacing:0.5}}>{`ACCOUNT`}</Text>

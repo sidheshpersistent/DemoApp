@@ -59,7 +59,7 @@ const ModelTestScreen = props => {
   };
 
   return (
-    <View style={{flex: 1, backgroundColor: 'grey'}}>
+    <View style={{flex: 1,}}>
       <TouchableOpacity onPress={() => setIsvisible(true)}>
         <Text style={{fontSize: 40}}>PAN SALARY CHECK</Text>
       </TouchableOpacity>
