@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import Popup from '../../components/Popup/Popup';
 import styled from 'styled-components/native';
+import PopUpExistingCustomer from '../../components/Popup/PopUpExistingCustomer';
 import PopupTextInput from '../../components/Popup/PopupTextInput';
 const icon = require('../../assets/info.png');
 const alertIcon = require('../../assets/alertIcon.png');
@@ -18,20 +19,24 @@ var PAN_INCOME_CHECK = [
   'Customer is aged 80 years or above and gross annual income is above ₹5 lacs',
 ];
 
-{/** TODO: popup info to be deleted later as it would come from backend*/}
+{
+  /** TODO: popup info to be deleted later as it would come from backend*/
+}
 const POPUP_INFO = {
- 
-  PAN_CHECK_INFO: 'It is mandatory for customers below 60 years of age to provide PAN if their income is above ₹2.5Lacs',
-  MOBILE_CHECK_INFO: "The mobile number entered already exists in the Bank under the Customer ID: *****6471 Name: Vicky Patilas fetched from CBS/MDM.",
-  EMAIL_CHECK_INFO: 'The email address entered already exists in the Ban under the Customer ID: *****6471 and Name: Vicky Patil as fetched from CBS/MDM.',
+  PAN_CHECK_INFO:
+    'It is mandatory for customers below 60 years of age to provide PAN if their income is above ₹2.5Lacs',
+  MOBILE_CHECK_INFO:
+    'The mobile number entered already exists in the Bank under the Customer ID: *****6471 Name: Vicky Patilas fetched from CBS/MDM.',
+  EMAIL_CHECK_INFO:
+    'The email address entered already exists in the Ban under the Customer ID: *****6471 and Name: Vicky Patil as fetched from CBS/MDM.',
 };
-
 
 const ModelTestScreen = props => {
   const [isVisible, setIsvisible] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [pan, setPan] = useState(false);
   const [email, setEmail] = useState(false);
+  const [isVisible3, setIsvisible3] = useState(false);
   const [number, setNumber] = useState('');
   const [panIncomeInfo, setPanIncomeInfo] = useState(PAN_INCOME_CHECK);
 
@@ -49,8 +54,12 @@ const ModelTestScreen = props => {
     setEmail(false);
   };
 
+  const buttonPressed3 = () => {
+    setIsvisible3(false);
+  };
+
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, backgroundColor: 'grey'}}>
       <TouchableOpacity onPress={() => setIsvisible(true)}>
         <Text style={{fontSize: 40}}>PAN SALARY CHECK</Text>
       </TouchableOpacity>
@@ -64,6 +73,11 @@ const ModelTestScreen = props => {
         <Text style={{fontSize: 40}}>Popup For email Input</Text>
       </TouchableOpacity>
 
+      <TouchableOpacity onPress={() => setIsvisible3(true)}>
+        <Text style={{fontSize: 40}}>
+          Popup with existing bank account details
+        </Text>
+      </TouchableOpacity>
       {/** PAN SALARY CHECK */}
 
       <Popup
@@ -82,56 +96,93 @@ const ModelTestScreen = props => {
       />
 
       {/* Popup For Mobile Input */}
-      {mobile?<PopupTextInput
-        popupType="mobile"
-        animationIn="bounceIn"
-        popupIcon={alertIcon}
-        isVisible={mobile}
-        Heading={HEADING.MOBILE_CHECK} // Heading is assumed to be taken from constants
-        popupInfo={POPUP_INFO.MOBILE_CHECK_INFO}
-        TextInputPlaceholder=""
-        ButtonText="Submit"
-        TextInputvalue={number}
-        onchangeText={setNumber}
-        buttonPress={() => buttonPress2()}
-      />:null}
+      {mobile ? (
+        <PopupTextInput
+          popupType="mobile"
+          animationIn="bounceIn"
+          popupIcon={alertIcon}
+          isVisible={mobile}
+          Heading={HEADING.MOBILE_CHECK} // Heading is assumed to be taken from constants
+          popupInfo={POPUP_INFO.MOBILE_CHECK_INFO}
+          TextInputPlaceholder=""
+          ButtonText="Submit"
+          TextInputvalue={number}
+          onchangeText={setNumber}
+          buttonPress={() => buttonPress2()}
+        />
+      ) : null}
 
-      {
-        pan?<PopupTextInput
-        popupType="pan"
+      {pan ? (
+        <PopupTextInput
+          popupType="pan"
+          animationIn="bounceIn"
+          popupIcon={alertIcon}
+          isVisible={pan}
+          Heading={HEADING.PAN_CHECK} // Heading is assumed to be taken from constants
+          popupInfo={POPUP_INFO.PAN_CHECK_INFO}
+          TextInputPlaceholder=""
+          ButtonText="Submit"
+          TextInputvalue={number}
+          onchangeText={setNumber}
+          buttonPress={() => buttonPress3()}
+        />
+      ) : null}
+      {email ? (
+        <PopupTextInput
+          popupType="email"
+          animationIn="bounceIn"
+          popupIcon={alertIcon}
+          isVisible={email}
+          Heading={HEADING.EMAIL_CHECK} // Heading is assumed to be taken from constants
+          popupInfo={POPUP_INFO.EMAIL_CHECK_INFO}
+          TextInputPlaceholder=""
+          ButtonText="Submit"
+          TextInputvalue={number}
+          onchangeText={setNumber}
+          buttonPress={() => buttonPress4()}
+        />
+      ) : null}
+
+      <PopUpExistingCustomer
         animationIn="bounceIn"
-        popupIcon={alertIcon}
-        isVisible={pan}
-        Heading={HEADING.PAN_CHECK} // Heading is assumed to be taken from constants
-        popupInfo={POPUP_INFO.PAN_CHECK_INFO}
-        TextInputPlaceholder=""
-        ButtonText="Submit"
+        popupIcon={icon}
+        isVisible={isVisible3}
+        heading="The application already has a banking relationship with us"
+        subText={`The following accounts exist under the Customer ID *****6471`}
+        popupInfo="The following account exist under the customer ID *****6471."
+        data={data}
+        ButtonText="Confirm"
         TextInputvalue={number}
-        onchangeText={setNumber}
-        buttonPress={() => buttonPress3()}
-      />:null
-      }
-      {
-        email?<PopupTextInput
-        popupType="email"
-        animationIn="bounceIn"
-        popupIcon={alertIcon}
-        isVisible={email}
-        Heading={HEADING.EMAIL_CHECK} // Heading is assumed to be taken from constants
-        popupInfo={POPUP_INFO.EMAIL_CHECK_INFO}
-        TextInputPlaceholder=""
-        ButtonText="Submit"
-        TextInputvalue={number}
-        onchangeText={setNumber}
-        buttonPress={() => buttonPress4()}
-      />:null
-      }
-      
-      
+        buttonPress={buttonPressed3}
+      />
     </View>
   );
 };
 
+const data = {
+  accountList: [
+    {
+      accountType: 'Type 1',
+      accountNumber: '******5415',
+    },
+    {
+      accountType: 'Type 2',
+      accountNumber: '******4579',
+    },
+  ],
+  customerID: '****6471',
+  mobileNumber: '+91 7085762345',
+  offerList: [
+    {
+      ID: '1',
+      reason: 'Better offers on Card',
+    },
+    {
+      ID: '2',
+      reason: 'PPF account',
+    },
+  ],
+};
 const ComponentContainer = styled.View`
   flex-direction: row;
   width: 416px;
