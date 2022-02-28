@@ -45,7 +45,7 @@ const PopUpExistingCustomer = props => {
             <View style={{paddingLeft: 24, paddingRight: 24}}>
               
               <PopupHeading>{heading}</PopupHeading>
-              <SubTextContainer>{subText}</SubTextContainer>
+              <SubTextContainer><Text>{subText}</Text></SubTextContainer>
               <View style={{backgroundColor:'#ffffff',width:'100%',paddingVertical:20, marginTop:10, borderRadius:10}}>
               {
                 data?.accountList?.map((account)=>{

@@ -41,7 +41,7 @@ const Popup = props => {
             <TopIconView>
               <Image source={popupIcon} style={{width: 64, height: 64}} />
             </TopIconView>
-            <View style={{paddingLeft: 24, paddingRight: 24, width: 416}}>
+            <View style={{width:"85%",alignSelf:"center"}}>
               <PopupHeading>{Heading}</PopupHeading>
               <SubTextContainer>{component}</SubTextContainer>
             </View>

@@ -223,7 +223,7 @@ const CustomerIdentificationDetails = props => {
 
 const ComponentContainer = styled.View`
   flex-direction: row;
-  width: 416px;
+
 `;
 
 const Bullet = styled.Text`

@@ -7,7 +7,9 @@ export const CenteredView = styled.View`
 `;
 
 export const ModalView = styled.View`
-  justify-content: center;
+ 
+  justify-content:center;
+ 
   width: 90%;  /**TODO: changed from 70 to 90 as there was conflict with UI on Screen, Have to be discussed  */
   background-color: #f6f6f6;
   border-radius: 16px;
@@ -16,6 +18,7 @@ export const ModalView = styled.View`
 `;
 
 export const PopupHeading = styled.Text`
+  
   font-family: Inter;
   font-size: 20px;
   font-weight: bold;
@@ -25,8 +28,11 @@ export const PopupHeading = styled.Text`
   color: #25243b;
 `;
 
-export const SubTextContainer = styled.Text`
+export const SubTextContainer = styled.View`
   margin-top: 20px;  
+ 
+  
+  
 
 `;
 

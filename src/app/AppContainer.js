@@ -5,6 +5,7 @@ import Dashboard from '../Screens/Dashboard/Dashboard';
 import ModelTestScreen from '../Screens/ModalTestScreen.js/ModalTestScreen';
 import LoginScreen from '../Screens/LogIn/LoginScreen';
 import CustomerIdentificationDetails from '../Screens/CustomerIdentificationDetails/CustomerIdentificationDetails';
+import CustomerProfile from '../Screens/CustomerProfile/CustomerProfile';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,11 +13,11 @@ const AppContainer = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName='ModelTestScreen'  
+        initialRouteName="ModelTestScreen"
         screenOptions={{headerShown: false}}>
         <Stack.Screen name={'LoginScreen'} component={LoginScreen} />
         <Stack.Screen name={'Dashboard'} component={Dashboard} />
-
+        <Stack.Screen name={'CustomerProfile'} component={CustomerProfile} />
         <Stack.Screen name={'ModelTestScreen'} component={ModelTestScreen} />
         <Stack.Screen
           name={'CustomerIdentificationDetails'}

@@ -15,7 +15,7 @@ const HEADING = {
 
 var PAN_INCOME_CHECK = [
   'Customer is below 60 years of age and gross annual income is above ₹2.5 lacs',
-  'Customer is between 60-79 years of age and gross annual income is above ₹3 lacs',
+  'Customer is between 60-79 years of age and gross annual income is above ₹3 lacs ',
   'Customer is aged 80 years or above and gross annual income is above ₹5 lacs',
 ];
 
@@ -24,7 +24,7 @@ var PAN_INCOME_CHECK = [
 }
 const POPUP_INFO = {
   PAN_CHECK_INFO:
-    'It is mandatory for customers below 60 years of age to provide PAN if their income is above ₹2.5Lacs',
+    'It is mandatory for customers below 60 years of age to provide PAN if their income is above ₹2.5Lacs ',
   MOBILE_CHECK_INFO:
     'The mobile number entered already exists in the Bank under the Customer ID: *****6471 Name: Vicky Patilas fetched from CBS/MDM.',
   EMAIL_CHECK_INFO:
@@ -102,7 +102,7 @@ const ModelTestScreen = props => {
           animationIn="bounceIn"
           popupIcon={alertIcon}
           isVisible={mobile}
-          Heading={HEADING.MOBILE_CHECK} // Heading is assumed to be taken from constants
+          Heading={HEADING.MOBILE_CHECK} //TODO: Heading is assumed to be taken from constants
           popupInfo={POPUP_INFO.MOBILE_CHECK_INFO}
           TextInputPlaceholder=""
           ButtonText="Submit"
@@ -148,7 +148,7 @@ const ModelTestScreen = props => {
         popupIcon={icon}
         isVisible={isVisible3}
         heading="The application already has a banking relationship with us"
-        subText={`The following accounts exist under the Customer ID *****6471`}
+        subText={`The following accounts exist under the Customer ID *****6471 `}
         popupInfo="The following account exist under the customer ID *****6471."
         data={data}
         ButtonText="Confirm"
@@ -185,7 +185,7 @@ const data = {
 };
 const ComponentContainer = styled.View`
   flex-direction: row;
-  width: 416px;
+  
 `;
 
 const Bullet = styled.Text`

@@ -5,15 +5,7 @@ export const DashboardContainer = styled.ImageBackground`
  
 `;
 
-export const UpperBoxContainer = styled.View`
-  padding: 60px 40px 0 40px;
 
-  height:330px;
-  background-color: white;
-  border-bottom-left-radius: 24px;
-  border-bottom-right-radius: 24px;
-  elevation: 4;
-`;
 
 export const Welcome = styled.Text`
   font-size: 28px;

@@ -37,11 +37,11 @@ const PopupTextInput = props => {
       isVisible={isVisible}
       Heading={Heading}
       component={
-        <View style={{paddingBottom: 20}}>
-          <View style={{width: 416, marginBottom: 34}}>
+        <View style={{ paddingBottom: 20/* ,backgroundColor:"gray" */}}>
+          <View style={{ marginBottom: 34}}>
             <Text
               style={{
-                width: 416,
+                
                 //height: 72,
                 fontFamily: 'Inter',
                 fontSize: 16,
@@ -57,7 +57,7 @@ const PopupTextInput = props => {
 
           <View
             style={{
-              width: 416,
+              width: "100%",
               height: 100,
               paddingLeft: 16,
               paddingRight: 16,
@@ -118,7 +118,7 @@ const PopupTextInput = props => {
                       ? 'default'
                       : 'email-address'
                   }
-                  style={{fontSize: 20, width: 380}}
+                  style={{fontSize: 20,width: "100%"}}
                   placeholder={TextInputPlaceholder}
                   value={TextInputvalue}
                   onChangeText={onchangeText}

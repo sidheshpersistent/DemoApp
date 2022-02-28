@@ -9,7 +9,7 @@ import {
   Dimensions,
 } from 'react-native';
 import {
-  UpperBoxContainer,
+  
   DashboardContainer,
   Welcome,
   AgentName,
@@ -28,6 +28,7 @@ import ProfileHeaderContainer from 'components/ProfileHeaderContainer';
 import {COMMON_CONST} from '../../constants/constants';
 import MonthlyHighlights from './MonthlyHighlights';
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
+import UpperBoxContainer from '../../components/UpperBoxContainer/UpperBoxContainer';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
