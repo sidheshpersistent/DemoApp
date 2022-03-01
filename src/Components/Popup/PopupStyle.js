@@ -10,7 +10,7 @@ export const ModalView = styled.View`
  
   justify-content:center;
  
-  width: 70%;  /**TODO: changed from 70 to 90 as there was conflict with UI on Screen, Have to be discussed  */
+  width: 80%;  /**TODO: changed from 70 to 90 as there was conflict with UI on Screen, Have to be discussed  */
   background-color: #f6f6f6;
   border-radius: 16px;
   shadow-color: black;
