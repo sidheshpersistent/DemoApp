@@ -66,14 +66,19 @@ const Dashboard = props => {
     {id: 2, flag: 'success', value: 80, title: 'Successful Applications'},
     {id: 3, flag: 'pending', value: 200, title: 'Application In Progress'},
   ]);
+
+  const onCardPress = index => {
+    if (index === 0 || index === 1) {
+      let accountType = index === 0 ? 'HH' : 'CS';
+      props.navigation.navigate('CustomerIdentificationDetails', {
+        accountType: accountType,
+      });
+    }
+  };
+
   const renderItem = ({item, index}) => {
     return (
-      <TouchableOpacity
-        onPress={() =>
-          index == 0
-            ? props.navigation.navigate('CustomerIdentificationDetails')
-            : null
-        }>
+      <TouchableOpacity onPress={() => onCardPress(index)}>
         <ImageBackground
           key={item.key}
           style={{

@@ -45,6 +45,7 @@ const ModelTestScreen = props => {
   };
 
   const buttonPress2 = () => {
+    
     setMobile(false);
   };
   const buttonPress3 = () => {
