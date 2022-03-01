@@ -60,6 +60,9 @@ const ModelTestScreen = props => {
 
   return (
     <View style={{flex: 1,}}>
+      <TouchableOpacity style={{alignSelf:"flex-end"}} onPress={()=>props.navigation.navigate("CustomerProfile")}>
+          <Text>Navigate to Next</Text>
+      </TouchableOpacity>
       <TouchableOpacity onPress={() => setIsvisible(true)}>
         <Text style={{fontSize: 40}}>PAN SALARY CHECK</Text>
       </TouchableOpacity>
@@ -155,6 +158,8 @@ const ModelTestScreen = props => {
         TextInputvalue={number}
         buttonPress={buttonPressed3}
       />
+
+      
     </View>
   );
 };

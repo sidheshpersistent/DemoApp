@@ -26,7 +26,27 @@ const PopupTextInput = props => {
     onchangeText,
   } = props;
 
-  console.log(popupType);
+
+  const SideIconSource =
+    popupType == 'mobile'
+      ? require('../../assets/mobileDedupe.png')
+      : popupType == 'pan'
+      ? require('../../assets/panCheck.png')
+      : require('../../assets/emailCheck.png');
+
+
+  const keyboardType =
+    popupType == 'mobile'
+      ? 'numeric'
+      : popupType == 'pan'
+      ? 'default'
+      : 'email-address';
+  
+  const ERROR_TEXT={
+    MOBILE:"Please renter mobile number to proceed",
+    PAN:"Permanent Account Number (PAN)",
+    EMAIL:"Please re-enter email address to proceed",
+  }
 
   // NOTE: valid popup types are= mobile,email,pan
   return (
@@ -37,104 +57,38 @@ const PopupTextInput = props => {
       isVisible={isVisible}
       Heading={Heading}
       component={
-        <View style={{ paddingBottom: 20/* ,backgroundColor:"gray" */}}>
-          <View style={{ marginBottom: 34}}>
-            <Text
-              style={{
-                
-                //height: 72,
-                fontFamily: 'Inter',
-                fontSize: 16,
-                fontWeight: 'normal',
-                fontStyle: 'normal',
-                lineHeight: 24,
-
-                color: '#25243b',
-              }}>
-              {popupInfo}
-            </Text>
+        <BodyContainer>
+          <View style={{marginBottom: 34}}>
+            <PopupText>{popupInfo}</PopupText>
           </View>
 
-          <View
-            style={{
-              width: "100%",
-              height: 100,
-              paddingLeft: 16,
-              paddingRight: 16,
-              borderRadius: 8,
-              backgroundColor: 'white',
-              elevation: 3,
-              shadowColor: '#d60b26',
-            }}>
-            <Image
-              style={{
-                position: 'absolute',
-                width: 48,
-                height: 48,
-                right: 16,
-                top: -15,
-              }}
-              source={
-                popupType == 'mobile'
-                  ? require('../../assets/mobileDedupe.png')
-                  : popupType == 'pan'
-                  ? require('../../assets/panCheck.png')
-                  : require('../../assets/emailCheck.png')
-              }
-            />
-            <View
-              style={{
-                borderBottomColor: '#d60b26',
-                borderBottomWidth: 1,
-              }}>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  overflow: 'hidden',
-                  alignItems: 'center',
-                }}>
+          <WhiteRectangleBox>
+            <SideIcon source={SideIconSource} />
+            <InputContainer>
+              <TextInputStyle>
                 {popupType == 'mobile' ? (
-                  <Text
-                    style={{
-                      width: 46,
-                      //height: 26,
-                      fontFamily: 'Inter',
-                      fontSize: 20,
-                      fontWeight: 'bold',
-                      fontStyle: 'normal',
-                      lineHeight: 26,
-                      letterSpacing: -0.5,
-                      color: '#9b1e26',
-                    }}>
-                    +91
-                  </Text>
+                  <CountryCodeStyle>+91</CountryCodeStyle>
                 ) : null}
 
                 <TextInput
-                  keyboardType={
-                    popupType == 'mobile'
-                      ? 'numeric'
-                      : popupType == 'pan'
-                      ? 'default'
-                      : 'email-address'
-                  }
-                  style={{fontSize: 20,width: "100%"}}
+                  keyboardType={keyboardType}
+                  style={{fontSize: 20, width: '100%'}}
                   placeholder={TextInputPlaceholder}
                   value={TextInputvalue}
                   onChangeText={onchangeText}
                 />
-              </View>
+              </TextInputStyle>
 
               {popupType == 'mobile' ? (
-                <RedText>Please renter mobile number to proceed</RedText>
+                <RedText>{ERROR_TEXT.MOBILE}</RedText>
               ) : popupType == 'email' ? (
-                <RedText>Please re-enter email address to proceed</RedText>
+                <RedText>{ERROR_TEXT.EMAIL}</RedText>
               ) : (
-                <RedText>Permanent Account Number (PAN)</RedText>
+                <RedText>{ERROR_TEXT.PAN}</RedText>
               )}
-            </View>
-          </View>
-        </View>
+            </InputContainer>
+          </WhiteRectangleBox>
+        </BodyContainer>
       }
       ButtonText={ButtonText}
       buttonPress={() => buttonPress()}
@@ -156,4 +110,57 @@ line-height: 13px;
 letter-spacing: -0.3px;
 color: #d60b26;
 margin-bottom: 12px;
+`;
+
+const PopupText = styled.Text`
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 24px;
+  color: #25243b;
+`;
+
+const WhiteRectangleBox = styled.View`
+  width: 100%;
+  height: 100px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 8px;
+  background-color: white;
+  elevation: 3;
+  shadow-color: #d60b26;
+`;
+
+const SideIcon = styled.Image`
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  right: 16px;
+  top: -15px;
+`;
+const InputContainer = styled.View`
+  border-bottom-color: #d60b26;
+  border-bottom-width: 1px;
+`;
+const BodyContainer = styled.View`
+  padding-bottom: 20px;
+`;
+
+const TextInputStyle = styled.View`
+  flex-direction: row;
+  overflow: hidden;
+  align-items: center;
+`;
+
+const CountryCodeStyle = styled.Text`
+  width: 46px;
+
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 26px;
+  letter-spacing: -0.5px;
+  color: #9b1e26;
 `;
