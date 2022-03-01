@@ -112,6 +112,12 @@ const CustomTextInput = props => {
           </TouchableOpacity>
         )}
       </View>
+      {isError && (
+        <SubHintText isError={isError} errorColor={errorColor}>
+          {' '}
+          {errorMessage}
+        </SubHintText>
+      )}
       <HorizontalLine isError={isError}>{}</HorizontalLine>
     </MainContainer>
   );

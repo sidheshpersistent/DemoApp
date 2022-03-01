@@ -6,12 +6,7 @@ import PopupTextInput from '../../components/Popup/PopupTextInput';
 const ModelTestScreen = props => {
   const [isVisible, setIsvisible] = useState(false);
   const [isVisible2, setIsvisible2] = useState(false);
-  const [number,setNumber]=useState("")
-
-
-
-
-
+  const [number, setNumber] = useState('');
 
   //dzc
   const icon = require('../../assets/info.png');
@@ -22,26 +17,23 @@ const ModelTestScreen = props => {
     'Customer is aged 80 years or above and gross annual income is above ₹5 lacs',
   ];
 
-
-
-
-
   const buttonPress = () => {
     console.log('i am pressed');
     setIsvisible(false);
   };
 
   const buttonPress2 = () => {
-    console.log('i am text input and popup and this is the phone number',number);
+    console.log(
+      'i am text input and popup and this is the phone number',
+      number,
+    );
 
     setIsvisible2(false);
   };
 
-
-  const onChangeText = (e) => {
+  const onChangeText = e => {
     alert(JSON.stringify(e));
-  }
-
+  };
 
   return (
     <View style={{flex: 1}}>

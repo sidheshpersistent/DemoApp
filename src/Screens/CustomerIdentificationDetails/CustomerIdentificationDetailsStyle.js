@@ -9,11 +9,14 @@ export const CustomerDetailsBG = styled.View`
   padding: 20px 70px 20px 70px;
 `;
 export const HeadingText = styled.Text`
-  margin: 40px 0px 20px 0px;
+  margin: 50px 0px 20px 0px;
   font-size: 28px;
   line-height: 36px;
   letter-spacing: -1px;
   color: #fff;
+`;
+export const BoldText = styled.Text`
+  font-weight: bold;
 `;
 export const FormFieldText = styled.Text`
   margin: 0px 0px 20px 0px;
@@ -21,7 +24,6 @@ export const FormFieldText = styled.Text`
   line-height: 22px;
   letter-spacing: -0.5px;
   color: #25243b;
-  flex: 1;
 `;
 export const CardInnerContainer = styled.View`
   padding: 20px;
@@ -54,6 +56,14 @@ export const RightArrowButton = styled.View`
   align-items: center;
   justify-content: center;
 `;
+export const RightArrowButtonActive = styled.View`
+  border-radius: 40px;
+  width: 80px;
+  height: 80px;
+  background-color: #9b1e26;
+  align-items: center;
+  justify-content: center;
+`;
 export const RightArrow = styled.View`
   width: 80px;
   height: 80px;
@@ -80,4 +90,8 @@ export const infoIconStyle = {
   width: 20,
   height: 20,
   marginRight: 20,
+};
+export const infoIconView = {
+  flex: 1,
+  alignItems: 'flex-end',
 };
