@@ -7,59 +7,68 @@ import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
 import UpperBoxContainer from '../../components/UpperBoxContainer/UpperBoxContainer';
 import ProfileHeaderContainer from 'components/ProfileHeaderContainer';
 import {ScrollView} from 'react-native-gesture-handler';
+import AutoCompleteTextInput from '../../components/AutoCompleteTextInput/AutoCompleteTextInput';
+
 const iconClose = require('../../assets/iconClose.png');
 
-const CustomerProfile = () => {
+const CustomerProfile = props => {
+  const [nomineeVisible, setNomineeVisible] = useState(true);
+
+  const SubmitButtonEnable = () => {
+    return true;
+  };
+
   return (
-    <ScrollView style={{flex: 1}}>
-      <BackgroundImage>
-        <HeaderContainer>
-          <CloseAndSave>
-            <IconClose source={iconClose} />
-            <SaveAndExit>Save & Exit</SaveAndExit>
-          </CloseAndSave>
-          <ProfileHeaderContainer
-            style={header}
-            maxContainerHeight={200}
-            leftView={
-              <View>
-                <Image
-                  style={image}
-                  source={require('../Dashboard/testImg.jpg')}
-                />
+    <BackgroundImage>
+      <HeaderContainer>
+        <CloseAndSave>
+          <IconClose source={iconClose} />
+          <SaveAndExit>Save & Exit</SaveAndExit>
+        </CloseAndSave>
+        <ProfileHeaderContainer
+          style={header}
+          maxContainerHeight={200}
+          leftView={
+            <View>
+              <Image
+                style={image}
+                source={require('../Dashboard/testImg.jpg')}
+              />
+            </View>
+          }
+          rightView={
+            <View
+              style={{
+                justifyContent: 'center',
+                marginTop: 3,
+                marginLeft: 13,
+              }}>
+              <CustomerName>Astha Patil</CustomerName>
+              <View style={{flexDirection: 'row'}}>
+                <NameAndAge>28</NameAndAge>
+                <NameAndAge>|</NameAndAge>
+                <NameAndAge>Female</NameAndAge>
               </View>
-            }
-            rightView={
-              <View
-                style={{
-                  justifyContent: 'center',
-                  marginTop: 3,
-                  marginLeft: 13,
-                }}>
-                <CustomerName>Astha Patil</CustomerName>
-                <View style={{flexDirection: 'row'}}>
-                  <NameAndAge>28</NameAndAge>
-                  <NameAndAge>|</NameAndAge>
-                  <NameAndAge>Female</NameAndAge>
-                </View>
-              </View>
-            }
-          />
-        </HeaderContainer>
-        <PleaseEnter>
-          <Text style={{fontWeight: 'normal'}}>Please enter the </Text>
-          customer’s personal details
-        </PleaseEnter>
-        <LowerConatainer>
-          {/**TODO: marginTop:71 has to be deleted after applying steppers on screen*/}
-          <AlignedContainer style={{marginTop: 71}}>
+            </View>
+          }
+        />
+      </HeaderContainer>
+      <PleaseEnter>
+        <Text style={{fontWeight: 'normal'}}>Please enter the </Text>
+        customer’s personal details
+      </PleaseEnter>
+
+      <LowerConatainer>
+        {/**TODO: marginTop:71 has to be deleted after applying steppers on screen*/}
+        <ScrollView style={{flex: 1, marginTop: 50}}>
+          <AlignedContainer>
             <CardMargin>
               <Card style={{elevation: 4}}>
                 <CardPadding>
                   <CustomTextInput
                     isActive={false}
                     isValue={false}
-                    placeholder="Salary"
+                    placeholder="Gross Annual Income"
                     keyboardType="numeric"
                     errorMessage=""
                     isError={false}
@@ -75,10 +84,9 @@ const CustomerProfile = () => {
               <Card style={{elevation: 4}}>
                 <CardPadding>
                   <CustomTextInput
-                
                     isActive={false}
                     isValue={false}
-                    placeholder="Salary"
+                    placeholder="Mother's Name"
                     keyboardType="numeric"
                     errorMessage=""
                     isError={false}
@@ -102,7 +110,6 @@ const CustomerProfile = () => {
                 height: 158, // TODO: this height can be deleted later
               }}>
               <View>
-                
                 <ToogleRadioText>Same as adhar</ToogleRadioText>
               </View>
               <View>
@@ -120,47 +127,156 @@ const CustomerProfile = () => {
                   alignItems: 'center',
                 }}>
                 <ToogleRadioText>Do You Want a nominee</ToogleRadioText>
-                <Text>Toggle Button</Text>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    width: 100,
+                    justifyContent: 'space-between',
+                  }}>
+                  <TouchableOpacity onPress={() => setNomineeVisible(true)}>
+                    <ToogleRadioText>Yes</ToogleRadioText>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() => setNomineeVisible(false)}>
+                    <ToogleRadioText>No</ToogleRadioText>
+                  </TouchableOpacity>
+                </View>
               </View>
             </AlignedContainer>
           </FullLengthBox>
-          <AlignedContainer>
-            <Label>Nominee Details</Label>
+          {nomineeVisible ? (
+            <View>
+              <AlignedContainer>
+                <Label>Nominee Details</Label>
+
+                <CardMargin>
+                  <Card style={{elevation: 4}}>
+                    <CardPadding>
+                      <CustomTextInput
+                        isActive={false}
+                        isValue={false}
+                        placeholder="Nominee Name"
+                        keyboardType="numeric"
+                        errorMessage=""
+                        isError={false}
+                        errorColor="red"
+                        textColor="black"
+                        maxLength={10}
+                        onKeyPress={() => {}}
+                      />
+                    </CardPadding>
+                  </Card>
+                </CardMargin>
+                <CardMargin>
+                  <Card style={{elevation: 4}}>
+                    <AutoCompleteTextInput
+                      style={{backgroundColor: 'red'}}
+                      testID={'12345'}
+                      name={`Reason`}
+                      invalid={false}
+                      maxLength={40}
+                      isRightImage={true}
+                      rightImage={require('../../assets/icons_24_chevron_down.png')}
+                      // errorMessage={errors?.cityBal?.message}
+                      // data={businessCities}
+                      value={''}
+                      onChangeText={text => {
+                        //   onChange(text);
+                      }}
+                      placeholder={`Reason`}
+                      // onSelectListItem={item => onSelectCity(item, onChange)}
+                    />
+                  </Card>
+                </CardMargin>
+                <CardMargin>
+                  <Card style={{elevation: 4, borderRadius: 5}}>
+                    <AutoCompleteTextInput
+                      style={{backgroundColor: 'red'}}
+                      testID={'12346'}
+                      name={`ReNominee’s date of birth*ason`}
+                      invalid={false}
+                      maxLength={40}
+                      isRightImage={true}
+                      rightImage={require('../../assets/icons_24_calendar.png')}
+                      // errorMessage={errors?.cityBal?.message}
+                      // data={businessCities}
+                      value={''}
+                      onChangeText={text => {
+                        //   onChange(text);
+                      }}
+                      placeholder={`Nominee’s date of birth*`}
+                      // onSelectListItem={item => onSelectCity(item, onChange)}
+                    />
+                  </Card>
+                </CardMargin>
+              </AlignedContainer>
+              <AlignedContainer>
+                <Label>Nominee Address</Label>
+              </AlignedContainer>
+              <FullLengthBox>
+                <AlignedContainer
+                  style={{
+                    paddingBottom: 26,
+                    paddingTop: 26,
+                    justifyContent: 'space-between',
+                    height: 140, // TODO: this height can be deleted later
+                  }}>
+                  <View>
+                    <ToogleRadioText>Same as adhar</ToogleRadioText>
+                  </View>
+                  <View>
+                    <ToogleRadioText>other address</ToogleRadioText>
+                  </View>
+                </AlignedContainer>
+              </FullLengthBox>
+            </View>
+          ) : null}
+
+          <AlignedContainer style={{alignItems:"center",justifyContent:"center",marginBottom:38}}>
+            {SubmitButtonEnable() ? (
+              <RightArrowButtonActive>
+                <Image
+                  source={require('../../assets/RightArrowWhite.png')}
+                  style={RightArrowImage}
+                />
+              </RightArrowButtonActive>
+            ) : (
+              <RightArrowButton>
+                <Image
+                  source={require('../../assets/RightArrow.png')}
+                  style={RightArrowImage}
+                />
+              </RightArrowButton>
+            )}
           </AlignedContainer>
-          <FullLengthBox>
-            <AlignedContainer
-              style={{
-                paddingBottom: 26,
-                paddingTop: 26,
-                justifyContent: 'space-between',
-                height: 140, // TODO: this height can be deleted later
-              }}>
-              <View>
-                <ToogleRadioText>Same as adhar</ToogleRadioText>
-              </View>
-              <View>
-                <ToogleRadioText>other address</ToogleRadioText>
-              </View>
-            </AlignedContainer>
-          </FullLengthBox>
-        </LowerConatainer>
-      </BackgroundImage>
-    </ScrollView>
+        </ScrollView>
+      </LowerConatainer>
+    </BackgroundImage>
   );
 };
 
 export default CustomerProfile;
+const RightArrowImage = {
+  width: 40,
+  height: 40,
+ 
+};
+const RightArrowButtonActive = styled.View`
+  border-radius: 40px;
+  width: 80px;
+  height: 80px;
+  background-color: #9b1e26;
+  align-items: center;
+  justify-content: center;
+`;
 
-const ToogleRadioText=styled.Text`
-
+const ToogleRadioText = styled.Text`
   font-family: Inter;
   font-size: 15px;
   font-weight: 600;
   line-height: 20px;
 
   color: #25243b;
-
-`
+`;
 
 const Label = styled.Text`
   font-family: Inter;

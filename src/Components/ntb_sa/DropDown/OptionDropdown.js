@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Text, FlatList, Keyboard } from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, View, Text, FlatList, Keyboard} from 'react-native';
 import PropTypes from 'prop-types';
-import { deviceConstants, iconConstants } from 'constants/ntb_sa';
-import { Colors, Typography } from 'styles';
+import {deviceConstants, iconConstants} from 'constants/ntb_sa';
+import {Colors, Typography} from 'styles';
 import CardView from 'components/ntb_sa/common/CardView';
 import CustomIcon from 'components/ntb_sa/common/CustomIcon';
-import { If } from 'utils/ntb_sa';
-import { Menu, MenuTrigger, MenuOptions, MenuOption, renderers } from 'react-native-popup-menu';
+import {If} from 'utils/ntb_sa';
+import {
+  Menu,
+  MenuTrigger,
+  MenuOptions,
+  MenuOption,
+  renderers,
+} from 'react-native-popup-menu';
 
 const styles = StyleSheet.create({
-  mainConatiner: { marginHorizontal: 15, marginVertical: 10 },
+  mainConatiner: {marginHorizontal: 15, marginVertical: 10},
   inputContainer: {
     flex: 1,
     flexDirection: 'row',
@@ -66,12 +72,18 @@ const optionsStyles = {
     fontSize: 13,
     fontFamily: Typography.FONT_FAMILY_REGULAR,
   },
-  flex8Style: { flex: 8.5 },
-  flex1Style: { flex: 1.5 },
+  flex8Style: {flex: 8.5},
+  flex1Style: {flex: 1.5},
 };
 
 const OptionDropdown = props => {
-  const { placeholder, isBottom = false, hintTxt = placeholder, options, selectedOptions = '' } = props;
+  const {
+    placeholder,
+    isBottom = false,
+    hintTxt = placeholder,
+    options,
+    selectedOptions = '',
+  } = props;
   const [isVisible, setVisible] = useState(false);
   const [selectedValue, setselectedValue] = useState(selectedOptions);
 
@@ -79,18 +91,25 @@ const OptionDropdown = props => {
     if (selectedValue && selectedValue.length > 0 && isVisible) {
       return Colors.MAROON;
     }
-    return selectedValue && selectedValue.length > 0 ? Colors.DARK : Colors.TEXTINPUT_PLACEHOLDER;
+    return selectedValue && selectedValue.length > 0
+      ? Colors.DARK
+      : Colors.TEXTINPUT_PLACEHOLDER;
   };
 
   const placeholderTxtStyle = {
-    marginBottom: isVisible || (selectedValue && selectedValue.length > 0) ? 0 : 8,
+    marginBottom:
+      isVisible || (selectedValue && selectedValue.length > 0) ? 0 : 8,
     color: selectedColorVal(),
     fontSize: selectedValue && selectedValue.length > 0 && isVisible ? 20 : 16,
     fontFamily: Typography.FONT_FAMILY_BOLD,
   };
 
-  const optionsHeightStyle = { height: options.length > 4 ? 200 : options.length * 40 };
-  const bottomHeightStyle = { height: options.length > 4 ? 210 : options.length * 43 };
+  const optionsHeightStyle = {
+    height: options.length > 4 ? 200 : options.length * 40,
+  };
+  const bottomHeightStyle = {
+    height: options.length > 4 ? 210 : options.length * 43,
+  };
 
   return (
     <Menu
@@ -105,13 +124,14 @@ const OptionDropdown = props => {
       onSelect={item => {
         setselectedValue(item.value);
         props.onChange(item);
-      }}
-    >
+      }}>
       <MenuTrigger style={styles.mainConatiner}>
         <CardView>
           <View style={styles.inputContainer}>
             <View style={styles.flex8Style}>
-              <Text style={[styles.textInputStyle, { ...placeholderTxtStyle }]}>{selectedValue || placeholder}</Text>
+              <Text style={[styles.textInputStyle, {...placeholderTxtStyle}]}>
+                {selectedValue || placeholder}
+              </Text>
 
               <If condition={isVisible || selectedValue.length > 0}>
                 <Text
@@ -120,16 +140,19 @@ const OptionDropdown = props => {
                     {
                       color: Colors.TEXTINPUT_PLACEHOLDER,
                     },
-                  ]}
-                >
+                  ]}>
                   {hintTxt}
                 </Text>
               </If>
             </View>
             <View style={styles.flex1Style}>
               <CustomIcon
-                style={{ color: Colors.MAROON }}
-                name={isVisible ? iconConstants.IC_CHEVRON_UP : iconConstants.IC_CHEVRON_DOWN}
+                style={{color: Colors.MAROON}}
+                name={
+                  isVisible
+                    ? iconConstants.IC_CHEVRON_UP
+                    : iconConstants.IC_CHEVRON_DOWN
+                }
                 size={24}
               />
             </View>
@@ -143,15 +166,15 @@ const OptionDropdown = props => {
       <MenuOptions customStyles={optionsStyles}>
         <FlatList
           data={options}
-          renderItem={({ item }) => <MenuOption value={item} text={item.label} />}
-          style={{ ...optionsHeightStyle }}
+          renderItem={({item}) => <MenuOption value={item} text={item.label} />}
+          style={{...optionsHeightStyle}}
           keyExtractor={(item, index) => index.toString()}
         />
       </MenuOptions>
       {/* </Card> */}
 
       <If condition={isVisible && isBottom}>
-        <View style={{ ...bottomHeightStyle }} />
+        <View style={{...bottomHeightStyle}} />
       </If>
     </Menu>
   );
