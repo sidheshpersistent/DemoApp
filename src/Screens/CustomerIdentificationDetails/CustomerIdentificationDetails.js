@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Image, TouchableOpacity, View} from 'react-native';
+import {Image, TouchableOpacity, View,Text} from 'react-native';
 import {
   Container,
   CustomerDetailsBG,
@@ -106,7 +106,9 @@ const CustomerIdentificationDetails = props => {
                 {CUSTOMERDETAILS.CID_LABEL_CUSTOMER_DETAILS}
               </FormFieldText>
               <CardMargin>
+                
                 <Card>
+                
                   <CardPadding>
                     <CustomTextInput
                       isActive={false}
