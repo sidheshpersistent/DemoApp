@@ -1,72 +1,326 @@
 import React, {useEffect, useState} from 'react';
-
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  
-  
-  Dimensions,
-} from 'react-native';
+import Card from '../../components/CardView';
+import {View, Text, Image, TouchableOpacity, Dimensions} from 'react-native';
 import styled from 'styled-components/native';
+import CustomTextInput from '../../components/ntb_sa/Inputs/CustomTextInput';
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
 import UpperBoxContainer from '../../components/UpperBoxContainer/UpperBoxContainer';
 import ProfileHeaderContainer from 'components/ProfileHeaderContainer';
+import {ScrollView} from 'react-native-gesture-handler';
+import AutoCompleteTextInput from '../../components/AutoCompleteTextInput/AutoCompleteTextInput';
 
-const CustomerProfile = () => {
+const iconClose = require('../../assets/iconClose.png');
+
+const CustomerProfile = props => {
+  const [nomineeVisible, setNomineeVisible] = useState(true);
+
+  const SubmitButtonEnable = () => {
+    return true;
+  };
+
   return (
     <BackgroundImage>
-
       <HeaderContainer>
         <CloseAndSave>
-        <Text>ad</Text>
-        <SaveAndExit>Save & Exit</SaveAndExit>
+          <IconClose source={iconClose} />
+          <SaveAndExit>Save & Exit</SaveAndExit>
         </CloseAndSave>
-
         <ProfileHeaderContainer
           style={header}
           maxContainerHeight={200}
           leftView={
-            <View >
+            <View>
               <Image
                 style={image}
                 source={require('../Dashboard/testImg.jpg')}
               />
             </View>
           }
-          rightView={<View style={{justifyContent:"center",alignItems:"center"}}>
-              <Text >Astha Patil</Text>
-              <Text >28 | Female</Text>
-          </View>}
+          rightView={
+            <View
+              style={{
+                justifyContent: 'center',
+                marginTop: 3,
+                marginLeft: 13,
+              }}>
+              <CustomerName>Astha Patil</CustomerName>
+              <View style={{flexDirection: 'row'}}>
+                <NameAndAge>28</NameAndAge>
+                <NameAndAge>|</NameAndAge>
+                <NameAndAge>Female</NameAndAge>
+              </View>
+            </View>
+          }
         />
       </HeaderContainer>
+      <PleaseEnter>
+        <Text style={{fontWeight: 'normal'}}>Please enter the </Text>
+        customer’s personal details
+      </PleaseEnter>
 
-      <PleaseEnter>Please enter the customer’s personal details</PleaseEnter>
-    
-          <Conatainer>
+      <LowerConatainer>
+        {/**TODO: marginTop:71 has to be deleted after applying steppers on screen*/}
+        <ScrollView style={{flex: 1, marginTop: 50}}>
+          <AlignedContainer>
+            <CardMargin>
+              <Card style={{elevation: 4}}>
+                <CardPadding>
+                  <CustomTextInput
+                    isActive={false}
+                    isValue={false}
+                    placeholder="Gross Annual Income"
+                    keyboardType="numeric"
+                    errorMessage=""
+                    isError={false}
+                    errorColor="red"
+                    textColor="black"
+                    maxLength={10}
+                    onKeyPress={() => {}}
+                  />
+                </CardPadding>
+              </Card>
+            </CardMargin>
+            <CardMargin>
+              <Card style={{elevation: 4}}>
+                <CardPadding>
+                  <CustomTextInput
+                    isActive={false}
+                    isValue={false}
+                    placeholder="Mother's Name"
+                    keyboardType="numeric"
+                    errorMessage=""
+                    isError={false}
+                    errorColor="red"
+                    textColor="black"
+                    maxLength={10}
+                    onKeyPress={() => {}}
+                  />
+                </CardPadding>
+              </Card>
+            </CardMargin>
 
-          </Conatainer>
-          
+            <Label>Communication Address</Label>
+          </AlignedContainer>
+          <FullLengthBox>
+            <AlignedContainer
+              style={{
+                paddingBottom: 26,
+                paddingTop: 26,
+                justifyContent: 'space-between',
+                height: 158, // TODO: this height can be deleted later
+              }}>
+              <View>
+                <ToogleRadioText>Same as adhar</ToogleRadioText>
+              </View>
+              <View>
+                <ToogleRadioText>other address</ToogleRadioText>
+              </View>
+            </AlignedContainer>
+          </FullLengthBox>
+          <FullLengthBox>
+            <AlignedContainer>
+              <View
+                style={{
+                  height: 60,
+                  justifyContent: 'space-between',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                <ToogleRadioText>Do You Want a nominee</ToogleRadioText>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    width: 100,
+                    justifyContent: 'space-between',
+                  }}>
+                  <TouchableOpacity onPress={() => setNomineeVisible(true)}>
+                    <ToogleRadioText>Yes</ToogleRadioText>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() => setNomineeVisible(false)}>
+                    <ToogleRadioText>No</ToogleRadioText>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </AlignedContainer>
+          </FullLengthBox>
+          {nomineeVisible ? (
+            <View>
+              <AlignedContainer>
+                <Label>Nominee Details</Label>
+
+                <CardMargin>
+                  <Card style={{elevation: 4}}>
+                    <CardPadding>
+                      <CustomTextInput
+                        isActive={false}
+                        isValue={false}
+                        placeholder="Nominee Name"
+                        keyboardType="numeric"
+                        errorMessage=""
+                        isError={false}
+                        errorColor="red"
+                        textColor="black"
+                        maxLength={10}
+                        onKeyPress={() => {}}
+                      />
+                    </CardPadding>
+                  </Card>
+                </CardMargin>
+                <CardMargin>
+                  <Card style={{elevation: 4}}>
+                    <AutoCompleteTextInput
+                      style={{backgroundColor: 'red'}}
+                      testID={'12345'}
+                      name={`Reason`}
+                      invalid={false}
+                      maxLength={40}
+                      isRightImage={true}
+                      rightImage={require('../../assets/icons_24_chevron_down.png')}
+                      // errorMessage={errors?.cityBal?.message}
+                      // data={businessCities}
+                      value={''}
+                      onChangeText={text => {
+                        //   onChange(text);
+                      }}
+                      placeholder={`Reason`}
+                      // onSelectListItem={item => onSelectCity(item, onChange)}
+                    />
+                  </Card>
+                </CardMargin>
+                <CardMargin>
+                  <Card style={{elevation: 4, borderRadius: 5}}>
+                    <AutoCompleteTextInput
+                      style={{backgroundColor: 'red'}}
+                      testID={'12346'}
+                      name={`ReNominee’s date of birth*ason`}
+                      invalid={false}
+                      maxLength={40}
+                      isRightImage={true}
+                      rightImage={require('../../assets/icons_24_calendar.png')}
+                      // errorMessage={errors?.cityBal?.message}
+                      // data={businessCities}
+                      value={''}
+                      onChangeText={text => {
+                        //   onChange(text);
+                      }}
+                      placeholder={`Nominee’s date of birth*`}
+                      // onSelectListItem={item => onSelectCity(item, onChange)}
+                    />
+                  </Card>
+                </CardMargin>
+              </AlignedContainer>
+              <AlignedContainer>
+                <Label>Nominee Address</Label>
+              </AlignedContainer>
+              <FullLengthBox>
+                <AlignedContainer
+                  style={{
+                    paddingBottom: 26,
+                    paddingTop: 26,
+                    justifyContent: 'space-between',
+                    height: 140, // TODO: this height can be deleted later
+                  }}>
+                  <View>
+                    <ToogleRadioText>Same as adhar</ToogleRadioText>
+                  </View>
+                  <View>
+                    <ToogleRadioText>other address</ToogleRadioText>
+                  </View>
+                </AlignedContainer>
+              </FullLengthBox>
+            </View>
+          ) : null}
+
+          <AlignedContainer style={{alignItems:"center",justifyContent:"center",marginBottom:38}}>
+            {SubmitButtonEnable() ? (
+              <RightArrowButtonActive>
+                <Image
+                  source={require('../../assets/RightArrowWhite.png')}
+                  style={RightArrowImage}
+                />
+              </RightArrowButtonActive>
+            ) : (
+              <RightArrowButton>
+                <Image
+                  source={require('../../assets/RightArrow.png')}
+                  style={RightArrowImage}
+                />
+              </RightArrowButton>
+            )}
+          </AlignedContainer>
+        </ScrollView>
+      </LowerConatainer>
     </BackgroundImage>
   );
 };
 
 export default CustomerProfile;
-
-const  HeaderContainer = styled(UpperBoxContainer)`
-  height: 158px;
-  padding: 12px 15px 26px 12px;
-  margin-bottom:38px
+const RightArrowImage = {
+  width: 40,
+  height: 40,
+ 
+};
+const RightArrowButtonActive = styled.View`
+  border-radius: 40px;
+  width: 80px;
+  height: 80px;
+  background-color: #9b1e26;
+  align-items: center;
+  justify-content: center;
 `;
-const  CloseAndSave = styled.View`
- flex-direction:row;
- justify-content:space-between
+
+const ToogleRadioText = styled.Text`
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+
+  color: #25243b;
+`;
+
+const Label = styled.Text`
+  font-family: Inter;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 13px;
+  color: #686873;
+  margin-bottom: 16px;
+`;
+
+const AlignedContainer = styled.View`
+  width: 70%;
+  align-self: center;
+`;
+const FullLengthBox = styled.View`
+  width: 100%;
+  background-color: white;
+  margin-bottom: 32px;
+`;
+
+const CardMargin = styled.View`
+  margin-bottom: 20px;
+`;
+const CardPadding = styled.View`
+  padding: 10px;
+`;
+const IconClose = styled.Image`
+  width: 24px;
+  height: 24px;
+`;
+
+const HeaderContainer = styled(UpperBoxContainer)`
+  height: 152px;
+  padding: 12px 15px 26px 12px;
+  margin-bottom: 38px;
+`;
+const CloseAndSave = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 5px;
 `;
 
 const SaveAndExit = styled.Text`
-  width: 70px;
-  height: 20px;
   font-family: Inter;
   font-size: 14px;
   font-weight: 600;
@@ -74,25 +328,38 @@ const SaveAndExit = styled.Text`
   letter-spacing: -0.5px;
   text-align: right;
   color: #9b1e26;
-`
-const Conatainer=styled.View`
-    background-color:white;
-    flex:1
-
-`
+`;
+const LowerConatainer = styled.View`
+  background-color: #f6f6f6;
+  flex: 1;
+`;
 const PleaseEnter = styled.Text`
-margin-bottom:40px;
+align-self:center
+  margin-bottom: 40px;
   width: 406px;
   height: 26px;
   font-family: Inter;
   font-size: 20px;
   font-weight: bold;
   line-height: 26px;
-  letter-spacing: -0.5px;
+ 
   text-align: center;
   color: #ffffff;
-`
-const header = {elevation: 0, padding: 0, marginTop: 15,alignItems:"center"}
+`;
+
+const NameAndAge = styled.Text`
+  margin-right: 5px;
+`;
+const CustomerName = styled.Text`
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 26px;
+
+  color: #25243b;
+  margin-bottom: 5px;
+`;
+const header = {elevation: 0, paddingLeft: 20, alignItems: 'center'};
 const image = {
   width: 48,
   height: 48,

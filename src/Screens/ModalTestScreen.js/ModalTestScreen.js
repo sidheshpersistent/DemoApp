@@ -4,6 +4,8 @@ import Popup from '../../components/Popup/Popup';
 import styled from 'styled-components/native';
 import PopUpExistingCustomer from '../../components/Popup/PopUpExistingCustomer';
 import PopupTextInput from '../../components/Popup/PopupTextInput';
+import TimeLineView from '../../components/TimeLineView/TimeLineView';
+
 const icon = require('../../assets/info.png');
 const alertIcon = require('../../assets/alertIcon.png');
 const HEADING = {
@@ -60,7 +62,7 @@ const ModelTestScreen = props => {
   };
 
   return (
-    <View style={{flex: 1,}}>
+    <View style={{flex: 1,alignItems:'center'}}>
       <TouchableOpacity style={{alignSelf:"flex-end"}} onPress={()=>props.navigation.navigate("CustomerProfile")}>
           <Text>Navigate to Next</Text>
       </TouchableOpacity>
@@ -160,7 +162,9 @@ const ModelTestScreen = props => {
         buttonPress={buttonPressed3}
       />
 
-      
+      <View style={{height:100,width:'80%'}}>
+          <TimeLineView></TimeLineView>
+        </View>
     </View>
   );
 };
