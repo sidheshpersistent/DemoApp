@@ -8,7 +8,7 @@ import UpperBoxContainer from '../../components/UpperBoxContainer/UpperBoxContai
 import ProfileHeaderContainer from 'components/ProfileHeaderContainer';
 import {ScrollView} from 'react-native-gesture-handler';
 import AutoCompleteTextInput from '../../components/AutoCompleteTextInput/AutoCompleteTextInput';
-
+import TimeLineView from '../../components/TimeLineView/TimeLineView';
 const iconClose = require('../../assets/iconClose.png');
 
 const CustomerProfile = props => {
@@ -57,11 +57,17 @@ const CustomerProfile = props => {
         <Text style={{fontWeight: 'normal'}}>Please enter the </Text>
         customer’s personal details
       </PleaseEnter>
-
+     
       <LowerConatainer>
+      <AlignedContainer>
+      <View style={{position:'absolute',top:-30, height:100,width:'100%',alignSelf:'center'}}>
+          <TimeLineView></TimeLineView>
+        </View>
+        </AlignedContainer>
         {/**TODO: marginTop:71 has to be deleted after applying steppers on screen*/}
-        <ScrollView style={{flex: 1, marginTop: 50}}>
+        <ScrollView style={{flex: 1, marginTop: 120}}>
           <AlignedContainer>
+          
             <CardMargin>
               <Card style={{elevation: 4}}>
                 <CardPadding>
