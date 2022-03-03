@@ -4,6 +4,7 @@ import Popup from '../../components/Popup/Popup';
 import styled from 'styled-components/native';
 import PopUpExistingCustomer from '../../components/Popup/PopUpExistingCustomer';
 import PopupTextInput from '../../components/Popup/PopupTextInput';
+import PopupCommunicationAddress from '../../components/PopupNewCommunicationAddress/PopupCommunicationAddress';
 const icon = require('../../assets/info.png');
 const alertIcon = require('../../assets/alertIcon.png');
 const HEADING = {
@@ -12,6 +13,14 @@ const HEADING = {
   MOBILE_CHECK: 'Please provide another mobile number to proceed further',
   EMAIL_CHECK: 'Please provide another email address to proceed further',
 };
+
+// const NEWCOMMUNICATIONADDRESS = {
+//   HEADING: 'New communication address',
+//   SUB_HEADING:
+//     'Please enter the address where you reside and want all your communications to be done',
+//   MOBILE_CHECK: 'Please provide another mobile number to proceed further',
+//   EMAIL_CHECK: 'Please provide another email address to proceed further',
+// };
 
 var PAN_INCOME_CHECK = [
   'Customer is below 60 years of age and gross annual income is above ₹2.5 lacs',
@@ -31,6 +40,8 @@ const POPUP_INFO = {
     'The email address entered already exists in the Ban under the Customer ID: *****6471 and Name: Vicky Patil as fetched from CBS/MDM.',
 };
 
+import {NEWCOMMUNICATIONADDRESS} from '../../constants/constants';
+
 const ModelTestScreen = props => {
   const [isVisible, setIsvisible] = useState(false);
   const [mobile, setMobile] = useState(false);
@@ -39,13 +50,13 @@ const ModelTestScreen = props => {
   const [isVisible3, setIsvisible3] = useState(false);
   const [number, setNumber] = useState('');
   const [panIncomeInfo, setPanIncomeInfo] = useState(PAN_INCOME_CHECK);
+  const [communicationAddress, setCommunicationAddress] = useState(false);
 
   const buttonPress = () => {
     setIsvisible(false);
   };
 
   const buttonPress2 = () => {
-    
     setMobile(false);
   };
   const buttonPress3 = () => {
@@ -59,10 +70,16 @@ const ModelTestScreen = props => {
     setIsvisible3(false);
   };
 
+  const closeCAModal = () => {
+    setCommunicationAddress(false);
+  };
+
   return (
-    <View style={{flex: 1,}}>
-      <TouchableOpacity style={{alignSelf:"flex-end"}} onPress={()=>props.navigation.navigate("CustomerProfile")}>
-          <Text>Navigate to Next</Text>
+    <View style={{flex: 1}}>
+      <TouchableOpacity
+        style={{alignSelf: 'flex-end'}}
+        onPress={() => props.navigation.navigate('CustomerProfile')}>
+        <Text>Navigate to Next</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => setIsvisible(true)}>
         <Text style={{fontSize: 40}}>PAN SALARY CHECK</Text>
@@ -80,6 +97,12 @@ const ModelTestScreen = props => {
       <TouchableOpacity onPress={() => setIsvisible3(true)}>
         <Text style={{fontSize: 40}}>
           Popup with existing bank account details
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => setCommunicationAddress(true)}>
+        <Text style={{fontSize: 30, marginTop: 30}}>
+          NEW COMMUNICATION ADDRESS
         </Text>
       </TouchableOpacity>
       {/** PAN SALARY CHECK */}
@@ -160,7 +183,27 @@ const ModelTestScreen = props => {
         buttonPress={buttonPressed3}
       />
 
-      
+      {communicationAddress ? (
+        <PopupCommunicationAddress
+          popupType="communication_address"
+          animationIn="bounceIn"
+          popupIcon={require('../../assets/icon_24_location.png')}
+          isVisible={communicationAddress}
+          Heading={NEWCOMMUNICATIONADDRESS.NCA_FORM_HEADING} // Heading is assumed to be taken from constants
+          popupInfo={NEWCOMMUNICATIONADDRESS.NCA_SUB_HEADING}
+          isActive={false}
+          isValue={false}
+          TextInputPlaceholder=""
+          textColor="black"
+          // maxLength={10}
+          ButtonText="Confirm"
+          buttonPress={() => closeCAModal()}
+          CancelButtonText="Cancel"
+          cancelButtonPress={() => closeCAModal()}
+          isError={false}
+          error_text={'validation failed'}
+        />
+      ) : null}
     </View>
   );
 };
@@ -191,7 +234,6 @@ const data = {
 };
 const ComponentContainer = styled.View`
   flex-direction: row;
-  
 `;
 
 const Bullet = styled.Text`

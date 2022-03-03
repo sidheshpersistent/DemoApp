@@ -75,6 +75,7 @@ const PopupNewCommunicationAddress = props => {
                       isActive={false}
                       isValue={false}
                       placeholder={NEWCOMMUNICATIONADDRESS.NCA_ADDRESS1}
+                      keyboardType="default"
                       errorMessage=""
                       isError={false}
                       errorColor="red"
@@ -92,6 +93,7 @@ const PopupNewCommunicationAddress = props => {
                       isActive={false}
                       isValue={false}
                       placeholder={NEWCOMMUNICATIONADDRESS.NCA_ADDRESS2}
+                      keyboardType="default"
                       errorMessage=""
                       isError={false}
                       errorColor="red"

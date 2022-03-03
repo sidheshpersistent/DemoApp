@@ -25,9 +25,12 @@ const Popup = props => {
     component,
     ButtonText,
     buttonPress,
+    CancelButtonText,
+    cancelButtonPress,
     animationIn,
     popupIcon,
-    style
+    popupIconStyle,
+    style,
   } = props;
 
   return (
@@ -37,11 +40,14 @@ const Popup = props => {
         isVisible={isVisible}
         customBackdrop={<CustomBlurView />}>
         <CenteredView>
-          <ModalView style={style} >
+          <ModalView style={style}>
             <TopIconView>
-              <Image source={popupIcon} style={{width: 64, height: 64}} />
+              <Image
+                source={popupIcon}
+                style={[popupIconStyle, {width: 64, height: 64}]}
+              />
             </TopIconView>
-            <View style={{width:"85%",alignSelf:"center"}}>
+            <View style={{width: '85%', alignSelf: 'center'}}>
               <PopupHeading>{Heading}</PopupHeading>
               <SubTextContainer>{component}</SubTextContainer>
             </View>
@@ -50,6 +56,11 @@ const Popup = props => {
               onPress={() => buttonPress()}
               style={styles.Button}>
               <Text style={styles.ButtonText}>{ButtonText}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => cancelButtonPress()}
+              style={styles.cancelBtn}>
+              <Text style={styles.cancelBtnTxt}>{CancelButtonText}</Text>
             </TouchableOpacity>
           </ModalView>
         </CenteredView>
@@ -83,6 +94,28 @@ const styles = StyleSheet.create({
     letterSpacing: -0.6,
     textAlign: 'center',
     color: '#ffffff',
+  },
+  cancelBtnTxt: {
+    fontWeight: '600',
+    width: 174,
+    height: 24,
+    fontFamily: 'Inter',
+    fontSize: 17,
+    alignSelf: 'center',
+    fontStyle: 'normal',
+    lineHeight: 24,
+    letterSpacing: -0.6,
+    textAlign: 'center',
+    color: '#9b1e26',
+  },
+  cancelBtn: {
+    alignSelf: 'center',
+    marginTop: 0,
+    marginBottom: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 200,
+    height: 56,
   },
 });
 

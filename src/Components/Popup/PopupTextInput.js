@@ -26,7 +26,6 @@ const PopupTextInput = props => {
     onchangeText,
   } = props;
 
-
   const SideIconSource =
     popupType == 'mobile'
       ? require('../../assets/mobileDedupe.png')
@@ -34,19 +33,18 @@ const PopupTextInput = props => {
       ? require('../../assets/panCheck.png')
       : require('../../assets/emailCheck.png');
 
-
   const keyboardType =
     popupType == 'mobile'
       ? 'numeric'
       : popupType == 'pan'
       ? 'default'
       : 'email-address';
-  
-  const ERROR_TEXT={
-    MOBILE:"Please renter mobile number to proceed",
-    PAN:"Permanent Account Number (PAN)",
-    EMAIL:"Please re-enter email address to proceed",
-  }
+
+  const ERROR_TEXT = {
+    MOBILE: 'Please renter mobile number to proceed',
+    PAN: 'Permanent Account Number (PAN)',
+    EMAIL: 'Please re-enter email address to proceed',
+  };
 
   // NOTE: valid popup types are= mobile,email,pan
   return (
