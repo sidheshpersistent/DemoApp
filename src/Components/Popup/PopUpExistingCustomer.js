@@ -35,6 +35,7 @@ const PopUpExistingCustomer = props => {
     data,
     ButtonText,
     buttonPress,
+    cancelBtnPressed,
     animationIn,
     popupIcon,
   } = props;
@@ -100,7 +101,7 @@ const PopUpExistingCustomer = props => {
               <Text style={styles.ButtonText}>{ButtonText}</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => buttonPress()}
+              onPress={() => cancelBtnPressed()}
               style={styles.cancelBtn}>
               <Text style={styles.cancelBtnTxt}>{`Cancel`}</Text>
             </TouchableOpacity>

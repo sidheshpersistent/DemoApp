@@ -82,6 +82,7 @@ const AutoCompleteTextInput = props => {
               : styles.textInputStyle,
             {
               marginBottom: value.length > 0 ? 0 : 14,
+              borderBottomColor:"lightgrey", //TODO: added bottom color
               borderBottomWidth: isBorderActive
                 ? value.length > 0
                   ? 0

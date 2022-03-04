@@ -2,11 +2,17 @@ import React, {useEffect, useState} from 'react';
 
 import {View, Text, Image, TouchableOpacity, Dimensions} from 'react-native';
 import styled from 'styled-components/native';
+
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
 import UpperBoxContainer from '../../components/UpperBoxContainer/UpperBoxContainer';
 import ProfileHeaderContainer from 'components/ProfileHeaderContainer';
+import {ScrollView} from 'react-native-gesture-handler';
 
-const CustomerProfile = () => {
+import TimeLineView from '../../components/TimeLineView/TimeLineView';
+import PersonalDetail from './personalDetail/PersonalDetail';
+const iconClose = require('../../assets/iconClose.png');
+
+const CustomerProfile = props => {
   return (
     <BackgroundImage>
       <HeaderContainer>
@@ -14,7 +20,6 @@ const CustomerProfile = () => {
           <Text>ad</Text>
           <SaveAndExit>Save & Exit</SaveAndExit>
         </CloseAndSave>
-
         <ProfileHeaderContainer
           style={header}
           maxContainerHeight={200}
@@ -34,6 +39,10 @@ const CustomerProfile = () => {
           }
         />
       </HeaderContainer>
+      <PleaseEnter>
+        <Text style={{fontWeight: 'normal'}}>Please enter the </Text>
+        customer’s personal details
+      </PleaseEnter>
 
       <PleaseEnter>Please enter the customer’s personal details</PleaseEnter>
 
@@ -55,8 +64,6 @@ const CloseAndSave = styled.View`
 `;
 
 const SaveAndExit = styled.Text`
-  width: 70px;
-  height: 20px;
   font-family: Inter;
   font-size: 14px;
   font-weight: 600;
@@ -77,7 +84,6 @@ const PleaseEnter = styled.Text`
   font-size: 20px;
   font-weight: bold;
   line-height: 26px;
-  letter-spacing: -0.5px;
   text-align: center;
   color: #ffffff;
 `;
