@@ -36,6 +36,7 @@ const AutoCompleteTextInput = props => {
     data,
     onSelectListItem,
     isCitySearch,
+    isSearchIcon = false,
   } = props;
 
   const errorMessageStr = errorMessage || (errors && errors?.[name]?.message);
@@ -100,12 +101,18 @@ const AutoCompleteTextInput = props => {
             <Image style={styles.imagePasswordview} source={rightImage} />
           </Pressable>
         )}
-        {/* {value.length > 0 && invalid ? (
+        {/*TODO: changes done by rohit for search button*/}
+        {isSearchIcon && (
+          <Pressable
+            style={styles.imagePasswordview}
+            // onPress={() => props.onPressRightImage(!props.isSecured)}
+            >
           <Image
-            style={styles.imgWarning}
-            source={require('../../../assets/icons_24_search.png')}
+            style={styles.imagePasswordview}
+            source={rightImage}
           />
-        ) : null} */}
+          </Pressable>
+        ) }
 
         {/* {value.length > 0 && invalid ? (
           <View

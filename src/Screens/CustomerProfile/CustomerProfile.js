@@ -10,6 +10,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 
 import TimeLineView from '../../components/TimeLineView/TimeLineView';
 import PersonalDetail from './personalDetail/PersonalDetail';
+import OccupationDetails from './OccupationDetails/OccupationDetails'
 const iconClose = require('../../assets/iconClose.png');
 
 const CustomerProfile = props => {
@@ -70,7 +71,8 @@ const CustomerProfile = props => {
            {/**TODO: below we will conditinally render**/}
 
 
-          <PersonalDetail />
+          {/* <PersonalDetail /> */}
+          <OccupationDetails></OccupationDetails>
 
 
         </ScrollView>
