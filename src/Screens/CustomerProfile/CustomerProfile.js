@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-
-import {View, Text, Image, TouchableOpacity, Dimensions} from 'react-native';
+import Card from '../../components/CardView';
+import {View, Text, Image} from 'react-native';
 import styled from 'styled-components/native';
 
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
@@ -17,7 +17,7 @@ const CustomerProfile = props => {
     <BackgroundImage>
       <HeaderContainer>
         <CloseAndSave>
-          <Text>ad</Text>
+          <IconClose source={iconClose} />
           <SaveAndExit>Save & Exit</SaveAndExit>
         </CloseAndSave>
         <ProfileHeaderContainer
@@ -32,9 +32,18 @@ const CustomerProfile = props => {
             </View>
           }
           rightView={
-            <View style={{justifyContent: 'center', alignItems: 'center'}}>
-              <Text>Astha Patil</Text>
-              <Text>28 | Female</Text>
+            <View
+              style={{
+                justifyContent: 'center',
+                marginTop: 3,
+                marginLeft: 13,
+              }}>
+              <CustomerName>Astha Patil</CustomerName>
+              <View style={{flexDirection: 'row'}}>
+                <NameAndAge>28</NameAndAge>
+                <NameAndAge>|</NameAndAge>
+                <NameAndAge>Female</NameAndAge>
+              </View>
             </View>
           }
         />
@@ -44,23 +53,53 @@ const CustomerProfile = props => {
         customer’s personal details
       </PleaseEnter>
 
-      <PleaseEnter>Please enter the customer’s personal details</PleaseEnter>
+      <LowerConatainer>
+        <AlignedContainer>
+          <View
+            style={{
+              position: 'absolute',
+              top: -30,
+              height: 100,
+              width: '100%',
+              alignSelf: 'center',
+            }}>
+            <TimeLineView></TimeLineView>
+          </View>
+        </AlignedContainer>
+           <ScrollView style={{flex: 1, marginTop: 80, paddingTop: 20}}> 
+           {/**TODO: below we will conditinally render**/}
 
-      <Conatainer></Conatainer>
+
+          <PersonalDetail />
+
+
+        </ScrollView>
+      </LowerConatainer>
     </BackgroundImage>
   );
 };
 
 export default CustomerProfile;
 
+const AlignedContainer = styled.View`
+  width: 70%;
+  align-self: center;
+`;
+const IconClose = styled.Image`
+  width: 24px;
+  height: 24px;
+`;
+
 const HeaderContainer = styled(UpperBoxContainer)`
-  height: 158px;
+  height: 152px;
   padding: 12px 15px 26px 12px;
   margin-bottom: 38px;
 `;
 const CloseAndSave = styled.View`
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 5px;
 `;
 
 const SaveAndExit = styled.Text`
@@ -72,11 +111,12 @@ const SaveAndExit = styled.Text`
   text-align: right;
   color: #9b1e26;
 `;
-const Conatainer = styled.View`
-  background-color: white;
+const LowerConatainer = styled.View`
+  background-color: #f6f6f6;
   flex: 1;
 `;
 const PleaseEnter = styled.Text`
+align-self:center
   margin-bottom: 40px;
   width: 406px;
   height: 26px;
@@ -84,10 +124,24 @@ const PleaseEnter = styled.Text`
   font-size: 20px;
   font-weight: bold;
   line-height: 26px;
+ 
   text-align: center;
   color: #ffffff;
 `;
-const header = {elevation: 0, padding: 0, marginTop: 15, alignItems: 'center'};
+
+const NameAndAge = styled.Text`
+  margin-right: 5px;
+`;
+const CustomerName = styled.Text`
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 26px;
+
+  color: #25243b;
+  margin-bottom: 5px;
+`;
+const header = {elevation: 0, paddingLeft: 20, alignItems: 'center'};
 const image = {
   width: 48,
   height: 48,

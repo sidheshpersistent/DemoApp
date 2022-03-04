@@ -21,7 +21,7 @@ const data = [
         'ID':2,
         'img':'source',
         'text':'Occupational Details',
-        'isSelected': false,
+        'isSelected':true,
         'iconEnabled': OccupationDetailsEnabled,
         'iconDisabled' : OccupationDetailsDisabled,
     },
@@ -29,7 +29,7 @@ const data = [
         'ID':3,
         'img':'source',
         'text':'Banking Preference',
-        'isSelected': false,
+        'isSelected': true,
         'iconEnabled': BankingPreferenceEnabled,
         'iconDisabled' : BankingPreferenceDisabled,
     },
@@ -73,7 +73,7 @@ export const TimeLineItem = ({item,length,index}) =>{
     console.log(islineRightAlignType);
     return (<TimeLineItemContainer totalItem={length}>
         <View style={{height:70,justifyContent:'center', alignItems:'center'}}>
-            { islineRightAlignType ? <View style={{position:'absolute',right:'50%', height:1,width:'100%',backgroundColor:'black'}}></View>
+            { islineRightAlignType ? <View style={{position:'absolute',right:'50%', height:1,width:'100%',backgroundColor:'#9b1e26'}}></View>
             : null
         }
             <TimeLineImgContainer isSelected={item.item.isSelected}>

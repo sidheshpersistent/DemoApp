@@ -41,7 +41,7 @@ export const TopIconView = styled.View`
 `;
 
 export const AccountDetailsCardContainer = styled.View`
-  flexdirection: row;
+  flex-direction: row;
 `;
 
 export const AccountDetailsColumn = styled.View`

@@ -57,11 +57,12 @@ const Popup = props => {
               style={styles.Button}>
               <Text style={styles.ButtonText}>{ButtonText}</Text>
             </TouchableOpacity>
-            <TouchableOpacity
+            {/** TODO:  */}
+            {/* <TouchableOpacity
               onPress={() => cancelButtonPress()}
               style={styles.cancelBtn}>
               <Text style={styles.cancelBtnTxt}>{CancelButtonText}</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
           </ModalView>
         </CenteredView>
       </Modal>

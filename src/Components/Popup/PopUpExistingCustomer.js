@@ -40,6 +40,8 @@ const PopUpExistingCustomer = props => {
     popupIcon,
   } = props;
 
+  console.log("dsdadsf",data)
+
   return (
     <CenteredView>
       <Modal
@@ -58,6 +60,7 @@ const PopUpExistingCustomer = props => {
               </SubTextContainer>
               <AccountListView>
                 {data?.accountList?.map(account => {
+                
                   /**TODO: added a key to avoid similar key issue */
                   return (
                     <AccountDetailsCard
