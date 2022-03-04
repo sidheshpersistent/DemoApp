@@ -92,31 +92,31 @@ const CustomerIdentificationDetails = props => {
       isValidMobileNo(mobileNumber) &&
       isValidAadhar(aadharNo)
     ) {
-      return true;
-      // if (emailId !== '' && panNo !== '') {
-      //   console.log("log 1")
-      //   if (isValidEmailId(emailId) && isValidPan(panNo)) {
-      //     return true;
-      //   } else {
-      //     return false;
-      //   }
-      // } else if (emailId !== '' && panNo === '') {
-      //   console.log("log 2")
-      //   if (isValidEmailId(emailId)) {
-      //     return true;
-      //   } else {
-      //     return false;
-      //   }
-      // } else if (emailId === '' && panNo !== '') {
-      //   console.log("log 3")
-      //   if (isValidPan(emailId)) {
-      //     return true;
-      //   } else {
-      //     return false;
-      //   }
-      // } else {
-      //   return true;
-      // }
+      // return true;
+      if (emailId !== '' && panNo !== '') {
+        console.log('log 1');
+        if (isValidEmailId(emailId) && isValidPan(panNo)) {
+          return true;
+        } else {
+          return false;
+        }
+      } else if (emailId !== '' && panNo === '') {
+        console.log('log 2');
+        if (isValidEmailId(emailId)) {
+          return true;
+        } else {
+          return false;
+        }
+      } else if (emailId === '' && panNo !== '') {
+        console.log('log 3');
+        if (isValidPan(emailId)) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return true;
+      }
     } else {
       return false;
     }
