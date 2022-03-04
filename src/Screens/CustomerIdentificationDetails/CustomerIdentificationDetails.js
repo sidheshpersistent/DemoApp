@@ -36,6 +36,47 @@ import Popup from '../../components/Popup/Popup';
 import styled from 'styled-components/native';
 const icon = require('../../assets/info.png');
 const HEADING = 'When is it mandatory to enter PAN?';
+import PopupTextInput from '../../components/Popup/PopupTextInput';
+import PopUpExistingCustomer from '../../components/Popup/PopUpExistingCustomer';
+const alertIcon = require('../../assets/alertIcon.png');
+const HEADING_PAN = {
+  PAN_MANDATORY: 'When is it mandatory to enter PAN?',
+  PAN_CHECK: 'Sorry!  Customer must provide PAN to open account.',
+  MOBILE_CHECK: 'Please provide another mobile number to proceed further',
+  EMAIL_CHECK: 'Please provide another email address to proceed further',
+};
+const POPUP_INFO = {
+  PAN_CHECK_INFO:
+    'It is mandatory for customers below 60 years of age to provide PAN if their income is above ₹2.5Lacs ',
+  MOBILE_CHECK_INFO:
+    'The mobile number entered already exists in the Bank under the Customer ID: *****6471 Name: Vicky Patilas fetched from CBS/MDM.',
+  EMAIL_CHECK_INFO:
+    'The email address entered already exists in the Ban under the Customer ID: *****6471 and Name: Vicky Patil as fetched from CBS/MDM.',
+};
+const data = {
+  accountList: [
+    {
+      accountType: 'Type 1',
+      accountNumber: '******5415',
+    },
+    {
+      accountType: 'Type 2',
+      accountNumber: '******4579',
+    },
+  ],
+  customerID: '****6471',
+  mobileNumber: '+91 7085762345',
+  offerList: [
+    {
+      ID: '1',
+      reason: 'Better offers on Card',
+    },
+    {
+      ID: '2',
+      reason: 'PPF account',
+    },
+  ],
+};
 const PAN_INCOME_CHECK = [
   'Customer is below 60 years of age and gross annual income is above ₹2.5 lacs',
   'Customer is between 60-79 years of age and gross annual income is above ₹3 lacs',
@@ -51,8 +92,14 @@ const CustomerIdentificationDetails = props => {
   const [isErrorEmail, setIsErrorEmail] = useState(false);
   const [isErrorPan, setIsErrorPan] = useState(false);
   const [isErrorAadhar, setIsErrorAadhar] = useState(false);
+  const [pan, setPan] = useState(false);
+  const [number, setNumber] = useState('');
+  const [isVisible3, setIsvisible3] = useState(false);
   const route = useRoute();
-
+  const buttonPress3 = () => {
+    setPan(false);
+    setIsvisible3(true);
+  };
   const setMobileValidation = async mobileNumber => {
     var ismobile = await isValidMobileNo(mobileNumber);
     if (ismobile) {
@@ -315,12 +362,14 @@ const CustomerIdentificationDetails = props => {
                 <FooterContainer>
                   <FooterText>{CUSTOMERDETAILS.CID_LABEL_FOOTER}</FooterText>
                   {SubmitButtonEnable() ? (
-                    <RightArrowButtonActive>
-                      <Image
-                        source={require('../../assets/RightArrowWhite.png')}
-                        style={RightArrowImage}
-                      />
-                    </RightArrowButtonActive>
+                    <TouchableOpacity onPress={() => setPan(true)}>
+                      <RightArrowButtonActive>
+                        <Image
+                          source={require('../../assets/RightArrowWhite.png')}
+                          style={RightArrowImage}
+                        />
+                      </RightArrowButtonActive>
+                    </TouchableOpacity>
                   ) : (
                     <RightArrowButton>
                       <Image
@@ -335,6 +384,39 @@ const CustomerIdentificationDetails = props => {
           </CustomerDetailsBG>
         </ScrollView>
       </BackgroundImage>
+      {/* show PAN popup dialog */}
+      { 
+        <PopupTextInput
+          popupType="pan"
+          animationIn="bounceIn"
+          popupIcon={alertIcon}
+          isVisible={pan}
+          Heading={HEADING_PAN.PAN_CHECK} // Heading is assumed to be taken from constants
+          popupInfo={POPUP_INFO.PAN_CHECK_INFO}
+          TextInputPlaceholder=""
+          ButtonText="Submit"
+          TextInputvalue={number}
+          onchangeText={setNumber}
+          buttonPress={() => buttonPress3()}
+        />
+      }
+      <PopUpExistingCustomer
+        animationIn="bounceIn"
+        popupIcon={icon}
+        isVisible={isVisible3}
+        heading="The application already has a banking relationship with us"
+        subText={`The following accounts exist under the Customer ID *****6471 `}
+        popupInfo="The following account exist under the customer ID *****6471."
+        data={data}
+        ButtonText="Confirm"
+        TextInputvalue={number}
+        buttonPress={() => {
+          setIsvisible3(false)
+          props.navigation.navigate('CustomerProfile');
+        }}
+        cancelBtnPressed={()=>{setIsvisible3(false)}}
+      />
+      {/* end  popup dialog */}
     </Container>
   );
 };
