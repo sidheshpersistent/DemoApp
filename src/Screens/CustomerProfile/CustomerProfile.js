@@ -1,6 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import Card from '../../components/CardView';
-import {View, Text, Image, TouchableOpacity, Dimensions} from 'react-native';
+import {
+  View,
+  Switch,
+  Text,
+  Image,
+  TouchableOpacity,
+  Dimensions,
+} from 'react-native';
 import styled from 'styled-components/native';
 import CustomTextInput from '../../components/ntb_sa/Inputs/CustomTextInput';
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
@@ -68,7 +75,7 @@ const CustomerProfile = props => {
                   <CustomTextInput
                     isActive={false}
                     isValue={false}
-                    placeholder="Gross Annual Income"
+                    placeholder="Gross Annual Income*"
                     keyboardType="numeric"
                     errorMessage=""
                     isError={false}
@@ -86,7 +93,7 @@ const CustomerProfile = props => {
                   <CustomTextInput
                     isActive={false}
                     isValue={false}
-                    placeholder="Mother's Name"
+                    placeholder="Mother's Name*"
                     keyboardType="numeric"
                     errorMessage=""
                     isError={false}
@@ -107,13 +114,44 @@ const CustomerProfile = props => {
                 paddingBottom: 26,
                 paddingTop: 26,
                 justifyContent: 'space-between',
-                height: 158, // TODO: this height can be deleted later
+                // TODO: this height can be deleted later
               }}>
-              <View>
-                <ToogleRadioText>Same as adhar</ToogleRadioText>
+              <View style={{flexDirection: 'row'}}>
+                <View //TODO: this we will remove and apply ccl
+                  style={{
+                    marginRight: 20,
+                    width: 24,
+                    height: 24,
+                    borderRadius: 12,
+                    borderColor: '#9b1e26',
+                    borderWidth: 1,
+                  }}></View>
+
+                <View style={{width: 309, marginBottom: 22}}>
+                  <ToogleRadioText>Same as adhar</ToogleRadioText>
+                  <Text style={{color: '#25243b', fontSize: 12}}>
+                    401, El Tara, Hiranandani Gardens, Powai, Mumbai,
+                    Maharashtra 400076
+                  </Text>
+                </View>
               </View>
-              <View>
-                <ToogleRadioText>other address</ToogleRadioText>
+              <View style={{flexDirection: 'row'}}>
+                <View //TODO: this we will remove and apply ccl
+                  style={{
+                    marginRight: 20,
+                    width: 24,
+                    height: 24,
+                    borderRadius: 12,
+                    borderColor: '#9b1e26',
+                    borderWidth: 1,
+                  }}></View>
+                <View>
+                  <TouchableOpacity>
+                    <ToogleRadioText>other address</ToogleRadioText>
+                  </TouchableOpacity>
+
+                  <Text></Text>
+                </View>
               </View>
             </AlignedContainer>
           </FullLengthBox>
@@ -132,13 +170,21 @@ const CustomerProfile = props => {
                     flexDirection: 'row',
                     width: 100,
                     justifyContent: 'space-between',
+                    alignItems:"center"
                   }}>
-                  <TouchableOpacity onPress={() => setNomineeVisible(true)}>
-                    <ToogleRadioText>Yes</ToogleRadioText>
-                  </TouchableOpacity>
-                  <TouchableOpacity onPress={() => setNomineeVisible(false)}>
+                   
                     <ToogleRadioText>No</ToogleRadioText>
-                  </TouchableOpacity>
+                  
+                  <Switch
+
+                    onValueChange={() => setNomineeVisible(!nomineeVisible)}
+                    value={nomineeVisible}
+                  />
+                  
+                    <ToogleRadioText>Yes</ToogleRadioText>
+                
+                  
+                  
                 </View>
               </View>
             </AlignedContainer>
@@ -154,7 +200,7 @@ const CustomerProfile = props => {
                       <CustomTextInput
                         isActive={false}
                         isValue={false}
-                        placeholder="Nominee Name"
+                        placeholder="Nominee Name*"
                         keyboardType="numeric"
                         errorMessage=""
                         isError={false}
@@ -192,7 +238,7 @@ const CustomerProfile = props => {
                     <AutoCompleteTextInput
                       style={{backgroundColor: 'red'}}
                       testID={'12346'}
-                      name={`ReNominee’s date of birth*ason`}
+                      name={`Nominee’s date of birth*ason`}
                       invalid={false}
                       maxLength={40}
                       isRightImage={true}
@@ -220,18 +266,56 @@ const CustomerProfile = props => {
                     justifyContent: 'space-between',
                     height: 140, // TODO: this height can be deleted later
                   }}>
-                  <View>
-                    <ToogleRadioText>Same as adhar</ToogleRadioText>
+                  <View style={{flexDirection: 'row'}}>
+                    <View //TODO: this we will remove and apply ccl
+                      style={{
+                        marginRight: 20,
+                        width: 24,
+                        height: 24,
+                        borderRadius: 12,
+                        borderColor: '#9b1e26',
+                        borderWidth: 1,
+                      }}
+                    />
+
+                    <View style={{width: 309, marginBottom: 22}}>
+                      <ToogleRadioText>Same as adhar</ToogleRadioText>
+                      <Text style={{color: '#25243b', fontSize: 12}}>
+                        401, El Tara, Hiranandani Gardens, Powai, Mumbai,
+                        Maharashtra 400076
+                      </Text>
+                    </View>
                   </View>
-                  <View>
-                    <ToogleRadioText>other address</ToogleRadioText>
+                  <View style={{flexDirection: 'row'}}>
+                    <View //TODO: this we will remove and apply ccl
+                      style={{
+                        marginRight: 20,
+                        width: 24,
+                        height: 24,
+                        borderRadius: 12,
+                        borderColor: '#9b1e26',
+                        borderWidth: 1,
+                      }}
+                    />
+                    <View>
+                      <TouchableOpacity>
+                        <ToogleRadioText>other address</ToogleRadioText>
+                      </TouchableOpacity>
+
+                      <Text></Text>
+                    </View>
                   </View>
                 </AlignedContainer>
               </FullLengthBox>
             </View>
           ) : null}
 
-          <AlignedContainer style={{alignItems:"center",justifyContent:"center",marginBottom:38}}>
+          <AlignedContainer
+            style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginBottom: 38,
+            }}>
             {SubmitButtonEnable() ? (
               <RightArrowButtonActive>
                 <Image
@@ -258,7 +342,6 @@ export default CustomerProfile;
 const RightArrowImage = {
   width: 40,
   height: 40,
- 
 };
 const RightArrowButtonActive = styled.View`
   border-radius: 40px;
