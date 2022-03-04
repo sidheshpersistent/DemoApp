@@ -72,7 +72,7 @@ const CustomerProfile = props => {
         </View>
         </AlignedContainer>
         {/**TODO: marginTop:71 has to be deleted after applying steppers on screen*/}
-        <ScrollView style={{flex: 1, marginTop: 120}}>
+        <ScrollView style={{flex: 1, marginTop: 100,paddingTop:20}}>
           <AlignedContainer>
           
             <CardMargin>
@@ -134,7 +134,7 @@ const CustomerProfile = props => {
                   }}></View>
 
                 <View style={{width: 309, marginBottom: 22}}>
-                  <ToogleRadioText>Same as adhar</ToogleRadioText>
+                  <ToogleRadioText>Same as Adhar</ToogleRadioText>
                   <Text style={{color: '#25243b', fontSize: 12}}>
                     401, El Tara, Hiranandani Gardens, Powai, Mumbai,
                     Maharashtra 400076
@@ -285,7 +285,7 @@ const CustomerProfile = props => {
                     />
 
                     <View style={{width: 309, marginBottom: 22}}>
-                      <ToogleRadioText>Same as adhar</ToogleRadioText>
+                      <ToogleRadioText>Same as Adhar</ToogleRadioText>
                       <Text style={{color: '#25243b', fontSize: 12}}>
                         401, El Tara, Hiranandani Gardens, Powai, Mumbai,
                         Maharashtra 400076
@@ -361,7 +361,7 @@ const RightArrowButtonActive = styled.View`
 const ToogleRadioText = styled.Text`
   font-family: Inter;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: bold;
   line-height: 20px;
 
   color: #25243b;
