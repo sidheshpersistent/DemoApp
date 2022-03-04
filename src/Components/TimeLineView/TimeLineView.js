@@ -78,7 +78,7 @@ export const TimeLineItem = ({item,length,index}) =>{
         }
             <TimeLineImgContainer isSelected={item.item.isSelected}>
             <Image
-                style={{height: 36, width: 36}}
+                style={{height: 22, width: 22}} //TODO: chnaged from 36 to 22
                 source={icon}
               />
             </TimeLineImgContainer>
@@ -92,17 +92,19 @@ export const TimeLineItemContainer = styled.View`
     height:90px;
     width:${props =>{ return  (100/props.totalItem) + `%`}};
 `;
-
+// TODO:changed height width from 60 to 36
 export const TimeLineImgContainer = styled.View`
-    height:60px;
-    width:60px;
-    border-radius:30px;
+    height:36px;
+    width:36px;
+    border-radius:18px;
     justify-content: center;
     align-items:center;
     background-color: ${props =>{ return  (props.isSelected ? `#9b1e26`:`#ffffff`)}};
 `;
-
+//TODO: added fontSize below
 export const TimeLineText = styled.Text`
+
     color:${props =>{ return  (props.isSelected ? `#9b1e26`:`#25243b`)}};
     text-align:center;
+    font-size:10px; 
 `;

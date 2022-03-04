@@ -72,7 +72,8 @@ const CustomerProfile = props => {
         </View>
         </AlignedContainer>
         {/**TODO: marginTop:71 has to be deleted after applying steppers on screen*/}
-        <ScrollView style={{flex: 1, marginTop: 100,paddingTop:20}}>
+        {/** changed below scrollview from marginTop:120 */}
+        <ScrollView style={{flex: 1, marginTop:80,paddingTop:20}}> 
           <AlignedContainer>
           
             <CardMargin>
