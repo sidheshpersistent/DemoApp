@@ -57,7 +57,7 @@ const LoginScreen = (props) => {
                     </UserNameView>
                     <PasswordView >
                     {/* TODO: ccl textinput to be used here */}
-                        <PasswordtextInput  placeholder='Password' onChangeText={setPassword} >
+                        <PasswordtextInput secureTextEntry={true} placeholder='Password' onChangeText={setPassword} >
                             {password}
                         </PasswordtextInput>
                     </PasswordView>
