@@ -14,14 +14,6 @@ const HEADING = {
   EMAIL_CHECK: 'Please provide another email address to proceed further',
 };
 
-// const NEWCOMMUNICATIONADDRESS = {
-//   HEADING: 'New communication address',
-//   SUB_HEADING:
-//     'Please enter the address where you reside and want all your communications to be done',
-//   MOBILE_CHECK: 'Please provide another mobile number to proceed further',
-//   EMAIL_CHECK: 'Please provide another email address to proceed further',
-// };
-
 var PAN_INCOME_CHECK = [
   'Customer is below 60 years of age and gross annual income is above ₹2.5 lacs',
   'Customer is between 60-79 years of age and gross annual income is above ₹3 lacs ',
@@ -197,7 +189,10 @@ const ModelTestScreen = props => {
           textColor="black"
           // maxLength={10}
           ButtonText="Confirm"
-          buttonPress={() => closeCAModal()}
+          buttonPress={data => {
+            closeCAModal();
+            console.log(data);
+          }}
           CancelButtonText="Cancel"
           cancelButtonPress={() => closeCAModal()}
           isError={false}

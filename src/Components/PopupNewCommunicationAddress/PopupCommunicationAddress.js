@@ -13,9 +13,13 @@ import {NEWCOMMUNICATIONADDRESS} from '../../constants/constants';
 import Popup from '../Popup/Popup';
 
 const PopupCommunicationAddress = props => {
-  const [pan, setPan] = useState('');
-  const [address1, setAddress1] = useState('');
-  const [address2, setAddress2] = useState('');
+  const [pincode, setPincode] = useState('123456');
+  const [address1, setAddress1] = useState('test address 1');
+  const [address2, setAddress2] = useState('test address 2');
+  const [city, setCity] = useState('Kolhapur');
+  const [state, setState] = useState('MH');
+  const [country, setCountry] = useState('IN');
+  const [cityText, setCityText] = useState('Mumbai | Maharashtra | India');
 
   const {
     popupType,
@@ -39,6 +43,18 @@ const PopupCommunicationAddress = props => {
     maxLength,
   } = props;
 
+  const onPressButton = () => {
+    let data = {
+      pincode: pincode,
+      address1: address1,
+      address2: address2,
+      city: city,
+      state: state,
+      country: country,
+    };
+    buttonPress(data);
+  };
+
   return (
     <Popup
       style={{backgroundColor: '#f6f6f6'}}
@@ -61,9 +77,9 @@ const PopupCommunicationAddress = props => {
                   style={{fontSize: 20, width: '100%'}}
                   placeholder={NEWCOMMUNICATIONADDRESS.NCA_PINCODE}
                   isActive={isActive}
-                  value={pan}
+                  value={pincode}
                   onchangeText={text => {
-                    setPan(text);
+                    setPincode(text);
                   }}
                   textColor={textColor}
                   maxLength={maxLength}
@@ -115,10 +131,14 @@ const PopupCommunicationAddress = props => {
               {isError && <RedText>{error_text}</RedText>}
             </InputContainer>
           </WhiteRectangleBox>
+
+          <View style={{marginVertical: 16}}>
+            <CityText>{cityText}</CityText>
+          </View>
         </BodyContainer>
       }
       ButtonText={ButtonText}
-      buttonPress={() => buttonPress()}
+      buttonPress={() => onPressButton()}
       CancelButtonText={CancelButtonText}
       cancelButtonPress={() => cancelButtonPress()}
     />
@@ -136,7 +156,17 @@ const RedText = styled.Text`
   line-height: 13px;
   letter-spacing: -0.3px;
   color: #d60b26;
-  margin-bottom: 12px;`;
+  margin-bottom: 12px;
+`;
+
+const CityText = styled.Text`
+  font-family: Inter;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  color: #25243b;
+  margin-bottom: 12px;
+`;
 
 const PopupText = styled.Text`
   font-family: Inter;
