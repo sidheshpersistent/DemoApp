@@ -62,8 +62,7 @@ const SelectPage = ()=>{
       return acc;
     }
   })
-console.log("su");
-  console.log(selectedIndex);
+
   switch (selectedIndex) {
     case 0 : 
       return  <PersonalDetail /> 
