@@ -1,50 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
-import PersonalDetailsEnabled from './images/personalDetailsEnabled.png';
-import OccupationDetailsEnabled from './images/occupationDetailsEnabled.png';
-import OccupationDetailsDisabled from './images/occupationDetailsDisabled.png';
-import BankingPreferenceEnabled from './images/bankingPreferenceEnabled.png';
-import BankingPreferenceDisabled from './images/bankingPreferenceDisabled.png';
-import CustomerConsentEnabled from './images/customerConsentEnabled.png';
-import CustomerConsentDisabled from './images/customerConsentDisabled.png';
-const data = [
-    {
-        'ID':1,
-        'img':'source',
-        'text':'Personal Details',
-        'isSelected': true,
-        'iconEnabled': PersonalDetailsEnabled,
-        'iconDisabled' : PersonalDetailsEnabled,
-    },
-    {
-        'ID':2,
-        'img':'source',
-        'text':'Occupational Details',
-        'isSelected':true,
-        'iconEnabled': OccupationDetailsEnabled,
-        'iconDisabled' : OccupationDetailsDisabled,
-    },
-    {
-        'ID':3,
-        'img':'source',
-        'text':'Banking Preference',
-        'isSelected': true,
-        'iconEnabled': BankingPreferenceEnabled,
-        'iconDisabled' : BankingPreferenceDisabled,
-    },
-    {
-        'ID':4,
-        'img':'source',
-        'text':'Customer Consent',
-        'isSelected': false,
-        'iconEnabled': CustomerConsentEnabled,
-        'iconDisabled' : CustomerConsentDisabled,
-    }
-]
 
-const TimeLineView = ()=>{
 
+const TimeLineView = ({data})=>{
     return(
         <View style={{flex:1,flexDirection:'row'}}>
             {data.map((item,index)=>{
@@ -69,8 +28,7 @@ export const TimeLineItem = ({item,length,index}) =>{
     }else{
         icon = item.item.iconDisabled;
     }
-    console.log(index);
-    console.log(islineRightAlignType);
+
     return (<TimeLineItemContainer totalItem={length}>
         <View style={{height:70,justifyContent:'center', alignItems:'center'}}>
             { islineRightAlignType ? <View style={{position:'absolute',right:'50%', height:1,width:'100%',backgroundColor:'#9b1e26'}}></View>

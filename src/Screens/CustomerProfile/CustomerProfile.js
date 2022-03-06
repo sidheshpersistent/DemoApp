@@ -9,11 +9,73 @@ import ProfileHeaderContainer from 'components/ProfileHeaderContainer';
 import {ScrollView} from 'react-native-gesture-handler';
 
 import TimeLineView from '../../components/TimeLineView/TimeLineView';
+import PersonalDetailsEnabled from '../../components/TimeLineView/images/personalDetailsEnabled.png';
+import OccupationDetailsEnabled from '../../components/TimeLineView/images/occupationDetailsEnabled.png';
+import OccupationDetailsDisabled from '../../components/TimeLineView/images/occupationDetailsDisabled.png';
+import BankingPreferenceEnabled from '../../components/TimeLineView/images/bankingPreferenceEnabled.png';
+import BankingPreferenceDisabled from '../../components/TimeLineView/images/bankingPreferenceDisabled.png';
+import CustomerConsentEnabled from '../../components/TimeLineView/images/customerConsentEnabled.png';
+import CustomerConsentDisabled from '../../components/TimeLineView/images/customerConsentDisabled.png';
 import PersonalDetail from './personalDetail/PersonalDetail';
 import OccupationDetails from './OccupationDetails/OccupationDetails'
 const iconClose = require('../../assets/iconClose.png');
-
+const data = [
+  {
+      'ID':1,
+      'img':'source',
+      'text':'Personal Details',
+      'isSelected': true,
+      'iconEnabled': PersonalDetailsEnabled,
+      'iconDisabled' : PersonalDetailsEnabled,
+  },
+  {
+      'ID':2,
+      'img':'source',
+      'text':'Occupational Details',
+      'isSelected':false,
+      'iconEnabled': OccupationDetailsEnabled,
+      'iconDisabled' : OccupationDetailsDisabled,
+  },
+  {
+      'ID':3,
+      'img':'source',
+      'text':'Banking Preference',
+      'isSelected': false,
+      'iconEnabled': BankingPreferenceEnabled,
+      'iconDisabled' : BankingPreferenceDisabled,
+  },
+  {
+      'ID':4,
+      'img':'source',
+      'text':'Customer Consent',
+      'isSelected': false,
+      'iconEnabled': CustomerConsentEnabled,
+      'iconDisabled' : CustomerConsentDisabled,
+  }
+]
+const SelectPage = ()=>{
+  let selectedIndex = data.reduce((acc,curr,index) => {
+    if(curr.isSelected){
+      acc = index;
+      return acc;
+    }else{
+      return acc;
+    }
+  })
+console.log("su");
+  console.log(selectedIndex);
+  switch (selectedIndex) {
+    case 0 : 
+      return  <PersonalDetail /> 
+    case 1 :
+      return  <OccupationDetails />
+    default :
+      return <PersonalDetail /> 
+  }
+}
 const CustomerProfile = props => {
+
+  
   return (
     <BackgroundImage>
       <HeaderContainer>
@@ -64,15 +126,15 @@ const CustomerProfile = props => {
               width: '100%',
               alignSelf: 'center',
             }}>
-            <TimeLineView></TimeLineView>
+            <TimeLineView  data={data}></TimeLineView>
           </View>
         </AlignedContainer>
            <ScrollView style={{flex: 1, marginTop: 80, paddingTop: 20}}> 
            {/**TODO: below we will conditinally render**/}
-
-
-          {/* <PersonalDetail /> */}
-          <OccupationDetails></OccupationDetails>
+      
+              
+           
+          <SelectPage />
 
 
         </ScrollView>
