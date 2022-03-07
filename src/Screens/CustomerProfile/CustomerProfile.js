@@ -17,7 +17,9 @@ import BankingPreferenceDisabled from '../../components/TimeLineView/images/bank
 import CustomerConsentEnabled from '../../components/TimeLineView/images/customerConsentEnabled.png';
 import CustomerConsentDisabled from '../../components/TimeLineView/images/customerConsentDisabled.png';
 import PersonalDetail from './personalDetail/PersonalDetail';
-import OccupationDetails from './OccupationDetails/OccupationDetails'
+import OccupationDetails from './OccupationDetails/OccupationDetails';
+import CustomerConsent from './CustomerConsent/CustomerConsent';
+
 const iconClose = require('../../assets/iconClose.png');
 const data = [
   {
@@ -68,6 +70,8 @@ const SelectPage = ()=>{
       return  <PersonalDetail /> 
     case 1 :
       return  <OccupationDetails />
+    case 3 : 
+      return <CustomerConsent />
     default :
       return <PersonalDetail /> 
   }
