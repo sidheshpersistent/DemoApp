@@ -13,14 +13,28 @@ import CustomTextInput from '../../../components/ntb_sa/Inputs/CustomTextInput';
 
 import UpperBoxContainer from '../../../components/UpperBoxContainer/UpperBoxContainer';
 import AutoCompleteTextInput from '../../../components/AutoCompleteTextInput/AutoCompleteTextInput';
-
-
+import {NEWCOMMUNICATIONADDRESS} from '../../../constants/constants';
+import PopupCommunicationAddress from '../../../components/PopupNewCommunicationAddress/PopupCommunicationAddress';
 
 const PersonalDetail = props => {
   const [nomineeVisible, setNomineeVisible] = useState(true);
+  const [communicationAddress, setCommunicationAddress] = useState(false);
+  const [form60Visible, setForm60Visible] = useState(false);
+  const [panApplied, setPanApplied] = useState(false);
+  const closeCAModal = () => {
+    setCommunicationAddress(false);
+  };
 
   const SubmitButtonEnable = () => {
     return true;
+  };
+
+  const popupCheck = text => {
+    if (text > 3 * 10 ** 5) {
+      setForm60Visible(true);
+    } else {
+      setForm60Visible(false);
+    }
   };
 
   return (
@@ -39,6 +53,9 @@ const PersonalDetail = props => {
                 errorColor="red"
                 textColor="black"
                 maxLength={10}
+                onChangeText={text => {
+                  popupCheck(text);
+                }}
                 onKeyPress={() => {}}
               />
             </CardPadding>
@@ -62,8 +79,109 @@ const PersonalDetail = props => {
             </CardPadding>
           </Card>
         </CardMargin>
+      </AlignedContainer>
+      {form60Visible ? (
+        <View>
+          <AlignedContainer>
+            <View>
+              <Label>FORM 60 DETAILS</Label>
+              <CardMargin>
+                <Card style={{elevation: 4}}>
+                  <CardPadding>
+                    <CustomTextInput
+                      isActive={false}
+                      isValue={false}
+                      placeholder="Father's Name*"
+                      keyboardType="numeric"
+                      errorMessage=""
+                      isError={false}
+                      errorColor="red"
+                      textColor="black"
+                      maxLength={10}
+                      onKeyPress={() => {}}
+                    />
+                  </CardPadding>
+                </Card>
+              </CardMargin>
+            </View>
+          </AlignedContainer>
+          <FullLengthBox>
+            <AlignedContainer>
+              <View
+                style={{
+                  height: 60,
+                  justifyContent: 'space-between',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                <ToogleRadioText>Have you applied for PAN?</ToogleRadioText>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    width: 100,
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                  }}>
+                  <ToogleRadioText>No</ToogleRadioText>
 
-        <Label>Communication Address</Label>
+                  <Switch
+                    onValueChange={() => setPanApplied(!panApplied)}
+                    value={panApplied}
+                  />
+
+                  <ToogleRadioText>Yes</ToogleRadioText>
+                </View>
+              </View>
+            </AlignedContainer>
+          </FullLengthBox>
+          {panApplied ? (
+            <AlignedContainer>
+              <CardMargin>
+                <Card style={{elevation: 4, borderRadius: 5}}>
+                  <AutoCompleteTextInput
+                    style={{backgroundColor: 'red'}}
+                    testID={'12346'}
+                    name={`Nominee’s date of birth*ason`}
+                    invalid={false}
+                    maxLength={40}
+                    isRightImage={true}
+                    rightImage={require('../../../assets/icons_24_calendar.png')}
+                    // errorMessage={errors?.cityBal?.message}
+                    // data={businessCities}
+                    value={''}
+                    onChangeText={text => {
+                      //   onChange(text);
+                    }}
+                    placeholder={`Date of application*`}
+                    // onSelectListItem={item => onSelectCity(item, onChange)}
+                  />
+                </Card>
+              </CardMargin>
+              <CardMargin>
+                <Card style={{elevation: 4}}>
+                  <CardPadding>
+                    <CustomTextInput
+                      isActive={false}
+                      isValue={false}
+                      placeholder="Acknowledgement No.*"
+                      keyboardType="numeric"
+                      errorMessage=""
+                      isError={false}
+                      errorColor="red"
+                      textColor="black"
+                      maxLength={10}
+                      onKeyPress={() => {}}
+                    />
+                  </CardPadding>
+                </Card>
+              </CardMargin>
+            </AlignedContainer>
+          ) : null}
+        </View>
+      ) : null}
+
+      <AlignedContainer>
+        <Label>COMMUNICATION ADDRESS</Label>
       </AlignedContainer>
       <FullLengthBox>
         <AlignedContainer
@@ -103,7 +221,7 @@ const PersonalDetail = props => {
                 borderWidth: 1,
               }}></View>
             <View>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => setCommunicationAddress(true)}>
                 <ToogleRadioText>other address</ToogleRadioText>
               </TouchableOpacity>
 
@@ -250,7 +368,8 @@ const PersonalDetail = props => {
                   }}
                 />
                 <View>
-                  <TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => setCommunicationAddress(true)}>
                     <ToogleRadioText>other address</ToogleRadioText>
                   </TouchableOpacity>
 
@@ -284,6 +403,31 @@ const PersonalDetail = props => {
           </RightArrowButton>
         )}
       </AlignedContainer>
+
+      {communicationAddress ? (
+        <PopupCommunicationAddress
+          popupType="communication_address"
+          animationIn="bounceIn"
+          popupIcon={require('../../../assets/icon_24_location.png')}
+          isVisible={communicationAddress}
+          Heading={NEWCOMMUNICATIONADDRESS.NCA_FORM_HEADING} // Heading is assumed to be taken from constants
+          popupInfo={NEWCOMMUNICATIONADDRESS.NCA_SUB_HEADING}
+          isActive={false}
+          isValue={false}
+          TextInputPlaceholder=""
+          textColor="black"
+          // maxLength={10}
+          ButtonText="Confirm"
+          buttonPress={data => {
+            closeCAModal();
+            console.log(data);
+          }}
+          CancelButtonText="Cancel"
+          cancelButtonPress={() => closeCAModal()}
+          isError={false}
+          error_text={'validation failed'}
+        />
+      ) : null}
     </View>
   );
 };
@@ -311,6 +455,7 @@ const ToogleRadioText = styled.Text`
 `;
 
 const Label = styled.Text`
+  font-size: 11px;
   font-family: Inter;
   font-weight: bold;
   font-style: normal;
@@ -335,67 +480,7 @@ const CardMargin = styled.View`
 const CardPadding = styled.View`
   padding: 10px;
 `;
-const IconClose = styled.Image`
-  width: 24px;
-  height: 24px;
-`;
 
-const HeaderContainer = styled(UpperBoxContainer)`
-  height: 152px;
-  padding: 12px 15px 26px 12px;
-  margin-bottom: 38px;
-`;
-const CloseAndSave = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  margin-top: 5px;
-`;
 
-const SaveAndExit = styled.Text`
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 20px;
-  letter-spacing: -0.5px;
-  text-align: right;
-  color: #9b1e26;
-`;
-const LowerConatainer = styled.View`
-  background-color: #f6f6f6;
-  flex: 1;
-`;
-const PleaseEnter = styled.Text`
-  align-self:center
-    margin-bottom: 40px;
-    width: 406px;
-    height: 26px;
-    font-family: Inter;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 26px;
-   
-    text-align: center;
-    color: #ffffff;
-  `;
-
-const NameAndAge = styled.Text`
-  margin-right: 5px;
-`;
-const CustomerName = styled.Text`
-  font-family: Inter;
-  font-size: 20px;
-  font-weight: 800;
-  line-height: 26px;
-
-  color: #25243b;
-  margin-bottom: 5px;
-`;
-const header = {elevation: 0, paddingLeft: 20, alignItems: 'center'};
-const image = {
-  width: 48,
-  height: 48,
-  borderRadius: 24,
-};
 
 export default PersonalDetail;
