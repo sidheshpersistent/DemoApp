@@ -58,11 +58,18 @@ const Popup = props => {
               <Text style={styles.ButtonText}>{ButtonText}</Text>
             </TouchableOpacity>
             {/** TODO:  */}
-            {/* <TouchableOpacity
-              onPress={() => cancelButtonPress()}
-              style={styles.cancelBtn}>
-              <Text style={styles.cancelBtnTxt}>{CancelButtonText}</Text>
-            </TouchableOpacity> */}
+            {
+              cancelButtonPress?(
+                <TouchableOpacity
+                onPress={() => cancelButtonPress()}
+                style={styles.cancelBtn}>
+                <Text style={styles.cancelBtnTxt}>{CancelButtonText}</Text>
+              </TouchableOpacity> 
+              ):null
+              
+              
+            }
+          
           </ModalView>
         </CenteredView>
       </Modal>

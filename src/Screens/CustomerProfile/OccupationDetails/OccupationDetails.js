@@ -15,14 +15,24 @@ import UpperBoxContainer from '../../../components/UpperBoxContainer/UpperBoxCon
 import ProfileHeaderContainer from 'components/ProfileHeaderContainer';
 import {ScrollView} from 'react-native-gesture-handler';
 import AutoCompleteTextInput from '../../../components/AutoCompleteTextInput/AutoCompleteTextInput';
+import { NetworkCallExecutionStatus } from '../../../Utils';
 
 
 const OccupationDetails = props => {
+  const {next,prev}=props
   const [isIndianCitizen, toggleIndianCitizen] = useState(false);
 
   const SubmitButtonEnable = () => {
     return true;
   };
+
+
+  const forwardArrowPress=()=>{
+    next()
+  }
+  const backArrowPress=()=>{
+    prev()
+  }
 
   return (
     <BackgroundImage>
@@ -221,14 +231,14 @@ const OccupationDetails = props => {
               marginBottom: 38,
               flexDirection: 'row',
             }}>
-            <BackArrowButton>
+            <BackArrowButton onPress={()=>backArrowPress()}>
               <Image
                 source={require('../../../assets/arrow_back.png')}
                 style={RightArrowImage}
               />
             </BackArrowButton>
             {SubmitButtonEnable() ? (
-              <RightArrowButtonActive>
+              <RightArrowButtonActive onPress={()=>forwardArrowPress()} >
                 <Image
                   source={require('../../../assets/RightArrowWhite.png')}
                   style={RightArrowImage}
@@ -254,7 +264,7 @@ const RightArrowImage = {
   width: 40,
   height: 40,
 };
-const RightArrowButtonActive = styled.View`
+const RightArrowButtonActive = styled.TouchableOpacity`
   border-radius: 40px;
   width: 80px;
   height: 80px;
@@ -263,7 +273,7 @@ const RightArrowButtonActive = styled.View`
   justify-content: center;
 `;
 
-const BackArrowButton = styled.View`
+const BackArrowButton = styled.TouchableOpacity`
   border-radius: 40px;
   width: 80px;
   height: 80px;

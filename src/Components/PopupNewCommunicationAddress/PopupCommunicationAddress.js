@@ -186,7 +186,7 @@ const WhiteRectangleBox = styled.View`
   background-color: white;
   elevation: 3;
   shadow-color: #d60b26;
-  margin-vertical: 8;
+  margin-vertical: 8px;
 `;
 
 const SideIcon = styled.Image`
