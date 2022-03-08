@@ -98,8 +98,8 @@ const CustomerProfile = props => {
       case 2:
         return (
           <BankingPreferences
-            next={() => nextPage('occupation')}
-            prev={() => prevPage('BankingPreferences')}
+            next={() => nextPage('consent')}
+            prev={() => prevPage('banking')}
           />
         );
       case 3:
