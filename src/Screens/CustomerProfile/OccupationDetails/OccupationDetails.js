@@ -15,24 +15,22 @@ import UpperBoxContainer from '../../../components/UpperBoxContainer/UpperBoxCon
 import ProfileHeaderContainer from 'components/ProfileHeaderContainer';
 import {ScrollView} from 'react-native-gesture-handler';
 import AutoCompleteTextInput from '../../../components/AutoCompleteTextInput/AutoCompleteTextInput';
-import { NetworkCallExecutionStatus } from '../../../Utils';
-
+import {NetworkCallExecutionStatus} from '../../../Utils';
 
 const OccupationDetails = props => {
-  const {next,prev}=props
+  const {next, prev} = props;
   const [isIndianCitizen, toggleIndianCitizen] = useState(false);
 
   const SubmitButtonEnable = () => {
     return true;
   };
 
-
-  const forwardArrowPress=()=>{
-    next()
-  }
-  const backArrowPress=()=>{
-    prev()
-  }
+  const forwardArrowPress = () => {
+    next();
+  };
+  const backArrowPress = () => {
+    prev();
+  };
 
   return (
     <BackgroundImage>
@@ -231,14 +229,14 @@ const OccupationDetails = props => {
               marginBottom: 38,
               flexDirection: 'row',
             }}>
-            <BackArrowButton onPress={()=>backArrowPress()}>
+            <BackArrowButton onPress={() => backArrowPress()}>
               <Image
                 source={require('../../../assets/arrow_back.png')}
                 style={RightArrowImage}
               />
             </BackArrowButton>
             {SubmitButtonEnable() ? (
-              <RightArrowButtonActive onPress={()=>forwardArrowPress()} >
+              <RightArrowButtonActive onPress={() => forwardArrowPress()}>
                 <Image
                   source={require('../../../assets/RightArrowWhite.png')}
                   style={RightArrowImage}

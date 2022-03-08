@@ -19,7 +19,7 @@ import CustomerConsentDisabled from '../../components/TimeLineView/images/custom
 import PersonalDetail from './personalDetail/PersonalDetail';
 import OccupationDetails from './OccupationDetails/OccupationDetails';
 import CustomerConsent from './CustomerConsent/CustomerConsent';
-
+import BankingPreferences from './BankingPreferences/BankingPreferences'
 const iconClose = require('../../assets/iconClose.png');
 const data = [
   {
@@ -97,9 +97,10 @@ const CustomerProfile = props => {
         );
       case 2:
         return (
-          <View>
-            <Text>afdgf</Text>
-          </View>
+          <BankingPreferences
+            next={() => nextPage('occupation')}
+            prev={() => prevPage('BankingPreferences')}
+          />
         );
       case 3:
         return <CustomerConsent />;
