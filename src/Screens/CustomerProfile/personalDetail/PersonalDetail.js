@@ -17,10 +17,14 @@ import {NEWCOMMUNICATIONADDRESS} from '../../../constants/constants';
 import PopupCommunicationAddress from '../../../components/PopupNewCommunicationAddress/PopupCommunicationAddress';
 
 const PersonalDetail = props => {
+  const {data, next}=props
   const [nomineeVisible, setNomineeVisible] = useState(true);
   const [communicationAddress, setCommunicationAddress] = useState(false);
   const [form60Visible, setForm60Visible] = useState(false);
   const [panApplied, setPanApplied] = useState(false);
+  
+
+
   const closeCAModal = () => {
     setCommunicationAddress(false);
   };
@@ -36,6 +40,14 @@ const PersonalDetail = props => {
       setForm60Visible(false);
     }
   };
+
+  const arrowPress=()=>{
+    next()
+  }
+
+
+
+
 
   return (
     <View>
@@ -388,7 +400,7 @@ const PersonalDetail = props => {
           marginBottom: 38,
         }}>
         {SubmitButtonEnable() ? (
-          <RightArrowButtonActive>
+          <RightArrowButtonActive onPress={()=>arrowPress()}>
             <Image
               source={require('../../../assets/RightArrowWhite.png')}
               style={RightArrowImage}
@@ -436,7 +448,7 @@ const RightArrowImage = {
   width: 40,
   height: 40,
 };
-const RightArrowButtonActive = styled.View`
+const RightArrowButtonActive = styled.TouchableOpacity`
   border-radius: 40px;
   width: 80px;
   height: 80px;

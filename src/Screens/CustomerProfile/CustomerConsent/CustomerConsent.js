@@ -12,7 +12,9 @@ import {
   const CustomerConsent = (props) =>{
 
     return (
-       <View style={{flex:1}}></View>
+       <View style={{flex:1}}>
+         <Text>ayush</Text>
+         </View>
     )
   }
   export default CustomerConsent;

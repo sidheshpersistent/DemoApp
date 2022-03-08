@@ -47,7 +47,7 @@ export const TimeLineItem = ({item,length,index}) =>{
 export default TimeLineView;
 
 export const TimeLineItemContainer = styled.View`
-    height:90px;
+    
     width:${props =>{ return  (100/props.totalItem) + `%`}};
 `;
 // TODO:changed height width from 60 to 36

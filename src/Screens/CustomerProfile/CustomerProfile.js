@@ -23,62 +23,91 @@ import CustomerConsent from './CustomerConsent/CustomerConsent';
 const iconClose = require('../../assets/iconClose.png');
 const data = [
   {
-      'ID':1,
-      'img':'source',
-      'text':'Personal Details',
-      'isSelected': true,
-      'iconEnabled': PersonalDetailsEnabled,
-      'iconDisabled' : PersonalDetailsEnabled,
+    ID: 1,
+    type: 'personalDetail',
+    img: 'source',
+    text: 'Personal Details',
+    isSelected: true,
+    iconEnabled: PersonalDetailsEnabled,
+    iconDisabled: PersonalDetailsEnabled,
   },
   {
-      'ID':2,
-      'img':'source',
-      'text':'Occupational Details',
-      'isSelected':false,
-      'iconEnabled': OccupationDetailsEnabled,
-      'iconDisabled' : OccupationDetailsDisabled,
+    ID: 2,
+    type: 'occupation',
+    img: 'source',
+    text: 'Occupational Details',
+    isSelected: false,
+    iconEnabled: OccupationDetailsEnabled,
+    iconDisabled: OccupationDetailsDisabled,
   },
   {
-      'ID':3,
-      'img':'source',
-      'text':'Banking Preference',
-      'isSelected': false,
-      'iconEnabled': BankingPreferenceEnabled,
-      'iconDisabled' : BankingPreferenceDisabled,
+    ID: 3,
+    img: 'source',
+    type: 'banking',
+    text: 'Banking Preference',
+    isSelected: false,
+    iconEnabled: BankingPreferenceEnabled,
+    iconDisabled: BankingPreferenceDisabled,
   },
   {
-      'ID':4,
-      'img':'source',
-      'text':'Customer Consent',
-      'isSelected': false,
-      'iconEnabled': CustomerConsentEnabled,
-      'iconDisabled' : CustomerConsentDisabled,
-  }
-]
-const SelectPage = ()=>{
-  let selectedIndex = data.reduce((acc,curr,index) => {
-    if(curr.isSelected){
-      acc = index;
-      return acc;
-    }else{
-      return acc;
-    }
-  })
+    ID: 4,
+    img: 'source',
+    type: 'consent',
+    text: 'Customer Consent',
+    isSelected: false,
+    iconEnabled: CustomerConsentEnabled,
+    iconDisabled: CustomerConsentDisabled,
+  },
+];
 
-  switch (selectedIndex) {
-    case 0 : 
-      return  <PersonalDetail /> 
-    case 1 :
-      return  <OccupationDetails />
-    case 3 : 
-      return <CustomerConsent />
-    default :
-      return <PersonalDetail /> 
-  }
-}
 const CustomerProfile = props => {
+  const [screen, setScreen] = useState(data);
 
-  
+  const SelectPage = () => {
+    let selectedIndex = screen.reduce((acc, curr, index) => {
+      if (curr.isSelected) {
+        acc = index;
+        return acc;
+      } else {
+        return acc;
+      }
+    });
+    const nextPage = type => {
+      let newScreen = screen.map(element =>
+        element.type == type ? {...element, isSelected: true} : element,
+      );
+      setScreen(newScreen);
+    };
+    const prevPage = type => {
+      let newScreen = screen.map(element =>
+        element.type == type ? {...element, isSelected: false} : element,
+      );
+      setScreen(newScreen);
+    };
+
+    switch (selectedIndex) {
+      case 0:
+        return <PersonalDetail next={() => nextPage('occupation')} />;
+      case 1:
+        return (
+          <OccupationDetails
+            next={() => nextPage('banking')}
+            prev={() => prevPage('occupation')}
+          />
+        );
+      case 2:
+        return (
+          <View>
+            <Text>afdgf</Text>
+          </View>
+        );
+      case 3:
+        return <CustomerConsent />;
+      default:
+        return <PersonalDetail next={() => nextPage('occupation')} />;
+    }
+  };
+
   return (
     <BackgroundImage>
       <HeaderContainer>
@@ -123,23 +152,19 @@ const CustomerProfile = props => {
         <AlignedContainer>
           <View
             style={{
-              position: 'absolute',
-              top: -30,
+              position:"absolute",
+              top:-35,
               height: 100,
               width: '100%',
               alignSelf: 'center',
             }}>
-            <TimeLineView  data={data}></TimeLineView>
+            <TimeLineView data={screen}></TimeLineView>
           </View>
         </AlignedContainer>
-           <ScrollView style={{flex: 1, marginTop: 80, paddingTop: 20}}> 
-           {/**TODO: below we will conditinally render**/}
-      
-              
-           
+        <ScrollView style={{flex: 1, marginTop: 80, paddingTop: 20}}>
+          {/**TODO: below we will conditinally render**/}
+
           <SelectPage />
-
-
         </ScrollView>
       </LowerConatainer>
     </BackgroundImage>
