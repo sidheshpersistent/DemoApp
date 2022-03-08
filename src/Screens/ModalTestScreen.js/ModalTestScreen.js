@@ -4,7 +4,7 @@ import Popup from '../../components/Popup/Popup';
 import styled from 'styled-components/native';
 import PopUpExistingCustomer from '../../components/Popup/PopUpExistingCustomer';
 import PopupTextInput from '../../components/Popup/PopupTextInput';
-import PopupCommunicationAddress from '../../components/PopupNewCommunicationAddress/PopupCommunicationAddress';
+import PopupCommunicationAddress from '../../components/Popup/PopupCommunicationAddress';
 const icon = require('../../assets/info.png');
 const alertIcon = require('../../assets/alertIcon.png');
 const HEADING = {
@@ -32,7 +32,8 @@ const POPUP_INFO = {
     'The email address entered already exists in the Ban under the Customer ID: *****6471 and Name: Vicky Patil as fetched from CBS/MDM.',
 };
 
-import {NEWCOMMUNICATIONADDRESS} from '../../constants/constants';
+import {NEWCOMMUNICATIONADDRESS, EDITBRANCH} from '../../constants/constants';
+import PopupEditBranch from '../../components/Popup/PopupEditBranch';
 
 const ModelTestScreen = props => {
   const [isVisible, setIsvisible] = useState(false);
@@ -43,6 +44,7 @@ const ModelTestScreen = props => {
   const [number, setNumber] = useState('');
   const [panIncomeInfo, setPanIncomeInfo] = useState(PAN_INCOME_CHECK);
   const [communicationAddress, setCommunicationAddress] = useState(false);
+  const [editbranch, setEditbranch] = useState(false);
 
   const buttonPress = () => {
     setIsvisible(false);
@@ -64,6 +66,10 @@ const ModelTestScreen = props => {
 
   const closeCAModal = () => {
     setCommunicationAddress(false);
+  };
+
+  const closeEBModal = () => {
+    setEditbranch(false);
   };
 
   return (
@@ -96,6 +102,10 @@ const ModelTestScreen = props => {
         <Text style={{fontSize: 30, marginTop: 30}}>
           NEW COMMUNICATION ADDRESS
         </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => setEditbranch(true)}>
+        <Text style={{fontSize: 30, marginTop: 30}}>EDIT BRANCH POPUP</Text>
       </TouchableOpacity>
       {/** PAN SALARY CHECK */}
 
@@ -195,6 +205,31 @@ const ModelTestScreen = props => {
           }}
           CancelButtonText="Cancel"
           cancelButtonPress={() => closeCAModal()}
+          isError={false}
+          error_text={'validation failed'}
+        />
+      ) : null}
+
+      {editbranch ? (
+        <PopupEditBranch
+          popupType="edit_branch"
+          animationIn="bounceIn"
+          popupIcon={require('../../assets/icon_24_location.png')}
+          isVisible={editbranch}
+          Heading={EDITBRANCH.EB_FORM_HEADING} // Heading is assumed to be taken from constants
+          popupInfo={EDITBRANCH.EB_SUB_HEADING}
+          isActive={false}
+          isValue={false}
+          TextInputPlaceholder=""
+          textColor="black"
+          // maxLength={10}
+          ButtonText="Confirm"
+          buttonPress={data => {
+            closeEBModal();
+            console.log(data);
+          }}
+          CancelButtonText="Cancel"
+          cancelButtonPress={() => closeEBModal()}
           isError={false}
           error_text={'validation failed'}
         />

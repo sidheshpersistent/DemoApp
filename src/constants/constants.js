@@ -34,3 +34,9 @@ export const NEWCOMMUNICATIONADDRESS = {
   NCA_ADDRESS1: 'Address Line 1*',
   NCA_ADDRESS2: 'Address Line 2',
 };
+
+export const EDITBRANCH = {
+  EB_FORM_HEADING: 'Edit fetched branch',
+  EB_SUB_HEADING: 'Please select your preferred branch from the options below',
+  EB_BRANCH_LOCATION: 'Prefered branch location',
+};

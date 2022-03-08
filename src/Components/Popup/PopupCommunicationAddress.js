@@ -11,6 +11,12 @@ import {
 import styled from 'styled-components/native';
 import {NEWCOMMUNICATIONADDRESS} from '../../constants/constants';
 import Popup from '../Popup/Popup';
+import {
+  CardMargin,
+  CardPadding,
+} from '../../Screens/CustomerIdentificationDetails/CustomerIdentificationDetailsStyle';
+import Card from '../../components/CardView';
+import CustomTextInput from '../../components/ntb_sa/Inputs/CustomTextInput';
 
 const PopupCommunicationAddress = props => {
   const [pincode, setPincode] = useState('123456');
@@ -69,70 +75,73 @@ const PopupCommunicationAddress = props => {
             <PopupText>{popupInfo}</PopupText>
           </View>
 
-          <WhiteRectangleBox>
-            <InputContainer>
-              <TextInputStyle>
-                <TextInput
-                  keyboardType={'numeric'}
-                  style={{fontSize: 20, width: '100%'}}
+          <CardMargin>
+            <Card>
+              <CardPadding>
+                <CustomTextInput
+                  isActive={false}
+                  isValue={false}
                   placeholder={NEWCOMMUNICATIONADDRESS.NCA_PINCODE}
-                  isActive={isActive}
+                  keyboardType="numeric"
+                  errorMessage={error_text}
+                  isError={isError}
+                  errorColor="red"
+                  textColor={textColor}
+                  maxLength={maxLength}
                   value={pincode}
-                  onchangeText={text => {
+                  onChangeText={text => {
                     setPincode(text);
                   }}
+                />
+              </CardPadding>
+            </Card>
+          </CardMargin>
+
+          <CardMargin>
+            <Card>
+              <CardPadding>
+                <CustomTextInput
+                  isActive={false}
+                  isValue={false}
+                  placeholder={NEWCOMMUNICATIONADDRESS.NCA_ADDRESS1}
+                  keyboardType="default"
+                  errorMessage={error_text}
+                  isError={isError}
+                  errorColor="red"
                   textColor={textColor}
                   maxLength={maxLength}
-                />
-              </TextInputStyle>
-
-              {isError && <RedText>{error_text}</RedText>}
-            </InputContainer>
-          </WhiteRectangleBox>
-
-          <WhiteRectangleBox>
-            <InputContainer>
-              <TextInputStyle>
-                <TextInput
-                  keyboardType={'default'}
-                  style={{fontSize: 20, width: '100%'}}
-                  placeholder={NEWCOMMUNICATIONADDRESS.NCA_ADDRESS1}
-                  isActive={isActive}
                   value={address1}
-                  onchangeText={text => {
+                  onChangeText={text => {
                     setAddress1(text);
                   }}
+                />
+              </CardPadding>
+            </Card>
+          </CardMargin>
+
+          <CardMargin>
+            <Card>
+              <CardPadding>
+                <CustomTextInput
+                  isActive={false}
+                  isValue={false}
+                  placeholder={NEWCOMMUNICATIONADDRESS.NCA_ADDRESS2}
+                  keyboardType="default"
+                  errorMessage={error_text}
+                  isError={isError}
+                  errorColor="red"
                   textColor={textColor}
                   maxLength={maxLength}
-                />
-              </TextInputStyle>
-
-              {isError && <RedText>{error_text}</RedText>}
-            </InputContainer>
-          </WhiteRectangleBox>
-
-          <WhiteRectangleBox>
-            <InputContainer>
-              <TextInputStyle>
-                <TextInput
-                  keyboardType={'default'}
-                  style={{fontSize: 20, width: '100%'}}
-                  placeholder={NEWCOMMUNICATIONADDRESS.NCA_ADDRESS2}
-                  isActive={isActive}
                   value={address2}
-                  onchangeText={text => {
+                  onChangeText={text => {
                     setAddress2(text);
                   }}
-                  textColor={textColor}
-                  maxLength={maxLength}
                 />
-              </TextInputStyle>
+              </CardPadding>
+            </Card>
+          </CardMargin>
 
-              {isError && <RedText>{error_text}</RedText>}
-            </InputContainer>
-          </WhiteRectangleBox>
-
-          <View style={{marginVertical: 16}}>
+          <View style={{margin: 16}}>
             <CityText>{cityText}</CityText>
           </View>
         </BodyContainer>
