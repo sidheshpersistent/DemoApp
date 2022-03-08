@@ -14,7 +14,8 @@ import CustomTextInput from '../../../components/ntb_sa/Inputs/CustomTextInput';
 import UpperBoxContainer from '../../../components/UpperBoxContainer/UpperBoxContainer';
 import AutoCompleteTextInput from '../../../components/AutoCompleteTextInput/AutoCompleteTextInput';
 import {NEWCOMMUNICATIONADDRESS} from '../../../constants/constants';
-import PopupCommunicationAddress from '../../../components/PopupNewCommunicationAddress/PopupCommunicationAddress';
+import PopupCommunicationAddress from '../../../components/Popup/PopupCommunicationAddress';
+/* import PopupCommunicationAddress from '../../../components/PopupNewCommunicationAddress/PopupCommunicationAddress'; */
 
 const PersonalDetail = props => {
   const {data, next}=props
