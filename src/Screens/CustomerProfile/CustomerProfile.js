@@ -103,7 +103,10 @@ const CustomerProfile = props => {
           />
         );
       case 3:
-        return <CustomerConsent />;
+        return <CustomerConsent 
+            next={() => props.navigation.navigate('SASuccess')}
+            prev={() => prevPage('consent')}
+        />;
       default:
         return <PersonalDetail next={() => nextPage('occupation')} />;
     }

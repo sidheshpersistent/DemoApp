@@ -4300,6 +4300,8 @@
   "resolved" "https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.2.tgz"
   "version" "1.0.2"
 
+"encoding@^0.1.0":
+
 "end-of-stream@^1.1.0":
   "integrity" "sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q=="
   "resolved" "https://registry.npmjs.org/end-of-stream/-/end-of-stream-1.4.4.tgz"
@@ -8629,7 +8631,7 @@
   optionalDependencies:
     "moment" "^2.24.0"
 
-"react-native-codegen@*", "react-native-codegen@^0.0.7":
+"react-native-codegen@^0.0.7":
   "integrity" "sha512-dwNgR8zJ3ALr480QnAmpTiqvFo+rDtq6V5oCggKhYFlRjzOmVSFn3YD41u8ltvKS5G2nQ8gCs2vReFFnRGLYng=="
   "resolved" "https://registry.npmjs.org/react-native-codegen/-/react-native-codegen-0.0.7.tgz"
   "version" "0.0.7"
@@ -8666,13 +8668,6 @@
     "invariant" "^2.2.4"
     "prop-types" "^15.7.2"
 
-"react-native-gradle-plugin@^0.0.3":
-  "integrity" "sha512-mvkntuCKpKL26XV54XVBGt2hJWGh6IJc5rjOEXQ/9jd9FNhsbRnqdOjI8XMy1gLvK2X8xwbbpEym+QKunV658g=="
-  "resolved" "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.0.3.tgz"
-  "version" "0.0.3"
-  dependencies:
-    "react-native-codegen" "*"
-
 "react-native-linear-gradient@^2.5.6":
   "integrity" "sha512-HDwEaXcQIuXXCV70O+bK1rizFong3wj+5Q/jSyifKFLg0VWF95xh8XQgfzXwtq0NggL9vNjPKXa016KuFu+VFg=="
   "resolved" "https://registry.npmjs.org/react-native-linear-gradient/-/react-native-linear-gradient-2.5.6.tgz"
@@ -8699,9 +8694,7 @@
   "version" "4.1.0"
 
 "react-native-safe-area-context@^3.4.0", "react-native-safe-area-context@>= 3.0.0":
-  "integrity" "sha512-xfpVd0CiZR7oBhuwJ2HcZMehg5bjha1Ohu1XHpcT+9ykula0TgovH2BNU0R5Krzf/jBR1LMjR6VabxdlUjqxcA=="
-  "resolved" "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-3.4.1.tgz"
-  "version" "3.4.1"
+  "version" "3.4.0"
 
 "react-native-safe-modules@^1.0.3":
   "integrity" "sha512-DUxti4Z+AgJ/ZsO5U7p3uSCUBko8JT8GvFlCeOXk9bMd+4qjpoDvMYpfbixXKgL88M+HwmU/KI1YFN6gsQZyBA=="
@@ -8711,12 +8704,9 @@
     "dedent" "^0.6.0"
 
 "react-native-screens@^3.11.1", "react-native-screens@>= 3.0.0":
-  "integrity" "sha512-EB1H5GrYtCTG8gC4v8OeJLL1MHlWQBeh6oEu6kH02QllVEy5QI9p8YKtTp4l8w+FMXOXxEvNxKANc75RMtwriw=="
-  "resolved" "https://registry.npmjs.org/react-native-screens/-/react-native-screens-3.12.0.tgz"
-  "version" "3.12.0"
+  "version" "3.11.1"
   dependencies:
     "react-freeze" "^1.0.0"
-    "react-native-gradle-plugin" "^0.0.3"
     "warn-once" "^0.1.0"
 
 "react-native-slider@0.11.0":
@@ -8761,6 +8751,8 @@
   dependencies:
     "prop-types" "^15.7.2"
     "yargs" "^16.1.1"
+
+"react-native-web@>= 0.10.1":
 
 "react-native@*", "react-native@^0.0.0-0 || 0.60 - 0.67 || 1000.0.0", "react-native@>=0.45.0", "react-native@>=0.46", "react-native@>=0.50.0", "react-native@>=0.55", "react-native@>=0.57", "react-native@>=0.59", "react-native@>=0.64.0", "react-native@>=0.65.0", "react-native@0.66.4":
   "integrity" "sha512-9vx5dlSfQlKbbDtr8+xMon6qsmSu7jvjdXWZpEKh3XVKpUidbbODv7048gwVKX8YAel1egeR7hN8vzSeI6ssTw=="
@@ -10779,6 +10771,8 @@
   "integrity" "sha512-qBIvFLGiBpLjfwmYAaHPXsn+ho5xZnGvyGvsarywGNc8VyQJUMHJ8OBKGGrPER0okBeMDaan4mNBlgBROxuI8w=="
   "resolved" "https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-6.1.0.tgz"
   "version" "6.1.0"
+
+"webpack@>=2":
 
 "whatwg-encoding@^1.0.5":
   "integrity" "sha512-b5lim54JOPN9HtzvK9HFXvBma/rnfFeqsic0hSpjtDbVxR3dJKLc+KB4V6GgiGOvl7CY/KNh8rxSo9DKQrnUEw=="
