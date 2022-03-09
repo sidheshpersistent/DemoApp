@@ -40,3 +40,7 @@ export const EDITBRANCH = {
   EB_SUB_HEADING: 'Please select your preferred branch from the options below',
   EB_BRANCH_LOCATION: 'Prefered branch location',
 };
+
+export const CPD_CONSTANTS = {
+  CPD_SERVICES_REQUIRED: 'SERVICES REQUIRED',
+};
