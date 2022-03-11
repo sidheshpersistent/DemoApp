@@ -6,14 +6,14 @@ import ModelTestScreen from '../Screens/ModalTestScreen.js/ModalTestScreen';
 import LoginScreen from '../Screens/LogIn/LoginScreen';
 import CustomerIdentificationDetails from '../Screens/CustomerIdentificationDetails/CustomerIdentificationDetails';
 import CustomerProfile from '../Screens/CustomerProfile/CustomerProfile';
-
+import SASuccess from '../Screens/SASuccess/SASuccess';
 const Stack = createNativeStackNavigator();
 
 const AppContainer = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="ModelTestScreen"
+        initialRouteName="LoginScreen"
         screenOptions={{headerShown: false}}>
         <Stack.Screen name={'LoginScreen'} component={LoginScreen} />
         <Stack.Screen name={'Dashboard'} component={Dashboard} />
@@ -23,6 +23,7 @@ const AppContainer = () => {
           name={'CustomerIdentificationDetails'}
           component={CustomerIdentificationDetails}
         />
+        <Stack.Screen name={'SASuccess'} component={SASuccess} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -19,7 +19,6 @@ const BankingPreferences = props => {
     prev();
   };
 
-  
   return (
     <View>
       <AlignedContainer>

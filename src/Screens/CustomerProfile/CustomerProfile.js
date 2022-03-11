@@ -19,7 +19,7 @@ import CustomerConsentDisabled from '../../components/TimeLineView/images/custom
 import PersonalDetail from './personalDetail/PersonalDetail';
 import OccupationDetails from './OccupationDetails/OccupationDetails';
 import CustomerConsent from './CustomerConsent/CustomerConsent';
-import BankingPreferences from './BankingPreferences/BankingPreferences'
+import BankingPreferences from './BankingPreferences/BankingPreferences';
 const iconClose = require('../../assets/iconClose.png');
 const data = [
   {
@@ -103,7 +103,10 @@ const CustomerProfile = props => {
           />
         );
       case 3:
-        return <CustomerConsent />;
+        return <CustomerConsent 
+            next={() => props.navigation.navigate('SASuccess')}
+            prev={() => prevPage('consent')}
+        />;
       default:
         return <PersonalDetail next={() => nextPage('occupation')} />;
     }
@@ -153,8 +156,8 @@ const CustomerProfile = props => {
         <AlignedContainer>
           <View
             style={{
-              position:"absolute",
-              top:-35,
+              position: 'absolute',
+              top: -35,
               height: 100,
               width: '100%',
               alignSelf: 'center',

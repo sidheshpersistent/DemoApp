@@ -1,13 +1,56 @@
 import React, {useEffect, useState} from 'react';
 import Card from '../../../components/CardView';
-import {View, Image, Text, Pressable, TouchableOpacity} from 'react-native';
+import {View, Image, Text, Pressable, FlatList} from 'react-native';
 import styled from 'styled-components/native';
 import CustomTextInput from '../../../components/ntb_sa/Inputs/CustomTextInput';
 
 import AutoCompleteTextInput from '../../../components/AutoCompleteTextInput/AutoCompleteTextInput';
 import ProductCard from '../Components/ProductCard';
 import PersonalizedButton from '../Components/PersonalizedButton';
+import {CPD_CONSTANTS} from '../../../constants/constants';
+
+const Item = ({title}) => (
+  <Card
+    style={{
+      flex: 0.5,
+      padding: 16,
+      margin: 8,
+      borderWidth: 1,
+      borderColor: '#9b1e26',
+    }}>
+    <View
+      style={{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: 8,
+      }}>
+      <Image
+        source={require('../../../assets/checkbox_selected.png')}
+        style={checkBoxImage}
+      />
+      <Image
+        source={require('../../../assets/checkbox_selected.png')}
+        style={checkBoxImage}
+      />
+    </View>
+    <Text style={{fontSize: 12, fontWeight: '700', padding: 8}}>{title}</Text>
+  </Card>
+);
+
 const PersonalizedBanking = props => {
+  const [optionsList, setOptionsList] = useState([
+    {
+      title: 'Chequebook',
+      isSelected: false,
+    },
+    {
+      title: 'Debit Card',
+      isSelected: true,
+    },
+  ]);
+
+  const renderItem = ({item}) => <Item title={item.title} />;
+
   return (
     <View>
       <Label>RECOMMENDED PRODUCT</Label>
@@ -107,6 +150,14 @@ const PersonalizedBanking = props => {
           </TouchableOpacity>
         </Card>
       </CardMargin>
+
+      <Label>{CPD_CONSTANTS.CPD_SERVICES_REQUIRED}</Label>
+      <FlatList
+        data={optionsList}
+        renderItem={renderItem}
+        numColumns={2}
+        keyExtractor={item => item.id}
+      />
     </View>
   );
 };
@@ -123,6 +174,11 @@ const benefitStyle = {
   width: 40,
   height: 40,
   marginBottom: 8,
+};
+
+const checkBoxImage = {
+  width: 24,
+  height: 24,
 };
 
 const AlignedContainer = styled.View`
