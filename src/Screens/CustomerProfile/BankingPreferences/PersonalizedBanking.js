@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Card from '../../../components/CardView';
-import {View, Image, Text, Pressable} from 'react-native';
+import {View, Image, Text, Pressable, TouchableOpacity} from 'react-native';
 import styled from 'styled-components/native';
 import CustomTextInput from '../../../components/ntb_sa/Inputs/CustomTextInput';
 
@@ -86,6 +86,7 @@ const PersonalizedBanking = props => {
       <Label>PREFERRED BANK BRANCH</Label>
       <CardMargin>
         <Card style={{elevation: 4}}>
+          <TouchableOpacity>
           <AutoCompleteTextInput
             style={{backgroundColor: 'red'}}
             testID={'12345'}
@@ -103,6 +104,7 @@ const PersonalizedBanking = props => {
             placeholder={`Preferred branch location*`}
             // onSelectListItem={item => onSelectCity(item, onChange)}
           />
+          </TouchableOpacity>
         </Card>
       </CardMargin>
     </View>
