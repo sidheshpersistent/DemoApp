@@ -13,6 +13,9 @@ import Card from '../../../components/CardView';
 
 const CustomerConsent = props => {
   const {next, prev} = props;
+  const [isTermsNconditionsAccepted, toggleTermsNconditionsAccepted] =
+    useState(false);
+  const [isConsent, toggleConsent] = useState(false);
   const forwardArrowPress = () => {
     next();
   };
@@ -65,10 +68,23 @@ const CustomerConsent = props => {
       <FullLengthBox>
         <AlignedContainer>
           <View style={{flexDirection: 'row', marginVertical: 20}}>
-            <Image
-              source={require('../../../assets/upload.png')}
-              style={checkBoxStyle}
-            />
+            <TouchableOpacity
+              onPress={() =>
+                toggleTermsNconditionsAccepted(!isTermsNconditionsAccepted)
+              }
+              style={checkBoxStyle}>
+              {isTermsNconditionsAccepted ? (
+                <Image
+                  source={require('../../../assets/checked.png')}
+                  style={checkBoxStyle}
+                />
+              ) : (
+                <Image
+                  source={require('../../../assets/unchecked.png')}
+                  style={checkBoxStyle}
+                />
+              )}
+            </TouchableOpacity>
             <Text style={agreeText}>
               I agree to all{' '}
               <Text style={termsNconditionStyle}>Terms & Conditions</Text> of
@@ -83,10 +99,21 @@ const CustomerConsent = props => {
       <FullLengthBox>
         <AlignedContainer>
           <View style={{flexDirection: 'row', marginVertical: 20}}>
-            <Image
-              source={require('../../../assets/upload.png')}
-              style={checkBoxStyle}
-            />
+            <TouchableOpacity
+              onPress={() => toggleConsent(!isConsent)}
+              style={checkBoxStyle}>
+              {isConsent ? (
+                <Image
+                  source={require('../../../assets/checked.png')}
+                  style={checkBoxStyle}
+                />
+              ) : (
+                <Image
+                  source={require('../../../assets/unchecked.png')}
+                  style={checkBoxStyle}
+                />
+              )}
+            </TouchableOpacity>
             <Text style={agreeText}>
               I give consent for my Aadhaar authentication to open a new bank
               account

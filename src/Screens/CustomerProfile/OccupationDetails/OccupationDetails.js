@@ -20,6 +20,7 @@ import {NetworkCallExecutionStatus} from '../../../Utils';
 const OccupationDetails = props => {
   const {next, prev} = props;
   const [isIndianCitizen, toggleIndianCitizen] = useState(false);
+  const [isPoliticallyExposed, togglePoliticallyExposed] = useState(false);
 
   const SubmitButtonEnable = () => {
     return true;
@@ -134,11 +135,21 @@ const OccupationDetails = props => {
 
                   height: 70, // TODO: this height can be deleted later
                 }}>
-                <Button
-                  title="o"
-                  onPress={() =>
-                    toggleIndianCitizen(!isIndianCitizen)
-                  }></Button>
+                <TouchableOpacity
+                  onPress={() => toggleIndianCitizen(!isIndianCitizen)}
+                  style={checkBoxStyle}>
+                  {isIndianCitizen ? (
+                    <Image
+                      source={require('../../../assets/checked.png')}
+                      style={checkBoxStyle}
+                    />
+                  ) : (
+                    <Image
+                      source={require('../../../assets/unchecked.png')}
+                      style={checkBoxStyle}
+                    />
+                  )}
+                </TouchableOpacity>
                 <CheckBoxText style={{marginLeft: 12}}>
                   I am an Indian citizen paying taxes only in India.
                 </CheckBoxText>
@@ -214,7 +225,23 @@ const OccupationDetails = props => {
                   flexDirection: 'row',
                   height: 70, // TODO: this height can be deleted later
                 }}>
-                <Button title="o"></Button>
+                <TouchableOpacity
+                  onPress={() =>
+                    togglePoliticallyExposed(!isPoliticallyExposed)
+                  }
+                  style={checkBoxStyle}>
+                  {isPoliticallyExposed ? (
+                    <Image
+                      source={require('../../../assets/checked.png')}
+                      style={checkBoxStyle}
+                    />
+                  ) : (
+                    <Image
+                      source={require('../../../assets/unchecked.png')}
+                      style={checkBoxStyle}
+                    />
+                  )}
+                </TouchableOpacity>
                 <CheckBoxText style={{marginLeft: 12}}>
                   I am not a politically exposed person nor related to one.
                 </CheckBoxText>
@@ -309,3 +336,8 @@ const LowerConatainer = styled.View`
   background-color: #f6f6f6;
   flex: 1;
 `;
+const checkBoxStyle = {
+  width: 24,
+  height: 24,
+  marginRight: 12,
+};
