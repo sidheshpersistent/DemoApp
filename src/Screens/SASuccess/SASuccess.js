@@ -5,6 +5,7 @@ import styled from 'styled-components/native';
 import Card from '../../components/CardView';
 
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
+import {CardPadding} from '../CustomerIdentificationDetails/CustomerIdentificationDetailsStyle';
 const iconClose = require('../../assets/iconClose.png');
 const SASuccess = props => {
   const [iseNachMandate, seteNachMandate] = useState(true);
@@ -24,109 +25,188 @@ const SASuccess = props => {
             source={require('../../assets/success.png')}
             style={successStyle}
           />
-          <Text>Congratulations</Text>
-          <Text>Rohit Babar</Text>
-          <Text>Savings account has been successfully opened</Text>
+          <Text style={CongratsTextStyle}>Congratulations</Text>
+          <Text style={NameStyle}>Rohit Babar!</Text>
+          <Text style={successTextStyle}>
+            Savings account has been successfully opened
+          </Text>
         </View>
       </BackgroundImage>
 
-      <AlignedContainer>
-        <Label>ACCOUNT DETAILS</Label>
-        <CardMargin>
-          <Card
-            style={{
-              elevation: 4,
-              backgroundColor: '#ffffff',
-              alignItems: 'center',
-              padding: 20,
-              flexDirection: 'row',
-            }}>
-            <View style={{flex: 0.5}}>
-              <View>
-                <Text style={AccDetailsTextStyle}>Customer ID</Text>
-                <Text style={AccDetailsValueStyle}>5000006233</Text>
-              </View>
-
-              <View style={{marginTop: 20}}>
-                <Text style={AccDetailsTextStyle}>IFSC Code</Text>
-                <Text style={AccDetailsValueStyle}>IDFB0040101</Text>
-              </View>
-            </View>
-
-            <View style={{flex: 0.5}}>
-              <View>
-                <Text style={AccDetailsTextStyle}>Account No.</Text>
-                <Text style={AccDetailsValueStyle}>100345678030</Text>
-              </View>
-
-              <View style={{marginTop: 20}}>
-                <Text style={AccDetailsTextStyle}>Branch name</Text>
-                <Text style={AccDetailsValueStyle}>Powai</Text>
-              </View>
-            </View>
-          </Card>
-        </CardMargin>
-
-        <Label>MODE OF PAYMENT</Label>
-        <CardMargin></CardMargin>
-      </AlignedContainer>
-      <FullLengthBox>
+      <ScrollView>
         <AlignedContainer>
-          <View
-            style={{
-              height: 60,
-              justifyContent: 'space-between',
-              flexDirection: 'row',
-              alignItems: 'center',
-            }}>
-            <ToogleRadioText>Setup eNach mandate?</ToogleRadioText>
+          <Label>ACCOUNT DETAILS</Label>
+          <CardMargin>
+            <Card
+              style={{
+                elevation: 4,
+                backgroundColor: '#ffffff',
+                alignItems: 'center',
+                padding: 20,
+                flexDirection: 'row',
+              }}>
+              <View style={{flex: 0.5}}>
+                <View>
+                  <Text style={AccDetailsTextStyle}>Customer ID</Text>
+                  <Text style={AccDetailsValueStyle}>5000006233</Text>
+                </View>
+
+                <View style={{marginTop: 20}}>
+                  <Text style={AccDetailsTextStyle}>IFSC Code</Text>
+                  <Text style={AccDetailsValueStyle}>IDFB0040101</Text>
+                </View>
+              </View>
+
+              <View style={{flex: 0.5}}>
+                <View>
+                  <Text style={AccDetailsTextStyle}>Account No.</Text>
+                  <Text style={AccDetailsValueStyle}>100345678030</Text>
+                </View>
+
+                <View style={{marginTop: 20}}>
+                  <Text style={AccDetailsTextStyle}>Branch name</Text>
+                  <Text style={AccDetailsValueStyle}>Powai</Text>
+                </View>
+              </View>
+            </Card>
+          </CardMargin>
+
+          <Label>MODE OF PAYMENT</Label>
+          <CardMargin>
+            <Card style={{elevation: 4}}>
+              <CardPadding>
+                <View style={{flexDirection: 'row', padding: 10}}>
+                  <View //TODO: this we will remove and apply ccl
+                    style={{
+                      marginRight: 20,
+                      width: 24,
+                      height: 24,
+                      borderRadius: 12,
+                      borderColor: '#9b1e26',
+                      borderWidth: 1,
+                    }}
+                  />
+                  <View>
+                    <TouchableOpacity
+                      onPress={() => setCommunicationAddress(true)}>
+                      <ToogleRadioText>
+                        Online payment on this device
+                      </ToogleRadioText>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </CardPadding>
+            </Card>
+          </CardMargin>
+          <CardMargin>
+            <Card style={{elevation: 4}}>
+              <CardPadding>
+                <View style={{flexDirection: 'row', padding: 10}}>
+                  <View //TODO: this we will remove and apply ccl
+                    style={{
+                      marginRight: 20,
+                      width: 24,
+                      height: 24,
+                      borderRadius: 12,
+                      borderColor: '#9b1e26',
+                      borderWidth: 1,
+                    }}
+                  />
+                  <View>
+                    <TouchableOpacity
+                      onPress={() => setCommunicationAddress(true)}>
+                      <ToogleRadioText>
+                        Online payment on own device
+                      </ToogleRadioText>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </CardPadding>
+            </Card>
+          </CardMargin>
+          <CardMargin>
+            <Card style={{elevation: 4}}>
+              <CardPadding>
+                <View style={{flexDirection: 'row', padding: 10}}>
+                  <View //TODO: this we will remove and apply ccl
+                    style={{
+                      marginRight: 20,
+                      width: 24,
+                      height: 24,
+                      borderRadius: 12,
+                      borderColor: '#9b1e26',
+                      borderWidth: 1,
+                    }}
+                  />
+                  <View>
+                    <TouchableOpacity
+                      onPress={() => setCommunicationAddress(true)}>
+                      <ToogleRadioText>Payment via cheque</ToogleRadioText>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </CardPadding>
+            </Card>
+          </CardMargin>
+        </AlignedContainer>
+        <FullLengthBox>
+          <AlignedContainer>
             <View
               style={{
-                flexDirection: 'row',
-                width: 100,
+                height: 60,
                 justifyContent: 'space-between',
+                flexDirection: 'row',
                 alignItems: 'center',
               }}>
-              <ToogleRadioText>No</ToogleRadioText>
+              <ToogleRadioText>Setup eNach mandate?</ToogleRadioText>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  width: 100,
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}>
+                <ToogleRadioText>No</ToogleRadioText>
 
-              <Switch
-                onValueChange={() => seteNachMandate(!iseNachMandate)}
-                value={iseNachMandate}
-              />
+                <Switch
+                  onValueChange={() => seteNachMandate(!iseNachMandate)}
+                  value={iseNachMandate}
+                />
 
-              <ToogleRadioText>Yes</ToogleRadioText>
+                <ToogleRadioText>Yes</ToogleRadioText>
+              </View>
             </View>
-          </View>
-        </AlignedContainer>
-      </FullLengthBox>
+          </AlignedContainer>
+        </FullLengthBox>
 
-      <FullLengthBox>
-        <AlignedContainer>
-          <View style={{flexDirection: 'row', marginVertical: 20}}>
-            <TouchableOpacity
-              onPress={() => setConfirmation(!isConfirmed)}
-              style={checkBoxStyle}>
-              {isConfirmed ? (
-                <Image
-                  source={require('../../assets/checked.png')}
-                  style={checkBoxStyle}
-                />
-              ) : (
-                <Image
-                  source={require('../../assets/unchecked.png')}
-                  style={checkBoxStyle}
-                />
-              )}
-            </TouchableOpacity>
-            <Text>
-              I confirm that the funds will be transferred from my own account
-            </Text>
-          </View>
-        </AlignedContainer>
-      </FullLengthBox>
-      <TouchableOpacity onPress={() => alert('hi')} style={Button}>
-        <Text style={ButtonText}>Fund Account</Text>
-      </TouchableOpacity>
+        <FullLengthBox>
+          <AlignedContainer>
+            <View style={{flexDirection: 'row', marginVertical: 20}}>
+              <TouchableOpacity
+                onPress={() => setConfirmation(!isConfirmed)}
+                style={checkBoxStyle}>
+                {isConfirmed ? (
+                  <Image
+                    source={require('../../assets/checked.png')}
+                    style={checkBoxStyle}
+                  />
+                ) : (
+                  <Image
+                    source={require('../../assets/unchecked.png')}
+                    style={checkBoxStyle}
+                  />
+                )}
+              </TouchableOpacity>
+              <Text style={confirmationStyle}>
+                I confirm that the funds will be transferred from my own account
+              </Text>
+            </View>
+          </AlignedContainer>
+        </FullLengthBox>
+        <TouchableOpacity onPress={() => alert('coming soon')} style={Button}>
+          <Text style={ButtonText}>Fund Account</Text>
+        </TouchableOpacity>
+      </ScrollView>
     </View>
   );
 };
@@ -134,8 +214,8 @@ const SASuccess = props => {
 const CloseAndSave = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 16px;
-  margin-top: 12px;
+  margin-bottom: 40px;
+  margin-top: 16px;
   margin-horizontal: 16px;
 `;
 
@@ -254,5 +334,35 @@ const AccDetailsTextStyle = {
 const AccDetailsValueStyle = {
   fontFamily: 'Inter-SemiBold',
   color: '#25243b',
+  fontWeight: 'bold',
+};
+const CongratsTextStyle = {
+  fontSize: 24,
+  fontFamily: 'Inter - Light',
+  lineHeight: 32,
+  color: '#ffffff',
+  marginTop: 12,
+};
+
+const NameStyle = {
+  fontSize: 24,
+  fontFamily: 'Inter - Bold',
+  lineHeight: 32,
+  color: '#ffffff',
+  fontWeight: 'bold',
+  marginBottom: 4,
+};
+const successTextStyle = {
+  fontSize: 16,
+  fontFamily: 'Inter',
+  lineHeight: 20,
+  color: '#ffffff',
+};
+
+const confirmationStyle = {
+  color: '#25243b',
+  fontSize: 14,
+  fontFamily: 'Inter',
+  lineHeight: 20,
 };
 export default SASuccess;
