@@ -129,6 +129,7 @@ const PersonalizedBanking = props => {
       <Label>PREFERRED BANK BRANCH</Label>
       <CardMargin>
         <Card style={{elevation: 4}}>
+          <TouchableOpacity>
           <AutoCompleteTextInput
             style={{backgroundColor: 'red'}}
             testID={'12345'}
@@ -146,6 +147,7 @@ const PersonalizedBanking = props => {
             placeholder={`Preferred branch location*`}
             // onSelectListItem={item => onSelectCity(item, onChange)}
           />
+          </TouchableOpacity>
         </Card>
       </CardMargin>
 
