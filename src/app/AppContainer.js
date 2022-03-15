@@ -7,6 +7,7 @@ import LoginScreen from '../Screens/LogIn/LoginScreen';
 import CustomerIdentificationDetails from '../Screens/CustomerIdentificationDetails/CustomerIdentificationDetails';
 import CustomerProfile from '../Screens/CustomerProfile/CustomerProfile';
 import SASuccess from '../Screens/SASuccess/SASuccess';
+import Scan from '../Screens/QRcodeScanner/Scan'
 const Stack = createNativeStackNavigator();
 
 const AppContainer = () => {
@@ -24,6 +25,7 @@ const AppContainer = () => {
           component={CustomerIdentificationDetails}
         />
         <Stack.Screen name={'SASuccess'} component={SASuccess} />
+        <Stack.Screen name={'Scan'} component={Scan} />
       </Stack.Navigator>
     </NavigationContainer>
   );

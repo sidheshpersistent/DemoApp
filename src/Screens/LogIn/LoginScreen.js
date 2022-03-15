@@ -73,6 +73,11 @@ const LoginScreen = (props) => {
                     {/* TODO: ccl Button to be used here */}
                         <TouchableOpacity testID={'signin'} onPress={loginAPiCall} style={{ backgroundColor: '#9b1e26', height: 56, marginHorizontal: 20, borderRadius: 27,  justifyContent: 'center', alignItems: 'center' }}><Text style={{ fontSize: 17, color: 'white' }}>{'Login'}</Text></TouchableOpacity>
                     </LoginButtonView>
+
+                    <LoginButtonView>
+                    {/* TODO: ccl Button to be used here */}
+                        <TouchableOpacity testID={'signin'} onPress={()=>props.navigation.navigate('Scan')} style={{ backgroundColor: '#9b1e26', height: 56, marginHorizontal: 20, borderRadius: 27,  justifyContent: 'center', alignItems: 'center' }}><Text style={{ fontSize: 17, color: 'white' }}>{'scan now'}</Text></TouchableOpacity>
+                    </LoginButtonView>
                 </LoginBox>
             </LoginBoxContainer>
             </LoginContainer>
