@@ -7,13 +7,15 @@ import LoginScreen from '../Screens/LogIn/LoginScreen';
 import CustomerIdentificationDetails from '../Screens/CustomerIdentificationDetails/CustomerIdentificationDetails';
 import CustomerProfile from '../Screens/CustomerProfile/CustomerProfile';
 import SASuccess from '../Screens/SASuccess/SASuccess';
+import AccountOnHold from '../Screens/AccountOnHold/AccountOnHold';
+import PreApprovedOffers from '../Screens/PreApprovedOffers/PreApprovedOffers';
 const Stack = createNativeStackNavigator();
 
 const AppContainer = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="LoginScreen"
+        initialRouteName="PreApprovedOffers"
         screenOptions={{headerShown: false}}>
         <Stack.Screen name={'LoginScreen'} component={LoginScreen} />
         <Stack.Screen name={'Dashboard'} component={Dashboard} />
@@ -24,6 +26,11 @@ const AppContainer = () => {
           component={CustomerIdentificationDetails}
         />
         <Stack.Screen name={'SASuccess'} component={SASuccess} />
+        <Stack.Screen name={'AccountOnHold'} component={AccountOnHold} />
+        <Stack.Screen
+          name={'PreApprovedOffers'}
+          component={PreApprovedOffers}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
