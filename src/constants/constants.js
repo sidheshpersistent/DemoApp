@@ -59,3 +59,15 @@ export const PAO_CONSTANTS = {
   PAO_INTRO: 'Explore exciting pre-approved offers for your customer',
   PAO_NAVIGATE_BUTTON_TEXT: 'Go To Dashboard',
 };
+
+export const AS_CONSTANTS = {
+  AS_HEADER: 'Please verify account details basis kit selected',
+  AS_ACCOUNT_TYPE_HEADER: 'ACCOUNT TYPE',
+  AS_ACCOUNT_NUMBER_HEADER: 'ACCOUNT NUMBER',
+  AS_UCIC_HEADER: 'UCIC',
+  AS_FETCHED_BRANCH_HEADER: 'FETCHED BRANCH',
+  AS_ACCOUNT_TYPE: 'Insta-Savings + Signature Card',
+  AS_ACCOUNT_NUMBER: '100345678030',
+  AS_UCIC: '1000401288',
+  AS_FETCHED_BRANCH: 'BKC - Naman',
+};

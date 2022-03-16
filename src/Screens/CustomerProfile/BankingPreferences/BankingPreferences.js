@@ -10,9 +10,11 @@ import PersonalizedButton from '../Components/PersonalizedButton';
 import PersonalizedBanking from './PersonalizedBanking';
 import InstantBanking from './InstantBanking';
 import {RightArrowButton} from '../../CustomerIdentificationDetails/CustomerIdentificationDetailsStyle';
+import AfterScan from './AfterScan';
 const BankingPreferences = props => {
   const {next, prev} = props;
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isScanned, setIsScanned] = useState(true);
   const forwardArrowPress = () => {
     next();
   };
@@ -23,13 +25,21 @@ const BankingPreferences = props => {
   return (
     <View>
       <AlignedContainer>
-        <PersonalizedButton
-          selectedButtonIndex={index => {
-            setActiveIndex(index);
-          }}
-        />
+        {isScanned != true && (
+          <PersonalizedButton
+            selectedButtonIndex={index => {
+              setActiveIndex(index);
+            }}
+          />
+        )}
         <ScrollView>
-          {activeIndex === 0 ? <PersonalizedBanking /> : <InstantBanking />}
+          {isScanned == true ? (
+            <AfterScan />
+          ) : activeIndex == 0 ? (
+            <PersonalizedBanking />
+          ) : (
+            <InstantBanking />
+          )}
           <AlignedContainer
             style={{
               alignItems: 'center',

@@ -15,7 +15,7 @@ const AppContainer = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="PreApprovedOffers"
+        initialRouteName="CustomerProfile"
         screenOptions={{headerShown: false}}>
         <Stack.Screen name={'LoginScreen'} component={LoginScreen} />
         <Stack.Screen name={'Dashboard'} component={Dashboard} />
