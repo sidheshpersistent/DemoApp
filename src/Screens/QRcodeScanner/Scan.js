@@ -12,19 +12,19 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 import {RNCamera} from 'react-native-camera';
 
 const onSuccess = e => {
- 
-  console.log(e)
-  /* Linking.openURL(e.data).catch(err => console.error('An error occured', err)); */ 
+  alert(JSON.stringify(e));
+  console.log(e);
+  /* Linking.openURL(e.data).catch(err => console.error('An error occured', err)); */
 };
 class Scan extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
         <QRCodeScanner
-          onRead={(e) => onSuccess(e)}
+          onRead={e => onSuccess(e)}
           flashMode={RNCamera.Constants.FlashMode.auto}
           reactivate={true}
-          reactivateTimeout={300}
+          
           //   ref={node => {
           //     this.scanner = node;
           //   }}
