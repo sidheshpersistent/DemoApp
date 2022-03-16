@@ -9,6 +9,7 @@ import ProductCard from '../Components/ProductCard';
 import PersonalizedButton from '../Components/PersonalizedButton';
 import PersonalizedBanking from './PersonalizedBanking';
 import InstantBanking from './InstantBanking';
+import {RightArrowButton} from '../../CustomerIdentificationDetails/CustomerIdentificationDetailsStyle';
 const BankingPreferences = props => {
   const {next, prev} = props;
   const [activeIndex, setActiveIndex] = useState(0);

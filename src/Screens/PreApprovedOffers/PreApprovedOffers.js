@@ -1,5 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, Image, Switch, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  FlatList,
+  TouchableOpacity,
+  ImageBackground,
+} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
 import Card from '../../components/CardView';
@@ -10,7 +17,135 @@ import {PAO_CONSTANTS} from '../../constants/constants';
 import UpperBoxContainer from '../../components/UpperBoxContainer/UpperBoxContainer';
 
 const iconClose = require('../../assets/iconClose.png');
+
+const Item = ({item}) => (
+  <Card
+    style={{
+      flex: 1,
+      margin: 8,
+      borderWidth: 0,
+      marginHorizontal: 57,
+    }}>
+    <ImageBackground
+      borderRadius={8}
+      source={item.backgroundImage}
+      style={{
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: 16,
+      }}>
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Image
+          source={item.itemImage}
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            height: 92,
+            width: 68,
+          }}
+          resizeMode={'center'}
+        />
+      </View>
+
+      <View
+        style={{
+          flex: 3,
+          justifyContent: 'center',
+          alignItems: 'flex-start',
+        }}>
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'flex-start',
+          }}>
+          <Text style={titleText}>{item.title}</Text>
+          <Text style={introText}>{item?.intro_1}</Text>
+          <Text style={introText}>{item?.intro_2}</Text>
+        </View>
+
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'flex-start',
+          }}>
+          <View
+            style={{
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'flex-start',
+            }}>
+            <TouchableOpacity onPress={() => {}} style={ButtonKM}>
+              <Text style={ButtonKMText}>{item.button_1}</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View
+            style={{
+              flex: 1.5,
+              justifyContent: 'center',
+              alignItems: 'flex-start',
+            }}>
+            <TouchableOpacity onPress={() => {}} style={ButtonAO}>
+              <Text style={ButtonAOText}>{item.button_2}</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </ImageBackground>
+  </Card>
+);
+
 const PreApprovedOffers = props => {
+  const [optionsList, setOptionsList] = useState([
+    {
+      title: 'FIRST Wealth Credit Card',
+      backgroundImage: require('../../assets/background_1.png'),
+      itemImage: require('../../assets/icon_1.png'),
+      intro_1: 'With Visa Infinite Card',
+      intro_2: 'Avg. Monthly Balance ₹25,000',
+      button_1: 'Know More',
+      button_2: 'Avail Offer',
+    },
+    {
+      title: 'Cover your hospitalisation expenses at just ₹2200/yr',
+      backgroundImage: require('../../assets/background_2.png'),
+      itemImage: require('../../assets/icon_2.png'),
+      intro_1: '',
+      intro_2: '',
+      button_1: 'Know More',
+      button_2: 'Avail Offer',
+    },
+    {
+      title: 'Pradhan Mantri Jeevan Jyoti Bima Yojana',
+      backgroundImage: require('../../assets/background_3.png'),
+      itemImage: require('../../assets/icon_3.png'),
+      intro_1: '',
+      intro_2: '',
+      button_1: 'Know More',
+      button_2: 'Avail Offer',
+    },
+    {
+      title: 'Pradhan Mantri Suraksha Bima Yojana',
+      backgroundImage: require('../../assets/background_4.png'),
+      itemImage: require('../../assets/icon_4.png'),
+      intro_1: '',
+      intro_2: '',
+      button_1: 'Know More',
+      button_2: 'Avail Offer',
+    },
+  ]);
+
+  const renderItem = ({item}) => <Item item={item} />;
+
   return (
     <View style={{flex: 1, backgroundColor: '#f6f6f6'}}>
       <HeaderContainer>
@@ -30,7 +165,13 @@ const PreApprovedOffers = props => {
         </View>
       </HeaderContainer>
 
-      <View></View>
+      <View>
+        <FlatList
+          data={optionsList}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+        />
+      </View>
 
       <TouchableOpacity
         onPress={() => {
@@ -46,7 +187,7 @@ const PreApprovedOffers = props => {
 const CloseAndSave = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   margin-top: 16px;
   margin-horizontal: 16px;
 `;
@@ -113,15 +254,67 @@ const image = {
   borderRadius: 24,
 };
 
-const CustomerName = styled.Text`
-  font-family: Inter;
-  font-size: 20px;
-  font-weight: 800;
-  line-height: 26px;
+const titleText = {
+  fontWeight: '600',
+  fontFamily: 'Inter-SemiBold',
+  fontSize: 24,
+  lineHeight: 32,
+  letterSpacing: -0.6,
+  textAlign: 'left',
+  color: '#ffffff',
+};
 
-  color: #25243b;
-  margin-bottom: 5px;
-`;
+const introText = {
+  fontFamily: 'Inter-Regular',
+  fontSize: 12,
+  lineHeight: 18,
+  letterSpacing: -0.5,
+  textAlign: 'left',
+  color: '#dbdbde',
+};
+
+const ButtonKM = {
+  marginTop: 20,
+  marginBottom: 20,
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: 99,
+  height: 36,
+  borderRadius: 27,
+  borderWidth: 0.8,
+  borderColor: '#c9c9c9',
+};
+
+const ButtonAO = {
+  marginTop: 20,
+  marginBottom: 20,
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: 99,
+  height: 36,
+  borderRadius: 27,
+  borderWidth: 0.8,
+  borderColor: '#ffffff',
+  backgroundColor: '#ffffff',
+};
+
+const ButtonKMText = {
+  fontFamily: 'Inter-SemiBold',
+  fontSize: 12,
+  lineHeight: 18,
+  letterSpacing: 0,
+  textAlign: 'center',
+  color: '#ffffff',
+};
+
+const ButtonAOText = {
+  fontFamily: 'Inter-SemiBold',
+  fontSize: 12,
+  lineHeight: 18,
+  letterSpacing: 0,
+  textAlign: 'center',
+  color: '#9b1e26',
+};
 
 const NameAndAge = styled.Text`
   margin-right: 5px;
@@ -211,7 +404,7 @@ const confirmationStyle = {
 };
 
 const HeaderContainer = styled(UpperBoxContainer)`
-  height: 166px;
+  height: 156px;
   padding: 12px 15px 26px 12px;
   margin-bottom: 38px;
 `;
