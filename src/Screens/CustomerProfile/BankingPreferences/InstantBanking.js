@@ -13,7 +13,7 @@ const InstantBanking = props => {
       <Label>RECOMMENDED PRODUCT</Label>
       <ProductCard
         onPressCard={() => {
-          if (!props.isEmulator) {
+          if (props.isEmulator) {
             alert('You are on emulator');
           } else {
             props.scanNowClicked();
