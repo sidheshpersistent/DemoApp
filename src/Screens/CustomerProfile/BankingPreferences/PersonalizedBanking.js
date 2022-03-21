@@ -1,6 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import Card from '../../../components/CardView';
-import {View, Image, Text, Pressable, FlatList} from 'react-native';
+import {
+  View,
+  Image,
+  Text,
+  Pressable,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
 import styled from 'styled-components/native';
 import CustomTextInput from '../../../components/ntb_sa/Inputs/CustomTextInput';
 
@@ -130,23 +137,23 @@ const PersonalizedBanking = props => {
       <CardMargin>
         <Card style={{elevation: 4}}>
           <TouchableOpacity>
-          <AutoCompleteTextInput
-            style={{backgroundColor: 'red'}}
-            testID={'12345'}
-            name={`Reason`}
-            invalid={false}
-            maxLength={40}
-            isRightImage={true}
-            rightImage={require('../../../assets/icons_24_chevron_down.png')}
-            // errorMessage={errors?.cityBal?.message}
-            // data={businessCities}
-            value={''}
-            onChangeText={text => {
-              //   onChange(text);
-            }}
-            placeholder={`Preferred branch location*`}
-            // onSelectListItem={item => onSelectCity(item, onChange)}
-          />
+            <AutoCompleteTextInput
+              style={{backgroundColor: 'red'}}
+              testID={'12345'}
+              name={`Reason`}
+              invalid={false}
+              maxLength={40}
+              isRightImage={true}
+              rightImage={require('../../../assets/icons_24_chevron_down.png')}
+              // errorMessage={errors?.cityBal?.message}
+              // data={businessCities}
+              value={''}
+              onChangeText={text => {
+                //   onChange(text);
+              }}
+              placeholder={`Preferred branch location*`}
+              // onSelectListItem={item => onSelectCity(item, onChange)}
+            />
           </TouchableOpacity>
         </Card>
       </CardMargin>

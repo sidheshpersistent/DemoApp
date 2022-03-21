@@ -28,6 +28,7 @@
     "react-native-calendars": "1.1275.0",
     "react-native-camera": "^4.2.1",
     "react-native-confirmation-code-field": "7.2.0",
+    "react-native-device-info": "^8.5.0",
     "react-native-extra-dimensions-android": "1.2.5",
     "react-native-flip-card": "3.5.6",
     "react-native-gesture-handler": "1.10.3",

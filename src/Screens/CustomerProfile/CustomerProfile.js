@@ -98,6 +98,7 @@ const CustomerProfile = props => {
       case 2:
         return (
           <BankingPreferences
+            navigation={props.navigation}
             next={() => nextPage('consent')}
             prev={() => prevPage('banking')}
           />
@@ -105,7 +106,7 @@ const CustomerProfile = props => {
       case 3:
         return (
           <CustomerConsent
-            next={() => props.navigation.navigate('SASuccess')}
+            next={() => props.navigation.navigate('AccountOnHold')}
             // next={() => alert('coming soon')}
             prev={() => prevPage('consent')}
           />

@@ -203,8 +203,14 @@ const SASuccess = props => {
             </View>
           </AlignedContainer>
         </FullLengthBox>
-        <TouchableOpacity onPress={() => alert('coming soon')} style={Button}>
-          <Text style={ButtonText}>Fund Account</Text>
+        <TouchableOpacity
+          onPress={() =>
+            iseNachMandate
+              ? props.navigation.navigate('ENachMandate')
+              : props.navigation.navigate('PreApprovedOffers')
+          }
+          style={Button}>
+          <Text style={ButtonText}>Proceed</Text>
         </TouchableOpacity>
       </ScrollView>
     </View>

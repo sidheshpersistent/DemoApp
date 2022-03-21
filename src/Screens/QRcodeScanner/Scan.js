@@ -13,8 +13,8 @@ import {RNCamera} from 'react-native-camera';
 
 const onSuccess = e => {
   alert(JSON.stringify(e));
-  console.log(e);
-  /* Linking.openURL(e.data).catch(err => console.error('An error occured', err)); */
+  console.log(e.data);
+  //Linking.openURL(e.data).catch(err => console.error('An error occured', err));
 };
 class Scan extends Component {
   render() {
@@ -24,17 +24,10 @@ class Scan extends Component {
           onRead={e => onSuccess(e)}
           flashMode={RNCamera.Constants.FlashMode.auto}
           reactivate={true}
-          
           //   ref={node => {
           //     this.scanner = node;
           //   }}
-          topContent={
-            <Text style={styles.centerText}>
-              Go to{' '}
-              <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on
-              your computer and scan the QR code.
-            </Text>
-          }
+          topContent={<Text style={styles.textBold}> scan the QR code.</Text>}
           bottomContent={
             <TouchableOpacity style={styles.buttonTouchable}>
               <Text style={styles.buttonText}>OK. Got it!</Text>

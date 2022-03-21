@@ -9,26 +9,44 @@ import ProductCard from '../Components/ProductCard';
 import PersonalizedButton from '../Components/PersonalizedButton';
 import PersonalizedBanking from './PersonalizedBanking';
 import InstantBanking from './InstantBanking';
+import {RightArrowButton} from '../../CustomerIdentificationDetails/CustomerIdentificationDetailsStyle';
+import AfterScan from './AfterScan';
+import DeviceInfo from 'react-native-device-info';
 const BankingPreferences = props => {
   const {next, prev} = props;
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isScanned, setIsScanned] = useState(false);
   const forwardArrowPress = () => {
     next();
   };
   const backArrowPress = () => {
     prev();
   };
-
+  const scanNowClicked = () => {
+    props.navigation.navigate('Scan');
+    setIsScanned(true);
+  };
   return (
     <View>
       <AlignedContainer>
-        <PersonalizedButton
-          selectedButtonIndex={index => {
-            setActiveIndex(index);
-          }}
-        />
+        {isScanned != true && (
+          <PersonalizedButton
+            selectedButtonIndex={index => {
+              setActiveIndex(index);
+            }}
+          />
+        )}
         <ScrollView>
-          {activeIndex === 0 ? <PersonalizedBanking /> : <InstantBanking />}
+          {isScanned == true ? (
+            <AfterScan />
+          ) : activeIndex == 0 ? (
+            <PersonalizedBanking />
+          ) : (
+            <InstantBanking
+              isEmulator={DeviceInfo.isEmulator()}
+              scanNowClicked={() => scanNowClicked()}
+            />
+          )}
           <AlignedContainer
             style={{
               alignItems: 'center',

@@ -8650,6 +8650,11 @@
   "resolved" "https://registry.npmjs.org/react-native-confirmation-code-field/-/react-native-confirmation-code-field-7.2.0.tgz"
   "version" "7.2.0"
 
+"react-native-device-info@^8.5.0":
+  "integrity" "sha512-Y5mSYWvVvlpKbN3hkA+mDBqXvcgeR/jiIFaJZrsYw4LF+e3fwFl+vQgPz21IroDi9JXkA26BpxaXu3lj1P1GGg=="
+  "resolved" "https://registry.npmjs.org/react-native-device-info/-/react-native-device-info-8.5.0.tgz"
+  "version" "8.5.0"
+
 "react-native-extra-dimensions-android@1.2.5":
   "integrity" "sha512-eorFo9X1vEqAWUkgcZ300yKBG1wtgNeE7tdWAH2CE+P50FGTniJg5Sr6l1iPWG8ZskQOuF+KeiSTFlDa4vLfMw=="
   "resolved" "https://registry.npmjs.org/react-native-extra-dimensions-android/-/react-native-extra-dimensions-android-1.2.5.tgz"

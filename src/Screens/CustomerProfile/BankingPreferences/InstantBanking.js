@@ -13,7 +13,11 @@ const InstantBanking = props => {
       <Label>RECOMMENDED PRODUCT</Label>
       <ProductCard
         onPressCard={() => {
-          alert('card press');
+          if (!props.isEmulator) {
+            alert('You are on emulator');
+          } else {
+            props.scanNowClicked();
+          }
         }}
         isQREnable={true}
       />
