@@ -1,0 +1,31 @@
+const NavigationUrl = {
+  // Authentication :
+  drawerId: 'drawer',
+  loginId: 'LoginScreen',
+  dashboardId: 'Dashboard',
+  modalTestScreenId: 'ModalTestScreen',
+  customerId: 'CustomerIdentificationDetails',
+  CustomerProfileId: 'CustomerProfile',
+  cclId: 'ccl',
+  ENachMandateId: 'ENachMandate',
+  PreApprovedOffersId: 'PreApprovedOffers',
+  AccountOnHoldId: 'AccountOnHold',
+  SASuccessID: 'SASuccess',
+  KnowMoreID: 'KnowMore',
+  ApplyNowForm: 'ApplyNowForm',
+  EAuthId: 'EAuth',
+  Splash: 'Splash',
+  Scanner: 'Scanner',
+  BankUseSectionList: 'BankUseSectionList',
+  BankUseSectionForm: 'BankUseSectionForm',
+  ResumeApplication: "ResumeApplication",
+  WebViewComponent: "WebViewComponent",
+  CustomWebPage: "CustomWebPage",
+  Transactions: "Transactions",
+  CreditCard: "CreditCard",
+  DeclarationLinking: "DeclarationLinking",
+  DeclarationSeeding: "DeclarationSeeding",
+  AadhaarSuccess: "AadhaarSuccess",
+};
+
+export default NavigationUrl;
