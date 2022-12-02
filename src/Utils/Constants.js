@@ -1,9 +1,4 @@
-import {
-  FontSize,
-  IconSize,
-  LineHeight,
-  TextAlign,
-} from "@idfc/ccl-commons/enums";
+
 
 export const AppConstant = {
   qaAutomationUI: true,
@@ -251,9 +246,9 @@ export const Text_Variant = {
 };
 
 export const Text_Align = {
-  LEFT: TextAlign.LEFT,
-  CENTER: TextAlign.CENTER,
-  RIGHT: TextAlign.RIGHT,
+  LEFT: 'left',
+  CENTER: 'center',
+  RIGHT: 'right',
 };
 
 export const LetterSpacing = {
@@ -271,15 +266,15 @@ export const LetterSpacing = {
 };
 
 export const Line_Height = {
-  HEIGHT_16: LineHeight.HEIGHT_16,
-  HEIGHT_20: LineHeight.HEIGHT_20,
-  HEIGHT_18: LineHeight.HEIGHT_18,
-  HEIGHT_36: LineHeight.HEIGHT_36,
-  HEIGHT_22: LineHeight.HEIGHT_22,
-  HEIGHT_24: LineHeight.HEIGHT_24,
-  HEIGHT_26: LineHeight.HEIGHT_26,
-  HEIGHT_14: LineHeight.HEIGHT_14,
-  HEIGHT_32: LineHeight.HEIGHT_32,
+  HEIGHT_16: 16,
+  HEIGHT_20: 20,
+  HEIGHT_18: 18,
+  HEIGHT_36: 36,
+  HEIGHT_22: 22,
+  HEIGHT_24: 24,
+  HEIGHT_26: 26,
+  HEIGHT_14: 14,
+  HEIGHT_32: 32,
 };
 export const FontWeight = {
   WEIGHT_400: 400,
@@ -686,20 +681,20 @@ export const FontFamily = {
   Inter_Light: "Inter-Light",
 };
 export const Font_Size = {
-  SIZE_14: FontSize.SIZE_14,
-  SIZE_16: FontSize.SIZE_16,
-  SIZE_28: FontSize.SIZE_28,
-  SIZE_12: FontSize.SIZE_12,
-  SIZE_20: FontSize.SIZE_20,
-  SIZE_10: FontSize.SIZE_10,
-  SIZE_24: FontSize.SIZE_24,
+  SIZE_14: 14,
+  SIZE_16: 16,
+  SIZE_28: 28,
+  SIZE_12: 12,
+  SIZE_20: 20,
+  SIZE_10: 10,
+  SIZE_24: 24,
 };
 
 export const Icon_Size = {
-  NORMAL: IconSize.NORMAL,
-  LARGE: IconSize.LARGE,
-  MEDIUM: IconSize.MEDIUM,
-  SMALL: IconSize.SMALL,
+  NORMAL: 28,
+  LARGE: 48,
+  MEDIUM: 20,
+  SMALL: 16,
 };
 
 export const LocalDB = {

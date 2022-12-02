@@ -9,15 +9,15 @@
 import React from 'react';
 import {View} from 'react-native';
 import AppContainer from './src/App/AppContainer';
+import AppProvider from './src/App/AppContext';
 
 // import AppProvider from './src/App/AppContext';
 const App = () => {
   return (
     <View style={{flex: 1}}>
-      <AppContainer />
-      {/* <AppProvider>
+      <AppProvider>
         <AppContainer />
-      </AppProvider> */}
+      </AppProvider>
     </View>
   );
 };

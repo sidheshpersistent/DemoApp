@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 import NavigationUrl from '../Utils/NavigationUrl';
+import useSession from "./useSession";
 
 // import Splash from '../Screens/Splash/index';
 import LoginScreen from '../Screens/AgentLogin_oAuth';
@@ -15,7 +16,7 @@ import LoginScreen from '../Screens/AgentLogin_oAuth';
 // import PreApprovedOffers from "../Screens/PreApprovedOffers";
 // import AccountOnHold from "../Screens/AccountOnHold";
 // import SASuccess from "../Screens/SASuccess";
-// import useSession from "./useSession";
+
 // import KnowMore from "../Screens/KnowMore";
 
 // import HamburgerScreen from "../Screens/HamburgerScreen";
@@ -51,15 +52,17 @@ const Stack = createNativeStackNavigator();
 const AppContainer = ({childFunc}) => {
   const {session, setSession} = useSession();
 
-  useEffect(() => {
-    childFunc.current = navigateToLogin;
-  }, []);
+  // useEffect(() => {
+  //   childFunc.current = navigateToLogin;
+  // }, []);
 
-  const navigateToLogin = () => {
-    setSession({...session, loginFlag: true});
-    setSession({...session, loginFlag: false});
-  };
+  // const navigateToLogin = () => {
+  //   setSession({...session, loginFlag: true});
+  //   setSession({...session, loginFlag: false});
+  // };
 
+
+  
   return (
     <NavigationContainer>
       {session.loginFlag !== true ? (

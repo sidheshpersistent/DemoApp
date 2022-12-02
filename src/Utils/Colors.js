@@ -1,8 +1,7 @@
-import { FontColor, IconColor } from "@idfc/ccl-commons/enums";
 
 const Colors = {
   MAROON: "maroon",
-  MAROON_DARK: IconColor.MAROON_DARK,
+  MAROON_DARK: '#fffdff',
   PRIMARY_COLOR: "NEW_MAROON_100",
   WHITE: "white",
   BLACK: "black",
@@ -36,7 +35,7 @@ const Colors = {
   TINT_YELLOW: { text: "TINT_YELLOW", code: "#FCEDB7" },
   NEW_GREY_600: { text: "NEW_GREY_600", code: "#686873" },
   NEW_GREY_800: { text: "NEW_GREY_800", code: "#25243b" },
-  NEW_WHITE_100: FontColor.NEW_WHITE_100, //TODO: change this color across application // NEW_WHITE_100: { text: "	NEW_WHITE_100", code: "#FFFFFF" }
+  NEW_WHITE_100: '#ffffff', //TODO: change this color across application // NEW_WHITE_100: { text: "	NEW_WHITE_100", code: "#FFFFFF" }
   LABEL_ERROR: "#d60b26",
   GRADIENT_NEON_500: { text: "GRADIENT_NEON_500", code: "#FFEBEB" },
   PROD_TWILIGHT_300: { text: "PROD_TWILIGHT_300", code: "#323250" },
