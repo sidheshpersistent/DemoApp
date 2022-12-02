@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useNavigation ,useFocusEffect} from "@react-navigation/native";
+import React, {useEffect, useState} from 'react';
+import {useNavigation, useFocusEffect} from '@react-navigation/native';
 import {
   View,
   Image,
@@ -8,7 +8,7 @@ import {
   ImageBackground,
   BackHandler,
   Alert,
-} from "react-native";
+} from 'react-native';
 
 import {
   AgentGreetWrapper,
@@ -17,13 +17,13 @@ import {
   LowerBoxContainer,
   CardDetailsView,
   StatusView,
-} from "./styles";
+} from './styles';
 import {
   ProfileHeaderContainer,
   BackgroundImage,
   UpperBoxContainer,
   CustomText,
-} from "../../Components";
+} from '../../Components';
 import {
   FontFamily,
   FontWeight,
@@ -32,60 +32,64 @@ import {
   Font_Size,
   Line_Height,
   AsyncStorageUtils,
-} from "../../Utils/";
-import MonthlyHighlights from "./Components/MonthlyHighlights";
+} from '../../Utils/';
+import MonthlyHighlights from './Components/MonthlyHighlights';
 import {
   bankUseBg,
   redArrowForward,
   resumeApplicationBg,
   salaryAccountBg,
   savingAccountBg,
-} from "../../Assets/Images";
-import {  DATA, lowerCardWidth, MonthlyHighlightData } from "./constants";
+} from '../../Assets/Images';
+import {DATA, lowerCardWidth, MonthlyHighlightData} from './constants';
 
-import { TestIds, LocalDB, Account_Type,CommonConstant } from "../../Utils/Constants";
-import { IconButton } from "@idfc/ccl-mobile";
-import { IconSize } from "@idfc/ccl-commons/enums";
-import { StringsOfLanguages } from "../../Localization";
-import useSession from "../../App/useSession";
-import LoaderComponent from "../../Components/LoaderComponent";
-import NavigationUrl from "../..//Utils/NavigationUrl";
-import ErrorPopup from "../../Components/ErrorPopup";
+import {
+  TestIds,
+  LocalDB,
+  Account_Type,
+  CommonConstant,
+} from '../../Utils/Constants';
+import {IconButton} from '@idfc/ccl-mobile';
+import {IconSize} from '@idfc/ccl-commons/enums';
+import {StringsOfLanguages} from '../../Localization';
+import useSession from '../../App/useSession';
+import LoaderComponent from '../../Components/LoaderComponent';
+import NavigationUrl from '../..//Utils/NavigationUrl';
+import ErrorPopup from '../../Components/ErrorPopup';
 import {getDasboardDetailsDataService} from './service';
-const Dashboard = (props) => {
+const Dashboard = props => {
   const navigation = useNavigation();
-  const { session, setSession } = useSession();
+  const {session, setSession} = useSession();
   const [monthlyHighlights, setMonthlyHighlights] = useState(
-    MonthlyHighlightData()
+    MonthlyHighlightData(),
   );
   const [inCompleteCount, setinCompleteCount] = useState(0);
   const [inProgessCount, setinProgessCount] = useState(0);
   const [agentDetails, setAgentDetails] = useState({});
   const [showLoader, setShowLoader] = useState(false);
 
-  const [isErrorPopup,setIsErrorPopup] = useState(false);
-  const [errorMsg,setErrorMsg] = useState("");
+  const [isErrorPopup, setIsErrorPopup] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   useEffect(() => {
     getAgentDetails();
     _retrieveData();
-    BackHandler.addEventListener("hardwareBackPress", handleBackPress);
+    BackHandler.addEventListener('hardwareBackPress', handleBackPress);
     return () => {
       // Anything in here is fired on component unmount.
-      BackHandler.removeEventListener("hardwareBackPress", handleBackPress);
+      BackHandler.removeEventListener('hardwareBackPress', handleBackPress);
     };
   }, []);
 
   useFocusEffect(
     React.useCallback(() => {
       getDasboardDetailsData();
-    }, [])
+    }, []),
   );
 
-
-  async function _retrieveData  () {
-    const value = await AsyncStorageUtils.getItem("language");
-    console.log("***** retrive value lang *****", value);
+  async function _retrieveData() {
+    const value = await AsyncStorageUtils.getItem('language');
+    console.log('***** retrive value lang *****', value);
     StringsOfLanguages.setLanguage(value);
   }
 
@@ -105,7 +109,7 @@ const Dashboard = (props) => {
             onPress: () => BackHandler.exitApp(),
           },
         ],
-        { cancelable: false }
+        {cancelable: false},
       );
     } else {
       navigation.goBack(null);
@@ -113,7 +117,7 @@ const Dashboard = (props) => {
     return true;
   };
 
-  async function getAgentDetails (){
+  async function getAgentDetails() {
     try {
       let data = await AsyncStorageUtils.getItem(LocalDB.agentInfo);
 
@@ -125,61 +129,58 @@ const Dashboard = (props) => {
     }
   }
 
-  async function getDasboardDetailsData ()  {
+  async function getDasboardDetailsData() {
     setShowLoader(true);
-    getDasboardDetailsDataService((status,responseData,monthlyHighlights)=>{
-      if(status == CommonConstant.SUCCESS){
+    getDasboardDetailsDataService((status, responseData, monthlyHighlights) => {
+      if (status == CommonConstant.SUCCESS) {
         setinCompleteCount(responseData?.incomplete);
         setinProgessCount(responseData?.resumeAppl);
         setMonthlyHighlights(monthlyHighlights);
-      }else if (status == CommonConstant.NODATA){
-        console.log(status)
-        setErrorMsg(StringsOfLanguages.COMMON.NO_DATA_ERROR)
+      } else if (status == CommonConstant.NODATA) {
+        console.log(status);
+        setErrorMsg(StringsOfLanguages.COMMON.NO_DATA_ERROR);
         setIsErrorPopup(true);
-      }else if (status == CommonConstant.INTERNALSERVERERROR){
-        setErrorMsg(responseData)
+      } else if (status == CommonConstant.INTERNALSERVERERROR) {
+        setErrorMsg(responseData);
         setIsErrorPopup(true);
-      }else {
-        setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR)
+      } else {
+        setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
         setIsErrorPopup(true);
       }
       setShowLoader(false);
     });
-
   }
 
-  const onCardPress = (index) => {
+  const onCardPress = index => {
     if (index === 0 || index === 1) {
-       
-      let accountType = index === 0 ? Account_Type.ASSISTED_SA : Account_Type.ASSISTED_CS;
-      setSession({...session,accountType:accountType})
+      let accountType =
+        index === 0 ? Account_Type.ASSISTED_SA : Account_Type.ASSISTED_CS;
+      setSession({...session, accountType: accountType});
       navigation.navigate(NavigationUrl.customerId, {
         accountType: accountType,
       });
-      
     }
     if (index === 3) {
       navigation.navigate(NavigationUrl.ResumeApplication);
     }
     if (index === 2) {
-      navigation.navigate(NavigationUrl.BankUseSectionList)
+      navigation.navigate(NavigationUrl.BankUseSectionList);
     }
   };
 
-  const renderItem = ({ item, index }) => {
+  const renderItem = ({item, index}) => {
     return (
       <TouchableOpacity
         testID={
           index == 0
             ? TestIds.db_saving_acc_click
             : index == 1
-              ? TestIds.db_salary_acc_click
-              : index == 2
-                ? TestIds.db_bank_use_click
-                : TestIds.db_resume_click
+            ? TestIds.db_salary_acc_click
+            : index == 2
+            ? TestIds.db_bank_use_click
+            : TestIds.db_resume_click
         }
-        onPress={() => onCardPress(index)}
-      >
+        onPress={() => onCardPress(index)}>
         <ImageBackground
           key={item.key}
           style={{
@@ -191,37 +192,33 @@ const Dashboard = (props) => {
             index == 0
               ? savingAccountBg
               : index == 1
-                ? salaryAccountBg
-                : index == 2
-                  ? bankUseBg
-                  : resumeApplicationBg
-          }
-        >
+              ? salaryAccountBg
+              : index == 2
+              ? bankUseBg
+              : resumeApplicationBg
+          }>
           <CardDetailsView
             testID={
               index == 0
                 ? TestIds.db_savings_acc
                 : index == 1
-                  ? TestIds.db_salary_acc
-                  : index == 2
-                    ? TestIds.db_bank_use
-                    : TestIds.db_resume_app
-            }
-          >
+                ? TestIds.db_salary_acc
+                : index == 2
+                ? TestIds.db_bank_use
+                : TestIds.db_resume_app
+            }>
             <View>
               <CustomText
                 fontSize={Font_Size.SIZE_20}
                 lineHeight={Line_Height.HEIGHT_26}
-                color={Colors.NEW_GREY_800.text}
-              >
+                color={Colors.NEW_GREY_800.text}>
                 {item.title}
               </CustomText>
               <CustomText
                 fontFamily={FontFamily.INTER_BOLD}
                 fontSize={Font_Size.SIZE_20}
                 lineHeight={Line_Height.HEIGHT_26}
-                color={Colors.NEW_GREY_800.text}
-              >
+                color={Colors.NEW_GREY_800.text}>
                 {item.subtitle}
               </CustomText>
               {item.status ? (
@@ -230,20 +227,16 @@ const Dashboard = (props) => {
                     fontFamily={FontFamily.INTER_BOLD}
                     fontSize={Font_Size.SIZE_10}
                     lineHeight={Line_Height.HEIGHT_14}
-                    color={Colors.NEW_GREY_800.text}
-                  >
-                    {item.status == "INCOMPLETE"
-                      ? inCompleteCount + " " + item.status
-                      : inProgessCount + " " + item.status}
+                    color={Colors.NEW_GREY_800.text}>
+                    {item.status == 'INCOMPLETE'
+                      ? inCompleteCount + ' ' + item.status
+                      : inProgessCount + ' ' + item.status}
                   </CustomText>
                 </StatusView>
               ) : null}
             </View>
             <View>
-              <Image
-                style={{ height: 36, width: 36 }}
-                source={redArrowForward}
-              />
+              <Image style={{height: 36, width: 36}} source={redArrowForward} />
             </View>
           </CardDetailsView>
         </ImageBackground>
@@ -256,18 +249,18 @@ const Dashboard = (props) => {
       <UpperBoxContainer>
         <IconButton
           testID={TestIds.db_hamburg_icon}
-          iconType={"Bars"}
+          iconType={'Bars'}
           style={{
             width: 36,
-            position: "absolute",
+            position: 'absolute',
             marginTop: 8,
             marginLeft: 16,
           }}
-          iconColor={"maroon"}
+          iconColor={'maroon'}
           transparent
           iconSize={IconSize.MEDIUM}
           onPress={() => {
-            navigation.openDrawer()
+            navigation.openDrawer();
           }}
         />
         <ProfileHeaderContainer
@@ -290,8 +283,7 @@ const Dashboard = (props) => {
                 fontSize={Font_Size.SIZE_28}
                 lineHeight={Line_Height.HEIGHT_36}
                 letterSpacing={LetterSpacing.MINUS_ONE}
-                color={Colors.NEW_GREY_800.text}
-              >
+                color={Colors.NEW_GREY_800.text}>
                 {StringsOfLanguages.DASHBOARD.DROP_JOURNY_MODAL_TITLE}
               </CustomText>
               <CustomText
@@ -300,9 +292,9 @@ const Dashboard = (props) => {
                 lineHeight={Line_Height.HEIGHT_36}
                 fontSize={Font_Size.SIZE_28}
                 letterSpacing={LetterSpacing.MINUS_ONE}
-                color={Colors.NEW_GREY_800.text}
-              >
-                {agentDetails?.firstName} {agentDetails?.lastName}{` !`}
+                color={Colors.NEW_GREY_800.text}>
+                {agentDetails?.firstName} {agentDetails?.lastName}
+                {` !`}
               </CustomText>
             </AgentGreetWrapper>
           }
@@ -314,8 +306,7 @@ const Dashboard = (props) => {
           marginTop={Font_Size.SIZE_10}
           fontSize={Font_Size.SIZE_10}
           fontFamily={FontFamily.INTER_BOLD}
-          color={Colors.NEW_GREY_600.text}
-        >
+          color={Colors.NEW_GREY_600.text}>
           {StringsOfLanguages.DASHBOARD.HIGHLIGHTS}
         </CustomText>
 
@@ -329,14 +320,13 @@ const Dashboard = (props) => {
           lineHeight={Line_Height.HEIGHT_22}
           letterSpacing={LetterSpacing.MINUS_ZERO_POINT_FIVE}
           color={Colors.NEW_WHITE_100}
-          paddingLeft={10}
-        >
+          paddingLeft={10}>
           {StringsOfLanguages.DASHBOARD.MAIN_MENU_HEADER}
         </CustomText>
 
         <FlatList
           data={DATA()}
-          keyExtractor={(item) => item.key}
+          keyExtractor={item => item.key}
           renderItem={(item, index) => renderItem(item, index)}
           numColumns={2}
         />
@@ -347,12 +337,13 @@ const Dashboard = (props) => {
         heading={StringsOfLanguages.LOADER.DASH_HEADING}
         subHeading={StringsOfLanguages.LOADER.DASH_SUBHEADING}
       />
-      {<ErrorPopup
-      popUpshow={isErrorPopup} 
-      message={errorMsg}
-      callBack={()=>setIsErrorPopup(false)}
-      btnText={StringsOfLanguages.COMMON.SESSION_ALERT_OK}
-      ></ErrorPopup>}
+      {
+        <ErrorPopup
+          popUpshow={isErrorPopup}
+          message={errorMsg}
+          callBack={() => setIsErrorPopup(false)}
+          btnText={StringsOfLanguages.COMMON.SESSION_ALERT_OK}></ErrorPopup>
+      }
     </BackgroundImage>
   );
 };
