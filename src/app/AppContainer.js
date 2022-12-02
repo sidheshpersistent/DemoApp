@@ -9,7 +9,7 @@ import useSession from "./useSession";
 // import Splash from '../Screens/Splash/index';
 import LoginScreen from '../Screens/AgentLogin_oAuth';
 
-// import Dashboard from '../Screens/Dashboard';
+import Dashboard from '../Screens/Dashboard';
 // import CustomerIdentificationDetails from "../Screens/CustomerIdentificationDetails";
 // import CustomerProfile from "../Screens/CustomerProfile";
 // import ENachMandate from "../Screens/ENachMandate";
@@ -64,20 +64,29 @@ const AppContainer = ({childFunc}) => {
 
   
   return (
+  
     <NavigationContainer>
-      {session.loginFlag !== true ? (
-        <Stack.Navigator initialRouteName={NavigationUrl.loginId}>
+    
+      {true ? (
+        <Stack.Navigator initialRouteName={NavigationUrl.dashboardId}>
           {/* <Stack.Screen
             name={NavigationUrl.Splash}
             component={Splash}
             options={{headerShown: false}}
           /> */}
 
-          <Stack.Screen
+          {/* <Stack.Screen
             name={NavigationUrl.loginId}
             component={LoginScreen}
             options={{headerShown: false}}
+          /> */}
+
+          <Stack.Screen
+            name={NavigationUrl.dashboardId}
+            component={Dashboard}
+            options={{headerShown: false}}
           />
+
           {/* <Stack.Screen
             name={NavigationUrl.EAuthId}
             component={EAuth}

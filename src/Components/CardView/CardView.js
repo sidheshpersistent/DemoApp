@@ -1,7 +1,6 @@
-/* eslint-disable react/destructuring-assignment */
+
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-/* import { isIos } from 'utils/platform'; */
 
 const styles = StyleSheet.create({
   rowCardStyles: {

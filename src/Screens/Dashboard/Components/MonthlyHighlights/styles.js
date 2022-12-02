@@ -1,4 +1,4 @@
-import { StyledText } from '@idfc/ccl-mobile/lib/module/v2';
+
 import styled from 'styled-components/native';
 import Colors from '../../../../Utils/Colors';
 
@@ -10,7 +10,7 @@ export const HighLightTextContainer = styled.View`
   margin-top: 39px;
   width: 70px;
 `;
-export const HighLightText = styled(StyledText)`
+export const HighLightText = styled.Text`
   font-family: Inter;
   font-size: 12px;
   line-height: 16px;

@@ -1,6 +1,6 @@
 import React from 'react';
-import {View} from 'react-native';
-import {TestIds} from '../../../../Utils/Constants';
+import { View } from 'react-native';
+import { TestIds } from '../../../../Utils/Constants';
 
 
 import {
@@ -16,38 +16,42 @@ import {
   TotalProgressImage,
   TotalSuccessImage,
 } from './styles';
-import { FontSize, LineHeight,COLOR_TYPES } from '@idfc/ccl-commons/enums';
+import { Font_Size, Line_Height } from '../../../../Utils/Constants';
 
 
-import { monthlyProgressApplication, monthlySuccessApplication, monthlyTotalApplication } from '../../../../Assets/Images';
-import { Card,CustomText } from '../../../../Components';
+import {
+  monthlyProgressApplication,
+  monthlySuccessApplication,
+  monthlyTotalApplication
+} from '../../../../Assets/Images';
+import { Card, CustomText } from '../../../../Components';
 import { Colors } from '../../../../Utils';
 
 
 
 const MonthlyHighlights = props => {
- 
-// monthlyHighlights
-  const {monthlyHighlights} = props;
 
-// console.log("qqqqqqq",monthlyHighlights)
+  // monthlyHighlights
+  const { monthlyHighlights } = props;
+
+  // console.log("qqqqqqq",monthlyHighlights)
 
   return (
     <HighLightContainer>
       {monthlyHighlights.map(item =>
         item.flag == 'total' ? (
-       
-       <Card key={item.id} style={highlightCard} testID={TestIds.db_total_app}> 
-            <View style={[smallBox, {backgroundColor: COLOR_TYPES.PROD_TWILIGHT_100}]}>
+
+          <Card key={item.id} style={highlightCard} testID={TestIds.db_total_app}>
+            <View style={[smallBox, { backgroundColor: Colors.PROD_TWILIGHT_300.code }]}>
               <TotalApplicationImage
                 source={monthlyTotalApplication}
-                
+
               />
             </View>
             <HighLightTextContainer>
               <CustomText
-                fontSize={FontSize.SIZE_12}
-                lineHeight={LineHeight.HEIGHT_16}
+                fontSize={Font_Size.SIZE_12}
+                lineHeight={Line_Height.HEIGHT_16}
                 color={Colors.NEW_GREY_800.text}>
                 {item.title}
               </CustomText>
@@ -56,10 +60,10 @@ const MonthlyHighlights = props => {
           </Card>
         ) : item.flag == 'success' ? (
           <Card key={item.id} style={highlightCard2} testID={TestIds.db_successful_app}>
-            <View style={[smallBox, {backgroundColor: COLOR_TYPES.PROD_PERSIAN_100}]}>
+            <View style={[smallBox, { backgroundColor: Colors.PROD_TWILIGHT_300.code }]}>
               <TotalSuccessImage
                 source={monthlySuccessApplication}
-          
+
               />
             </View>
             <HighLightTextContainer>
@@ -69,10 +73,10 @@ const MonthlyHighlights = props => {
           </Card>
         ) : (
           <Card key={item.id} style={highlightCard3} testID={TestIds.db_app_in_progress}>
-            <View style={[smallBox, {backgroundColor: COLOR_TYPES.PROD_MUSTARD_100}]}>
-              <TotalProgressImage        
+            <View style={[smallBox, { backgroundColor: Colors.PROD_TWILIGHT_300.code }]}>
+              <TotalProgressImage
                 source={monthlyProgressApplication}
-              
+
               />
             </View>
             <HighLightTextContainer>

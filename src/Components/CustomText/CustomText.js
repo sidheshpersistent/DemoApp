@@ -1,7 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
-
-import { StyledText } from '@idfc/ccl-mobile/lib/module/v2';
+import { Text } from 'react-native';
 
 const CustomText = props => {
   const {
@@ -34,9 +33,9 @@ const CustomText = props => {
   } = props;
 
   return (
-    <StyledText
-    testID={testID}
-    fontWeight={fontWeight}
+    <Text
+      testID={testID}
+      fontWeight={fontWeight}
       paddingVertical={paddingVertical}
       key={key}
       align={align}
@@ -58,11 +57,11 @@ const CustomText = props => {
       paddingRight={paddingRight}
       paddingTop={paddingTop}
       variant={variant}
-      style={[style,{ flex: flex ? flex : 0, fontFamily: fontFamily ? fontFamily : "Inter" }]}>
+      style={[style, { flex: flex ? flex : 0, fontFamily: fontFamily ? fontFamily : "Inter" }]}>
       {props.children}
 
 
-    </StyledText>
+    </Text>
   );
 };
 
