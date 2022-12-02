@@ -1,14 +1,14 @@
+import React, {useEffect} from 'react';
 import {Dimensions} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import React, {useEffect} from 'react';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+// import {createDrawerNavigator} from '@react-navigation/drawer';
 import NavigationUrl from '../Utils/NavigationUrl';
 
-import Splash from '../Screens/Splash/index';
-// import Dashboard from '../Screens/Dashboard';
-// import LoginScreen from '../Screens/AgentLogin_oAuth';
+// import Splash from '../Screens/Splash/index';
+import LoginScreen from '../Screens/AgentLogin_oAuth';
 
+// import Dashboard from '../Screens/Dashboard';
 // import CustomerIdentificationDetails from "../Screens/CustomerIdentificationDetails";
 // import CustomerProfile from "../Screens/CustomerProfile";
 // import ENachMandate from "../Screens/ENachMandate";
@@ -54,25 +54,27 @@ const AppContainer = ({childFunc}) => {
   useEffect(() => {
     childFunc.current = navigateToLogin;
   }, []);
+
   const navigateToLogin = () => {
     setSession({...session, loginFlag: true});
     setSession({...session, loginFlag: false});
   };
+
   return (
     <NavigationContainer>
       {session.loginFlag !== true ? (
         <Stack.Navigator initialRouteName={NavigationUrl.loginId}>
-          <Stack.Screen
+          {/* <Stack.Screen
             name={NavigationUrl.Splash}
             component={Splash}
             options={{headerShown: false}}
-          />
+          /> */}
 
-          {/* <Stack.Screen
+          <Stack.Screen
             name={NavigationUrl.loginId}
             component={LoginScreen}
             options={{headerShown: false}}
-          /> */}
+          />
           {/* <Stack.Screen
             name={NavigationUrl.EAuthId}
             component={EAuth}

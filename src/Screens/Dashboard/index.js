@@ -57,6 +57,7 @@ import LoaderComponent from '../../Components/LoaderComponent';
 import NavigationUrl from '../..//Utils/NavigationUrl';
 import ErrorPopup from '../../Components/ErrorPopup';
 import {getDasboardDetailsDataService} from './service';
+
 const Dashboard = props => {
   const navigation = useNavigation();
   const {session, setSession} = useSession();

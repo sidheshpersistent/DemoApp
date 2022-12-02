@@ -7,25 +7,17 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {View} from 'react-native';
+import AppContainer from './src/App/AppContainer';
 
-import AppContainer from './src/app/AppContainer';
-import AppProvider from './src/app/AppContext';
+// import AppProvider from './src/App/AppContext';
 const App = () => {
   return (
     <View style={{flex: 1}}>
-      {/* <LoginScreen></LoginScreen> */}
-      <AppProvider>
+      <AppContainer />
+      {/* <AppProvider>
         <AppContainer />
-      </AppProvider>
+      </AppProvider> */}
     </View>
   );
 };
