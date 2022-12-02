@@ -48,10 +48,10 @@ const LoginScreen = () => {
 
 
   const [userName, setUserName] = useState('999999');
-  const [password, ] = useState('password');
+  const [password,] = useState('password');
 
   const [language, setLanguage] = useState('en');
-  const [showLoader, ] = useState(false);
+  const [showLoader,] = useState(false);
 
 
   useEffect(() => {
@@ -67,8 +67,8 @@ const LoginScreen = () => {
   };
 
 
-  const setLogInDetails = async ()  => {
-    
+  const setLogInDetails = async () => {
+
     let agentData = {
       "email": "sagar.bhat_tho@idfcbankqatest.com",
       "firstName": "Sagar",
@@ -78,7 +78,7 @@ const LoginScreen = () => {
       "userId": "sagar.bhat_tho@IDFCbankqatest.com",
       "userTypes": ["OPS"]
     }
-    let headerData = {'authorization':'Bearer token','agentId':agentData?.email,'appName':'','mobileNumber':''}
+    let headerData = { 'authorization': 'Bearer token', 'agentId': agentData?.email, 'appName': '', 'mobileNumber': '' }
     // AsyncStorageUtils.clearAll();
     try {
       await AsyncStorageUtils.storeItemKey(
@@ -162,7 +162,7 @@ const LoginScreen = () => {
 
         <LoginBoxContainer>
           <LoginBox>
-  
+
             <LoginButtonView>
               <CustomButton
                 testID={TestIds.lg_login_button}

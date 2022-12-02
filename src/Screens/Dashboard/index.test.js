@@ -4,7 +4,7 @@ import {
   render,
   waitFor,
   fireEvent,
-  
+
   shallow,
 } from "@testing-library/react-native";
 import Dashboard from "./index";
@@ -30,10 +30,10 @@ jest.mock('../../API');
 jest.mock('@react-navigation/native', () => ({
   ...jest.requireActual('@react-navigation/native'),
   useFocusEffect: jest.fn(),
-  useNavigation: () => ({ openDrawer: jest.fn() , navigate: jest.fn()})
+  useNavigation: () => ({ openDrawer: jest.fn(), navigate: jest.fn() })
 }));
-jest.spyOn(React, "useCallback").mockImplementationOnce((f) =>f()).mockReturnValueOnce((f)=>f())
-jest.spyOn(React, "useEffect").mockImplementationOnce((f) =>  f()());
+jest.spyOn(React, "useCallback").mockImplementationOnce((f) => f()).mockReturnValueOnce((f) => f())
+jest.spyOn(React, "useEffect").mockImplementationOnce((f) => f()());
 
 
 // jest.mock('@react-navigation/native', () => ({   ...jest.requireActual('@react-navigation/native'),   useFocusEffect: jest.fn().mockImplementationOnce((func) => func()), }));
@@ -41,7 +41,7 @@ jest.mock("axios");
 
 test("axios response", () => {
   axios.get.mockImplementation(() => Promise.resolve({ data: {} }));
-  
+
 });
 
 
@@ -101,46 +101,46 @@ const props = {
   setSession: jest.fn(),
 };
 describe("Dashboard Test Module", () => {
-test('Test getAgentDasboardDetails api', () => {
-  const navigate = jest.fn();
-  const { getByTestId } = render(<Dashboard />);
-  getDasboardDetailsDataService((status,responseData,monthlyHighlights)=>{});
-  jest.spyOn(axios, 'get').mockImplementation((url) => {
-    switch (url) {
-      case Endpoints.getAgentDasboardDetails:
-        return Promise.resolve(getAgentDasboardDetails_MockData);
-    }
+  test('Test getAgentDasboardDetails api', () => {
+    const navigate = jest.fn();
+    const { getByTestId } = render(<Dashboard />);
+    getDasboardDetailsDataService((status, responseData, monthlyHighlights) => { });
+    jest.spyOn(axios, 'get').mockImplementation((url) => {
+      switch (url) {
+        case Endpoints.getAgentDasboardDetails:
+          return Promise.resolve(getAgentDasboardDetails_MockData);
+      }
+    });
   });
-});
-test("Should fire the function passed as prop when Savings account is tapped", () => {
-  const navigate = jest.fn();
-  const { getByTestId } = render(<Dashboard onCardPress={navigate} {...props}/>);
-  fireEvent.press(getByTestId(TestIds.db_saving_acc_click));
-  expect(navigate).toHaveBeenCalledTimes(0);
-});
+  test("Should fire the function passed as prop when Savings account is tapped", () => {
+    const navigate = jest.fn();
+    const { getByTestId } = render(<Dashboard onCardPress={navigate} {...props} />);
+    fireEvent.press(getByTestId(TestIds.db_saving_acc_click));
+    expect(navigate).toHaveBeenCalledTimes(0);
+  });
 
-test("Should fire the function passed as prop when Salary account is tapped", () => {
-  const navigate = jest.fn();
-  const { getByTestId } = render(
-    <Dashboard onCardPress={navigate} {...props} />
-  );
-  fireEvent.press(getByTestId(TestIds.db_salary_acc_click));
-  expect(navigate).toHaveBeenCalledTimes(0);
-});
+  test("Should fire the function passed as prop when Salary account is tapped", () => {
+    const navigate = jest.fn();
+    const { getByTestId } = render(
+      <Dashboard onCardPress={navigate} {...props} />
+    );
+    fireEvent.press(getByTestId(TestIds.db_salary_acc_click));
+    expect(navigate).toHaveBeenCalledTimes(0);
+  });
 
-test("Should fire the function passed as prop when Bank use card is tapped", () => {
-  const navigate = jest.fn();
-  const { getByTestId } = render(<Dashboard onCardPress={navigate} />);
-  fireEvent.press(getByTestId(TestIds.db_bank_use_click));
-  expect(navigate).toHaveBeenCalledTimes(0);
-});
+  test("Should fire the function passed as prop when Bank use card is tapped", () => {
+    const navigate = jest.fn();
+    const { getByTestId } = render(<Dashboard onCardPress={navigate} />);
+    fireEvent.press(getByTestId(TestIds.db_bank_use_click));
+    expect(navigate).toHaveBeenCalledTimes(0);
+  });
 
-test("Should fire the function passed as prop when resume application is tapped", () => {
-  const navigate = jest.fn();
-  const { getByTestId } = render(<Dashboard onCardPress={navigate} />);
-  fireEvent.press(getByTestId(TestIds.db_resume_click));
-  expect(navigate).toHaveBeenCalledTimes(0);
-});
+  test("Should fire the function passed as prop when resume application is tapped", () => {
+    const navigate = jest.fn();
+    const { getByTestId } = render(<Dashboard onCardPress={navigate} />);
+    fireEvent.press(getByTestId(TestIds.db_resume_click));
+    expect(navigate).toHaveBeenCalledTimes(0);
+  });
   test("Should render elements", () => {
     const { getByTestId } = render(<Dashboard />);
     // expect(getByTestId(TestIds.db_avtar)).toBeDefined();
@@ -194,28 +194,28 @@ test("Should fire the function passed as prop when resume application is tapped"
   });
 
 
-test("Should match snapshot", async () => {
-  const { toJSON } = await waitFor(() => render(<Dashboard />));
-  expect(toJSON()).toMatchSnapshot();
-});
+  test("Should match snapshot", async () => {
+    const { toJSON } = await waitFor(() => render(<Dashboard />));
+    expect(toJSON()).toMatchSnapshot();
+  });
 
-test('hamburg button clicked', async () =>{
-  const navigation = {
-    openDrawer:jest.fn()
-  }
-  const { getByTestId } = render(<Dashboard onPress={jest.fn()}   />);
-  fireEvent.press(getByTestId(TestIds.db_hamburg_icon));
-});
+  test('hamburg button clicked', async () => {
+    const navigation = {
+      openDrawer: jest.fn()
+    }
+    const { getByTestId } = render(<Dashboard onPress={jest.fn()} />);
+    fireEvent.press(getByTestId(TestIds.db_hamburg_icon));
+  });
 
-test("Test handle hardware Back Press", async () => {
+  test("Test handle hardware Back Press", async () => {
 
-  const { getByTestId } = render(<Dashboard />);
-  fireEvent.press(getByTestId(TestIds.db_hamburg_icon));
-   
-   BackHandler.addEventListener = jest.fn();
-   BackHandler.removeEventListener = jest.fn();
-   
-});
+    const { getByTestId } = render(<Dashboard />);
+    fireEvent.press(getByTestId(TestIds.db_hamburg_icon));
+
+    BackHandler.addEventListener = jest.fn();
+    BackHandler.removeEventListener = jest.fn();
+
+  });
 
 
 });

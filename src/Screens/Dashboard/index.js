@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {useNavigation, useFocusEffect} from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import {
   View,
   Image,
@@ -41,7 +41,7 @@ import {
   salaryAccountBg,
   savingAccountBg,
 } from '../../Assets/Images';
-import {DATA, lowerCardWidth, MonthlyHighlightData} from './constants';
+import { DATA, lowerCardWidth, MonthlyHighlightData } from './constants';
 
 import {
   TestIds,
@@ -51,7 +51,7 @@ import {
 } from '../../Utils/Constants';
 // import {IconButton} from '@idfc/ccl-mobile';
 // import {IconSize} from '@idfc/ccl-commons/enums';
-import {StringsOfLanguages} from '../../Localization';
+import { StringsOfLanguages } from '../../Localization';
 import useSession from '../../App/useSession';
 import LoaderComponent from '../../Components/LoaderComponent';
 import NavigationUrl from '../..//Utils/NavigationUrl';
@@ -60,7 +60,7 @@ import NavigationUrl from '../..//Utils/NavigationUrl';
 
 const Dashboard = props => {
   const navigation = useNavigation();
-  const {session, setSession} = useSession();
+  const { session, setSession } = useSession();
   const [monthlyHighlights, setMonthlyHighlights] = useState(
     MonthlyHighlightData(),
   );
@@ -111,7 +111,7 @@ const Dashboard = props => {
             onPress: () => BackHandler.exitApp(),
           },
         ],
-        {cancelable: false},
+        { cancelable: false },
       );
     } else {
       navigation.goBack(null);
@@ -157,7 +157,7 @@ const Dashboard = props => {
     if (index === 0 || index === 1) {
       let accountType =
         index === 0 ? Account_Type.ASSISTED_SA : Account_Type.ASSISTED_CS;
-      setSession({...session, accountType: accountType});
+      setSession({ ...session, accountType: accountType });
       navigation.navigate(NavigationUrl.customerId, {
         accountType: accountType,
       });
@@ -170,17 +170,17 @@ const Dashboard = props => {
     }
   };
 
-  const renderItem = ({item, index}) => {
+  const renderItem = ({ item, index }) => {
     return (
       <TouchableOpacity
         testID={
           index == 0
             ? TestIds.db_saving_acc_click
             : index == 1
-            ? TestIds.db_salary_acc_click
-            : index == 2
-            ? TestIds.db_bank_use_click
-            : TestIds.db_resume_click
+              ? TestIds.db_salary_acc_click
+              : index == 2
+                ? TestIds.db_bank_use_click
+                : TestIds.db_resume_click
         }
         onPress={() => onCardPress(index)}>
         <ImageBackground
@@ -194,20 +194,20 @@ const Dashboard = props => {
             index == 0
               ? savingAccountBg
               : index == 1
-              ? salaryAccountBg
-              : index == 2
-              ? bankUseBg
-              : resumeApplicationBg
+                ? salaryAccountBg
+                : index == 2
+                  ? bankUseBg
+                  : resumeApplicationBg
           }>
           <CardDetailsView
             testID={
               index == 0
                 ? TestIds.db_savings_acc
                 : index == 1
-                ? TestIds.db_salary_acc
-                : index == 2
-                ? TestIds.db_bank_use
-                : TestIds.db_resume_app
+                  ? TestIds.db_salary_acc
+                  : index == 2
+                    ? TestIds.db_bank_use
+                    : TestIds.db_resume_app
             }>
             <View>
               <CustomText
@@ -238,7 +238,7 @@ const Dashboard = props => {
               ) : null}
             </View>
             <View>
-              <Image style={{height: 36, width: 36}} source={redArrowForward} />
+              <Image style={{ height: 36, width: 36 }} source={redArrowForward} />
             </View>
           </CardDetailsView>
         </ImageBackground>
@@ -246,119 +246,117 @@ const Dashboard = props => {
     );
   };
 
-  // return (
-  //   <BackgroundImage>
-  //     <UpperBoxContainer>
-  //       {/* <IconButton
-  //         testID={TestIds.db_hamburg_icon}
-  //         iconType={'Bars'}
-  //         style={{
-  //           width: 36,
-  //           position: 'absolute',
-  //           marginTop: 8,
-  //           marginLeft: 16,
-  //         }}
-  //         iconColor={'maroon'}
-  //         transparent
-  //         iconSize={IconSize.MEDIUM}
-  //         onPress={() => {
-  //           navigation.openDrawer();
-  //         }}
-  //       /> */}
-  //       <View style={{
-  //           width: 36,
-  //           position: 'absolute',
-  //           marginTop: 8,
-  //           marginLeft: 16,
-  //         }}></View>
-  //       <ProfileHeaderContainer
-  //         style={header}
-  //         leftView={
-  //           <View testID={TestIds.db_avtar}>
-  //             <Image
-  //               style={image}
-  //               source={{
-  //                 uri: agentDetails?.agentAvator,
-  //               }}
-  //             />
-  //           </View>
-  //         }
-  //         rightView={
-  //           <AgentGreetWrapper>
-  //             <CustomText
-  //               testID={TestIds.db_welcome_text}
-  //               fontWeight={FontWeight.WEIGHT_400}
-  //               fontSize={Font_Size.SIZE_28}
-  //               lineHeight={Line_Height.HEIGHT_36}
-  //               letterSpacing={LetterSpacing.MINUS_ONE}
-  //               color={Colors.NEW_GREY_800.text}>
-  //               {StringsOfLanguages.DASHBOARD.DROP_JOURNY_MODAL_TITLE}
-  //             </CustomText>
-  //             <CustomText
-  //               testID={TestIds.db_user_name}
-  //               fontFamily={FontFamily.INTER_BOLD}
-  //               lineHeight={Line_Height.HEIGHT_36}
-  //               fontSize={Font_Size.SIZE_28}
-  //               letterSpacing={LetterSpacing.MINUS_ONE}
-  //               color={Colors.NEW_GREY_800.text}>
-  //               {agentDetails?.firstName} {agentDetails?.lastName}
-  //               {` !`}
-  //             </CustomText>
-  //           </AgentGreetWrapper>
-  //         }
-  //       />
-  //       <CustomText
-  //         testID={TestIds.db_month_highlight_text}
-  //         lineHeight={Line_Height.HEIGHT_14}
-  //         letterSpacing={LetterSpacing.ZERO_POINT_FIVE}
-  //         marginTop={Font_Size.SIZE_10}
-  //         fontSize={Font_Size.SIZE_10}
-  //         fontFamily={FontFamily.INTER_BOLD}
-  //         color={Colors.NEW_GREY_600.text}>
-  //         {StringsOfLanguages.DASHBOARD.HIGHLIGHTS}
-  //       </CustomText>
+  return (
+    <BackgroundImage>
+      <UpperBoxContainer>
+        {/* <IconButton
+          testID={TestIds.db_hamburg_icon}
+          iconType={'Bars'}
+          style={{
+            width: 36,
+            position: 'absolute',
+            marginTop: 8,
+            marginLeft: 16,
+          }}
+          iconColor={'maroon'}
+          transparent
+          iconSize={IconSize.MEDIUM}
+          onPress={() => {
+            navigation.openDrawer();
+          }}
+        /> */}
+        <View style={{
+          width: 36,
+          position: 'absolute',
+          marginTop: 8,
+          marginLeft: 16,
+        }}></View>
+        <ProfileHeaderContainer
+          style={header}
+          leftView={
+            <View testID={TestIds.db_avtar}>
+              <Image
+                style={image}
+                source={{
+                  uri: agentDetails?.agentAvator,
+                }}
+              />
+            </View>
+          }
+          rightView={
+            <AgentGreetWrapper>
+              <CustomText
+                testID={TestIds.db_welcome_text}
+                fontWeight={FontWeight.WEIGHT_400}
+                fontSize={Font_Size.SIZE_28}
+                lineHeight={Line_Height.HEIGHT_36}
+                letterSpacing={LetterSpacing.MINUS_ONE}
+                color={Colors.NEW_GREY_800.text}>
+                {StringsOfLanguages.DASHBOARD.DROP_JOURNY_MODAL_TITLE}
+              </CustomText>
+              <CustomText
+                testID={TestIds.db_user_name}
+                fontFamily={FontFamily.INTER_BOLD}
+                lineHeight={Line_Height.HEIGHT_36}
+                fontSize={Font_Size.SIZE_28}
+                letterSpacing={LetterSpacing.MINUS_ONE}
+                color={Colors.NEW_GREY_800.text}>
+                {agentDetails?.firstName} {agentDetails?.lastName}
+                {` !`}
+              </CustomText>
+            </AgentGreetWrapper>
+          }
+        />
+        <CustomText
+          testID={TestIds.db_month_highlight_text}
+          lineHeight={Line_Height.HEIGHT_14}
+          letterSpacing={LetterSpacing.ZERO_POINT_FIVE}
+          marginTop={Font_Size.SIZE_10}
+          fontSize={Font_Size.SIZE_10}
+          fontFamily={FontFamily.INTER_BOLD}
+          color={Colors.NEW_GREY_600.text}>
+          {StringsOfLanguages.DASHBOARD.HIGHLIGHTS}
+        </CustomText>
 
-  //       <MonthlyHighlights monthlyHighlights={monthlyHighlights} />
-  //     </UpperBoxContainer>
+        <MonthlyHighlights monthlyHighlights={monthlyHighlights} />
+      </UpperBoxContainer>
 
-  //     <LowerBoxContainer>
-  //       <CustomText
-  //         testID={TestIds.db_main_header}
-  //         fontSize={Font_Size.SIZE_16}
-  //         lineHeight={Line_Height.HEIGHT_22}
-  //         letterSpacing={LetterSpacing.MINUS_ZERO_POINT_FIVE}
-  //         color={Colors.NEW_WHITE_100}
-  //         paddingLeft={10}>
-  //         {StringsOfLanguages.DASHBOARD.MAIN_MENU_HEADER}
-  //       </CustomText>
+      <LowerBoxContainer>
+        <CustomText
+          testID={TestIds.db_main_header}
+          fontSize={Font_Size.SIZE_16}
+          lineHeight={Line_Height.HEIGHT_22}
+          letterSpacing={LetterSpacing.MINUS_ZERO_POINT_FIVE}
+          color={Colors.NEW_WHITE_100}
+          paddingLeft={10}>
+          {StringsOfLanguages.DASHBOARD.MAIN_MENU_HEADER}
+        </CustomText>
 
-  //       <FlatList
-  //         data={DATA()}
-  //         keyExtractor={item => item.key}
-  //         renderItem={(item, index) => renderItem(item, index)}
-  //         numColumns={2}
-  //       />
-  //     </LowerBoxContainer>
+        <FlatList
+          data={DATA()}
+          keyExtractor={item => item.key}
+          renderItem={(item, index) => renderItem(item, index)}
+          numColumns={2}
+        />
+      </LowerBoxContainer>
 
-  //     <LoaderComponent
-  //       isVisible={false} //showLoader
-  //       heading={StringsOfLanguages.LOADER.DASH_HEADING}
-  //       subHeading={StringsOfLanguages.LOADER.DASH_SUBHEADING}
-  //     />
-  //     {/* {
-  //       <ErrorPopup
-  //         popUpshow={false} //isErrorPopup
-  //         message={errorMsg}
-  //         callBack={() => setIsErrorPopup(false)}
-  //         btnText={StringsOfLanguages.COMMON.SESSION_ALERT_OK}></ErrorPopup>
-  //     } */}
-  //   </BackgroundImage>
-  // );
-
-
-  return(
-    <View style={{flex:1,backgroundColor:'red'}}/>
+      <LoaderComponent
+        isVisible={false} //showLoader
+        heading={StringsOfLanguages.LOADER.DASH_HEADING}
+        subHeading={StringsOfLanguages.LOADER.DASH_SUBHEADING}
+      />
+      {/* {
+        <ErrorPopup
+          popUpshow={false} //isErrorPopup
+          message={errorMsg}
+          callBack={() => setIsErrorPopup(false)}
+          btnText={StringsOfLanguages.COMMON.SESSION_ALERT_OK}></ErrorPopup>
+      } */}
+    </BackgroundImage>
   );
+
+
+
 };
 
 export default Dashboard;

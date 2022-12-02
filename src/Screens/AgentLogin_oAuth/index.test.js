@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, waitFor} from '@testing-library/react-native';
+import { render, waitFor } from '@testing-library/react-native';
 import LoginScreen from './index';
 // import useSession from '../../App/useSession';
 
@@ -15,6 +15,6 @@ import LoginScreen from './index';
 // });
 
 test('Should match snapshot', async () => {
-  const {toJSON} = await waitFor(() => render(<LoginScreen />));
+  const { toJSON } = await waitFor(() => render(<LoginScreen />));
   expect(toJSON()).toMatchSnapshot();
 });

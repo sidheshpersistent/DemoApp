@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react';
-import {Dimensions} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import React, { useEffect } from 'react';
+import { Dimensions } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 import NavigationUrl from '../Utils/NavigationUrl';
 import useSession from "./useSession";
@@ -49,8 +49,8 @@ const Stack = createNativeStackNavigator();
 //     </Drawer.Navigator>
 //   </>
 // );
-const AppContainer = ({childFunc}) => {
-  const {session, setSession} = useSession();
+const AppContainer = ({ childFunc }) => {
+  const { session, setSession } = useSession();
 
   // useEffect(() => {
   //   childFunc.current = navigateToLogin;
@@ -62,30 +62,25 @@ const AppContainer = ({childFunc}) => {
   // };
 
 
-  
+
   return (
-  
+
     <NavigationContainer>
-    
-      {true ? (
-        <Stack.Navigator initialRouteName={NavigationUrl.dashboardId}>
+
+      {session.loginFlag != true ? (
+        <Stack.Navigator initialRouteName={NavigationUrl.loginId}>
           {/* <Stack.Screen
             name={NavigationUrl.Splash}
             component={Splash}
             options={{headerShown: false}}
           /> */}
 
-          {/* <Stack.Screen
+          <Stack.Screen
             name={NavigationUrl.loginId}
             component={LoginScreen}
-            options={{headerShown: false}}
-          /> */}
-
-          <Stack.Screen
-            name={NavigationUrl.dashboardId}
-            component={Dashboard}
-            options={{headerShown: false}}
+            options={{ headerShown: false }}
           />
+
 
           {/* <Stack.Screen
             name={NavigationUrl.EAuthId}
@@ -94,7 +89,12 @@ const AppContainer = ({childFunc}) => {
           /> */}
         </Stack.Navigator>
       ) : (
-        <Stack.Navigator initialRouteName={NavigationUrl.drawerId}>
+        <Stack.Navigator initialRouteName={NavigationUrl.dashboardId}>
+          <Stack.Screen
+            name={NavigationUrl.dashboardId}
+            component={Dashboard}
+            options={{ headerShown: false }}
+          />
           {/* <Stack.Screen
             name={NavigationUrl.drawerId}
             component={DrawerStack}
