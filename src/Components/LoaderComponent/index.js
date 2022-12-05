@@ -1,15 +1,16 @@
 import React from 'react';
 import {
   View,
-  Image
+  Image,
+  ActivityIndicator
 } from 'react-native';
-// import Modal from 'react-native-modal';
-// import {
-//   LogoView,
-//   ModalView,
-// } from './styled';
-// import LOADER_IMAGE_DARK from '@idfc/ccl-commons/assets/images/idfc-loader-dark.gif';
-// import { LOADER_SIZE, DEFAULT_LOADER_SIZE } from '@idfc/ccl-commons/constants';
+import Modal from 'react-native-modal';
+import { Colors, FontWeight, Font_Size, LetterSpacing, Line_Height } from '../../Utils';
+import CustomText from '../CustomText/CustomText';
+import {
+  LogoView,
+  ModalView,
+} from './styled';
 
 const LoaderComponent = props => {
   const {
@@ -17,31 +18,30 @@ const LoaderComponent = props => {
     animationIn,
     style,
   } = props;
-  // const loaderSize = LOADER_SIZE[DEFAULT_LOADER_SIZE]; // LOADER_SIZE[size] || LOADER_SIZE[DEFAULT_LOADER_SIZE]
-  // const LOADER_IMAGE = LOADER_IMAGE_DARK; //theme?.name === 'base' ? LOADER_IMAGE_LIGHT : LOADER_IMAGE_DARK
+
 
   return (
-    // <Modal
-    //   animationIn={animationIn}
-    //   isVisible={isVisible}
-    //   backdropColor={"#ffffff"}
-    //   backdropOpacity={0.70}
-    // >
-    //   <LogoView>
-    //     <ModalView style={style}>
-    //       <View style={{ alignItems: 'center' }}>
-    //         <Image
-    //           source={LOADER_IMAGE}
-    //           style={{
-    //             width: loaderSize,
-    //             height: loaderSize
-    //           }}
-    //         />
-    //       </View>
-    //     </ModalView>
-    //   </LogoView>
-    // </Modal>
-    <View/>
+    <Modal
+      animationIn={animationIn}
+      isVisible={isVisible}
+      backdropColor={"#ffffff"}
+      backdropOpacity={0.70}
+    >
+      <LogoView>
+        <ModalView style={style}>
+          <View style={{ alignItems: 'center' }}>
+            <ActivityIndicator size={'large'} />
+            <CustomText
+              style={{
+                fontSize: Font_Size.SIZE_20,
+                color: Colors.BLACK,
+                fontWeight: FontWeight.BOLD,
+                paddingVertical: 16
+              }}>Loading...</CustomText>
+          </View>
+        </ModalView>
+      </LogoView>
+    </Modal>
   );
 };
 

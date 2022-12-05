@@ -7,14 +7,13 @@
  */
 
 import React from 'react';
-import {View} from 'react-native';
-import AppContainer from './src/App/AppContainer';
+import { View } from 'react-native';
 import AppProvider from './src/App/AppContext';
+import AppContainer from './src/App/AppContainer';
 
-// import AppProvider from './src/App/AppContext';
 const App = () => {
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <AppProvider>
         <AppContainer />
       </AppProvider>

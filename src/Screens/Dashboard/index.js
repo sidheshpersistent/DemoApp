@@ -73,7 +73,6 @@ const Dashboard = props => {
   const [errorMsg, setErrorMsg] = useState('');
 
   useEffect(() => {
-    console.log('test-=--------------------------');
     getAgentDetails();
     _retrieveData();
     BackHandler.addEventListener('hardwareBackPress', handleBackPress);
@@ -133,6 +132,10 @@ const Dashboard = props => {
 
   async function getDasboardDetailsData() {
     setShowLoader(true);
+    setTimeout(() => {
+      setShowLoader(false);
+    }, 3000)
+
     // getDasboardDetailsDataService((status, responseData, monthlyHighlights) => {
     //   if (status == CommonConstant.SUCCESS) {
     //     setinCompleteCount(responseData?.incomplete);
@@ -341,7 +344,7 @@ const Dashboard = props => {
       </LowerBoxContainer>
 
       <LoaderComponent
-        isVisible={false} //showLoader
+        isVisible={showLoader} //showLoader
         heading={StringsOfLanguages.LOADER.DASH_HEADING}
         subHeading={StringsOfLanguages.LOADER.DASH_SUBHEADING}
       />

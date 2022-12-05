@@ -57,11 +57,8 @@ const CustomText = props => {
       paddingRight={paddingRight}
       paddingTop={paddingTop}
       variant={variant}
-      style={[style, { flex: flex ? flex : 0, fontFamily: fontFamily ? fontFamily : "Inter" }]}>
-      {props.children}
-
-
-    </Text>
+      style={[style, { flex: flex ? flex : 0, fontFamily: fontFamily ? fontFamily : "Inter" }]}
+    >{props.children}</Text>
   );
 };
 

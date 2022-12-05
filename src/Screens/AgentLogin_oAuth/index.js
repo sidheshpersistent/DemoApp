@@ -76,9 +76,9 @@ const LoginScreen = ()=> {
               name={'How to?'}
               style={styles.howtoButton}
               textColor={Colors.WHITE}
-              onPress={() =>
-                Linking.openURL('https://my.idfcfirstbank.com/login')
-              }
+              // onPress={() =>
+              //   Linking.openURL('https://my.idfcfirstbank.com/login')
+              // }
             />
             <Image
               resizeMode={'contain'}
