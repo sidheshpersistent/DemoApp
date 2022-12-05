@@ -15,8 +15,8 @@ import {
   ToastAndroid,
 } from "react-native";
 
-import { LineHeight } from "@idfc/ccl-commons/enums";
-import { IconButton } from "@idfc/ccl-mobile";
+// import { LineHeight } from "@idfc/ccl-commons/enums";
+// import { IconButton } from "@idfc/ccl-mobile";
 import {
   Container,
   CustomerDetailsBG,
@@ -89,7 +89,7 @@ import {
   EmailVerificationDetails,
   aadharBase64String
 } from "./constants";
-import {getAadharDetails } from './CommonServices'
+import { getAadharDetails } from './CommonServices'
 import {
   rightArrow,
   alertIcon,
@@ -98,12 +98,22 @@ import {
   rightArrowWhite,
   mobileDedupe,
 } from "../../Assets/Images";
-import { Account_Type, Customer_Type, TestIds, Milestone, Save_Status, CommonConstant,banking_Type ,LocalDB, RadioButtonConstants, AdharPanMatch , PersonalDetailsConstants,Api_Error_Code
+import {
+  Account_Type, 
+  Customer_Type,
+  TestIds, Milestone,
+  Save_Status,
+  CommonConstant,
+  banking_Type, 
+  LocalDB,
+  RadioButtonConstants, 
+  AdharPanMatch,
+  PersonalDetailsConstants, 
+  Api_Error_Code
 } from "../../Utils/Constants";
-import { StyledText } from "@idfc/ccl-mobile/lib/module/v2";
-import { Select } from "@idfc/ccl-mobile/lib/module/v2";
+// import { Select } from "@idfc/ccl-mobile/lib/module/v2";
 import { StringsOfLanguages } from "../../Localization";
-import { PasswordInput } from "@idfc/ccl-mobile/lib/module/v2";
+// import { PasswordInput } from "@idfc/ccl-mobile/lib/module/v2";
 import { Endpoints, NetworkManager } from "../../API";
 import useSession from "../../App/useSession";
 import {
@@ -116,10 +126,10 @@ import {
 
 import LoaderComponent from "../../Components/LoaderComponent";
 import { encryptedDataValue, decryptDataValue } from "../../Utils/CryptoHelper";
-import { customerProfileContextReset } from "../../Screens/Dashboard/constants";
-import { PopupEmpVerification } from "../../Components";
-import { PopupFailedOfficeMailVerification } from "../../Components";
-import ErrorPopup from "../../Components/ErrorPopup";
+// import { customerProfileContextReset } from "../../Screens/Dashboard/constants";
+// import { PopupEmpVerification } from "../../Components";
+// import { PopupFailedOfficeMailVerification } from "../../Components";
+// import ErrorPopup from "../../Components/ErrorPopup";
 import CustomSearchInputDropdown from "../../Components/CustomSearchInputDropdown/CustomSearchInputDropdown";
 import { getPrivateString } from "../../Utils/CommonFunction"
 
@@ -166,13 +176,13 @@ const CustomerIdentificationDetails = (props) => {
   const [mobileDedupeCallCount, setMobileDedupeCallCount] = useState(0);
   const [emailDedupeCallCount, setEmailDedupeCallCount] = useState(0);
   const panInputRef = useRef(null);
-  const  userValidationRef = useRef("");
-  const  getGenCustRespRef = useRef("");
-  const  checkGenDedupeRespRef = useRef("");
+  const userValidationRef = useRef("");
+  const getGenCustRespRef = useRef("");
+  const checkGenDedupeRespRef = useRef("");
   const navigation = useNavigation();
   const [showLoader, setShowLoader] = useState(false);
-  const [isUnkownError,setIsUnkownError] = useState(false);
-  const [errorMsg,setErrorMsg] = useState("");
+  const [isUnkownError, setIsUnkownError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
   const [hideSearchResult, sethideSearchResult] = useState(false);
   const [searchTimer, setSearchTimer] = useState(null);
   const [isCompanySelectedFromList, setIsCompanySelectedFromList] =
@@ -183,12 +193,12 @@ const CustomerIdentificationDetails = (props) => {
   const [showAccAlreadyExistPopUp, setshowAccAlreadyExistPopUp] =
     useState(false);
   const [resumeApiData, setResumeApiData] = useState("");
-  const [isEmpVerificationPopup,setIsEmpVerificationPopup] = useState(false);
-  const [empVerificationFailCount,setEmpVerificationFailCount] = useState(0);
-  const [empDomainVerificationFailPopup,setempDomainVerificationFailPopup] = useState(false);
-  const [isOfficeMailVerificationPopup,setIsOfficeMailVerificationPopup] = useState(false);
+  const [isEmpVerificationPopup, setIsEmpVerificationPopup] = useState(false);
+  const [empVerificationFailCount, setEmpVerificationFailCount] = useState(0);
+  const [empDomainVerificationFailPopup, setempDomainVerificationFailPopup] = useState(false);
+  const [isOfficeMailVerificationPopup, setIsOfficeMailVerificationPopup] = useState(false);
   //const [duplicateAccReason, setDuplicateAccReason] = useState("");
-  let userValidationDetails ="";
+  let userValidationDetails = "";
   let getGenCustResp = "";
   let checkGenDedupeResp = "";
 
@@ -198,138 +208,138 @@ const CustomerIdentificationDetails = (props) => {
   let customerConsentData = prevSessionData.customerProfile.customerConsent;
   let cidContextData = prevSessionData.agentDetails;
   //let reasonForDuplicateAcc = prevSessionData.reasonForDuplicateAcc;
-  let {adharDetails, panDetails, reasonForDuplicateAcc} = session;
+  let { adharDetails, panDetails, reasonForDuplicateAcc } = session;
   const route = useRoute();
 
   const resetCustomerProfileData = () => {
     const customerProfileReset = {
-    personalDetail:{
-      annualIncome:"",
-      mothersName:"",
-      countryOfBirth:PersonalDetailsConstants.INDIA,
-      countryOfBirthObj:{id:1,value:"IN",displayText:PersonalDetailsConstants.INDIA},
-      nomineeVisible:true,
-      communicationAddress:false,
-      nomineeCommunicationAddress:false,
-      guardianCommunicationAddress:false,
-      form60Visible:false,
-      panApplied:false,
-      selValue:RadioButtonConstants.RADIO1,
-      nomineeAddressRadio:RadioButtonConstants.RADIO1,
-      guardianAddressRadio:RadioButtonConstants.RADIO1,
-      customerOtherAddress:null,
-      guardianOtherAddress:null,
-      nomineeDob:"",
-      isNomineeMinor:false,
-      showCompanyName:false,
-      occupationType:null,
-      sourceOfIncome:null,
-      sourceOfIncomeDetails:[],
-      nomineeName:"",
-      customerRelation:null,
-      guardianName:"",
-      customerPincode:"",
-      customerAddress1:"",
-      customerAddress2:"",
-      customerAddress3:"",
-      nomineeOtherAddress:null,
-      nomineePincode:"",
-      nomineeAddress1:"",
-      nomineeAddress2:"",
-      nomineeAddress3:"",
-      guardianPincode:"",
-      guardianAddress1:"",
-      guardianAddress2:"",
-      guardianAddress3:"",
-      cityOfBirth:"",
-      cityOfBirthObj:null,
-      CompanyValue:"",
-      CompanyValueObj:null,
-      popupType:false,
-      occupationDetails:"",
-      companyDetails:"",
-      cityDetails:"",
-      countryDetails:"",
-      panNumber:"",
-      isPanPopupShow:false,
-      panAdharInvalid:false,
-      isPanAdharMatchPopup:false,
-      isErrorPan:false,
-      isNTBUser:false,
-      customerData:"",
-      isPrathamBankUser:false,
-      isETBUser:false,
-      popupTypeInfo:"",
-      fathersName:"",
-      acknowledgeNumb:"",
-      applicationDob:"",
-      hideSearchResult:false,
-      hideCountrySearch:false,
-      isCountrySelectedFromList:true,
-      hideCitySearch:false,
-      isCitySelectedFromList:false,
-      isCompanySelectedFromList:false,
-      companyName:null,
-      nomineeRelationData:[],
-      allCountryListData:[]
-    },
-    bankingPreference:{
-      inputAccountNumber:"",
-      Success:false,
-      verifyKitData:{
-        data:{
-          accountNumber:"",
-          ucic:"",
-          accountType:""
-        }
+      personalDetail: {
+        annualIncome: "",
+        mothersName: "",
+        countryOfBirth: PersonalDetailsConstants.INDIA,
+        countryOfBirthObj: { id: 1, value: "IN", displayText: PersonalDetailsConstants.INDIA },
+        nomineeVisible: true,
+        communicationAddress: false,
+        nomineeCommunicationAddress: false,
+        guardianCommunicationAddress: false,
+        form60Visible: false,
+        panApplied: false,
+        selValue: RadioButtonConstants.RADIO1,
+        nomineeAddressRadio: RadioButtonConstants.RADIO1,
+        guardianAddressRadio: RadioButtonConstants.RADIO1,
+        customerOtherAddress: null,
+        guardianOtherAddress: null,
+        nomineeDob: "",
+        isNomineeMinor: false,
+        showCompanyName: false,
+        occupationType: null,
+        sourceOfIncome: null,
+        sourceOfIncomeDetails: [],
+        nomineeName: "",
+        customerRelation: null,
+        guardianName: "",
+        customerPincode: "",
+        customerAddress1: "",
+        customerAddress2: "",
+        customerAddress3: "",
+        nomineeOtherAddress: null,
+        nomineePincode: "",
+        nomineeAddress1: "",
+        nomineeAddress2: "",
+        nomineeAddress3: "",
+        guardianPincode: "",
+        guardianAddress1: "",
+        guardianAddress2: "",
+        guardianAddress3: "",
+        cityOfBirth: "",
+        cityOfBirthObj: null,
+        CompanyValue: "",
+        CompanyValueObj: null,
+        popupType: false,
+        occupationDetails: "",
+        companyDetails: "",
+        cityDetails: "",
+        countryDetails: "",
+        panNumber: "",
+        isPanPopupShow: false,
+        panAdharInvalid: false,
+        isPanAdharMatchPopup: false,
+        isErrorPan: false,
+        isNTBUser: false,
+        customerData: "",
+        isPrathamBankUser: false,
+        isETBUser: false,
+        popupTypeInfo: "",
+        fathersName: "",
+        acknowledgeNumb: "",
+        applicationDob: "",
+        hideSearchResult: false,
+        hideCountrySearch: false,
+        isCountrySelectedFromList: true,
+        hideCitySearch: false,
+        isCitySelectedFromList: false,
+        isCompanySelectedFromList: false,
+        companyName: null,
+        nomineeRelationData: [],
+        allCountryListData: []
       },
-      activeIndex:0,
-      istermsAggreed:true,
-      boosterAccount:true,
-      checkbookOpted:true,
-      debitOpted:true,
-      productRadio:RadioButtonConstants.RADIO0,
-      productSelected:"",
-      branchSelected:"",
-      reimburseAccount:false,
-      services:"",
-      isEditBranch:false,
-      SAProductList:[],
-      branchSelectedValue:"",
-      isBranchSelectedFromList:false,
-      personalizedTerms:true,
-      instaKitTerms:true 
-    },
-    customerConsent:{
-      isIndianCitizen:true,
-      isEmploymentProofNeeded:true, // Todo : this response is come from api call
-      isPanImageNeeded:true, // Todo : this response is come from api call
-      country:"",
-      foreignTin:"",
-      tinCountry:"",
-      isTermsAgreed:true,
-      isConsentGiven:true,
-      isPoliticalyExposed:false,
-      signatureImage:"",
-      panImage:"",
-      employmentProofImage:"",
-      isOpenImagePicker:false,
-      isOpenImagePickerPan:false,
-      isErrorForeignTIN:false
+      bankingPreference: {
+        inputAccountNumber: "",
+        Success: false,
+        verifyKitData: {
+          data: {
+            accountNumber: "",
+            ucic: "",
+            accountType: ""
+          }
+        },
+        activeIndex: 0,
+        istermsAggreed: true,
+        boosterAccount: true,
+        checkbookOpted: true,
+        debitOpted: true,
+        productRadio: RadioButtonConstants.RADIO0,
+        productSelected: "",
+        branchSelected: "",
+        reimburseAccount: false,
+        services: "",
+        isEditBranch: false,
+        SAProductList: [],
+        branchSelectedValue: "",
+        isBranchSelectedFromList: false,
+        personalizedTerms: true,
+        instaKitTerms: true
+      },
+      customerConsent: {
+        isIndianCitizen: true,
+        isEmploymentProofNeeded: true, // Todo : this response is come from api call
+        isPanImageNeeded: true, // Todo : this response is come from api call
+        country: "",
+        foreignTin: "",
+        tinCountry: "",
+        isTermsAgreed: true,
+        isConsentGiven: true,
+        isPoliticalyExposed: false,
+        signatureImage: "",
+        panImage: "",
+        employmentProofImage: "",
+        isOpenImagePicker: false,
+        isOpenImagePickerPan: false,
+        isErrorForeignTIN: false
+      }
     }
-  }
     prevSessionData.customerProfile = customerProfileReset;
     prevSessionData.accountType = accountType;
     prevSessionData.progressPercent = 0;
     prevSessionData.availedCardFlag = "";
     prevSessionData.panDetails = {
-      panNumber:"",
-      name:"",
-      pnSts:"",
-      panTitle:"",
-      lastUpdatedDate:"",
-      panAadharLinkSts:"",
-      panAdharStatus:""
+      panNumber: "",
+      name: "",
+      pnSts: "",
+      panTitle: "",
+      lastUpdatedDate: "",
+      panAadharLinkSts: "",
+      panAdharStatus: ""
     }
     setSession({ ...session, prevSessionData });
   };
@@ -344,18 +354,18 @@ const CustomerIdentificationDetails = (props) => {
   const getCompanyDetailsFromLocalData = async () => {
     let company = await AsyncStorageUtils.getObjectItem(LocalDB.companyDetails);
     let companyDetails = decryptDataValue(company);
-    if(companyDetails != null){
+    if (companyDetails != null) {
       getRankDetails(companyDetails);
       setIsCompanySelectedFromList(true);
       setCompanyName(companyDetails.displayText);
       setCompanyValue(companyDetails);
-    }else{
+    } else {
       setIsCompanySelectedFromList(false);
       setCompanyRankList("");
       setCompanyName("");
       setCompanyValue("");
     }
-   
+
   };
 
   async function setCompanyData() {
@@ -390,18 +400,18 @@ const CustomerIdentificationDetails = (props) => {
     return encryptedDataValue(JSON.stringify(request));
   };
 
-  const saveAdharDetailsInContext = () =>{
-    let adharDetails = getAadharDetails(aadharNo,aadharNameList);
+  const saveAdharDetailsInContext = () => {
+    let adharDetails = getAadharDetails(aadharNo, aadharNameList);
     prevSessionData.adharDetails = adharDetails;
     setSession({ ...session, prevSessionData });
     getPanVerificationDetails();
   }
 
-  const getEncryptedAdharDetails = () =>{   
-    return encryptedDataValue(JSON.stringify(prevSessionData.adharDetails)); 
+  const getEncryptedAdharDetails = () => {
+    return encryptedDataValue(JSON.stringify(prevSessionData.adharDetails));
   }
-  const getEncryptedPanDetails = () =>{
-    return encryptedDataValue(JSON.stringify(prevSessionData.panDetails)); 
+  const getEncryptedPanDetails = () => {
+    return encryptedDataValue(JSON.stringify(prevSessionData.panDetails));
   }
   //submitCIDDetails is a function which actually creates user in backend and send back userID in response
   const submitCIDDetails = async () => {
@@ -415,29 +425,29 @@ const CustomerIdentificationDetails = (props) => {
       aadharDetails: getEncryptedAdharDetails(),
       panDetails: getEncryptedPanDetails(),
       appName: accountType,
-      userValidationDetails:userValidationRef.current,
-      getGenCustResp:getGenCustRespRef.current,
-      checkGenDedupeResp:checkGenDedupeRespRef.current
+      userValidationDetails: userValidationRef.current,
+      getGenCustResp: getGenCustRespRef.current,
+      checkGenDedupeResp: checkGenDedupeRespRef.current
     };
-    let header={
+    let header = {
       appName: accountType,
-      mobileNumber:encryptedDataValue(mobileNumber)
+      mobileNumber: encryptedDataValue(mobileNumber)
     }
 
     NetworkManager.IDFCNetworkPut(
       Endpoints.saveCustomerDetails,
       request,
       header,
-      (response,message) => {
+      (response, message) => {
         if (response?.status == CommonConstant.SUCCESS) {
           cidContextData.userId = response.userId;
           setSession({ ...session, prevSessionData });
           //store response.userId
           props.navigation.navigate(NavigationUrl.CustomerProfileId);
         } else if (response == CommonConstant.INTERNALSERVERERROR) {
-         setErrorMsg(message);
-         setIsUnkownError(true);
-        }else{
+          setErrorMsg(message);
+          setIsUnkownError(true);
+        } else {
           setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
           setIsUnkownError(true);
         }
@@ -445,35 +455,35 @@ const CustomerIdentificationDetails = (props) => {
     );
   };
 
-  async function getCompanyListData () {
+  async function getCompanyListData() {
     setShowLoader(true);
-    let header={
+    let header = {
       appName: accountType,
-      mobileNumber:""
+      mobileNumber: ""
     }
-      NetworkManager.IDFCNetworkGet(
-        Endpoints.getCompanyList + '%20',
-        header,
-        (response) => {
-          let data = response;
-          setShowLoader(false);
-          if(isEmptyValue(data)){
-            setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
-            setIsUnkownError(true);
-            sethideSearchResult(false);
-          }else{
-              setCompanyDetails(data);
-              sethideSearchResult(true);
-              getCompanyDetailsFromLocalData();
-          }
+    NetworkManager.IDFCNetworkGet(
+      Endpoints.getCompanyList + '%20',
+      header,
+      (response) => {
+        let data = response;
+        setShowLoader(false);
+        if (isEmptyValue(data)) {
+          setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
+          setIsUnkownError(true);
+          sethideSearchResult(false);
+        } else {
+          setCompanyDetails(data);
+          sethideSearchResult(true);
+          getCompanyDetailsFromLocalData();
         }
-      );
+      }
+    );
   };
 
   const getRankDetails = async (company, isfromClickhandler) => {
-    let header={
+    let header = {
       appName: accountType,
-      mobileNumber:""
+      mobileNumber: ""
     }
     await NetworkManager.IDFCNetworkGet(
       Endpoints.getCompanyRank + company.displayText,
@@ -552,7 +562,7 @@ const CustomerIdentificationDetails = (props) => {
         personalcontextData.showCompanyName = true;
         personalcontextData.CompanyValue =
           fetchedData.fetchedPersonalDetails?.companyName?.displayText;
-          personalcontextData.CompanyValueObj =
+        personalcontextData.CompanyValueObj =
           fetchedData.fetchedPersonalDetails?.companyName
         if (fetchedData.fetchedPersonalDetails.companyName) {
           personalcontextData.isCompanySelectedFromList = true;
@@ -568,11 +578,11 @@ const CustomerIdentificationDetails = (props) => {
         fetchedData.fetchedPersonalDetails.mothersFullName;
       personalcontextData.countryOfBirthObj =
         fetchedData.fetchedPersonalDetails.countryOfBirth;
-        personalcontextData.countryOfBirth =
+      personalcontextData.countryOfBirth =
         fetchedData.fetchedPersonalDetails.countryOfBirth?.displayText;
-        personalcontextData.cityOfBirthObj =
+      personalcontextData.cityOfBirthObj =
         fetchedData.fetchedPersonalDetails.cityOfBirth;
-        personalcontextData.cityOfBirth =
+      personalcontextData.cityOfBirth =
         fetchedData.fetchedPersonalDetails.cityOfBirth?.displayText;
 
       //form 60 details - pan details
@@ -684,7 +694,7 @@ const CustomerIdentificationDetails = (props) => {
       }
       if (
         fetchedData.fetchedPersonalDetails.nomineeDetails?.guardianDetails
-          ?.address?.otherAddress 
+          ?.address?.otherAddress
       ) {
         personalcontextData.guardianOtherAddress =
           fetchedData.fetchedPersonalDetails.nomineeDetails?.guardianDetails?.address?.otherAddress;
@@ -735,7 +745,7 @@ const CustomerIdentificationDetails = (props) => {
           fetchedData.fetchedBankingDetails.reimburseAccount;
         bankingPreferenceData.istermsAggreed =
           fetchedData.fetchedBankingDetails.istermsAggreed;
-          bankingPreferenceData.personalizedTerms=fetchedData.fetchedBankingDetails.istermsAggreed;
+        bankingPreferenceData.personalizedTerms = fetchedData.fetchedBankingDetails.istermsAggreed;
       } else {
         bankingPreferenceData.activeIndex = 1;
         if (fetchedData.fetchedBankingDetails.inputAccountNumber !== "") {
@@ -746,7 +756,7 @@ const CustomerIdentificationDetails = (props) => {
           fetchedData.fetchedBankingDetails.verifyKitData;
         bankingPreferenceData.istermsAggreed =
           fetchedData.fetchedBankingDetails.istermsAggreed;
-          bankingPreferenceData.instaKitTerms = fetchedData.fetchedBankingDetails.istermsAggreed;
+        bankingPreferenceData.instaKitTerms = fetchedData.fetchedBankingDetails.istermsAggreed;
       }
     }
 
@@ -767,7 +777,7 @@ const CustomerIdentificationDetails = (props) => {
         fetchedData.fetchedCustConsentDetails.signatureImage;
       customerConsentData.panImage =
         fetchedData.fetchedCustConsentDetails.panImage;
-        customerConsentData.employmentProofImage = fetchedData.fetchedCustConsentDetails.employmentProofImage;
+      customerConsentData.employmentProofImage = fetchedData.fetchedCustConsentDetails.employmentProofImage;
     }
 
     setSession({ ...session, prevSessionData });
@@ -830,12 +840,12 @@ const CustomerIdentificationDetails = (props) => {
     setShowLoader(true);
     // let accType = accountType;
     let header = {
-      appName:accountType,
-      mobileNumber:  encryptedDataValue(number)
+      appName: accountType,
+      mobileNumber: encryptedDataValue(number)
     }
     NetworkManager.IDFCNetworkGet(
-      Endpoints.getResumeJourneyCheck,header,
-      (response,message) => {
+      Endpoints.getResumeJourneyCheck, header,
+      (response, message) => {
         setShowLoader(false);
         if (response?.status == CommonConstant.SUCCESS) {
           const encryptedResponse = {
@@ -865,7 +875,7 @@ const CustomerIdentificationDetails = (props) => {
             encryptedResponse.panDetails
           );
 
-          
+
           const fetchedData = {
             fetchedCIDDetails,
             fetchedPersonalDetails,
@@ -882,7 +892,7 @@ const CustomerIdentificationDetails = (props) => {
             if (
               _milestone == Milestone.CUST_CONSENT_DETAILS &&
               fetchedData?.fetchedCustConsentDetails?.saveStatus ==
-                Save_Status.finish
+              Save_Status.finish
             ) {
               setshowAccAlreadyExistPopUp(true);
             } else {
@@ -891,7 +901,7 @@ const CustomerIdentificationDetails = (props) => {
               setResumeApiData(fetchedData);
             }
           }
-        } 
+        }
       }
     );
   };
@@ -1110,7 +1120,7 @@ const CustomerIdentificationDetails = (props) => {
       : setKvalue(-150);
   };
 
-  const getCustomerDedupe = async() => {
+  const getCustomerDedupe = async () => {
     let userDetails = {
       cidDetails: getCIDDetailsRequest(),
       aadharDetails: getAadharDetails(aadharNo, aadharNameList),
@@ -1119,44 +1129,44 @@ const CustomerIdentificationDetails = (props) => {
       appName: route.params.accountType,
       mobileNumber: ""
     }
-    await customerDedupe(userDetails, header, (userType, data, msg,genericCustResp,posidexDedupeResp,userDetailsEncrypted) => {
+    await customerDedupe(userDetails, header, (userType, data, msg, genericCustResp, posidexDedupeResp, userDetailsEncrypted) => {
       setShowLoader(false);
       setCustomerData(data);
-      if(userDetailsEncrypted){
-       userValidationRef.current = userDetailsEncrypted;
+      if (userDetailsEncrypted) {
+        userValidationRef.current = userDetailsEncrypted;
       }
-      if(genericCustResp){
+      if (genericCustResp) {
         getGenCustRespRef.current = genericCustResp;
       }
-      if(posidexDedupeResp){
-        checkGenDedupeRespRef.current=posidexDedupeResp
+      if (posidexDedupeResp) {
+        checkGenDedupeRespRef.current = posidexDedupeResp
       }
-  
+
       /* istanbul ignore else */
       if (userType === Customer_Type.NTB_CUSTOMER) {
         setIsNTBUser(true);
         checkMobileDedupeApi();
-      } 
-       else if (userType === Customer_Type.PRATHAMBANK_CUSTOMER) {
-          setIsPrathamBankUser(true);
-        } else if (userType === Customer_Type.ETB_WITH_SA_CUSTOMER) {
-          setIsETBUser(true);
-        } else if (userType === Customer_Type.ETB_WITHOUT_SA_CUSTOMER) {
-          setIsETBUser(true);
-          setIsETBWithoutSaUser(true);
-        }
-        else if(userType === Customer_Type.ETB_WITH_CS_CUSTOMER_CORPORATE){
-          setIsETBUser(true);
-          setIsETBUserCorporateCS(true);
-        } 
-        else if(userType === Customer_Type.ETB_WITH_SA_CUSTOMER_CORPORATE){
-          setIsETBUser(true);
-          setIsETBUserCorporateSA(true);
-        }
-        else {
-          setErrorMsg(msg);
-          setIsUnkownError(true);
-        }
+      }
+      else if (userType === Customer_Type.PRATHAMBANK_CUSTOMER) {
+        setIsPrathamBankUser(true);
+      } else if (userType === Customer_Type.ETB_WITH_SA_CUSTOMER) {
+        setIsETBUser(true);
+      } else if (userType === Customer_Type.ETB_WITHOUT_SA_CUSTOMER) {
+        setIsETBUser(true);
+        setIsETBWithoutSaUser(true);
+      }
+      else if (userType === Customer_Type.ETB_WITH_CS_CUSTOMER_CORPORATE) {
+        setIsETBUser(true);
+        setIsETBUserCorporateCS(true);
+      }
+      else if (userType === Customer_Type.ETB_WITH_SA_CUSTOMER_CORPORATE) {
+        setIsETBUser(true);
+        setIsETBUserCorporateSA(true);
+      }
+      else {
+        setErrorMsg(msg);
+        setIsUnkownError(true);
+      }
     });
   };
 
@@ -1164,10 +1174,10 @@ const CustomerIdentificationDetails = (props) => {
     if (panNo) {
       setShowLoader(true);
       // if user has entered pan number
-      await isPanNumberValidApi(panNo, (isPanValid,panDetails) => {
+      await isPanNumberValidApi(panNo, (isPanValid, panDetails) => {
 
         if (isPanValid) {
-          let middleName = isEmptyValue(panDetails?.middleName) ? "" :(panDetails.middleName + " ")
+          let middleName = isEmptyValue(panDetails?.middleName) ? "" : (panDetails.middleName + " ")
           prevSessionData.panDetails.panNumber = panDetails.panNumber;
           prevSessionData.panDetails.name = panDetails.firstName + " " + middleName + panDetails.lastName
           prevSessionData.panDetails.pnSts = panDetails.panStatus;
@@ -1177,11 +1187,11 @@ const CustomerIdentificationDetails = (props) => {
           setSession({ ...session, prevSessionData });
           checkNamePanAdharMatch();
         } else {
-          if(panDetails == ""){
+          if (panDetails == "") {
             setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
             setIsUnkownError(true);
             setShowLoader(false);
-          }else{
+          } else {
             setShowLoader(false);
             setIsPanPopupShow(true);
           }
@@ -1212,17 +1222,17 @@ const CustomerIdentificationDetails = (props) => {
   };
   const checkNamePanAdharMatch = () => {
     checkPanAdharMatch(prevSessionData.adharDetails.name, prevSessionData.panDetails.name, (res) => {
-      
+
       setShowLoader(false);
-      if(res == AdharPanMatch.COMPLETE_MATCHED){
+      if (res == AdharPanMatch.COMPLETE_MATCHED) {
         prevSessionData.panDetails.panAdharStatus = res;
         setSession({ ...session, prevSessionData });
-         getCustomerDedupe();
-      }else if(res == AdharPanMatch.PARTIAL_MATCHED){
+        getCustomerDedupe();
+      } else if (res == AdharPanMatch.PARTIAL_MATCHED) {
         prevSessionData.panDetails.panAdharStatus = res;
         setSession({ ...session, prevSessionData });
         setIsPanAdharMatchPopup(true);
-      }else {
+      } else {
         prevSessionData.panDetails.panAdharStatus = res;
         setSession({ ...session, prevSessionData });
         setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
@@ -1255,19 +1265,19 @@ const CustomerIdentificationDetails = (props) => {
   };
 
   const checkMobileDedupeApi = () => {
-    checkMobileDedupe(mobileNumber, (isNTBMobile_number,isErr) => {
-      console.log("isErr",isErr)
+    checkMobileDedupe(mobileNumber, (isNTBMobile_number, isErr) => {
+      console.log("isErr", isErr)
       if (!isNTBMobile_number) { //if its false then its ETB user with existing mobile number.
-        if(isErr){
+        if (isErr) {
           setIsUnkownError(true)
           setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
         }
-        else{
+        else {
           setisReEnterMobile(true);
           setMobileNumber("")
         }
-       
-      }else if (emailId) {
+
+      } else if (emailId) {
         setMobileDedupeCallCount(0);
         checkEmailDedupeApi();
       } else {
@@ -1314,79 +1324,79 @@ const CustomerIdentificationDetails = (props) => {
       });
     }
   };
- const submitEmpVerificationPopup=(res)=>{
-  setIsEmpVerificationPopup(false);
-  if(res.optionValue==StringsOfLanguages.COMMON.YES){
-    setOfficeEmailId("");
-  }
-  else{
-    setPersonalEmailId(res.personalEmailId);
-  }
- }
- const submitOfficeVerifiactionPopup=(value)=>{
-  setIsOfficeMailVerificationPopup(false);
-  setOfficeEmailId(value);
- }
-const getEncryptedEmpVerificationParam=()=>{
-  let params = {
-    organizationName: CompanyValue.displayText, 
-    individualName: EmailVerificationDetails.INDIVIDUALNAME, 
-    email: office_emailId
-   };
-   ConsoleLogHelper.log("Emp vevification req :",params);
-  return encryptedDataValue(JSON.stringify(params));
-}
- const EmployeeVerificationApi = async () => {
-  if(accountType === Account_Type.ASSISTED_CS && office_emailId){
-    if(empVerificationFailCount>=2){
-      prevSessionData.customerProfile.customerConsent.isEmploymentProofNeeded = true;
-      setSession({ ...session, prevSessionData });
-      setempDomainVerificationFailPopup(true);
+  const submitEmpVerificationPopup = (res) => {
+    setIsEmpVerificationPopup(false);
+    if (res.optionValue == StringsOfLanguages.COMMON.YES) {
+      setOfficeEmailId("");
     }
-    else{
-      setShowLoader(true);
-      let EncryptedParams= {data : getEncryptedEmpVerificationParam()}
-      let header = {
-        appName: accountType,
-        mobileNumber : ""
+    else {
+      setPersonalEmailId(res.personalEmailId);
+    }
+  }
+  const submitOfficeVerifiactionPopup = (value) => {
+    setIsOfficeMailVerificationPopup(false);
+    setOfficeEmailId(value);
+  }
+  const getEncryptedEmpVerificationParam = () => {
+    let params = {
+      organizationName: CompanyValue.displayText,
+      individualName: EmailVerificationDetails.INDIVIDUALNAME,
+      email: office_emailId
+    };
+    ConsoleLogHelper.log("Emp vevification req :", params);
+    return encryptedDataValue(JSON.stringify(params));
+  }
+  const EmployeeVerificationApi = async () => {
+    if (accountType === Account_Type.ASSISTED_CS && office_emailId) {
+      if (empVerificationFailCount >= 2) {
+        prevSessionData.customerProfile.customerConsent.isEmploymentProofNeeded = true;
+        setSession({ ...session, prevSessionData });
+        setempDomainVerificationFailPopup(true);
       }
-      NetworkManager.IDFCNetworkPost(Endpoints.emailVerify, EncryptedParams, header,response => {
-        ConsoleLogHelper.log("response karza :",response);
-        setShowLoader(false);
-        if(response){
-          if(response?.statusCode==Api_Error_Code.ERROR_402){
-           setIsOfficeMailVerificationPopup(true);
-          }
-          else{
-            if(response?.isPersonalMail){
-              setIsEmpVerificationPopup(true);
-            }
-            else if(!response?.isPersonalMail && response?.isDomainMatched){
-              prevSessionData.customerProfile.customerConsent.isEmploymentProofNeeded = false;
-              setSession({ ...session, prevSessionData });
-              submitCIDDetails();
-            }
-            else if(!response.isPersonalMail && !response.isDomainMatched){
-              let count= empVerificationFailCount + 1;
-              setEmpVerificationFailCount(count);
-              setIsEmpVerificationPopup(true);
-            } 
-          }
+      else {
+        setShowLoader(true);
+        let EncryptedParams = { data: getEncryptedEmpVerificationParam() }
+        let header = {
+          appName: accountType,
+          mobileNumber: ""
         }
-        else{
-          setIsOfficeMailVerificationPopup(true);
-        }
-      });
-}
-}
-else{
-  submitCIDDetails();
-}
-};
-const EmpVerificationFailedPopupSubmit=()=>{
-  setempDomainVerificationFailPopup(false);
-  submitCIDDetails();
-}
+        NetworkManager.IDFCNetworkPost(Endpoints.emailVerify, EncryptedParams, header, response => {
+          ConsoleLogHelper.log("response karza :", response);
+          setShowLoader(false);
+          if (response) {
+            if (response?.statusCode == Api_Error_Code.ERROR_402) {
+              setIsOfficeMailVerificationPopup(true);
+            }
+            else {
+              if (response?.isPersonalMail) {
+                setIsEmpVerificationPopup(true);
+              }
+              else if (!response?.isPersonalMail && response?.isDomainMatched) {
+                prevSessionData.customerProfile.customerConsent.isEmploymentProofNeeded = false;
+                setSession({ ...session, prevSessionData });
+                submitCIDDetails();
+              }
+              else if (!response.isPersonalMail && !response.isDomainMatched) {
+                let count = empVerificationFailCount + 1;
+                setEmpVerificationFailCount(count);
+                setIsEmpVerificationPopup(true);
+              }
+            }
+          }
+          else {
+            setIsOfficeMailVerificationPopup(true);
+          }
+        });
+      }
+    }
+    else {
+      submitCIDDetails();
+    }
+  };
+  const EmpVerificationFailedPopupSubmit = () => {
+    setempDomainVerificationFailPopup(false);
+    submitCIDDetails();
+  }
   return (
     <Container>
       <BackgroundImage>
@@ -1434,36 +1444,36 @@ const EmpVerificationFailedPopupSubmit=()=>{
                         <View>
 
 
-              <CustomSearchInputDropdown
-                value={companyName}
-                placeholder={
-                  StringsOfLanguages.CID.CID_FIELD_COMPANY
-                }
-                searchList={companyDetails}
-                clickHandler={clickHandler}
-                onCrossPress={() => {
-                    setCompanyRankList("");
-                    setCompanyName("");
-                    setCompanyValue("");
-                    setIsCompanySelectedFromList(false);
-                }}
-                onChangeText={
-                  (text)=>{
-                    if(text == ""){
-                      setCompanyRankList("");
-                      setCompanyName("");
-                      setCompanyValue("");
-                      setIsCompanySelectedFromList(false);
-                    }else if(text != companyName){
-                      setCompanyRankList("");
-                      setCompanyName("");
-                      setCompanyValue("");
-                      setIsCompanySelectedFromList(false);
-                    }
-                    // setIsErrorBankName("error")
-                  }
-                }
-              />
+                          <CustomSearchInputDropdown
+                            value={companyName}
+                            placeholder={
+                              StringsOfLanguages.CID.CID_FIELD_COMPANY
+                            }
+                            searchList={companyDetails}
+                            clickHandler={clickHandler}
+                            onCrossPress={() => {
+                              setCompanyRankList("");
+                              setCompanyName("");
+                              setCompanyValue("");
+                              setIsCompanySelectedFromList(false);
+                            }}
+                            onChangeText={
+                              (text) => {
+                                if (text == "") {
+                                  setCompanyRankList("");
+                                  setCompanyName("");
+                                  setCompanyValue("");
+                                  setIsCompanySelectedFromList(false);
+                                } else if (text != companyName) {
+                                  setCompanyRankList("");
+                                  setCompanyName("");
+                                  setCompanyValue("");
+                                  setIsCompanySelectedFromList(false);
+                                }
+                                // setIsErrorBankName("error")
+                              }
+                            }
+                          />
                           {/* <CustomSearchInputCompany
                             testID={TestIds.cid_cs_company_name}
                             placeholder={
@@ -1498,20 +1508,20 @@ const EmpVerificationFailedPopupSubmit=()=>{
                         CompanyValue.rankApplicable &&
                         CompanyRankList !== "" &&
                         CompanyRankList.length > 0 && (
-                        <CardMargin>
-                          <Select
-                            style={selectStyle}
-                            testID={TestIds.cid_cs_company_rank}
-                            defaultSelectedItem={selectedRank}
-                            label={StringsOfLanguages.CID.CID_FIELD_RANK}
-                            options={CompanyRankList}
-                            labelStyle={{ color: Colors.NEW_GREY_800.text }}
-                            iconColor={Colors.MAROON_DARK}
-                            onChange={(value) => setSelectedRank(value)}
-                            key={selectedRank.id}
-                          />
-                        </CardMargin>
-                      )}
+                          <CardMargin>
+                            {/* <Select
+                              style={selectStyle}
+                              testID={TestIds.cid_cs_company_rank}
+                              defaultSelectedItem={selectedRank}
+                              label={StringsOfLanguages.CID.CID_FIELD_RANK}
+                              options={CompanyRankList}
+                              labelStyle={{ color: Colors.NEW_GREY_800.text }}
+                              iconColor={Colors.MAROON_DARK}
+                              onChange={(value) => setSelectedRank(value)}
+                              key={selectedRank.id}
+                            /> */}
+                          </CardMargin>
+                        )}
                     </View>
                   )}
                   <View style={{ zIndex: 0 }}>
@@ -1640,12 +1650,12 @@ const EmpVerificationFailedPopupSubmit=()=>{
                             labelStyle={{
                               color:
                                 isErrorOfficeEmail == "error" &&
-                                office_emailId != ""
+                                  office_emailId != ""
                                   ? Colors.ERROR
                                   : Colors.GRAY,
                               opacity:
                                 isErrorOfficeEmail == "error" &&
-                                office_emailId != ""
+                                  office_emailId != ""
                                   ? 1
                                   : 0.32,
                             }}
@@ -1653,12 +1663,12 @@ const EmpVerificationFailedPopupSubmit=()=>{
                               style: {
                                 borderBottomColor:
                                   isErrorOfficeEmail == "error" &&
-                                  office_emailId != ""
+                                    office_emailId != ""
                                     ? Colors.ERROR
                                     : Colors.GRAY,
                                 opacity:
                                   isErrorOfficeEmail == "error" &&
-                                  office_emailId != ""
+                                    office_emailId != ""
                                     ? 1
                                     : 0.32,
                               },
@@ -1671,7 +1681,7 @@ const EmpVerificationFailedPopupSubmit=()=>{
                               style: {
                                 color:
                                   isErrorOfficeEmail == "error" &&
-                                  office_emailId != ""
+                                    office_emailId != ""
                                     ? Colors.ERROR
                                     : Colors.GRAY,
                               },
@@ -1696,12 +1706,12 @@ const EmpVerificationFailedPopupSubmit=()=>{
                             labelStyle={{
                               color:
                                 isErrorPersonalEmail == "error" &&
-                                personal_emailId != ""
+                                  personal_emailId != ""
                                   ? Colors.ERROR
                                   : Colors.GRAY,
                               opacity:
                                 isErrorPersonalEmail == "error" &&
-                                personal_emailId != ""
+                                  personal_emailId != ""
                                   ? 1
                                   : 0.32,
                             }}
@@ -1709,12 +1719,12 @@ const EmpVerificationFailedPopupSubmit=()=>{
                               style: {
                                 borderBottomColor:
                                   isErrorPersonalEmail == "error" &&
-                                  personal_emailId != ""
+                                    personal_emailId != ""
                                     ? Colors.ERROR
                                     : Colors.GRAY,
                                 opacity:
                                   isErrorPersonalEmail == "error" &&
-                                  personal_emailId != ""
+                                    personal_emailId != ""
                                     ? 1
                                     : 0.32,
                               },
@@ -1727,7 +1737,7 @@ const EmpVerificationFailedPopupSubmit=()=>{
                               style: {
                                 color:
                                   isErrorPersonalEmail == "error" &&
-                                  personal_emailId != ""
+                                    personal_emailId != ""
                                     ? Colors.ERROR
                                     : Colors.GRAY,
                               },
@@ -1738,21 +1748,21 @@ const EmpVerificationFailedPopupSubmit=()=>{
                               personal_emailId
                                 ? StringsOfLanguages.CID.CID_ERROR_EMAIL
                                 : StringsOfLanguages.CID
-                                    .CID_FIELD_PERSONAL_EMAIL
+                                  .CID_FIELD_PERSONAL_EMAIL
                             }
                             errorColor={Colors.PRIMARY_COLOR}
                           />
                         </MarginBottom>
                         <MarginBottom>
-                        <CustomText
-                           fontSize={Font_Size.SIZE_14}
-                           lineHeight={Line_Height.HEIGHT_18}
-                           letterSpacing={LetterSpacing.MINUS_ZERO_POINT_TWO}
-                           color={Colors.NEW_GREY_800.text}
-                           fontFamily={FontFamily.Inter_SemiBold}
-                    >
-                      {StringsOfLanguages.CID.EMAIL_ID_NOTE}
-                    </CustomText>
+                          <CustomText
+                            fontSize={Font_Size.SIZE_14}
+                            lineHeight={Line_Height.HEIGHT_18}
+                            letterSpacing={LetterSpacing.MINUS_ZERO_POINT_TWO}
+                            color={Colors.NEW_GREY_800.text}
+                            fontFamily={FontFamily.Inter_SemiBold}
+                          >
+                            {StringsOfLanguages.CID.EMAIL_ID_NOTE}
+                          </CustomText>
                         </MarginBottom>
                       </View>
                     )}
@@ -1853,7 +1863,7 @@ const EmpVerificationFailedPopupSubmit=()=>{
                   </InfoIconContainer>
 
                   <MarginBottom>
-                    <PasswordInput
+                    {/* <PasswordInput
                       value={aadharNo}
                       testID={TestIds.cid_aadhar}
                       onBlur={() => keyboardBlurHandle()}
@@ -1899,7 +1909,8 @@ const EmpVerificationFailedPopupSubmit=()=>{
                             alignItems: "center",
                           }}
                         >
-                          <IconButton
+                        // Icon button to be replace
+                           <IconButton
                             primaryColor={Colors.MAROON_DARK}
                             iconColor={"maroon"}
                             iconType={toggleMask ? "Eye2Off" : "Eye2"}
@@ -1917,13 +1928,13 @@ const EmpVerificationFailedPopupSubmit=()=>{
                           </AdharTooltipHindden>
                         </View>
                       }
-                    />
+                    /> */}
                   </MarginBottom>
 
                   <FooterContainer>
                     <CustomText
                       fontSize={Font_Size.SIZE_12}
-                      lineHeight={LineHeight.HEIGHT_16}
+                      lineHeight={Line_Height.HEIGHT_16}
                       letterSpacing={LetterSpacing.MINUS_ZERO_POINT_THREE}
                       color={Colors.NEW_GREY_600.text}
                       flex={1}
@@ -1964,26 +1975,26 @@ const EmpVerificationFailedPopupSubmit=()=>{
         </KeyboardAvoidingView>
 
         {/* Popup for showing error message on pan validation */}
-        {
-          <ErrorPopup 
-          popUpshow={isPanPopupShow} 
-          message={StringsOfLanguages.CID.CID_DESCR_INVALID_PAN}
-          callBack={()=>setIsPanPopupShow(!isPanPopupShow)}
-          btnText={StringsOfLanguages.CID.CID_LABLE_RE_ENTER_PAN}
+        {/* {
+          <ErrorPopup
+            popUpshow={isPanPopupShow}
+            message={StringsOfLanguages.CID.CID_DESCR_INVALID_PAN}
+            callBack={() => setIsPanPopupShow(!isPanPopupShow)}
+            btnText={StringsOfLanguages.CID.CID_LABLE_RE_ENTER_PAN}
           >
           </ErrorPopup>
-        }
-           {
-          <ErrorPopup 
-          popUpshow={isUnkownError} 
-          message={errorMsg}
-          callBack={()=>setIsUnkownError(false)}
-          btnText={StringsOfLanguages.COMMON.SESSION_ALERT_OK}
+        } */}
+        {/* {
+          <ErrorPopup
+            popUpshow={isUnkownError}
+            message={errorMsg}
+            callBack={() => setIsUnkownError(false)}
+            btnText={StringsOfLanguages.COMMON.SESSION_ALERT_OK}
           >
           </ErrorPopup>
-        }
+        } */}
         {/* show PAN popup dialog  here */}
-        {
+        {/* {
           <Popup
             testID_submit={TestIds.cid_adhar_pop_up_submit}
             testID_cancel={TestIds.cid_adhar_pop_up_cancel}
@@ -2006,8 +2017,8 @@ const EmpVerificationFailedPopupSubmit=()=>{
               </ComponentContainer>
             }
           />
-        }
-        {
+        } */}
+        {/* {
           <Popup
             testID_submit={TestIds.cid_adhar_pop_up_submit1}
             testID_cancel={TestIds.cid_adhar_pop_up_cancel1}
@@ -2041,9 +2052,9 @@ const EmpVerificationFailedPopupSubmit=()=>{
               </ComponentContainer>
             }
           />
-        }
+        } */}
         {/* ETB customer popup */}
-        {
+        {/* {
           <PopUpExistingCustomer
             testID_submit={TestIds.cid_adhar_pop_up_submit2}
             testID_cancel={TestIds.cid_adhar_pop_up_cancel2}
@@ -2064,19 +2075,19 @@ const EmpVerificationFailedPopupSubmit=()=>{
             isETBUserCorporateSA={isETBUserCorporateSA}
             cancelBtnPressed={() => {
               setIsETBUser(false);
-             setIsETBUserCorporateCS(false);
-             setIsETBUserCorporateSA(false);
+              setIsETBUserCorporateCS(false);
+              setIsETBUserCorporateSA(false);
               setIsETBWithoutSaUser(false);
               // props.navigation.navigate(NavigationUrl.drawerId, {
               //   screen: NavigationUrl.dashboardId,
               // });
             }
-          }
+            }
           />
-        }
+        } */}
 
         {/* re enter pan */}
-        {
+        {/* {
           <PopupTextInput
             testID_submit={TestIds.cid_pan_pop_up_submit}
             testID_cancel={TestIds.cid_pan_pop_up_cancel}
@@ -2098,10 +2109,10 @@ const EmpVerificationFailedPopupSubmit=()=>{
             cancelButtonPress={() => setPan(false)}
             isError={isErrorPan}
           />
-        }
+        } */}
 
         {/* show PAN Adhar Name Mismatch popup dialog  here */}
-        {
+        {/* {
           <Popup
             testID_submit={TestIds.cid_pan_adhar_match_pop_up_submit}
             testID_cancel={TestIds.cid_pan_adhar_match_pop_up_cancel}
@@ -2117,9 +2128,9 @@ const EmpVerificationFailedPopupSubmit=()=>{
                 <View>
                   <CustomText>
                     <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text}>{StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_TEXT1}</CustomText>
-                    <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text} fontFamily={FontFamily.Inter_SemiBold}>{isEmptyValue(panDetails?.name) ? "": panDetails?.name}</CustomText>
+                    <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text} fontFamily={FontFamily.Inter_SemiBold}>{isEmptyValue(panDetails?.name) ? "" : panDetails?.name}</CustomText>
                     <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text}>{StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_TEXT2}</CustomText>
-                    <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text} fontFamily={FontFamily.Inter_SemiBold}>{isEmptyValue(adharDetails?.name) ? "":adharDetails?.name}</CustomText>
+                    <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text} fontFamily={FontFamily.Inter_SemiBold}>{isEmptyValue(adharDetails?.name) ? "" : adharDetails?.name}</CustomText>
                     <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text}>{StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_TEXT3}</CustomText>
                   </CustomText>
                   <CustomText>
@@ -2131,10 +2142,10 @@ const EmpVerificationFailedPopupSubmit=()=>{
               </ComponentContainer>
             }
           />
-        }
+        } */}
 
         {/* re enter mobile */}
-        {
+        {/* {
           <PopupTextInput
             testID_submit={TestIds.cid_pan_pop_up_submit1}
             testID_cancel={TestIds.cid_pan_pop_up_cancel1}
@@ -2154,15 +2165,15 @@ const EmpVerificationFailedPopupSubmit=()=>{
             isError={isErrorMobile}
             errorMessage={
               mobileNumber
-                            ? StringsOfLanguages.CID.CID_ERROR_MOBILE
-                            : StringsOfLanguages.CID.CID_FIELD_MOBILE
+                ? StringsOfLanguages.CID.CID_ERROR_MOBILE
+                : StringsOfLanguages.CID.CID_FIELD_MOBILE
             }
-            disabled={isErrorMobile?true:false}
+            disabled={isErrorMobile ? true : false}
           />
-        }
+        } */}
 
         {/* re enter email */}
-        {
+        {/* {
           <PopupTextInput
             testID_submit={TestIds.cid_pan_pop_up_submit2}
             testID_cancel={TestIds.cid_pan_pop_up_cancel2}
@@ -2180,10 +2191,10 @@ const EmpVerificationFailedPopupSubmit=()=>{
             cancelButtonPress={() => setisReEnterEmail(false)}
             isError={isErrorEmail}
           />
-        }
+        } */}
 
         {/* re mismatch adhar pan */}
-        {
+        {/* {
           <Popup
             testID_submit={TestIds.cid_re_enter_pan_validate}
             animationIn="bounceIn"
@@ -2208,9 +2219,9 @@ const EmpVerificationFailedPopupSubmit=()=>{
               </ComponentContainer>
             }
           />
-        }
+        } */}
 
-        {
+        {/* {
           <Popup
             testID_submit={TestIds.cid_resume_journey_pop_up_submit}
             testID_cancel={TestIds.cid_resume_journey_pop_up_cancel}
@@ -2242,9 +2253,9 @@ const EmpVerificationFailedPopupSubmit=()=>{
               </ComponentContainer>
             }
           />
-        }
+        } */}
 
-        {
+        {/* {
           <Popup
             testID_submit={TestIds.cid_acc_already_exist_submit}
             animationIn="bounceIn"
@@ -2269,8 +2280,8 @@ const EmpVerificationFailedPopupSubmit=()=>{
               </ComponentContainer>
             }
           />
-        }
-        {isEmpVerificationPopup ?
+        } */}
+        {/* {isEmpVerificationPopup ?
           <PopupEmpVerification
             testID_submit={TestIds.cid_emp_pop_up_submit}
             animationIn="bounceIn"
@@ -2278,23 +2289,23 @@ const EmpVerificationFailedPopupSubmit=()=>{
             isVisible={isEmpVerificationPopup}
             officeEmail={office_emailId}
             personalEmail={personal_emailId}
-            buttonPress={(res)=> submitEmpVerificationPopup(res) }
+            buttonPress={(res) => submitEmpVerificationPopup(res)}
           />
           : null
-        }
-        {isOfficeMailVerificationPopup ?
+        } */}
+        {/* {isOfficeMailVerificationPopup ?
           <PopupFailedOfficeMailVerification
             testID_submit={TestIds.cid_office_verification_pop_up_submit}
             animationIn="bounceIn"
             popupIcon={alertIcon}
             isVisible={isOfficeMailVerificationPopup}
             officeEmail={office_emailId}
-            buttonPress={(value)=> submitOfficeVerifiactionPopup(value) }
+            buttonPress={(value) => submitOfficeVerifiactionPopup(value)}
           />
           : null
-        }
+        } */}
         {/* show popup when Employee domain verification failed*/}
-        {
+        {/* {
           <Popup
             animationIn="bounceIn"
             testID_submit={TestIds.cid_popup_verification}
@@ -2302,7 +2313,7 @@ const EmpVerificationFailedPopupSubmit=()=>{
             isVisible={empDomainVerificationFailPopup}
             Heading={StringsOfLanguages.CID.EMP_VERIFICATION_FAILED_POPUP_HEADING}
             ButtonText={StringsOfLanguages.CUSTOMERCONSENT.CC_OKAY}
-            buttonPress={()=> EmpVerificationFailedPopupSubmit()}
+            buttonPress={() => EmpVerificationFailedPopupSubmit()}
             component={
               <ComponentContainer>
                 <View>
@@ -2326,7 +2337,7 @@ const EmpVerificationFailedPopupSubmit=()=>{
               </ComponentContainer>
             }
           />
-        }
+        } */}
       </BackgroundImage>
     </Container>
   );

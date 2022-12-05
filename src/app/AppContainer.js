@@ -10,7 +10,7 @@ import useSession from "./useSession";
 import LoginScreen from '../Screens/AgentLogin_oAuth';
 
 import Dashboard from '../Screens/Dashboard';
-// import CustomerIdentificationDetails from "../Screens/CustomerIdentificationDetails";
+import CustomerIdentificationDetails from "../Screens/CustomerIdentificationDetails";
 // import CustomerProfile from "../Screens/CustomerProfile";
 // import ENachMandate from "../Screens/ENachMandate";
 // import PreApprovedOffers from "../Screens/PreApprovedOffers";
@@ -107,11 +107,11 @@ const AppContainer = ({ childFunc }) => {
             options={{headerShown: false}}
           /> */}
 
-          {/* <Stack.Screen
+          <Stack.Screen
             name={NavigationUrl.customerId}
             component={CustomerIdentificationDetails}
-            options={{headerShown: false}}
-          /> */}
+            options={{ headerShown: false }}
+          />
 
           {/* <Stack.Screen
             name={NavigationUrl.CustomerProfileId}

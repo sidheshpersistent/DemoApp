@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { View, FlatList, Text, TouchableOpacity } from 'react-native';
-import { IconButton } from '@idfc/ccl-mobile';
+// import { IconButton } from '@idfc/ccl-mobile';
 import { Colors, Icon_Size } from '../../Utils';
 import { CustomTextInput } from '..';
 import { debounce } from "lodash";
@@ -98,26 +98,25 @@ const CustomSearchInputDropdown = props => {
                         },
                         maxLength: 30,
                     }}
-                    suffix={
-                        <IconButton
-                            primaryColor={Colors.MAROON_DARK}
-                            iconColor={Colors.MAROON_DARK}
-                            iconType={searchText ? "Cross" : "Search"}
-                            transparent
-                            iconSrize={Icon_Size.NORMAL}
-                            onPress={() => {
-                                onCrossPress?onCrossPress():null
-                                
-                                setSearchText("");
-                                sethideSearchResult(false);
-                                setIsCompanySelectedFromList(false)
-                                if (isRankListAvailable) {
-                                    resetRankList();
-                                }
+                    // suffix={
+                    //     <IconButton
+                    //         primaryColor={Colors.MAROON_DARK}
+                    //         iconColor={Colors.MAROON_DARK}
+                    //         iconType={searchText ? "Cross" : "Search"}
+                    //         transparent
+                    //         iconSrize={Icon_Size.NORMAL}
+                    //         onPress={() => {
+                    //             onCrossPress?onCrossPress():null        
+                    //             setSearchText("");
+                    //             sethideSearchResult(false);
+                    //             setIsCompanySelectedFromList(false)
+                    //             if (isRankListAvailable) {
+                    //                 resetRankList();
+                    //             }
 
-                            }}
-                        />
-                    }
+                    //         }}
+                    //     />
+                    // }
                     labelStyle={
                         isCompanySelectedFromList && searchText !== ""
                             ? { color: Colors.GRAY }
