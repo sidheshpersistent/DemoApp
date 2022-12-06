@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react';
-import { Dimensions } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, {useEffect} from 'react';
+import {Dimensions} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 import NavigationUrl from '../Utils/NavigationUrl';
-import useSession from "./useSession";
+import useSession from './useSession';
 
 // import Splash from '../Screens/Splash/index';
 import LoginScreen from '../Screens/AgentLogin_oAuth';
 
 import Dashboard from '../Screens/Dashboard';
-import CustomerIdentificationDetails from "../Screens/CustomerIdentificationDetails";
+import CustomerIdentificationDetails from '../Screens/CustomerIdentificationDetails';
 // import CustomerProfile from "../Screens/CustomerProfile";
 // import ENachMandate from "../Screens/ENachMandate";
 // import PreApprovedOffers from "../Screens/PreApprovedOffers";
@@ -49,8 +49,8 @@ const Stack = createNativeStackNavigator();
 //     </Drawer.Navigator>
 //   </>
 // );
-const AppContainer = ({ childFunc }) => {
-  const { session, setSession } = useSession();
+const AppContainer = ({childFunc}) => {
+  const {session, setSession} = useSession();
 
   // useEffect(() => {
   //   childFunc.current = navigateToLogin;
@@ -61,12 +61,8 @@ const AppContainer = ({ childFunc }) => {
   //   setSession({...session, loginFlag: false});
   // };
 
-
-
   return (
-
     <NavigationContainer>
-
       {session.loginFlag != true ? (
         <Stack.Navigator initialRouteName={NavigationUrl.loginId}>
           {/* <Stack.Screen
@@ -78,9 +74,8 @@ const AppContainer = ({ childFunc }) => {
           <Stack.Screen
             name={NavigationUrl.loginId}
             component={LoginScreen}
-            options={{ headerShown: false }}
+            options={{headerShown: false}}
           />
-
 
           {/* <Stack.Screen
             name={NavigationUrl.EAuthId}
@@ -93,7 +88,7 @@ const AppContainer = ({ childFunc }) => {
           <Stack.Screen
             name={NavigationUrl.dashboardId}
             component={Dashboard}
-            options={{ headerShown: false }}
+            options={{headerShown: false}}
           />
           {/* <Stack.Screen
             name={NavigationUrl.drawerId}
@@ -110,7 +105,7 @@ const AppContainer = ({ childFunc }) => {
           <Stack.Screen
             name={NavigationUrl.customerId}
             component={CustomerIdentificationDetails}
-            options={{ headerShown: false }}
+            options={{headerShown: false}}
           />
 
           {/* <Stack.Screen

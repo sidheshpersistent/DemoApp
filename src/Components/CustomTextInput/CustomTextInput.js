@@ -1,71 +1,99 @@
-/* eslint-disable react/destructuring-assignment */
-import React from 'react';
-import { TextInput } from 'react-native';
-
-import { Colors } from '../../Utils';
-// import { TextInput } from '@idfc/ccl-mobile/lib/module/v2';
+import React, {Component, useEffect, useState} from 'react';
+import {View, StatusBar, TextInput, Animated, Text} from 'react-native';
 
 const CustomTextInput = props => {
-  const {
-    onChange,
-    style,
-    labelStyle,
-    onChangeText,
-    label,
-    keyboardType,
-    inputBorderProps,
-    textInputProps,
-    textProps,
-    value,
-    placeholder,
-    isActive,
-    isValue,
-    errorMessage,
-    isError,
-    errorColor,
-    textColor,
-    testID,
-    onBlur,
-    onFocus,
-    suffix,
-    disabled,
-    reference,
-    autofocus
-  } = props;
+  const {label, suffix = false, onChangeText, value} = props;
+  const [paddingBox, setPaddingBox] = useState(0);
+  const [isFocused, setIsFocused] = useState(false);
+  const [animatedIsFocused] = useState(
+    new Animated.Value(value === '' ? 0 : 1),
+  );
+  useEffect(() => {
+    animation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isFocused]);
 
-  textInputProps ? textInputProps.maxLength = textInputProps.maxLength ? textInputProps.maxLength : 30 : null
+  const animation = () => {
+    Animated.timing(animatedIsFocused, {
+      toValue: isFocused || value !== '' ? 1 : 0,
+      duration: 200,
+      useNativeDriver: false,
+    }).start();
+  };
 
+  const handleFocus = () => {
+    setIsFocused(true);
+    setPaddingBox(4);
+  };
+  const handleBlur = () => {
+    setIsFocused(false);
+    setPaddingBox(0);
+  };
 
+  const labelStyle = {
+    position: 'absolute',
+    left: 12,
+    bottom: animatedIsFocused.interpolate({
+      inputRange: [0, 1],
+      outputRange: [30, 15],
+    }),
+    fontSize: animatedIsFocused.interpolate({
+      inputRange: [0, 1],
+      outputRange: [22, 12],
+    }),
+    color: animatedIsFocused.interpolate({
+      inputRange: [0, 1],
+      outputRange: ['#aaa', '#000'],
+    }),
+  };
+  const labelStyle2 = {
+    bottom: animatedIsFocused.interpolate({
+      inputRange: [0, 1],
+      outputRange: [8, 0],
+    }),
+    color: animatedIsFocused.interpolate({
+      inputRange: [0, 1],
+      outputRange: ['#aaa', '#000'],
+    }),
+    marginBottom: 10,
+    borderBottomColor: 'gray',
+    borderBottomWidth: isFocused || !value ? 1 : 0,
+    marginTop: 10,
+  };
   return (
+    <View
+      style={{
+        paddingLeft: 8,
+        paddingRight: 8,
+        backgroundColor: 'white',
+        borderRadius: 5,
+        marginVertical: 8,
+        paddingVertical: paddingBox,
+      }}>
+      <Animated.Text style={labelStyle}>{label}</Animated.Text>
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <TextInput
+          value={value}
+          onChangeText={onChangeText}
+          style={{
+            fontSize: 22,
+            color: '#9b1e26',
+            marginBottom: 5,
+            width: '85%',
+          }}
+          onFocus={() => handleFocus()}
+          onBlur={() => handleBlur()}
+          blurOnSubmit
+        />
+        {value ? (
+          <View style={{position: 'absolute', right: 15}}></View>
+        ) : (
+          <View style={{position: 'absolute', right: 15}}></View>
+        )}
+      </View>
 
-    <TextInput
-      ref={reference}
-      autofocus={autofocus}
-      onChange={onChange}
-      disabled={disabled}
-      testID={testID}
-      style={style}
-      suffix={suffix}
-      onBlur={onBlur}
-      onFocus={onFocus}
-      onChangeText={onChangeText}
-      label={label}
-      labelStyle={labelStyle}
-      keyboardType={keyboardType}
-      inputBorderProps={inputBorderProps}
-      textInputProps={textInputProps}
-      textProps={textProps}
-      value={value}
-      placeholder={placeholder}
-      isActive={isActive}
-      isValue={isValue}
-      validationStatus={isError}
-      validationMessage={errorMessage}
-      errorColor={errorColor || Colors.PRIMARY_COLOR}
-      textColor={textColor}
-
-    />
-
+      <Animated.View style={labelStyle2} />
+    </View>
   );
 };
 

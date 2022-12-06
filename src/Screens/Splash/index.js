@@ -15,6 +15,7 @@ const Splash = () => {
       navigation.navigate(NavigationUrl.dashboardId);
     }, 1000);
   }, []);
+
   return (
     <BackgroundImage imageSource={SplashBg}>
       <SplashContainer>
