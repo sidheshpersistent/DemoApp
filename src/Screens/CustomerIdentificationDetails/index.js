@@ -157,7 +157,7 @@ const CustomerIdentificationDetails = props => {
   const [number, setNumber] = useState('');
   const [showInvalidMsg, setShowInvalidMsg] = useState(false);
   const [toggleMask, setToggleMask] = useState(false);
-  const [kvalue, setKvalue] = useState(-200);
+  const [kvalue, setKvalue] = useState(-300);
   const [accountType, setAccountType] = useState(useRoute().params.accountType);
   const [companyDetails, setCompanyDetails] = useState('');
   const [displayData, setDisplayData] = useState('');
@@ -1124,12 +1124,12 @@ const CustomerIdentificationDetails = props => {
   };
 
   const keyboardBlurHandle = () => {
-    setKvalue(-200);
+    setKvalue(-300);
   };
   const keyboardFocusHandle = () => {
     route.params.accountType === Account_Type.ASSISTED_CS
-      ? setKvalue(-100)
-      : setKvalue(-150);
+      ? setKvalue(-200)
+      : setKvalue(-250);
   };
 
   const getCustomerDedupe = async () => {
@@ -1442,7 +1442,7 @@ const CustomerIdentificationDetails = props => {
         <KeyboardAvoidingView
           keyboardVerticalOffset={Platform.select({
             ios: () => 0,
-            android: () => kvalue,
+            android: () => -400,
           })()}
           behavior={Platform.OS === 'ios' ? 'padding' : 'position'}>
           <ScrollView

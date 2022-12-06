@@ -3,11 +3,13 @@ import {View, StatusBar, TextInput, Animated, Text} from 'react-native';
 
 const CustomTextInput = props => {
   const {label, suffix = false, onChangeText, value} = props;
+
   const [paddingBox, setPaddingBox] = useState(0);
   const [isFocused, setIsFocused] = useState(false);
   const [animatedIsFocused] = useState(
     new Animated.Value(value === '' ? 0 : 1),
   );
+
   useEffect(() => {
     animation();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -25,6 +27,7 @@ const CustomTextInput = props => {
     setIsFocused(true);
     setPaddingBox(4);
   };
+
   const handleBlur = () => {
     setIsFocused(false);
     setPaddingBox(0);
@@ -46,6 +49,7 @@ const CustomTextInput = props => {
       outputRange: ['#aaa', '#000'],
     }),
   };
+
   const labelStyle2 = {
     bottom: animatedIsFocused.interpolate({
       inputRange: [0, 1],
