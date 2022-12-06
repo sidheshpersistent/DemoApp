@@ -1,8 +1,9 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
+import { TextInput } from 'react-native';
 
 import { Colors } from '../../Utils';
-import { TextInput } from '@idfc/ccl-mobile/lib/module/v2';
+// import { TextInput } from '@idfc/ccl-mobile/lib/module/v2';
 
 const CustomTextInput = props => {
   const {
@@ -32,21 +33,21 @@ const CustomTextInput = props => {
     autofocus
   } = props;
 
-  textInputProps?textInputProps.maxLength=textInputProps.maxLength?textInputProps.maxLength:30:null
-  
+  textInputProps ? textInputProps.maxLength = textInputProps.maxLength ? textInputProps.maxLength : 30 : null
+
 
   return (
 
     <TextInput
-    ref = {reference}
-    autofocus={autofocus}
-    onChange={onChange}
-    disabled={disabled}
-    testID={testID}
-  style={style}
-    suffix={suffix}
-    onBlur={onBlur}
-    onFocus={onFocus}
+      ref={reference}
+      autofocus={autofocus}
+      onChange={onChange}
+      disabled={disabled}
+      testID={testID}
+      style={style}
+      suffix={suffix}
+      onBlur={onBlur}
+      onFocus={onFocus}
       onChangeText={onChangeText}
       label={label}
       labelStyle={labelStyle}
@@ -62,7 +63,7 @@ const CustomTextInput = props => {
       validationMessage={errorMessage}
       errorColor={errorColor || Colors.PRIMARY_COLOR}
       textColor={textColor}
-     
+
     />
 
   );

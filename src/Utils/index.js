@@ -1,11 +1,11 @@
 
 import Colors from './Colors';
-import {Icon_Size,Font_Size, AOH_CONSTANTS, AS_CONSTANTS, CARDTYPE, CPD_CONSTANTS, EDITBRANCH, FontFamily, FontWeight, LetterSpacing, LOGIN, NEWCOMMUNICATIONADDRESS, PAO_CONSTANTS, Text_Variant, Line_Height, TestIds } from './Constants';
+import { Icon_Size, Font_Size, AOH_CONSTANTS, AS_CONSTANTS, CARDTYPE, CPD_CONSTANTS, EDITBRANCH, FontFamily, FontWeight, LetterSpacing, LOGIN, NEWCOMMUNICATIONADDRESS, PAO_CONSTANTS, Text_Variant, Line_Height, TestIds } from './Constants';
 import NavigationUrl from './NavigationUrl';
 import { COMMON_CONST, CUSTOMERDETAILS } from './Strings';
 import ConsoleLogHelper from './ConsoleLogHelper';
 import * as AsyncStorageUtils from './AsyncStorage';
-import {moderateScale, scale, verticalScale} from './DeviceScaling';
+import { moderateScale, scale, verticalScale } from './DeviceScaling';
 
 export {
   Font_Size,
@@ -19,7 +19,7 @@ export {
   AOH_CONSTANTS,
   PAO_CONSTANTS,
   AS_CONSTANTS,
-TestIds,
+  TestIds,
   NavigationUrl,
   Colors,
   COMMON_CONST,
@@ -30,7 +30,7 @@ TestIds,
   Text_Variant,
   ConsoleLogHelper,
   AsyncStorageUtils,
-  moderateScale, 
-  scale, 
+  moderateScale,
+  scale,
   verticalScale
 };

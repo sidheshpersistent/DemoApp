@@ -3,9 +3,9 @@ import Card from "./CardView/CardView"
 // import CustomButton from "./CustomButton/CustomButton";
 // import CustomCheckbox from "./CustomCheckbox/CustomCheckbox";
 import CustomText from "./CustomText/CustomText";
-// import CustomTextInput from "./CustomTextInput/CustomTextInput";
+import CustomTextInput from "./CustomTextInput/CustomTextInput";
 // import CustomToggle from "./CustomToggle/CustomToggle";
-// import BackArrowHeader from "./HeaderComponent/BackArrowHeader";
+import BackArrowHeader from "./HeaderComponent/BackArrowHeader";
 // import Popup from "./Popup/Popup";
 // import PopupCommunicationAddress from "./Popup/PopupCommunicationAddress";
 // import PopupEditBranch from "./Popup/PopupEditBranch";
@@ -32,9 +32,9 @@ export{
     // CustomButton,
     // CustomCheckbox,
     CustomText,
-    // CustomTextInput,
+    CustomTextInput,
     // CustomToggle,
-    // BackArrowHeader,
+    BackArrowHeader,
     // Popup,
     // TimeLineView,PopupTextInput,
     // PopupCommunicationAddress,

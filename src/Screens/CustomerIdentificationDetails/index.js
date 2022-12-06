@@ -99,16 +99,16 @@ import {
   mobileDedupe,
 } from "../../Assets/Images";
 import {
-  Account_Type, 
+  Account_Type,
   Customer_Type,
   TestIds, Milestone,
   Save_Status,
   CommonConstant,
-  banking_Type, 
+  banking_Type,
   LocalDB,
-  RadioButtonConstants, 
+  RadioButtonConstants,
   AdharPanMatch,
-  PersonalDetailsConstants, 
+  PersonalDetailsConstants,
   Api_Error_Code
 } from "../../Utils/Constants";
 // import { Select } from "@idfc/ccl-mobile/lib/module/v2";
@@ -1819,29 +1819,29 @@ const CustomerIdentificationDetails = (props) => {
                     </MarginBottom>
                   </View>
                   {/** popup */}
-                  <Popup
-                    testID_submit={TestIds.cid_pan_check_submit}
-                    animationIn="bounceIn"
-                    popupIcon={info}
-                    isVisible={panVisible}
-                    Heading={HEADING.PAN}
-                    ButtonText="Ok"
-                    buttonPress={() => buttonPress()}
-                    component={PAN_INCOME_CHECK.map((item) => (
-                      <ComponentContainer key={item}>
-                        <Bullet>•</Bullet>
-                        <CustomText
-                          paddingLeft={10}
-                          marginBottom={20}
-                          fontSize={Font_Size.SIZE_16}
-                          lineHeight={Line_Height.HEIGHT_24}
-                          color={Colors.NEW_GREY_800.text}
-                        >
-                          {item}
-                        </CustomText>
-                      </ComponentContainer>
-                    ))}
-                  />
+                  {/* <Popup
+                  testID_submit={TestIds.cid_pan_check_submit}
+                  animationIn="bounceIn"
+                  popupIcon={info}
+                  isVisible={panVisible}
+                  Heading={HEADING.PAN}
+                  ButtonText="Ok"
+                  buttonPress={() => buttonPress()}
+                  component={PAN_INCOME_CHECK.map((item) => (
+                    <ComponentContainer key={item}>
+                      <Bullet>•</Bullet>
+                      <CustomText
+                        paddingLeft={10}
+                        marginBottom={20}
+                        fontSize={Font_Size.SIZE_16}
+                        lineHeight={Line_Height.HEIGHT_24}
+                        color={Colors.NEW_GREY_800.text}
+                      >
+                        {item}
+                      </CustomText>
+                    </ComponentContainer>
+                  ))}
+                /> */}
                   <InfoIconContainer>
                     <CustomText
                       testID={TestIds.cid_mandatory_pan}
