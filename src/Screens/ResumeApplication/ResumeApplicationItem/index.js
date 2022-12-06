@@ -22,7 +22,7 @@ import {
 } from "./styled";
 
 import { DeleteIcon, rightArrowWhite } from "../../../Assets/Images";
-import CustomProgressBar from "../../../Components/CustomProgressBar/CustomProgressBar";
+// import CustomProgressBar from "../../../Components/CustomProgressBar/CustomProgressBar";
 
 
 const Item = ({ item, index, onDelete, onNext }) => {
@@ -75,13 +75,13 @@ const Item = ({ item, index, onDelete, onNext }) => {
         <ImageTextContainer>
           {/* progressbar here */}
           <Container1Below>
-            <CustomProgressBar
+            {/* <CustomProgressBar
               progressValue={
                 item.journeyPercentage != null
                   ? item.journeyPercentage.toString()
                   : "0"
               }
-            />
+            /> */}
           </Container1Below>
 
           <Container2Below>

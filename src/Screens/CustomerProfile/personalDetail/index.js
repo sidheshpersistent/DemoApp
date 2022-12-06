@@ -32,11 +32,11 @@ import {
   Card,
   CustomText,
   Popup,
-  PopUpExistingCustomer,
-  PopupTextInput,
-  CustomSearchInputCompany,
+  // PopUpExistingCustomer,
+  // PopupTextInput,
+  // CustomSearchInputCompany,
 } from "../../../Components";
-import { DateInput, RadioButton, Select } from "@idfc/ccl-mobile/lib/module/v2";
+// import { DateInput, RadioButton, Select } from "@idfc/ccl-mobile/lib/module/v2";
 import {
   alertIcon,
   info,
@@ -44,7 +44,7 @@ import {
   rightArrow,
   rightArrowWhite,
 } from "../../../Assets/Images";
-import { ColorType, FontSize } from "@idfc/ccl-commons/enums";
+// import { ColorType, FontSize } from "@idfc/ccl-commons/enums";
 import {
   Colors,
   FontFamily,
@@ -1451,7 +1451,7 @@ const PersonalDetail = (props) => {
         {session.accountType === Account_Type.ASSISTED_SA ? (
           <View>
             <CardMargin>
-              <Select
+              {/* <Select
                 testID={TestIds.cp_occupation_type}
                 label={StringsOfLanguages.PERSONAL_DETAIL.OCCUPATION_TYPE}
                 defaultSelectedItem={
@@ -1486,10 +1486,10 @@ const PersonalDetail = (props) => {
                   setSession({ ...session, prevSessionData });
                   section1Api.current = false;
                 }}
-              />
+              /> */}
             </CardMargin>
             <CardMargin>
-              <Select
+              {/* <Select
                 defaultSelectedItem={
                   sourceOfIncomeDetails &&
                   sourceOfIncomeDetails.find(
@@ -1507,11 +1507,11 @@ const PersonalDetail = (props) => {
                 }}
                 labelStyle={{ color: Colors.NEW_GREY_800.text }}
                 iconColor={Colors.MAROON_DARK}
-              />
+              /> */}
             </CardMargin>
             {showCompanyName ? (
               <CardMargin style={{ zIndex: 1 }}>
-                <CustomSearchInputCompany
+                {/* <CustomSearchInputCompany
                   value={CompanyValue}
                   testID={TestIds.cp_search_company}
                   placeholder={StringsOfLanguages.CID.CID_FIELD_COMPANY}
@@ -1533,7 +1533,7 @@ const PersonalDetail = (props) => {
                     personalcontextData.companyName = null
                     setSession({ ...session, prevSessionData });
                   }}
-                />
+                /> */}
               </CardMargin>
             ) : null}
           </View>
@@ -1698,7 +1698,7 @@ const PersonalDetail = (props) => {
                 <Card style={{ elevation: 4, borderRadius: 5 }}></Card>
               </CardMargin>
               <CardMargin>
-                <DateInput
+                {/* <DateInput
                   testID={TestIds.cp_date_of_application}
                   label={StringsOfLanguages.PERSONAL_DETAIL.DATE_OF_APPLICATION}
                   dateFormat={dateFormat}
@@ -1719,7 +1719,7 @@ const PersonalDetail = (props) => {
                       section1Api.current = true;
                     },
                   }}
-                />
+                /> */}
               </CardMargin>
 
               <CardMargin>
@@ -1767,7 +1767,7 @@ const PersonalDetail = (props) => {
       <FullLengthBox>
         <AlignedContainer>
           <CommunicationAddressContainer>
-            <RadioButton
+            {/* <RadioButton
               testID={TestIds.cp_cutomer_address_radio1}
               value={RadioButtonConstants.RADIO1}
               name="radio-normal"
@@ -1776,12 +1776,12 @@ const PersonalDetail = (props) => {
               onChange={() => handleChange(RadioButtonConstants.RADIO1)}
             >
               {StringsOfLanguages.PERSONAL_DETAIL.SAME_AS_ADAHAR}
-            </RadioButton>
+            </RadioButton> */}
             {selValue === RadioButtonConstants.RADIO1 ? (
               <AdharAddressContainer>
                 <Text
                   fontFamily={FontFamily.Inter_REGULAR}
-                  fontSize={FontSize.SIZE_12}
+                  fontSize={Font_Size.SIZE_12}
                   lineHeight={Line_Height.HEIGHT_18}
                 >
                   {prevSessionData.adharDetails.addressLn1}
@@ -1789,7 +1789,7 @@ const PersonalDetail = (props) => {
               </AdharAddressContainer>
             ) : null}
 
-            <RadioButton
+            {/* <RadioButton
               value={RadioButtonConstants.RADIO2}
               testID={TestIds.cp_cutomer_address_radio2}
               name="radio-normal"
@@ -1798,7 +1798,7 @@ const PersonalDetail = (props) => {
               onChange={() => handleChange(RadioButtonConstants.RADIO2)}
             >
               {StringsOfLanguages.PERSONAL_DETAIL.OTHER_ADDRESS}
-            </RadioButton>
+            </RadioButton> */}
 
             {selValue === RadioButtonConstants.RADIO2 &&
             customerOtherAddress ? (
@@ -1820,7 +1820,7 @@ const PersonalDetail = (props) => {
                     style={{ width: "80%" }}
                     color={Colors.BLACK}
                     fontFamily={FontFamily.Inter_REGULAR}
-                    fontSize={FontSize.SIZE_14}
+                    fontSize={Font_Size.SIZE_14}
                     lineHeight={Line_Height.HEIGHT_20}
                   >
                     {renderAddressText(customerOtherAddress)}
@@ -1851,7 +1851,7 @@ const PersonalDetail = (props) => {
           <NomineeSwitchContainer>
             <CustomText
               fontFamily={FontFamily.Inter_SemiBold}
-              fontSize={FontSize.SIZE_14}
+              fontSize={Font_Size.SIZE_14}
               lineHeight={Line_Height.HEIGHT_20}
               color={Colors.BLACK}
             >
@@ -1860,7 +1860,7 @@ const PersonalDetail = (props) => {
             <SwitchContainer>
               <CustomText
                 fontFamily={FontFamily.Inter_SemiBold}
-                fontSize={FontSize.SIZE_14}
+                fontSize={Font_Size.SIZE_14}
                 lineHeight={Line_Height.HEIGHT_20}
                 color={Colors.BLACK}
               >
@@ -1880,7 +1880,7 @@ const PersonalDetail = (props) => {
 
               <CustomText
                 fontFamily={FontFamily.Inter_SemiBold}
-                fontSize={FontSize.SIZE_14}
+                fontSize={Font_Size.SIZE_14}
                 lineHeight={Line_Height.HEIGHT_20}
                 color={Colors.BLACK}
               >
@@ -1929,7 +1929,7 @@ const PersonalDetail = (props) => {
                 onBlur={() => section3ProgressApi()}
               />
             </CardMargin>
-            <Select
+            {/* <Select
               defaultSelectedItem={customerRelation}
               testID={TestIds.cp_relationship_with_customer}
               value={customerRelation}
@@ -1945,10 +1945,10 @@ const PersonalDetail = (props) => {
               }}
               labelStyle={{ color: Colors.NEW_GREY_800.text }}
               iconColor={Colors.MAROON_DARK}
-            />
+            /> */}
             <CardMargin></CardMargin>
             <CardMargin>
-              <DateInput
+              {/* <DateInput
                 testID={TestIds.cp_nominees_dob}
                 label={StringsOfLanguages.PERSONAL_DETAIL.NOMINEE_DOB}
                 dateFormat={dateFormat}
@@ -1967,7 +1967,7 @@ const PersonalDetail = (props) => {
                     nomineeDate.current = 1;
                   },
                 }}
-              />
+              /> */}
             </CardMargin>
           </AlignedContainer>
           <AlignedContainer>
@@ -1988,7 +1988,7 @@ const PersonalDetail = (props) => {
               <CommunicationAddressContainer>
                 {selValue === RadioButtonConstants.RADIO2 ? (
                   <>
-                    <RadioButton
+                    {/* <RadioButton
                       testID={TestIds.cp_communication_address_radio3}
                       value={RadioButtonConstants.RADIO3}
                       name="radio-normal"
@@ -2004,11 +2004,11 @@ const PersonalDetail = (props) => {
                         StringsOfLanguages.PERSONAL_DETAIL
                           .SAME_AS_CUST_COMMUNICATION
                       }
-                    </RadioButton>
+                    </RadioButton> */}
                   </>
                 ) : null}
 
-                <RadioButton
+                {/* <RadioButton
                 testID={TestIds.cp_communication_address_radio4}
                   value={RadioButtonConstants.RADIO1}
                   name="radio-normal"
@@ -2028,7 +2028,7 @@ const PersonalDetail = (props) => {
                   onChange={() => handleChange2(RadioButtonConstants.RADIO2)}
                 >
                   {StringsOfLanguages.PERSONAL_DETAIL.OTHER_ADDRESS}
-                </RadioButton>
+                </RadioButton> */}
 
                 {nomineeAddressRadio === RadioButtonConstants.RADIO2 &&
                 nomineeOtherAddress ? (
@@ -2048,7 +2048,7 @@ const PersonalDetail = (props) => {
                         style={{ width: 309 }}
                         color={Colors.BLACK}
                         fontFamily={FontFamily.Inter_REGULAR}
-                        fontSize={FontSize.SIZE_14}
+                        fontSize={Font_Size.SIZE_14}
                         lineHeight={Line_Height.HEIGHT_20}
                       >
                         {renderAddressText(nomineeOtherAddress)}
@@ -2129,7 +2129,7 @@ const PersonalDetail = (props) => {
                     {selValue === RadioButtonConstants.RADIO2 ? (
                       <>
                         <View style={{ flex: 1, alignItem: "center" }}>
-                          <RadioButton
+                          {/* <RadioButton
                             testID={TestIds.cp_communication_address_radio6}
                             value={RadioButtonConstants.RADIO3}
                             name="radio-normal"
@@ -2146,14 +2146,14 @@ const PersonalDetail = (props) => {
                               StringsOfLanguages.PERSONAL_DETAIL
                                 .SAME_AS_CUST_COMMUNICATION
                             }
-                          </RadioButton>
+                          </RadioButton> */}
                         </View>
                       </>
                     ) : null}
 
                     {nomineeAddressRadio === RadioButtonConstants.RADIO2 ? (
                       <>
-                        <RadioButton
+                        {/* <RadioButton
                         testID={TestIds.cp_communication_address_radio7}
                           value={RadioButtonConstants.RADIO4}
                           name="radio-normal"
@@ -2169,11 +2169,11 @@ const PersonalDetail = (props) => {
                             StringsOfLanguages.PERSONAL_DETAIL
                               .SAME_AS_NOMINEE_ADDRESS
                           }
-                        </RadioButton>
+                        </RadioButton> */}
                       </>
                     ) : null}
 
-                    <RadioButton
+                    {/* <RadioButton
                      testID={TestIds.cp_communication_address_radio8}
                       value={RadioButtonConstants.RADIO1}
                       name="radio-normal"
@@ -2186,9 +2186,9 @@ const PersonalDetail = (props) => {
                       }
                     >
                       {StringsOfLanguages.PERSONAL_DETAIL.SAME_AS_CUST_ADAHR}
-                    </RadioButton>
+                    </RadioButton> */}
 
-                    <RadioButton
+                    {/* <RadioButton
                      testID={TestIds.cp_communication_address_radio9}
                       value={RadioButtonConstants.RADIO2}
                       name="radio-normal"
@@ -2201,7 +2201,7 @@ const PersonalDetail = (props) => {
                       }
                     >
                       {StringsOfLanguages.PERSONAL_DETAIL.OTHER_ADDRESS}
-                    </RadioButton>
+                    </RadioButton> */}
 
                     {guardianAddressRadio === RadioButtonConstants.RADIO2 &&
                     guardianOtherAddress ? (
@@ -2221,7 +2221,7 @@ const PersonalDetail = (props) => {
                             style={{ width: 309 }}
                             color={Colors.BLACK}
                             fontFamily={FontFamily.Inter_REGULAR}
-                            fontSize={FontSize.SIZE_14}
+                            fontSize={Font_Size.SIZE_14}
                             lineHeight={Line_Height.HEIGHT_20}
                           >
                             {renderAddressText(guardianOtherAddress)}
@@ -2269,26 +2269,26 @@ const PersonalDetail = (props) => {
         )}
       </AlignedContainer>
       {
-        <PopUpExistingCustomer
-        testID_cancel={"testCancel1"}
-        testID_submit={"testSubmit1"}
-          animationIn="bounceIn"
-          popupIcon={info}
-          isVisible={isETBUser}
-          Heading={HEADING.ETB_USER}
-          ButtonText={StringsOfLanguages.PERSONAL_DETAIL.CONFIRM}
-          data={customerData && customerData.accountList}
-          dropdownData={
-            customerData && customerData.offerList && customerData.offerList
-          }
-          buttonPress={existingPopupConfirmBtnPressed}
-          subText={SUB_HEADING.ETB_USER_INFO + customerData.customerID}
-          responseData={customerData}
-          cancelBtnPressed={() => {
-            personalcontextData.isETBUser = !personalcontextData.isETBUser;
-            setSession({ ...session, prevSessionData });
-          }}
-        />
+        // <PopUpExistingCustomer
+        // testID_cancel={"testCancel1"}
+        // testID_submit={"testSubmit1"}
+        //   animationIn="bounceIn"
+        //   popupIcon={info}
+        //   isVisible={isETBUser}
+        //   Heading={HEADING.ETB_USER}
+        //   ButtonText={StringsOfLanguages.PERSONAL_DETAIL.CONFIRM}
+        //   data={customerData && customerData.accountList}
+        //   dropdownData={
+        //     customerData && customerData.offerList && customerData.offerList
+        //   }
+        //   buttonPress={existingPopupConfirmBtnPressed}
+        //   subText={SUB_HEADING.ETB_USER_INFO + customerData.customerID}
+        //   responseData={customerData}
+        //   cancelBtnPressed={() => {
+        //     personalcontextData.isETBUser = !personalcontextData.isETBUser;
+        //     setSession({ ...session, prevSessionData });
+        //   }}
+        // />
       }
       <Popup
         isVisible={nomineePopupVisible}
@@ -2434,38 +2434,38 @@ const PersonalDetail = (props) => {
         />
       }
       {
-        <PopupTextInput
-        testID_cancel={"testCancel5"}
-        testID_submit={"testSubmit5"}
-        TextInputvalue={panNumber}
-          popupType={PersonalDetailsConstants.POPUPTYPE.PAN}
-          animationIn="bounceIn"
-          popupIcon={alertIcon}
-          isVisible={popupType}
-          Heading={StringsOfLanguages.PERSONAL_DETAIL.PAN_HEADING} 
-          popupInfo={popupTypeInfo}
-          TextInputPlaceholder={StringsOfLanguages.CID.CID_FIELD_PAN}
-          ButtonText={StringsOfLanguages.PERSONAL_DETAIL.SUBMIT}
-          buttonPress={() => {
-            panSubmitButton();
-          }}
-          onchangeText={(e) => panInputHandler(e)}
-          isError={panNumber?!isValidPan(panNumber)?isErrorPan:false:false}
-          disabled={!isValidPan(panNumber)}
-          cancelButtonPress ={()=>{
-            setPopupType(false)
-            if(panNumber){
-              personalcontextData.panNumber="",
-              prevSessionData.panDetails.panNumber=""
-              setSession({ ...session, prevSessionData });
-            }
-          }}
-          errorMessage={
-            panNumber&&!isValidPan(panNumber)
-              ? StringsOfLanguages.CID.CID_ERROR_PAN
-              : StringsOfLanguages.CID.CID_FIELD_PAN
-          }
-        />
+        // <PopupTextInput
+        // testID_cancel={"testCancel5"}
+        // testID_submit={"testSubmit5"}
+        // TextInputvalue={panNumber}
+        //   popupType={PersonalDetailsConstants.POPUPTYPE.PAN}
+        //   animationIn="bounceIn"
+        //   popupIcon={alertIcon}
+        //   isVisible={popupType}
+        //   Heading={StringsOfLanguages.PERSONAL_DETAIL.PAN_HEADING} 
+        //   popupInfo={popupTypeInfo}
+        //   TextInputPlaceholder={StringsOfLanguages.CID.CID_FIELD_PAN}
+        //   ButtonText={StringsOfLanguages.PERSONAL_DETAIL.SUBMIT}
+        //   buttonPress={() => {
+        //     panSubmitButton();
+        //   }}
+        //   onchangeText={(e) => panInputHandler(e)}
+        //   isError={panNumber?!isValidPan(panNumber)?isErrorPan:false:false}
+        //   disabled={!isValidPan(panNumber)}
+        //   cancelButtonPress ={()=>{
+        //     setPopupType(false)
+        //     if(panNumber){
+        //       personalcontextData.panNumber="",
+        //       prevSessionData.panDetails.panNumber=""
+        //       setSession({ ...session, prevSessionData });
+        //     }
+        //   }}
+        //   errorMessage={
+        //     panNumber&&!isValidPan(panNumber)
+        //       ? StringsOfLanguages.CID.CID_ERROR_PAN
+        //       : StringsOfLanguages.CID.CID_FIELD_PAN
+        //   }
+        // />
       }
 
       {communicationAddress ? (

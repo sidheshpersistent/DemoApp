@@ -24,7 +24,8 @@
     "react-native-modal": "^13.0.1",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.8.0",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "lodash": "4.17.21"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

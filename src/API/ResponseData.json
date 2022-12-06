@@ -1,0 +1,49 @@
+{
+  "getJourneyList": {
+    "data": [
+      {
+        "userId": 2833,
+        "customerName": "JASPRIT SHARMA1",
+        "journeyPercentage": 33,
+        "journeyCreatedDate": "15 Nov,2022 04:06 PM",
+        "journeyUpdatedDate": "02 Dec,2022 05:22 PM"
+      },
+      {
+        "userId": 2848,
+        "customerName": "JASPRIT SHARMA",
+        "journeyPercentage": 33,
+        "journeyCreatedDate": "15 Nov,2022 04:06 PM",
+        "journeyUpdatedDate": "02 Dec,2022 05:22 PM"
+      },
+      {
+        "userId": 3808,
+        "customerName": "PRASANT TAMANG",
+        "journeyPercentage": 33,
+        "journeyCreatedDate": "02 Dec,2022 05:16 PM",
+        "journeyUpdatedDate": "02 Dec,2022 05:17 PM"
+      },
+      {
+        "userId": 3749,
+        "customerName": "NILESH MISHRA",
+        "journeyPercentage": 66,
+        "journeyCreatedDate": "30 Nov,2022 11:47 AM",
+        "journeyUpdatedDate": "02 Dec,2022 05:06 PM"
+      },
+      {
+        "userId": 3748,
+        "customerName": "PRASANT TAMANG",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "30 Nov,2022 11:43 AM",
+        "journeyUpdatedDate": "02 Dec,2022 01:16 PM"
+      },
+      {
+        "userId": 3768,
+        "customerName": "JASPRIT SHARMA",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "01 Dec,2022 04:46 PM",
+        "journeyUpdatedDate": "01 Dec,2022 06:05 PM"
+      }
+    ],
+    "status": "SUCCESS"
+  }
+}

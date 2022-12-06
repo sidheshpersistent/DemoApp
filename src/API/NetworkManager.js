@@ -1,8 +1,10 @@
 /* eslint-disable no-undef */
-import axios from "axios";
+// import axios from "axios";
 // import { useNavigation } from '@react-navigation/native';
 import { AsyncStorageUtils, ConsoleLogHelper } from "../Utils";
 import { CommonConstant, LocalDB } from "../Utils/Constants";
+import ResponseData from '../API/ResponseData.json';
+import Endpoints from "./Endpoints";
 
 
 let headers = {
@@ -26,38 +28,44 @@ export default class NetworkManager {
     } catch (e) {
       callBack(e);
     }
-    axios
-      .get(url, { headers: headers }, { timeout: NETWORK_TIMEOUT })
-      .then((response) => {
-        ConsoleLogHelper.log(
-          "\nRESPONSE : ",
-          JSON.stringify(response) + "\n--------------------\n"
-        );
-        callBack(response?.data);
-      })
-      .catch((error) => {
-        let status = error?.response?.status
-        ConsoleLogHelper.log(
-          "\nERROR : ",
-          JSON.stringify(error) + "\n--------------------\n"
-        );
-        switch (status){
-          case 400:
-            callBack(CommonConstant.BADREQUEST);
-            break;
-          case 401:
-            callBack(CommonConstant.UNAUTHORISED);
-            break;
-          case 404:
-            callBack(CommonConstant.NOTFOUND);
-            break;
-          case 500:
-            callBack(CommonConstant.INTERNALSERVERERROR,error?.response?.data?.message);
-            break;
-          default:
-            callBack(CommonConstant.ERROR);
-        }
-      });
+    let response = {}
+    console.log(' Endpoints.getResumeApplicationsList---url', url);
+
+    response = ResponseData[`${url}`];
+
+    callBack(response);
+    // axios
+    //   .get(url, { headers: headers }, { timeout: NETWORK_TIMEOUT })
+    //   .then((response) => {
+    //     ConsoleLogHelper.log(
+    //       "\nRESPONSE : ",
+    //       JSON.stringify(response) + "\n--------------------\n"
+    //     );
+    //     callBack(response?.data);
+    //   })
+    //   .catch((error) => {
+    //     let status = error?.response?.status
+    //     ConsoleLogHelper.log(
+    //       "\nERROR : ",
+    //       JSON.stringify(error) + "\n--------------------\n"
+    //     );
+    //     switch (status){
+    //       case 400:
+    //         callBack(CommonConstant.BADREQUEST);
+    //         break;
+    //       case 401:
+    //         callBack(CommonConstant.UNAUTHORISED);
+    //         break;
+    //       case 404:
+    //         callBack(CommonConstant.NOTFOUND);
+    //         break;
+    //       case 500:
+    //         callBack(CommonConstant.INTERNALSERVERERROR,error?.response?.data?.message);
+    //         break;
+    //       default:
+    //         callBack(CommonConstant.ERROR);
+    //     }
+    //   });
   };
 
   static IDFCNetworkPost = async (url, param, header, callBack) => {
@@ -71,42 +79,44 @@ export default class NetworkManager {
     } catch (e) {
       callBack(e);
     }
+
     console.log(headers)
-    axios
-      .post(url, param, { headers: headers }, { timeout: NETWORK_TIMEOUT })
-      .then((response) => {
-        ConsoleLogHelper.log(
-          "\nRESPONSE : ",
-          JSON.stringify(response) + "\n--------------------\n"
-        );
-        callBack(response?.data);
-      })
-      .catch((error) => {
-        let status = error?.response?.status
-        ConsoleLogHelper.log(
-          "\nERROR : ",
-          JSON.stringify(error?.response) + "\n--------------------\n"
-        );
-        switch (status){
-          case 400:
-            callBack(CommonConstant.BADREQUEST);
-            break;
-          case 401:
-            callBack(CommonConstant.UNAUTHORISED);
-            break;
-          case 404:
-            callBack(CommonConstant.NOTFOUND);
-            break;
-          case 500:
-            callBack(CommonConstant.INTERNALSERVERERROR,error?.response?.data?.message);
-            break;
-          default:
-            callBack(CommonConstant.ERROR);
-        }
-      });
+    callBack('');
+    // axios
+    //   .post(url, param, { headers: headers }, { timeout: NETWORK_TIMEOUT })
+    //   .then((response) => {
+    //     ConsoleLogHelper.log(
+    //       "\nRESPONSE : ",
+    //       JSON.stringify(response) + "\n--------------------\n"
+    //     );
+    //     callBack(response?.data);
+    //   })
+    //   .catch((error) => {
+    //     let status = error?.response?.status
+    //     ConsoleLogHelper.log(
+    //       "\nERROR : ",
+    //       JSON.stringify(error?.response) + "\n--------------------\n"
+    //     );
+    //     switch (status){
+    //       case 400:
+    //         callBack(CommonConstant.BADREQUEST);
+    //         break;
+    //       case 401:
+    //         callBack(CommonConstant.UNAUTHORISED);
+    //         break;
+    //       case 404:
+    //         callBack(CommonConstant.NOTFOUND);
+    //         break;
+    //       case 500:
+    //         callBack(CommonConstant.INTERNALSERVERERROR,error?.response?.data?.message);
+    //         break;
+    //       default:
+    //         callBack(CommonConstant.ERROR);
+    //     }
+    //   });
   };
 
-  static IDFCNetworkPut = async (url, param,header, callBack ) => {
+  static IDFCNetworkPut = async (url, param, header, callBack) => {
     try {
       let headerInfo = await AsyncStorageUtils.getItem(LocalDB.headerInfo);
       let parsedHeaderInfo = JSON.parse(headerInfo);
@@ -117,34 +127,35 @@ export default class NetworkManager {
     } catch (e) {
       callBack(e);
     }
-    axios
-      .put(url, param, { headers: headers }, { timeout: NETWORK_TIMEOUT })
-      .then((response) => {
-        callBack(response?.data);
-      })
-      .catch((error) => {
-        let status = error?.response?.status
-        ConsoleLogHelper.log(
-          "\nERROR : ",
-          JSON.stringify(error?.response) + "\n--------------------\n"
-        );
-        switch (status){
-          case 400:
-            callBack(CommonConstant.BADREQUEST);
-            break;
-          case 401:
-            callBack(CommonConstant.UNAUTHORISED);
-            break;
-          case 404:
-            callBack(CommonConstant.NOTFOUND);
-            break;
-          case 500:
-            callBack(CommonConstant.INTERNALSERVERERROR,error?.response?.data?.message);
-            break;
-          default:
-            callBack(CommonConstant.ERROR);
-        }
-      });
+    callBack('');
+    // axios
+    //   .put(url, param, { headers: headers }, { timeout: NETWORK_TIMEOUT })
+    //   .then((response) => {
+    //     callBack(response?.data);
+    //   })
+    //   .catch((error) => {
+    //     let status = error?.response?.status
+    //     ConsoleLogHelper.log(
+    //       "\nERROR : ",
+    //       JSON.stringify(error?.response) + "\n--------------------\n"
+    //     );
+    //     switch (status){
+    //       case 400:
+    //         callBack(CommonConstant.BADREQUEST);
+    //         break;
+    //       case 401:
+    //         callBack(CommonConstant.UNAUTHORISED);
+    //         break;
+    //       case 404:
+    //         callBack(CommonConstant.NOTFOUND);
+    //         break;
+    //       case 500:
+    //         callBack(CommonConstant.INTERNALSERVERERROR,error?.response?.data?.message);
+    //         break;
+    //       default:
+    //         callBack(CommonConstant.ERROR);
+    //     }
+    //   });
   };
   static IDFCNetworkDelete = async (url, header, callBack) => {
     try {
@@ -157,53 +168,55 @@ export default class NetworkManager {
     } catch (e) {
       callBack(e);
     }
+    callBack('');
 
-    axios
-      .delete(url, { headers: headers }, { timeout: NETWORK_TIMEOUT })
-      .then((response) => {
-        callBack(response?.data);
-      })
-      .catch((error) => {
-        let status = error?.response?.status
-        ConsoleLogHelper.log(
-          "\nERROR : ",
-          JSON.stringify(error?.response) + "\n--------------------\n"
-        );
-        switch (status){
-          case 400:
-            callBack(CommonConstant.BADREQUEST);
-            break;
-          case 401:
-            callBack(CommonConstant.UNAUTHORISED);
-            break;
-          case 404:
-            callBack(CommonConstant.NOTFOUND);
-            break;
-          case 500:
-            callBack(CommonConstant.INTERNALSERVERERROR,error?.response?.data?.message);
-            break;
-          default:
-            callBack(CommonConstant.ERROR);
-        }
-      });
+    // axios
+    //   .delete(url, { headers: headers }, { timeout: NETWORK_TIMEOUT })
+    //   .then((response) => {
+    //     callBack(response?.data);
+    //   })
+    //   .catch((error) => {
+    //     let status = error?.response?.status
+    //     ConsoleLogHelper.log(
+    //       "\nERROR : ",
+    //       JSON.stringify(error?.response) + "\n--------------------\n"
+    //     );
+    //     switch (status){
+    //       case 400:
+    //         callBack(CommonConstant.BADREQUEST);
+    //         break;
+    //       case 401:
+    //         callBack(CommonConstant.UNAUTHORISED);
+    //         break;
+    //       case 404:
+    //         callBack(CommonConstant.NOTFOUND);
+    //         break;
+    //       case 500:
+    //         callBack(CommonConstant.INTERNALSERVERERROR,error?.response?.data?.message);
+    //         break;
+    //       default:
+    //         callBack(CommonConstant.ERROR);
+    //     }
+    //   });
   };
 
   static IDFCNetworkPostWithoutHeader = async (url, params, callBack) => {
-    axios
-      .post(url, params, { headers: headers }, { timeout: NETWORK_TIMEOUT })
-      .then((response) => {
-        ConsoleLogHelper.log(
-          "\nRESPONSE : ",
-          JSON.stringify(response?.data) + "\n--------------------\n"
-        );
-        callBack(response?.data);
-      })
-      .catch((error) => {
-        ConsoleLogHelper.log(
-          "\nERROR : ",
-          JSON.stringify(error) + "\n--------------------\n"
-        );
-        callBack(JSON.stringify(error));
-      });
+    callBack('');
+    // axios
+    //   .post(url, params, { headers: headers }, { timeout: NETWORK_TIMEOUT })
+    //   .then((response) => {
+    //     ConsoleLogHelper.log(
+    //       "\nRESPONSE : ",
+    //       JSON.stringify(response?.data) + "\n--------------------\n"
+    //     );
+    //     callBack(response?.data);
+    //   })
+    //   .catch((error) => {
+    //     ConsoleLogHelper.log(
+    //       "\nERROR : ",
+    //       JSON.stringify(error) + "\n--------------------\n"
+    //     );
+    //     callBack(JSON.stringify(error));
+    //   });
   };
 }

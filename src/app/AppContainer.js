@@ -1,14 +1,14 @@
-import React, {useEffect} from 'react';
-import {Dimensions} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import React, { useEffect } from 'react';
+import { Dimensions } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 import NavigationUrl from '../Utils/NavigationUrl';
 import useSession from './useSession';
 
 // import Splash from '../Screens/Splash/index';
 import LoginScreen from '../Screens/AgentLogin_oAuth';
-
+//hi
 import Dashboard from '../Screens/Dashboard';
 import CustomerIdentificationDetails from '../Screens/CustomerIdentificationDetails';
 // import CustomerProfile from "../Screens/CustomerProfile";
@@ -21,7 +21,7 @@ import CustomerIdentificationDetails from '../Screens/CustomerIdentificationDeta
 
 // import HamburgerScreen from "../Screens/HamburgerScreen";
 // import BankUseSectionForm from "../Screens/BankUseSectionForm";
-// import ResumeApplication from "../Screens/ResumeApplication";
+import ResumeApplication from "../Screens/ResumeApplication";
 // import EAuth from '../Screens/AgentLogin_oAuth/EAuth';
 // import BankUseSectionList from "../Screens/BankUseSectionList";
 // import ScanScreen from "../Screens/CustomerProfile/BankingPreferences/Scanner";
@@ -49,8 +49,8 @@ const Stack = createNativeStackNavigator();
 //     </Drawer.Navigator>
 //   </>
 // );
-const AppContainer = ({childFunc}) => {
-  const {session, setSession} = useSession();
+const AppContainer = ({ childFunc }) => {
+  const { session, setSession } = useSession();
 
   // useEffect(() => {
   //   childFunc.current = navigateToLogin;
@@ -64,7 +64,7 @@ const AppContainer = ({childFunc}) => {
   return (
     <NavigationContainer>
       {session.loginFlag != true ? (
-        <Stack.Navigator initialRouteName={NavigationUrl.loginId}>
+        <Stack.Navigator initialRouteName={NavigationUrl.ResumeApplication}>
           {/* <Stack.Screen
             name={NavigationUrl.Splash}
             component={Splash}
@@ -74,7 +74,12 @@ const AppContainer = ({childFunc}) => {
           <Stack.Screen
             name={NavigationUrl.loginId}
             component={LoginScreen}
-            options={{headerShown: false}}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name={NavigationUrl.ResumeApplication}
+            component={ResumeApplication}
+            options={{ headerShown: false }}
           />
 
           {/* <Stack.Screen
@@ -88,7 +93,7 @@ const AppContainer = ({childFunc}) => {
           <Stack.Screen
             name={NavigationUrl.dashboardId}
             component={Dashboard}
-            options={{headerShown: false}}
+            options={{ headerShown: false }}
           />
           {/* <Stack.Screen
             name={NavigationUrl.drawerId}
@@ -105,7 +110,7 @@ const AppContainer = ({childFunc}) => {
           <Stack.Screen
             name={NavigationUrl.customerId}
             component={CustomerIdentificationDetails}
-            options={{headerShown: false}}
+            options={{ headerShown: false }}
           />
 
           {/* <Stack.Screen

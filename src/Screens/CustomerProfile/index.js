@@ -8,7 +8,7 @@ import BankingPreferenceDisabled from "../../Components/TimeLineView/images/bank
 import CustomerConsentEnabled from "../../Components/TimeLineView/images/customerConsentEnabled.png";
 import CustomerConsentDisabled from "../../Components/TimeLineView/images/customerConsentDisabled.png";
 import PersonalDetail from "./personalDetail";
-import CustomerConsent from "./CustomerConsent";
+// import CustomerConsent from "./CustomerConsent";
 import BankingPreferences from "./BankingPreferences";
 import BGImage from '../../Assets/Images/bg2.png';
 
@@ -75,13 +75,13 @@ const CustomerProfile = (props) => {
   ];
   const navigation = useNavigation();
   const [screen, setScreen] = useState(data);
-  const [activeIndex, setActiveIndex] = useState(props?.route?.params?.milestone == Milestone.CUST_CONSENT_DETAILS ? CustomerProfileStepper.CUSTOMERCONSENT :CustomerProfileStepper.PERSONALDETAILS);
+  const [activeIndex, setActiveIndex] = useState(props?.route?.params?.milestone == Milestone.CUST_CONSENT_DETAILS ? CustomerProfileStepper.CUSTOMERCONSENT : CustomerProfileStepper.PERSONALDETAILS);
   const [userData] = useState("");
   const [popupVisible, setPopupVisible] = useState(false);
   const [crossPopup, setCrossPopup] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
-  
-  
+
+
   const childFunc = useRef(null);
   const resetFunc = useRef(null);
   // const { session, setSession } = useSession();
@@ -139,29 +139,29 @@ const CustomerProfile = (props) => {
         );
       case 1:
         setActiveIndex(1);
-        return (
-          <BankingPreferences
-            navigation={props.navigation}
-            next={() => nextPage(Customer_Profile.consent)}
-            prev={() => prevPage(Customer_Profile.banking)}
-            childFunc={childFunc}
-            resetFunc={resetFunc}
-            loading={(flag) => setShowLoader(flag)}
-          />
-        );
+        // return (
+        //   <BankingPreferences
+        //     navigation={props.navigation}
+        //     next={() => nextPage(Customer_Profile.consent)}
+        //     prev={() => prevPage(Customer_Profile.banking)}
+        //     childFunc={childFunc}
+        //     resetFunc={resetFunc}
+        //     loading={(flag) => setShowLoader(flag)}
+        //   />
+        // );
       case 2:
         setActiveIndex(2);
-        return (
-          <CustomerConsent
-            // next={() => props.navigation.navigate('SASuccess')}
-            next={() => props.navigation.navigate(NavigationUrl.SASuccessID)}
-            prev={() => prevPage(Customer_Profile.consent)}
-            navigation={props.navigation}
-            childFunc={childFunc}
-            resetFunc={resetFunc}
-            loading={(flag) => setShowLoader(flag)}
-          />
-        );
+        // return (
+        //   <CustomerConsent
+        //     // next={() => props.navigation.navigate('SASuccess')}
+        //     next={() => props.navigation.navigate(NavigationUrl.SASuccessID)}
+        //     prev={() => prevPage(Customer_Profile.consent)}
+        //     navigation={props.navigation}
+        //     childFunc={childFunc}
+        //     resetFunc={resetFunc}
+        //     loading={(flag) => setShowLoader(flag)}
+        //   />
+        // );
       default:
         setActiveIndex(0);
         return (
@@ -177,73 +177,73 @@ const CustomerProfile = (props) => {
   };
 
   return (
-    <View style={{flex:1}}>
-    <ImageBackground source={BGImage}>
-      {
-        showLoader?<LoaderComponent
-        isVisible={showLoader}
-        heading={StringsOfLanguages.LOADER.CID_HEADING}
-        subHeading={StringsOfLanguages.LOADER.CID_SUBHEADING}
-      />:null
-      }
-      <HeaderContainer>
-        <CloseAndSave>
-          <TouchableOpacity onPress={() => setCrossPopup(true)}>
-            <IconClose source={iconClose} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={handleBackPress}>
-            <SaveAndExit>Save & Exit</SaveAndExit>
-          </TouchableOpacity>
-        </CloseAndSave>
-      <UserContainer ></UserContainer>
-      </HeaderContainer>
-      {activeIndex == CustomerProfileStepper.PERSONALDETAILS ? (
-        <PleaseEnter>
-          <Text style={{ fontWeight: "normal" }}>{StringsOfLanguages.CUSTOMERCONSENT.CC_PLEASE_ENTER} </Text>
-          {StringsOfLanguages.CUSTOMERCONSENT.CC_PERSONAL_DETAILS}
-        </PleaseEnter>
-      ) : activeIndex ==CustomerProfileStepper.BANKINGPREFERENCES ? (
-        <CustomText
-          align="center"
-          color={Colors.WHITE}
-          marginBottom={40}
-          fontSize={Font_Size.SIZE_20}
-          lineHeight={Line_Height.HEIGHT_26}
-          fontFamily={FontFamily.Inter_Light}
-        >
-          {StringsOfLanguages.CUSTOMERCONSENT.CC_SELECT}
+    <View style={{ flex: 1 }}>
+      <ImageBackground source={BGImage}>
+        {
+          showLoader ? <LoaderComponent
+            isVisible={showLoader}
+            heading={StringsOfLanguages.LOADER.CID_HEADING}
+            subHeading={StringsOfLanguages.LOADER.CID_SUBHEADING}
+          /> : null
+        }
+        <HeaderContainer>
+          <CloseAndSave>
+            <TouchableOpacity onPress={() => setCrossPopup(true)}>
+              <IconClose source={iconClose} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={handleBackPress}>
+              <SaveAndExit>Save & Exit</SaveAndExit>
+            </TouchableOpacity>
+          </CloseAndSave>
+          <UserContainer ></UserContainer>
+        </HeaderContainer>
+        {activeIndex == CustomerProfileStepper.PERSONALDETAILS ? (
+          <PleaseEnter>
+            <Text style={{ fontWeight: "normal" }}>{StringsOfLanguages.CUSTOMERCONSENT.CC_PLEASE_ENTER} </Text>
+            {StringsOfLanguages.CUSTOMERCONSENT.CC_PERSONAL_DETAILS}
+          </PleaseEnter>
+        ) : activeIndex == CustomerProfileStepper.BANKINGPREFERENCES ? (
           <CustomText
             align="center"
             color={Colors.WHITE}
+            marginBottom={40}
             fontSize={Font_Size.SIZE_20}
             lineHeight={Line_Height.HEIGHT_26}
-            fontFamily={FontFamily.INTER_BOLD}
+            fontFamily={FontFamily.Inter_Light}
           >
-            {StringsOfLanguages.CUSTOMERCONSENT.CC_PREFERED_PRO}
+            {StringsOfLanguages.CUSTOMERCONSENT.CC_SELECT}
+            <CustomText
+              align="center"
+              color={Colors.WHITE}
+              fontSize={Font_Size.SIZE_20}
+              lineHeight={Line_Height.HEIGHT_26}
+              fontFamily={FontFamily.INTER_BOLD}
+            >
+              {StringsOfLanguages.CUSTOMERCONSENT.CC_PREFERED_PRO}
+            </CustomText>
+            {StringsOfLanguages.CUSTOMERCONSENT.CC_FOR_THE_CUST}
           </CustomText>
-          {StringsOfLanguages.CUSTOMERCONSENT.CC_FOR_THE_CUST}
-        </CustomText>
-      ) : (
-        <CustomText
-          align="center"
-          color={Colors.WHITE}
-          marginBottom={40}
-          fontSize={Font_Size.SIZE_20}
-          lineHeight={Line_Height.HEIGHT_26}
-          fontFamily={FontFamily.Inter_Light}
-        >
-          {StringsOfLanguages.CUSTOMERCONSENT.CC_COMPLETE_THE_JOURNEY}
+        ) : (
           <CustomText
             align="center"
             color={Colors.WHITE}
+            marginBottom={40}
             fontSize={Font_Size.SIZE_20}
             lineHeight={Line_Height.HEIGHT_26}
-            fontFamily={FontFamily.INTER_BOLD}
-          >{StringsOfLanguages.CUSTOMERCONSENT.CC_CUST_CONCENT}
+            fontFamily={FontFamily.Inter_Light}
+          >
+            {StringsOfLanguages.CUSTOMERCONSENT.CC_COMPLETE_THE_JOURNEY}
+            <CustomText
+              align="center"
+              color={Colors.WHITE}
+              fontSize={Font_Size.SIZE_20}
+              lineHeight={Line_Height.HEIGHT_26}
+              fontFamily={FontFamily.INTER_BOLD}
+            >{StringsOfLanguages.CUSTOMERCONSENT.CC_CUST_CONCENT}
+            </CustomText>
           </CustomText>
-        </CustomText>
-      )}
-</ImageBackground>
+        )}
+      </ImageBackground>
       <LowerConatainer>
         <AlignedContainer>
           <TimeLineContainer>
@@ -270,7 +270,7 @@ const CustomerProfile = (props) => {
                 setPopupVisible(false);
                 //resetFunc.current();
                 childFunc.current();
-                
+
               }}
               component={
                 <ComponentContainer>

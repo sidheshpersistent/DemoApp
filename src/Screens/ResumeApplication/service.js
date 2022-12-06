@@ -1,5 +1,6 @@
 import { Endpoints, NetworkManager } from "../../API";
 import { Account_Type, CommonConstant } from "../../Utils/Constants";
+import ResponseData from '../../API/ResponseData.json';
 
 
 export const getResumeApplicationsListComm = async (callBack) => {
@@ -23,11 +24,11 @@ export const getResumeApplicationDataComm = async (endPoint, callBack) => {
         appName: Account_Type.ASSISTED_SA,
         mobileNumber: ""
     }
-    NetworkManager.IDFCNetworkGet(endPoint,header, response => {
+    NetworkManager.IDFCNetworkGet(endPoint, header, response => {
         if (response?.status == CommonConstant.SUCCESS) {
-            callBack(true,response);
+            callBack(true, response);
         } else {
-            callBack(false,"");
+            callBack(false, "");
         }
     });
 };
