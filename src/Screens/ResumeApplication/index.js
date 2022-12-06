@@ -36,8 +36,8 @@ import {
   emptyBox,
 } from "./styled";
 import { CustomTextInput, Popup } from "../../Components";
-import { RadioButton, Select } from "@idfc/ccl-mobile/lib/module/v2";
-import { IconButton } from "@idfc/ccl-mobile";
+// import { RadioButton, Select } from "@idfc/ccl-mobile/lib/module/v2";
+// import { IconButton } from "@idfc/ccl-mobile";
 import { Endpoints } from "../../API";
 import {
   deleteResumeApplicationDataComm,
@@ -53,7 +53,6 @@ import {
   Save_Status,
   TestIds,
 } from "../../Utils/Constants";
-import { decryptDataValue } from "../../Utils/CryptoHelper";
 // import { validation } from "../../Utils/ValidationUtils";
 import LoaderComponent from "../../Components/LoaderComponent";
 import ErrorPopup from "../../Components/ErrorPopup";
@@ -228,24 +227,24 @@ const ResumeApplication = () => {
             panDetails: response?.panDetails,
           };
           
-          const fetchedPersonalDetails = decryptDataValue(
+          const fetchedPersonalDetails =
             encryptedResponse.personalDetails
-          );
-          const fetchedBankingDetails = decryptDataValue(
+         
+          const fetchedBankingDetails =
             encryptedResponse.bankingDetails
-          );
-          const fetchedCustConsentDetails = decryptDataValue(
+     
+          const fetchedCustConsentDetails =
             encryptedResponse.custConsentDetails
-          );
-          const fetchedCIDDetails = decryptDataValue(
+         
+          const fetchedCIDDetails =
             encryptedResponse.cidDetails
-          );
-          const fetchedAadharDetails = decryptDataValue(
+         
+          const fetchedAadharDetails =
             encryptedResponse.aadharDetails
-          );
-          const fetchedPanDetails = decryptDataValue(
+         
+          const fetchedPanDetails =
             encryptedResponse.panDetails
-          );
+         
           const fetchedData = {
             fetchedCIDDetails,
             fetchedPersonalDetails,
@@ -633,10 +632,14 @@ const ResumeApplication = () => {
     );
   };
 
+  // return(
+  //   <View style={{flex:1,backgroundColor:'red'}}></View>
+  // );
+
   return (
     <Container>
       <LoaderComponent
-        isVisible={showLoader}
+        isVisible={false}
         heading={StringsOfLanguages.LOADER.CID_HEADING}
         subHeading={StringsOfLanguages.LOADER.CID_SUBHEADING}
       />
@@ -677,7 +680,7 @@ const ResumeApplication = () => {
           textInputProps={{ style: textInputPropsStyle }}
           suffix={
             <View style={iconButtonStyle}>
-              <IconButton
+              {/* <IconButton
                 iconColor={Colors.MAROON_DARK}
                 iconType={searchValue ? "Cross" : "Search"}
                 transparent
@@ -685,7 +688,7 @@ const ResumeApplication = () => {
                 onPress={() => {
                   searchValue ? cancleSearch() : null;
                 }}
-              />
+              /> */}
             </View>
           }
         />
@@ -717,7 +720,7 @@ const ResumeApplication = () => {
             <View>
               <ComponentContainer>
                 <View style={radioGroupStyle}>
-                  <RadioButton
+                  {/* <RadioButton
                     testID={TestIds.rap_delete_yes}
                     value="Yes"
                     name="radio-normal"
@@ -737,7 +740,7 @@ const ResumeApplication = () => {
                     onChange={() => onChangeRadioValue("No")}
                   >
                     {StringsOfLanguages.RESUMEAPPLIST.RAL_NO}
-                  </RadioButton>
+                  </RadioButton> */}
                 </View>
 
                 <View style={emptyBox}></View>
@@ -746,7 +749,7 @@ const ResumeApplication = () => {
               <ComponentContainer>
                 {isShowDrop && (
                   <View style={selectBoxStyle}>
-                    <Select
+                    {/* <Select
                       testID={TestIds.rap_selsect_resason}
                       value={reason}
                       label={StringsOfLanguages.RESUMEAPPLIST.RAL_REASON}
@@ -760,7 +763,7 @@ const ResumeApplication = () => {
                           </Text>
                         </View>
                       )}
-                    />
+                    /> */}
                   </View>
                 )}
               </ComponentContainer>

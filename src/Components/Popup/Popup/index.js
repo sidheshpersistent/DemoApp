@@ -17,12 +17,12 @@ import {
   Colors,
   FontFamily,
   LetterSpacing,
+  Line_Height,
 } from '../../../Utils';
 import { CustomText, CustomButton } from '../../../Components';
-import { LineHeight } from '@idfc/ccl-commons/enums';
 import Modal from 'react-native-modal';
-import CustomBlurView from '../CustomBlurView';
-import { Icon } from '@idfc/ccl-mobile';
+// import CustomBlurView from '../CustomBlurView';
+// import { Icon } from '@idfc/ccl-mobile';
 
 const Popup = props => {
   const {
@@ -51,7 +51,8 @@ const Popup = props => {
       <Modal
         animationIn={animationIn}
         isVisible={isVisible}
-        customBackdrop={<CustomBlurView />}>
+       >
+         {/* customBackdrop={<CustomBlurView />} */}
         <CenteredView>
           <ModalView style={style}>
             <TopIconView>
@@ -66,13 +67,13 @@ const Popup = props => {
             <View style={popupContainer}>
               {isClose &&
                 <CloseIconView onPress={closeButton}>
-                  <Icon name="CrossSmall" primaryColor={Colors.MAROON} />
+                  {/* <Icon name="CrossSmall" primaryColor={Colors.MAROON} /> */}
                 </CloseIconView>
               }
               <CustomText
                 fontFamily={FontFamily.Inter_SemiBold}
                 fontSize={20}
-                lineHeight={LineHeight.HEIGHT_20}
+                lineHeight={Line_Height.HEIGHT_20}
                 letterSpacing={LetterSpacing.MINUS_ZERO_POINT_FIVE}
                 color={Colors.NEW_GREY_800.text}>
                 {Heading}

@@ -1,12 +1,12 @@
 import BackgroundImage from "./BackgroundImage/BackgroundImage";
 import Card from "./CardView/CardView"
-// import CustomButton from "./CustomButton/CustomButton";
+import CustomButton from "./CustomButton/CustomButton";
 // import CustomCheckbox from "./CustomCheckbox/CustomCheckbox";
 import CustomText from "./CustomText/CustomText";
 import CustomTextInput from "./CustomTextInput/CustomTextInput";
 // import CustomToggle from "./CustomToggle/CustomToggle";
 import BackArrowHeader from "./HeaderComponent/BackArrowHeader";
-// import Popup from "./Popup/Popup";
+import Popup from "./Popup/Popup";
 // import PopupCommunicationAddress from "./Popup/PopupCommunicationAddress";
 // import PopupEditBranch from "./Popup/PopupEditBranch";
 // import PopUpExistingCustomer from "./Popup/PopUpExistingCustomer";
@@ -23,19 +23,19 @@ import OutlineButton from './Buttons/OutlineButton/OutlineButton';
 // import PopupShareDetails from "./Popup/PopupShareDetails";
 // import PopupEmpVerification from "./Popup/PopupEmpVerification";
 // import PopupFailedOfficeMailVerification from "./Popup/PopupFailedOfficeMailVerification";
-export{
+export {
     // NavyBlueInfoBox,
     BackgroundImage,
     Card,
     ProfileHeaderContainer,
-    UpperBoxContainer ,
-    // CustomButton,
+    UpperBoxContainer,
+    CustomButton,
     // CustomCheckbox,
     CustomText,
     CustomTextInput,
     // CustomToggle,
     BackArrowHeader,
-    // Popup,
+    Popup,
     // TimeLineView,PopupTextInput,
     // PopupCommunicationAddress,
     // PopupEditBranch,
