@@ -1,8 +1,26 @@
 import React, {Component, useEffect, useState} from 'react';
 import {View, StatusBar, TextInput, Animated, Text} from 'react-native';
+import {Colors} from '../../Utils';
 
 const CustomTextInput = props => {
   const {label, suffix = false, onChangeText, value} = props;
+  const {
+    onChange,
+    labelStyle,
+    keyboardType,
+    textProps,
+    placeholder,
+    isActive,
+    errorMessage,
+    isError,
+    errorColor,
+    testID,
+    onBlur,
+    onFocus,
+    disabled,
+    reference,
+    autofocus,
+  } = props;
 
   const [paddingBox, setPaddingBox] = useState(0);
   const [isFocused, setIsFocused] = useState(false);
@@ -33,7 +51,7 @@ const CustomTextInput = props => {
     setPaddingBox(0);
   };
 
-  const labelStyle = {
+  const labelStyle1 = {
     position: 'absolute',
     left: 12,
     bottom: animatedIsFocused.interpolate({
@@ -60,9 +78,14 @@ const CustomTextInput = props => {
       outputRange: ['#aaa', '#000'],
     }),
     marginBottom: 10,
-    borderBottomColor: 'gray',
+    borderBottomColor: Colors.gray,
     borderBottomWidth: isFocused || !value ? 1 : 0,
     marginTop: 10,
+  };
+  const textInputStyle = {
+    fontSize: 22,
+    marginBottom: 5,
+    width: '85%',
   };
   return (
     <View
@@ -74,29 +97,78 @@ const CustomTextInput = props => {
         marginVertical: 8,
         paddingVertical: paddingBox,
       }}>
-      <Animated.Text style={labelStyle}>{label}</Animated.Text>
+      <Animated.Text
+        style={[
+          labelStyle1,
+          {color: isError == 'error' ? errorColor : Colors.gray},
+        ]}>
+        {isError == 'error' ? errorMessage : label}
+      </Animated.Text>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <TextInput
+          testID={testID}
+          ref={reference}
+          autofocus={autofocus}
           value={value}
           onChangeText={onChangeText}
-          style={{
-            fontSize: 22,
-            color: '#9b1e26',
-            marginBottom: 5,
-            width: '85%',
+          onChange={onChange}
+          keyboardType={keyboardType}
+          style={
+            isError == 'error'
+              ? [
+                  textInputStyle,
+                  {
+                    color: errorColor,
+                  },
+                ]
+              : [
+                  textInputStyle,
+                  {
+                    color: Colors.gray,
+                  },
+                ]
+          }
+          textProps={textProps}
+          placeholder={placeholder}
+          isActive={isActive}
+          disabled={disabled}
+          onFocus={() => {
+            handleFocus();
+            onFocus;
           }}
-          onFocus={() => handleFocus()}
-          onBlur={() => handleBlur()}
+          onBlur={() => {
+            handleBlur();
+            onBlur;
+          }}
           blurOnSubmit
         />
         {value ? (
-          <View style={{position: 'absolute', right: 15}}></View>
+          <View
+            style={[
+              {position: 'absolute', right: 15},
+              isError == 'error'
+                ? {backgroundColor: 'red'}
+                : {backgroundColor: 'black'},
+            ]}></View>
         ) : (
-          <View style={{position: 'absolute', right: 15}}></View>
+          <View
+            style={[
+              {position: 'absolute', right: 15},
+              isError == 'error'
+                ? {backgroundColor: 'red'}
+                : {backgroundColor: 'black'},
+            ]}></View>
         )}
       </View>
 
-      <Animated.View style={labelStyle2} />
+      <Animated.View
+        style={[
+          labelStyle2,
+          {
+            borderBottomColor: isError == 'error' ? errorColor : Colors.gray,
+          },
+        ]}
+      />
     </View>
   );
 };

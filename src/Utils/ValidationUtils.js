@@ -1,16 +1,16 @@
 /* eslint-disable no-useless-escape */
 export const validation = {
   mobile: {
-    pattern: /^[0]?[6789]\d{9}$/,      //                /^([0-9'-\s]){10}$/         previos validation
+    pattern: /^[0]?[6789]\d{9}$/, //                /^([0-9'-\s]){10}$/         previos validation
     message: 'Invalid mobile number',
   },
   mobile2: {
-    pattern: /^[^!-\/:-@\[-`{-~]+$/,      //                /^([0-9'-\s]){10}$/         previos validation
+    pattern: /^[^!-\/:-@\[-`{-~]+$/, //                /^([0-9'-\s]){10}$/         previos validation
     message: 'Invalid mobile number',
   },
   email: {
-    pattern:/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
-      ///^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
+    pattern: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+    ///^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
     message: 'Invalid email Id',
   },
   pan: {
@@ -26,37 +26,37 @@ export const validation = {
     message: 'Invalid aadhar number /virtual ID',
   },
   isNumberField: {
-    pattern: /^\d+$/, 
+    pattern: /^\d+$/,
     message: 'Invalid gross annual income',
   },
-  isOnlyTextField:{
-    pattern: /^[a-zA-Z\s]+$/, 
+  isOnlyTextField: {
+    pattern: /^[a-zA-Z\s]+$/,
     message: 'Invalid gross annual income',
   },
-  TIN:{
+  TIN: {
     pattern: /^\d{9}$/,
-    messege:'Invalid TIN'
+    messege: 'Invalid TIN',
   },
-  pinCode:{
+  pinCode: {
     pattern: /[1-9]{1}[0-9]{6}/,
-    messege:'Invalid PinCode'
+    messege: 'Invalid PinCode',
   },
-  pinCodeReplace:{
+  pinCodeReplace: {
     pattern: /[^0-9]+/g,
-    messege:'Invalid PinCode'
+    messege: 'Invalid PinCode',
   },
-  address:{
+  address: {
     pattern: /[^A-Za-z 0-9/,]+/g,
-    messege:'Invalid Address'
+    messege: 'Invalid Address',
   },
-  accountNumber:{
-    pattern: /^[0-9]*$/g, 
-    messege:'Invalid Account Number'
+  accountNumber: {
+    pattern: /^[0-9]*$/g,
+    messege: 'Invalid Account Number',
   },
-  searchResume:{
+  searchResume: {
     pattern: /^[a-zA-Z0-9]*$/g,
-    messege:'Invalid Address'
-  }
+    messege: 'Invalid Address',
+  },
 };
 
 export const isValidMobileNo = value => {
@@ -121,22 +121,25 @@ export const isValidPinCode = value => {
   }
 };
 
-export const removeNumberFromString = value =>{
-  return value.replace(/[^A-Za-z ]+/g, "");
-}
+export const removeNumberFromString = value => {
+  return value.replace(/[^A-Za-z ]+/g, '');
+};
 
-export const isEmptyValue = value =>{
-
-    if(value == null || value == undefined || value == "" || value == [] || value == {})
+export const isEmptyValue = value => {
+  if (
+    value == null ||
+    value == undefined ||
+    value == '' ||
+    value == [] ||
+    value == {}
+  )
     return true;
-    else
-    return false;
-}
-export const getValueIfNonEmpty = value =>{
-  if(value && value!=null && value!=undefined){
+  else return false;
+};
+export const getValueIfNonEmpty = value => {
+  if (value && value != null && value != undefined) {
     return value;
+  } else {
+    return '';
   }
-  else{
-    return "";
-  }
-}
+};

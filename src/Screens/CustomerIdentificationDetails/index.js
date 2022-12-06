@@ -125,7 +125,7 @@ import {
   checkEmailDedupe,
 } from '../../Utils/CommonApi';
 
-import LoaderComponent from '../../Components/LoaderComponent';
+// import LoaderComponent from '../../Components/LoaderComponent';
 import {encryptedDataValue, decryptDataValue} from '../../Utils/CryptoHelper';
 // import { customerProfileContextReset } from "../../Screens/Dashboard/constants";
 // import { PopupEmpVerification } from "../../Components";
@@ -942,7 +942,7 @@ const CustomerIdentificationDetails = props => {
     setMobileNumber(mobileNumber);
     var ismobile = await isValidMobileNo(mobileNumber);
     if (ismobile && validation.mobile2.pattern.test(mobileNumber)) {
-      resumeAPIcall(mobileNumber);
+      // resumeAPIcall(mobileNumber);
       setIsErrorMobile(false);
     } else {
       setIsErrorMobile('error');
@@ -1428,11 +1428,11 @@ const CustomerIdentificationDetails = props => {
   return (
     <Container>
       <BackgroundImage>
-        <LoaderComponent
+        {/* <LoaderComponent
           isVisible={showLoader}
           heading={StringsOfLanguages.LOADER.CID_HEADING}
           subHeading={StringsOfLanguages.LOADER.CID_SUBHEADING}
-        />
+        /> */}
         <BackArrowHeader
           testID={TestIds.cid_header_back_arrow}
           onPressBack={() => {
@@ -1467,7 +1467,7 @@ const CustomerIdentificationDetails = props => {
                     <View style={{zIndex: 1}}>
                       <CardMargin>
                         <View>
-                          <CustomSearchInputDropdown
+                          {/* <CustomSearchInputDropdown
                             value={companyName}
                             placeholder={
                               StringsOfLanguages.CID.CID_FIELD_COMPANY
@@ -1494,33 +1494,33 @@ const CustomerIdentificationDetails = props => {
                               }
                               // setIsErrorBankName("error")
                             }}
-                          />
-                          {/* <CustomSearchInputCompany
+                          /> */}
+                          <CustomSearchInputCompany
                             testID={TestIds.cid_cs_company_name}
                             placeholder={
                               StringsOfLanguages.CID.CID_FIELD_COMPANY
                             }
                             value={CompanyValue.displayText} // one value of response
-                            getSerachResult={getCompanyListData}  // api call function
-                            searchList={companyDetails}  // api response
-                            hideSearchResult={hideSearchResult} 
+                            getSerachResult={getCompanyListData} // api call function
+                            searchList={companyDetails} // api response
+                            hideSearchResult={hideSearchResult}
                             isCompanySelectedFromList={
                               isCompanySelectedFromList
                             }
-                            setIsCompanySelectedFromList={(val) =>
+                            setIsCompanySelectedFromList={val =>
                               changeIsCompanySelectedFromList(val)
                             }
-                            sethideSearchResult={(val) =>
+                            sethideSearchResult={val =>
                               sethideSearchResult(val)
                             }
                             clickHandler={clickHandler}
                             isRankListAvailable={true}
                             resetRankList={() => {
-                              setCompanyRankList("");
-                              setCompanyName("");
-                              setCompanyValue("");
+                              setCompanyRankList('');
+                              setCompanyName('');
+                              setCompanyValue('');
                             }}
-                          /> */}
+                          />
                         </View>
                       </CardMargin>
                       {companyDetails !== '' &&
