@@ -125,7 +125,7 @@ import {
   checkEmailDedupe,
 } from '../../Utils/CommonApi';
 
-import LoaderComponent from '../../Components/LoaderComponent';
+// import LoaderComponent from '../../Components/LoaderComponent';
 import {encryptedDataValue, decryptDataValue} from '../../Utils/CryptoHelper';
 // import { customerProfileContextReset } from "../../Screens/Dashboard/constants";
 // import { PopupEmpVerification } from "../../Components";
@@ -157,7 +157,7 @@ const CustomerIdentificationDetails = props => {
   const [number, setNumber] = useState('');
   const [showInvalidMsg, setShowInvalidMsg] = useState(false);
   const [toggleMask, setToggleMask] = useState(false);
-  const [kvalue, setKvalue] = useState(-200);
+  const [kvalue, setKvalue] = useState(-300);
   const [accountType, setAccountType] = useState(useRoute().params.accountType);
   const [companyDetails, setCompanyDetails] = useState('');
   const [displayData, setDisplayData] = useState('');
@@ -942,7 +942,7 @@ const CustomerIdentificationDetails = props => {
     setMobileNumber(mobileNumber);
     var ismobile = await isValidMobileNo(mobileNumber);
     if (ismobile && validation.mobile2.pattern.test(mobileNumber)) {
-      resumeAPIcall(mobileNumber);
+      // resumeAPIcall(mobileNumber);
       setIsErrorMobile(false);
     } else {
       setIsErrorMobile('error');
@@ -1124,12 +1124,12 @@ const CustomerIdentificationDetails = props => {
   };
 
   const keyboardBlurHandle = () => {
-    setKvalue(-200);
+    setKvalue(-300);
   };
   const keyboardFocusHandle = () => {
     route.params.accountType === Account_Type.ASSISTED_CS
-      ? setKvalue(-100)
-      : setKvalue(-150);
+      ? setKvalue(-200)
+      : setKvalue(-250);
   };
 
   const getCustomerDedupe = async () => {
@@ -1428,11 +1428,11 @@ const CustomerIdentificationDetails = props => {
   return (
     <Container>
       <BackgroundImage>
-        <LoaderComponent
+        {/* <LoaderComponent
           isVisible={showLoader}
           heading={StringsOfLanguages.LOADER.CID_HEADING}
           subHeading={StringsOfLanguages.LOADER.CID_SUBHEADING}
-        />
+        /> */}
         <BackArrowHeader
           testID={TestIds.cid_header_back_arrow}
           onPressBack={() => {
@@ -1442,7 +1442,7 @@ const CustomerIdentificationDetails = props => {
         <KeyboardAvoidingView
           keyboardVerticalOffset={Platform.select({
             ios: () => 0,
-            android: () => kvalue,
+            android: () => -400,
           })()}
           behavior={Platform.OS === 'ios' ? 'padding' : 'position'}>
           <ScrollView
@@ -1467,7 +1467,7 @@ const CustomerIdentificationDetails = props => {
                     <View style={{zIndex: 1}}>
                       <CardMargin>
                         <View>
-                          <CustomSearchInputDropdown
+                          {/* <CustomSearchInputDropdown
                             value={companyName}
                             placeholder={
                               StringsOfLanguages.CID.CID_FIELD_COMPANY
@@ -1494,33 +1494,33 @@ const CustomerIdentificationDetails = props => {
                               }
                               // setIsErrorBankName("error")
                             }}
-                          />
-                          {/* <CustomSearchInputCompany
+                          /> */}
+                          <CustomSearchInputCompany
                             testID={TestIds.cid_cs_company_name}
                             placeholder={
                               StringsOfLanguages.CID.CID_FIELD_COMPANY
                             }
                             value={CompanyValue.displayText} // one value of response
-                            getSerachResult={getCompanyListData}  // api call function
-                            searchList={companyDetails}  // api response
-                            hideSearchResult={hideSearchResult} 
+                            getSerachResult={getCompanyListData} // api call function
+                            searchList={companyDetails} // api response
+                            hideSearchResult={hideSearchResult}
                             isCompanySelectedFromList={
                               isCompanySelectedFromList
                             }
-                            setIsCompanySelectedFromList={(val) =>
+                            setIsCompanySelectedFromList={val =>
                               changeIsCompanySelectedFromList(val)
                             }
-                            sethideSearchResult={(val) =>
+                            sethideSearchResult={val =>
                               sethideSearchResult(val)
                             }
                             clickHandler={clickHandler}
                             isRankListAvailable={true}
                             resetRankList={() => {
-                              setCompanyRankList("");
-                              setCompanyName("");
-                              setCompanyValue("");
+                              setCompanyRankList('');
+                              setCompanyName('');
+                              setCompanyValue('');
                             }}
-                          /> */}
+                          />
                         </View>
                       </CardMargin>
                       {companyDetails !== '' &&
