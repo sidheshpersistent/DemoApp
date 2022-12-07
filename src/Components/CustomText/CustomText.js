@@ -31,33 +31,37 @@ const CustomText = props => {
     paddingVertical,
     style
   } = props;
-
   return (
     <Text
       testID={testID}
-      fontWeight={fontWeight}
-      paddingVertical={paddingVertical}
+      style={[style, {
+        paddingVertical: paddingVertical,
+        paddingHorizontal: paddingHorizontal,
+        paddingBottom: paddingBottom,
+        paddingLeft: paddingLeft,
+        paddingRight: paddingRight,
+        paddingTop: paddingTop,
+        marginBottom: marginBottom,
+        marginHorizontal: marginHorizontal,
+        marginLeft: marginLeft,
+        marginRight: marginRight,
+        marginTop: marginTop,
+        marginVertical: marginVertical,
+        color: color,
+        fontSize: fontSize,
+        lineHeight: lineHeight,
+        letterSpacing: letterSpacing,
+        flex: flex ? flex : 0,
+        fontFamily: fontFamily ? fontFamily : "Inter",
+        fontWeight: fontWeight ? '' + fontWeight : 'normal'
+      }]}
       key={key}
       align={align}
-      color={color}
-      fontSize={fontSize}
-      isClickable={isClickable}
-      letterSpacing={letterSpacing}
-      lineHeight={lineHeight}
-      marginBottom={marginBottom}
-      marginHorizontal={marginHorizontal}
-      marginLeft={marginLeft}
-      marginRight={marginRight}
-      marginTop={marginTop}
-      marginVertical={marginVertical}
-      maxLength={maxLength}
-      paddingBottom={paddingBottom}
-      paddingHorizontal={paddingHorizontal}
-      paddingLeft={paddingLeft}
-      paddingRight={paddingRight}
-      paddingTop={paddingTop}
-      variant={variant}
-      style={[style, { flex: flex ? flex : 0, fontFamily: fontFamily ? fontFamily : "Inter" }]}
+
+    // isClickable={isClickable}
+    // maxLength={maxLength}
+    // variant={variant}
+
     >{props.children}</Text>
   );
 };

@@ -42,7 +42,7 @@ const MonthlyHighlights = props => {
         item.flag == 'total' ? (
 
           <Card key={item.id} style={highlightCard} testID={TestIds.db_total_app}>
-            <View style={[smallBox, { backgroundColor: Colors.PROD_TWILIGHT_300.code }]}>
+            <View style={[smallBox, { backgroundColor: Colors.PROD_TWILIGHT_100.code }]}>
               <TotalApplicationImage
                 source={monthlyTotalApplication}
 
@@ -60,7 +60,7 @@ const MonthlyHighlights = props => {
           </Card>
         ) : item.flag == 'success' ? (
           <Card key={item.id} style={highlightCard2} testID={TestIds.db_successful_app}>
-            <View style={[smallBox, { backgroundColor: Colors.PROD_TWILIGHT_300.code }]}>
+            <View style={[smallBox, { backgroundColor: Colors.PROD_PERSIAN_100.code }]}>
               <TotalSuccessImage
                 source={monthlySuccessApplication}
 
@@ -73,7 +73,7 @@ const MonthlyHighlights = props => {
           </Card>
         ) : (
           <Card key={item.id} style={highlightCard3} testID={TestIds.db_app_in_progress}>
-            <View style={[smallBox, { backgroundColor: Colors.PROD_TWILIGHT_300.code }]}>
+            <View style={[smallBox, { backgroundColor: Colors.PROD_MUSTARD_100.code }]}>
               <TotalProgressImage
                 source={monthlyProgressApplication}
 

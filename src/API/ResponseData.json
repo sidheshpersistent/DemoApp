@@ -2,11 +2,18 @@
   "getJourneyList": {
     "data": [
       {
-        "userId": 2833,
-        "customerName": "JASPRIT SHARMA1",
-        "journeyPercentage": 33,
-        "journeyCreatedDate": "15 Nov,2022 04:06 PM",
-        "journeyUpdatedDate": "02 Dec,2022 05:22 PM"
+        "userId": 3848,
+        "customerName": "YOGESH AVADHOOT PAVTEKAR",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "06 Dec,2022 02:34 PM",
+        "journeyUpdatedDate": "06 Dec,2022 02:34 PM"
+      },
+      {
+        "userId": 3828,
+        "customerName": "SUJIT MUKHARJEE",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "06 Dec,2022 12:51 PM",
+        "journeyUpdatedDate": "06 Dec,2022 12:51 PM"
       },
       {
         "userId": 2848,
@@ -42,8 +49,510 @@
         "journeyPercentage": 100,
         "journeyCreatedDate": "01 Dec,2022 04:46 PM",
         "journeyUpdatedDate": "01 Dec,2022 06:05 PM"
+      },
+      {
+        "userId": 3750,
+        "customerName": "AYUSH MISHRA",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "30 Nov,2022 11:52 AM",
+        "journeyUpdatedDate": "30 Nov,2022 12:11 PM"
+      },
+      {
+        "userId": 3730,
+        "customerName": "PRASANT TAMANG",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "30 Nov,2022 09:27 AM",
+        "journeyUpdatedDate": "30 Nov,2022 09:29 AM"
+      },
+      {
+        "userId": 3729,
+        "customerName": "SUJIT MUKHARJEE",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "30 Nov,2022 09:22 AM",
+        "journeyUpdatedDate": "30 Nov,2022 09:24 AM"
+      },
+      {
+        "userId": 3708,
+        "customerName": "ALIA BHAT",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "29 Nov,2022 05:45 PM",
+        "journeyUpdatedDate": "29 Nov,2022 05:45 PM"
+      },
+      {
+        "userId": 3688,
+        "customerName": "SUJIT MUKHARJEE",
+        "journeyPercentage": 33,
+        "journeyCreatedDate": "29 Nov,2022 05:05 PM",
+        "journeyUpdatedDate": "29 Nov,2022 05:06 PM"
+      },
+      {
+        "userId": 3188,
+        "customerName": "SUBRAT KUMAR BAL",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "22 Nov,2022 03:46 PM",
+        "journeyUpdatedDate": "29 Nov,2022 04:27 PM"
+      },
+      {
+        "userId": 3672,
+        "customerName": "RAHUL KL",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "29 Nov,2022 12:28 PM",
+        "journeyUpdatedDate": "29 Nov,2022 12:30 PM"
+      },
+      {
+        "userId": 3671,
+        "customerName": "ALIA BHAT",
+        "journeyPercentage": 93,
+        "journeyCreatedDate": "29 Nov,2022 12:07 PM",
+        "journeyUpdatedDate": "29 Nov,2022 12:09 PM"
+      },
+      {
+        "userId": 3670,
+        "customerName": "YOGESH AVADHOOT PAVTEKAR",
+        "journeyPercentage": 83,
+        "journeyCreatedDate": "29 Nov,2022 12:01 PM",
+        "journeyUpdatedDate": "29 Nov,2022 12:03 PM"
+      },
+      {
+        "userId": 3669,
+        "customerName": "MEGHANA TARANATH",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "29 Nov,2022 11:57 AM",
+        "journeyUpdatedDate": "29 Nov,2022 11:57 AM"
+      },
+      {
+        "userId": 3668,
+        "customerName": "RAHUL KL",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "29 Nov,2022 11:46 AM",
+        "journeyUpdatedDate": "29 Nov,2022 11:53 AM"
+      },
+      {
+        "userId": 2708,
+        "customerName": "ALIA BHAT",
+        "journeyPercentage": 33,
+        "journeyCreatedDate": "11 Nov,2022 04:05 PM",
+        "journeyUpdatedDate": "28 Nov,2022 04:15 PM"
+      },
+      {
+        "userId": 3651,
+        "customerName": "NILESH MISHRA",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "28 Nov,2022 04:03 PM",
+        "journeyUpdatedDate": "28 Nov,2022 04:03 PM"
+      },
+      {
+        "userId": 3648,
+        "customerName": "ALIA BHAT",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "28 Nov,2022 03:13 PM",
+        "journeyUpdatedDate": "28 Nov,2022 03:13 PM"
+      },
+      {
+        "userId": 3632,
+        "customerName": "JASPRIT SHARMA",
+        "journeyPercentage": 9,
+        "journeyCreatedDate": "28 Nov,2022 12:11 PM",
+        "journeyUpdatedDate": "28 Nov,2022 12:12 PM"
+      },
+      {
+        "userId": 3631,
+        "customerName": "RAHUL KL",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "28 Nov,2022 11:40 AM",
+        "journeyUpdatedDate": "28 Nov,2022 11:40 AM"
+      },
+      {
+        "userId": 3591,
+        "customerName": "MEGHANA TARANATH",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "25 Nov,2022 03:18 PM",
+        "journeyUpdatedDate": "25 Nov,2022 03:20 PM"
+      },
+      {
+        "userId": 3590,
+        "customerName": "SUBRAT KUMAR BAL",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "25 Nov,2022 03:01 PM",
+        "journeyUpdatedDate": "25 Nov,2022 03:14 PM"
+      },
+      {
+        "userId": 3589,
+        "customerName": "YOGESH AVADHOOT PAVTEKAR",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "25 Nov,2022 02:43 PM",
+        "journeyUpdatedDate": "25 Nov,2022 02:45 PM"
+      },
+      {
+        "userId": 3588,
+        "customerName": "YOGESH AVADHOOT PAVTEKAR",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "25 Nov,2022 02:37 PM",
+        "journeyUpdatedDate": "25 Nov,2022 02:41 PM"
+      },
+      {
+        "userId": 3548,
+        "customerName": "AYUSH MISHRA",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "25 Nov,2022 12:41 PM",
+        "journeyUpdatedDate": "25 Nov,2022 01:40 PM"
+      },
+      {
+        "userId": 3568,
+        "customerName": "SUJIT MUKHARJEE",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "25 Nov,2022 12:58 PM",
+        "journeyUpdatedDate": "25 Nov,2022 01:01 PM"
+      },
+      {
+        "userId": 3528,
+        "customerName": "ROHIT BABAR",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "25 Nov,2022 12:24 PM",
+        "journeyUpdatedDate": "25 Nov,2022 12:35 PM"
+      },
+      {
+        "userId": 3489,
+        "customerName": "ROHIT BABAR",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "25 Nov,2022 10:41 AM",
+        "journeyUpdatedDate": "25 Nov,2022 10:44 AM"
+      },
+      {
+        "userId": 3468,
+        "customerName": "AYUSH MISHRA",
+        "journeyPercentage": 9,
+        "journeyCreatedDate": "24 Nov,2022 05:34 PM",
+        "journeyUpdatedDate": "24 Nov,2022 05:40 PM"
+      },
+      {
+        "userId": 2849,
+        "customerName": "SUBRAT KUMAR BAL",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "15 Nov,2022 04:12 PM",
+        "journeyUpdatedDate": "24 Nov,2022 05:33 PM"
+      },
+      {
+        "userId": 3430,
+        "customerName": "RAHUL KL",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "24 Nov,2022 04:13 PM",
+        "journeyUpdatedDate": "24 Nov,2022 04:20 PM"
+      },
+      {
+        "userId": 3308,
+        "customerName": "SUJIT MUKHARJEE",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "24 Nov,2022 10:12 AM",
+        "journeyUpdatedDate": "24 Nov,2022 10:31 AM"
+      },
+      {
+        "userId": 3268,
+        "customerName": "RAHUL KL",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "23 Nov,2022 05:18 PM",
+        "journeyUpdatedDate": "23 Nov,2022 05:32 PM"
+      },
+      {
+        "userId": 3249,
+        "customerName": "SALMAN BUTT",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "23 Nov,2022 04:22 PM",
+        "journeyUpdatedDate": "23 Nov,2022 04:29 PM"
+      },
+      {
+        "userId": 3228,
+        "customerName": "YOGESH AVADHOOT PAVTEKAR",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "23 Nov,2022 11:47 AM",
+        "journeyUpdatedDate": "23 Nov,2022 11:55 AM"
+      },
+      {
+        "userId": 3209,
+        "customerName": "YOGESH AVADHOOT PAVTEKAR",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "23 Nov,2022 11:00 AM",
+        "journeyUpdatedDate": "23 Nov,2022 11:15 AM"
+      },
+      {
+        "userId": 3208,
+        "customerName": "SALMAN BUTT",
+        "journeyPercentage": 6,
+        "journeyCreatedDate": "23 Nov,2022 10:56 AM",
+        "journeyUpdatedDate": "23 Nov,2022 10:58 AM"
+      },
+      {
+        "userId": 3168,
+        "customerName": "RAHUL KL",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "21 Nov,2022 04:47 PM",
+        "journeyUpdatedDate": "21 Nov,2022 05:05 PM"
+      },
+      {
+        "userId": 3029,
+        "customerName": "YOGESH AVADHOOT PAVTEKAR",
+        "journeyPercentage": 94,
+        "journeyCreatedDate": "17 Nov,2022 01:45 PM",
+        "journeyUpdatedDate": "21 Nov,2022 01:32 PM"
+      },
+      {
+        "userId": 3108,
+        "customerName": "PRASANT TAMANG",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "21 Nov,2022 11:12 AM",
+        "journeyUpdatedDate": "21 Nov,2022 11:23 AM"
+      },
+      {
+        "userId": 3109,
+        "customerName": "AYUSH MISHRA",
+        "journeyPercentage": 100,
+        "journeyCreatedDate": "21 Nov,2022 11:13 AM",
+        "journeyUpdatedDate": "21 Nov,2022 11:20 AM"
+      },
+      {
+        "userId": 2968,
+        "customerName": "ALIA BHAT",
+        "journeyPercentage": 66,
+        "journeyCreatedDate": "17 Nov,2022 10:19 AM",
+        "journeyUpdatedDate": "17 Nov,2022 10:23 AM"
+      },
+      {
+        "userId": 2829,
+        "customerName": "NILESH MISHRA",
+        "journeyPercentage": 33,
+        "journeyCreatedDate": "15 Nov,2022 03:31 PM",
+        "journeyUpdatedDate": "15 Nov,2022 03:54 PM"
+      },
+      {
+        "userId": 2828,
+        "customerName": "NILESH MISHRA",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "15 Nov,2022 03:22 PM",
+        "journeyUpdatedDate": "15 Nov,2022 03:22 PM"
+      },
+      {
+        "userId": 2789,
+        "customerName": "YOGESH AVADHOOT PAVTEKAR",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "11 Nov,2022 07:21 PM",
+        "journeyUpdatedDate": "11 Nov,2022 07:21 PM"
+      },
+      {
+        "userId": 2788,
+        "customerName": "RAHUL KL",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "11 Nov,2022 07:08 PM",
+        "journeyUpdatedDate": "11 Nov,2022 07:08 PM"
+      },
+      {
+        "userId": 2768,
+        "customerName": "ROHIT BABAR",
+        "journeyPercentage": 66,
+        "journeyCreatedDate": "11 Nov,2022 05:49 PM",
+        "journeyUpdatedDate": "11 Nov,2022 06:04 PM"
+      },
+      {
+        "userId": 2748,
+        "customerName": "SALMAN BUTT",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "11 Nov,2022 05:09 PM",
+        "journeyUpdatedDate": "11 Nov,2022 05:09 PM"
+      },
+      {
+        "userId": 2731,
+        "customerName": "AYUSH MISHRA",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "11 Nov,2022 05:03 PM",
+        "journeyUpdatedDate": "11 Nov,2022 05:03 PM"
+      },
+      {
+        "userId": 2730,
+        "customerName": "SAMRUDHI PADGAOUNKAR",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "11 Nov,2022 04:52 PM",
+        "journeyUpdatedDate": "11 Nov,2022 04:52 PM"
+      },
+      {
+        "userId": 2729,
+        "customerName": "SAMRUDHI PADGAOUNKAR",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "11 Nov,2022 04:49 PM",
+        "journeyUpdatedDate": "11 Nov,2022 04:49 PM"
+      },
+      {
+        "userId": 2728,
+        "customerName": "PRASANT TAMANG",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "11 Nov,2022 04:43 PM",
+        "journeyUpdatedDate": "11 Nov,2022 04:43 PM"
+      },
+      {
+        "userId": 2710,
+        "customerName": "JASPRIT SHARMA",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "11 Nov,2022 04:26 PM",
+        "journeyUpdatedDate": "11 Nov,2022 04:26 PM"
+      },
+      {
+        "userId": 2709,
+        "customerName": "PRASANT TAMANG",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "11 Nov,2022 04:16 PM",
+        "journeyUpdatedDate": "11 Nov,2022 04:16 PM"
+      },
+      {
+        "userId": 2688,
+        "customerName": "RAHUL KL",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "11 Nov,2022 12:52 PM",
+        "journeyUpdatedDate": "11 Nov,2022 12:52 PM"
+      },
+      {
+        "userId": 2633,
+        "customerName": "AYUSH MISHRA",
+        "journeyPercentage": 33,
+        "journeyCreatedDate": "10 Nov,2022 04:02 PM",
+        "journeyUpdatedDate": "10 Nov,2022 04:02 PM"
+      },
+      {
+        "userId": 2617,
+        "customerName": "NILESH MISHRA",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "10 Nov,2022 02:37 PM",
+        "journeyUpdatedDate": "10 Nov,2022 02:37 PM"
+      },
+      {
+        "userId": 2612,
+        "customerName": "JASPRIT SHARMA",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "10 Nov,2022 02:29 PM",
+        "journeyUpdatedDate": "10 Nov,2022 02:29 PM"
+      },
+      {
+        "userId": 2611,
+        "customerName": "YOGESH AVADHOOT PAVTEKAR",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "10 Nov,2022 02:27 PM",
+        "journeyUpdatedDate": "10 Nov,2022 02:27 PM"
+      },
+      {
+        "userId": 2610,
+        "customerName": "SUJIT MUKHARJEE",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "10 Nov,2022 02:19 PM",
+        "journeyUpdatedDate": "10 Nov,2022 02:19 PM"
+      },
+      {
+        "userId": 2609,
+        "customerName": "SUJIT MUKHARJEE",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "10 Nov,2022 01:59 PM",
+        "journeyUpdatedDate": "10 Nov,2022 01:59 PM"
+      },
+      {
+        "userId": 2608,
+        "customerName": "SALMAN BUTT",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "10 Nov,2022 01:44 PM",
+        "journeyUpdatedDate": "10 Nov,2022 01:44 PM"
+      },
+      {
+        "userId": 2591,
+        "customerName": "NILESH MISHRA",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "10 Nov,2022 12:59 PM",
+        "journeyUpdatedDate": "10 Nov,2022 12:59 PM"
+      },
+      {
+        "userId": 2590,
+        "customerName": "ALIA BHAT",
+        "journeyPercentage": 33,
+        "journeyCreatedDate": "10 Nov,2022 12:56 PM",
+        "journeyUpdatedDate": "10 Nov,2022 12:58 PM"
+      },
+      {
+        "userId": 2589,
+        "customerName": "ALIA BHAT",
+        "journeyPercentage": 33,
+        "journeyCreatedDate": "10 Nov,2022 12:48 PM",
+        "journeyUpdatedDate": "10 Nov,2022 12:49 PM"
+      },
+      {
+        "userId": 2588,
+        "customerName": "AYUSH MISHRA",
+        "journeyPercentage": 24,
+        "journeyCreatedDate": "10 Nov,2022 12:41 PM",
+        "journeyUpdatedDate": "10 Nov,2022 12:42 PM"
+      },
+      {
+        "userId": 2557,
+        "customerName": "NILESH MISHRA",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "10 Nov,2022 12:22 PM",
+        "journeyUpdatedDate": "10 Nov,2022 12:22 PM"
+      },
+      {
+        "userId": 2556,
+        "customerName": "SUJIT MUKHARJEE",
+        "journeyPercentage": 9,
+        "journeyCreatedDate": "10 Nov,2022 12:18 PM",
+        "journeyUpdatedDate": "10 Nov,2022 12:19 PM"
+      },
+      {
+        "userId": 2550,
+        "customerName": "AYUSH MISHRA",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "10 Nov,2022 11:55 AM",
+        "journeyUpdatedDate": "10 Nov,2022 11:55 AM"
+      },
+      {
+        "userId": 2549,
+        "customerName": "ALIA BHAT",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "10 Nov,2022 11:52 AM",
+        "journeyUpdatedDate": "10 Nov,2022 11:52 AM"
+      },
+      {
+        "userId": 2548,
+        "customerName": "RAHUL KL",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "10 Nov,2022 11:46 AM",
+        "journeyUpdatedDate": "10 Nov,2022 11:46 AM"
+      },
+      {
+        "userId": 2533,
+        "customerName": "ALIA BHAT",
+        "journeyPercentage": 66,
+        "journeyCreatedDate": "10 Nov,2022 11:03 AM",
+        "journeyUpdatedDate": "10 Nov,2022 11:06 AM"
+      },
+      {
+        "userId": 2532,
+        "customerName": "SUJIT MUKHARJEE",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "10 Nov,2022 10:59 AM",
+        "journeyUpdatedDate": "10 Nov,2022 10:59 AM"
+      },
+      {
+        "userId": 2531,
+        "customerName": "SALMAN BUTT",
+        "journeyPercentage": 0,
+        "journeyCreatedDate": "10 Nov,2022 10:56 AM",
+        "journeyUpdatedDate": "10 Nov,2022 10:56 AM"
       }
     ],
     "status": "SUCCESS"
+  },
+  "getAgentDashboardDetails": {
+    "status": "SUCCESS",
+    "responseData": {
+      "monthlyTotal": 4,
+      "monthlySuccessful": 0,
+      "monthlyInProgress": 4,
+      "resumeAppl": 77,
+      "incomplete": 114
+    },
+    "message": null,
+    "responseCd": "00"
   }
 }

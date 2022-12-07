@@ -18,22 +18,19 @@ export default class NetworkManager {
   ////// IDFC server
 
   static IDFCNetworkGet = async (url, header, callBack) => {
-    try {
-      let headerInfo = await AsyncStorageUtils.getItem(LocalDB.headerInfo);
-      let parsedHeaderInfo = JSON.parse(headerInfo);
-      headers.Authorization = parsedHeaderInfo.authorization;
-      headers.agentId = parsedHeaderInfo.agentId;
-      headers.appName = header != null ? header.appName : "";
-      headers.mobileNumber = header != null ? header.mobileNumber : "";
-    } catch (e) {
-      callBack(e);
-    }
-    let response = {}
-    console.log(' Endpoints.getResumeApplicationsList---url', url);
-
-    response = ResponseData[`${url}`];
-
-    callBack(response);
+    // try {
+    //   let headerInfo = await AsyncStorageUtils.getItem(LocalDB.headerInfo);
+    //   let parsedHeaderInfo = JSON.parse(headerInfo);
+    //   headers.Authorization = parsedHeaderInfo.authorization;
+    //   headers.agentId = parsedHeaderInfo.agentId;
+    //   headers.appName = header != null ? header.appName : "";
+    //   headers.mobileNumber = header != null ? header.mobileNumber : "";
+    // } catch (e) {
+    //   console.log('test---------------------------eee--',e);
+    //   callBack(e);
+    // }
+    console.log('test----------------------------url', url);
+    callBack(ResponseData[`${url}`]);
     // axios
     //   .get(url, { headers: headers }, { timeout: NETWORK_TIMEOUT })
     //   .then((response) => {

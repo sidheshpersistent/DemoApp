@@ -64,7 +64,7 @@ const AppContainer = ({ childFunc }) => {
   return (
     <NavigationContainer>
       {session.loginFlag != true ? (
-        <Stack.Navigator initialRouteName={NavigationUrl.ResumeApplication}>
+        <Stack.Navigator initialRouteName={NavigationUrl.loginId}>
           {/* <Stack.Screen
             name={NavigationUrl.Splash}
             component={Splash}
@@ -76,12 +76,6 @@ const AppContainer = ({ childFunc }) => {
             component={LoginScreen}
             options={{ headerShown: false }}
           />
-          <Stack.Screen
-            name={NavigationUrl.ResumeApplication}
-            component={ResumeApplication}
-            options={{ headerShown: false }}
-          />
-
           {/* <Stack.Screen
             name={NavigationUrl.EAuthId}
             component={EAuth}
@@ -93,6 +87,11 @@ const AppContainer = ({ childFunc }) => {
           <Stack.Screen
             name={NavigationUrl.dashboardId}
             component={Dashboard}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name={NavigationUrl.ResumeApplication}
+            component={ResumeApplication}
             options={{ headerShown: false }}
           />
           {/* <Stack.Screen

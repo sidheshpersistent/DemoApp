@@ -55,8 +55,8 @@ import { StringsOfLanguages } from '../../Localization';
 import useSession from '../../App/useSession';
 import LoaderComponent from '../../Components/LoaderComponent';
 import NavigationUrl from '../..//Utils/NavigationUrl';
-// import ErrorPopup from '../../Components/ErrorPopup';
-// import {getDasboardDetailsDataService} from './service';
+import ErrorPopup from '../../Components/ErrorPopup';
+import { getDasboardDetailsDataService } from './service';
 
 const Dashboard = props => {
   const navigation = useNavigation();
@@ -121,9 +121,7 @@ const Dashboard = props => {
   async function getAgentDetails() {
     try {
       let data = await AsyncStorageUtils.getItem(LocalDB.agentInfo);
-
       let kk = JSON.parse(data);
-
       setAgentDetails(kk);
     } catch {
       console.error();
@@ -131,29 +129,24 @@ const Dashboard = props => {
   }
 
   async function getDasboardDetailsData() {
-    setShowLoader(true);
-    setTimeout(() => {
+    getDasboardDetailsDataService((status, responseData, monthlyHighlights) => {
+      if (status == CommonConstant.SUCCESS) {
+        setinCompleteCount(responseData?.incomplete);
+        setinProgessCount(responseData?.resumeAppl);
+        setMonthlyHighlights(monthlyHighlights);
+      } else if (status == CommonConstant.NODATA) {
+        console.log(status);
+        setErrorMsg(StringsOfLanguages.COMMON.NO_DATA_ERROR);
+        setIsErrorPopup(true);
+      } else if (status == CommonConstant.INTERNALSERVERERROR) {
+        setErrorMsg(responseData);
+        setIsErrorPopup(true);
+      } else {
+        setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
+        setIsErrorPopup(true);
+      }
       setShowLoader(false);
-    }, 3000)
-
-    // getDasboardDetailsDataService((status, responseData, monthlyHighlights) => {
-    //   if (status == CommonConstant.SUCCESS) {
-    //     setinCompleteCount(responseData?.incomplete);
-    //     setinProgessCount(responseData?.resumeAppl);
-    //     setMonthlyHighlights(monthlyHighlights);
-    //   } else if (status == CommonConstant.NODATA) {
-    //     console.log(status);
-    //     setErrorMsg(StringsOfLanguages.COMMON.NO_DATA_ERROR);
-    //     setIsErrorPopup(true);
-    //   } else if (status == CommonConstant.INTERNALSERVERERROR) {
-    //     setErrorMsg(responseData);
-    //     setIsErrorPopup(true);
-    //   } else {
-    //     setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
-    //     setIsErrorPopup(true);
-    //   }
-    //   setShowLoader(false);
-    // });
+    });
   }
 
   const onCardPress = index => {
@@ -251,7 +244,27 @@ const Dashboard = props => {
 
   return (
     <BackgroundImage>
-      <UpperBoxContainer>
+      <UpperBoxContainer >
+        <TouchableOpacity
+          style={{ backgroundColor: 'red' }}
+          onPress={() => {
+            console.log('test');
+            navigation.openDrawer();
+          }}>
+          <Image
+            style={{
+              width: 36,
+              position: 'absolute',
+              marginTop: 8,
+              marginLeft: 16,
+            }}
+            source={{
+              uri: agentDetails?.agentAvator,
+            }}
+
+          />
+        </TouchableOpacity>
+
         {/* <IconButton
           testID={TestIds.db_hamburg_icon}
           iconType={'Bars'}
@@ -268,12 +281,7 @@ const Dashboard = props => {
             navigation.openDrawer();
           }}
         /> */}
-        <View style={{
-          width: 36,
-          position: 'absolute',
-          marginTop: 8,
-          marginLeft: 16,
-        }}></View>
+
         <ProfileHeaderContainer
           style={header}
           leftView={
@@ -348,13 +356,13 @@ const Dashboard = props => {
         heading={StringsOfLanguages.LOADER.DASH_HEADING}
         subHeading={StringsOfLanguages.LOADER.DASH_SUBHEADING}
       />
-      {/* {
+      {
         <ErrorPopup
-          popUpshow={false} //isErrorPopup
+          popUpshow={isErrorPopup}
           message={errorMsg}
           callBack={() => setIsErrorPopup(false)}
           btnText={StringsOfLanguages.COMMON.SESSION_ALERT_OK}></ErrorPopup>
-      } */}
+      }
     </BackgroundImage>
   );
 
