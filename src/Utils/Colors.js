@@ -24,6 +24,13 @@ const Colors = {
   darkRed: '#a72339',
   LiteBlue: '#f6f5fa',
 
+
+  green_radio: '#00a07a',
+  grey700: '#222222',
+  white_radio: '#ffffff',
+  black_radio: '#050505',
+  grey400: '#707070',
+
   /**/
   NEW_MAROON_100: 'NEW_MAROON_100', //"#e1e1eb",
   NEW_YELLOW_200: 'NEW_YELLOW_200',

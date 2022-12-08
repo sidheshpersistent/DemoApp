@@ -5,9 +5,10 @@ import {
   Text,
   FlatList,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import useSession from "../../App/useSession";
-import { arrowBack, alertIcon } from "../../Assets/Images";
+import { arrowBack, alertIcon, chevronDown } from "../../Assets/Images";
 import { StringsOfLanguages } from "../../Localization";
 import { AsyncStorageUtils, Colors, Icon_Size, NavigationUrl } from "../../Utils";
 import Item from "./ResumeApplicationItem";
@@ -35,7 +36,7 @@ import {
   selectTextStyle,
   emptyBox,
 } from "./styled";
-import { CustomTextInput, Popup } from "../../Components";
+import { CustomTextInput, Popup, RadioButton } from "../../Components";
 // import { RadioButton, Select } from "@idfc/ccl-mobile/lib/module/v2";
 // import { IconButton } from "@idfc/ccl-mobile";
 import { Endpoints } from "../../API";
@@ -48,6 +49,7 @@ import {
   Account_Type,
   banking_Type,
   CommonConstant,
+  FontFamily,
   Milestone,
   RadioButtonConstants,
   Save_Status,
@@ -56,6 +58,7 @@ import {
 // import { validation } from "../../Utils/ValidationUtils";
 import LoaderComponent from "../../Components/LoaderComponent";
 import ErrorPopup from "../../Components/ErrorPopup";
+import SelectDropdown from "react-native-select-dropdown";
 
 const ResumeApplication = () => {
   const navigation = useNavigation();
@@ -107,7 +110,7 @@ const ResumeApplication = () => {
 
 
   const searchFilterFunction = (text) => {
-    const newData=resumeList.filter((item)=>item?.customerName.toUpperCase().includes(text.toUpperCase()))
+    const newData = resumeList.filter((item) => item?.customerName.toUpperCase().includes(text.toUpperCase()))
     setFilterData(newData)
   };
 
@@ -150,16 +153,14 @@ const ResumeApplication = () => {
   };
 
   const onChangeRadioValue = (val) => {
-    
     if (val == "Yes") {
       setRadioValue("Yes");
-      if(selectedItem){
+      if (selectedItem) {
         setIsVisibleSubmit(false);
       }
-      else{
+      else {
         setIsVisibleSubmit(true);
       }
-     
       setIsShowDrop(true);
     } else {
       setRadioValue("No");
@@ -186,38 +187,38 @@ const ResumeApplication = () => {
     setFilterData(resumeList);
   };
 
-  async function getResumeApplicationsList (){
+  async function getResumeApplicationsList() {
     setIsLoading(true);
     setShowLoader(true);
-    await getResumeApplicationsListComm((status,response) => {
-        setIsLoading(false);
-        setShowLoader(false);
-        if (status && response && response?.length > 0) {
-          setFilterData(response);
-          setResumeList(response)
-          setPageNo(pageNo + 1);
-        }else if(status == false && response == ""){
-          setFilterData("");
-          setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
-          setErrorPopup(true);
-        } else{
-          setFilterData("");
-          setErrorMsg(StringsOfLanguages.COMMON.NO_DATA_ERROR);
-          setErrorPopup(true);
-        }
+    await getResumeApplicationsListComm((status, response) => {
+      setIsLoading(false);
+      setShowLoader(false);
+      if (status && response && response?.length > 0) {
+        setFilterData(response);
+        setResumeList(response)
+        setPageNo(pageNo + 1);
+      } else if (status == false && response == "") {
+        setFilterData("");
+        setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
+        setErrorPopup(true);
+      } else {
+        setFilterData("");
+        setErrorMsg(StringsOfLanguages.COMMON.NO_DATA_ERROR);
+        setErrorPopup(true);
       }
+    }
     );
 
   };
 
 
   const getResumeApplicationData = async (userId) => {
-    
+
     await getResumeApplicationDataComm(
       Endpoints.saveCustomerDetails + `/${userId}`,
-      (status,response) => {
-        if ( status && response) {
-          
+      (status, response) => {
+        if (status && response) {
+
           const encryptedResponse = {
             personalDetails: response?.personalDetails,
             bankingDetails: response?.bankingDetails,
@@ -226,25 +227,25 @@ const ResumeApplication = () => {
             aadharDetails: response?.aadharDetails,
             panDetails: response?.panDetails,
           };
-          
+
           const fetchedPersonalDetails =
             encryptedResponse.personalDetails
-         
+
           const fetchedBankingDetails =
             encryptedResponse.bankingDetails
-     
+
           const fetchedCustConsentDetails =
             encryptedResponse.custConsentDetails
-         
+
           const fetchedCIDDetails =
             encryptedResponse.cidDetails
-         
+
           const fetchedAadharDetails =
             encryptedResponse.aadharDetails
-         
+
           const fetchedPanDetails =
             encryptedResponse.panDetails
-         
+
           const fetchedData = {
             fetchedCIDDetails,
             fetchedPersonalDetails,
@@ -255,12 +256,12 @@ const ResumeApplication = () => {
             fetchedPanDetails,
           };
           cidContextData.userId = response.userId;
-          prevSessionData.accountType= response.appName==Account_Type.ASSISTED_CS?Account_Type.ASSISTED_CS:Account_Type.ASSISTED_SA
+          prevSessionData.accountType = response.appName == Account_Type.ASSISTED_CS ? Account_Type.ASSISTED_CS : Account_Type.ASSISTED_SA
           setSession({ ...session, prevSessionData });
           if (fetchedData.cidDetails !== null) {
             saveFetchedData(fetchedData);
           }
-        }else{
+        } else {
           setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
           setErrorPopup(true);
         }
@@ -292,7 +293,7 @@ const ResumeApplication = () => {
         personalcontextData.showCompanyName = true;
         personalcontextData.CompanyValue =
           fetchedData.fetchedPersonalDetails.companyName?.displayText;
-          personalcontextData.CompanyValueObj =
+        personalcontextData.CompanyValueObj =
           fetchedData.fetchedPersonalDetails.companyName
         if (fetchedData.fetchedPersonalDetails.companyName) {
           personalcontextData.isCompanySelectedFromList = true;
@@ -306,13 +307,13 @@ const ResumeApplication = () => {
       };
       personalcontextData.mothersName =
         fetchedData.fetchedPersonalDetails.mothersFullName;
-        personalcontextData.countryOfBirthObj =
+      personalcontextData.countryOfBirthObj =
         fetchedData.fetchedPersonalDetails.countryOfBirth;
-        personalcontextData.countryOfBirth =
+      personalcontextData.countryOfBirth =
         fetchedData.fetchedPersonalDetails.countryOfBirth?.displayText;
-        personalcontextData.cityOfBirthObj =
+      personalcontextData.cityOfBirthObj =
         fetchedData.fetchedPersonalDetails.cityOfBirth;
-        personalcontextData.cityOfBirth =
+      personalcontextData.cityOfBirth =
         fetchedData.fetchedPersonalDetails.cityOfBirth?.displayText;
 
       //form 60 details - pan details
@@ -383,7 +384,7 @@ const ResumeApplication = () => {
       }
       if (
         fetchedData.fetchedPersonalDetails.nomineeDetails?.address
-          ?.otherAddress 
+          ?.otherAddress
       ) {
         personalcontextData.nomineeOtherAddress =
           fetchedData.fetchedPersonalDetails.nomineeDetails?.address?.otherAddress;
@@ -424,7 +425,7 @@ const ResumeApplication = () => {
       }
       if (
         fetchedData.fetchedPersonalDetails.nomineeDetails?.guardianDetails
-          ?.address?.otherAddress 
+          ?.address?.otherAddress
       ) {
         personalcontextData.guardianOtherAddress =
           fetchedData.fetchedPersonalDetails.nomineeDetails?.guardianDetails?.address?.otherAddress;
@@ -508,7 +509,7 @@ const ResumeApplication = () => {
       customerConsentData.employmentProofImage =
         fetchedData.fetchedCustConsentDetails.employmentProofImage;
     }
-    
+
     setSession({ ...session, prevSessionData });
     let _milestone = fetchedData.response.milestone;
 
@@ -570,7 +571,7 @@ const ResumeApplication = () => {
   };
 
   const renderItem = ({ item, index }) => (
-    <Item  item={item} index={index} onDelete={onDelete} onNext={onNext} />
+    <Item item={item} index={index} onDelete={onDelete} onNext={onNext} />
   );
 
   const renderEmptyListItem = () => (
@@ -606,30 +607,16 @@ const ResumeApplication = () => {
   //       );
 
   //     }
-      
+
   //   })
   // }
 
   const deleteApiCall = async () => {
-    await deleteResumeApplicationDataComm(
-      Endpoints.deleteResumeApplicationsData + `${deleteItem.userId}&reason=${reason}`,
-      (response) => {
-        if (response.status == CommonConstant.SUCCESS) {
-          setRadioValue("No");
-          setReason("");
-          setSelectedItem("");
-          setIsVisibleSubmit(false);
-          onClickDelete(deleteItem, deleteIndex);
-        }else {
-            setIsDeletePopupShow(!isDeletePopupShow);
-            setIsShowDrop(false);
-            setRadioValue("No");
-            setReason("");
-            setSelectedItem("");
-            setIsVisibleSubmit(false);
-          }
-      }
-    );
+    setRadioValue("No");
+    setReason("");
+    setSelectedItem("");
+    setIsVisibleSubmit(false);
+    onClickDelete(deleteItem, deleteIndex);
   };
 
   // return(
@@ -669,10 +656,10 @@ const ResumeApplication = () => {
           onChangeText={(text) => {
             searchFilterFunction(text)
             setSearchValue(text);
-            if (/^[a-zA-Z0-9]*$/g.test(text)){
+            if (/^[a-zA-Z0-9]*$/g.test(text)) {
               setIsErrorSearch(false);
               setSearchLable(StringsOfLanguages.RESUMEAPPLIST.RAL_SEARCH_BY);
-            }else{
+            } else {
               setIsErrorSearch("error");
               setSearchLable(StringsOfLanguages.RESUMEAPPLIST.RAL_ERR_SEARCH);
             }
@@ -720,7 +707,8 @@ const ResumeApplication = () => {
             <View>
               <ComponentContainer>
                 <View style={radioGroupStyle}>
-                  {/* <RadioButton
+
+                  <RadioButton
                     testID={TestIds.rap_delete_yes}
                     value="Yes"
                     name="radio-normal"
@@ -740,7 +728,7 @@ const ResumeApplication = () => {
                     onChange={() => onChangeRadioValue("No")}
                   >
                     {StringsOfLanguages.RESUMEAPPLIST.RAL_NO}
-                  </RadioButton> */}
+                  </RadioButton>
                 </View>
 
                 <View style={emptyBox}></View>
@@ -764,6 +752,39 @@ const ResumeApplication = () => {
                         </View>
                       )}
                     /> */}
+                    <SelectDropdown
+                      testID={TestIds.rap_selsect_resason}
+                      data={reasonData}
+                      defaultButtonText={StringsOfLanguages.RESUMEAPPLIST.RAL_REASON}
+                      onSelect={onChangeReason}
+                      dropdownIconPosition={"right"}
+                      buttonStyle={{ width: '100%' }}
+                      buttonTextStyle={{
+                        fontSize: 14,
+                        fontFamily: FontFamily.Inter_SemiBold,
+                        lineHeight: 14,
+                        color: Colors.GRAY,
+                      }}
+                      rowTextStyle={dropdownTextStyle}
+                      renderDropdownIcon={() => {
+                        return <Image
+                          source={chevronDown}
+                          style={{
+                            padding: 10,
+                            margin: 5,
+                            height: 25,
+                            width: 25,
+                            resizeMode: 'stretch',
+                          }}
+                        />
+                      }}
+                      buttonTextAfterSelection={(selectedItem, index) => {
+                        return selectedItem.displayText
+                      }}
+                      rowTextForSelection={(item, index) => {
+                        return item.displayText
+                      }}
+                    />
                   </View>
                 )}
               </ComponentContainer>
@@ -771,7 +792,7 @@ const ResumeApplication = () => {
           }
         />
       }
-            {
+      {
         <ErrorPopup
           testID={TestIds.rap_error_popup}
           popUpshow={errorPopup}

@@ -23,6 +23,7 @@ import OutlineButton from './Buttons/OutlineButton/OutlineButton';
 // import PopupShareDetails from "./Popup/PopupShareDetails";
 // import PopupEmpVerification from "./Popup/PopupEmpVerification";
 // import PopupFailedOfficeMailVerification from "./Popup/PopupFailedOfficeMailVerification";
+import RadioButton from './RadioButton/RadioButton';
 export {
   // NavyBlueInfoBox,
   BackgroundImage,
@@ -30,6 +31,7 @@ export {
   ProfileHeaderContainer,
   UpperBoxContainer,
   CustomButton,
+  RadioButton,
   // CustomCheckbox,
   CustomText,
   CustomTextInput,
