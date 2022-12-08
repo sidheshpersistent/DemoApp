@@ -15,6 +15,7 @@ import {
   ToastAndroid,
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/Ionicons';
 // import { LineHeight } from "@idfc/ccl-commons/enums";
 // import { IconButton } from "@idfc/ccl-mobile";
 import {
@@ -36,6 +37,7 @@ import {
   PasswordView,
   AdharTooltipHindden,
   selectStyle,
+  EyeButton,
 } from './styled';
 import {
   Colors,
@@ -131,7 +133,7 @@ import {encryptedDataValue, decryptDataValue} from '../../Utils/CryptoHelper';
 // import { customerProfileContextReset } from "../../Screens/Dashboard/constants";
 // import { PopupEmpVerification } from "../../Components";
 // import { PopupFailedOfficeMailVerification } from "../../Components";
-// import ErrorPopup from "../../Components/ErrorPopup";
+import ErrorPopup from '../../Components/ErrorPopup';
 import CustomSearchInputDropdown from '../../Components/CustomSearchInputDropdown/CustomSearchInputDropdown';
 import {getPrivateString} from '../../Utils/CommonFunction';
 
@@ -355,7 +357,7 @@ const CustomerIdentificationDetails = props => {
   useEffect(() => {
     resetCustomerProfileData();
     if (accountType === Account_Type.ASSISTED_CS) {
-      getCompanyListData();
+      // getCompanyListData();
     }
   }, []);
 
@@ -1883,7 +1885,6 @@ const CustomerIdentificationDetails = props => {
                     <CustomPasswordTextInput
                       value={aadharNo}
                       testID={TestIds.cid_aadhar}
-                      secureTextEntry={true}
                       onBlur={() => keyboardBlurHandle()}
                       onFocus={() => keyboardFocusHandle()}
                       // testID={TestIds.lg_password_input}
@@ -1910,7 +1911,7 @@ const CustomerIdentificationDetails = props => {
                           ? {color: Colors.ERROR}
                           : {color: Colors.GRAY}
                       }
-                      showPassword={toggleMask}
+                      secureTextEntry={toggleMask}
                       passwordInputProps={{
                         style:
                           isErrorAadhar == 'error' && aadharNo != ''
@@ -1926,17 +1927,19 @@ const CustomerIdentificationDetails = props => {
                             justifyContent: 'space-between',
                             alignItems: 'center',
                           }}>
-                          {/* <IconButton
-                            primaryColor={Colors.MAROON_DARK}
-                            iconColor={"maroon"}
-                            iconType={toggleMask ? "Eye2Off" : "Eye2"}
-                            buttonSize={24}
-                            transparent
-                            iconSize={Icon_Size.NORMAL}
+                          <EyeButton
                             onPress={() => {
                               setToggleMask(!toggleMask);
-                            }}
-                          /> */}
+                            }}>
+                            <Icon
+                              color={'maroon'}
+                              name={toggleMask ? 'eye-off' : 'eye'}
+                              buttonSize={24}
+                              transparent
+                              size={Icon_Size.NORMAL}
+                            />
+                          </EyeButton>
+
                           <AdharTooltipHindden
                             onPress={() => setAdharVisible(true)}>
                             <Image style={infoIconStyle} source={help} />
@@ -1988,24 +1991,23 @@ const CustomerIdentificationDetails = props => {
         </KeyboardAvoidingView>
 
         {/* Popup for showing error message on pan validation */}
-        {/* {
+        {
           <ErrorPopup
             popUpshow={isPanPopupShow}
             message={StringsOfLanguages.CID.CID_DESCR_INVALID_PAN}
             callBack={() => setIsPanPopupShow(!isPanPopupShow)}
-            btnText={StringsOfLanguages.CID.CID_LABLE_RE_ENTER_PAN}
-          >
-          </ErrorPopup>
-        } */}
-        {/* {
+            btnText={
+              StringsOfLanguages.CID.CID_LABLE_RE_ENTER_PAN
+            }></ErrorPopup>
+        }
+        {
           <ErrorPopup
             popUpshow={isUnkownError}
             message={errorMsg}
             callBack={() => setIsUnkownError(false)}
             btnText={StringsOfLanguages.COMMON.SESSION_ALERT_OK}
-          >
-          </ErrorPopup>
-        } */}
+          />
+        }
         {/* show PAN popup dialog  here */}
         {
           <Popup

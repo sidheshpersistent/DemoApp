@@ -5,7 +5,7 @@ export const Container = styled.View`
   background-color: #fff;
 `;
 export const CustomerDetailsBG = styled.View`
-  flex:1;
+  flex: 1;
   padding: 0px 70px 140px 70px;
 `;
 // export const HeadingText = styled.Text`
@@ -41,7 +41,7 @@ export const FooterContainer = styled.View`
   flex-direction: row;
   align-items: center;
   //justify-content: space-between;
-  margin-vertical:20px;
+  margin-vertical: 20px;
   ${'' /* padding:10px; */}
 `;
 
@@ -58,7 +58,7 @@ export const RightArrowButton = styled.View`
   background-color: #e9e9e9;
   align-items: center;
   justify-content: center;
-  margin-left:36px;
+  margin-left: 36px;
 `;
 export const RightArrowButtonActive = styled.View`
   border-radius: 40px;
@@ -82,16 +82,16 @@ export const RightArrowImage = {
   width: 40,
   height: 40,
 };
-export const touchableStyle={
-  marginLeft:36
-}
+export const touchableStyle = {
+  marginLeft: 36,
+};
 export const BackArrowView = styled.View`
   position: absolute;
   top: 20px;
   left: 20px;
 `;
 export const InfoIconContainer = styled.View`
-margin-bottom:5px;
+  margin-bottom: 5px;
   flex-direction: row;
   justify-content: space-between;
 `;
@@ -115,12 +115,16 @@ export const MarginBottom = styled.View`
   margin-bottom: 20px;
 `;
 export const AdharTooltip = styled.TouchableOpacity`
-  right:0px;
-  top:-8px;
-  position:absolute;
+  right: 0px;
+  top: -8px;
+  position: absolute;
 `;
 export const AdharTooltipHindden = styled.TouchableOpacity`
-  left:16px;
+  left: 16px;
+`;
+export const EyeButton = styled.TouchableOpacity`
+  margin-left: 8px;
+  margin-right: 8px;
 `;
 export const PasswordView = styled.View`
   padding-left: 20px;
