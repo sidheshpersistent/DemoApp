@@ -4,6 +4,7 @@ import CustomButton from './CustomButton/CustomButton';
 // import CustomCheckbox from "./CustomCheckbox/CustomCheckbox";
 import CustomText from './CustomText/CustomText';
 import CustomTextInput from './CustomTextInput/CustomTextInput';
+import CustomPasswordTextInput from './CustomPasswordTextInput/CustomPasswordTextInput';
 // import CustomToggle from "./CustomToggle/CustomToggle";
 import BackArrowHeader from './HeaderComponent/BackArrowHeader';
 import Popup from './Popup/Popup';
@@ -33,6 +34,7 @@ export {
   // CustomCheckbox,
   CustomText,
   CustomTextInput,
+  CustomPasswordTextInput,
   // CustomToggle,
   BackArrowHeader,
   Popup,

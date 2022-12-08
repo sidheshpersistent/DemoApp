@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Image
-} from 'react-native';
+import {View, Image} from 'react-native';
 import {
   CancelBtn,
   CenteredView,
@@ -13,13 +10,8 @@ import {
   SubTextContainer,
   TopIconView,
 } from './styled';
-import {
-  Colors,
-  FontFamily,
-  LetterSpacing,
-  Line_Height,
-} from '../../../Utils';
-import { CustomText, CustomButton } from '../../../Components';
+import {Colors, FontFamily, LetterSpacing, Line_Height} from '../../../Utils';
+import {CustomText, CustomButton} from '../../../Components';
 import Modal from 'react-native-modal';
 // import CustomBlurView from '../CustomBlurView';
 // import { Icon } from '@idfc/ccl-mobile';
@@ -43,33 +35,32 @@ const Popup = props => {
     buttonWidth,
     cancelButtonText,
     isClose,
-    closeButton
+    closeButton,
   } = props;
 
   return (
     <CenteredView>
-      <Modal
-        animationIn={animationIn}
-        isVisible={isVisible}
-       >
-         {/* customBackdrop={<CustomBlurView />} */}
+      <Modal animationIn={animationIn} isVisible={isVisible}>
+        {/* customBackdrop={<CustomBlurView />} */}
         <CenteredView>
           <ModalView style={style}>
             <TopIconView>
-              {
-                icon ? icon : <Image
+              {icon ? (
+                icon
+              ) : (
+                <Image
                   source={popupIcon}
-                  style={[popupIconStyle, { width: 64, height: 64 }]}
+                  style={[popupIconStyle, {width: 64, height: 64}]}
                 />
-              }
+              )}
             </TopIconView>
 
             <View style={popupContainer}>
-              {isClose &&
+              {isClose && (
                 <CloseIconView onPress={closeButton}>
                   {/* <Icon name="CrossSmall" primaryColor={Colors.MAROON} /> */}
                 </CloseIconView>
-              }
+              )}
               <CustomText
                 fontFamily={FontFamily.Inter_SemiBold}
                 fontSize={20}
@@ -87,7 +78,7 @@ const Popup = props => {
               style={submitButtonStyle}
               disabled={disabled ? disabled : false}
               buttonType="primary"
-              width={buttonWidth ? buttonWidth : "200"}
+              width={buttonWidth ? buttonWidth : '200'}
               title={ButtonText}
               buttonPress={() => buttonPress()}
             />
@@ -95,14 +86,12 @@ const Popup = props => {
             {cancelButtonPress ? (
               <CancelBtn
                 testID={testID_cancel}
-                onPress={() => cancelButtonPress()}
-              >
-                <CustomText
-                  color={Colors.NEW_MAROON_100}
-                  variant="B2">{cancelButtonText ? cancelButtonText : `Cancel`}</CustomText>
+                onPress={() => cancelButtonPress()}>
+                <CustomText color={Colors.NEW_MAROON_100} variant="B2">
+                  {cancelButtonText ? cancelButtonText : `Cancel`}
+                </CustomText>
               </CancelBtn>
             ) : null}
-
           </ModalView>
         </CenteredView>
       </Modal>

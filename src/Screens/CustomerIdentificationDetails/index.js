@@ -74,6 +74,7 @@ import {
   CustomText,
   CustomSearchInputCompany,
   CustomSearchInput,
+  CustomPasswordTextInput,
 } from '../../Components';
 import {
   HEADING,
@@ -468,10 +469,11 @@ const CustomerIdentificationDetails = props => {
       mobileNumber: '',
     };
     NetworkManager.IDFCNetworkGet(
-      Endpoints.getCompanyList + '%20',
+      Endpoints.getCompanyList,
       header,
       response => {
-        let data = response;
+        console.log('response=======================>', response);
+        let data = response.data;
         setShowLoader(false);
         if (isEmptyValue(data)) {
           setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
@@ -492,7 +494,7 @@ const CustomerIdentificationDetails = props => {
       mobileNumber: '',
     };
     await NetworkManager.IDFCNetworkGet(
-      Endpoints.getCompanyRank + company.displayText,
+      Endpoints.getCompanyRank,
       header,
       response => {
         if (response && response !== null) {
@@ -1837,29 +1839,28 @@ const CustomerIdentificationDetails = props => {
                     </MarginBottom>
                   </View>
                   {/** popup */}
-                  {/* <Popup
-                  testID_submit={TestIds.cid_pan_check_submit}
-                  animationIn="bounceIn"
-                  popupIcon={info}
-                  isVisible={panVisible}
-                  Heading={HEADING.PAN}
-                  ButtonText="Ok"
-                  buttonPress={() => buttonPress()}
-                  component={PAN_INCOME_CHECK.map((item) => (
-                    <ComponentContainer key={item}>
-                      <Bullet>•</Bullet>
-                      <CustomText
-                        paddingLeft={10}
-                        marginBottom={20}
-                        fontSize={Font_Size.SIZE_16}
-                        lineHeight={Line_Height.HEIGHT_24}
-                        color={Colors.NEW_GREY_800.text}
-                      >
-                        {item}
-                      </CustomText>
-                    </ComponentContainer>
-                  ))}
-                /> */}
+                  <Popup
+                    testID_submit={TestIds.cid_pan_check_submit}
+                    animationIn="bounceIn"
+                    popupIcon={info}
+                    isVisible={panVisible}
+                    Heading={HEADING.PAN}
+                    ButtonText="Ok"
+                    buttonPress={() => buttonPress()}
+                    component={PAN_INCOME_CHECK.map(item => (
+                      <ComponentContainer key={item}>
+                        <Bullet>•</Bullet>
+                        <CustomText
+                          paddingLeft={10}
+                          marginBottom={20}
+                          fontSize={Font_Size.SIZE_16}
+                          lineHeight={Line_Height.HEIGHT_24}
+                          color={Colors.NEW_GREY_800.text}>
+                          {item}
+                        </CustomText>
+                      </ComponentContainer>
+                    ))}
+                  />
                   <InfoIconContainer>
                     <CustomText
                       testID={TestIds.cid_mandatory_pan}
@@ -1879,54 +1880,53 @@ const CustomerIdentificationDetails = props => {
                   </InfoIconContainer>
 
                   <MarginBottom>
-                    {/* <PasswordInput
+                    <CustomPasswordTextInput
                       value={aadharNo}
                       testID={TestIds.cid_aadhar}
+                      secureTextEntry={true}
                       onBlur={() => keyboardBlurHandle()}
                       onFocus={() => keyboardFocusHandle()}
                       // testID={TestIds.lg_password_input}
                       inputBorderProps={{
                         style:
-                          isErrorAadhar == "error" && aadharNo != ""
-                            ? { borderBottomColor: Colors.ERROR }
-                            : { borderBottomColor: Colors.GRAY },
+                          isErrorAadhar == 'error' && aadharNo != ''
+                            ? {borderBottomColor: Colors.ERROR}
+                            : {borderBottomColor: Colors.GRAY},
                       }}
                       fontSize={20}
-                      onChangeText={(text) => {
+                      onChangeText={text => {
                         setAadharNo(text);
                         setAadharValidation(text);
                       }}
                       label={
                         aadharNo && aadharNo.length < 12
                           ? StringsOfLanguages.CID.CID_ERROR_ADHAR
-                          : (isErrorAadhar == "error" && aadharNo)
-                            ? StringsOfLanguages.CID.CID_ERROR_VID
-                            : StringsOfLanguages.CID.CID_FIELD_AADHAAR
+                          : isErrorAadhar == 'error' && aadharNo
+                          ? StringsOfLanguages.CID.CID_ERROR_VID
+                          : StringsOfLanguages.CID.CID_FIELD_AADHAAR
                       }
                       labelStyle={
-                        isErrorAadhar == "error" && aadharNo != ""
-                          ? { color: Colors.ERROR }
-                          : { color: Colors.GRAY }
+                        isErrorAadhar == 'error' && aadharNo != ''
+                          ? {color: Colors.ERROR}
+                          : {color: Colors.GRAY}
                       }
                       showPassword={toggleMask}
                       passwordInputProps={{
                         style:
-                          isErrorAadhar == "error" && aadharNo != ""
-                            ? { color: Colors.ERROR }
-                            : { color: Colors.GRAY },
-                        selectionColor: "black",
+                          isErrorAadhar == 'error' && aadharNo != ''
+                            ? {color: Colors.ERROR}
+                            : {color: Colors.GRAY},
+                        selectionColor: 'black',
                         maxLength: 16,
                       }}
                       suffix={
                         <View
                           style={{
-                            flexDirection: "row",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                          }}
-                        >
-                        // Icon button to be replace
-                           <IconButton
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                          }}>
+                          {/* <IconButton
                             primaryColor={Colors.MAROON_DARK}
                             iconColor={"maroon"}
                             iconType={toggleMask ? "Eye2Off" : "Eye2"}
@@ -1936,15 +1936,14 @@ const CustomerIdentificationDetails = props => {
                             onPress={() => {
                               setToggleMask(!toggleMask);
                             }}
-                          />
+                          /> */}
                           <AdharTooltipHindden
-                            onPress={() => setAdharVisible(true)}
-                          >
+                            onPress={() => setAdharVisible(true)}>
                             <Image style={infoIconStyle} source={help} />
                           </AdharTooltipHindden>
                         </View>
                       }
-                    /> */}
+                    />
                   </MarginBottom>
 
                   <FooterContainer>
@@ -2008,7 +2007,7 @@ const CustomerIdentificationDetails = props => {
           </ErrorPopup>
         } */}
         {/* show PAN popup dialog  here */}
-        {/* {
+        {
           <Popup
             testID_submit={TestIds.cid_adhar_pop_up_submit}
             testID_cancel={TestIds.cid_adhar_pop_up_cancel}
@@ -2024,14 +2023,13 @@ const CustomerIdentificationDetails = props => {
                   marginBottom={20}
                   fontSize={Font_Size.SIZE_16}
                   lineHeight={Line_Height.HEIGHT_24}
-                  color={Colors.NEW_GREY_800.text}
-                >
+                  color={Colors.NEW_GREY_800.text}>
                   {SUB_HEADING.ADHAR_INFO}
                 </CustomText>
               </ComponentContainer>
             }
           />
-        } */}
+        }
         {/* {
           <Popup
             testID_submit={TestIds.cid_adhar_pop_up_submit1}

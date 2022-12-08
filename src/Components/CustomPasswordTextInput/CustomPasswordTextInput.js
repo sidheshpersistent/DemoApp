@@ -1,9 +1,9 @@
 import React, {Component, useEffect, useState} from 'react';
-import {View, StatusBar, TextInput, Animated, Text} from 'react-native';
+import {View, Text, TextInput, Animated, TouchableOpacity} from 'react-native';
 import {Colors} from '../../Utils';
 
-const CustomTextInput = props => {
-  const {label, suffix = false, onChangeText, value} = props;
+const CustomPasswordTextInput = props => {
+  const {label, suffix, onChangeText, value} = props;
   const {
     onChange,
     labelStyle,
@@ -83,11 +83,21 @@ const CustomTextInput = props => {
     borderBottomWidth: isFocused || !value ? 1 : 0,
     marginTop: 10,
   };
+
   const textInputStyle = {
+    flex: 8,
     fontSize: 22,
     marginBottom: 5,
     width: '85%',
   };
+
+  const suffixStyle = {
+    flex: 2,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  };
+
   return (
     <View
       style={{
@@ -106,44 +116,48 @@ const CustomTextInput = props => {
         {isError == 'error' ? errorMessage : label}
       </Animated.Text>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <TextInput
-          testID={testID}
-          ref={reference}
-          secureTextEntry={secureTextEntry}
-          autofocus={autofocus}
-          value={value}
-          onChangeText={onChangeText}
-          onChange={onChange}
-          keyboardType={keyboardType}
-          style={
-            isError == 'error'
-              ? [
-                  textInputStyle,
-                  {
-                    color: errorColor,
-                  },
-                ]
-              : [
-                  textInputStyle,
-                  {
-                    color: Colors.gray,
-                  },
-                ]
-          }
-          textProps={textProps}
-          placeholder={placeholder}
-          isActive={isActive}
-          disabled={disabled}
-          onFocus={() => {
-            handleFocus();
-            onFocus;
-          }}
-          onBlur={() => {
-            handleBlur();
-            onBlur;
-          }}
-          blurOnSubmit
-        />
+        <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
+          <TextInput
+            testID={testID}
+            ref={reference}
+            secureTextEntry={secureTextEntry}
+            autofocus={autofocus}
+            value={value}
+            onChangeText={onChangeText}
+            onChange={onChange}
+            keyboardType={keyboardType}
+            style={
+              isError == 'error'
+                ? [
+                    textInputStyle,
+                    {
+                      color: errorColor,
+                    },
+                  ]
+                : [
+                    textInputStyle,
+                    {
+                      color: Colors.gray,
+                    },
+                  ]
+            }
+            textProps={textProps}
+            placeholder={placeholder}
+            isActive={isActive}
+            disabled={disabled}
+            onFocus={() => {
+              handleFocus();
+              onFocus;
+            }}
+            onBlur={() => {
+              handleBlur();
+              onBlur;
+            }}
+            blurOnSubmit
+          />
+          {suffix && <View style={suffixStyle}>{suffix}</View>}
+        </View>
+
         {value ? (
           <View
             style={[
@@ -175,4 +189,4 @@ const CustomTextInput = props => {
   );
 };
 
-export default CustomTextInput;
+export default CustomPasswordTextInput;

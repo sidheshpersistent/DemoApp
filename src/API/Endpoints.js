@@ -1,7 +1,6 @@
-
-import { NativeModules } from 'react-native';
-import { ConsoleLogHelper } from '../Utils';
-const { AppConstantModule } = NativeModules;
+import {NativeModules} from 'react-native';
+import {ConsoleLogHelper} from '../Utils';
+const {AppConstantModule} = NativeModules;
 var obj = AppConstantModule?.getConstants();
 ConsoleLogHelper.log('obj >>', JSON.stringify(obj));
 
@@ -60,39 +59,40 @@ if (env === 'preprod') {
 // var qaUrl = 'https://app.qa-opt.idfcfirstbank.com/api/ntb-assisted/v1/';
 // var uatUrl = 'https://app.uat-opt.idfcfirstbank.com/api/ntb-assisted/v1/';
 //  var actualUrl = 'https://api.dev-opt.idfcfirstbank.com/api/ntb-assisted/v1/';
-var firebaseUrl = 'https://matmdemotest-default-rtdb.firebaseio.com/mATMApi/DevTeam';
+var firebaseUrl =
+  'https://matmdemotest-default-rtdb.firebaseio.com/mATMApi/DevTeam';
 
 // var url = actualUrl;
 const Endpoints = {
   getResumeApplicationsList: `getJourneyList`,
+  getCompanyList: `getCompanyList`,
+  getCompanyRank: `getCompanyRank`,
 
   getAgentDasboardDetails: `getAgentDashboardDetails`,
   getPanValidationData: `pan/verify`,
   saveCustomerDetails: `user/info`,
-  getPersonalData:`${firebaseUrl}/PersonalDetails/userDetails.json`,
+  getPersonalData: `${firebaseUrl}/PersonalDetails/userDetails.json`,
   getLoginDetails: `${firebaseUrl}/AgentLogin.json`,
   getDasboardDetails: `${firebaseUrl}/Dashboard.json`,
   changePassword: `${firebaseUrl}/AgentLogin.json`, // {"password":"anypassword"}
-  getCompanyList: `company/`,
   getBranchList: `branchList/`,
-  getCompanyRank:`rankDetails/`,
-  deleteResumeApplicationsData:`deleteJourney?userId=`,
+  deleteResumeApplicationsData: `deleteJourney?userId=`,
   checkPanAdharMatch: `/aadharPanMatch/`,
   getBankUseSectionList: `/getBankUseSectionList`,
-  
+
   customerDedupe1: `${firebaseUrl}/CID/customerDedupe/`, //>>> for 123 isPrathamBankCustomer: true <<>> for 122 isPrathamBankCustomer: false
   customerDedupe: `validate/user`,
   checkMobileDedupe: `mobile/dedupe`,
   checkEmailDedupe: `${firebaseUrl}/CID/emailDedupe/`,
-  getNomineeRelation:`nominee/relation`,
-  getCityStateByPin:`cityAndStateByPin/`,
-  getProduct:`product`,
-  getCountryDetails:`${firebaseUrl}/PersonalDetails/countryList.json`,
-  saveFeedback:`user/saveFeedBack`,
-  getCountryList:`country`,
-  getCityList:`getCity/`,
-  getBankList:`bank`,
-  getCampaignCodeList:`getCampaignList`,
+  getNomineeRelation: `nominee/relation`,
+  getCityStateByPin: `cityAndStateByPin/`,
+  getProduct: `product`,
+  getCountryDetails: `${firebaseUrl}/PersonalDetails/countryList.json`,
+  saveFeedback: `user/saveFeedBack`,
+  getCountryList: `country`,
+  getCityList: `getCity/`,
+  getBankList: `bank`,
+  getCampaignCodeList: `getCampaignList`,
   ///
   deploy_env: DEPLOY_ENV,
   google_api_key: GOOGLE_API_KEY,
@@ -149,12 +149,12 @@ const Endpoints = {
 
   bankStatement: `caleadservice/bankStatement`,
   getPerfiosBankData: `caleadservice/perfios/getdata`,
-  getResumeJourneyCheck:`getResumeJourney?`,
-  // progress bar percent sve api 
+  getResumeJourneyCheck: `getResumeJourney?`,
+  // progress bar percent sve api
   // getProgressPercent:`user/info`,
-  emailVerify:  `karza/emailVerify`,
-  getOccupationDetails:`occupation`,
-  accountOpening:`account`,
+  emailVerify: `karza/emailVerify`,
+  getOccupationDetails: `occupation`,
+  accountOpening: `account`,
   saveBankUseSection: `createBankUseSection`,
   getPaymentDetails: `getPaymentDetails/`,
 };
