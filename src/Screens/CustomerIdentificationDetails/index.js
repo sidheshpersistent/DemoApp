@@ -1,7 +1,7 @@
 /* eslint-disable  no-unused-vars  */
 /* eslint-disable  no-useless-escape  */
-import React, {useState, useEffect, useRef} from 'react';
-import {useFocusEffect, useNavigation} from '@react-navigation/native';
+import React, { useState, useEffect, useRef } from 'react';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import {
   Image,
   TouchableOpacity,
@@ -38,6 +38,7 @@ import {
   AdharTooltipHindden,
   selectStyle,
   EyeButton,
+  dropdownTextStyle,
 } from './styled';
 import {
   Colors,
@@ -54,7 +55,7 @@ import {
 // import CustomTextInput from '../../Components/ntb_sa/Inputs/CustomTextInput';
 // import AutoCompleteTextInput from '../../Components/AutoCompleteTextInput/AutoCompleteTextInput';
 
-import {useRoute} from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import {
   isValidMobileNo,
   isValidEmailId,
@@ -92,7 +93,7 @@ import {
   EmailVerificationDetails,
   aadharBase64String,
 } from './constants';
-import {getAadharDetails} from './CommonServices';
+import { getAadharDetails } from './CommonServices';
 import {
   rightArrow,
   alertIcon,
@@ -100,6 +101,7 @@ import {
   info,
   rightArrowWhite,
   mobileDedupe,
+  chevronDown,
 } from '../../Assets/Images';
 import {
   Account_Type,
@@ -116,9 +118,9 @@ import {
   Api_Error_Code,
 } from '../../Utils/Constants';
 // import { Select } from "@idfc/ccl-mobile/lib/module/v2";
-import {StringsOfLanguages} from '../../Localization';
+import { StringsOfLanguages } from '../../Localization';
 // import { PasswordInput } from "@idfc/ccl-mobile/lib/module/v2";
-import {Endpoints, NetworkManager} from '../../API';
+import { Endpoints, NetworkManager } from '../../API';
 import useSession from '../../App/useSession';
 import {
   checkPanAdharMatch,
@@ -129,13 +131,14 @@ import {
 } from '../../Utils/CommonApi';
 
 // import LoaderComponent from '../../Components/LoaderComponent';
-import {encryptedDataValue, decryptDataValue} from '../../Utils/CryptoHelper';
+import { encryptedDataValue, decryptDataValue } from '../../Utils/CryptoHelper';
 // import { customerProfileContextReset } from "../../Screens/Dashboard/constants";
 // import { PopupEmpVerification } from "../../Components";
 // import { PopupFailedOfficeMailVerification } from "../../Components";
 import ErrorPopup from '../../Components/ErrorPopup';
 import CustomSearchInputDropdown from '../../Components/CustomSearchInputDropdown/CustomSearchInputDropdown';
-import {getPrivateString} from '../../Utils/CommonFunction';
+import { getPrivateString } from '../../Utils/CommonFunction';
+import SelectDropdown from 'react-native-select-dropdown';
 
 const CustomerIdentificationDetails = props => {
   const [panVisible, setPanVisible] = useState(false);
@@ -167,7 +170,7 @@ const CustomerIdentificationDetails = props => {
 
   const [CompanyRankList, setCompanyRankList] = useState('');
   const [selectedRank, setSelectedRank] = useState('');
-  const {session, setSession} = useSession();
+  const { session, setSession } = useSession();
   const [isPrathamBankUser, setIsPrathamBankUser] = useState(false);
   const [isETBUser, setIsETBUser] = useState(false);
   const [isETBWithoutSaUser, setIsETBWithoutSaUser] = useState(false);
@@ -214,7 +217,7 @@ const CustomerIdentificationDetails = props => {
   let customerConsentData = prevSessionData.customerProfile.customerConsent;
   let cidContextData = prevSessionData.agentDetails;
   //let reasonForDuplicateAcc = prevSessionData.reasonForDuplicateAcc;
-  let {adharDetails, panDetails, reasonForDuplicateAcc} = session;
+  let { adharDetails, panDetails, reasonForDuplicateAcc } = session;
   const route = useRoute();
 
   const resetCustomerProfileData = () => {
@@ -351,7 +354,7 @@ const CustomerIdentificationDetails = props => {
       panAadharLinkSts: '',
       panAdharStatus: '',
     };
-    setSession({...session, prevSessionData});
+    setSession({ ...session, prevSessionData });
   };
 
   useEffect(() => {
@@ -412,7 +415,7 @@ const CustomerIdentificationDetails = props => {
   const saveAdharDetailsInContext = () => {
     let adharDetails = getAadharDetails(aadharNo, aadharNameList);
     prevSessionData.adharDetails = adharDetails;
-    setSession({...session, prevSessionData});
+    setSession({ ...session, prevSessionData });
     getPanVerificationDetails();
   };
 
@@ -450,7 +453,7 @@ const CustomerIdentificationDetails = props => {
       (response, message) => {
         if (response?.status == CommonConstant.SUCCESS) {
           cidContextData.userId = response.userId;
-          setSession({...session, prevSessionData});
+          setSession({ ...session, prevSessionData });
           //store response.userId
           props.navigation.navigate(NavigationUrl.CustomerProfileId);
         } else if (response == CommonConstant.INTERNALSERVERERROR) {
@@ -536,7 +539,7 @@ const CustomerIdentificationDetails = props => {
   };
 
   const navigateToScreen = (screenName, milestone) => {
-    navigation.navigate(screenName, {milestone: milestone});
+    navigation.navigate(screenName, { milestone: milestone });
   };
 
   const saveFetchedData = fetchedData => {
@@ -796,7 +799,7 @@ const CustomerIdentificationDetails = props => {
         fetchedData.fetchedCustConsentDetails.employmentProofImage;
     }
 
-    setSession({...session, prevSessionData});
+    setSession({ ...session, prevSessionData });
     let _milestone = fetchedData.response.milestone;
 
     if (_milestone == Milestone.PERSONAL_DETAILS) {
@@ -902,13 +905,13 @@ const CustomerIdentificationDetails = props => {
             response,
           };
           cidContextData.userId = response?.userId;
-          setSession({...session, prevSessionData});
+          setSession({ ...session, prevSessionData });
           if (fetchedData.cidDetails !== null) {
             let _milestone = fetchedData.response?.milestone;
             if (
               _milestone == Milestone.CUST_CONSENT_DETAILS &&
               fetchedData?.fetchedCustConsentDetails?.saveStatus ==
-                Save_Status.finish
+              Save_Status.finish
             ) {
               setshowAccAlreadyExistPopUp(true);
             } else {
@@ -1210,7 +1213,7 @@ const CustomerIdentificationDetails = props => {
           prevSessionData.panDetails.lastUpdatedDate =
             panDetails.lastUpdatedDate;
           prevSessionData.panDetails.panAadharLinkSts = panDetails.adharStaus;
-          setSession({...session, prevSessionData});
+          setSession({ ...session, prevSessionData });
           checkNamePanAdharMatch();
         } else {
           if (panDetails == '') {
@@ -1254,15 +1257,15 @@ const CustomerIdentificationDetails = props => {
         setShowLoader(false);
         if (res == AdharPanMatch.COMPLETE_MATCHED) {
           prevSessionData.panDetails.panAdharStatus = res;
-          setSession({...session, prevSessionData});
+          setSession({ ...session, prevSessionData });
           getCustomerDedupe();
         } else if (res == AdharPanMatch.PARTIAL_MATCHED) {
           prevSessionData.panDetails.panAdharStatus = res;
-          setSession({...session, prevSessionData});
+          setSession({ ...session, prevSessionData });
           setIsPanAdharMatchPopup(true);
         } else {
           prevSessionData.panDetails.panAdharStatus = res;
-          setSession({...session, prevSessionData});
+          setSession({ ...session, prevSessionData });
           setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
           setIsUnkownError(true);
         }
@@ -1377,11 +1380,11 @@ const CustomerIdentificationDetails = props => {
     if (accountType === Account_Type.ASSISTED_CS && office_emailId) {
       if (empVerificationFailCount >= 2) {
         prevSessionData.customerProfile.customerConsent.isEmploymentProofNeeded = true;
-        setSession({...session, prevSessionData});
+        setSession({ ...session, prevSessionData });
         setempDomainVerificationFailPopup(true);
       } else {
         setShowLoader(true);
-        let EncryptedParams = {data: getEncryptedEmpVerificationParam()};
+        let EncryptedParams = { data: getEncryptedEmpVerificationParam() };
         let header = {
           appName: accountType,
           mobileNumber: '',
@@ -1404,7 +1407,7 @@ const CustomerIdentificationDetails = props => {
                   response?.isDomainMatched
                 ) {
                   prevSessionData.customerProfile.customerConsent.isEmploymentProofNeeded = false;
-                  setSession({...session, prevSessionData});
+                  setSession({ ...session, prevSessionData });
                   submitCIDDetails();
                 } else if (
                   !response.isPersonalMail &&
@@ -1468,7 +1471,7 @@ const CustomerIdentificationDetails = props => {
               <Card>
                 <CardInnerContainer>
                   {accountType === Account_Type.ASSISTED_CS && (
-                    <View style={{zIndex: 1}}>
+                    <View style={{ zIndex: 1 }}>
                       <CardMargin>
                         <View>
                           {/* <CustomSearchInputDropdown
@@ -1544,11 +1547,44 @@ const CustomerIdentificationDetails = props => {
                               onChange={(value) => setSelectedRank(value)}
                               key={selectedRank.id}
                             /> */}
+                            <SelectDropdown
+                              testID={TestIds.cid_cs_company_rank}
+                              data={CompanyRankList}
+                              defaultButtonText={StringsOfLanguages.CID.CID_FIELD_RANK}
+                              onSelect={(value) => setSelectedRank(value)}
+                              dropdownIconPosition={"right"}
+                              buttonStyle={{ width: '100%' }}
+                              buttonTextStyle={{
+                                fontSize: 14,
+                                fontFamily: FontFamily.Inter_SemiBold,
+                                lineHeight: 14,
+                                color: Colors.GRAY,
+                              }}
+                              rowTextStyle={dropdownTextStyle}
+                              renderDropdownIcon={() => {
+                                return <Image
+                                  source={chevronDown}
+                                  style={{
+                                    padding: 10,
+                                    margin: 5,
+                                    height: 25,
+                                    width: 25,
+                                    resizeMode: 'stretch',
+                                  }}
+                                />
+                              }}
+                              buttonTextAfterSelection={(selectedItem, index) => {
+                                return selectedItem.displayText
+                              }}
+                              rowTextForSelection={(item, index) => {
+                                return item.displayText
+                              }}
+                            />
                           </CardMargin>
                         )}
                     </View>
                   )}
-                  <View style={{zIndex: 0}}>
+                  <View style={{ zIndex: 0 }}>
                     <CustomText
                       testID={TestIds.cid_cust_details}
                       marginBottom={20}
@@ -1673,12 +1709,12 @@ const CustomerIdentificationDetails = props => {
                             labelStyle={{
                               color:
                                 isErrorOfficeEmail == 'error' &&
-                                office_emailId != ''
+                                  office_emailId != ''
                                   ? Colors.ERROR
                                   : Colors.GRAY,
                               opacity:
                                 isErrorOfficeEmail == 'error' &&
-                                office_emailId != ''
+                                  office_emailId != ''
                                   ? 1
                                   : 0.32,
                             }}
@@ -1686,12 +1722,12 @@ const CustomerIdentificationDetails = props => {
                               style: {
                                 borderBottomColor:
                                   isErrorOfficeEmail == 'error' &&
-                                  office_emailId != ''
+                                    office_emailId != ''
                                     ? Colors.ERROR
                                     : Colors.GRAY,
                                 opacity:
                                   isErrorOfficeEmail == 'error' &&
-                                  office_emailId != ''
+                                    office_emailId != ''
                                     ? 1
                                     : 0.32,
                               },
@@ -1704,7 +1740,7 @@ const CustomerIdentificationDetails = props => {
                               style: {
                                 color:
                                   isErrorOfficeEmail == 'error' &&
-                                  office_emailId != ''
+                                    office_emailId != ''
                                     ? Colors.ERROR
                                     : Colors.GRAY,
                               },
@@ -1729,12 +1765,12 @@ const CustomerIdentificationDetails = props => {
                             labelStyle={{
                               color:
                                 isErrorPersonalEmail == 'error' &&
-                                personal_emailId != ''
+                                  personal_emailId != ''
                                   ? Colors.ERROR
                                   : Colors.GRAY,
                               opacity:
                                 isErrorPersonalEmail == 'error' &&
-                                personal_emailId != ''
+                                  personal_emailId != ''
                                   ? 1
                                   : 0.32,
                             }}
@@ -1742,12 +1778,12 @@ const CustomerIdentificationDetails = props => {
                               style: {
                                 borderBottomColor:
                                   isErrorPersonalEmail == 'error' &&
-                                  personal_emailId != ''
+                                    personal_emailId != ''
                                     ? Colors.ERROR
                                     : Colors.GRAY,
                                 opacity:
                                   isErrorPersonalEmail == 'error' &&
-                                  personal_emailId != ''
+                                    personal_emailId != ''
                                     ? 1
                                     : 0.32,
                               },
@@ -1760,7 +1796,7 @@ const CustomerIdentificationDetails = props => {
                               style: {
                                 color:
                                   isErrorPersonalEmail == 'error' &&
-                                  personal_emailId != ''
+                                    personal_emailId != ''
                                     ? Colors.ERROR
                                     : Colors.GRAY,
                               },
@@ -1771,7 +1807,7 @@ const CustomerIdentificationDetails = props => {
                               personal_emailId
                                 ? StringsOfLanguages.CID.CID_ERROR_EMAIL
                                 : StringsOfLanguages.CID
-                                    .CID_FIELD_PERSONAL_EMAIL
+                                  .CID_FIELD_PERSONAL_EMAIL
                             }
                             errorColor={Colors.PRIMARY_COLOR}
                           />
@@ -1789,7 +1825,7 @@ const CustomerIdentificationDetails = props => {
                       </View>
                     )}
 
-                    <MarginBottom style={{marginBottom: 5}}>
+                    <MarginBottom style={{ marginBottom: 5 }}>
                       <CustomTextInput
                         reference={panInputRef}
                         autofocus={false}
@@ -1891,8 +1927,8 @@ const CustomerIdentificationDetails = props => {
                       inputBorderProps={{
                         style:
                           isErrorAadhar == 'error' && aadharNo != ''
-                            ? {borderBottomColor: Colors.ERROR}
-                            : {borderBottomColor: Colors.GRAY},
+                            ? { borderBottomColor: Colors.ERROR }
+                            : { borderBottomColor: Colors.GRAY },
                       }}
                       fontSize={20}
                       onChangeText={text => {
@@ -1903,20 +1939,20 @@ const CustomerIdentificationDetails = props => {
                         aadharNo && aadharNo.length < 12
                           ? StringsOfLanguages.CID.CID_ERROR_ADHAR
                           : isErrorAadhar == 'error' && aadharNo
-                          ? StringsOfLanguages.CID.CID_ERROR_VID
-                          : StringsOfLanguages.CID.CID_FIELD_AADHAAR
+                            ? StringsOfLanguages.CID.CID_ERROR_VID
+                            : StringsOfLanguages.CID.CID_FIELD_AADHAAR
                       }
                       labelStyle={
                         isErrorAadhar == 'error' && aadharNo != ''
-                          ? {color: Colors.ERROR}
-                          : {color: Colors.GRAY}
+                          ? { color: Colors.ERROR }
+                          : { color: Colors.GRAY }
                       }
                       secureTextEntry={toggleMask}
                       passwordInputProps={{
                         style:
                           isErrorAadhar == 'error' && aadharNo != ''
-                            ? {color: Colors.ERROR}
-                            : {color: Colors.GRAY},
+                            ? { color: Colors.ERROR }
+                            : { color: Colors.GRAY },
                         selectionColor: 'black',
                         maxLength: 16,
                       }}

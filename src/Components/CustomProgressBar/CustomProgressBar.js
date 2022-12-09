@@ -1,6 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { useEffect } from "react";
-import { ProgressBar } from "@react-native-community/progress-bar-android";
+// import { ProgressBar } from "@react-native-community/progress-bar-android";
 import CustomText from "../CustomText/CustomText";
 import { FontFamily, Font_Size, Line_Height } from "../../Utils";
 import { StringsOfLanguages } from "../../Localization";
@@ -39,13 +39,13 @@ const CustomProgressBar = (props) => {
           {StringsOfLanguages.PROGRESS_BAR.PB_APPLICATION_SUBMITTED}
         </CustomText>
       </TextPercentContainer>
-      <ProgressBar
+      {/* <ProgressBar
         testID={testID}
         styleAttr="Horizontal"
         progress={progressValue / 100}
         indeterminate={false}
         animating={true}
-      />
+      /> */}
     </ProgressBarContainer>
   );
 };

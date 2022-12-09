@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { Colors, FontFamily } from '../../Utils';
 
 export const Container = styled.View`
  flex:1
@@ -133,4 +134,13 @@ export const PasswordView = styled.View`
 `;
 export const selectStyle = {
   height: 70,
+};
+
+export const dropdownTextStyle = {
+  fontSize: 14,
+  fontFamily: FontFamily.Inter_SemiBold,
+  lineHeight: 14,
+  color: Colors.GRAY,
+  letterSpacing: -0.5,
+  marginTop: 6,
 };
