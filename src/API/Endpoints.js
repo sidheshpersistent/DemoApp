@@ -67,10 +67,10 @@ const Endpoints = {
   getResumeApplicationsList: `getJourneyList`,
   getCompanyList: `getCompanyList`,
   getCompanyRank: `getCompanyRank`,
+  saveCustomerDetails: `saveCustomerDetails`,
 
   getAgentDasboardDetails: `getAgentDashboardDetails`,
   getPanValidationData: `pan/verify`,
-  saveCustomerDetails: `user/info`,
   getPersonalData: `${firebaseUrl}/PersonalDetails/userDetails.json`,
   getLoginDetails: `${firebaseUrl}/AgentLogin.json`,
   getDasboardDetails: `${firebaseUrl}/Dashboard.json`,
