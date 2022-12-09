@@ -443,14 +443,15 @@ const CustomerIdentificationDetails = props => {
     };
     let header = {
       appName: accountType,
-      mobileNumber: encryptedDataValue(mobileNumber),
+      mobileNumber: "", //encryptedDataValue(mobileNumber),
     };
 
-    NetworkManager.IDFCNetworkPut(
+    NetworkManager.IDFCNetworkGet(
       Endpoints.saveCustomerDetails,
-      request,
+      // request,
       header,
       (response, message) => {
+        console.log("===============>>>>>> resposnse", response);
         if (response?.status == CommonConstant.SUCCESS) {
           cidContextData.userId = response.userId;
           setSession({ ...session, prevSessionData });
@@ -1994,18 +1995,19 @@ const CustomerIdentificationDetails = props => {
                       flex={1}>
                       {StringsOfLanguages.CID.CID_LABEL_FOOTER}
                     </CustomText>
-                    {SubmitButtonEnable() ? (
+                    {!SubmitButtonEnable() ? (
                       <TouchableOpacity
                         testID={TestIds.cid_submit_button}
                         style={touchableStyle}
                         onPress={() => {
                           // let isFromResumeJourney=false
                           // resetCustomerProfileData(isFromResumeJourney);
-                          if (accountType === Account_Type.ASSISTED_CS) {
-                            setCompanyData();
-                            setRankData(selectedRank);
-                          }
-                          saveAdharDetailsInContext();
+                          submitCIDDetails();
+                          // if (accountType === Account_Type.ASSISTED_CS) {
+                          //   setCompanyData();
+                          //   setRankData(selectedRank);
+                          // }
+                          // saveAdharDetailsInContext();
                         }}>
                         <RightArrowButtonActive>
                           <Image

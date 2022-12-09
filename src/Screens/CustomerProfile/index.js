@@ -8,7 +8,7 @@ import BankingPreferenceDisabled from "../../Components/TimeLineView/images/bank
 import CustomerConsentEnabled from "../../Components/TimeLineView/images/customerConsentEnabled.png";
 import CustomerConsentDisabled from "../../Components/TimeLineView/images/customerConsentDisabled.png";
 import PersonalDetail from "./personalDetail";
-// import CustomerConsent from "./CustomerConsent";
+import CustomerConsent from "./CustomerConsent";
 import BankingPreferences from "./BankingPreferences";
 import BGImage from '../../Assets/Images/bg2.png';
 
@@ -139,29 +139,29 @@ const CustomerProfile = (props) => {
         );
       case 1:
         setActiveIndex(1);
-        // return (
-        //   <BankingPreferences
-        //     navigation={props.navigation}
-        //     next={() => nextPage(Customer_Profile.consent)}
-        //     prev={() => prevPage(Customer_Profile.banking)}
-        //     childFunc={childFunc}
-        //     resetFunc={resetFunc}
-        //     loading={(flag) => setShowLoader(flag)}
-        //   />
-        // );
+        return (
+          <BankingPreferences
+            navigation={props.navigation}
+            next={() => nextPage(Customer_Profile.consent)}
+            prev={() => prevPage(Customer_Profile.banking)}
+            childFunc={childFunc}
+            resetFunc={resetFunc}
+            loading={(flag) => setShowLoader(flag)}
+          />
+        );
       case 2:
         setActiveIndex(2);
-        // return (
-        //   <CustomerConsent
-        //     // next={() => props.navigation.navigate('SASuccess')}
-        //     next={() => props.navigation.navigate(NavigationUrl.SASuccessID)}
-        //     prev={() => prevPage(Customer_Profile.consent)}
-        //     navigation={props.navigation}
-        //     childFunc={childFunc}
-        //     resetFunc={resetFunc}
-        //     loading={(flag) => setShowLoader(flag)}
-        //   />
-        // );
+        return (
+          <CustomerConsent
+            // next={() => props.navigation.navigate('SASuccess')}
+            next={() => props.navigation.navigate(NavigationUrl.SASuccessID)}
+            prev={() => prevPage(Customer_Profile.consent)}
+            navigation={props.navigation}
+            childFunc={childFunc}
+            resetFunc={resetFunc}
+            loading={(flag) => setShowLoader(flag)}
+          />
+        );
       default:
         setActiveIndex(0);
         return (
@@ -258,7 +258,7 @@ const CustomerProfile = (props) => {
           nestedScrollEnabled={true}
         >
           <SelectPage />
-          {
+          {/* {
             <Popup
               cancelButtonPress={() => setPopupVisible(false)}
               animationIn="bounceIn"
@@ -337,7 +337,7 @@ const CustomerProfile = (props) => {
                 </ComponentContainer>
               }
             />
-          }
+          } */}
         </ScrollViewContainer>
       </LowerConatainer>
     </View>

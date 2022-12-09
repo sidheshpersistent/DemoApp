@@ -206,39 +206,39 @@ const PersonalDetail = (props) => {
   const totalField = useRef(0);
   const nomineeDate = useRef(0);
   const section1Api = useRef(false);
-  const [popupType , setPopupType]= useState(false);
-  const [isUnkownError,setIsUnkownError] = useState(false);
+  const [popupType, setPopupType] = useState(false);
+  const [isUnkownError, setIsUnkownError] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   useEffect(() => {
     getNomineeListData();
-    if(session.accountType === Account_Type.ASSISTED_SA){
-    getOccupationDetails();
-    getCompanyListData();
-    getAllCountryList();
+    if (session.accountType === Account_Type.ASSISTED_SA) {
+      getOccupationDetails();
+      getCompanyListData();
+      getAllCountryList();
     }
-    
-    
+
+
   }, []);
 
 
   useEffect(() => {
-    if( session.accountType == Account_Type.ASSISTED_SA){
-      personalcontextData.countryValue=countryOfBirthObj?.displayText
-      personalcontextData.cityValue=cityOfBirthObj?.displayText
-      setSession({...session,prevSessionData})
-      if(countryOfBirthObj?.displayText!=PersonalDetailsConstants.INDIA){
+    if (session.accountType == Account_Type.ASSISTED_SA) {
+      personalcontextData.countryValue = countryOfBirthObj?.displayText
+      personalcontextData.cityValue = cityOfBirthObj?.displayText
+      setSession({ ...session, prevSessionData })
+      if (countryOfBirthObj?.displayText != PersonalDetailsConstants.INDIA) {
         getAllCityList(countryOfBirthObj?.value)
       }
     }
-    
-   
-    
+
+
+
     childFunc.current = callSubmitApi;
-    resetFunc.current=resetfunction
+    resetFunc.current = resetfunction
   }, []);
   useEffect(() => {
-    session.accountType == Account_Type.ASSISTED_SA?
-      totalFieldToFill():totalFieldToFill_CS()
+    session.accountType == Account_Type.ASSISTED_SA ?
+      totalFieldToFill() : totalFieldToFill_CS()
   }, [
     nomineeVisible,
     nomineeName,
@@ -259,27 +259,27 @@ const PersonalDetail = (props) => {
     selValue,
     panApplied,
   ]);
-  useEffect(()=>{
+  useEffect(() => {
 
     const timeOut = setTimeout(() => {
-      session.accountType == Account_Type.ASSISTED_SA?
-      totalFieldToFill():totalFieldToFill_CS()
+      session.accountType == Account_Type.ASSISTED_SA ?
+        totalFieldToFill() : totalFieldToFill_CS()
     }, timeoutConst.VALUE_5000)
     return () => {
       clearTimeout(timeOut)
-      }
-  },[countryNamesList,cityNamesList])
+    }
+  }, [countryNamesList, cityNamesList])
 
-  
-  useEffect(()=>{
+
+  useEffect(() => {
     const timeOut = setTimeout(() => {
-      session.accountType == Account_Type.ASSISTED_SA?
-      totalFieldToFill():totalFieldToFill_CS()
+      session.accountType == Account_Type.ASSISTED_SA ?
+        totalFieldToFill() : totalFieldToFill_CS()
     }, 3000)
     return () => {
       clearTimeout(timeOut)
-      }
-  },[countryOfBirth,cityOfBirth,countryValue,cityValue])
+    }
+  }, [countryOfBirth, cityOfBirth, countryValue, cityValue])
 
   useEffect(() => {
     nomineeDate.current == 1 ? section3ProgressApi() : null;
@@ -287,13 +287,13 @@ const PersonalDetail = (props) => {
   useEffect(() => {
     section1Api.current == true ? section1ProgressApi() : null;
   }, [occupationType, sourceOfIncome]);
-  
+
   useEffect(() => {
-    
+
     const timeOut = setTimeout(() => {
-    
-      session.accountType == Account_Type.ASSISTED_SA?
-      totalFieldToFill():totalFieldToFill_CS()
+
+      session.accountType == Account_Type.ASSISTED_SA ?
+        totalFieldToFill() : totalFieldToFill_CS()
     }, timeoutConst.VALUE_8000);
 
     return () => {
@@ -301,22 +301,22 @@ const PersonalDetail = (props) => {
     };
   }, []);
 
-  useEffect(()=>{
-    prevSessionData.progressLoader=prevSessionData.progressLoader+1
-    
-    setSession({...session,prevSessionData})
-  },[])
+  useEffect(() => {
+    prevSessionData.progressLoader = prevSessionData.progressLoader + 1
 
-  const resetfunction=()=>{
-    
-    prevSessionData.customerProfile=customerProfileReset
-    setSession({...session,prevSessionData})
+    setSession({ ...session, prevSessionData })
+  }, [])
+
+  const resetfunction = () => {
+
+    prevSessionData.customerProfile = customerProfileReset
+    setSession({ ...session, prevSessionData })
   }
   const section3ProgressApi = () => {
     if (nomineeDob) {
       setTimeout(() => {
-        session.accountType == Account_Type.ASSISTED_SA?
-      totalFieldToFill():totalFieldToFill_CS()
+        session.accountType == Account_Type.ASSISTED_SA ?
+          totalFieldToFill() : totalFieldToFill_CS()
       }, timeoutConst.VALUE_8000);
     }
 
@@ -338,7 +338,7 @@ const PersonalDetail = (props) => {
         if (CompanyValue) {
           if (countryOfBirth == PersonalDetailsConstants.INDIA) {
             if (form60valid()) {
-              
+
               submitPersonalDetails(false, true);
               section1Api.current = false;
             }
@@ -369,10 +369,10 @@ const PersonalDetail = (props) => {
     }
   };
 
-  function totalFieldToFill_CS(){
+  function totalFieldToFill_CS() {
     totalField.current = 7;
-    
-    
+
+
     if (form60Visible) {
       totalField.current = totalField.current + 1;
       if (panApplied) {
@@ -388,15 +388,15 @@ const PersonalDetail = (props) => {
     }
     calcPercentValue_CS();
   };
-  function calcPercentValue_CS (){
-    
+  function calcPercentValue_CS() {
+
     const eachFieldValue = 33 / totalField.current;
 
     let total = 0;
     if (annualIncome) {
       total = total + eachFieldValue;
     }
-  
+
     if (mothersName) {
       total = total + eachFieldValue;
     }
@@ -445,13 +445,13 @@ const PersonalDetail = (props) => {
 
 
 
-  function totalFieldToFill (){
+  function totalFieldToFill() {
     totalField.current = 10;
     if (showCompanyName) {
       totalField.current = totalField.current + 1;
     }
     if (countryOfBirth != PersonalDetailsConstants.INDIA) {
-  
+
       totalField.current = totalField.current + 1;
     }
     if (form60Visible) {
@@ -470,7 +470,7 @@ const PersonalDetail = (props) => {
     calcPercentValue();
   };
 
-  function calcPercentValue () {
+  function calcPercentValue() {
     const eachFieldValue = 33 / totalField.current;
     let total = 0;
     if (annualIncome) {
@@ -491,16 +491,16 @@ const PersonalDetail = (props) => {
       total = total + eachFieldValue;
     }
     if (countryOfBirth) {
-      
-      if(countryNamesList && countryNamesList?.includes(countryValue)){
-    
+
+      if (countryNamesList && countryNamesList?.includes(countryValue)) {
+
         total = total + eachFieldValue;
       }
     }
     if (cityOfBirth) {
-      
-      if(cityNamesList && cityNamesList?.includes(cityValue)){
-       
+
+      if (cityNamesList && cityNamesList?.includes(cityValue)) {
+
         total = total + eachFieldValue;
       }
     }
@@ -536,18 +536,18 @@ const PersonalDetail = (props) => {
       }
       if (guardianAddressRadio) {
         total = total + eachFieldValue;
-   
+
       }
     }
-    total>32.0?
-    calculateProgressValue(Math.trunc(33)):calculateProgressValue(Math.trunc(total))
+    total > 32.0 ?
+      calculateProgressValue(Math.trunc(33)) : calculateProgressValue(Math.trunc(total))
 
-    
+
   };
 
   // function for increasing or decreasing progress bar
-  function calculateProgressValue  (value)  {
-    setSession({ ...session, progressPercent: value});
+  function calculateProgressValue(value) {
+    setSession({ ...session, progressPercent: value });
   };
 
   function callSubmitApi() {
@@ -557,7 +557,7 @@ const PersonalDetail = (props) => {
   function getNomineeListData() {
     let header = {
       appName: Account_Type.ASSISTED_SA,
-      mobileNumber:""
+      mobileNumber: ""
     }
     NetworkManager.IDFCNetworkGet(Endpoints.getNomineeRelation, header, (response) => {
       if (response?.status == CommonConstant.SUCCESS) {
@@ -573,7 +573,7 @@ const PersonalDetail = (props) => {
         }
         personalcontextData.nomineeRelationData = nomineeRelationlist;
         setSession({ ...session, prevSessionData });
-      }else{
+      } else {
         setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
         setIsUnkownError(true);
       }
@@ -582,32 +582,32 @@ const PersonalDetail = (props) => {
   function getAllCityList(city) {
     let header = {
       appName: Account_Type.ASSISTED_SA,
-      mobileNumber:""
+      mobileNumber: ""
     }
-      NetworkManager.IDFCNetworkGet(Endpoints.getCityList+city,header, (response) => {
-        if(response && response.data){
-          let data = response.data;
-          personalcontextData.cityDetails = data;
-          
-          const cityNames=data.map((item)=>item.displayText)
-          personalcontextData.cityNamesList=cityNames
-         
-          setSession({ ...session, prevSessionData })
-        }else{
-          setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
-          setIsUnkownError(true);
-        }
-      });
-      totalFieldToFill()
+    NetworkManager.IDFCNetworkGet(Endpoints.getCityList + city, header, (response) => {
+      if (response && response.data) {
+        let data = response.data;
+        personalcontextData.cityDetails = data;
+
+        const cityNames = data.map((item) => item.displayText)
+        personalcontextData.cityNamesList = cityNames
+
+        setSession({ ...session, prevSessionData })
+      } else {
+        setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
+        setIsUnkownError(true);
+      }
+    });
+    totalFieldToFill()
   }
 
   function getAllCountryList() {
     let header = {
       appName: Account_Type.ASSISTED_SA,
-      mobileNumber:""
+      mobileNumber: ""
     }
-    NetworkManager.IDFCNetworkGet(Endpoints.getCountryList, header,(response) => {
-      if(response && response.data){
+    NetworkManager.IDFCNetworkGet(Endpoints.getCountryList, header, (response) => {
+      if (response && response.data) {
         let data = response.data;
 
         let customCountryDetails = [];
@@ -622,11 +622,11 @@ const PersonalDetail = (props) => {
         }
 
         personalcontextData.allCountryListData = customCountryDetails;
-        const countryNames=customCountryDetails.map((item)=>item.displayText)
-        personalcontextData.countryNamesList=countryNames
+        const countryNames = customCountryDetails.map((item) => item.displayText)
+        personalcontextData.countryNamesList = countryNames
         setSession({ ...session, prevSessionData });
         totalFieldToFill();
-      }else{
+      } else {
         setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
         setIsUnkownError(true);
       }
@@ -642,9 +642,9 @@ const PersonalDetail = (props) => {
       setSession({ ...session, prevSessionData });
     }
     if (text.length >= 3) {
-      let header={
+      let header = {
         appName: session.accountType,
-        mobileNumber:""
+        mobileNumber: ""
       }
       NetworkManager.IDFCNetworkGet(
         Endpoints.getCompanyList + text + `?pageNo=1&pageSize=10`,
@@ -682,13 +682,13 @@ const PersonalDetail = (props) => {
   const countrySearchListHandler = (country) => {
     Keyboard.dismiss();
     personalcontextData.countryOfBirth = country.displayText;
-    personalcontextData.countryOfBirthObj=country
-    personalcontextData.countryValue=country.displayText
-    personalcontextData.cityOfBirth =""
-    personalcontextData.cityValue=""
+    personalcontextData.countryOfBirthObj = country
+    personalcontextData.countryValue = country.displayText
+    personalcontextData.cityOfBirth = ""
+    personalcontextData.cityValue = ""
     setSession({ ...session, prevSessionData });
     section1ProgressApi()
-    
+
     // setCountryValue(company.displayText)
     getAllCityList(country.value)
   };
@@ -696,12 +696,12 @@ const PersonalDetail = (props) => {
     Keyboard.dismiss();
     personalcontextData.cityOfBirth = city.displayText;
     personalcontextData.cityOfBirthObj = city
-    personalcontextData.cityValue=city.displayText
+    personalcontextData.cityValue = city.displayText
     setSession({ ...session, prevSessionData });
     section1ProgressApi()
-    // setCityValue(city.displayText)
-    ;
-    
+      // setCityValue(city.displayText)
+      ;
+
   };
 
   const setIsCompanySelectedFromList = (val) => {
@@ -720,31 +720,31 @@ const PersonalDetail = (props) => {
   function getOccupationDetails() {
     //move this api call to common API
     getOccupationDetailsService((res) => {
-      
+
       let data = res;
-     
+
       let customOccupationDetails = [];
-      if (data.length!=0) {
+      if (data.length != 0) {
         for (let i = 0; i < data.length; i++) {
           customOccupationDetails.push({
             id: data[i].occupationId,
             displayText: data[i].type,
             value: data[i].occupationId,
             sourceOfIncome: data[i].sourceOfIncome,
-            incomeSource:data[i].incomeSource,
+            incomeSource: data[i].incomeSource,
             cbsCode: data[i].cbsCode,
             profitCenterCode: data[i].profitCenterCode
           });
         }
       }
       personalcontextData.occupationDetails = customOccupationDetails;
-      
-      if(sourceOfIncome){
-        let selectedIndex = customOccupationDetails.findIndex(function(item, i){
+
+      if (sourceOfIncome) {
+        let selectedIndex = customOccupationDetails.findIndex(function (item, i) {
           return item.displayText === occupationType?.displayText
         });
         let customSourceOfIncome = [];
-        if (customOccupationDetails[selectedIndex].sourceOfIncome && selectedIndex!= -1) {
+        if (customOccupationDetails[selectedIndex].sourceOfIncome && selectedIndex != -1) {
           for (let i = 0; i < customOccupationDetails[selectedIndex].sourceOfIncome.length; i++) {
             customSourceOfIncome.push({
               id: customOccupationDetails[selectedIndex].sourceOfIncome[i].id,
@@ -754,7 +754,7 @@ const PersonalDetail = (props) => {
           }
         }
         personalcontextData.sourceOfIncomeDetails = customSourceOfIncome;
-       
+
       }
       setSession({ ...session, prevSessionData });
     });
@@ -893,8 +893,8 @@ const PersonalDetail = (props) => {
   };
   const countryCityValid = () => {
     if (countryOfBirth == PersonalDetailsConstants.INDIA) {
-      if(countryNamesList?.includes(countryValue)){
-        
+      if (countryNamesList?.includes(countryValue)) {
+
         if (form60valid()) {
           if (nomineeVisibleValid()) {
             return true;
@@ -904,16 +904,16 @@ const PersonalDetail = (props) => {
         } else {
           return false;
         }
-      }else{
-        
+      } else {
+
         return false;
       }
-      
+
     } else {
-      if(countryNamesList?.includes(countryValue)){
-        
+      if (countryNamesList?.includes(countryValue)) {
+
         if (cityOfBirth) {
-          if(cityNamesList?.includes(cityValue)){
+          if (cityNamesList?.includes(cityValue)) {
             if (form60valid()) {
               if (nomineeVisibleValid()) {
                 return true;
@@ -923,26 +923,26 @@ const PersonalDetail = (props) => {
             } else {
               return false;
             }
-          }else{
-         
+          } else {
+
             return false
           }
-        
-          
+
+
         } else {
-          
+
           return false;
         }
-      }else{
+      } else {
 
         return false
       }
-      
+
     }
   };
   const SubmitButtonEnable = () => {
     if (occupationType?.id == 1) {
-      if (!isCompanySelectedFromList && CompanyValue ) {
+      if (!isCompanySelectedFromList && CompanyValue) {
         return false;
       } else {
         if (countryCityValid()) {
@@ -960,20 +960,21 @@ const PersonalDetail = (props) => {
     }
   };
   const submitButtonEnable_HHandCS = () => {
+    return true; //temporary added
     if (session.accountType === Account_Type.ASSISTED_SA) {
       if (
-        annualIncome  &&
-        occupationType?.displayText  &&
+        annualIncome &&
+        occupationType?.displayText &&
         sourceOfIncome?.displayText &&
-        mothersName  &&
-        countryOfBirth 
+        mothersName &&
+        countryOfBirth
       ) {
         return SubmitButtonEnable();
       } else {
         return false;
       }
     } else {
-      if (annualIncome && mothersName  && countryOfBirth ) {
+      if (annualIncome && mothersName && countryOfBirth) {
         if (form60valid()) {
           if (nomineeVisibleValid()) {
             return true;
@@ -991,8 +992,8 @@ const PersonalDetail = (props) => {
   // console.log("countryOfBirthObj",countryOfBirthObj)
   // console.log("cityOfBirthObj",cityOfBirthObj)
   const getPersonalDetailsRequest = (isNext) => {
-    let occupationTypeNew={ 
-      id: occupationType?.id, 
+    let occupationTypeNew = {
+      id: occupationType?.id,
       displayText: occupationType?.displayText,
       value: occupationType?.value,
       incomeSource: occupationType?.incomeSource,
@@ -1009,7 +1010,7 @@ const PersonalDetail = (props) => {
         : null
     let guardian_otherAddress =
       guardianAddressRadio === RadioButtonConstants.RADIO2 &&
-      guardianOtherAddress
+        guardianOtherAddress
         ? guardianOtherAddress
         : null
     const request = {
@@ -1074,48 +1075,49 @@ const PersonalDetail = (props) => {
   };
 
   const submitPersonalDetails = async (isNext, isSaveSection) => {
-    getPersonalDetailsRequest()
-  
-    let agentInfo = await AsyncStorageUtils.getObjectItem(LocalDB.agentInfo);
-    let request = {
-      userId: prevSessionData.agentDetails.userId,
-      milestone: Milestone.PERSONAL_DETAILS,
-      agentId: agentInfo?.email,
-      journeyPercentage: session.progressPercent,
-      personalDetails: getPersonalDetailsRequest(isNext),
-    };
-    let header={
-      appName: session.accountType,
-      mobileNumber:""
-    }
-    ConsoleLogHelper.log("final request : ", JSON.stringify(request));
-    NetworkManager.IDFCNetworkPut(
-      Endpoints.saveCustomerDetails,
-      request,
-      header,
-      (response,message) => {
-        loading(false);
+    next(); //temporary added
+    // getPersonalDetailsRequest()
 
-        ConsoleLogHelper.log("save api response  :", response);
-        if (response?.status === CommonConstant.SUCCESS) {
-          if (isNext) {
-            next();
-          } else {
-            if (!isSaveSection) {
-              navigation.navigate(NavigationUrl.drawerId, {
-                screen: NavigationUrl.dashboardId,
-              });
-            }
-          }
-        } else if (response == CommonConstant.INTERNALSERVERERROR) {
-          setErrorMsg(message);
-          isUnkownError(true);
-        }else{
-          setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
-          isUnkownError(true);
-        }
-      }
-    );
+    // let agentInfo = await AsyncStorageUtils.getObjectItem(LocalDB.agentInfo);
+    // let request = {
+    //   userId: prevSessionData.agentDetails.userId,
+    //   milestone: Milestone.PERSONAL_DETAILS,
+    //   agentId: agentInfo?.email,
+    //   journeyPercentage: session.progressPercent,
+    //   personalDetails: getPersonalDetailsRequest(isNext),
+    // };
+    // let header = {
+    //   appName: session.accountType,
+    //   mobileNumber: ""
+    // }
+    // ConsoleLogHelper.log("final request : ", JSON.stringify(request));
+    // NetworkManager.IDFCNetworkPut(
+    //   Endpoints.saveCustomerDetails,
+    //   request,
+    //   header,
+    //   (response, message) => {
+    //     loading(false);
+
+    //     ConsoleLogHelper.log("save api response  :", response);
+    //     if (response?.status === CommonConstant.SUCCESS) {
+    //       if (isNext) {
+    //         next();
+    //       } else {
+    //         if (!isSaveSection) {
+    //           navigation.navigate(NavigationUrl.drawerId, {
+    //             screen: NavigationUrl.dashboardId,
+    //           });
+    //         }
+    //       }
+    //     } else if (response == CommonConstant.INTERNALSERVERERROR) {
+    //       setErrorMsg(message);
+    //       isUnkownError(true);
+    //     } else {
+    //       setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
+    //       isUnkownError(true);
+    //     }
+    //   }
+    // );
   };
   const incomeHandler = (e) => {
     e.id === 1
@@ -1203,7 +1205,7 @@ const PersonalDetail = (props) => {
   const form60Check = () => {
 
     let a = prevSessionData.adharDetails?.age;
-    if(isEmptyValue(prevSessionData?.panDetails?.panNumber)){
+    if (isEmptyValue(prevSessionData?.panDetails?.panNumber)) {
       if (a < 60 && annualIncomeLocal > 25 * 10 ** 4) {
         popupCheck(PersonalDetailsConstants.POPUP1);
       } else {
@@ -1234,11 +1236,11 @@ const PersonalDetail = (props) => {
       personalcontextData.isErrorPan = false;
       setSession({ ...session, prevSessionData });
     } else {
-      
-        personalcontextData.isErrorPan = "error";
-        setSession({ ...session, prevSessionData });
-      
-  
+
+      personalcontextData.isErrorPan = "error";
+      setSession({ ...session, prevSessionData });
+
+
     }
   };
   const panSubmitButton = () => {
@@ -1250,15 +1252,15 @@ const PersonalDetail = (props) => {
     if (panNumber) {
       // if user has entered pan number
       // alert(panNumber);
-      await isPanNumberValidApi(panNumber, (isPanValid,panDetails) => {
-        
-        let middleName = isEmptyValue(panDetails?.middleName) ? "" :(panDetails.middleName + " ")
-          prevSessionData.panDetails.panNumber = panDetails.panNumber;
-          prevSessionData.panDetails.name = panDetails.firstName + " " + middleName + panDetails.lastName
-          prevSessionData.panDetails.pnSts = panDetails.panStatus;
-          prevSessionData.panDetails.panTitle = panDetails.panTitle;
-          prevSessionData.panDetails.lastUpdatedDate = panDetails.lastUpdatedDate;
-          prevSessionData.panDetails.panAadharLinkSts = panDetails.adharStaus;
+      await isPanNumberValidApi(panNumber, (isPanValid, panDetails) => {
+
+        let middleName = isEmptyValue(panDetails?.middleName) ? "" : (panDetails.middleName + " ")
+        prevSessionData.panDetails.panNumber = panDetails.panNumber;
+        prevSessionData.panDetails.name = panDetails.firstName + " " + middleName + panDetails.lastName
+        prevSessionData.panDetails.pnSts = panDetails.panStatus;
+        prevSessionData.panDetails.panTitle = panDetails.panTitle;
+        prevSessionData.panDetails.lastUpdatedDate = panDetails.lastUpdatedDate;
+        prevSessionData.panDetails.panAadharLinkSts = panDetails.adharStaus;
         setSession({ ...session, prevSessionData });
 
         if (isPanValid) {
@@ -1272,24 +1274,24 @@ const PersonalDetail = (props) => {
       // To do:
     }
   };
-  
- 
+
+
   const checkNamePanAdharMatch = () => {
 
     checkPanAdharMatch(
       session.adharDetails.name, session.panDetails.name,
       (res) => {
-        console.log("subratResponse",res);
-        if(res == AdharPanMatch.COMPLETE_MATCHED){
+        console.log("subratResponse", res);
+        if (res == AdharPanMatch.COMPLETE_MATCHED) {
           prevSessionData.panDetails.panAdharStatus = res;
           setSession({ ...session, prevSessionData });
-           getCustomerDedupe();
-        }else if(res == AdharPanMatch.PARTIAL_MATCHED){
+          getCustomerDedupe();
+        } else if (res == AdharPanMatch.PARTIAL_MATCHED) {
           personalcontextData.panAdharInvalid = true;
           personalcontextData.isPanAdharMatchPopup = true;
           prevSessionData.panDetails.panAdharStatus = res;
-          setSession({ ...session, prevSessionData }); 
-        }else{
+          setSession({ ...session, prevSessionData });
+        } else {
           personalcontextData.panAdharInvalid = true;
           personalcontextData.isPanAdharMatchPopup = true;
           prevSessionData.panDetails.panAdharStatus = res;
@@ -1569,31 +1571,31 @@ const PersonalDetail = (props) => {
                 clickHandler={(country) => {
                   countrySearchListHandler(country);
                 }}
-                onChangeText={(text)=>{
-                  if(text!=""){
-                    personalcontextData.countryValue=text
-                    setSession({...session,prevSessionData})
+                onChangeText={(text) => {
+                  if (text != "") {
+                    personalcontextData.countryValue = text
+                    setSession({ ...session, prevSessionData })
                     //setCountryValue(text)
-                  }else{
+                  } else {
                     personalcontextData.countryOfBirth = "";
-                  personalcontextData.cityOfBirth = "";
-                  
-                  setSession({ ...session, prevSessionData });
+                    personalcontextData.cityOfBirth = "";
+
+                    setSession({ ...session, prevSessionData });
                   }
 
-                  
+
                 }}
                 onCrossPress={() => {
-                  
+
                   personalcontextData.countryOfBirth = "";
                   personalcontextData.cityOfBirth = "";
-                  personalcontextData.countryValue=""
+                  personalcontextData.countryValue = ""
                   setSession({ ...session, prevSessionData });
                 }}
               />
             </CardMargin>
 
-            {countryOfBirth != PersonalDetailsConstants.INDIA && countryOfBirth!="" && countryValue!="" ? (
+            {countryOfBirth != PersonalDetailsConstants.INDIA && countryOfBirth != "" && countryValue != "" ? (
               <CardMargin>
                 <CustomSearchInputDropdown
                   value={cityOfBirth}
@@ -1603,15 +1605,15 @@ const PersonalDetail = (props) => {
                   clickHandler={(city) => {
                     citySearchListHandler(city);
                   }}
-                  onChangeText={(text)=>{
-                    personalcontextData.cityValue=text
-                    setSession({...session,prevSessionData})
-                      //setCityValue(text)
-                  
+                  onChangeText={(text) => {
+                    personalcontextData.cityValue = text
+                    setSession({ ...session, prevSessionData })
+                    //setCityValue(text)
+
                   }}
                   onCrossPress={() => {
                     personalcontextData.cityOfBirth = "";
-                    personalcontextData.cityValue=""
+                    personalcontextData.cityValue = ""
                     // setCityValue("")
                     setSession({ ...session, prevSessionData });
                   }}
@@ -1801,7 +1803,7 @@ const PersonalDetail = (props) => {
             </RadioButton> */}
 
             {selValue === RadioButtonConstants.RADIO2 &&
-            customerOtherAddress ? (
+              customerOtherAddress ? (
               <NewAddressView>
                 <CustomText
                   testID={TestIds.cp_new_address_label}
@@ -2031,7 +2033,7 @@ const PersonalDetail = (props) => {
                 </RadioButton> */}
 
                 {nomineeAddressRadio === RadioButtonConstants.RADIO2 &&
-                nomineeOtherAddress ? (
+                  nomineeOtherAddress ? (
                   <NewAddressView>
                     <CustomText
                       fontFamily={FontFamily.INTER_BOLD}
@@ -2204,7 +2206,7 @@ const PersonalDetail = (props) => {
                     </RadioButton> */}
 
                     {guardianAddressRadio === RadioButtonConstants.RADIO2 &&
-                    guardianOtherAddress ? (
+                      guardianOtherAddress ? (
                       <NewAddressView>
                         <CustomText
                           fontFamily={FontFamily.INTER_BOLD}
@@ -2259,7 +2261,10 @@ const PersonalDetail = (props) => {
         }}
       >
         {submitButtonEnable_HHandCS() ? (
-          <RightArrowButtonActive testID={TestIds.cp_submit_button} onPress={() =>{ loading(true); submitPersonalDetails(true);}}>
+          <RightArrowButtonActive testID={TestIds.cp_submit_button} onPress={() => {
+            // loading(true); 
+            submitPersonalDetails(true);
+          }}>
             <Image source={rightArrowWhite} style={RightArrowImage} />
           </RightArrowButtonActive>
         ) : (
@@ -2349,36 +2354,36 @@ const PersonalDetail = (props) => {
         />
       }
       {
-          <Popup
-            testID_submit={TestIds.cid_pan_adhar_match_pop_up_submit}
-            testID_cancel={TestIds.cid_pan_adhar_match_pop_up_cancel}
-            animationIn="bounceIn"
-            popupIcon={alertIcon}
-            isVisible={isPanAdharMatchPopup}
-            Heading={StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_HEADING}
-            ButtonText="Okay"
-            buttonPress={panAdharMissMatchPopUpOkButtonPressed}
-            component={
-              <ComponentContainer>
-                <View>
-                  <CustomText>
-                    <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text}>{StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_TEXT1}</CustomText>
-                    <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text} fontFamily={FontFamily.Inter_SemiBold}>{isEmptyValue(session.panDetails?.name) ? "": session.panDetails?.name}</CustomText>
-                    <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text}>{StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_TEXT2}</CustomText>
-                    <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text} fontFamily={FontFamily.Inter_SemiBold}>{isEmptyValue(session.adharDetails?.name) ? "":session.adharDetails?.name}</CustomText>
-                    <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text}>{StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_TEXT3}</CustomText>
-                  </CustomText>
-                  <CustomText>
-                    <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text}>{StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_TEXT4}</CustomText>
-                    <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text} fontFamily={FontFamily.Inter_SemiBold}>{StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_TEXT5}</CustomText>
-                    <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text}>{StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_TEXT6}</CustomText>
-                  </CustomText>
-                </View>
-              </ComponentContainer>
-            }
-          />
-        }
-        {/*future reference*/}
+        <Popup
+          testID_submit={TestIds.cid_pan_adhar_match_pop_up_submit}
+          testID_cancel={TestIds.cid_pan_adhar_match_pop_up_cancel}
+          animationIn="bounceIn"
+          popupIcon={alertIcon}
+          isVisible={isPanAdharMatchPopup}
+          Heading={StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_HEADING}
+          ButtonText="Okay"
+          buttonPress={panAdharMissMatchPopUpOkButtonPressed}
+          component={
+            <ComponentContainer>
+              <View>
+                <CustomText>
+                  <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text}>{StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_TEXT1}</CustomText>
+                  <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text} fontFamily={FontFamily.Inter_SemiBold}>{isEmptyValue(session.panDetails?.name) ? "" : session.panDetails?.name}</CustomText>
+                  <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text}>{StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_TEXT2}</CustomText>
+                  <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text} fontFamily={FontFamily.Inter_SemiBold}>{isEmptyValue(session.adharDetails?.name) ? "" : session.adharDetails?.name}</CustomText>
+                  <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text}>{StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_TEXT3}</CustomText>
+                </CustomText>
+                <CustomText>
+                  <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text}>{StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_TEXT4}</CustomText>
+                  <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text} fontFamily={FontFamily.Inter_SemiBold}>{StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_TEXT5}</CustomText>
+                  <CustomText marginBottom={20} fontSize={Font_Size.SIZE_16} lineHeight={Line_Height.HEIGHT_24} color={Colors.NEW_GREY_800.text}>{StringsOfLanguages.CID.CID_PAN_ADHAR_MATCH_TEXT6}</CustomText>
+                </CustomText>
+              </View>
+            </ComponentContainer>
+          }
+        />
+      }
+      {/*future reference*/}
       {/* {
         <Popup
           animationIn="bounceIn"
@@ -2416,7 +2421,7 @@ const PersonalDetail = (props) => {
           buttonPress={() => {
             personalcontextData.isPanPopupShow =
               !personalcontextData.isPanPopupShow;
-              setPopupType(true);
+            setPopupType(true);
             setSession({ ...session, prevSessionData });
           }}
           component={
@@ -2470,8 +2475,8 @@ const PersonalDetail = (props) => {
 
       {communicationAddress ? (
         <PopupCommunicationAddress
-        testID_cancel={"testCancel6"}
-        testID_submit={"testSubmit6"}
+          testID_cancel={"testCancel6"}
+          testID_submit={"testSubmit6"}
           popupType={PersonalDetailsConstants.POPUPTYPE.COMMUNICATION_ADDRESS}
           animationIn="bounceIn"
           popupIcon={location}
@@ -2498,8 +2503,8 @@ const PersonalDetail = (props) => {
       ) : null}
       {nomineeCommunicationAddress ? (
         <PopupCommunicationAddress
-        testID_cancel={"testCancel7"}
-        testID_submit={"testSubmit7"}
+          testID_cancel={"testCancel7"}
+          testID_submit={"testSubmit7"}
           popupType={PersonalDetailsConstants.POPUPTYPE.COMMUNICATION_ADDRESS}
           animationIn="bounceIn"
           popupIcon={location}
@@ -2526,8 +2531,8 @@ const PersonalDetail = (props) => {
       ) : null}
       {guardianCommunicationAddress ? (
         <PopupCommunicationAddress
-        testID_cancel={"testCancel8"}
-        testID_submit={"testSubmit8"}
+          testID_cancel={"testCancel8"}
+          testID_submit={"testSubmit8"}
           popupType={PersonalDetailsConstants.POPUPTYPE.COMMUNICATION_ADDRESS}
           animationIn="bounceIn"
           popupIcon={location}
@@ -2552,11 +2557,11 @@ const PersonalDetail = (props) => {
           error_text={StringsOfLanguages.PERSONAL_DETAIL.VALIDATION_FAILED}
         />
       ) : null}
-            {<ErrorPopup
-      popUpshow={isUnkownError} 
-      message={errorMsg}
-      callBack={()=>setIsUnkownError(false)}
-      btnText={StringsOfLanguages.COMMON.SESSION_ALERT_OK}
+      {<ErrorPopup
+        popUpshow={isUnkownError}
+        message={errorMsg}
+        callBack={() => setIsUnkownError(false)}
+        btnText={StringsOfLanguages.COMMON.SESSION_ALERT_OK}
       ></ErrorPopup>}
     </View>
   );

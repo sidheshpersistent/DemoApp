@@ -1,4 +1,4 @@
-import React, { useEffect, useRef , useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import {
   View,
@@ -22,7 +22,7 @@ import {
   verify_card,
 } from "../../../Assets/Images";
 
-import { Checkbox } from "@idfc/ccl-mobile/lib/module/v2";
+// import { Checkbox } from "@idfc/ccl-mobile/lib/module/v2";
 import { CustomText, PopupEditBranch } from "../../../Components";
 import {
   Colors,
@@ -60,10 +60,10 @@ import {
 import ErrorPopup from "../../../Components/ErrorPopup";
 
 const BankingPreferences = (props) => {
-  const { next, prev, navigation, childFunc, loading,resetFunc } = props;
+  const { next, prev, navigation, childFunc, loading, resetFunc } = props;
   const { session, setSession } = useSession();
-  const [isUnkownError,setIsUnkownError] = useState(false);
-  const [errorMsg,setErrorMsg] = useState("");
+  const [isUnkownError, setIsUnkownError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
   const {
     Success,
     verifyKitData,
@@ -92,7 +92,7 @@ const BankingPreferences = (props) => {
   const totalField = useRef(0);
   useEffect(() => {
     childFunc.current = callSubmitApi;
-    resetFunc.current=resetfunction
+    resetFunc.current = resetfunction
   }, []);
 
   useEffect(() => {
@@ -121,15 +121,15 @@ const BankingPreferences = (props) => {
       clearTimeout(timeOut);
     };
   }, []);
-  useEffect(()=>{
-    prevSession.progressLoader=prevSession.progressLoader+1
-    setSession({...session,prevSession})
-  },[])
-  
-  const resetfunction=()=>{
-    
-    prevSession.customerProfile=customerProfileReset
-    setSession({...session,prevSession})
+  useEffect(() => {
+    prevSession.progressLoader = prevSession.progressLoader + 1
+    setSession({ ...session, prevSession })
+  }, [])
+
+  const resetfunction = () => {
+
+    prevSession.customerProfile = customerProfileReset
+    setSession({ ...session, prevSession })
   }
   const totalFieldToFillInstant = () => {
     totalField.current = 2;
@@ -191,7 +191,7 @@ const BankingPreferences = (props) => {
   };
 
   function callSubmitApi() {
-    submitBankingPreferences(false);
+    // submitBankingPreferences(false);
   }
 
   const getPersonalizedBankingRequest = (isNext) => {
@@ -231,49 +231,50 @@ const BankingPreferences = (props) => {
     return encryptedDataValue(JSON.stringify(request));
   };
   const submitBankingPreferences = async (isNext, isPrev) => {
-    loading(true);
-    let agentInfo = await AsyncStorageUtils.getObjectItem(LocalDB.agentInfo);
-    let request = {
-      userId: prevSession.agentDetails.userId,
-      milestone: Milestone.BANKING_DETAILS,
-      agentId: agentInfo?.email,
-      journeyPercentage: session.progressPercent,
-      bankingDetails:
-        activeIndex == 0
-          ? getPersonalizedBankingRequest(isNext)
-          : getInstantBankingRequest(isNext),
-    };
-    let header={
-      appName: session.accountType,
-      mobileNumber:""
-    }
-    ConsoleLogHelper.log("final request banking: ", JSON.stringify(request));
-    NetworkManager.IDFCNetworkPut(
-      Endpoints.saveCustomerDetails,
-      request,
-      header,
-      (response,message) => {
-        loading(false);
-        ConsoleLogHelper.log("save api response banking :", response);
-        if (response?.status == CommonConstant.SUCCESS) {
-          if (isNext) {
-            next();
-          } else if (isPrev) {
-            prev();
-          } else {
-            navigation.navigate(NavigationUrl.drawerId, {
-              screen: NavigationUrl.dashboardId,
-            });
-          }
-        } else if (response == CommonConstant.INTERNALSERVERERROR) {
-          setErrorMsg(message);
-         setIsUnkownError(true);
-        }else{
-          setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
-          setIsUnkownError(true);
-        }
-      }
-    );
+    next();
+    // loading(true);
+    // let agentInfo = await AsyncStorageUtils.getObjectItem(LocalDB.agentInfo);
+    // let request = {
+    //   userId: prevSession.agentDetails.userId,
+    //   milestone: Milestone.BANKING_DETAILS,
+    //   agentId: agentInfo?.email,
+    //   journeyPercentage: session.progressPercent,
+    //   bankingDetails:
+    //     activeIndex == 0
+    //       ? getPersonalizedBankingRequest(isNext)
+    //       : getInstantBankingRequest(isNext),
+    // };
+    // let header = {
+    //   appName: session.accountType,
+    //   mobileNumber: ""
+    // }
+    // ConsoleLogHelper.log("final request banking: ", JSON.stringify(request));
+    // NetworkManager.IDFCNetworkPut(
+    //   Endpoints.saveCustomerDetails,
+    //   request,
+    //   header,
+    //   (response, message) => {
+    //     loading(false);
+    //     ConsoleLogHelper.log("save api response banking :", response);
+    //     if (response?.status == CommonConstant.SUCCESS) {
+    //       if (isNext) {
+    //         next();
+    //       } else if (isPrev) {
+    //         prev();
+    //       } else {
+    //         navigation.navigate(NavigationUrl.drawerId, {
+    //           screen: NavigationUrl.dashboardId,
+    //         });
+    //       }
+    //     } else if (response == CommonConstant.INTERNALSERVERERROR) {
+    //       setErrorMsg(message);
+    //       setIsUnkownError(true);
+    //     } else {
+    //       setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
+    //       setIsUnkownError(true);
+    //     }
+    //   }
+    // );
   };
   const forwardArrowPress = () => {
     if (activeIndex == 0) {
@@ -302,17 +303,18 @@ const BankingPreferences = (props) => {
     }
   };
   const buttonActive = () => {
+    return true; //temporary added
     if (activeIndex == 1) {
       if (Success) {
-       
-       
-          return true;
-       
+
+
+        return true;
+
       } else {
         if (inputAccountNumber != "" && inputAccountNumber.length > 10) {
-          
-            return true;
-          
+
+          return true;
+
         } else {
           return false;
         }
@@ -486,8 +488,8 @@ const BankingPreferences = (props) => {
           </AlignedContainer>
         )}
         {session.accountType == Account_Type.ASSISTED_CS &&
-        activeIndex == 1 &&
-        Success ? (
+          activeIndex == 1 &&
+          Success ? (
           <FullLengthBox>
             <AlignedContainer>
               <MarginBox>
@@ -532,7 +534,7 @@ const BankingPreferences = (props) => {
         <FullLengthBox>
           <AlignedContainer>
             <MarginBox>
-              <Checkbox
+              {/* <Checkbox
                 testID={TestIds.bp_terms_aggreed_checkbox}
                 style={{
                   width: "85%",
@@ -590,7 +592,7 @@ const BankingPreferences = (props) => {
                     </CustomText>
                   )}
                 </CustomText>
-              </Checkbox>
+              </Checkbox> */}
             </MarginBox>
           </AlignedContainer>
         </FullLengthBox>
@@ -598,7 +600,7 @@ const BankingPreferences = (props) => {
           <FullLengthBox style={{ marginTop: -10 }}>
             <AlignedContainer>
               <MarginBox>
-                <Checkbox
+                {/* <Checkbox
                   testID={TestIds.bp_booster_account_checkbox}
                   style={{
                     width: "85%",
@@ -625,7 +627,7 @@ const BankingPreferences = (props) => {
                       {StringsOfLanguages.BANKING_PREFERNCE.SALARY_BOOSTER}
                     </CustomText>
                   </CustomText>
-                </Checkbox>
+                </Checkbox> */}
               </MarginBox>
             </AlignedContainer>
           </FullLengthBox>
@@ -684,11 +686,11 @@ const BankingPreferences = (props) => {
           }}
         />
       }
-                        {<ErrorPopup
-      popUpshow={isUnkownError} 
-      message={errorMsg}
-      callBack={()=>setIsUnkownError(false)}
-      btnText={StringsOfLanguages.COMMON.SESSION_ALERT_OK}
+      {<ErrorPopup
+        popUpshow={isUnkownError}
+        message={errorMsg}
+        callBack={() => setIsUnkownError(false)}
+        btnText={StringsOfLanguages.COMMON.SESSION_ALERT_OK}
       ></ErrorPopup>}
     </View>
   );

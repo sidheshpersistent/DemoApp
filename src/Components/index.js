@@ -9,7 +9,7 @@ import CustomPasswordTextInput from './CustomPasswordTextInput/CustomPasswordTex
 import BackArrowHeader from './HeaderComponent/BackArrowHeader';
 import Popup from './Popup/Popup';
 // import PopupCommunicationAddress from "./Popup/PopupCommunicationAddress";
-// import PopupEditBranch from "./Popup/PopupEditBranch";
+import PopupEditBranch from "./Popup/PopupEditBranch";
 // import PopUpExistingCustomer from "./Popup/PopUpExistingCustomer";
 // import PopupTextInput from "./Popup/PopupTextInput";
 import ProfileHeaderContainer from './ProfileHeaderContainer/ProfileHeaderContainer';
@@ -42,7 +42,7 @@ export {
   Popup,
   // TimeLineView,PopupTextInput,
   // PopupCommunicationAddress,
-  // PopupEditBranch,
+  PopupEditBranch,
   // PopUpExistingCustomer,
   // CustomSearchInput,
   CustomSearchInputCompany,

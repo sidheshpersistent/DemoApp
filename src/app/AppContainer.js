@@ -11,7 +11,7 @@ import LoginScreen from '../Screens/AgentLogin_oAuth';
 //hi
 import Dashboard from '../Screens/Dashboard';
 import CustomerIdentificationDetails from '../Screens/CustomerIdentificationDetails';
-// import CustomerProfile from "../Screens/CustomerProfile";
+import CustomerProfile from "../Screens/CustomerProfile";
 // import ENachMandate from "../Screens/ENachMandate";
 // import PreApprovedOffers from "../Screens/PreApprovedOffers";
 // import AccountOnHold from "../Screens/AccountOnHold";
@@ -112,11 +112,11 @@ const AppContainer = ({childFunc}) => {
             options={{headerShown: false}}
           />
 
-          {/* <Stack.Screen
+          <Stack.Screen
             name={NavigationUrl.CustomerProfileId}
             component={CustomerProfile}
             options={{headerShown: false}}
-          /> */}
+          />
 
           {/* <Stack.Screen
             name={NavigationUrl.ENachMandateId}

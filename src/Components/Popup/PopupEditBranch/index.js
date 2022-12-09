@@ -50,13 +50,13 @@ const PopupEditBranch = props => {
     getBranchList();
   }, []);
 
-  function getBranchList (){
+  function getBranchList() {
     let header = {
       appName: Account_Type.ASSISTED_SA,
-      mobileNumber : ""
+      mobileNumber: ""
     }
     NetworkManager.IDFCNetworkGet(
-      `${Endpoints.getBranchList}${initSearch}${urlEndPoint}`,header,
+      `${Endpoints.getBranchList}${initSearch}${urlEndPoint}`, header,
       (response) => {
         let data = response;
         if (data && data.length > 0) {
@@ -98,7 +98,7 @@ const PopupEditBranch = props => {
     if (text && text.length > 2) {
       let header = {
         appName: Account_Type.ASSISTED_SA,
-        mobileNumber : ""
+        mobileNumber: ""
       }
       NetworkManager.IDFCNetworkGet(
         `${Endpoints.getBranchList}${text}${urlEndPoint}`, header,

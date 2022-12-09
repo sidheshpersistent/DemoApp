@@ -12,7 +12,7 @@ import {
 import ProductCard from "../../Components/ProductCard";
 import { Account_Type, CPD_CONSTANTS, TestIds, timeoutConst, CommonConstant } from "../../../../Utils/Constants";
 import { Card, CustomSearchInputCompany, CustomText, Popup } from "../../../../Components";
-import { Checkbox, RadioButton, Select } from "@idfc/ccl-mobile/lib/module/v2";
+// import { Checkbox, RadioButton, Select } from "@idfc/ccl-mobile/lib/module/v2";
 import { decryptURL } from "../../../../Utils/CryptoHelper";
 import {
   Colors,
@@ -268,7 +268,7 @@ const PersonalizedBanking = () => {
           {session.accountType != Account_Type.ASSISTED_CS ? (
             <Card style={{ elevation: 4 }}>
               {/* To use dropdown input below */}
-              <Select
+              {/* <Select
                 style={{ height: 70 }}
                 testID={TestIds.ps_select_product_dropdown}
                 defaultSelectedItem={SAProductList && SAProductList.find(obj => obj.displayText === productSelected.displayText)}
@@ -280,7 +280,7 @@ const PersonalizedBanking = () => {
                 }}
                 labelStyle={{ color: Colors.NEW_GREY_800.text }}
                 iconColor={Colors.MAROON_DARK}
-              />
+              /> */}
             </Card>
           ) : (
             <View >
@@ -298,7 +298,7 @@ const PersonalizedBanking = () => {
                       }}
                     >
                       <RadioRecommendBox>
-                        <RadioButton
+                        {/* <RadioButton
                           testID={TestIds.ps_product_radio}
                           style={{ paddingVertical: 0 }}
                           value={`Radio ${index}`}
@@ -306,7 +306,7 @@ const PersonalizedBanking = () => {
                           id="1"
                           checked={productRadio == `Radio ${index}`}
                           onChange={() => productRadioHandler(item, index)}
-                        />
+                        /> */}
                         {item.recommended ? (
                           <RecommendedBox>
                             <CustomText
@@ -517,7 +517,7 @@ const PersonalizedBanking = () => {
               >
                 <Image source={mail_linear} style={CheckBookImageStyle} />
 
-                <Checkbox
+                {/* <Checkbox
                   testID={TestIds.ps_checkbook_checkbox}
                   style={{ width: 24, height: 24, marginRight: 10 }}
                   inputStyle={{
@@ -530,7 +530,7 @@ const PersonalizedBanking = () => {
                       !bankingPreferenceContext.checkbookOpted;
                     setSession({ ...session, prevSession });
                   }}
-                />
+                /> */}
               </CheckbookContainer>
               <CustomText
                 testID={TestIds.ps_checkbook}
@@ -557,7 +557,7 @@ const PersonalizedBanking = () => {
                   style={debitImageStyle}
                 />
 
-                <Checkbox
+                {/* <Checkbox
                   testID={TestIds.ps_debitcard_checkbox}
                   style={debitCheckboxStyle}
                   inputStyle={{
@@ -571,7 +571,7 @@ const PersonalizedBanking = () => {
                     setSession({ ...session, prevSession });
 
                   }}
-                />
+                /> */}
               </CheckbookContainer>
               <CustomText
                 testID={TestIds.ps_debitcard}

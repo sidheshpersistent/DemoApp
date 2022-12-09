@@ -1,5 +1,5 @@
 
-import { Checkbox, Select } from "@idfc/ccl-mobile/lib/module/v2";
+// import { Checkbox, Select } from "@idfc/ccl-mobile/lib/module/v2";
 import React, { useEffect, useRef, useState } from "react";
 import { View, Text, Image, TouchableOpacity, } from "react-native";
 import ImagePicker from "react-native-image-crop-picker";
@@ -648,7 +648,7 @@ const CustomerConsent = (props) => {
       <FullLengthBox>
         <AlignedContainer>
           <CheckboxView>
-            <Checkbox
+            {/* <Checkbox
               testID={TestIds.cc_indian_citizen_checkbox}
               labelStyle={{ marginLeft: 12 }}
               checked={isIndianCitizen}
@@ -656,7 +656,7 @@ const CustomerConsent = (props) => {
                 consentContextData.isIndianCitizen = !isIndianCitizen;
                 setSession({ ...session, prevSessionData });
               }}
-            ></Checkbox>
+            ></Checkbox> */}
             <CustomText
               testID={TestIds.cc_indian_citizen_text}
               fontSize={Font_Size.SIZE_14}
@@ -676,7 +676,7 @@ const CustomerConsent = (props) => {
       {!isIndianCitizen ? (
         <AlignedContainer>
           <CardMargin>
-            <Select
+            {/* <Select
               testID={TestIds.cc_tax_country_select}
               defaultSelectedItem={country}
               label={
@@ -692,7 +692,7 @@ const CustomerConsent = (props) => {
               }}
               labelStyle={{ color: Colors.NEW_GREY_800.text }}
               iconColor={Colors.MAROON_DARK}
-            />
+            /> */}
           </CardMargin>
 
           <CardMargin>
@@ -757,7 +757,7 @@ const CustomerConsent = (props) => {
       <FullLengthBox>
         <AlignedContainer>
           <CheckboxView>
-            <Checkbox
+            {/* <Checkbox
               testID={TestIds.cc_politically_exposed_checbox}
               checked={!isPoliticalyExposed}
               labelStyle={{ marginLeft: 12 }}
@@ -765,7 +765,7 @@ const CustomerConsent = (props) => {
                 consentContextData.isPoliticalyExposed = !isPoliticalyExposed;
                 setSession({ ...session, prevSessionData });
               }}
-            ></Checkbox>
+            ></Checkbox> */}
             <CustomText
               testID={TestIds.cc_politically_exposed_text}
               fontSize={Font_Size.SIZE_14}
@@ -790,7 +790,7 @@ const CustomerConsent = (props) => {
       <FullLengthBox>
         <AlignedContainer>
           <CheckboxView>
-            <Checkbox
+            {/* <Checkbox
               testID={TestIds.cc_terms_and_conditions_checkbox}
               labelStyle={{ marginLeft: 12 }}
               checked={isTermsAgreed}
@@ -798,7 +798,7 @@ const CustomerConsent = (props) => {
                 consentContextData.isTermsAgreed = !isTermsAgreed;
                 setSession({ ...session, prevSessionData });
               }}
-            ></Checkbox>
+            ></Checkbox> */}
             <CustomText
               testID={TestIds.cc_i_agree_text}
               fontSize={Font_Size.SIZE_14}
@@ -847,7 +847,7 @@ const CustomerConsent = (props) => {
       <FullLengthBox>
         <AlignedContainer>
           <CheckboxView>
-            <Checkbox
+            {/* <Checkbox
               testID={TestIds.cc_consent_checkbox}
               labelStyle={{ marginLeft: 12 }}
               checked={isConsentGiven}
@@ -855,7 +855,7 @@ const CustomerConsent = (props) => {
                 consentContextData.isConsentGiven = !isConsentGiven;
                 setSession({ ...session, prevSessionData });
               }}
-            ></Checkbox>
+            ></Checkbox> */}
             <CustomText
               testID={TestIds.cc_consent_text}
               fontSize={Font_Size.SIZE_14}
