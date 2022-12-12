@@ -1259,5 +1259,6 @@
       "value": "20101",
       "crmUserId": null
     }
-  ]
+  ],
+  "getNomineeRelation":[{"id":1,"relation":"Brother"},{"id":2,"relation":"Daughter"},{"id":3,"relation":"Father"},{"id":4,"relation":"Husband"},{"id":5,"relation":"Mother"},{"id":6,"relation":"Other"},{"id":7,"relation":"Sister"},{"id":8,"relation":"Son"},{"id":9,"relation":"Wife"}]
 }

@@ -68,6 +68,7 @@ const Endpoints = {
   getCompanyList: `getCompanyList`,
   getCompanyRank: `getCompanyRank`,
   saveCustomerDetails: `saveCustomerDetails`,
+  getNomineeRelation: `getNomineeRelation`,
 
   getAgentDasboardDetails: `getAgentDashboardDetails`,
   getPanValidationData: `pan/verify`,
@@ -84,7 +85,6 @@ const Endpoints = {
   customerDedupe: `validate/user`,
   checkMobileDedupe: `mobile/dedupe`,
   checkEmailDedupe: `${firebaseUrl}/CID/emailDedupe/`,
-  getNomineeRelation: `nominee/relation`,
   getCityStateByPin: `cityAndStateByPin/`,
   getProduct: `product`,
   getCountryDetails: `${firebaseUrl}/PersonalDetails/countryList.json`,
