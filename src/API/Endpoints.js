@@ -69,6 +69,7 @@ const Endpoints = {
   getCompanyRank: `getCompanyRank`,
   saveCustomerDetails: `saveCustomerDetails`,
   getNomineeRelation: `getNomineeRelation`,
+  getOccupationDetails: `getOccupationDetails`,
 
   getAgentDasboardDetails: `getAgentDashboardDetails`,
   getPanValidationData: `pan/verify`,
@@ -153,7 +154,6 @@ const Endpoints = {
   // progress bar percent sve api
   // getProgressPercent:`user/info`,
   emailVerify: `karza/emailVerify`,
-  getOccupationDetails: `occupation`,
   accountOpening: `account`,
   saveBankUseSection: `createBankUseSection`,
   getPaymentDetails: `getPaymentDetails/`,

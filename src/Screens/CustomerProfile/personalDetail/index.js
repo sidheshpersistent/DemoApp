@@ -564,23 +564,24 @@ const PersonalDetail = (props) => {
       mobileNumber: ""
     }
     NetworkManager.IDFCNetworkGet(Endpoints.getNomineeRelation, header, (response) => {
-      if (response?.status == CommonConstant.SUCCESS) {
-        const decrptedData = decryptDataValue(response?.data);
-        let nomineeRelationlist = [];
-        for (let i in decrptedData) {
-          let obj = {
-            id: decrptedData[i]?.id,
-            displayText: decrptedData[i]?.relation,
-            value: decrptedData[i]?.relation,
-          };
-          nomineeRelationlist.push(obj);
-        }
-        personalcontextData.nomineeRelationData = nomineeRelationlist;
-        setSession({ ...session, prevSessionData });
-      } else {
-        setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
-        setIsUnkownError(true);
+      // if (response?.status == CommonConstant.SUCCESS) {
+      // const decrptedData = decryptDataValue(response?.data);
+      const decrptedData = response;
+      let nomineeRelationlist = [];
+      for (let i in decrptedData) {
+        let obj = {
+          id: decrptedData[i]?.id,
+          displayText: decrptedData[i]?.relation,
+          value: decrptedData[i]?.relation,
+        };
+        nomineeRelationlist.push(obj);
       }
+      personalcontextData.nomineeRelationData = nomineeRelationlist;
+      setSession({ ...session, prevSessionData });
+      // } else {
+      //   setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
+      //   setIsUnkownError(true);
+      // }
     });
   }
   function getAllCityList(city) {
