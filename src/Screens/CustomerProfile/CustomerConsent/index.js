@@ -351,6 +351,7 @@ const CustomerConsent = (props) => {
   };
 
   const buttonActive = () => {
+    return true;
     if (
       isTermsAgreed &&
       isConsentGiven &&
