@@ -1260,5 +1260,194 @@
       "crmUserId": null
     }
   ],
-  "getNomineeRelation":[{"id":1,"relation":"Brother"},{"id":2,"relation":"Daughter"},{"id":3,"relation":"Father"},{"id":4,"relation":"Husband"},{"id":5,"relation":"Mother"},{"id":6,"relation":"Other"},{"id":7,"relation":"Sister"},{"id":8,"relation":"Son"},{"id":9,"relation":"Wife"}]
+  "getNomineeRelation":[{"id":1,"relation":"Brother"},{"id":2,"relation":"Daughter"},{"id":3,"relation":"Father"},{"id":4,"relation":"Husband"},{"id":5,"relation":"Mother"},{"id":6,"relation":"Other"},{"id":7,"relation":"Sister"},{"id":8,"relation":"Son"},{"id":9,"relation":"Wife"}],
+  "getOccupationDetails":{
+    "data": [
+        {
+            "occupationId": 1,
+            "type": "Salaried",
+            "incomeSource": "Salary",
+            "cbsCode": "Salaried",
+            "profitCenterCode": "55",
+            "sourceOfIncome": [
+                {
+                    "id": 1,
+                    "source": "Salary"
+                },
+                {
+                    "id": 2,
+                    "source": "Family wealth"
+                },
+                {
+                    "id": 3,
+                    "source": "Savings"
+                }
+            ]
+        },
+        {
+            "occupationId": 2,
+            "type": "Sole Proprietorship",
+            "incomeSource": "Business",
+            "cbsCode": "Self Employed Business",
+            "profitCenterCode": "56",
+            "sourceOfIncome": [
+                {
+                    "id": 4,
+                    "source": "Business"
+                },
+                {
+                    "id": 5,
+                    "source": "Investments"
+                },
+                {
+                    "id": 6,
+                    "source": "Professional fees"
+                },
+                {
+                    "id": 7,
+                    "source": "Savings"
+                }
+            ]
+        },
+        {
+            "occupationId": 3,
+            "type": "Partnership/Company",
+            "incomeSource": "Business",
+            "cbsCode": "Self Employed Business",
+            "profitCenterCode": "53",
+            "sourceOfIncome": [
+                {
+                    "id": 8,
+                    "source": "Business"
+                },
+                {
+                    "id": 9,
+                    "source": "Investments"
+                },
+                {
+                    "id": 10,
+                    "source": "Professional fees"
+                },
+                {
+                    "id": 11,
+                    "source": "Savings"
+                }
+            ]
+        },
+        {
+            "occupationId": 4,
+            "type": "Self Employed Professional",
+            "incomeSource": "Professional Fees",
+            "cbsCode": "Self Employed Professional",
+            "profitCenterCode": "53",
+            "sourceOfIncome": [
+                {
+                    "id": 12,
+                    "source": "Business"
+                },
+                {
+                    "id": 13,
+                    "source": "Investments"
+                },
+                {
+                    "id": 14,
+                    "source": "Professional fees"
+                },
+                {
+                    "id": 15,
+                    "source": "Savings"
+                }
+            ]
+        },
+        {
+            "occupationId": 5,
+            "type": "Homemaker",
+            "incomeSource": "Savings",
+            "cbsCode": "Homemaker",
+            "profitCenterCode": "55",
+            "sourceOfIncome": [
+                {
+                    "id": 16,
+                    "source": "Salary"
+                },
+                {
+                    "id": 17,
+                    "source": "Family wealth"
+                },
+                {
+                    "id": 18,
+                    "source": "Savings"
+                }
+            ]
+        },
+        {
+            "occupationId": 6,
+            "type": "Student",
+            "incomeSource": "Savings",
+            "cbsCode": "Student",
+            "profitCenterCode": "55",
+            "sourceOfIncome": [
+                {
+                    "id": 19,
+                    "source": "Salary"
+                },
+                {
+                    "id": 20,
+                    "source": "Family wealth"
+                },
+                {
+                    "id": 21,
+                    "source": "Savings"
+                }
+            ]
+        },
+        {
+            "occupationId": 7,
+            "type": "Farmer",
+            "incomeSource": "Agriculture",
+            "cbsCode": "Farmer",
+            "profitCenterCode": "55",
+            "sourceOfIncome": [
+                {
+                    "id": 22,
+                    "source": "Agriculture"
+                },
+                {
+                    "id": 23,
+                    "source": "Salary"
+                },
+                {
+                    "id": 24,
+                    "source": "Family wealth"
+                },
+                {
+                    "id": 25,
+                    "source": "Savings"
+                }
+            ]
+        },
+        {
+            "occupationId": 8,
+            "type": "Retired",
+            "incomeSource": "Savings",
+            "cbsCode": "Retired",
+            "profitCenterCode": "55",
+            "sourceOfIncome": [
+                {
+                    "id": 26,
+                    "source": "Salary"
+                },
+                {
+                    "id": 27,
+                    "source": "Family wealth"
+                },
+                {
+                    "id": 28,
+                    "source": "Savings"
+                }
+            ]
+        }
+    ],
+    "status": "SUCCESS"
+}
 }
