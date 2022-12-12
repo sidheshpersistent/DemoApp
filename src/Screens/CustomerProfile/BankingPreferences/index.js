@@ -644,7 +644,10 @@ const BankingPreferences = (props) => {
         >
           <BackArrowButton
             testID={TestIds.bp_back_arrow}
-            onPress={() => backArrowPress()}
+            onPress={() => {
+              prev()
+              // backArrowPress()
+            }}
           >
             <Image source={arrowBack} style={RightArrowImage} />
           </BackArrowButton>

@@ -28,7 +28,7 @@ import { cc_dropDown_Data } from "../../ApplyNowForm/constants";
 import { isValidTIN } from "../../../Utils/ValidationUtils";
 import { StringsOfLanguages } from "../../../Localization";
 import { Milestone, Save_Status, CommonConstant, Account_Type, InputStyleError, WebViewURL, ImageCaptureType, timeoutConst, AdharPanMatch, LocalDB, customerProfileReset } from "../../../Utils/Constants";
-import { encryptedDataValue,decryptDataValue } from "../../../Utils/CryptoHelper";
+import { encryptedDataValue, decryptDataValue } from "../../../Utils/CryptoHelper";
 import { Endpoints, NetworkManager } from "../../../API";
 import {
   AlignedContainer,
@@ -57,7 +57,7 @@ import ErrorPopup from "../../../Components/ErrorPopup";
 
 
 const CustomerConsent = (props) => {
-  const { next, prev, loading, childFunc,resetFunc } = props;
+  const { next, prev, loading, childFunc, resetFunc } = props;
   const { session, setSession } = useSession();
   const [errorPopup, setErrorPopup] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
@@ -75,7 +75,7 @@ const CustomerConsent = (props) => {
     employmentProofImage, // this param will have employment proof image data
     isErrorForeignTIN,
   } = session.customerProfile.customerConsent;
-  const {panDetails} = session;
+  const { panDetails } = session;
   const prevSessionData = session;
   const consentContextData = prevSessionData.customerProfile.customerConsent;
   const totalField = useRef(0);
@@ -83,21 +83,21 @@ const CustomerConsent = (props) => {
 
   useEffect(() => {
     childFunc.current = callSubmitApi;
-    resetFunc.current=resetfunction
-    if(panDetails?.panAdharStatus !== "" && panDetails?.panAdharStatus){
-      if(panDetails?.panAdharStatus == AdharPanMatch.COMPLETE_MATCHED){
+    resetFunc.current = resetfunction
+    if (panDetails?.panAdharStatus !== "" && panDetails?.panAdharStatus) {
+      if (panDetails?.panAdharStatus == AdharPanMatch.COMPLETE_MATCHED) {
         setIsPanImageNeeded(false);
-      }else{
+      } else {
         setIsPanImageNeeded(true);
       }
-    }else{
+    } else {
       setIsPanImageNeeded(true);
     }
   }, []);
 
   useEffect(() => {
-    session.accountType == Account_Type.ASSISTED_SA?
-      totalFieldToFill():totalFieldToFill_CS()
+    session.accountType == Account_Type.ASSISTED_SA ?
+      totalFieldToFill() : totalFieldToFill_CS()
   }, [
     isTermsAgreed,
     isIndianCitizen,
@@ -111,29 +111,29 @@ const CustomerConsent = (props) => {
   ]);
 
 
-  useEffect(()=>{
-    const timeOut=setTimeout(() => {
-      session.accountType == Account_Type.ASSISTED_SA?
-      totalFieldToFill():totalFieldToFill_CS()
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      session.accountType == Account_Type.ASSISTED_SA ?
+        totalFieldToFill() : totalFieldToFill_CS()
     }, timeoutConst.VALUE_8000);
-    return ()=>{
+    return () => {
       clearTimeout(timeOut)
     }
-  },[])
+  }, [])
 
-  useEffect(()=>{
-    prevSessionData.progressLoader=prevSessionData.progressLoader+1
-    setSession({...session,prevSessionData})
-  },[])
+  useEffect(() => {
+    prevSessionData.progressLoader = prevSessionData.progressLoader + 1
+    setSession({ ...session, prevSessionData })
+  }, [])
 
   function callSubmitApi() {
     submitCustomerConcents(false);
   }
-  const resetfunction=()=>{
-    prevSessionData.customerProfile=customerProfileReset
-    setSession({...session,prevSessionData})
+  const resetfunction = () => {
+    prevSessionData.customerProfile = customerProfileReset
+    setSession({ ...session, prevSessionData })
   }
-  function totalFieldToFill_CS(){
+  function totalFieldToFill_CS() {
     totalField.current = 3;
     if (!isIndianCitizen) {
       totalField.current = totalField.current + 3;
@@ -141,29 +141,29 @@ const CustomerConsent = (props) => {
     if (isEmploymentProofNeeded) {
       totalField.current = totalField.current + 1;
     }
-    if(isPanImageNeeded){
+    if (isPanImageNeeded) {
       totalField.current = totalField.current + 1;
     }
     calcPercentValue_CS();
   }
-  function calcPercentValue_CS(){
-    
+  function calcPercentValue_CS() {
+
     const eachFieldValue = 34 / totalField.current;
     let total = 66;
     if (panImage) {
       total = total + eachFieldValue;
-      
+
     }
     if (employmentProofImage) {
       total = total + eachFieldValue;
-      
+
     }
     if (signatureImage) {
       //TODO: this addtion is coming 86.39999999999....
       //79.6(total) + 6.8(eachFieldValue);
-      total =total + eachFieldValue;
-     
-      
+      total = total + eachFieldValue;
+
+
     }
     if (!isIndianCitizen) {
       if (foreignTin) {
@@ -184,8 +184,8 @@ const CustomerConsent = (props) => {
       total = total + eachFieldValue;
 
     }
-    total>99.0?
-    calculateProgressValue(Math.trunc(100)):calculateProgressValue(Math.trunc(total))
+    total > 99.0 ?
+      calculateProgressValue(Math.trunc(100)) : calculateProgressValue(Math.trunc(total))
   }
 
   function totalFieldToFill() {
@@ -193,13 +193,13 @@ const CustomerConsent = (props) => {
     if (!isIndianCitizen) {
       totalField.current = totalField.current + 3;
     }
-    if(isPanImageNeeded){
+    if (isPanImageNeeded) {
       totalField.current = totalField.current + 1;
     }
     calcPercentValue();
   };
-  
-  function calcPercentValue (){
+
+  function calcPercentValue() {
     const eachFieldValue = 34 / totalField.current;
     let total = 66;
     if (panImage) {
@@ -226,10 +226,10 @@ const CustomerConsent = (props) => {
     if (isConsentGiven) {
       total = total + eachFieldValue;
     }
-    total>99.0?
-    calculateProgressValue(Math.trunc(100)):calculateProgressValue(Math.trunc(total))
+    total > 99.0 ?
+      calculateProgressValue(Math.trunc(100)) : calculateProgressValue(Math.trunc(total))
   };
-  function calculateProgressValue  (value) {
+  function calculateProgressValue(value) {
     setSession({ ...session, progressPercent: value });
   };
 
@@ -250,7 +250,7 @@ const CustomerConsent = (props) => {
     return encryptedDataValue(JSON.stringify(request));
   };
 
-  const callAccOpening = ()=>{
+  const callAccOpening = () => {
     loading(true);
     let request = {
       userId: prevSessionData.agentDetails.userId,
@@ -258,30 +258,30 @@ const CustomerConsent = (props) => {
     };
     let header = {
       appName: session.accountType,
-      mobileNumber:""
+      mobileNumber: ""
     }
-    console.log("ayush id",request.userId)
-  NetworkManager.IDFCNetworkPost(Endpoints.accountOpening, request, header,response => {
-    console.log("accOpening res : ",response);
-    console.log("accOpening res lead id : ",decryptDataValue(response.assistedAccountDetails));
-    loading(false);
-    return next() // TODO: to remove this line later 
-    if(response && response.status==CommonConstant.SUCCESS){
-      next();
-    }
-   else if(response==null) {
-    setErrorMsg(StringsOfLanguages.COMMON.NO_DATA_ERROR);
-    setErrorPopup(true);
-   }
-   else{
-    if(session.accountType == Account_Type.ASSISTED_CS && response == ""){
-      next();
-    }
-    setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR); 
-    setErrorPopup(true);
-   }
-  });
-}
+    console.log("ayush id", request.userId)
+    NetworkManager.IDFCNetworkPost(Endpoints.accountOpening, request, header, response => {
+      console.log("accOpening res : ", response);
+      console.log("accOpening res lead id : ", decryptDataValue(response.assistedAccountDetails));
+      loading(false);
+      return next() // TODO: to remove this line later 
+      if (response && response.status == CommonConstant.SUCCESS) {
+        next();
+      }
+      else if (response == null) {
+        setErrorMsg(StringsOfLanguages.COMMON.NO_DATA_ERROR);
+        setErrorPopup(true);
+      }
+      else {
+        if (session.accountType == Account_Type.ASSISTED_CS && response == "") {
+          next();
+        }
+        setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
+        setErrorPopup(true);
+      }
+    });
+  }
   const submitCustomerConcents = async (isNext, isPrev) => {
     loading(true);
     let agentInfo = await AsyncStorageUtils.getObjectItem(LocalDB.agentInfo);
@@ -292,22 +292,22 @@ const CustomerConsent = (props) => {
       journeyPercentage: session.progressPercent,
       custConsentDetails: getConsentRequest(isNext),
     };
-    let header={
+    let header = {
       appName: session.accountType,
-      mobileNumber:""
+      mobileNumber: ""
     }
     ConsoleLogHelper.log("final request consent: ", JSON.stringify(request));
     NetworkManager.IDFCNetworkPut(
       Endpoints.saveCustomerDetails,
       request,
       header,
-      (response,message) => {
+      (response, message) => {
         loading(false);
         ConsoleLogHelper.log("save api response consent :", response);
         if (response?.status === CommonConstant.SUCCESS) {
           if (isNext) {
-            callAccOpening();
-            //next();
+            // callAccOpening();
+            next();
           } else if (isPrev) {
             prev();
           } else {
@@ -318,11 +318,11 @@ const CustomerConsent = (props) => {
         } else if (response == CommonConstant.INTERNALSERVERERROR) {
           setErrorMsg(message);
           setErrorPopup(true);
-          
-        }else{
+
+        } else {
           setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
           setErrorPopup(true);
-          
+
         }
       }
     );
@@ -339,11 +339,11 @@ const CustomerConsent = (props) => {
       return false;
     }
   }
-  const checkEmpProofValidation = () =>{
-    if(session.accountType == Account_Type.ASSISTED_SA || !isEmploymentProofNeeded){
-       return true;
+  const checkEmpProofValidation = () => {
+    if (session.accountType == Account_Type.ASSISTED_SA || !isEmploymentProofNeeded) {
+      return true;
     }
-    else if(isEmploymentProofNeeded && employmentProofImage!==""){
+    else if (isEmploymentProofNeeded && employmentProofImage !== "") {
       return true;
     } else {
       return false;
@@ -384,7 +384,7 @@ const CustomerConsent = (props) => {
       enableRotationGesture: true,
       includeBase64: true,
       compressImageQuality: 0.5,
-      compressImageMaxHeight:1000,
+      compressImageMaxHeight: 1000,
       compressImageMaxWidth: 1000
     })
       .then((response) => {
@@ -399,13 +399,13 @@ const CustomerConsent = (props) => {
         if (!response.uri) {
           response.uri = response.path;
         }
-        if(ImageType==ImageCaptureType.SIGNATURE){
+        if (ImageType == ImageCaptureType.SIGNATURE) {
           consentContextData.signatureImage = response;
         }
-        else if(ImageType==ImageCaptureType.PAN){
+        else if (ImageType == ImageCaptureType.PAN) {
           consentContextData.panImage = response;
         }
-        else if(ImageType==ImageCaptureType.EMPLOYEEMENTPROOF){
+        else if (ImageType == ImageCaptureType.EMPLOYEEMENTPROOF) {
           consentContextData.employmentProofImage = response;
         }
         setSession({ ...session, prevSessionData });
@@ -544,7 +544,7 @@ const CustomerConsent = (props) => {
           <CardMargin>
             {panImage == "" ? (
               <TouchableOpacity
-                 testID="Test1"
+                testID="Test1"
                 onPress={() => {
                   captureCamera(ImageCaptureType.PAN);
                 }}
@@ -637,7 +637,7 @@ const CustomerConsent = (props) => {
               <Card style={emptyCardView}>
                 <Image
                   resizeMode="stretch"
-                  source={{uri: `data:${employmentProofImage.mime};base64,${employmentProofImage.data}`}}
+                  source={{ uri: `data:${employmentProofImage.mime};base64,${employmentProofImage.data}` }}
                   style={imageSize}
                 />
               </Card>
@@ -665,11 +665,11 @@ const CustomerConsent = (props) => {
             >
               {StringsOfLanguages.CUSTOMERCONSENT.CC_I_AM_AN_INDIAN_CITIZEN}{" "}
               <CustomText
-              fontSize={Font_Size.SIZE_14}
-              fontFamily={FontFamily.Inter_SemiBold}
-            >
-              {StringsOfLanguages.CUSTOMERCONSENT.CC_I_AM_AN_INDIAN_CITIZEN_BOLD}
-            </CustomText>
+                fontSize={Font_Size.SIZE_14}
+                fontFamily={FontFamily.Inter_SemiBold}
+              >
+                {StringsOfLanguages.CUSTOMERCONSENT.CC_I_AM_AN_INDIAN_CITIZEN_BOLD}
+              </CustomText>
             </CustomText>
           </CheckboxView>
         </AlignedContainer>
@@ -776,13 +776,13 @@ const CustomerConsent = (props) => {
             >
               {StringsOfLanguages.CUSTOMERCONSENT.CC_I_AM_NOT_POLITICALLY}{" "}
               <CustomText
-              fontSize={Font_Size.SIZE_14}
-              fontFamily={FontFamily.Inter_SemiBold}
-              lineHeight={20}
-              letterSpacing={-0.5}
-            >
-              {StringsOfLanguages.CUSTOMERCONSENT.CC_I_AM_NOT_POLITICALLY_BOLD}
-            </CustomText>
+                fontSize={Font_Size.SIZE_14}
+                fontFamily={FontFamily.Inter_SemiBold}
+                lineHeight={20}
+                letterSpacing={-0.5}
+              >
+                {StringsOfLanguages.CUSTOMERCONSENT.CC_I_AM_NOT_POLITICALLY_BOLD}
+              </CustomText>
             </CustomText>
           </CheckboxView>
         </AlignedContainer>
@@ -816,7 +816,7 @@ const CustomerConsent = (props) => {
                     title: "",
                     subTitle: "",
                     isVisibleDone: false,
-                    isForTermsAndCondition:true,
+                    isForTermsAndCondition: true,
                     webViewUrl: WebViewURL.TERMSANDCONDITIONS,
                   });
                 }}
@@ -874,7 +874,10 @@ const CustomerConsent = (props) => {
       >
         <BackArrowButton
           testID={TestIds.cc_back_button}
-          onPress={() => backArrowPress()}
+          onPress={() => {
+            prev()
+            // backArrowPress()
+          }}
         >
           <Image source={arrowBack} style={RightArrowImage} />
         </BackArrowButton>
@@ -891,7 +894,7 @@ const CustomerConsent = (props) => {
           </RightArrowButton>
         )}
       </AlignedContainer>
-    
+
       {
         <Popup
           testID_submit={TestIds.pop_up_politically_exposed_person}
@@ -929,7 +932,7 @@ const CustomerConsent = (props) => {
         />
       }
 
-{
+      {
         <ErrorPopup
           popUpshow={errorPopup}
           message={errorMsg}

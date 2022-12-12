@@ -115,6 +115,7 @@ import {
 import CustomSearchInputDropdown from "../../../Components/CustomSearchInputDropdown/CustomSearchInputDropdown";
 import ErrorPopup from "../../../Components/ErrorPopup";
 import SelectDropdown from "react-native-select-dropdown";
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 const PersonalDetail = (props) => {
   const {
@@ -1435,7 +1436,7 @@ const PersonalDetail = (props) => {
         <CardMargin>
           <CustomTextInput
             testID={TestIds.cp_gross_annual_income}
-            value={annualIncomeLocal}
+            value={annualIncomeLocal.length > 0 ? calcValue() : ""}
             label={StringsOfLanguages.PERSONAL_DETAIL.GROSS_ANNUAL_INCOME}
             keyboardType="numeric"
             errorMessage=""
@@ -1448,6 +1449,11 @@ const PersonalDetail = (props) => {
                   : null;
               },
               value: annualIncomeLocal.length > 0 ? calcValue() : "",
+            }}
+            onChangeText={(text) => {
+              text.charAt(0) != 0 || text.charAt(0) == ""
+                ? annualIncomeHandler(text)
+                : null;
             }}
           />
         </CardMargin>
@@ -1817,6 +1823,20 @@ const PersonalDetail = (props) => {
                     },
                   }}
                 /> */}
+                <RNDateTimePicker
+                  mode="date"
+                  onChange={(e) => {
+                    personalcontextData.applicationDob = e;
+                    setSession({ ...session, prevSessionData });
+                    section1Api.current = true;
+                  }}
+                  maximumDate={
+                    new Date(new Date().getTime()).setDate(
+                      new Date().getDate() - 1
+                    )
+                  }
+                  minimumDate={minDate}
+                />
               </CardMargin>
 
               <CardMargin>
