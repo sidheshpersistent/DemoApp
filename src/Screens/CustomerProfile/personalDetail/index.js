@@ -115,7 +115,6 @@ import {
 import CustomSearchInputDropdown from "../../../Components/CustomSearchInputDropdown/CustomSearchInputDropdown";
 import ErrorPopup from "../../../Components/ErrorPopup";
 import SelectDropdown from "react-native-select-dropdown";
-import DateTimePicker from '@react-native-community/datetimepicker';
 
 const PersonalDetail = (props) => {
   const {
@@ -145,7 +144,7 @@ const PersonalDetail = (props) => {
     guardianAddressRadio,
     customerOtherAddress,
     guardianOtherAddress,
-    nomineeDob,
+    nomineeDob = new Date(),
     isNomineeMinor,
     showCompanyName,
     occupationType,
@@ -187,7 +186,7 @@ const PersonalDetail = (props) => {
     popupTypeInfo,
     fathersName,
     acknowledgeNumb,
-    applicationDob,
+    applicationDob = new Date(),
     hideSearchResult,
     hideCountrySearch,
     isCountrySelectedFromList,
@@ -1823,20 +1822,6 @@ const PersonalDetail = (props) => {
                     },
                   }}
                 /> */}
-                <RNDateTimePicker
-                  mode="date"
-                  onChange={(e) => {
-                    personalcontextData.applicationDob = e;
-                    setSession({ ...session, prevSessionData });
-                    section1Api.current = true;
-                  }}
-                  maximumDate={
-                    new Date(new Date().getTime()).setDate(
-                      new Date().getDate() - 1
-                    )
-                  }
-                  minimumDate={minDate}
-                />
               </CardMargin>
 
               <CardMargin>
