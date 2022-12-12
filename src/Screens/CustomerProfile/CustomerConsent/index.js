@@ -54,6 +54,7 @@ import {
   uploadSignatureText,
 } from "./styled";
 import ErrorPopup from "../../../Components/ErrorPopup";
+import CheckBox from "@react-native-community/checkbox";
 
 
 const CustomerConsent = (props) => {
@@ -649,15 +650,15 @@ const CustomerConsent = (props) => {
       <FullLengthBox>
         <AlignedContainer>
           <CheckboxView>
-            {/* <Checkbox
+            <CheckBox
               testID={TestIds.cc_indian_citizen_checkbox}
-              labelStyle={{ marginLeft: 12 }}
-              checked={isIndianCitizen}
-              onChange={() => {
+              style={{ marginRight: 12 }}
+              value={isIndianCitizen}
+              onValueChange={() => {
                 consentContextData.isIndianCitizen = !isIndianCitizen;
                 setSession({ ...session, prevSessionData });
               }}
-            ></Checkbox> */}
+            />
             <CustomText
               testID={TestIds.cc_indian_citizen_text}
               fontSize={Font_Size.SIZE_14}
@@ -758,15 +759,15 @@ const CustomerConsent = (props) => {
       <FullLengthBox>
         <AlignedContainer>
           <CheckboxView>
-            {/* <Checkbox
+            <CheckBox
               testID={TestIds.cc_politically_exposed_checbox}
-              checked={!isPoliticalyExposed}
-              labelStyle={{ marginLeft: 12 }}
-              onChange={() => {
+              style={{ marginRight: 12 }}
+              value={!isPoliticalyExposed}
+              onValueChange={() => {
                 consentContextData.isPoliticalyExposed = !isPoliticalyExposed;
                 setSession({ ...session, prevSessionData });
               }}
-            ></Checkbox> */}
+            />
             <CustomText
               testID={TestIds.cc_politically_exposed_text}
               fontSize={Font_Size.SIZE_14}
@@ -791,15 +792,15 @@ const CustomerConsent = (props) => {
       <FullLengthBox>
         <AlignedContainer>
           <CheckboxView>
-            {/* <Checkbox
+            <CheckBox
               testID={TestIds.cc_terms_and_conditions_checkbox}
-              labelStyle={{ marginLeft: 12 }}
-              checked={isTermsAgreed}
-              onChange={() => {
+              value={isTermsAgreed}
+              style={{ marginRight: 12 }}
+              onValueChange={() => {
                 consentContextData.isTermsAgreed = !isTermsAgreed;
                 setSession({ ...session, prevSessionData });
               }}
-            ></Checkbox> */}
+            />
             <CustomText
               testID={TestIds.cc_i_agree_text}
               fontSize={Font_Size.SIZE_14}
@@ -848,15 +849,15 @@ const CustomerConsent = (props) => {
       <FullLengthBox>
         <AlignedContainer>
           <CheckboxView>
-            {/* <Checkbox
+            <CheckBox
               testID={TestIds.cc_consent_checkbox}
-              labelStyle={{ marginLeft: 12 }}
-              checked={isConsentGiven}
-              onChange={() => {
+              value={isConsentGiven}
+              style={{ marginRight: 12 }}
+              onValueChange={() => {
                 consentContextData.isConsentGiven = !isConsentGiven;
                 setSession({ ...session, prevSessionData });
               }}
-            ></Checkbox> */}
+            />
             <CustomText
               testID={TestIds.cc_consent_text}
               fontSize={Font_Size.SIZE_14}

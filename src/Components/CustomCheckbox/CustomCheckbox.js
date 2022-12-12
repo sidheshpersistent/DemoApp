@@ -1,18 +1,15 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import {View} from 'react-native';
-//not used
-
-import { Checkbox } from '@idfc/ccl-mobile/lib/module/v2'
+import { View } from 'react-native';
+import CheckBox from '@react-native-community/checkbox';
 
 const CustomCheckbox = props => {
-const {checked } =props
-// onChange,isLabelBold,style,testID,validationStatus,accessibilityLabel,theme,disabled
-
+  const { checked } = props;
   return (
     <View >
-       <Checkbox checked={checked} />
-      
+      <CheckBox
+        value={checked} />
+
     </View>
   );
 };

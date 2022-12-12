@@ -1,7 +1,7 @@
 import BackgroundImage from './BackgroundImage/BackgroundImage';
 import Card from './CardView/CardView';
 import CustomButton from './CustomButton/CustomButton';
-// import CustomCheckbox from "./CustomCheckbox/CustomCheckbox";
+import CustomCheckbox from "./CustomCheckbox/CustomCheckbox";
 import CustomText from './CustomText/CustomText';
 import CustomTextInput from './CustomTextInput/CustomTextInput';
 import CustomPasswordTextInput from './CustomPasswordTextInput/CustomPasswordTextInput';
@@ -33,7 +33,7 @@ export {
   UpperBoxContainer,
   CustomButton,
   RadioButton,
-  // CustomCheckbox,
+  CustomCheckbox,
   CustomText,
   CustomTextInput,
   CustomPasswordTextInput,
