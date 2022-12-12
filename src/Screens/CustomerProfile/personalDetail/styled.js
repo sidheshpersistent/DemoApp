@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { Colors, FontFamily } from "../../../Utils";
 export const RightArrowImage = {
   width: 40,
   height: 40,
@@ -101,3 +102,12 @@ width: 100 ;
 justify-content: space-between ;
 align-items: center
 `;
+
+export const dropdownTextStyle = {
+  fontSize: 14,
+  fontFamily: FontFamily.Inter_SemiBold,
+  lineHeight: 14,
+  color: Colors.GRAY,
+  letterSpacing: -0.5,
+  marginTop: 6,
+};

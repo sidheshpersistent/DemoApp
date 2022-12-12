@@ -32,6 +32,7 @@ import {
   Card,
   CustomText,
   Popup,
+  RadioButton,
   // PopUpExistingCustomer,
   // PopupTextInput,
   // CustomSearchInputCompany,
@@ -39,6 +40,7 @@ import {
 // import { DateInput, RadioButton, Select } from "@idfc/ccl-mobile/lib/module/v2";
 import {
   alertIcon,
+  chevronDown,
   info,
   location,
   rightArrow,
@@ -74,6 +76,7 @@ import {
   ComponentContainer,
   PanAppliedContainer,
   PanAppliedSubContainer,
+  dropdownTextStyle,
 } from "./styled";
 import { StringsOfLanguages } from "../../../Localization";
 import { Endpoints, NetworkManager } from "../../../API";
@@ -111,6 +114,7 @@ import {
 } from "./constants";
 import CustomSearchInputDropdown from "../../../Components/CustomSearchInputDropdown/CustomSearchInputDropdown";
 import ErrorPopup from "../../../Components/ErrorPopup";
+import SelectDropdown from "react-native-select-dropdown";
 
 const PersonalDetail = (props) => {
   const {
@@ -1489,6 +1493,60 @@ const PersonalDetail = (props) => {
                   section1Api.current = false;
                 }}
               /> */}
+              <SelectDropdown
+                testID={TestIds.cp_occupation_type}
+                data={occupationDetails}
+                defaultButtonText={StringsOfLanguages.PERSONAL_DETAIL.OCCUPATION_TYPE}
+                onSelect={(value) => {
+                  let customSourceOfIncome = [];
+                  let defaultSourceOfIncome = {};
+                  if (value.sourceOfIncome) {
+                    for (let i = 0; i < value.sourceOfIncome.length; i++) {
+                      customSourceOfIncome.push({
+                        id: value.sourceOfIncome[i].id,
+                        displayText: value.sourceOfIncome[i].source,
+                        value: value.sourceOfIncome[i].id,
+                      });
+                    }
+                  }
+                  personalcontextData.occupationType = value;
+                  personalcontextData.sourceOfIncomeDetails =
+                    customSourceOfIncome;
+                  defaultSourceOfIncome = customSourceOfIncome.find((obj) => obj.displayText.toUpperCase() == value.incomeSource.toUpperCase())
+                  personalcontextData.sourceOfIncome = defaultSourceOfIncome ? defaultSourceOfIncome : null
+                  personalcontextData.CompanyValue = "";
+                  incomeHandler(value);
+                  setSession({ ...session, prevSessionData });
+                  section1Api.current = false;
+                }}
+                dropdownIconPosition={"right"}
+                buttonStyle={{ width: '100%' }}
+                buttonTextStyle={{
+                  fontSize: 14,
+                  fontFamily: FontFamily.Inter_SemiBold,
+                  lineHeight: 14,
+                  color: Colors.GRAY,
+                }}
+                rowTextStyle={dropdownTextStyle}
+                renderDropdownIcon={() => {
+                  return <Image
+                    source={chevronDown}
+                    style={{
+                      padding: 10,
+                      margin: 5,
+                      height: 25,
+                      width: 25,
+                      resizeMode: 'stretch',
+                    }}
+                  />
+                }}
+                buttonTextAfterSelection={(selectedItem, index) => {
+                  return selectedItem.displayText
+                }}
+                rowTextForSelection={(item, index) => {
+                  return item.displayText
+                }}
+              />
             </CardMargin>
             <CardMargin>
               {/* <Select
@@ -1510,6 +1568,43 @@ const PersonalDetail = (props) => {
                 labelStyle={{ color: Colors.NEW_GREY_800.text }}
                 iconColor={Colors.MAROON_DARK}
               /> */}
+              <SelectDropdown
+                testID={TestIds.cp_source_of_income}
+                data={sourceOfIncomeDetails}
+                defaultButtonText={StringsOfLanguages.PERSONAL_DETAIL.SOURCE_OF_INCOME}
+                onSelect={(value) => {
+                  personalcontextData.sourceOfIncome = value;
+                  setSession({ ...session, prevSessionData });
+                  section1Api.current = true;
+                }}
+                dropdownIconPosition={"right"}
+                buttonStyle={{ width: '100%' }}
+                buttonTextStyle={{
+                  fontSize: 14,
+                  fontFamily: FontFamily.Inter_SemiBold,
+                  lineHeight: 14,
+                  color: Colors.GRAY,
+                }}
+                rowTextStyle={dropdownTextStyle}
+                renderDropdownIcon={() => {
+                  return <Image
+                    source={chevronDown}
+                    style={{
+                      padding: 10,
+                      margin: 5,
+                      height: 25,
+                      width: 25,
+                      resizeMode: 'stretch',
+                    }}
+                  />
+                }}
+                buttonTextAfterSelection={(selectedItem, index) => {
+                  return selectedItem.displayText
+                }}
+                rowTextForSelection={(item, index) => {
+                  return item.displayText
+                }}
+              />
             </CardMargin>
             {showCompanyName ? (
               <CardMargin style={{ zIndex: 1 }}>
@@ -1779,6 +1874,16 @@ const PersonalDetail = (props) => {
             >
               {StringsOfLanguages.PERSONAL_DETAIL.SAME_AS_ADAHAR}
             </RadioButton> */}
+            <RadioButton
+              testID={TestIds.cp_cutomer_address_radio1}
+              value={RadioButtonConstants.RADIO1}
+              name="radio-normal"
+              id="1"
+              checked={selValue === RadioButtonConstants.RADIO1}
+              onChange={() => handleChange(RadioButtonConstants.RADIO1)}
+            >
+              {StringsOfLanguages.PERSONAL_DETAIL.SAME_AS_ADAHAR}
+            </RadioButton>
             {selValue === RadioButtonConstants.RADIO1 ? (
               <AdharAddressContainer>
                 <Text
@@ -1801,6 +1906,16 @@ const PersonalDetail = (props) => {
             >
               {StringsOfLanguages.PERSONAL_DETAIL.OTHER_ADDRESS}
             </RadioButton> */}
+            <RadioButton
+              testID={TestIds.cp_cutomer_address_radio2}
+              value={RadioButtonConstants.RADIO2}
+              name="radio-normal"
+              id="1"
+              checked={selValue === RadioButtonConstants.RADIO2}
+              onChange={() => handleChange(RadioButtonConstants.RADIO2)}
+            >
+              {StringsOfLanguages.PERSONAL_DETAIL.OTHER_ADDRESS}
+            </RadioButton>
 
             {selValue === RadioButtonConstants.RADIO2 &&
               customerOtherAddress ? (
@@ -1948,6 +2063,44 @@ const PersonalDetail = (props) => {
               labelStyle={{ color: Colors.NEW_GREY_800.text }}
               iconColor={Colors.MAROON_DARK}
             /> */}
+            <SelectDropdown
+              testID={TestIds.cp_relationship_with_customer}
+              data={nomineeRelationData}
+              defaultButtonText={StringsOfLanguages.PERSONAL_DETAIL.RELATIONSHIP_WITH_CUSTOMER}
+              onSelect={(value) => {
+                personalcontextData.customerRelation = value;
+                setSession({ ...session, prevSessionData });
+                section3ProgressApi();
+                //setCostumerRelation(value)
+              }}
+              dropdownIconPosition={"right"}
+              buttonStyle={{ width: '100%' }}
+              buttonTextStyle={{
+                fontSize: 14,
+                fontFamily: FontFamily.Inter_SemiBold,
+                lineHeight: 14,
+                color: Colors.GRAY,
+              }}
+              rowTextStyle={dropdownTextStyle}
+              renderDropdownIcon={() => {
+                return <Image
+                  source={chevronDown}
+                  style={{
+                    padding: 10,
+                    margin: 5,
+                    height: 25,
+                    width: 25,
+                    resizeMode: 'stretch',
+                  }}
+                />
+              }}
+              buttonTextAfterSelection={(selectedItem, index) => {
+                return selectedItem.displayText
+              }}
+              rowTextForSelection={(item, index) => {
+                return item.displayText
+              }}
+            />
             <CardMargin></CardMargin>
             <CardMargin>
               {/* <DateInput
@@ -2007,6 +2160,16 @@ const PersonalDetail = (props) => {
                           .SAME_AS_CUST_COMMUNICATION
                       }
                     </RadioButton> */}
+                    <RadioButton
+                      testID={TestIds.cp_communication_address_radio3}
+                      value={RadioButtonConstants.RADIO3}
+                      name="radio-normal"
+                      id="1"
+                      checked={selValue === RadioButtonConstants.RADIO3}
+                      onChange={() => handleChange(RadioButtonConstants.RADIO3)}
+                    >
+                      {StringsOfLanguages.PERSONAL_DETAIL.SAME_AS_CUST_COMMUNICATION}
+                    </RadioButton>
                   </>
                 ) : null}
 
@@ -2019,9 +2182,19 @@ const PersonalDetail = (props) => {
                   onChange={() => handleChange2(RadioButtonConstants.RADIO1)}
                 >
                   {StringsOfLanguages.PERSONAL_DETAIL.SAME_AS_CUST_ADAHR}
+                  </RadioButton>*/}
+                <RadioButton
+                  testID={TestIds.cp_communication_address_radio4}
+                  value={RadioButtonConstants.RADIO1}
+                  name="radio-normal"
+                  id="1"
+                  checked={selValue === RadioButtonConstants.RADIO1}
+                  onChange={() => handleChange(RadioButtonConstants.RADIO1)}
+                >
+                  {StringsOfLanguages.PERSONAL_DETAIL.SAME_AS_CUST_ADAHR}
                 </RadioButton>
 
-                <RadioButton
+                {/* <RadioButton
                 testID={TestIds.cp_communication_address_radio5}
                   value={RadioButtonConstants.RADIO2}
                   name="radio-normal"
@@ -2031,6 +2204,16 @@ const PersonalDetail = (props) => {
                 >
                   {StringsOfLanguages.PERSONAL_DETAIL.OTHER_ADDRESS}
                 </RadioButton> */}
+                <RadioButton
+                  testID={TestIds.cp_communication_address_radio5}
+                  value={RadioButtonConstants.RADIO2}
+                  name="radio-normal"
+                  id="1"
+                  checked={selValue === RadioButtonConstants.RADIO2}
+                  onChange={() => handleChange(RadioButtonConstants.RADIO2)}
+                >
+                  {StringsOfLanguages.PERSONAL_DETAIL.OTHER_ADDRESS}
+                </RadioButton>
 
                 {nomineeAddressRadio === RadioButtonConstants.RADIO2 &&
                   nomineeOtherAddress ? (
@@ -2149,6 +2332,16 @@ const PersonalDetail = (props) => {
                                 .SAME_AS_CUST_COMMUNICATION
                             }
                           </RadioButton> */}
+                          <RadioButton
+                            testID={TestIds.cp_communication_address_radio6}
+                            value={RadioButtonConstants.RADIO3}
+                            name="radio-normal"
+                            id="1"
+                            checked={selValue === RadioButtonConstants.RADIO3}
+                            onChange={() => handleChange(RadioButtonConstants.RADIO3)}
+                          >
+                            {StringsOfLanguages.PERSONAL_DETAIL.SAME_AS_CUST_COMMUNICATION}
+                          </RadioButton>
                         </View>
                       </>
                     ) : null}
@@ -2172,6 +2365,16 @@ const PersonalDetail = (props) => {
                               .SAME_AS_NOMINEE_ADDRESS
                           }
                         </RadioButton> */}
+                        <RadioButton
+                          testID={TestIds.cp_communication_address_radio7}
+                          value={RadioButtonConstants.RADIO4}
+                          name="radio-normal"
+                          id="1"
+                          checked={selValue === RadioButtonConstants.RADIO4}
+                          onChange={() => handleChange(RadioButtonConstants.RADIO4)}
+                        >
+                          {StringsOfLanguages.PERSONAL_DETAIL.SAME_AS_NOMINEE_ADDRESS}
+                        </RadioButton>
                       </>
                     ) : null}
 
@@ -2189,6 +2392,16 @@ const PersonalDetail = (props) => {
                     >
                       {StringsOfLanguages.PERSONAL_DETAIL.SAME_AS_CUST_ADAHR}
                     </RadioButton> */}
+                    <RadioButton
+                      testID={TestIds.cp_communication_address_radio8}
+                      value={RadioButtonConstants.RADIO1}
+                      name="radio-normal"
+                      id="1"
+                      checked={selValue === RadioButtonConstants.RADIO1}
+                      onChange={() => handleChange(RadioButtonConstants.RADIO1)}
+                    >
+                      {StringsOfLanguages.PERSONAL_DETAIL.SAME_AS_CUST_ADAHR}
+                    </RadioButton>
 
                     {/* <RadioButton
                      testID={TestIds.cp_communication_address_radio9}
@@ -2204,6 +2417,16 @@ const PersonalDetail = (props) => {
                     >
                       {StringsOfLanguages.PERSONAL_DETAIL.OTHER_ADDRESS}
                     </RadioButton> */}
+                    <RadioButton
+                      testID={TestIds.cp_communication_address_radio9}
+                      value={RadioButtonConstants.RADIO2}
+                      name="radio-normal"
+                      id="1"
+                      checked={selValue === RadioButtonConstants.RADIO2}
+                      onChange={() => handleChange(RadioButtonConstants.RADIO2)}
+                    >
+                      {StringsOfLanguages.PERSONAL_DETAIL.OTHER_ADDRESS}
+                    </RadioButton>
 
                     {guardianAddressRadio === RadioButtonConstants.RADIO2 &&
                       guardianOtherAddress ? (
