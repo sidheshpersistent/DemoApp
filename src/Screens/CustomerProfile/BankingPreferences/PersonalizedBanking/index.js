@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import ProductCard from "../../Components/ProductCard";
 import { Account_Type, CPD_CONSTANTS, TestIds, timeoutConst, CommonConstant } from "../../../../Utils/Constants";
-import { Card, CustomSearchInputCompany, CustomText, Popup } from "../../../../Components";
+import { Card, CustomSearchInputCompany, CustomText, Popup, RadioButton } from "../../../../Components";
 // import { Checkbox, RadioButton, Select } from "@idfc/ccl-mobile/lib/module/v2";
 import { decryptURL } from "../../../../Utils/CryptoHelper";
 import {
@@ -24,7 +24,7 @@ import {
 import { benifitData } from "../constants";
 import useSession from "../../../../App/useSession";
 import { StringsOfLanguages } from "../../../../Localization";
-import { debit_linear, info, mail_linear } from "../../../../Assets/Images";
+import { chevronDown, debit_linear, info, mail_linear } from "../../../../Assets/Images";
 import {
   benefitStyle,
   MarginBox,
@@ -48,6 +48,8 @@ import {
 } from "./styled";
 import { Endpoints, NetworkManager } from "../../../../API";
 import ErrorPopup from "../../../../Components/ErrorPopup";
+import SelectDropdown from "react-native-select-dropdown";
+import CheckBox from "@react-native-community/checkbox";
 
 const PersonalizedBanking = () => {
 
@@ -82,16 +84,16 @@ const PersonalizedBanking = () => {
       setSession({ ...session, prevSession });
     }
     getProductList()
-    if(!branchSelectedValue){
-      branchListApi("mumbai",true)
+    if (!branchSelectedValue) {
+      branchListApi("mumbai", true)
     }
-    
+
   }, []);
-  useEffect(()=>{
-    prevSession.progressLoader=prevSession.progressLoader+1
-    setSession({...session,prevSession})
-  },[])
-  
+  useEffect(() => {
+    prevSession.progressLoader = prevSession.progressLoader + 1
+    setSession({ ...session, prevSession })
+  }, [])
+
   function getProductList() {
     let header = {
       appName: session.accountType,
@@ -212,7 +214,6 @@ const PersonalizedBanking = () => {
               setSession({ ...session, prevSession });
             }
           }
-
         }
       }
     );
@@ -248,7 +249,6 @@ const PersonalizedBanking = () => {
               {StringsOfLanguages.PERSONALIZED_SECTION.RECOMMENDED_PRODUCT}
             </CustomText>
             <ProductCard
-
             />
           </View>
         ) : null}
@@ -281,6 +281,49 @@ const PersonalizedBanking = () => {
                 labelStyle={{ color: Colors.NEW_GREY_800.text }}
                 iconColor={Colors.MAROON_DARK}
               /> */}
+              <SelectDropdown
+                testID={TestIds.ps_select_product_dropdown}
+                style={{ height: 70 }}
+                data={SAProductList}
+                defaultButtonText={StringsOfLanguages.BANKING_PREFERNCE.SELECT_PRODUCT}
+                onSelect={() => {
+
+                }}
+                dropdownIconPosition={"right"}
+                buttonStyle={{ width: '100%' }}
+                buttonTextStyle={{
+                  fontSize: 14,
+                  fontFamily: FontFamily.Inter_SemiBold,
+                  lineHeight: 14,
+                  color: Colors.GRAY,
+                }}
+                rowTextStyle={{
+                  fontSize: 14,
+                  fontFamily: FontFamily.Inter_SemiBold,
+                  lineHeight: 14,
+                  color: Colors.GRAY,
+                  letterSpacing: -0.5,
+                  marginTop: 6,
+                }}
+                renderDropdownIcon={() => {
+                  return <Image
+                    source={chevronDown}
+                    style={{
+                      padding: 10,
+                      margin: 5,
+                      height: 25,
+                      width: 25,
+                      resizeMode: 'stretch',
+                    }}
+                  />
+                }}
+                buttonTextAfterSelection={(selectedItem, index) => {
+                  return selectedItem.displayText
+                }}
+                rowTextForSelection={(item, index) => {
+                  return item.displayText
+                }}
+              />
             </Card>
           ) : (
             <View >
@@ -298,7 +341,7 @@ const PersonalizedBanking = () => {
                       }}
                     >
                       <RadioRecommendBox>
-                        {/* <RadioButton
+                        <RadioButton
                           testID={TestIds.ps_product_radio}
                           style={{ paddingVertical: 0 }}
                           value={`Radio ${index}`}
@@ -306,7 +349,7 @@ const PersonalizedBanking = () => {
                           id="1"
                           checked={productRadio == `Radio ${index}`}
                           onChange={() => productRadioHandler(item, index)}
-                        /> */}
+                        />
                         {item.recommended ? (
                           <RecommendedBox>
                             <CustomText
@@ -516,21 +559,17 @@ const PersonalizedBanking = () => {
               <CheckbookContainer
               >
                 <Image source={mail_linear} style={CheckBookImageStyle} />
-
-                {/* <Checkbox
+                <CheckBox
                   testID={TestIds.ps_checkbook_checkbox}
                   style={{ width: 24, height: 24, marginRight: 10 }}
-                  inputStyle={{
-                    backgroundColor: checkbookOpted ? Colors.green : Colors.WHITE,
-                    borderColor: Colors.green,
-                  }}
-                  checked={checkbookOpted}
-                  onChange={() => {
+                  value={checkbookOpted}
+                  // tintColors={{true: '#ff0000'}}
+                  onValueChange={() => {
                     bankingPreferenceContext.checkbookOpted =
                       !bankingPreferenceContext.checkbookOpted;
                     setSession({ ...session, prevSession });
                   }}
-                /> */}
+                />
               </CheckbookContainer>
               <CustomText
                 testID={TestIds.ps_checkbook}
@@ -556,22 +595,17 @@ const PersonalizedBanking = () => {
                   source={debit_linear}
                   style={debitImageStyle}
                 />
-
-                {/* <Checkbox
+                <CheckBox
                   testID={TestIds.ps_debitcard_checkbox}
                   style={debitCheckboxStyle}
-                  inputStyle={{
-                    backgroundColor: debitOpted ? Colors.green : Colors.WHITE,
-                    borderColor: Colors.green,
-                  }}
-                  checked={debitOpted}
-                  onChange={() => {
+                  value={debitOpted}
+                  // tintColors={{true: '#ff0000'}}
+                  onValueChange={() => {
                     bankingPreferenceContext.debitOpted =
                       !bankingPreferenceContext.debitOpted;
                     setSession({ ...session, prevSession });
-
                   }}
-                /> */}
+                />
               </CheckbookContainer>
               <CustomText
                 testID={TestIds.ps_debitcard}
@@ -587,7 +621,6 @@ const PersonalizedBanking = () => {
       </AlignedContainer>
       {
         <Popup
-
           animationIn={StringsOfLanguages.BANKING_PREFERNCE.BOUNCE_IN}
           popupIcon={info}
           isVisible={popupVisible}
@@ -595,18 +628,14 @@ const PersonalizedBanking = () => {
           ButtonText={StringsOfLanguages.BANKING_PREFERNCE.OK}
           buttonPress={() => {
             setPopupVisible(false);
-
           }}
           component={
             <View>
-
               {feature?.map((e) => <Text
                 style={benefitTextStyle}
                 key={e?.title}>•  {e?.title}</Text>)}
-
             </View>
           }
-
         />
       }
       {<ErrorPopup

@@ -556,8 +556,8 @@
     "responseCd": "00"
   },
   "getCompanyList": {
-    "data":[
-    {
+    "data": [
+      {
         "id": "124",
         "value": "332",
         "displayText": "ADANI PROPERTIES PRIVATE LIMITED",
@@ -573,8 +573,8 @@
         "active": true,
         "corporateIdentificationNo": "U45201GJ1995PTC026067",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "150",
         "value": "3156",
         "displayText": "ADROIT GLOBAL PERSONNEL SERVICES PRIVATE LIMITED",
@@ -590,8 +590,8 @@
         "active": true,
         "corporateIdentificationNo": "U74140DL2014PTC270555",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "400",
         "value": "7038",
         "displayText": "ARC PROPERTY SOLUTIONS PVT LTD",
@@ -607,8 +607,8 @@
         "active": true,
         "corporateIdentificationNo": "U93030TG2011PTC074369",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "446",
         "value": "2776",
         "displayText": "ARYAA PROPERTY PRIVATE LIMITED",
@@ -624,8 +624,8 @@
         "active": true,
         "corporateIdentificationNo": "U45200MH2005PTC155659",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "706",
         "value": "6781",
         "displayText": "BLACK  CITY DEVELOPERS PRIVATE LIMITED",
@@ -641,8 +641,8 @@
         "active": true,
         "corporateIdentificationNo": "U45400TN2021PTC147562",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "725",
         "value": "4072",
         "displayText": "BNY MELLON INTERNATIONAL OPERATIONS (I) PVT LTD",
@@ -658,8 +658,8 @@
         "active": true,
         "corporateIdentificationNo": "U72900PN2004FTC022163",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "880",
         "value": "4221",
         "displayText": "CENTRAL GOVERNMENT EMPLOYEE CONSUMER CO-OPERATIVE SOCIETY LIMITED (KENDRIYA BHANDAR)",
@@ -675,8 +675,8 @@
         "active": true,
         "corporateIdentificationNo": "AAAFC5403F",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "5557",
         "value": "10535",
         "displayText": "CLASSIC MANPOWER OPERATIONS PRIVATE LIMITED",
@@ -692,8 +692,8 @@
         "active": true,
         "corporateIdentificationNo": "U74900TN2014PTC098410",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "1227",
         "value": "6956",
         "displayText": "DHARA PROPERTIES SOLUTIONS PRIVATE LIMITED",
@@ -709,8 +709,8 @@
         "active": true,
         "corporateIdentificationNo": "U70109CT2021PTC011996",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "1336",
         "value": "4741",
         "displayText": "E5 PROPERTIES PRIVATE LIMITED",
@@ -726,8 +726,8 @@
         "active": true,
         "corporateIdentificationNo": "U45200TN2011PTC081799",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "1411",
         "value": "2121",
         "displayText": "EMAMI PAPER MILLS LTD",
@@ -743,8 +743,8 @@
         "active": true,
         "corporateIdentificationNo": "L21019WB1981PLC034161",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "1418",
         "value": "8011",
         "displayText": "EMPERIALONE SYSTEMS PRIVATE LIMITED",
@@ -760,8 +760,8 @@
         "active": true,
         "corporateIdentificationNo": "U72200PN2020PTC190490",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "1430",
         "value": "8219",
         "displayText": "ENABLERS PROPERTY SERVICES PVT. LTD.",
@@ -777,8 +777,8 @@
         "active": true,
         "corporateIdentificationNo": "U74900TG2008PTC061360",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "1512",
         "value": "406",
         "displayText": "EXPERIAN SERVICES INDIA (PRIVATE LIMITED).",
@@ -794,8 +794,8 @@
         "active": true,
         "corporateIdentificationNo": "U74140MH2008FTC178319",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "1513",
         "value": "4767",
         "displayText": "EXPERT AVIATION PRIVATE LIMITED",
@@ -811,8 +811,8 @@
         "active": true,
         "corporateIdentificationNo": "U74900KA2014PTC077373",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "1514",
         "value": "973",
         "displayText": "EXPERTSOURCE GLOBAL SERVICES PRIVATE LIMITED",
@@ -828,8 +828,8 @@
         "active": true,
         "corporateIdentificationNo": "U74999MH2014PTC258998",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "1556",
         "value": "4389",
         "displayText": "FIDELITUS CORP PROPERTY SERVICES PVT. LTD.",
@@ -845,8 +845,8 @@
         "active": true,
         "corporateIdentificationNo": "U74900KA2013PTC070693",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "5223",
         "value": "8663",
         "displayText": "FINCOOPERS INDIA PVT LTD",
@@ -862,8 +862,8 @@
         "active": true,
         "corporateIdentificationNo": "U74140MP2019PTC048765",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "1574",
         "value": "8390",
         "displayText": "FINIAN ESTATES DEVELOPERS PRIVATE LIMITED",
@@ -879,8 +879,8 @@
         "active": true,
         "corporateIdentificationNo": "U45201DL2006PTC147796",
         "productVariantCode": null
-    },
-    {
+      },
+      {
         "id": "1583",
         "value": "8204",
         "displayText": "FIRST ADVANTAGE GLOBAL OPERATING CENTER PRIVATE LIMITED",
@@ -896,13 +896,13 @@
         "active": true,
         "corporateIdentificationNo": "U72200KA2000PTC026751",
         "productVariantCode": null
-    }
+      }
     ]
   },
-  "getCompanyRank":{
-    "data":[]
+  "getCompanyRank": {
+    "data": []
   },
-  "saveCustomerDetails":{
+  "saveCustomerDetails": {
     "status": "SUCCESS",
     "responseCd": "00",
     "userId": 3029,
@@ -916,5 +916,348 @@
     "bankingDetails": "T16sOA2w7BE2h1M0pb7uHoqkZ2K5bv4MDqReeRV7Gq81RY35GbhiYcYyHP5aSO4fOdwkVLl4CjlhNffPxDjuRp0pe52aJZIOTo+TR8q4nBnSrjG+Pf6pE9tnnkT1dS2f6r0qPpC+JeRNZCNIiuSZ5FHFh5MimITMEoE896fdgz1yLhcATla2f1n8sx+AG4+dOib2X841AAGvhT+/B4QZnOMUV0ZMJYxUC2LvVJWA2EzDizGIl07NLndnAXQuOCPLXa3w6hUZMpJyGuy2gs3XPMkkdPW1PX7E4x2OWVRKufee/ePlski/slbtm759KnOcvNHrNDCZVBC9E720+TkE7IbOmsR2UrAo7+e6vyZyeXkVUNiHplGdTD4FGraynHjBVjRVg5zDwgEP2Al5Js7v/QvuFhO1ogHbaFqhWcttEAUUOYQCsJ6wSz2hXRs4mJci+D/jQz9Gnha94fzvfm6yP/atoROrKUkuGmTNfYMOyOLXiykokTXOnXXS6JiQhHFMhDG7WhuLgU1+JYh3Fmsbp5lCMLebngMQBkso3TbCMc/CFndQRSIRgRczK3MigFe1ULQoizyJvXgTs/7AbSdkH7LAMvFoWkVtVIYSJkN0A1yk34vfIoTypIcHj1KZTnhg",
     "custConsentDetails": "EhUxb03iN1+RPwHIMGzhe+PVL06Th3vC+Ka+hq5z3XFqAZopvgHe1IfktIBwuuIoZ2/DXJ5RrGzTF7XTtuvo4zZVBe/dSa+/H7EoqA4AWDO3VfO8q7p2kWAnVnlKktrpccME98kD29N+A43pjO83KEmxqa2o2tOBDmbnt9s+J2/OkEU3ipbQzT/NcUXb4Ar94pS2Z8IY5hYc7DwktuX6QPbNralaIk6Cs68kDVpSf2hRkT7SoLJO1Fvd2LT6zJ3gent/OJ4a2s14swkC2nDnwmvyhHseWjZCpHBHZdecFE4=",
     "journeyPercentage": 94
-}
+  },
+  "product": {
+    "product": "SA",
+    "assistedProductDetailList": [
+      {
+        "productName": "BSBDA - Small Account",
+        "productCode": "20005002",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkdOgYQd1J2TfTwGZfT6P21mAo0Fk+5lCAFSyv032fEzo="
+      },
+      {
+        "productName": "Capital Market- POA",
+        "productCode": "20001022",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o73bAtc6PrOGbsox9JJCne8="
+      },
+      {
+        "productName": "Deposit Routing Account",
+        "productCode": "20001017",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0oxdTFjbop3jq3DWzVpw7HQ4="
+      },
+      {
+        "productName": "Digital Zero Balance Savings Account - Post IPV",
+        "productCode": "20001038",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0ozpD8OHpPJ+8Gevr+3hqjFw="
+      },
+      {
+        "productName": "Digital Zero Balance Savings Account - Pre IPV",
+        "productCode": "20001039",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o2ozWITjGcOkg/3mOOrADN4="
+      },
+      {
+        "productName": "IDFC FIRST Power - 10K",
+        "productCode": "20001112",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfko3pHzEgt9ioCk0Zqrk47t1ZGOCEDX86RF5cFhCIjsPM="
+      },
+      {
+        "productName": "IDFC FIRST Power - 25K",
+        "productCode": "20001110",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfko3pHzEgt9ioCk0Zqrk47t1HcuZUJOJh691sN5b0LZRw="
+      },
+      {
+        "productName": "IDFC PARAM",
+        "productCode": "20005004",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkdOgYQd1J2TfTwGZfT6P21ljGE8o6+jmaTV2NKV70MEI="
+      },
+      {
+        "productName": "IDFC Shakti",
+        "productCode": "20005003",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkdOgYQd1J2TfTwGZfT6P21q7IOJntcXlQMQLTyS5H8cE="
+      },
+      {
+        "productName": "IDFC VISHESH",
+        "productCode": "20005005",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkdOgYQd1J2TfTwGZfT6P21lM1Gf+l93j4zv6NYtIej5A="
+      },
+      {
+        "productName": "Insta-Saving 25K",
+        "productCode": "20001082",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o/NSINYZJVQdV/h096yuX5c="
+      },
+      {
+        "productName": "Insta-Saving(Asset X-Sell 10k)",
+        "productCode": "20001047",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o2XM3A66szPS4I62LFfvyg8="
+      },
+      {
+        "productName": "Insta-Saving(Asset X-Sell 25k)",
+        "productCode": "20001046",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0oywhp08vzkg/vZaNo4mQmTw="
+      },
+      {
+        "productName": "NIYO Zero Bal Savings Post IPV",
+        "productCode": "20001050",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o/Huvl6wmGaStAjGqo4pNBA="
+      },
+      {
+        "productName": "NIYO Zero Bal Savings Pre IPV",
+        "productCode": "20001051",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o8PNXvtdzT1+C8Ph8sItnSQ="
+      },
+      {
+        "productName": "Online SA with Signature DC",
+        "productCode": "20001020",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0oyZwOLDn1nMENT36LLxR0Ho="
+      },
+      {
+        "productName": "Online Salary with Platinum DC",
+        "productCode": "20001079",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o3LwlsUkqHQ5+N/1MJ5oSZc="
+      },
+      {
+        "productName": "Online Savings 10k",
+        "productCode": "20001086",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0oyH9ZM9h7p8t5ARLK28h8QA="
+      },
+      {
+        "productName": "PRATHAM",
+        "productCode": "20005001",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkdOgYQd1J2TfTwGZfT6P21g7//weLz2am5UZmQpXcyoE="
+      },
+      {
+        "productName": "SB Regular 10k (Asset X-Sell)",
+        "productCode": "20001048",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0oxsOkMKfRyP8zkz1Y7ciPqs="
+      },
+      {
+        "productName": "SB Regular 25k (Asset X-Sell)",
+        "productCode": "20001009",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0oymSMwi8ZQmFgQ6MXmZnS/Q="
+      },
+      {
+        "productName": "Savings - Kids (U;G)",
+        "productCode": "20001002",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0oyfgTPG6EJH8zHTiZ/0akkI="
+      },
+      {
+        "productName": "Savings - Kids (U;G) 10k",
+        "productCode": "20001043",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o9s9cvwC374atAmt8OuEAJA="
+      },
+      {
+        "productName": "Savings - Senior Citizen",
+        "productCode": "20001004",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0oy8oBWvWWga6d/42Kxr1eDs="
+      },
+      {
+        "productName": "Savings - Senior Citizen 10k",
+        "productCode": "20001042",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o4RttJ6Y2wK5OVzfj1yvO+g="
+      },
+      {
+        "productName": "Savings Regular",
+        "productCode": "20001001",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o1QApK2RK5QzIdNMTdZ0EWI="
+      },
+      {
+        "productName": "Savings Regular 10k",
+        "productCode": "20001041",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o7nbNlSGZL/21pi0H6smbAA="
+      },
+      {
+        "productName": "Vishesh ALSA",
+        "productCode": "20005011",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkdOgYQd1J2TfTwGZfT6P21hjaM16+O0Bi+gzCM85OhY8="
+      },
+      {
+        "productName": "Vishesh Staff Salary",
+        "productCode": "20005008",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkdOgYQd1J2TfTwGZfT6P21s+Fx42BnYaZ15VPbjEV0ZE="
+      },
+      {
+        "productName": "Zero Balance Savings Account",
+        "productCode": "20001077",
+        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0owrzXnD3441LbPJoGxw0I0o="
+      }
+    ],
+    "productFeature": [
+      "Attractive savings account interest rates",
+      "Monthly interest credit with monthly compounding",
+      "Zero Fees on most banking services",
+      "One of the highest insurance covers"
+    ]
+  },
+  "branchList": [
+    {
+      "id": "735",
+      "displayText": "AGAR MALWA BRANCH",
+      "value": "42741",
+      "crmUserId": null
+    },
+    {
+      "id": "460",
+      "displayText": "AHMEDABAD - BAPUNAGAR BRANCH",
+      "value": "40327",
+      "crmUserId": null
+    },
+    {
+      "id": "437",
+      "displayText": "AHMEDABAD - BAPUNAGAR BRANCH",
+      "value": "40327",
+      "crmUserId": null
+    },
+    {
+      "id": "438",
+      "displayText": "AHMEDABAD – ASHRAMROAD BRANCH",
+      "value": "40333",
+      "crmUserId": null
+    },
+    {
+      "id": "461",
+      "displayText": "AHMEDABAD – ASHRAMROAD BRANCH",
+      "value": "40333",
+      "crmUserId": null
+    },
+    {
+      "id": "441",
+      "displayText": "AHMEDABAD – NIKOL BRANCH",
+      "value": "40332",
+      "crmUserId": null
+    },
+    {
+      "id": "464",
+      "displayText": "AHMEDABAD – NIKOL BRANCH",
+      "value": "40332",
+      "crmUserId": null
+    },
+    {
+      "id": "440",
+      "displayText": "AHMEDABAD – SHYAMAL BRANCH",
+      "value": "40335",
+      "crmUserId": null
+    },
+    {
+      "id": "463",
+      "displayText": "AHMEDABAD – SHYAMAL BRANCH",
+      "value": "40335",
+      "crmUserId": null
+    },
+    {
+      "id": "465",
+      "displayText": "AHMEDABAD – SINDHUBHAVAN BRANCH",
+      "value": "40334",
+      "crmUserId": null
+    },
+    {
+      "id": "442",
+      "displayText": "AHMEDABAD – SINDHUBHAVAN BRANCH",
+      "value": "40334",
+      "crmUserId": null
+    },
+    {
+      "id": "785",
+      "displayText": "AHMEDNAGAR BRANCH",
+      "value": "42963",
+      "crmUserId": null
+    },
+    {
+      "id": "789",
+      "displayText": "AHMEDNAGAR BRANCH",
+      "value": "42963",
+      "crmUserId": null
+    },
+    {
+      "id": "1295",
+      "displayText": "AJMER BRANCH",
+      "value": "42186",
+      "crmUserId": null
+    },
+    {
+      "id": "1299",
+      "displayText": "AJMER BRANCH",
+      "value": "42181",
+      "crmUserId": null
+    },
+    {
+      "id": "27",
+      "displayText": "AMALAPURUM BRANCH",
+      "value": "81043",
+      "crmUserId": null
+    },
+    {
+      "id": "959",
+      "displayText": "AMALNER BRANCH",
+      "value": "43542",
+      "crmUserId": null
+    },
+    {
+      "id": "964",
+      "displayText": "AMBAJOGAI  BRANCH",
+      "value": "43821",
+      "crmUserId": null
+    },
+    {
+      "id": "516",
+      "displayText": "AMBALA CANTT. BRANCH",
+      "value": "21392",
+      "crmUserId": null
+    },
+    {
+      "id": "518",
+      "displayText": "AMBALA SADAR BRANCH",
+      "value": "21394",
+      "crmUserId": null
+    },
+    {
+      "id": "1280",
+      "displayText": "AMBAWADI BRANCH ",
+      "value": "40336",
+      "crmUserId": null
+    },
+    {
+      "id": "72",
+      "displayText": "AMBIKAPUR",
+      "value": "61061",
+      "crmUserId": null
+    },
+    {
+      "id": "992",
+      "displayText": "AMRITSAR - HALL BAZAR BRANCH",
+      "value": "21024",
+      "crmUserId": null
+    },
+    {
+      "id": "991",
+      "displayText": "AMRITSAR BRANCH",
+      "value": "21021",
+      "crmUserId": null
+    },
+    {
+      "id": "317",
+      "displayText": "BARAKHAMBA ROAD BRANCH",
+      "value": "20101",
+      "crmUserId": null
+    },
+    {
+      "id": "224",
+      "displayText": "BARAKHAMBA ROAD BRANCH",
+      "value": "20101",
+      "crmUserId": null
+    },
+    {
+      "id": "162",
+      "displayText": "BARAKHAMBA ROAD BRANCH",
+      "value": "20101",
+      "crmUserId": null
+    },
+    {
+      "id": "131",
+      "displayText": "BARAKHAMBA ROAD BRANCH",
+      "value": "20101",
+      "crmUserId": null
+    },
+    {
+      "id": "100",
+      "displayText": "BARAKHAMBA ROAD BRANCH",
+      "value": "20101",
+      "crmUserId": null
+    },
+    {
+      "id": "348",
+      "displayText": "BARAKHAMBA ROAD BRANCH",
+      "value": "20101",
+      "crmUserId": null
+    }
+  ]
 }

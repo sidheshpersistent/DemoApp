@@ -80,7 +80,6 @@ export const RadioContainer = styled.TouchableOpacity`
         background-color: ${RadioButtonTheming(props)[props.variant].backgroundColor};
       `;
     }
-    console.log('test-------------------------------neeel',props.variant);
     return '';
   }};
 `;

@@ -24,7 +24,7 @@ import CustomerProfile from "../Screens/CustomerProfile";
 import ResumeApplication from '../Screens/ResumeApplication';
 // import EAuth from '../Screens/AgentLogin_oAuth/EAuth';
 // import BankUseSectionList from "../Screens/BankUseSectionList";
-// import ScanScreen from "../Screens/CustomerProfile/BankingPreferences/Scanner";
+import ScanScreen from "../Screens/CustomerProfile/BankingPreferences/Scanner";
 // import WebViewComponent from "../Components/WebviewComponent/WebViewComponent";
 // import CustomWebPage from "../Components/CustomWebPage";
 // import Transactions from "../Screens/Transactions";
@@ -100,11 +100,11 @@ const AppContainer = ({childFunc}) => {
             options={{headerShown: false}}
           /> */}
 
-          {/* <Stack.Screen
+          <Stack.Screen
             name={NavigationUrl.Scanner}
             component={ScanScreen}
             options={{headerShown: false}}
-          /> */}
+          />
 
           <Stack.Screen
             name={NavigationUrl.customerId}

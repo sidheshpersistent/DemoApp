@@ -9,7 +9,6 @@ export const RADIO_BUTTON_VARIANTS = {
 
 const RadioButton = (props) => {
   const { disabled, onChange, name, checked, children, value, id, variant, style, ...restProps } = props;
-  console.log('children------------', props);
   return (
     <RadioContainer activeOpacity={1} disabled={disabled} selected={checked} variant={RADIO_BUTTON_VARIANTS[variant]} style={style} onPress={(selectedValue) => onChange(selectedValue)} {...restProps}>
       {checked ?
