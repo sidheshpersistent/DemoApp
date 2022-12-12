@@ -215,11 +215,11 @@ const PersonalDetail = (props) => {
   const [errorMsg, setErrorMsg] = useState("");
   useEffect(() => {
     getNomineeListData();
-    if (session.accountType === Account_Type.ASSISTED_SA) {
-      getOccupationDetails();
-      getCompanyListData();
-      getAllCountryList();
-    }
+    // if (session.accountType === Account_Type.ASSISTED_SA) {
+    getOccupationDetails();
+    getCompanyListData();
+    getAllCountryList();
+    // }
 
 
   }, []);
