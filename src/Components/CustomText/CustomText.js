@@ -53,7 +53,8 @@ const CustomText = props => {
         letterSpacing: letterSpacing,
         flex: flex ? flex : 0,
         fontFamily: fontFamily ? fontFamily : "Inter",
-        fontWeight: fontWeight ? '' + fontWeight : 'normal'
+        fontWeight: fontWeight ? '' + fontWeight : 'normal',
+        textAlign: align
       }]}
       key={key}
       align={align}

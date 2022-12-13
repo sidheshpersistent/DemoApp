@@ -167,6 +167,13 @@ useEffect(()=>{
               : false
           }
           onBlur={() => totalFieldToFill()}
+          onChangeText={(e) => {
+            bankingPreferenceContext.inputAccountNumber = e.replace(
+              /([^0-9])/g,
+              ""
+            );
+            setSession({ ...session, prevSession });
+          }}
          
           textInputProps={{
             onChangeText: (e) => {

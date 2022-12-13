@@ -1995,32 +1995,32 @@ const CustomerIdentificationDetails = props => {
                       flex={1}>
                       {StringsOfLanguages.CID.CID_LABEL_FOOTER}
                     </CustomText>
-                    {!SubmitButtonEnable() ? (
-                      <TouchableOpacity
-                        testID={TestIds.cid_submit_button}
-                        style={touchableStyle}
-                        onPress={() => {
-                          // let isFromResumeJourney=false
-                          // resetCustomerProfileData(isFromResumeJourney);
-                          submitCIDDetails();
-                          // if (accountType === Account_Type.ASSISTED_CS) {
-                          //   setCompanyData();
-                          //   setRankData(selectedRank);
-                          // }
-                          // saveAdharDetailsInContext();
-                        }}>
-                        <RightArrowButtonActive>
-                          <Image
-                            source={rightArrowWhite}
-                            style={RightArrowImage}
-                          />
-                        </RightArrowButtonActive>
-                      </TouchableOpacity>
-                    ) : (
+                    {/* {SubmitButtonEnable() ? ( */}
+                    <TouchableOpacity
+                      testID={TestIds.cid_submit_button}
+                      style={touchableStyle}
+                      onPress={() => {
+                        // let isFromResumeJourney=false
+                        // resetCustomerProfileData(isFromResumeJourney);
+                        submitCIDDetails();
+                        // if (accountType === Account_Type.ASSISTED_CS) {
+                        //   setCompanyData();
+                        //   setRankData(selectedRank);
+                        // }
+                        // saveAdharDetailsInContext();
+                      }}>
+                      <RightArrowButtonActive>
+                        <Image
+                          source={rightArrowWhite}
+                          style={RightArrowImage}
+                        />
+                      </RightArrowButtonActive>
+                    </TouchableOpacity>
+                    {/* ) : (
                       <RightArrowButton>
                         <Image source={rightArrow} style={RightArrowImage} />
                       </RightArrowButton>
-                    )}
+                    )} */}
                   </FooterContainer>
                 </CardInnerContainer>
               </Card>
