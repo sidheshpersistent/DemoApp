@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView, BackHandler } from 'react-native';
-import { RadioButton } from '@idfc/ccl-mobile/lib/module/v2';
+// import { RadioButton } from '@idfc/ccl-mobile/lib/module/v2';
+import { RadioButton } from '../../Components';
 import { BackgroundImage, Card, CustomText, Popup, CustomButton, PopupShareDetails } from '../../Components';
 import { checked, easy_buy, headerbackgroundSuccess, success, unchecked, iconClose, alertIcon, rightArrowWhite } from '../../Assets/Images';
 import {
@@ -28,7 +29,7 @@ import { userDetails } from './constants';
 import { decryptDataValue } from '../../Utils/CryptoHelper';
 import { saveBankUseSection } from "../BankUseSectionForm/service";
 import LoaderComponent from "../../Components/LoaderComponent";
-import {modeOfPayementCheque,modeOfPayementNeft} from "../BankUseSectionForm/constants";
+import { modeOfPayementCheque, modeOfPayementNeft } from "../BankUseSectionForm/constants";
 import ErrorPopup from "../../Components/ErrorPopup";
 
 
@@ -121,7 +122,7 @@ const SASuccess = (props) => {
   const getBankUseSectionRequest = () => {
     let paymentMode = "";
     if (radio.check2 === RadioButtonConstants.RADIO1) {
-      paymentMode = modeOfPayementNeft; 
+      paymentMode = modeOfPayementNeft;
     } else if (radio.check3 === RadioButtonConstants.RADIO1) {
       paymentMode = modeOfPayementCheque;
     }
@@ -139,7 +140,7 @@ const SASuccess = (props) => {
       appName: session.accountType,
       mobileNumber: ""
     }
-    saveBankUseSection(finalRequest,header, (response) => {
+    saveBankUseSection(finalRequest, header, (response) => {
       setShowLoader(false);
       if (response?.status == CommonConstant.SUCCESS) {
         navigation.navigate(NavigationUrl.PreApprovedOffersId)
@@ -478,7 +479,7 @@ const SASuccess = (props) => {
 
         </ScrollView>
       </View>
-      {
+      {/* {
         <PopupFeedback
           animationIn="bounceIn"
           isVisible={feedbackVisible}
@@ -488,8 +489,8 @@ const SASuccess = (props) => {
             setFeedbackVisible(false) 
           }}
         />
-      }
-      {
+      } */}
+      {/* {
         <Popup
           cancelButtonPress={() => setPopupVisible(false)}
           animationIn="bounceIn"
@@ -504,8 +505,8 @@ const SASuccess = (props) => {
             });
           }}
         />
-      }
-      {
+      } */}
+      {/* {
         <PopupShareDetails
           animationIn="bounceIn"
           isVisible={shareWithHrVisible}
@@ -543,8 +544,8 @@ const SASuccess = (props) => {
           accNo={accNo}
           branch={branch}
         />
-      }
-       {
+      } */}
+      {/* {
         <ErrorPopup
           popUpshow={errorPopup}
           message={errorMsg}
@@ -552,7 +553,7 @@ const SASuccess = (props) => {
             setErrorPopup(false);
           }}
         ></ErrorPopup>
-      }
+      } */}
     </View>
   );
 };

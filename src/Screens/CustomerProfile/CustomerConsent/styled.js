@@ -132,3 +132,13 @@ export const BackForwardContainer = {
     flexDirection: "row",
 };
 
+
+export const dropdownTextStyle = {
+    fontSize: 14,
+    fontFamily: FontFamily.Inter_SemiBold,
+    lineHeight: 14,
+    color: Colors.GRAY,
+    letterSpacing: -0.5,
+    marginTop: 6,
+};
+
