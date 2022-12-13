@@ -2029,7 +2029,7 @@ const CustomerIdentificationDetails = props => {
         </KeyboardAvoidingView>
 
         {/* Popup for showing error message on pan validation */}
-        {
+        {/* {
           <ErrorPopup
             popUpshow={isPanPopupShow}
             message={StringsOfLanguages.CID.CID_DESCR_INVALID_PAN}
@@ -2037,17 +2037,17 @@ const CustomerIdentificationDetails = props => {
             btnText={
               StringsOfLanguages.CID.CID_LABLE_RE_ENTER_PAN
             }></ErrorPopup>
-        }
-        {
+        } */}
+        {/* {
           <ErrorPopup
             popUpshow={isUnkownError}
             message={errorMsg}
             callBack={() => setIsUnkownError(false)}
             btnText={StringsOfLanguages.COMMON.SESSION_ALERT_OK}
           />
-        }
+        } */}
         {/* show PAN popup dialog  here */}
-        {
+        {/* {
           <Popup
             testID_submit={TestIds.cid_adhar_pop_up_submit}
             testID_cancel={TestIds.cid_adhar_pop_up_cancel}
@@ -2069,7 +2069,7 @@ const CustomerIdentificationDetails = props => {
               </ComponentContainer>
             }
           />
-        }
+        } */}
         {/* {
           <Popup
             testID_submit={TestIds.cid_adhar_pop_up_submit1}

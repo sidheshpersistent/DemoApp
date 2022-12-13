@@ -11,6 +11,7 @@ import {
   upload,
   info,
   recapture_image,
+  chevronDown,
 } from "../../../Assets/Images";
 import { Card, CustomText, CustomTextInput, Popup } from "../../../Components";
 import {
@@ -39,6 +40,7 @@ import {
   CheckboxView,
   ClickableTextStyle,
   ComponentContainer,
+  dropdownTextStyle,
   emptyCardView,
   flexView,
   FullLengthBox,
@@ -55,6 +57,7 @@ import {
 } from "./styled";
 import ErrorPopup from "../../../Components/ErrorPopup";
 import CheckBox from "@react-native-community/checkbox";
+import SelectDropdown from "react-native-select-dropdown";
 
 
 const CustomerConsent = (props) => {
@@ -284,6 +287,8 @@ const CustomerConsent = (props) => {
     });
   }
   const submitCustomerConcents = async (isNext, isPrev) => {
+    props.navigation.navigate(NavigationUrl.SASuccessID);
+    return;
     loading(true);
     let agentInfo = await AsyncStorageUtils.getObjectItem(LocalDB.agentInfo);
     let request = {
@@ -695,6 +700,44 @@ const CustomerConsent = (props) => {
               labelStyle={{ color: Colors.NEW_GREY_800.text }}
               iconColor={Colors.MAROON_DARK}
             /> */}
+            <SelectDropdown
+              testID={TestIds.cc_tax_country_select}
+              data={cc_dropDown_Data}
+              defaultButtonText={StringsOfLanguages.CUSTOMERCONSENT.CC_COUNTRY_OF_TAX_RESIDENT}
+              onSelect={(value) => {
+                consentContextData.country = value;
+                setSession({ ...session, prevSessionData });
+                consentContextData.tinCountry = value.displayText;
+                setSession({ ...session, prevSessionData });
+              }}
+              dropdownIconPosition={"right"}
+              buttonStyle={{ width: '100%' }}
+              buttonTextStyle={{
+                fontSize: 14,
+                fontFamily: FontFamily.Inter_SemiBold,
+                lineHeight: 14,
+                color: Colors.GRAY,
+              }}
+              rowTextStyle={dropdownTextStyle}
+              renderDropdownIcon={() => {
+                return <Image
+                  source={chevronDown}
+                  style={{
+                    padding: 10,
+                    margin: 5,
+                    height: 25,
+                    width: 25,
+                    resizeMode: 'stretch',
+                  }}
+                />
+              }}
+              buttonTextAfterSelection={(selectedItem, index) => {
+                return selectedItem.displayText
+              }}
+              rowTextForSelection={(item, index) => {
+                return item.displayText
+              }}
+            />
           </CardMargin>
 
           <CardMargin>
@@ -896,7 +939,7 @@ const CustomerConsent = (props) => {
         )}
       </AlignedContainer>
 
-      {
+      {/* {
         <Popup
           testID_submit={TestIds.pop_up_politically_exposed_person}
           testID_cancel={"TestCancel1"}
@@ -931,9 +974,9 @@ const CustomerConsent = (props) => {
             </ComponentContainer>
           }
         />
-      }
+      } */}
 
-      {
+      {/* {
         <ErrorPopup
           popUpshow={errorPopup}
           message={errorMsg}
@@ -941,7 +984,7 @@ const CustomerConsent = (props) => {
             setErrorPopup(false);
           }}
         ></ErrorPopup>
-      }
+      } */}
     </View>
   );
 };

@@ -3,7 +3,7 @@ import { View, Image, TouchableOpacity } from "react-native";
 import Modal from "react-native-modal";
 
 import { CenteredView, ModalView } from "../PopupStyle";
-import CustomBlurView from "../CustomBlurView";
+// import CustomBlurView from "../CustomBlurView";
 import {
   Colors,
   FontFamily,
@@ -83,7 +83,7 @@ const PopupFeedback = (props) => {
       <Modal
         animationIn={animationIn}
         isVisible={isVisible}
-        customBackdrop={<CustomBlurView />}
+        // customBackdrop={<CustomBlurView />}
       >
         <CenteredView>
           <ModalView>
