@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View } from "react-native";
 
 import { Colors } from "../../../Utils";
-import { Font_Size, Line_Height, TestIds,CommonConstant, Account_Type } from "../../../Utils/Constants";
+import { Font_Size, Line_Height, TestIds, CommonConstant, Account_Type } from "../../../Utils/Constants";
 import CustomText from "../../CustomText/CustomText";
 import Popup from "../../Popup/Popup";
 import { BodyContainer } from "../PopupStyle";
@@ -43,7 +43,7 @@ const PopupCommunicationAddress = (props) => {
   const [state, setState] = useState("State");
   const [country, setCountry] = useState("Country");
   const [pinError, setPinError] = useState("");
-  const [label,setLabel]=useState(StringsOfLanguages.NEWCOMMUNICATIONADDRESS.NCA_PINCODE)
+  const [label, setLabel] = useState(StringsOfLanguages.NEWCOMMUNICATIONADDRESS.NCA_PINCODE)
   useEffect(() => {
     if (pincode && pincode.length == 6) {
       cityPincodeFinder();
@@ -53,15 +53,15 @@ const PopupCommunicationAddress = (props) => {
       setCountry("Country");
     }
   }, [pincode]);
- function cityPincodeFinder() {
-  let header = {
-    appName: Account_Type.ASSISTED_SA,
-    mobileNumber: ""
-  }
+  function cityPincodeFinder() {
+    let header = {
+      appName: Account_Type.ASSISTED_SA,
+      mobileNumber: ""
+    }
     NetworkManager.IDFCNetworkGet(
       Endpoints.getCityStateByPin + pincode, header,
       (response) => {
-       
+
         if (response?.status == CommonConstant.SUCCESS) {
           let data = response;
           setCity(data.city);
@@ -70,10 +70,10 @@ const PopupCommunicationAddress = (props) => {
           setLabel(StringsOfLanguages.NEWCOMMUNICATIONADDRESS.NCA_PINCODE)
           setPinError("");
         }
-        else{
-          if(response?.status == CommonConstant.ERROR){
+        else {
+          if (response?.status == CommonConstant.ERROR) {
             setLabel(response.message)
-          }else{
+          } else {
             setLabel(StringsOfLanguages.NEWCOMMUNICATIONADDRESS.NCA_WENT_WRONG)
           }
 
@@ -110,11 +110,11 @@ const PopupCommunicationAddress = (props) => {
   };
 
   const pincodeHandler = (text) => {
-    if(text!=""){
+    if (text != "") {
       setPinError("error");
       setLabel(StringsOfLanguages.NEWCOMMUNICATIONADDRESS.NCA_INVALID_PINCODE)
     }
-    else{
+    else {
       setPinError("");
       setLabel(StringsOfLanguages.NEWCOMMUNICATIONADDRESS.NCA_PINCODE)
     }
@@ -151,14 +151,14 @@ const PopupCommunicationAddress = (props) => {
             <CustomTextInput
               testID={TestIds.nca_pincode}
               label={
-               label
+                label
               }
               keyboardType="numeric"
               textColor={textColor}
               maxLength={maxLength}
               value={pincode}
               textInputProps={{
-                maxLength:6,
+                maxLength: 6,
                 onChangeText: (text) => {
                   pincodeHandler(text);
                 },
@@ -167,6 +167,9 @@ const PopupCommunicationAddress = (props) => {
                 style: {
                   color: pinError == "error" ? Colors.ERROR : Colors.GRAY,
                 },
+              }}
+              onChangeText={(text) => {
+                pincodeHandler(text);
               }}
               inputBorderProps={{
                 style: {
@@ -194,6 +197,9 @@ const PopupCommunicationAddress = (props) => {
                 onChangeText: (e) =>
                   setAddress1(e.replace(validation.address.pattern, "")),
               }}
+              onChangeText={(e) => {
+                setAddress1(e.replace(validation.address.pattern, ""))
+              }}
             />
           </CardMargin>
 
@@ -212,6 +218,9 @@ const PopupCommunicationAddress = (props) => {
                 onChangeText: (e) =>
                   setAddress2(e.replace(validation.address.pattern, "")),
               }}
+              onChangeText={(e) => {
+                setAddress2(e.replace(validation.address.pattern, ""))
+              }}
             />
           </CardMargin>
           <CardMargin>
@@ -228,6 +237,9 @@ const PopupCommunicationAddress = (props) => {
                 value: address3,
                 onChangeText: (e) =>
                   setAddress3(e.replace(validation.address.pattern, "")),
+              }}
+              onChangeText={(e) => {
+                setAddress3(e.replace(validation.address.pattern, ""))
               }}
             />
           </CardMargin>

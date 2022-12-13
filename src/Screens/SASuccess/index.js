@@ -490,7 +490,7 @@ const SASuccess = (props) => {
           }}
         />
       } */}
-      {/* {
+      {
         <Popup
           cancelButtonPress={() => setPopupVisible(false)}
           animationIn="bounceIn"
@@ -505,7 +505,7 @@ const SASuccess = (props) => {
             });
           }}
         />
-      } */}
+      }
       {/* {
         <PopupShareDetails
           animationIn="bounceIn"

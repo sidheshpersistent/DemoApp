@@ -1659,6 +1659,10 @@ const PersonalDetail = (props) => {
               },
             }}
             onBlur={() => section1ProgressApi()}
+            onChangeText={(e) => {
+              personalcontextData.mothersName = removeNumberFromString(e);
+              setSession({ ...session, prevSessionData });
+            }}
           />
         </CardMargin>
         {session.accountType === Account_Type.ASSISTED_SA ? (
@@ -1754,6 +1758,13 @@ const PersonalDetail = (props) => {
                     },
                   }}
                   onBlur={() => section1ProgressApi()}
+                  onChangeText={(e) => {
+                    personalcontextData.fathersName = e.replace(
+                      avoidNumNChar,
+                      ""
+                    );
+                    setSession({ ...session, prevSessionData });
+                  }}
                 />
               </CardMargin>
             </View>
@@ -1848,6 +1859,13 @@ const PersonalDetail = (props) => {
                     value: acknowledgeNumb,
                   }}
                   onBlur={() => section1ProgressApi()}
+                  onChangeText={(text) => {
+                    personalcontextData.acknowledgeNumb = text.replace(
+                      allowOnlyNum,
+                      ""
+                    );
+                    setSession({ ...session, prevSessionData });
+                  }}
                 />
               </CardMargin>
             </AlignedContainer>
@@ -2050,6 +2068,14 @@ const PersonalDetail = (props) => {
                   },
                 }}
                 onBlur={() => section3ProgressApi()}
+                onChangeText={(e) => {
+                  personalcontextData.nomineeName = e.replace(
+                    avoidNumNChar,
+                    ""
+                  );
+                  setSession({ ...session, prevSessionData });
+                  //setNomineeName(e.replace(/[^A-Za-z ]+/g, "")),
+                }}
               />
             </CardMargin>
             {/* <Select
@@ -2298,6 +2324,13 @@ const PersonalDetail = (props) => {
                     }}
                     label={StringsOfLanguages.PERSONAL_DETAIL.GUARDIAN_NAME}
                     onBlur={() => section3ProgressApi()}
+                    onChangeText={(e) => {
+                      personalcontextData.guardianName = e.replace(
+                        avoidNumNChar,
+                        ""
+                      );
+                      setSession({ ...session, prevSessionData });
+                    }}
                   />
                 </CardMargin>
                 <CardMargin>
