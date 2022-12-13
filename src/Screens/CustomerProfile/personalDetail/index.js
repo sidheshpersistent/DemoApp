@@ -115,6 +115,7 @@ import {
 import CustomSearchInputDropdown from "../../../Components/CustomSearchInputDropdown/CustomSearchInputDropdown";
 import ErrorPopup from "../../../Components/ErrorPopup";
 import SelectDropdown from "react-native-select-dropdown";
+import CustomDateInput from "../../../Components/CustomDateInput/CustomDateInput";
 
 const PersonalDetail = (props) => {
   const {
@@ -2108,7 +2109,7 @@ const PersonalDetail = (props) => {
             />
             <CardMargin></CardMargin>
             <CardMargin>
-              {/* <DateInput
+              <CustomDateInput
                 testID={TestIds.cp_nominees_dob}
                 label={StringsOfLanguages.PERSONAL_DETAIL.NOMINEE_DOB}
                 dateFormat={dateFormat}
@@ -2120,14 +2121,19 @@ const PersonalDetail = (props) => {
                   new Date(new Date().getTime()).setDate(new Date().getDate()),
                 ]}
                 selectedDate={nomineeDob}
-                datePickerProps={{
-                  onSetDatePress: (e) => {
-                    personalcontextData.nomineeDob = e;
-                    setSession({ ...session, prevSessionData });
-                    nomineeDate.current = 1;
-                  },
+                onSetDatePress={(e) => {
+                  personalcontextData.nomineeDob = e;
+                  setSession({ ...session, prevSessionData });
+                  nomineeDate.current = 1;
                 }}
-              /> */}
+              // datePickerProps={{
+              //   onSetDatePress: (e) => {
+              //     personalcontextData.nomineeDob = e;
+              //     setSession({ ...session, prevSessionData });
+              //     nomineeDate.current = 1;
+              //   },
+              // }}
+              />
             </CardMargin>
           </AlignedContainer>
           <AlignedContainer>
