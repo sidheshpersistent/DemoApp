@@ -133,7 +133,7 @@ const CustomTextInput = props => {
           textProps={textProps}
           placeholder={placeholder}
           isActive={isActive}
-          disabled={disabled}
+          editable={disabled}
           onFocus={() => {
             handleFocus();
             onFocus;

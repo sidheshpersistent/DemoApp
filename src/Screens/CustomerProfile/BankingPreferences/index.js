@@ -21,8 +21,6 @@ import {
   location,
   verify_card,
 } from "../../../Assets/Images";
-
-// import { Checkbox } from "@idfc/ccl-mobile/lib/module/v2";
 import { CustomText, PopupEditBranch } from "../../../Components";
 import {
   Colors,
@@ -58,6 +56,7 @@ import {
   SuccessContainer,
 } from "./styled";
 import ErrorPopup from "../../../Components/ErrorPopup";
+import CheckBox from "@react-native-community/checkbox";
 
 const BankingPreferences = (props) => {
   const { next, prev, navigation, childFunc, loading, resetFunc } = props;
@@ -534,27 +533,24 @@ const BankingPreferences = (props) => {
         <FullLengthBox>
           <AlignedContainer>
             <MarginBox>
-              {/* <Checkbox
-                testID={TestIds.bp_terms_aggreed_checkbox}
-                style={{
-                  width: "85%",
-                  justifyContent: "flex-start",
-                  alignItems: "flex-start",
-                }}
-                labelStyle={{ marginLeft: 10 }}
-                checked={istermsAggreed}
-                onChange={() => {
-                  if (activeIndex == 0) {
-                    bankingPreferenceContext.personalizedTerms =
-                      !bankingPreferenceContext.personalizedTerms;
-                  } else {
-                    bankingPreferenceContext.instaKitTerms =
-                      !bankingPreferenceContext.instaKitTerms;
-                  }
+              <View style={{ flexDirection: 'row' }}>
+                <CheckBox
+                  testID={TestIds.bp_terms_aggreed_checkbox}
+                  style={{ width: 24, height: 24, marginRight: 10 }}
+                  value={istermsAggreed}
+                  // tintColors={{true: '#ff0000'}}
+                  onValueChange={() => {
+                    if (activeIndex == 0) {
+                      bankingPreferenceContext.personalizedTerms =
+                        !bankingPreferenceContext.personalizedTerms;
+                    } else {
+                      bankingPreferenceContext.instaKitTerms =
+                        !bankingPreferenceContext.instaKitTerms;
+                    }
 
-                  setSession({ ...session, prevSession });
-                }}
-              >
+                    setSession({ ...session, prevSession });
+                  }}
+                />
                 <CustomText
                   testID={TestIds.bp_i_agree}
                   fontFamily={FontFamily.Inter_REGULAR}
@@ -592,7 +588,7 @@ const BankingPreferences = (props) => {
                     </CustomText>
                   )}
                 </CustomText>
-              </Checkbox> */}
+              </View>
             </MarginBox>
           </AlignedContainer>
         </FullLengthBox>
@@ -600,21 +596,18 @@ const BankingPreferences = (props) => {
           <FullLengthBox style={{ marginTop: -10 }}>
             <AlignedContainer>
               <MarginBox>
-                {/* <Checkbox
-                  testID={TestIds.bp_booster_account_checkbox}
-                  style={{
-                    width: "85%",
-                    justifyContent: "flex-start",
-                    alignItems: "center",
-                  }}
-                  labelStyle={{ marginLeft: 10 }}
-                  checked={boosterAccount}
-                  onChange={() => {
-                    bankingPreferenceContext.boosterAccount =
-                      !bankingPreferenceContext.boosterAccount;
-                    setSession({ ...session, prevSession });
-                  }}
-                >
+                <View style={{ flexDirection: 'row' }}>
+                  <CheckBox
+                    testID={TestIds.bp_booster_account_checkbox}
+                    style={{ width: 24, height: 24, marginRight: 10 }}
+                    value={boosterAccount}
+                    // tintColors={{true: '#ff0000'}}
+                    onValueChange={() => {
+                      bankingPreferenceContext.boosterAccount =
+                        !bankingPreferenceContext.boosterAccount;
+                      setSession({ ...session, prevSession });
+                    }}
+                  />
                   <CustomText
                     fontFamily={FontFamily.Inter_REGULAR}
                     lineHeight={Line_Height.HEIGHT_20}
@@ -627,7 +620,7 @@ const BankingPreferences = (props) => {
                       {StringsOfLanguages.BANKING_PREFERNCE.SALARY_BOOSTER}
                     </CustomText>
                   </CustomText>
-                </Checkbox> */}
+                </View>
               </MarginBox>
             </AlignedContainer>
           </FullLengthBox>

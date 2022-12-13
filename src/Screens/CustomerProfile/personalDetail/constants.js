@@ -16,7 +16,7 @@ export const met_customer_at = [
   { id: "3", displayText: "IDFC FIRST Bank branch", value: "3" },
 ];
 
-export const dateFormat = "dd MMMM yyyy";
+export const dateFormat = "DD MMMM yyyy";
 export const minDate = "1990-01-01";
 
 export const countryList = {
