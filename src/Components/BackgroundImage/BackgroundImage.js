@@ -4,8 +4,9 @@ import BGImage from '../../Assets/Images/bg1.png';
 const BackgroundImage = props => {
   const { style, imageSource, imageStyle } = props;
 
-
   
+
+  //Test
   return (
     <ImageBackground
       imageStyle={imageStyle}
