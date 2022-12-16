@@ -6,21 +6,19 @@ import CustomText from '../CustomText/CustomText';
 
 const CustomButton = props => {
   const { variant, fontSize, disabled, buttonPress, maxWidth, title, buttonType, width, testID, noBorder, style } = props;
-
   return (
     <View>
       <TouchableOpacity
         variant={variant}
-        fontSize={fontSize}
         testID={testID}
-        style={[style, {
+        style={[{
           // maxWidth: maxWidth ? maxWidth : '90%',
           width: '90%',
           backgroundColor: Colors.MAROON,
           borderRadius: 30,
           justifyContent: 'center',
           alignSelf: 'center'
-        }]}
+        }, style]}
         disabled={disabled ? disabled : false}
         width={width}
         buttonType={buttonType}
@@ -30,7 +28,7 @@ const CustomButton = props => {
       >
         <CustomText
           fontFamily={FontFamily.INTER_BOLD}
-          fontSize={Font_Size.SIZE_20}
+          fontSize={fontSize ? fontSize : Font_Size.SIZE_20}
           lineHeight={28}
           letterSpacing={-0.2}
           align={"center"}

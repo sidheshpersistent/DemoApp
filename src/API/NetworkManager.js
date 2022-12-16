@@ -32,8 +32,8 @@ export default class NetworkManager {
     console.log('test----------------------------url', url);
     if (url.includes("branchList")) {
       callBack(ResponseData['branchList']);
-    }
-    callBack(ResponseData[`${url}`]);
+    } else
+      callBack(ResponseData[`${url}`]);
     // axios
     //   .get(url, { headers: headers }, { timeout: NETWORK_TIMEOUT })
     //   .then((response) => {

@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { IconSize } from "@idfc/ccl-commons/enums";
-import { Icon } from "@idfc/ccl-mobile";
+// import { Icon } from "@idfc/ccl-mobile";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import {
@@ -121,7 +120,7 @@ const PreApprovedOffers = (props) => {
 
         <Popup
           isVisible={submittedPopup}
-          icon={<Icon name={"VerifiedThumbsup"} size={60} isPreComposedIcon />}
+          // icon={<Icon name={"VerifiedThumbsup"} size={60} isPreComposedIcon />}
           Heading={StringsOfLanguages.PREAPPROVEDOFFERS.APPLICATION_SUBMIT}
           component={
             <View style={{ marginBottom: 15 }}>

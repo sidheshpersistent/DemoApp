@@ -134,6 +134,8 @@ const SASuccess = (props) => {
     }
   }
   const saveBankUserSectionForm = () => {
+    navigation.navigate(NavigationUrl.PreApprovedOffersId);
+    return;
     setShowLoader(true);
     let finalRequest = getBankUseSectionRequest();
     let header = {

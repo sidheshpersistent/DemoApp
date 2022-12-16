@@ -50,7 +50,7 @@ export const ButtonContainer = styled.View`
   
 `;
 export const ButtonKM = {
- marginRight:15,
+  marginRight: 15,
   alignItems: "center",
   justifyContent: "center",
   width: 99,
@@ -69,7 +69,7 @@ export const ButtonKMText = {
   color: "#ffffff",
 };
 export const CardContainer = {
-  flex:1,
+  flex: 1,
   margin: 8,
   borderWidth: 0,
   marginHorizontal: 57,

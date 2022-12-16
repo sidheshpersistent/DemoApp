@@ -26,7 +26,7 @@ import { background4, icon_4 } from "../../../../Assets/Images";
 import { StringsOfLanguages } from "../../../../Localization";
 
 const SurakshaBima = () => {
-  
+
 
   return (
     <Card style={CardContainer}>
@@ -80,7 +80,7 @@ const SurakshaBima = () => {
                   testID={TestIds.pa_AvailOffer_button}
                   style={{ width: 105, height: 36 }}
                   buttonPress={() => ""}
-                  fontSize={"12px"}
+                  fontSize={Font_Size.SIZE_12}
                   buttonType="primary"
                   noBorder
                   title={"Apply Now"}

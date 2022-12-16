@@ -80,7 +80,7 @@ const Endpoints = {
   getBranchList: `branchList/`,
   deleteResumeApplicationsData: `deleteJourney?userId=`,
   checkPanAdharMatch: `/aadharPanMatch/`,
-  getBankUseSectionList: `/getBankUseSectionList`,
+  getBankUseSectionList: `getBankUseSectionList`,
 
   customerDedupe1: `${firebaseUrl}/CID/customerDedupe/`, //>>> for 123 isPrathamBankCustomer: true <<>> for 122 isPrathamBankCustomer: false
   customerDedupe: `validate/user`,

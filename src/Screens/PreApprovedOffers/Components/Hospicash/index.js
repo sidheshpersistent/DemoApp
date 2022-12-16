@@ -29,9 +29,9 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { StringsOfLanguages } from "../../../../Localization";
 import { background2, icon_2 } from "../../../../Assets/Images";
-import { Icon } from "@idfc/ccl-mobile";
-import { IconSize } from "@idfc/ccl-commons/enums";
-import { Checkbox } from "@idfc/ccl-mobile/lib/module/v2";
+// import { Icon } from "@idfc/ccl-mobile";
+// import { IconSize } from "@idfc/ccl-commons/enums";
+import CheckBox from "@react-native-community/checkbox";
 
 const Hospicash = ({ item }) => {
   const navigation = useNavigation();
@@ -131,11 +131,11 @@ const Hospicash = ({ item }) => {
                   {StringsOfLanguages.PREAPPROVEDOFFERS.HERE_ARE}
                 </CustomText>
                 <TouchableOpacity style={{ marginBottom: -20, marginRight: 5 }}>
-                  <Icon
+                  {/* <Icon
                     name="Download"
                     size={IconSize.SIZE_16}
                     primaryColor={Colors.WHITE}
-                  />
+                  /> */}
                 </TouchableOpacity>
               </View>
               <ApplicationBoxContainer flag={item.flag}>
@@ -199,10 +199,11 @@ const Hospicash = ({ item }) => {
                     alignItems: "center",
                   }}
                 >
-                  <Checkbox
+                  <CheckBox
                     testID={TestIds.pa_terms_checkbox}
-                    checked={terms}
-                    onChange={() => setTerms(!terms)}
+                    value={terms}
+                    tintColors={{ true: '#9b1e26' }}
+                    onValueChange={() => setTerms(!terms)}
                   />
                   <Text
                     style={{
@@ -212,7 +213,7 @@ const Hospicash = ({ item }) => {
                       fontFamily: FontFamily.Inter_REGULAR,
                     }}
                   >
-                    {StringsOfLanguages.PREAPPROVEDOFFERS.I_ACCEPT+"  "}
+                    {StringsOfLanguages.PREAPPROVEDOFFERS.I_ACCEPT + "  "}
                     <Text
                       testID={TestIds.pa_terms_text}
                       style={{ color: "maroon" }}
@@ -222,11 +223,11 @@ const Hospicash = ({ item }) => {
                           title: "",
                           subTitle: "",
                           isVisibleDone: false,
-                          webViewUrl:item.termsURL
+                          webViewUrl: item.termsURL
                         });
                       }}
                     >
-                      {StringsOfLanguages.PREAPPROVEDOFFERS.TERMS+" "}
+                      {StringsOfLanguages.PREAPPROVEDOFFERS.TERMS + " "}
                     </Text>
                     <Text>{StringsOfLanguages.PREAPPROVEDOFFERS.OF_IDFC}</Text>
                   </Text>
@@ -234,11 +235,13 @@ const Hospicash = ({ item }) => {
                 <View
                   style={{ width: "80%", flexDirection: "row", marginTop: 10 }}
                 >
-                  <Checkbox
+                  <CheckBox
                     testID={TestIds.pa_declartion_checkbox}
-                    style={{ alignSelf: "flex-start" }}
-                    checked={policyterm}
-                    onChange={() => setPolicyterm(!policyterm)}
+                    tintColors={{ true: '#9b1e26' }}
+                    value={policyterm}
+                    onValueChange={() => setPolicyterm(!policyterm)}
+
+
                   />
                   <Text
                     style={{
@@ -258,17 +261,17 @@ const Hospicash = ({ item }) => {
                           title: "",
                           subTitle: "",
                           isVisibleDone: false,
-                          webViewUrl:item.declarationURL
-                            
+                          webViewUrl: item.declarationURL
+
                         });
                       }}
-                      // onPress={() =>
-                      //   {
-                      //     navigation.navigate(NavigationUrl.WebViewComponent, {
-                      //       url: "https://firebasestorage.googleapis.com/v0/b/matmdemotest.appspot.com/o/Annexure-3_Policy-Wordings-Group-Safeguard-Insurance.html?alt=media&token=0fa66900-ca51-4cd2-81b1-2835f762ed4b",
-                      //     });
-                      //   }
-                      // }
+                    // onPress={() =>
+                    //   {
+                    //     navigation.navigate(NavigationUrl.WebViewComponent, {
+                    //       url: "https://firebasestorage.googleapis.com/v0/b/matmdemotest.appspot.com/o/Annexure-3_Policy-Wordings-Group-Safeguard-Insurance.html?alt=media&token=0fa66900-ca51-4cd2-81b1-2835f762ed4b",
+                    //     });
+                    //   }
+                    // }
                     >
                       {"\n"}{StringsOfLanguages.PREAPPROVEDOFFERS.CLICK_HERE}{" "}
                     </Text>
@@ -303,7 +306,7 @@ const Hospicash = ({ item }) => {
                           cardID: item.id,
                         })
                       }
-                      fontSize={"12px"}
+                      fontSize={Font_Size.SIZE_12}
                       buttonType="secondary"
                       noBorder
                       title={StringsOfLanguages.PREAPPROVEDOFFERS.AVAIL_OFFER}
@@ -313,7 +316,7 @@ const Hospicash = ({ item }) => {
                       testID={TestIds.pa_AvailOffer_button}
                       style={{ width: 105, height: 36 }}
                       buttonPress={() => ""}
-                      fontSize={"12px"}
+                      fontSize={Font_Size.SIZE_12}
                       disabled={true}
                       title={StringsOfLanguages.PREAPPROVEDOFFERS.AVAIL_OFFER}
                     ></CustomButton>

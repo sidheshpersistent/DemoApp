@@ -1,5 +1,4 @@
 
-import { Checkbox, DateInput, Select } from "@idfc/ccl-mobile/lib/module/v2";
 import React, { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 
@@ -36,13 +35,15 @@ import {
 import useSession from "../../../../App/useSession";
 import { addressCheck, allowOnlyNum, avoidNumNChar, dateFormat, minDate } from "../../../CustomerProfile/personalDetail/constants";
 import { PREAPPROVED_FLAG_TYPE } from "../../../../Utils/Constants";
+import CheckBox from "@react-native-community/checkbox";
+import CustomDateInput from "../../../../Components/CustomDateInput/CustomDateInput";
 
 const Hospicash = ({ response }) => {
   const navigation = useNavigation();
 
   const { session, setSession } = useSession();
   const [isNomineAddressSame, setIsNomineAddressSame] = useState(true);
-  const [nomineeDob, setNomineeDob] = useState(""); 
+  const [nomineeDob, setNomineeDob] = useState("");
   const [isNomineeMinor, setIsNomineeMinor] = useState(false);
   const [isGuardianAdrressSame, setIsGuardianAdrressSame] = useState(true);
   const [nomineeName, setNomineeName] = useState("");
@@ -65,10 +66,10 @@ const Hospicash = ({ response }) => {
   const [guardianState, setGuardianState] = useState("");
   const [guardianCity, setGuardianCity] = useState("");
 
- 
+
 
   useEffect(() => {
-    
+
     const getAge = (nomineeDob) =>
       Math.floor((new Date() - new Date(nomineeDob).getTime()) / 3.15576e10);
     const nomineeAge = getAge(nomineeDob);
@@ -149,12 +150,12 @@ const Hospicash = ({ response }) => {
       confirmCheckbox
     ) {
       if (!isNomineeMinor) {
-        if(nomineeAddressCheck()){
-         return true
-        }else{
+        if (nomineeAddressCheck()) {
+          return true
+        } else {
           return false
         }
-       
+
       } else {
         if (guardianName != "") {
           if (nomineeAddressCheck() && guardianAddressCheck()) {
@@ -303,7 +304,7 @@ const Hospicash = ({ response }) => {
           />
         </MarginTopBox>
         <MarginTopBox>
-          <Select
+          {/* <Select
             testID={TestIds.hc_insured_relation}
             label={StringsOfLanguages.APPLYNOW_HOSPICASH.RELATIONSHIP_INSURED}
             options={nominee_Relation_Data}
@@ -311,10 +312,10 @@ const Hospicash = ({ response }) => {
             iconColor={Colors.MAROON_DARK}
             onChange={(e) => setInsuredRelation(e)}
             value={insuredRelation}
-          />
+          /> */}
         </MarginTopBox>
         <MarginTopBox>
-          <DateInput
+          <CustomDateInput
             testID={TestIds.hc_nomineeDOB}
             dateFormat={dateFormat}
             label={StringsOfLanguages.APPLYNOW_HOSPICASH.NOMINEE_DOB}
@@ -323,24 +324,21 @@ const Hospicash = ({ response }) => {
               new Date().getDate() - 2
             )}
             selectedDate={nomineeDob}
-            datePickerProps={{ onSetDatePress: (e) => setNomineeDob(e) }}
+            onSetDatePress={(e) => setNomineeDob(e)}
+          // datePickerProps={{ onSetDatePress: (e) => setNomineeDob(e) }}
           />
         </MarginTopBox>
       </AlignedContainer>
       <WhiteBox>
         <AlignedContainer>
-          <Checkbox
-          testID={TestIds.hc_is_nomineeAddressSame}
-            labelStyle={{
-              fontSize: 14,
-              marginLeft: 10,
-              fontFamily: FontFamily.Inter_REGULAR,
-            }}
-            checked={isNomineAddressSame}
-            onChange={() => setIsNomineAddressSame(!isNomineAddressSame)}
+          <CheckBox
+            testID={TestIds.hc_is_nomineeAddressSame}
+            style={{ marginLeft: 12 }}
+            value={isNomineAddressSame}
+            onValueChange={() => setIsNomineAddressSame(!isNomineAddressSame)}
           >
             {StringsOfLanguages.APPLYNOW_HOSPICASH.NOMINEE_ADDRESS_SAME}
-          </Checkbox>
+          </CheckBox>
         </AlignedContainer>
       </WhiteBox>
 
@@ -364,7 +362,7 @@ const Hospicash = ({ response }) => {
                 nomineePinError
                   ? StringsOfLanguages.APPLYNOW_HOSPICASH.INVALID_PINCODE
                   : StringsOfLanguages.APPLYNOW_HOSPICASH.PINCODE
-              }            
+              }
               value={nomineePincode}
               textInputProps={{
                 onChangeText: (text) => {
@@ -391,7 +389,7 @@ const Hospicash = ({ response }) => {
           </MarginTopBox>
 
           <MarginTopBox>
-            <Select
+            {/* <Select
               testID={TestIds.hc_nominee_state}
               label={StringsOfLanguages.APPLYNOW_HOSPICASH.STATE}
               defaultSelectedItem={nomineeState}
@@ -399,19 +397,19 @@ const Hospicash = ({ response }) => {
               labelStyle={{ color: Colors.NEW_GREY_800.text }}
               iconColor={Colors.MAROON_DARK}
               onChange={(e) => setNomineeState(e)}
-            />
+            /> */}
           </MarginTopBox>
           <MarginTopBox>
-            <Select
+            {/* <Select
               testID={TestIds.hc_nominee_city}
               label={StringsOfLanguages.APPLYNOW_HOSPICASH.CITY}
-             
+
               defaultSelectedItem={nomineeCity}
               options={City_Data}
               labelStyle={{ color: Colors.NEW_GREY_800.text }}
               iconColor={Colors.MAROON_DARK}
               onChange={(e) => setNomineeCity(e)}
-            />
+            /> */}
           </MarginTopBox>
           <MarginTopBox>
             <CustomTextInput
@@ -439,7 +437,7 @@ const Hospicash = ({ response }) => {
           </MarginTopBox>
           <MarginTopBox>
             <CustomTextInput
-            testID={TestIds.hc_nominee_address_3}
+              testID={TestIds.hc_nominee_address_3}
               value={nomineeAddress3}
               textInputProps={{
                 onChangeText: (text) =>
@@ -494,20 +492,18 @@ const Hospicash = ({ response }) => {
 
           <WhiteBox>
             <AlignedContainer>
-              <Checkbox
+              <CheckBox
                 testID={TestIds.hc_is_guardian_address}
-                labelStyle={{
-                  fontSize: 14,
+                style={{
                   marginLeft: 10,
-                  fontFamily: FontFamily.Inter_REGULAR,
                 }}
-                onChange={() =>
+                onValueChange={() =>
                   setIsGuardianAdrressSame(!isGuardianAdrressSame)
                 }
-                checked={isGuardianAdrressSame}
+                value={isGuardianAdrressSame}
               >
                 {StringsOfLanguages.APPLYNOW_HOSPICASH.GUARDIAN_ADDRESS_SAME}
-              </Checkbox>
+              </CheckBox>
             </AlignedContainer>
           </WhiteBox>
 
@@ -560,7 +556,7 @@ const Hospicash = ({ response }) => {
               </MarginTopBox>
 
               <MarginTopBox>
-                <Select
+                {/* <Select
                   testID={TestIds.hc_guardian_state}
                   label={StringsOfLanguages.APPLYNOW_HOSPICASH.STATE}
                   defaultSelectedItem={guardianState}
@@ -568,18 +564,18 @@ const Hospicash = ({ response }) => {
                   labelStyle={{ color: Colors.NEW_GREY_800.text }}
                   iconColor={Colors.MAROON_DARK}
                   onChange={(e) => setGuardianState(e)}
-                />
+                /> */}
               </MarginTopBox>
               <MarginTopBox>
-                <Select
-                testID={TestIds.hc_guardian_city}
+                {/* <Select
+                  testID={TestIds.hc_guardian_city}
                   label={StringsOfLanguages.APPLYNOW_HOSPICASH.CITY}
                   defaultSelectedItem={guardianCity}
                   options={City_Data}
                   labelStyle={{ color: Colors.NEW_GREY_800.text }}
                   iconColor={Colors.MAROON_DARK}
                   onChange={(e) => setGuardianCity(e)}
-                />
+                /> */}
               </MarginTopBox>
               <MarginTopBox>
                 <CustomTextInput
@@ -624,14 +620,11 @@ const Hospicash = ({ response }) => {
 
       <WhiteBox>
         <AlignedContainer>
-          <Checkbox
+          <CheckBox
             testID={TestIds.hc_terms_checkbox}
-            style={{
-              width: "90%",
-            }}
             labelStyle={{ fontSize: 14, marginLeft: 10 }}
-            checked
-            onChange={() => {
+            value={true}
+            onValueChange={() => {
               setTermsCheckbox(!termsCheckbox);
             }}
           >
@@ -641,27 +634,27 @@ const Hospicash = ({ response }) => {
             >
               {StringsOfLanguages.APPLYNOW_HOSPICASH.IDFC_TERMS}
               <Text
-              testID={TestIds.hc_terms_text}
-              onPress={() => {
-                navigation.navigate(NavigationUrl.CustomWebPage, {
-                  isVisibleHeader: false,
-                  title: "",
-                  subTitle: "",
-                  isVisibleDone: false,
-                  webViewUrl:response.terms
-                    
-                });
-              }}
+                testID={TestIds.hc_terms_text}
+                onPress={() => {
+                  navigation.navigate(NavigationUrl.CustomWebPage, {
+                    isVisibleHeader: false,
+                    title: "",
+                    subTitle: "",
+                    isVisibleDone: false,
+                    webViewUrl: response.terms
+
+                  });
+                }}
               >
-              <CustomText
-                fontSize={Font_Size.SIZE_14}
-                color={Colors.MAROON}
-                fontFamily={FontFamily.Inter_SemiBold}
-              >
-                {StringsOfLanguages.APPLYNOW_HOSPICASH.TERMS +" "}
-              </CustomText>
+                <CustomText
+                  fontSize={Font_Size.SIZE_14}
+                  color={Colors.MAROON}
+                  fontFamily={FontFamily.Inter_SemiBold}
+                >
+                  {StringsOfLanguages.APPLYNOW_HOSPICASH.TERMS + " "}
+                </CustomText>
               </Text>
-              
+
               <CustomText
                 fontSize={Font_Size.SIZE_14}
                 fontFamily={FontFamily.Inter_REGULAR}
@@ -669,20 +662,20 @@ const Hospicash = ({ response }) => {
                 {StringsOfLanguages.APPLYNOW_HOSPICASH.OF_IDFC}
               </CustomText>
             </CustomText>
-          </Checkbox>
+          </CheckBox>
         </AlignedContainer>
       </WhiteBox>
 
       <WhiteBox>
         <AlignedContainer>
-          <Checkbox
-          testID={TestIds.hc_declaration_checkbox}
-            style={checkboxStyle}
+          <CheckBox
+            testID={TestIds.hc_declaration_checkbox}
             labelStyle={checkboxLabelStyle}
-            checked
-            onChange={() => {
+            value={true}
+            onValueChange={() => {
               setConfirmCheckbox(!confirmCheckbox);
             }}
+            tintColors={{ true: '#9b1e26' }}
           >
             <Text>{StringsOfLanguages.APPLYNOW_HOSPICASH.I_CONFIRM}</Text>
 
@@ -694,8 +687,8 @@ const Hospicash = ({ response }) => {
                   title: "",
                   subTitle: "",
                   isVisibleDone: false,
-                  webViewUrl:response.declaration
-                    
+                  webViewUrl: response.declaration
+
                 });
               }}
               style={{
@@ -715,7 +708,7 @@ const Hospicash = ({ response }) => {
             >
               {StringsOfLanguages.APPLYNOW_HOSPICASH.TO_DOWNLOAD}
             </Text>
-          </Checkbox>
+          </CheckBox>
         </AlignedContainer>
       </WhiteBox>
 
@@ -726,7 +719,7 @@ const Hospicash = ({ response }) => {
             navigation.navigate(NavigationUrl.PreApprovedOffersId, {
               isApplied: true,
             });
-            setSession({ ...session, availedCardFlag:PREAPPROVED_FLAG_TYPE.HOSPICASH });
+            setSession({ ...session, availedCardFlag: PREAPPROVED_FLAG_TYPE.HOSPICASH });
           }}
           style={{ marginBottom: 32 }}
           disabled={!buttonActive()}

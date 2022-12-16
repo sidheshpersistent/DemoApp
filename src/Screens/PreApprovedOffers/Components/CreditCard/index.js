@@ -29,14 +29,14 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { StringsOfLanguages } from "../../../../Localization";
 import { background1, icons_24_info, icon_1 } from "../../../../Assets/Images";
-import { Icon } from "@idfc/ccl-mobile";
-import { IconSize } from "@idfc/ccl-commons/enums";
+// import { Icon } from "@idfc/ccl-mobile";
+// import { IconSize } from "@idfc/ccl-commons/enums";
 
 const CreditCard = ({ item }) => {
   const navigation = useNavigation();
 
   const titleContainer = (title) => {
-    
+
     return (
       <CustomText
         testID={TestIds.pa_title}
@@ -45,7 +45,7 @@ const CreditCard = ({ item }) => {
         lineHeight={32}
         color={Colors.WHITE}
       >
-        {title + " " }
+        {title + " "}
 
         <CustomText
           fontFamily={FontFamily.Inter_Light}
@@ -106,11 +106,11 @@ const CreditCard = ({ item }) => {
                   {StringsOfLanguages.PREAPPROVEDOFFERS.HERE_ARE}
                 </CustomText>
                 <TouchableOpacity style={{ marginBottom: -10, marginRight: 5 }}>
-                  <Icon
+                  {/* <Icon
                     name="Download"
                     size={IconSize.SIZE_16}
                     primaryColor={Colors.WHITE}
-                  />
+                  /> */}
                 </TouchableOpacity>
               </View>
 
@@ -182,7 +182,7 @@ const CreditCard = ({ item }) => {
                 <View>
                   {titleContainer(item.title)}
                   <View style={{ flexDirection: "row", marginTop: 5 }}>
-                    <View style={{ marginRight:"20%" }}>
+                    <View style={{ marginRight: "20%" }}>
                       <CustomText
                         testID={TestIds.pa_intro_1}
                         fontFamily={FontFamily.Inter_REGULAR}
@@ -205,21 +205,21 @@ const CreditCard = ({ item }) => {
                         ₹XXXX
                       </CustomText>
                     </View>
-                    <View style={{ }}>
-                      <View style={{flexDirection:"row"}}>
-                      <CustomText
-                        testID={TestIds.pa_intro_1}
-                        fontFamily={FontFamily.Inter_REGULAR}
-                        fontSize={Font_Size.SIZE_10}
-                        lineHeight={Line_Height.HEIGHT_18}
-                        letterSpacing={LetterSpacing.ZERO_POINT_ONE}
-                        style={{ color: "lightgrey" }}
-                      >
-                        {StringsOfLanguages.PREAPPROVEDOFFERS.ANNUAL_PERCENTAGE}
-                      </CustomText>
-                      <Image source={icons_24_info} style={{width:15,height:15 , marginLeft:5,marginTop:1}}/>
+                    <View style={{}}>
+                      <View style={{ flexDirection: "row" }}>
+                        <CustomText
+                          testID={TestIds.pa_intro_1}
+                          fontFamily={FontFamily.Inter_REGULAR}
+                          fontSize={Font_Size.SIZE_10}
+                          lineHeight={Line_Height.HEIGHT_18}
+                          letterSpacing={LetterSpacing.ZERO_POINT_ONE}
+                          style={{ color: "lightgrey" }}
+                        >
+                          {StringsOfLanguages.PREAPPROVEDOFFERS.ANNUAL_PERCENTAGE}
+                        </CustomText>
+                        <Image source={icons_24_info} style={{ width: 15, height: 15, marginLeft: 5, marginTop: 1 }} />
                       </View>
-                      
+
                       <CustomText
                         testID={TestIds.pa_intro_1}
                         marginTop={2}
@@ -268,14 +268,14 @@ const CreditCard = ({ item }) => {
                   <CustomButton
                     testID={TestIds.pa_AvailOffer_button}
                     style={{ width: 105, height: 36 }}
-                    buttonPress={() =>{
+                    buttonPress={() => {
                       navigation.navigate(NavigationUrl.ApplyNowForm, {
                         cardID: item.id,
                       })
                     }
-                      
+
                     }
-                    fontSize={"12px"}
+                    fontSize={Font_Size.SIZE_12}
                     buttonType="secondary"
                     noBorder
                     title={StringsOfLanguages.PREAPPROVEDOFFERS.AVAIL_OFFER}

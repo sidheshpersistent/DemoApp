@@ -16,7 +16,7 @@ import ScanScreen from "../Screens/CustomerProfile/BankingPreferences/Scanner";
 import SASuccess from "../Screens/SASuccess";
 import ResumeApplication from '../Screens/ResumeApplication';
 // import ENachMandate from "../Screens/ENachMandate";
-// import PreApprovedOffers from "../Screens/PreApprovedOffers";
+import PreApprovedOffers from "../Screens/PreApprovedOffers";
 // import AccountOnHold from "../Screens/AccountOnHold";
 
 // import KnowMore from "../Screens/KnowMore";
@@ -24,13 +24,13 @@ import ResumeApplication from '../Screens/ResumeApplication';
 // import HamburgerScreen from "../Screens/HamburgerScreen";
 // import BankUseSectionForm from "../Screens/BankUseSectionForm";
 // import EAuth from '../Screens/AgentLogin_oAuth/EAuth';
-// import BankUseSectionList from "../Screens/BankUseSectionList";
+import BankUseSectionList from "../Screens/BankUseSectionList";
 // import WebViewComponent from "../Components/WebviewComponent/WebViewComponent";
-// import CustomWebPage from "../Components/CustomWebPage";
+import CustomWebPage from "../Components/CustomWebPage";
 // import Transactions from "../Screens/Transactions";
 // import DeclarationLinking from "../Screens/Transactions/DeclarationLInking";
 // import DeclarationSeeding from "../Screens/Transactions/DeclarationSeeding";
-// import ApplyNowForm from "../Screens/ApplyNowForm";
+import ApplyNowForm from "../Screens/ApplyNowForm";
 // import AadhaarSuccess from "../Screens/Transactions/AadhaarSuccess";
 
 const Stack = createNativeStackNavigator();
@@ -125,11 +125,11 @@ const AppContainer = ({ childFunc }) => {
           /> */}
 
 
-          {/* <Stack.Screen
+          <Stack.Screen
             name={NavigationUrl.PreApprovedOffersId}
             component={PreApprovedOffers}
-            options={{headerShown: false}}
-          /> */}
+            options={{ headerShown: false }}
+          />
 
           {/* <Stack.Screen
             name={NavigationUrl.AccountOnHoldId}
@@ -149,23 +149,23 @@ const AppContainer = ({ childFunc }) => {
             options={{ headerShown: false }}
           /> */}
 
-          {/* <Stack.Screen
+          <Stack.Screen
             name={NavigationUrl.CustomWebPage}
             component={CustomWebPage}
-            options={{headerShown: false}}
-          /> */}
+            options={{ headerShown: false }}
+          />
 
-          {/* <Stack.Screen
+          <Stack.Screen
             name={NavigationUrl.ApplyNowForm}
             component={ApplyNowForm}
-            options={{headerShown: false}}
-          /> */}
+            options={{ headerShown: false }}
+          />
 
-          {/* <Stack.Screen
+          <Stack.Screen
             name={NavigationUrl.BankUseSectionList}
             component={BankUseSectionList}
-            options={{headerShown: false}}
-          /> */}
+            options={{ headerShown: false }}
+          />
 
           {/* <Stack.Screen
             name={NavigationUrl.BankUseSectionForm}

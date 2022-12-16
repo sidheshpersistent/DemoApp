@@ -142,8 +142,6 @@ const PersonalizedBanking = () => {
         getBenifitData(productData.productFeature)
       }
     });
-
-
   }
 
   const getBenifitData = (feature) => {
@@ -155,11 +153,8 @@ const PersonalizedBanking = () => {
         title: feature[i]
       }
       newFeature.push(obj)
-
     }
     setFeature(newFeature)
-
-
   }
 
   const productRadioHandler = (item, index) => {
@@ -167,7 +162,6 @@ const PersonalizedBanking = () => {
     bankingPreferenceContext.productSelected = item;
     setSession({ ...session, prevSession });
   };
-
 
   const searchFilterFunction = (text) => {
     bankingPreferenceContext.branchSelectedValue = text;
@@ -267,20 +261,6 @@ const PersonalizedBanking = () => {
         <CardMargin>
           {session.accountType != Account_Type.ASSISTED_CS ? (
             <Card style={{ elevation: 4 }}>
-              {/* To use dropdown input below */}
-              {/* <Select
-                style={{ height: 70 }}
-                testID={TestIds.ps_select_product_dropdown}
-                defaultSelectedItem={SAProductList && SAProductList.find(obj => obj.displayText === productSelected.displayText)}
-                label={StringsOfLanguages.BANKING_PREFERNCE.SELECT_PRODUCT}
-                options={SAProductList}
-                onChange={(value) => {
-                  bankingPreferenceContext.productSelected = value;
-                  setSession({ ...session, prevSession });
-                }}
-                labelStyle={{ color: Colors.NEW_GREY_800.text }}
-                iconColor={Colors.MAROON_DARK}
-              /> */}
               <SelectDropdown
                 testID={TestIds.ps_select_product_dropdown}
                 style={{ height: 70 }}
@@ -512,7 +492,6 @@ const PersonalizedBanking = () => {
             {StringsOfLanguages.BANKING_PREFERNCE.PREFERRED_BANK_BRANCH}
           </CustomText>
         </View>
-
         <CardMargin style={{ zIndex: 1 }}>
           <CustomSearchInputCompany
             value={branchSelectedValue}
@@ -563,7 +542,6 @@ const PersonalizedBanking = () => {
                   testID={TestIds.ps_checkbook_checkbox}
                   style={{ width: 24, height: 24, marginRight: 10 }}
                   value={checkbookOpted}
-                  // tintColors={{true: '#ff0000'}}
                   onValueChange={() => {
                     bankingPreferenceContext.checkbookOpted =
                       !bankingPreferenceContext.checkbookOpted;

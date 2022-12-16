@@ -30,28 +30,30 @@ const BankUseSectionList = (props) => {
   const [errorPopup, setErrorPopup] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [showLoader, setShowLoader] = useState(false);
-  const isFocused=useIsFocused();
+  const isFocused = useIsFocused();
   useEffect(() => {
-    if(isFocused){
-    getBankUseSectionList();
-  }
-  }, [props,isFocused]);
+    if (isFocused) {
+      getBankUseSectionList();
+    }
+  }, [props, isFocused]);
 
-  async function getBankUseSectionList () {
+  async function getBankUseSectionList() {
 
     setShowLoader(true);
-    let header ={
+    let header = {
       appName: Account_Type.ASSISTED_SA,
       mobileNumber: ""
     }
     NetworkManager.IDFCNetworkGet(
-      Endpoints.getBankUseSectionList,header,
+      Endpoints.getBankUseSectionList, header,
       (response) => {
+
         setShowLoader(false);
         if (response?.status == CommonConstant.SUCCESS) {
-          let bankUseSectionList = decryptDataValue(
+          let bankUseSectionList =
             response?.assistedBankUseSectionResp
-          );
+
+          console.log('resopnse------', bankUseSectionList);
           setBankUseSectionList(bankUseSectionList);
           if (bankUseSectionList?.length == 0) {
             setErrorPopup(true);

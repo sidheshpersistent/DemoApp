@@ -9,7 +9,7 @@ import CustomTextInput from '../CustomTextInput/CustomTextInput';
 const CustomDateInput = props => {
     const { testID, label, dateFormat, minDate, maxDate, selectedDate, onSetDatePress, style } = props;
     const [date, setDate] = useState(new Date());
-    const [value, setValue] = useState(new Date());
+    const [value, setValue] = useState(moment(new Date()).format(dateFormat));
 
     const onChange = (event, selectedDate) => {
         const formattedDate = moment(selectedDate).format(dateFormat);
@@ -37,8 +37,10 @@ const CustomDateInput = props => {
         <View>
             <TouchableOpacity onPress={showDatepicker} activeOpacity={1}>
                 <CustomTextInput
-                    placeholder={label}
+                    // placeholder={label}
+                    label={label}
                     value={value}
+                    isError={false}
                     disabled={false}
                     pointerEvents={'none'}
                     testID={testID}

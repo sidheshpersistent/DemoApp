@@ -13,20 +13,16 @@ import {
 } from "../../../../Utils";
 import {
   CustomButton,
+  CustomPasswordTextInput,
   CustomText,
   CustomTextInput,
-} from "../../../../Components";
-import {
-  Checkbox,
-  PasswordInput,
   RadioButton,
-  Select,
-} from "@idfc/ccl-mobile/lib/module/v2";
+} from "../../../../Components";
 import { Company_Data, nominee_Relation_Data } from "../../constants";
-import {  IconSize } from "@idfc/ccl-commons/enums";
+// import { IconSize } from "@idfc/ccl-commons/enums";
 import { useNavigation } from "@react-navigation/native";
 import { StringsOfLanguages } from "../../../../Localization";
-import { SearchResult, IconButton } from "@idfc/ccl-mobile";
+// import { SearchResult, IconButton } from "@idfc/ccl-mobile";
 import {
   CardImageTitle,
   BackgroundImageStyle,
@@ -52,7 +48,7 @@ import {
   PasswordView,
 } from "./styled";
 import useSession from "../../../../App/useSession";
-import { icons_24_info } from "../../../../Assets/Images";
+import { chevronDown, icons_24_info } from "../../../../Assets/Images";
 import {
   isValidEmailId,
   isValidMobileNo,
@@ -65,6 +61,11 @@ import {
   MenuTrigger,
   renderers,
 } from 'react-native-popup-menu';
+import CheckBox from "@react-native-community/checkbox";
+import SelectDropdown from "react-native-select-dropdown";
+import { EyeButton } from "../../../CustomerIdentificationDetails/styled";
+
+import Icon from 'react-native-vector-icons/Ionicons';
 const { Popover } = renderers;
 
 const CreditCard = ({ response }) => {
@@ -74,7 +75,7 @@ const CreditCard = ({ response }) => {
   const [isDirectorRelated, setIsDirectorRelated] = useState("");
   const [isOtpSent, setIsOtpSent] = useState(false);
   const [isOTPVerified, setIsOtpVerified] = useState(false);
-  // const [toggleMask, setToggleMask] = useState(false);
+  const [toggleMask, setToggleMask] = useState(false);
   const [value] = useState("+91 8750332889");
   const [companyName, setCompanyName] = useState("");
   const [filterData, setFilterData] = useState(Company_Data);
@@ -197,31 +198,31 @@ const CreditCard = ({ response }) => {
     //     appName: session.accountType,
     //     mobileNumber:""
     //   }
-      // NetworkManager.GetWithSession(
-      //   Endpoints.getCompanyList + text + `?pageNo=1&pageSize=5`,
-      //   header,
-      //   (response) => {
-      //     if (response === "timeOut") {
-      //       setSession({ ...session, loginFlag: false });
-      //     } else {
-      //       let data = response?.data;
-      //       // setCompanyDetails(data);
-      //       if (data && data.length > 0) {
-      //         sethideSearchResult(true);
-      //         setFilterData(data);
-      //         setIsErrorCompanyName(false);
-      //       } else {
-      //         setFilterData([]);
-      //         sethideSearchResult(false);
-      //         setIsErrorCompanyName("error");
-      //       }
-      //     }
-      //   }
-      // );
-      // setFilterData(newData);
-      // sethideSearchResult(true);
+    // NetworkManager.GetWithSession(
+    //   Endpoints.getCompanyList + text + `?pageNo=1&pageSize=5`,
+    //   header,
+    //   (response) => {
+    //     if (response === "timeOut") {
+    //       setSession({ ...session, loginFlag: false });
+    //     } else {
+    //       let data = response?.data;
+    //       // setCompanyDetails(data);
+    //       if (data && data.length > 0) {
+    //         sethideSearchResult(true);
+    //         setFilterData(data);
+    //         setIsErrorCompanyName(false);
+    //       } else {
+    //         setFilterData([]);
+    //         sethideSearchResult(false);
+    //         setIsErrorCompanyName("error");
+    //       }
+    //     }
+    //   }
+    // );
+    // setFilterData(newData);
+    // sethideSearchResult(true);
     // } else {
-      // setFilterData(Company_Data);
+    // setFilterData(Company_Data);
     //   sethideSearchResult(false);
     //   setIsErrorCompanyName(false);
     // }
@@ -432,7 +433,7 @@ const CreditCard = ({ response }) => {
                       alignItems: "center",
                     }}
                   >
-                    <IconButton
+                    {/* <IconButton
                       iconColor={Colors.MAROON_DARK}
                       iconType={companyName ? "Cross" : "Search"}
                       transparent
@@ -443,7 +444,7 @@ const CreditCard = ({ response }) => {
                         //   setToggleMask(!toggleMask);
                         companyName ? cancleSearch() : null;
                       }}
-                    />
+                    /> */}
                   </View>
                 }
               />
@@ -458,7 +459,7 @@ const CreditCard = ({ response }) => {
                   borderBottomRightRadius: 5,
                 }}
               >
-                <SearchResult>
+                {/* <SearchResult>
                   {filterData && filterData.map((company) => (
                     <SearchResult.Item
                       testID={TestIds.crc_filtered_result}
@@ -471,7 +472,7 @@ const CreditCard = ({ response }) => {
                       <SearchResult.Text>{company.displayText}</SearchResult.Text>
                     </SearchResult.Item>
                   ))}
-                </SearchResult>
+                </SearchResult> */}
               </View>
             ) : null}
 
@@ -680,7 +681,7 @@ const CreditCard = ({ response }) => {
                       alignItems: "center",
                     }}
                   >
-                    <IconButton
+                    {/* <IconButton
                       iconColor={Colors.MAROON_DARK}
                       iconType={companyName ? "Cross" : "Search"}
                       transparent
@@ -691,7 +692,7 @@ const CreditCard = ({ response }) => {
                         //   setToggleMask(!toggleMask);
                         companyName ? cancleSearch() : null;
                       }}
-                    />
+                    /> */}
                   </View>
                 }
               />
@@ -706,7 +707,7 @@ const CreditCard = ({ response }) => {
                   borderBottomRightRadius: 5,
                 }}
               >
-                <SearchResult>
+                {/* <SearchResult>
                   {filterData && filterData.map((company) => (
                     <SearchResult.Item
                       testID={TestIds.crc_filtered_result2}
@@ -719,7 +720,7 @@ const CreditCard = ({ response }) => {
                       <SearchResult.Text>{company.displayText}</SearchResult.Text>
                     </SearchResult.Item>
                   ))}
-                </SearchResult>
+                </SearchResult> */}
               </View>
             ) : null}
 
@@ -911,7 +912,7 @@ const CreditCard = ({ response }) => {
 
         {isOTPVerified &&
           <MarginTopBox>
-            <PasswordInput
+            <CustomPasswordTextInput
               testID={TestIds.crc_otp_placeholder}
               disabled={true}
               label={StringsOfLanguages.APPLYNOW_CREDITCARD.OTP_PLACEHOLDER}
@@ -919,14 +920,14 @@ const CreditCard = ({ response }) => {
               showPassword={false}
               suffix={
                 <View>
-                  <IconButton
+                  {/* <IconButton
                     iconColor={Colors.green}
                     iconSize={IconSize.SIZE_20}
                     iconType={"TickFilledClear"}
                     buttonSize={20}
                     transparent
                     disabled
-                  />
+                  /> */}
                   <CustomText
                     fontFamily={FontFamily.Inter_REGULAR}
                     fontSize={Font_Size.SIZE_10}
@@ -942,7 +943,7 @@ const CreditCard = ({ response }) => {
         <MarginTopBox>
           {isOtpSent && !isOTPVerified ? (
             <PasswordView>
-              <PasswordInput
+              <CustomPasswordTextInput
                 testID={TestIds.crc_set_otp}
                 fontSize={Font_Size.SIZE_20}
                 onChangeText={(text) => {
@@ -1000,18 +1001,25 @@ const CreditCard = ({ response }) => {
                 isError={isPinCodeError}
                 errorColor={Colors.ERROR}
                 suffix={
-                  <IconButton
-                    style={[{ top: -13, right: 5 }]}
-                    iconColor={Colors.yellow}
-                    iconSize={IconSize.SIZE_40}
-                    iconType={"Key2"}
-                    buttonSize={24}
-                    transparent
-                    // ASA-1123
-                    onPress={() => {
-                      // setToggleMask(!toggleMask);
-                    }}
-                  />
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                    }}>
+                    <EyeButton
+                      onPress={() => {
+                        setToggleMask(!toggleMask);
+                      }}>
+                      <Icon
+                        color={'maroon'}
+                        name={toggleMask ? 'eye-off' : 'eye'}
+                        buttonSize={24}
+                        transparent
+                        size={Icon_Size.NORMAL}
+                      />
+                    </EyeButton>
+                  </View>
                 }
               />
               <RowBox>
@@ -1025,9 +1033,9 @@ const CreditCard = ({ response }) => {
                   <CustomText>{StringsOfLanguages.APPLYNOW_CREDITCARD.TIME_LEFT + ` ${timerText}`}</CustomText>
                 </MarginTopBox>
                 <MarginTopBox>
-                  <TouchableOpacity 
-                  testID={TestIds.crc_resend_otp}
-                  // resend button
+                  <TouchableOpacity
+                    testID={TestIds.crc_resend_otp}
+                    // resend button
                     disabled={!isActiveResend}
                     onPress={() => createTimer()}
                   >
@@ -1066,7 +1074,7 @@ const CreditCard = ({ response }) => {
           ) : null}
           {!isOtpSent ? (
             <CustomButton
-            testID={TestIds.crc_send_otp}
+              testID={TestIds.crc_send_otp}
               buttonPress={() => {
                 setIsOtpSent(true);
                 createTimer();
@@ -1217,7 +1225,7 @@ const CreditCard = ({ response }) => {
 
             <RadioContainer>
               <RadioButton
-               testID={TestIds.crc_applynow_creditCard_no} 
+                testID={TestIds.crc_applynow_creditCard_no}
                 style={{
                   marginTop: 10,
                   alignItems: "center",
@@ -1315,15 +1323,48 @@ const CreditCard = ({ response }) => {
           </MarginTopBox>
 
           <MarginTopBox>
-            <Select
-
+            <SelectDropdown
               testID={TestIds.crc_relationship_with_customer}
               defaultSelectedItem={customerRelation}
               value={customerRelation}
-              label={StringsOfLanguages.APPLYNOW_CREDITCARD.RELATIONSHIP}
-              options={nominee_Relation_Data}
-              onChange={(value) => {
+              defaultButtonText={StringsOfLanguages.APPLYNOW_CREDITCARD.RELATIONSHIP}
+              data={nominee_Relation_Data}
+              onSelect={(value) => {
                 setCostumerRelation(value);
+              }}
+              dropdownIconPosition={"right"}
+              buttonStyle={{ width: '100%' }}
+              buttonTextStyle={{
+                fontSize: 14,
+                fontFamily: FontFamily.Inter_SemiBold,
+                lineHeight: 14,
+                color: Colors.GRAY,
+              }}
+              rowTextStyle={{
+                fontSize: 14,
+                fontFamily: FontFamily.Inter_SemiBold,
+                lineHeight: 14,
+                color: Colors.GRAY,
+                letterSpacing: -0.5,
+                marginTop: 6,
+              }}
+              renderDropdownIcon={() => {
+                return <Image
+                  source={chevronDown}
+                  style={{
+                    padding: 10,
+                    margin: 5,
+                    height: 25,
+                    width: 25,
+                    resizeMode: 'stretch',
+                  }}
+                />
+              }}
+              buttonTextAfterSelection={(selectedItem, index) => {
+                return selectedItem.displayText
+              }}
+              rowTextForSelection={(item, index) => {
+                return item.displayText
               }}
               labelStyle={{ color: Colors.NEW_GREY_800.text }}
               iconColor={Colors.MAROON_DARK}
@@ -1431,11 +1472,12 @@ const CreditCard = ({ response }) => {
 
       <FullLengthBox>
         <CheckboxView>
-          <Checkbox
+          <CheckBox
             testID={TestIds.crc_terms_and_conditions_checkbox}
-            labelStyle={{ marginLeft: 12 }}
-            checked={isAgree}
-            onChange={() => {
+            style={{ marginLeft: 12 }}
+            tintColors={{ true: '#9b1e26' }}
+            value={isAgree}
+            onValueChange={() => {
               setIsAgree(!isAgree);
             }}
           >
@@ -1464,7 +1506,7 @@ const CreditCard = ({ response }) => {
               </Text>
               of IDFC FIRST Credit Card.
             </CustomText>
-          </Checkbox>
+          </CheckBox>
         </CheckboxView>
       </FullLengthBox>
 

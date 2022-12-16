@@ -13,6 +13,7 @@ import AppContainer from './src/App/AppContainer';
 import { MenuProvider } from 'react-native-popup-menu';
 
 const App = () => {
+  console.disableYellowBox = true;
   return (
     <View style={{ flex: 1 }}>
       <AppProvider>

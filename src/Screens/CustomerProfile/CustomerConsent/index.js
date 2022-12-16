@@ -658,6 +658,7 @@ const CustomerConsent = (props) => {
             <CheckBox
               testID={TestIds.cc_indian_citizen_checkbox}
               style={{ marginRight: 12 }}
+              tintColors={{ true: '#9b1e26' }}
               value={isIndianCitizen}
               onValueChange={() => {
                 consentContextData.isIndianCitizen = !isIndianCitizen;
@@ -805,6 +806,7 @@ const CustomerConsent = (props) => {
             <CheckBox
               testID={TestIds.cc_politically_exposed_checbox}
               style={{ marginRight: 12 }}
+              tintColors={{ true: '#9b1e26' }}
               value={!isPoliticalyExposed}
               onValueChange={() => {
                 consentContextData.isPoliticalyExposed = !isPoliticalyExposed;
@@ -839,6 +841,7 @@ const CustomerConsent = (props) => {
               testID={TestIds.cc_terms_and_conditions_checkbox}
               value={isTermsAgreed}
               style={{ marginRight: 12 }}
+              tintColors={{ true: '#9b1e26' }}
               onValueChange={() => {
                 consentContextData.isTermsAgreed = !isTermsAgreed;
                 setSession({ ...session, prevSessionData });
@@ -896,6 +899,7 @@ const CustomerConsent = (props) => {
               testID={TestIds.cc_consent_checkbox}
               value={isConsentGiven}
               style={{ marginRight: 12 }}
+              tintColors={{ true: '#9b1e26' }}
               onValueChange={() => {
                 consentContextData.isConsentGiven = !isConsentGiven;
                 setSession({ ...session, prevSessionData });

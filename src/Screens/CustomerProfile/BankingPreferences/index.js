@@ -538,7 +538,7 @@ const BankingPreferences = (props) => {
                   testID={TestIds.bp_terms_aggreed_checkbox}
                   style={{ width: 24, height: 24, marginRight: 10 }}
                   value={istermsAggreed}
-                  // tintColors={{true: '#ff0000'}}
+                  tintColors={{ true: '#9b1e26' }}
                   onValueChange={() => {
                     if (activeIndex == 0) {
                       bankingPreferenceContext.personalizedTerms =
@@ -601,7 +601,7 @@ const BankingPreferences = (props) => {
                     testID={TestIds.bp_booster_account_checkbox}
                     style={{ width: 24, height: 24, marginRight: 10 }}
                     value={boosterAccount}
-                    // tintColors={{true: '#ff0000'}}
+                    tintColors={{ true: '#9b1e26' }}
                     onValueChange={() => {
                       bankingPreferenceContext.boosterAccount =
                         !bankingPreferenceContext.boosterAccount;

@@ -14,6 +14,8 @@ target 'newPro' do
 
   pod 'RNCCheckbox', :path => '../node_modules/@react-native-community/checkbox'
 
+  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
+
   target 'newProTests' do
     inherit! :complete
     # Pods for testing

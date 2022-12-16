@@ -1,4 +1,4 @@
-// import CryptoJS from 'crypto-js';
+import CryptoJS from 'crypto-js';
 
 const encryptionKey = 'IDeCVaBRGoWE1Xb+';
 
@@ -18,21 +18,21 @@ export const encryptedDataValue = (value) => {
   };
 
   export const decryptDataValue = (value) => {
-    return value;
-    // try {
-    //   const key = CryptoJS.enc.Latin1.parse(encryptionKey);
-    //   const str = CryptoJS.AES.decrypt(value, key, {
-    //     iv: key,
-    //     mode: CryptoJS.mode.CBC,
-    //     padding: CryptoJS.pad.Pkcs7,
-    //   });
+    // return value;
+    try {
+      const key = CryptoJS.enc.Latin1.parse(encryptionKey);
+      const str = CryptoJS.AES.decrypt(value, key, {
+        iv: key,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7,
+      });
   
-    //   const decryptedData = str.toString(CryptoJS.enc.Utf8);
+      const decryptedData = str.toString(CryptoJS.enc.Utf8);
 
-    //   return JSON.parse(decryptedData) ;
-    // } catch (error) {
-    //   return null;
-    // }
+      return JSON.parse(decryptedData) ;
+    } catch (error) {
+      return null;
+    }
   };
 
   export const decryptURL = (value) => {

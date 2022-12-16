@@ -9,17 +9,15 @@ import SurakshaBima from "../SurakshaBima";
 
 
 const Item = ({ item }) => {
-
-  
   return (
     <>
-    {
-      item.type=="credit"?<CreditCard item={item} />:
-      item.type=="hospi"?<Hospicash item={item} />:
-      item.type=="jj"?<JeevanJyoti item={item} />:
-      item.type=="sb"?<SurakshaBima item={item} />:
-      null
-    }
+      {
+        item.type == "credit" ? <CreditCard item={item} /> :
+          item.type == "hospi" ? <Hospicash item={item} /> :
+            item.type == "jj" ? <JeevanJyoti item={item} /> :
+              item.type == "sb" ? <SurakshaBima item={item} /> :
+                null
+      }
     </>
   );
 };

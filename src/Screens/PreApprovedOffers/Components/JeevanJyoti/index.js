@@ -77,7 +77,7 @@ const JeevanJyoti = () => {
                   // buttonPress={() => {onClick(item.flag)}}   // to change the card design from normal to avail
                   // index==1 || index==2 to be romed later
                   buttonPress={() => ""}
-                  fontSize={"12px"}
+                  fontSize={Font_Size.SIZE_12}
                   buttonType="primary"
                   noBorder
                   title={"Apply Now"}
