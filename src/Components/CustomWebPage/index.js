@@ -33,7 +33,7 @@ const CustomWebPage = (props) => {
     isVisibleDone = props.route.params.isVisibleDone,
     webViewUrl = props.route.params.webViewUrl,
     buttonText = props.route.params.buttonText,
-    isForTermsAndCondition=props.route.params.isForTermsAndCondition,
+    isForTermsAndCondition = props.route.params.isForTermsAndCondition,
   } = props;
   const { session, setSession } = useSession();
   const prevSessionData = session;
@@ -93,7 +93,7 @@ const CustomWebPage = (props) => {
           onLoadStart={() => setShowLoader(true)}
           onLoad={() => setShowLoader(false)}
           onScroll={({ nativeEvent }) => {
-            if(isForTermsAndCondition){
+            if (isForTermsAndCondition) {
               if (isCloseToBottom(nativeEvent)) {
                 setShowBottomContainer(true);//this function will trigger when user reached to bottom in case of 
               }
@@ -112,19 +112,19 @@ const CustomWebPage = (props) => {
             buttonType="primary"
             width="50%"
             title={StringsOfLanguages.COMMON.I_AGREE_WEBVIEW_BTN_TEXT}
-            buttonPress={() =>{
+            buttonPress={() => {
               consentContextData.isTermsAgreed = true;
               setSession({ ...session, prevSessionData });
               navigation.goBack()
-            } }
+            }}
           />
         </View>
       }
       {isVisibleDone && (
         <CustomButton
           buttonPress={() => navigation.goBack()}
-          style={{ bottom: -10, height: 56 }}
-          title={buttonText ? buttonText :StringsOfLanguages.PREAPPROVEDOFFERS.DONE}
+          style={{ bottom: -10, height: 56, width: 260 }}
+          title={buttonText ? buttonText : StringsOfLanguages.PREAPPROVEDOFFERS.DONE}
         />
       )}
       <LoaderComponent

@@ -5,7 +5,7 @@ import Hospicash from "../Hospicash";
 import { ContentContainer } from "./styled";
 
 const Form = ({ response }) => {
-  
+ 
   const FormSelector = () => {
     if (response.cardFlag == "CreditCard") {
       return (

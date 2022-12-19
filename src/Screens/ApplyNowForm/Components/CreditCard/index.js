@@ -1062,7 +1062,7 @@ const CreditCard = ({ response }) => {
                   }}
                   disabled={otpMobile.length != 6 && otpErr == "error"}
                   style={{
-                    width: 200,
+                    width: 250,
                     height: 48,
                     marginBottom: 16,
                     color: Colors.NEW_GREY_600.text,
@@ -1080,7 +1080,7 @@ const CreditCard = ({ response }) => {
                 createTimer();
               }}
               style={{
-                width: 200,
+                width: 250,
                 height: 48,
                 marginBottom: 16,
                 marginTop: 8,
@@ -1480,33 +1480,32 @@ const CreditCard = ({ response }) => {
             onValueChange={() => {
               setIsAgree(!isAgree);
             }}
+          />
+          <CustomText
+            testID={TestIds.cc_i_agree_text}
+            fontSize={Font_Size.SIZE_14}
+            fontFamily={FontFamily.Inter_REGULAR}
+            lineHeight={Line_Height.HEIGHT_20}
           >
-            <CustomText
-              testID={TestIds.cc_i_agree_text}
-              fontSize={Font_Size.SIZE_14}
-              fontFamily={FontFamily.Inter_REGULAR}
-              lineHeight={Line_Height.HEIGHT_20}
+            I agree to all the{" "}
+            <Text
+              testID={TestIds.cc_terms_and_conditions_text}
+              style={ClickableTextStyle}
+              onPress={() => {
+                navigation.navigate(NavigationUrl.CustomWebPage, {
+                  isVisibleHeader: false,
+                  title: "",
+                  subTitle: "",
+                  isVisibleDone: false,
+                  webViewUrl:
+                    "https://firebasestorage.googleapis.com/v0/b/matmdemotest.appspot.com/o/termsAndCondition.html?alt=media&token=2e638c7f-e66b-46d5-ae0e-a3b69a2889b0",
+                });
+              }}
             >
-              I agree to all the{" "}
-              <Text
-                testID={TestIds.cc_terms_and_conditions_text}
-                style={ClickableTextStyle}
-                onPress={() => {
-                  navigation.navigate(NavigationUrl.CustomWebPage, {
-                    isVisibleHeader: false,
-                    title: "",
-                    subTitle: "",
-                    isVisibleDone: false,
-                    webViewUrl:
-                      "https://firebasestorage.googleapis.com/v0/b/matmdemotest.appspot.com/o/termsAndCondition.html?alt=media&token=2e638c7f-e66b-46d5-ae0e-a3b69a2889b0",
-                  });
-                }}
-              >
-                Terms & Conditions{"  "}
-              </Text>
-              of IDFC FIRST Credit Card.
-            </CustomText>
-          </CheckBox>
+              Terms & Conditions{"  "}
+            </Text>
+            of IDFC FIRST Credit Card.
+          </CustomText>
         </CheckboxView>
       </FullLengthBox>
 

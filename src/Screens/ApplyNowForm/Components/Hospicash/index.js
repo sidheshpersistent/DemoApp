@@ -2,11 +2,17 @@
 import React, { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 
+import CheckBox from "@react-native-community/checkbox";
+import { useNavigation } from "@react-navigation/native";
+import useSession from "../../../../App/useSession";
 import {
   CustomButton,
   CustomText,
-  CustomTextInput,
+  CustomTextInput
 } from "../../../../Components";
+import CustomDateInput from "../../../../Components/CustomDateInput/CustomDateInput";
+import CustomDropDown from "../../../../Components/CustomDropDown/CustomDropDown";
+import { StringsOfLanguages } from "../../../../Localization";
 import {
   Colors,
   FontFamily,
@@ -14,29 +20,17 @@ import {
   LetterSpacing,
   Line_Height,
   NavigationUrl,
-  TestIds,
+  TestIds
 } from "../../../../Utils";
+import { PREAPPROVED_FLAG_TYPE } from "../../../../Utils/Constants";
+import { addressCheck, allowOnlyNum, avoidNumNChar, dateFormat, minDate } from "../../../CustomerProfile/personalDetail/constants";
 import { City_Data, nominee_Relation_Data, State_Data } from "../../constants";
-import { useNavigation } from "@react-navigation/native";
-import { StringsOfLanguages } from "../../../../Localization";
 import {
-  CardContainer,
-  BackgroundImageStyle,
-  MarginTopBox,
-  AlignedContainer,
-  WhiteBox,
-  OfferBox,
+  AlignedContainer, BackgroundImageStyle, CardContainer, MarginTopBox, OfferBox,
   OfferBoxContainer,
   OfferImage,
-  OfferText,
-  checkboxStyle,
-  checkboxLabelStyle,
+  OfferText, WhiteBox
 } from "./styled";
-import useSession from "../../../../App/useSession";
-import { addressCheck, allowOnlyNum, avoidNumNChar, dateFormat, minDate } from "../../../CustomerProfile/personalDetail/constants";
-import { PREAPPROVED_FLAG_TYPE } from "../../../../Utils/Constants";
-import CheckBox from "@react-native-community/checkbox";
-import CustomDateInput from "../../../../Components/CustomDateInput/CustomDateInput";
 
 const Hospicash = ({ response }) => {
   const navigation = useNavigation();
@@ -304,7 +298,7 @@ const Hospicash = ({ response }) => {
           />
         </MarginTopBox>
         <MarginTopBox>
-          {/* <Select
+          <CustomDropDown
             testID={TestIds.hc_insured_relation}
             label={StringsOfLanguages.APPLYNOW_HOSPICASH.RELATIONSHIP_INSURED}
             options={nominee_Relation_Data}
@@ -312,7 +306,7 @@ const Hospicash = ({ response }) => {
             iconColor={Colors.MAROON_DARK}
             onChange={(e) => setInsuredRelation(e)}
             value={insuredRelation}
-          /> */}
+          />
         </MarginTopBox>
         <MarginTopBox>
           <CustomDateInput
@@ -331,14 +325,21 @@ const Hospicash = ({ response }) => {
       </AlignedContainer>
       <WhiteBox>
         <AlignedContainer>
-          <CheckBox
-            testID={TestIds.hc_is_nomineeAddressSame}
-            style={{ marginLeft: 12 }}
-            value={isNomineAddressSame}
-            onValueChange={() => setIsNomineAddressSame(!isNomineAddressSame)}
-          >
-            {StringsOfLanguages.APPLYNOW_HOSPICASH.NOMINEE_ADDRESS_SAME}
-          </CheckBox>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <CheckBox
+              testID={TestIds.hc_is_nomineeAddressSame}
+              value={isNomineAddressSame}
+              tintColors={{ true: '#9b1e26' }}
+              style={{ marginRight: 10 }}
+              onValueChange={() => setIsNomineAddressSame(!isNomineAddressSame)}
+            />
+
+            <CustomText
+              fontFamily={FontFamily.Inter_REGULAR}
+              lineHeight={Line_Height.HEIGHT_20}>
+              {StringsOfLanguages.APPLYNOW_HOSPICASH.NOMINEE_ADDRESS_SAME}
+            </CustomText>
+          </View>
         </AlignedContainer>
       </WhiteBox>
 
@@ -389,7 +390,7 @@ const Hospicash = ({ response }) => {
           </MarginTopBox>
 
           <MarginTopBox>
-            {/* <Select
+            <CustomDropDown
               testID={TestIds.hc_nominee_state}
               label={StringsOfLanguages.APPLYNOW_HOSPICASH.STATE}
               defaultSelectedItem={nomineeState}
@@ -397,10 +398,10 @@ const Hospicash = ({ response }) => {
               labelStyle={{ color: Colors.NEW_GREY_800.text }}
               iconColor={Colors.MAROON_DARK}
               onChange={(e) => setNomineeState(e)}
-            /> */}
+            />
           </MarginTopBox>
           <MarginTopBox>
-            {/* <Select
+            <CustomDropDown
               testID={TestIds.hc_nominee_city}
               label={StringsOfLanguages.APPLYNOW_HOSPICASH.CITY}
 
@@ -409,7 +410,7 @@ const Hospicash = ({ response }) => {
               labelStyle={{ color: Colors.NEW_GREY_800.text }}
               iconColor={Colors.MAROON_DARK}
               onChange={(e) => setNomineeCity(e)}
-            /> */}
+            />
           </MarginTopBox>
           <MarginTopBox>
             <CustomTextInput
@@ -492,18 +493,22 @@ const Hospicash = ({ response }) => {
 
           <WhiteBox>
             <AlignedContainer>
-              <CheckBox
-                testID={TestIds.hc_is_guardian_address}
-                style={{
-                  marginLeft: 10,
-                }}
-                onValueChange={() =>
-                  setIsGuardianAdrressSame(!isGuardianAdrressSame)
-                }
-                value={isGuardianAdrressSame}
-              >
-                {StringsOfLanguages.APPLYNOW_HOSPICASH.GUARDIAN_ADDRESS_SAME}
-              </CheckBox>
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <CheckBox
+                  testID={TestIds.hc_is_guardian_address}
+                  onValueChange={() =>
+                    setIsGuardianAdrressSame(!isGuardianAdrressSame)
+                  }
+                  tintColors={{ true: '#9b1e26' }}
+                  style={{ marginRight: 10 }}
+                  value={isGuardianAdrressSame}
+                />
+                <CustomText
+                  fontFamily={FontFamily.Inter_REGULAR}
+                  lineHeight={Line_Height.HEIGHT_20}>
+                  {StringsOfLanguages.APPLYNOW_HOSPICASH.GUARDIAN_ADDRESS_SAME}
+                </CustomText>
+              </View>
             </AlignedContainer>
           </WhiteBox>
 
@@ -556,7 +561,7 @@ const Hospicash = ({ response }) => {
               </MarginTopBox>
 
               <MarginTopBox>
-                {/* <Select
+                <CustomDropDown
                   testID={TestIds.hc_guardian_state}
                   label={StringsOfLanguages.APPLYNOW_HOSPICASH.STATE}
                   defaultSelectedItem={guardianState}
@@ -564,10 +569,10 @@ const Hospicash = ({ response }) => {
                   labelStyle={{ color: Colors.NEW_GREY_800.text }}
                   iconColor={Colors.MAROON_DARK}
                   onChange={(e) => setGuardianState(e)}
-                /> */}
+                />
               </MarginTopBox>
               <MarginTopBox>
-                {/* <Select
+                <CustomDropDown
                   testID={TestIds.hc_guardian_city}
                   label={StringsOfLanguages.APPLYNOW_HOSPICASH.CITY}
                   defaultSelectedItem={guardianCity}
@@ -575,7 +580,7 @@ const Hospicash = ({ response }) => {
                   labelStyle={{ color: Colors.NEW_GREY_800.text }}
                   iconColor={Colors.MAROON_DARK}
                   onChange={(e) => setGuardianCity(e)}
-                /> */}
+                />
               </MarginTopBox>
               <MarginTopBox>
                 <CustomTextInput
@@ -620,14 +625,16 @@ const Hospicash = ({ response }) => {
 
       <WhiteBox>
         <AlignedContainer>
-          <CheckBox
-            testID={TestIds.hc_terms_checkbox}
-            labelStyle={{ fontSize: 14, marginLeft: 10 }}
-            value={true}
-            onValueChange={() => {
-              setTermsCheckbox(!termsCheckbox);
-            }}
-          >
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <CheckBox
+              testID={TestIds.hc_terms_checkbox}
+              value={true}
+              onValueChange={() => {
+                setTermsCheckbox(!termsCheckbox);
+              }}
+              style={{ marginRight: 10 }}
+              tintColors={{ true: '#9b1e26' }}
+            />
             <CustomText
               fontSize={Font_Size.SIZE_14}
               fontFamily={FontFamily.Inter_REGULAR}
@@ -662,53 +669,57 @@ const Hospicash = ({ response }) => {
                 {StringsOfLanguages.APPLYNOW_HOSPICASH.OF_IDFC}
               </CustomText>
             </CustomText>
-          </CheckBox>
+          </View>
         </AlignedContainer>
       </WhiteBox>
 
       <WhiteBox>
         <AlignedContainer>
-          <CheckBox
-            testID={TestIds.hc_declaration_checkbox}
-            labelStyle={checkboxLabelStyle}
-            value={true}
-            onValueChange={() => {
-              setConfirmCheckbox(!confirmCheckbox);
-            }}
-            tintColors={{ true: '#9b1e26' }}
-          >
-            <Text>{StringsOfLanguages.APPLYNOW_HOSPICASH.I_CONFIRM}</Text>
-
-            <Text
-              testID={TestIds.hc_declaration_text}
-              onPress={() => {
-                navigation.navigate(NavigationUrl.CustomWebPage, {
-                  isVisibleHeader: false,
-                  title: "",
-                  subTitle: "",
-                  isVisibleDone: false,
-                  webViewUrl: response.declaration
-
-                });
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <CheckBox
+              testID={TestIds.hc_declaration_checkbox}
+              value={true}
+              onValueChange={() => {
+                setConfirmCheckbox(!confirmCheckbox);
               }}
-              style={{
-                color: Colors.MAROON,
-                fontFamily: FontFamily.Inter_SemiBold,
-                lineHeight: Line_Height.HEIGHT_20,
-                fontSize: Font_Size.SIZE_14,
-              }}
-            >
-              {StringsOfLanguages.APPLYNOW_HOSPICASH.CLICK_HERE}
-            </Text>
-            <Text
-              marginLeft={50}
-              lineHeight={Line_Height.HEIGHT_20}
-              fontSize={Font_Size.SIZE_14}
-              fontFamily={FontFamily.Inter_REGULAR}
-            >
-              {StringsOfLanguages.APPLYNOW_HOSPICASH.TO_DOWNLOAD}
-            </Text>
-          </CheckBox>
+              style={{ marginRight: 10 }}
+              tintColors={{ true: '#9b1e26' }}
+            />
+            <View>
+              <Text>{StringsOfLanguages.APPLYNOW_HOSPICASH.I_CONFIRM}</Text>
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Text
+                  testID={TestIds.hc_declaration_text}
+                  onPress={() => {
+                    navigation.navigate(NavigationUrl.CustomWebPage, {
+                      isVisibleHeader: false,
+                      title: "",
+                      subTitle: "",
+                      isVisibleDone: false,
+                      webViewUrl: response.declaration
+
+                    });
+                  }}
+                  style={{
+                    color: Colors.MAROON,
+                    fontFamily: FontFamily.Inter_SemiBold,
+                    lineHeight: Line_Height.HEIGHT_20,
+                    fontSize: Font_Size.SIZE_14,
+                  }}
+                >
+                  {StringsOfLanguages.APPLYNOW_HOSPICASH.CLICK_HERE}
+                </Text>
+                <Text
+                  marginLeft={50}
+                  lineHeight={Line_Height.HEIGHT_20}
+                  fontSize={Font_Size.SIZE_14}
+                  fontFamily={FontFamily.Inter_REGULAR}
+                >
+                  {StringsOfLanguages.APPLYNOW_HOSPICASH.TO_DOWNLOAD}
+                </Text>
+              </View>
+            </View>
+          </View>
         </AlignedContainer>
       </WhiteBox>
 
@@ -721,7 +732,7 @@ const Hospicash = ({ response }) => {
             });
             setSession({ ...session, availedCardFlag: PREAPPROVED_FLAG_TYPE.HOSPICASH });
           }}
-          style={{ marginBottom: 32 }}
+          style={{ marginBottom: 32, padding: 15, width: 280 }}
           disabled={!buttonActive()}
           title={StringsOfLanguages.APPLYNOW_HOSPICASH.APPLY_NOW}
         />
