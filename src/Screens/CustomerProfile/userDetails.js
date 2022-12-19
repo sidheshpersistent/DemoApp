@@ -31,18 +31,18 @@ const UserContainer = () => {
         maxContainerHeight={200}
         leftView={
           <View>
-            {session.adharDetails?.avator != "" ?
-              <Image style={image} source={{ uri: `data:image/png;base64,${session.adharDetails?.avator}` }} /> : null
-            }
+            {/* {session.adharDetails?.avator != "" ? */}
+            <Image style={image} source={require("../../Assets/Images/user_image.png")} />
+            {/*  : null } */}
           </View>
         }
         rightView={
           <NameAndGender>
-            <CustomerName style={capitalizeText}>{session.adharDetails?.name}</CustomerName>
+            <CustomerName style={capitalizeText}>{"Sidhesh M"}</CustomerName>
             <View style={{ flexDirection: "row" }}>
-              <NameAndAge>{session.adharDetails?.age}</NameAndAge>
+              <NameAndAge>{"27"}</NameAndAge>
               <NameAndAge>|</NameAndAge>
-              <NameAndAge>{session.adharDetails?.gender}</NameAndAge>
+              <NameAndAge>{"Male"}</NameAndAge>
             </View>
           </NameAndGender>
         }

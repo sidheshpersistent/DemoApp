@@ -60,7 +60,7 @@ import LoaderComponent from "../../Components/LoaderComponent";
 import ErrorPopup from "../../Components/ErrorPopup";
 import SelectDropdown from "react-native-select-dropdown";
 
-const ResumeApplication = () => {
+const ResumeApplication = (props) => {
   const navigation = useNavigation();
   const { session, setSession } = useSession();
   const [filterData, setFilterData] = useState();
@@ -215,56 +215,68 @@ const ResumeApplication = () => {
   const getResumeApplicationData = async (userId) => {
 
     await getResumeApplicationDataComm(
-      Endpoints.saveCustomerDetails + `/${userId}`,
+      Endpoints.saveCustomerDetails,
       (status, response) => {
-        if (status && response) {
-
-          const encryptedResponse = {
-            personalDetails: response?.personalDetails,
-            bankingDetails: response?.bankingDetails,
-            custConsentDetails: response?.custConsentDetails,
-            cidDetails: response?.cidDetails,
-            aadharDetails: response?.aadharDetails,
-            panDetails: response?.panDetails,
-          };
-
-          const fetchedPersonalDetails =
-            encryptedResponse.personalDetails
-
-          const fetchedBankingDetails =
-            encryptedResponse.bankingDetails
-
-          const fetchedCustConsentDetails =
-            encryptedResponse.custConsentDetails
-
-          const fetchedCIDDetails =
-            encryptedResponse.cidDetails
-
-          const fetchedAadharDetails =
-            encryptedResponse.aadharDetails
-
-          const fetchedPanDetails =
-            encryptedResponse.panDetails
-
-          const fetchedData = {
-            fetchedCIDDetails,
-            fetchedPersonalDetails,
-            fetchedBankingDetails,
-            fetchedCustConsentDetails,
-            response,
-            fetchedAadharDetails,
-            fetchedPanDetails,
-          };
+        if (response?.status == CommonConstant.SUCCESS) {
           cidContextData.userId = response.userId;
-          prevSessionData.accountType = response.appName == Account_Type.ASSISTED_CS ? Account_Type.ASSISTED_CS : Account_Type.ASSISTED_SA
           setSession({ ...session, prevSessionData });
-          if (fetchedData.cidDetails !== null) {
-            saveFetchedData(fetchedData);
-          }
+          //store response.userId
+          props.navigation.navigate(NavigationUrl.CustomerProfileId);
+        } else if (response == CommonConstant.INTERNALSERVERERROR) {
+          setErrorMsg(message);
+          setIsUnkownError(true);
         } else {
           setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
-          setErrorPopup(true);
+          setIsUnkownError(true);
         }
+        // if (status && response) {
+
+        //   const encryptedResponse = {
+        //     personalDetails: response?.personalDetails,
+        //     bankingDetails: response?.bankingDetails,
+        //     custConsentDetails: response?.custConsentDetails,
+        //     cidDetails: response?.cidDetails,
+        //     aadharDetails: response?.aadharDetails,
+        //     panDetails: response?.panDetails,
+        //   };
+
+        //   const fetchedPersonalDetails =
+        //     encryptedResponse.personalDetails
+
+        //   const fetchedBankingDetails =
+        //     encryptedResponse.bankingDetails
+
+        //   const fetchedCustConsentDetails =
+        //     encryptedResponse.custConsentDetails
+
+        //   const fetchedCIDDetails =
+        //     encryptedResponse.cidDetails
+
+        //   const fetchedAadharDetails =
+        //     encryptedResponse.aadharDetails
+
+        //   const fetchedPanDetails =
+        //     encryptedResponse.panDetails
+
+        //   const fetchedData = {
+        //     fetchedCIDDetails,
+        //     fetchedPersonalDetails,
+        //     fetchedBankingDetails,
+        //     fetchedCustConsentDetails,
+        //     response,
+        //     fetchedAadharDetails,
+        //     fetchedPanDetails,
+        //   };
+        //   cidContextData.userId = response.userId;
+        //   prevSessionData.accountType = response.appName == Account_Type.ASSISTED_CS ? Account_Type.ASSISTED_CS : Account_Type.ASSISTED_SA
+        //   setSession({ ...session, prevSessionData });
+        //   if (fetchedData.cidDetails !== null) {
+        //     saveFetchedData(fetchedData);
+        //   }
+        // } else {
+        //   setErrorMsg(StringsOfLanguages.COMMON.UNKOWN_ERROR);
+        //   setErrorPopup(true);
+        // }
       }
     );
   };
