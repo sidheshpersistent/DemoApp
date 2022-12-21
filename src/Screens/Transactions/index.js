@@ -34,8 +34,8 @@ import {
   infoIconStyle,
   PasswordIconStyle,
 } from "./styled";
-import { PasswordInput } from "@idfc/ccl-mobile/lib/module/v2";
-import { IconButton } from "@idfc/ccl-mobile";
+// import { PasswordInput } from "@idfc/ccl-mobile/lib/module/v2";
+// import { IconButton } from "@idfc/ccl-mobile";
 
 import { isValidAadhar } from "../../Utils/ValidationUtils";
 import {
@@ -118,7 +118,7 @@ const Transactions = () => {
           </CustomText>
         </MarginTopBox>
 
-        <MarginTopBox>
+        {/* <MarginTopBox>
           <PasswordInput
             value={aadharNo}
             testID={TestIds.tra_adhar_no}
@@ -158,7 +158,7 @@ const Transactions = () => {
             suffix={
               <View
                 style={PasswordIconStyle}
-              >{/*TODO: constant change*/}
+              >
                 <IconButton
                   primaryColor={Colors.MAROON_DARK}
                   iconColor={"maroon"}
@@ -176,7 +176,7 @@ const Transactions = () => {
               </View>
             }
           />
-        </MarginTopBox>
+        </MarginTopBox> */}
 
         <MarginTopBox>
           <CustomTextInput
