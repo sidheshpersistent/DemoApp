@@ -38,7 +38,7 @@ const { Popover } = renderers;
 const SASuccess = (props) => {
 
   const navigation = useNavigation()
-  const { session } = useSession();
+  const { session, setSession } = useSession();
   const [isConfirmed, setConfirmation] = useState(true);
   const [radio, setRadio] = useState({
     check1: RadioButtonConstants.RADIO1,
@@ -60,10 +60,16 @@ const SASuccess = (props) => {
   const [showLoader, setShowLoader] = useState(false);
   const [errorPopup, setErrorPopup] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+
+  const prevSessionData = session;
+
   useEffect(() => {
-    if (session.accountType == Account_Type.ASSISTED_CS) {
-      getCompanyDetailsFromLocalData();
-    }
+    prevSessionData.accountType = Account_Type.ASSISTED_CS
+    setSession({ ...session, prevSessionData })
+
+    // if (session.accountType == Account_Type.ASSISTED_CS) {
+    //   getCompanyDetailsFromLocalData();
+    // }
 
     BackHandler.addEventListener("hardwareBackPress", handleBackPress);
     return () => {
