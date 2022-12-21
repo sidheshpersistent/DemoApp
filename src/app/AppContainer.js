@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import NavigationUrl from '../Utils/NavigationUrl';
 import useSession from './useSession';
 
@@ -27,15 +27,15 @@ import BankUseSectionForm from "../Screens/BankUseSectionForm";
 import BankUseSectionList from "../Screens/BankUseSectionList";
 // import WebViewComponent from "../Components/WebviewComponent/WebViewComponent";
 import CustomWebPage from "../Components/CustomWebPage";
-// import Transactions from "../Screens/Transactions";
+import Transactions from "../Screens/Transactions";
 // import DeclarationLinking from "../Screens/Transactions/DeclarationLInking";
 // import DeclarationSeeding from "../Screens/Transactions/DeclarationSeeding";
 import ApplyNowForm from "../Screens/ApplyNowForm";
 // import AadhaarSuccess from "../Screens/Transactions/AadhaarSuccess";
 
 const Stack = createNativeStackNavigator();
-// const Drawer = createDrawerNavigator();
-// drawerContent={props => <DrawerContainer {...props} />}
+const Drawer = createDrawerNavigator();
+// drawerContent = { props => < DrawerContainer {...props } />}
 
 const DrawerStack = () => (
   <>
@@ -83,7 +83,13 @@ const AppContainer = ({ childFunc }) => {
           /> */}
         </Stack.Navigator>
       ) : (
-        <Stack.Navigator initialRouteName={NavigationUrl.dashboardId}>
+        <Stack.Navigator initialRouteName={NavigationUrl.drawerId}>
+
+          <Stack.Screen
+            name={NavigationUrl.drawerId}
+            component={DrawerStack}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen
             name={NavigationUrl.dashboardId}
             component={Dashboard}
@@ -94,11 +100,6 @@ const AppContainer = ({ childFunc }) => {
             component={ResumeApplication}
             options={{ headerShown: false }}
           />
-          {/* <Stack.Screen
-            name={NavigationUrl.drawerId}
-            component={DrawerStack}
-            options={{ headerShown: false }}
-          /> */}
 
           <Stack.Screen
             name={NavigationUrl.Scanner}
@@ -179,11 +180,11 @@ const AppContainer = ({ childFunc }) => {
             options={{headerShown: false}}
           /> */}
 
-          {/* <Stack.Screen
+          <Stack.Screen
             name={NavigationUrl.Transactions}
             component={Transactions}
             options={{headerShown: false}}
-          /> */}
+          />
 
           {/* <Stack.Screen
             name={NavigationUrl.DeclarationLinking}

@@ -48,6 +48,7 @@ import {
   LocalDB,
   Account_Type,
   CommonConstant,
+  Icon_Size,
 } from '../../Utils/Constants';
 // import {IconButton} from '@idfc/ccl-mobile';
 // import {IconSize} from '@idfc/ccl-commons/enums';
@@ -57,6 +58,7 @@ import LoaderComponent from '../../Components/LoaderComponent';
 import NavigationUrl from '../..//Utils/NavigationUrl';
 import ErrorPopup from '../../Components/ErrorPopup';
 import { getDasboardDetailsDataService } from './service';
+import { Ionicons } from 'react-native-vector-icons/Ionicons';
 
 const Dashboard = props => {
   const navigation = useNavigation();
@@ -246,36 +248,38 @@ const Dashboard = props => {
     <BackgroundImage>
       <UpperBoxContainer >
         <TouchableOpacity
-          style={{ backgroundColor: 'red' }}
+          style={{
+            width: 36,
+            height: 36,
+            position: 'absolute',
+            marginTop: 8,
+            marginLeft: 16,
+          }}
           onPress={() => {
             console.log('test');
             navigation.openDrawer();
-          }}>
+          }}
+          >
           <Image
             style={{
-              width: 36,
-              position: 'absolute',
-              marginTop: 8,
-              marginLeft: 16,
+              width: 24,
+              height: 24,
+              marginTop: 16,
             }}
-            source={{
-              uri: agentDetails?.agentAvator,
-            }}
-
+            source={require("../../Assets/Images/menu.png")}
           />
         </TouchableOpacity>
 
-        {/* <IconButton
+        {/* <Icon
           testID={TestIds.db_hamburg_icon}
-          iconType={'Bars'}
+          name={'Bars'}
           style={{
             width: 36,
             position: 'absolute',
             marginTop: 8,
             marginLeft: 16,
           }}
-          iconColor={'maroon'}
-          transparent
+          color={'maroon'}
           iconSize={IconSize.MEDIUM}
           onPress={() => {
             navigation.openDrawer();

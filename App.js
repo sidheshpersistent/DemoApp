@@ -11,6 +11,7 @@ import { View } from 'react-native';
 import AppProvider from './src/App/AppContext';
 import AppContainer from './src/App/AppContainer';
 import { MenuProvider } from 'react-native-popup-menu';
+import 'react-native-gesture-handler';
 
 const App = () => {
   console.disableYellowBox = true;
