@@ -104,7 +104,7 @@ const PreApprovedOffers = (props) => {
         {
           <PopupFeedback
             animationIn="bounceIn"
-            isVisible={false}
+            isVisible={feedbackPopup}
             Heading={
              StringsOfLanguages.PREAPPROVEDOFFERS.PLEASE_PROVIDE
             }

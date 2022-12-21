@@ -25,6 +25,9 @@ const HamburgerScreen = (props) => {
     props.navigation.closeDrawer();
   };
   const logOut = async () => {
+    AsyncStorageUtils.clearAll();
+    setSession({ ...session, loginFlag: false })
+    return;
     NetworkManager.IDFCNetworkPost(Endpoints.logOut, {}, response => {
       if (response != "") {
         AsyncStorageUtils.clearAll();
@@ -159,7 +162,7 @@ const HamburgerScreen = (props) => {
           </CustomText>
         </TouchableOpacity>
       </BoxContainer>
-      <BoxContainer>
+      {/* <BoxContainer>
         <View
 
           style={{ flexDirection: "row" }}
@@ -205,7 +208,7 @@ const HamburgerScreen = (props) => {
 
           </View>
         </View>
-      </BoxContainer>
+      </BoxContainer> */}
       <BoxContainer>
         <TouchableOpacity
           testID={TestIds.hm_logout}

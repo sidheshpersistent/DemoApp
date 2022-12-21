@@ -56,6 +56,8 @@ const PopupFeedback = (props) => {
   };
 
   const saveFeedBackData =(selectedRating)=>{
+    buttonPress();
+    return;
     let request = {
       userId:session.agentDetails.userId,
       userFeedback:selectedRating,
