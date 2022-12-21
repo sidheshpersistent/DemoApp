@@ -181,7 +181,7 @@ const CustomerProfile = (props) => {
       <ImageBackground source={BGImage}>
         {
           showLoader ? <LoaderComponent
-            isVisible={showLoader}
+            isVisible={false}
             heading={StringsOfLanguages.LOADER.CID_HEADING}
             subHeading={StringsOfLanguages.LOADER.CID_SUBHEADING}
           /> : null
@@ -258,7 +258,7 @@ const CustomerProfile = (props) => {
           nestedScrollEnabled={true}
         >
           <SelectPage />
-          {/* {
+          {
             <Popup
               cancelButtonPress={() => setPopupVisible(false)}
               animationIn="bounceIn"
@@ -337,7 +337,7 @@ const CustomerProfile = (props) => {
                 </ComponentContainer>
               }
             />
-          } */}
+          }
         </ScrollViewContainer>
       </LowerConatainer>
     </View>
