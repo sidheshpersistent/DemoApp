@@ -49,7 +49,7 @@ export const Occupation_Type_Data = [
   { id: "2", displayText: "Self Employed", value: "2" },
 ];
 export const Product_Data = [
-  { id: "1", displayText: "IDFC FIRST Power for Women", value: "1" },
+  { id: "1", displayText: "ABC Power for Women", value: "1" },
   { id: "2", displayText: "Senior Citizen Saving Account", value: "2" },
   { id: "3", displayText: "Staff Saving Account", value: "3" },
   { id: "4", displayText: "Others", value: "4" },
@@ -77,7 +77,7 @@ export const applyNow_api_Data = [
     flag:"wealth",
     cardFlag: "CreditCard",
     backgroundImage: background1,
-    title: "Apply for FIRST Wealth Credit Card",
+    title: "Apply for ABC D Card",
     subTitle:
       "Please review all the application details carefully before proceeding to apply",
     infoName:"Vicky Dhanwani ",
@@ -85,7 +85,7 @@ export const applyNow_api_Data = [
     customerAddress:"401, El Tara, Hiranandani Gardens, Powai, Mumbai, Maharashtra 400076",
     CardData: {
       cardImage: icon_1,
-      cardName: "FIRST Wealth Credit Card",
+      cardName: "ABC D Credit Card",
       creditTitle: "CREDIT LIMIT",
       creditLimit: "₹XXXX",
       annualTitle: "ANNUAL PERCENTAGE RATE",
@@ -141,7 +141,7 @@ export const applyNow_api_Data = [
     customerAddress:"401, El Tara, Hiranandani Gardens, Powai, Mumbai, Maharashtra 400076",
     CardData: {
       cardImage: icon_1,
-      cardName: "FIRST Wealth Select Card",
+      cardName: "ABC D Select Card",
       creditTitle: "CREDIT LIMIT",
       creditLimit: "₹XXXX",
       annualTitle: "ANNUAL PERCENTAGE RATE",
@@ -194,7 +194,7 @@ export const applyNow_api_Data = [
     subTitle:
       "Please review all the application details carefully before proceeding to apply for the product",
     warning:
-      "Please fund your IDFC FIRST account within 24 hours to avoid any rejection to your Group Safeguard insuarance application",
+      "Please fund your ABC account within 24 hours to avoid any rejection to your Group Safeguard insuarance application",
     CardData: {
       cardName: "Group Safegaurd Insuarance",
       cardSubtitle_1:
@@ -231,7 +231,7 @@ export const dec_banks_data = [
   { id: "3", displayText: "Kotak Mahindra Bank", value: "3" },
   { id: "4", displayText: "Axis Bank", value: "4" },
   { id: "5", displayText: "IDBI Bank", value: "5" },
-  { id: "6", displayText: "ICICI Bank", value: "6" },
+  { id: "6", displayText: "XYZ Bank", value: "6" },
   { id: "7", displayText: "Bank of Baroda", value: "7" },
   { id: "8", displayText: "Canara Bank", value: "8" },
 ];

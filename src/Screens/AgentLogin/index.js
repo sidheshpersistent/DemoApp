@@ -173,7 +173,7 @@ const LoginScreen = () => {
                 title={StringsOfLanguages.LOGIN.LOGIN}
                 buttonPress={setLogInDetails}
               />
-              {/* <TouchableOpacity testID={'signin'} onPress={loginAPiCall} style={{ backgroundColor: '#9b1e26', height: 56, marginHorizontal: 20,marginBottom:20, borderRadius: 27, justifyContent: 'center', alignItems: 'center' }}><Text style={{ fontSize: 17, color: 'white' }}>{'Login'}</Text></TouchableOpacity> */}
+              {/* <TouchableOpacity testID={'signin'} onPress={loginAPiCall} style={{ backgroundColor: '#50bfbf', height: 56, marginHorizontal: 20,marginBottom:20, borderRadius: 27, justifyContent: 'center', alignItems: 'center' }}><Text style={{ fontSize: 17, color: 'white' }}>{'Login'}</Text></TouchableOpacity> */}
             </LoginButtonView>
           </LoginBox>
         </LoginBoxContainer>

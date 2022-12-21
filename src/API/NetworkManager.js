@@ -15,7 +15,7 @@ let headers = {
 
 const NETWORK_TIMEOUT = 30 * 1000;
 export default class NetworkManager {
-  ////// IDFC server
+  ////// ABC server
 
   static IDFCNetworkGet = async (url, header, callBack) => {
     // try {

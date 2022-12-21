@@ -108,7 +108,7 @@ const item={
     },
     knowMore: {
       uri: "https://firebasestorage.googleapis.com/v0/b/matmdemotest.appspot.com/o/hospicash.html?alt=media&token=d9544af0-fd35-435b-bcad-34306aa00fbb",
-      title: "Group Safeguard - Hospicash - IDFC First Bank",
+      title: "Group Safeguard - Hospicash - ABC First Bank",
     },
   }
   const item2={
@@ -131,7 +131,7 @@ const item={
     },
     knowMore: {
       uri: "https://firebasestorage.googleapis.com/v0/b/matmdemotest.appspot.com/o/hospicash.html?alt=media&token=d9544af0-fd35-435b-bcad-34306aa00fbb",
-      title: "Group Safeguard - Hospicash - IDFC First Bank",
+      title: "Group Safeguard - Hospicash - ABC First Bank",
     },
   }
 const props = {

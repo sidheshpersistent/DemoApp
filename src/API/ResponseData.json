@@ -921,154 +921,19 @@
     "product": "SA",
     "assistedProductDetailList": [
       {
-        "productName": "BSBDA - Small Account",
+        "productName": "ABC - Account1",
         "productCode": "20005002",
         "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkdOgYQd1J2TfTwGZfT6P21mAo0Fk+5lCAFSyv032fEzo="
       },
       {
-        "productName": "Capital Market- POA",
+        "productName": "ABC - Account2",
         "productCode": "20001022",
         "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o73bAtc6PrOGbsox9JJCne8="
       },
       {
-        "productName": "Deposit Routing Account",
+        "productName": "ABC - Account3",
         "productCode": "20001017",
         "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0oxdTFjbop3jq3DWzVpw7HQ4="
-      },
-      {
-        "productName": "Digital Zero Balance Savings Account - Post IPV",
-        "productCode": "20001038",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0ozpD8OHpPJ+8Gevr+3hqjFw="
-      },
-      {
-        "productName": "Digital Zero Balance Savings Account - Pre IPV",
-        "productCode": "20001039",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o2ozWITjGcOkg/3mOOrADN4="
-      },
-      {
-        "productName": "IDFC FIRST Power - 10K",
-        "productCode": "20001112",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfko3pHzEgt9ioCk0Zqrk47t1ZGOCEDX86RF5cFhCIjsPM="
-      },
-      {
-        "productName": "IDFC FIRST Power - 25K",
-        "productCode": "20001110",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfko3pHzEgt9ioCk0Zqrk47t1HcuZUJOJh691sN5b0LZRw="
-      },
-      {
-        "productName": "IDFC PARAM",
-        "productCode": "20005004",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkdOgYQd1J2TfTwGZfT6P21ljGE8o6+jmaTV2NKV70MEI="
-      },
-      {
-        "productName": "IDFC Shakti",
-        "productCode": "20005003",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkdOgYQd1J2TfTwGZfT6P21q7IOJntcXlQMQLTyS5H8cE="
-      },
-      {
-        "productName": "IDFC VISHESH",
-        "productCode": "20005005",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkdOgYQd1J2TfTwGZfT6P21lM1Gf+l93j4zv6NYtIej5A="
-      },
-      {
-        "productName": "Insta-Saving 25K",
-        "productCode": "20001082",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o/NSINYZJVQdV/h096yuX5c="
-      },
-      {
-        "productName": "Insta-Saving(Asset X-Sell 10k)",
-        "productCode": "20001047",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o2XM3A66szPS4I62LFfvyg8="
-      },
-      {
-        "productName": "Insta-Saving(Asset X-Sell 25k)",
-        "productCode": "20001046",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0oywhp08vzkg/vZaNo4mQmTw="
-      },
-      {
-        "productName": "NIYO Zero Bal Savings Post IPV",
-        "productCode": "20001050",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o/Huvl6wmGaStAjGqo4pNBA="
-      },
-      {
-        "productName": "NIYO Zero Bal Savings Pre IPV",
-        "productCode": "20001051",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o8PNXvtdzT1+C8Ph8sItnSQ="
-      },
-      {
-        "productName": "Online SA with Signature DC",
-        "productCode": "20001020",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0oyZwOLDn1nMENT36LLxR0Ho="
-      },
-      {
-        "productName": "Online Salary with Platinum DC",
-        "productCode": "20001079",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o3LwlsUkqHQ5+N/1MJ5oSZc="
-      },
-      {
-        "productName": "Online Savings 10k",
-        "productCode": "20001086",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0oyH9ZM9h7p8t5ARLK28h8QA="
-      },
-      {
-        "productName": "PRATHAM",
-        "productCode": "20005001",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkdOgYQd1J2TfTwGZfT6P21g7//weLz2am5UZmQpXcyoE="
-      },
-      {
-        "productName": "SB Regular 10k (Asset X-Sell)",
-        "productCode": "20001048",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0oxsOkMKfRyP8zkz1Y7ciPqs="
-      },
-      {
-        "productName": "SB Regular 25k (Asset X-Sell)",
-        "productCode": "20001009",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0oymSMwi8ZQmFgQ6MXmZnS/Q="
-      },
-      {
-        "productName": "Savings - Kids (U;G)",
-        "productCode": "20001002",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0oyfgTPG6EJH8zHTiZ/0akkI="
-      },
-      {
-        "productName": "Savings - Kids (U;G) 10k",
-        "productCode": "20001043",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o9s9cvwC374atAmt8OuEAJA="
-      },
-      {
-        "productName": "Savings - Senior Citizen",
-        "productCode": "20001004",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0oy8oBWvWWga6d/42Kxr1eDs="
-      },
-      {
-        "productName": "Savings - Senior Citizen 10k",
-        "productCode": "20001042",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o4RttJ6Y2wK5OVzfj1yvO+g="
-      },
-      {
-        "productName": "Savings Regular",
-        "productCode": "20001001",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o1QApK2RK5QzIdNMTdZ0EWI="
-      },
-      {
-        "productName": "Savings Regular 10k",
-        "productCode": "20001041",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0o7nbNlSGZL/21pi0H6smbAA="
-      },
-      {
-        "productName": "Vishesh ALSA",
-        "productCode": "20005011",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkdOgYQd1J2TfTwGZfT6P21hjaM16+O0Bi+gzCM85OhY8="
-      },
-      {
-        "productName": "Vishesh Staff Salary",
-        "productCode": "20005008",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkdOgYQd1J2TfTwGZfT6P21s+Fx42BnYaZ15VPbjEV0ZE="
-      },
-      {
-        "productName": "Zero Balance Savings Account",
-        "productCode": "20001077",
-        "imgName": "y72b6W3a15ne0ccoQOu6nbn4+LYTTXQMr1m8v2TfciDKcAYrDOqf0OD8foVThZfkphZQFbvsINeot6Cbb6v0owrzXnD3441LbPJoGxw0I0o="
       }
     ],
     "productFeature": [
@@ -3605,7 +3470,7 @@
       },
       {
         "id": 18,
-        "displayText": "ICICI BANK",
+        "displayText": "XYZ BANK",
         "debitCardCode": "10010",
         "netbankingCode": "9460",
         "popularity": 2

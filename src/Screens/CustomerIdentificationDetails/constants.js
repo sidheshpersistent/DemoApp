@@ -14,13 +14,13 @@ export const HEADING = {
 };
 export const SUB_HEADING = {
   ADHAR_INFO: 'Virtual ID/VID is a temporary, revocable 16-digit random number mapped with the Aadhaar number. VID can be used in lieu of Aadhaar number whenever authentication or e-KYC services are performed. Authentication may be performed using VID in a manner similar to using Aadhaar number.',
-  PRATHAM_BANK_INFO: 'Customer already has an IDFC FIRST Bank Pratham savings account with Account Number',
+  PRATHAM_BANK_INFO: 'Customer already has an ABC Bank Pratham savings account with Account Number',
   ETB_USER_INFO: 'The following accounts exist under the Customer ID ',
   RESUME_JOURNEY_INFO: 'Click Proceed to be re-directed to this pending application.',
   ACC_EXISTS: "You have already created your account successfully with this number"
 }
 export const ADHAR_INFO = "Virtual ID/VID is a temporary, revocable 16-digit random number mapped with the Aadhaar number. VID can be used in lieu of Aadhaar number whenever authentication or e-KYC services are performed. Authentication may be performed using VID in a manner similar to using Aadhaar number."
-export const PRATHAM_BANK_INFO = "Customer already has an IDFC BANK Pratham savings account with Account Number "
+export const PRATHAM_BANK_INFO = "Customer already has an ABC BANK Pratham savings account with Account Number "
 export const POPUP_INFO = {
   PAN_CHECK_INFO:
     'It is mandatory for customers below 60 years of age to provide PAN if their income is above ₹2.5Lacs ',

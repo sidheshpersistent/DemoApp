@@ -58,7 +58,7 @@ import {
 // import { validation } from "../../Utils/ValidationUtils";
 import LoaderComponent from "../../Components/LoaderComponent";
 import ErrorPopup from "../../Components/ErrorPopup";
-import SelectDropdown from "react-native-select-dropdown";
+import CustomDropDown from "../../Components/CustomDropDown/CustomDropDown";
 
 const ResumeApplication = (props) => {
   const navigation = useNavigation();
@@ -749,7 +749,7 @@ const ResumeApplication = (props) => {
               <ComponentContainer>
                 {isShowDrop && (
                   <View style={selectBoxStyle}>
-                    {/* <Select
+                    <CustomDropDown
                       testID={TestIds.rap_selsect_resason}
                       value={reason}
                       label={StringsOfLanguages.RESUMEAPPLIST.RAL_REASON}
@@ -763,40 +763,8 @@ const ResumeApplication = (props) => {
                           </Text>
                         </View>
                       )}
-                    /> */}
-                    <SelectDropdown
-                      testID={TestIds.rap_selsect_resason}
-                      data={reasonData}
-                      defaultButtonText={StringsOfLanguages.RESUMEAPPLIST.RAL_REASON}
-                      onSelect={onChangeReason}
-                      dropdownIconPosition={"right"}
-                      buttonStyle={{ width: '100%' }}
-                      buttonTextStyle={{
-                        fontSize: 14,
-                        fontFamily: FontFamily.Inter_SemiBold,
-                        lineHeight: 14,
-                        color: Colors.GRAY,
-                      }}
-                      rowTextStyle={dropdownTextStyle}
-                      renderDropdownIcon={() => {
-                        return <Image
-                          source={chevronDown}
-                          style={{
-                            padding: 10,
-                            margin: 5,
-                            height: 25,
-                            width: 25,
-                            resizeMode: 'stretch',
-                          }}
-                        />
-                      }}
-                      buttonTextAfterSelection={(selectedItem, index) => {
-                        return selectedItem.displayText
-                      }}
-                      rowTextForSelection={(item, index) => {
-                        return item.displayText
-                      }}
                     />
+
                   </View>
                 )}
               </ComponentContainer>

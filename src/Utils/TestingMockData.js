@@ -141,7 +141,7 @@ export const getBankList_MockData = {
       },
       {
         id: 18,
-        displayText: "ICICI BANK",
+        displayText: "XYZ BANK",
         debitCardCode: "10010",
         netbankingCode: "9460",
         popularity: 2,

@@ -21,7 +21,7 @@ export const SaveAndExit = styled.Text`
   font-weight: 600;
   line-height: 20px;
   letter-spacing: -0.5px;
-  color: #9b1e26;
+  color: #50bfbf;
 `;
 
 export const warningBoxStyle = {

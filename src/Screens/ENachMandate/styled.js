@@ -30,7 +30,7 @@ export const SaveAndExit = styled.Text`
   line-height: 20px;
   letter-spacing: -0.5px;
   text-align: right;
-  color: #9b1e26;
+  color: #50bfbf;
 `;
 export const LowerConatainer = styled.View`
   background-color: #f6f6f6;
@@ -89,7 +89,7 @@ export const RightArrowButtonActive = styled.TouchableOpacity`
   border-radius: 40px;
   width: 80px;
   height: 80px;
-  background-color: #9b1e26;
+  background-color: #50bfbf;
   align-items: center;
   justify-content: center;
 `;
@@ -115,7 +115,7 @@ export const LableContainer = styled.View`
   align-items: center;
 `;
 export const RedText = styled.Text`
-  color: #9b1e26;
+  color: #50bfbf;
   font-weight: bold;
 `;
 export const BlackBoxContainer = styled.View`

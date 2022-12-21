@@ -138,9 +138,9 @@ const PreApprovedOffers = (props) => {
                 >
                   {
                     session.availedCardFlag==PREAPPROVED_FLAG_TYPE.HOSPICASH?
-                    "IDFC FIRST Hospicash. "
+                    "ABC Hospicash. "
                     :
-                    "IDFC FIRST Credit Card. "
+                    "ABC Credit Card. "
                   }
                 
                 </CustomText>

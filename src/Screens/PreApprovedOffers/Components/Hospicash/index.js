@@ -202,7 +202,7 @@ const Hospicash = ({ item }) => {
                   <CheckBox
                     testID={TestIds.pa_terms_checkbox}
                     value={terms}
-                    tintColors={{ true: '#9b1e26' }}
+                    tintColors={{ true: '#50bfbf' }}
                     onValueChange={() => setTerms(!terms)}
                   />
                   <Text
@@ -237,7 +237,7 @@ const Hospicash = ({ item }) => {
                 >
                   <CheckBox
                     testID={TestIds.pa_declartion_checkbox}
-                    tintColors={{ true: '#9b1e26' }}
+                    tintColors={{ true: '#50bfbf' }}
                     value={policyterm}
                     onValueChange={() => setPolicyterm(!policyterm)}
 

@@ -97,7 +97,7 @@ const props = {
     subTitle:
       "Please review all the application details carefully before proceeding to apply for the product",
     warning:
-      "Please fund your IDFC FIRST account within 24 hours to avoid any rejection to your Group Safeguard insuarance application",
+      "Please fund your ABC account within 24 hours to avoid any rejection to your Group Safeguard insuarance application",
     CardData: {
       cardName: "Group Safegaurd Insuarance",
       cardSubtitle_1:

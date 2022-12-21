@@ -510,8 +510,8 @@ const BankingPreferences = (props) => {
                     <Switch
                       testID={TestIds.bp_opt_for_switch}
                       trackColor={{
-                        false: Colors.NEW_RED_200.code,
-                        true: Colors.NEW_GREEN_100.code,
+                        false: Colors.GRAY,
+                        true: Colors.MAROON,
                       }}
                       thumbColor={Colors.WHITE}
                       onValueChange={() => {
@@ -538,7 +538,7 @@ const BankingPreferences = (props) => {
                   testID={TestIds.bp_terms_aggreed_checkbox}
                   style={{ width: 24, height: 24, marginRight: 10 }}
                   value={istermsAggreed}
-                  tintColors={{ true: '#9b1e26' }}
+                  tintColors={{ true: '#50bfbf' }}
                   onValueChange={() => {
                     if (activeIndex == 0) {
                       bankingPreferenceContext.personalizedTerms =
@@ -601,7 +601,7 @@ const BankingPreferences = (props) => {
                     testID={TestIds.bp_booster_account_checkbox}
                     style={{ width: 24, height: 24, marginRight: 10 }}
                     value={boosterAccount}
-                    tintColors={{ true: '#9b1e26' }}
+                    tintColors={{ true: '#50bfbf' }}
                     onValueChange={() => {
                       bankingPreferenceContext.boosterAccount =
                         !bankingPreferenceContext.boosterAccount;
@@ -712,7 +712,7 @@ const RightArrowButtonActive = styled.TouchableOpacity`
   border-radius: 40px;
   width: 80px;
   height: 80px;
-  background-color: #9b1e26;
+  background-color: #50bfbf;
   align-items: center;
   justify-content: center;
 `;

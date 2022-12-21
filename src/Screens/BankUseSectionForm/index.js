@@ -58,6 +58,7 @@ import useSession from "../../App/useSession";
 import { convertDateTo_dd_MM_YYYY } from "../../Utils/CommonFunction"
 import CustomDropDown from "../../Components/CustomDropDown/CustomDropDown";
 import CustomDateInput from "../../Components/CustomDateInput/CustomDateInput";
+import CheckBox from "@react-native-community/checkbox";
 
 const BankUseSectionForm = (props) => {
   const navigation = useNavigation();
@@ -924,18 +925,15 @@ const BankUseSectionForm = (props) => {
         <FullLengthBox>
           <AlignedContainer>
             <CustomerSignatureView>
-              <TouchableOpacity
+              <CheckBox
                 testID={TestIds.bus_is_customer_sign}
-                onPress={() => toggleCustmerSign(!isCustomerSigned)}
-                style={checkBoxStyle}
-              >
-                {isCustomerSigned ? (
-                  <Image source={checked} style={checkBoxStyle} />
-                ) : (
-                  <Image source={unchecked} style={checkBoxStyle} />
-                )}
-              </TouchableOpacity>
-
+                style={{ width: 24, height: 24, marginRight: 10 }}
+                value={isCustomerSigned}
+                tintColors={{ true: '#50bfbf' }}
+                onValueChange={() => {
+                  toggleCustmerSign(!isCustomerSigned)
+                }}
+              />
               <CustomText
                 fontFamily={FontFamily.Inter_REGULAR}
                 fontSize={Font_Size.SIZE_14}

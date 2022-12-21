@@ -13,7 +13,7 @@ export const campaign_code = [
 export const met_customer_at = [
   { id: "1", displayText: "Residence", value: "1" },
   { id: "2", displayText: "Place of work", value: "2" },
-  { id: "3", displayText: "IDFC FIRST Bank branch", value: "3" },
+  { id: "3", displayText: "ABC Bank branch", value: "3" },
 ];
 
 export const dateFormat = "DD MMMM yyyy";
@@ -227,7 +227,7 @@ export const cityList = {
 export const modeOfPayementCheque = "Cheque";
 export const modeOfPayementNeft = "NEFT/RTGS";
 export const modeOfPayementGateway = "Payment gateway";
-export const bankNameIdfc = "IDFC FIRST BANK";
+export const bankNameIdfc = "ABC BANK";
 export const avoidNumNChar = /[^A-Za-z ]+/g;
 export const allowOnlyNum = /([^0-9])/g;
 export const addressCheck = /[^A-Za-z 0-9/,]+/g;

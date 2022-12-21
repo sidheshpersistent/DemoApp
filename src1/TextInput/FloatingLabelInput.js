@@ -76,7 +76,7 @@ const FloatingLabelInput = props => {
           onChangeText={onChangeText}
           style={{
             fontSize: 22,
-            color: '#9b1e26',
+            color: '#50bfbf',
             marginBottom: 5,
             width: '85%',
           }}

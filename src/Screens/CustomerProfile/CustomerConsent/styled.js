@@ -41,9 +41,9 @@ export const FullLengthBox = styled.View`
 `;
 
 export const uploadIconStyle = {
-    width: 24,
-    height: 24,
-    marginRight: 2,
+    width: 20,
+    height: 20,
+    marginRight: 10,
 };
 
 export const recaptureIconStyle = {

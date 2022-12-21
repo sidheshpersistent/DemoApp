@@ -1,17 +1,17 @@
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import {View, Image, ImageBackground, Text, Linking} from 'react-native';
+import { View, Image, ImageBackground, Text, Linking } from 'react-native';
 import DeviceInfo from 'react-native-device-info';
 
-import {OutlineButton} from '../../Components/index';
+import { OutlineButton } from '../../Components/index';
 import { LocalDB } from '../../Utils/Constants';
-import {NavigationUrl, Colors, AsyncStorageUtils} from '../../Utils/index';
+import { NavigationUrl, Colors, AsyncStorageUtils } from '../../Utils/index';
 import useSession from '../../App/useSession';
 // import {useOrientation} from '../../Utils/useOrientation';
 import styles from './style';
 
 
-const LoginScreen = ()=> {
+const LoginScreen = () => {
   const navigation = useNavigation();
   const { session, setSession } = useSession();
   const isPortraitOrientation = true; //useOrientation();
@@ -28,21 +28,21 @@ const LoginScreen = ()=> {
     setLogInDetails();
   };
 
-  
-  const setLogInDetails = async ()  => {
+
+  const setLogInDetails = async () => {
     let agentData = {
       "email": "sagar.bhat_tho@idfcbankqatest.com",
-      "firstName": "Sagar",
+      "firstName": "Lionel",
       "groups": "CN=prime-auth-admin,OU=Groups,OU=IDFCBanktest,DC=IDFCbanktest,DC=com",
-      "lastName": "Bhat",
+      "lastName": "Messi",
       "loginMode": "PASSWORD",
       "userId": "sagar.bhat_tho@IDFCbankqatest.com",
       "userTypes": ["OPS"]
     }
-    let headerData = {'authorization':'Bearer token','agentId':agentData?.email,'appName':'','mobileNumber':''}
+    let headerData = { 'authorization': 'Bearer token', 'agentId': agentData?.email, 'appName': '', 'mobileNumber': '' }
     // AsyncStorageUtils.clearAll();
     try {
-      await AsyncStorageUtils .storeItemKey(
+      await AsyncStorageUtils.storeItemKey(
         LocalDB.headerInfo,
         JSON.stringify(headerData),
       );
@@ -58,15 +58,18 @@ const LoginScreen = ()=> {
 
   return (
     <ImageBackground
-      source={require('../../Assets/Images/LoginScreen/login_background.png')}
+      source={require('../../Assets/Images/bg1.png')}
       resizeMode="cover"
       style={styles.containerImage}
     >
       <>
         <View style={styles.container}>
-          <Image
+          {/* <Image
             resizeMode={'contain'}
             source={require('../../Assets/Images/LoginScreen/logo.png')}
+            style={styles.logoImage}
+          /> */}
+          <View
             style={styles.logoImage}
           />
           <View style={styles.menuHowtoView}>
@@ -76,9 +79,9 @@ const LoginScreen = ()=> {
               name={'How to?'}
               style={styles.howtoButton}
               textColor={Colors.WHITE}
-              // onPress={() =>
-              //   Linking.openURL('https://my.idfcfirstbank.com/login')
-              // }
+              onPress={() =>
+                Linking.openURL('https://www.google.com/')
+              }
             />
             <Image
               resizeMode={'contain'}
@@ -94,7 +97,7 @@ const LoginScreen = ()=> {
               : styles.innerContainer_p
           }
         >
-          <View style={{alignItems: 'center'}}>
+          <View style={{ alignItems: 'center' }}>
             <Image
               resizeMode={'contain'}
               source={require('../../Assets/Images/LoginScreen/smiley.png')}
@@ -102,14 +105,14 @@ const LoginScreen = ()=> {
             />
             <Text style={styles.letsText}>Lets get started!</Text>
           </View>
-          <View style={{alignItems: 'center'}}>
+          <View style={{ alignItems: 'center' }}>
             <OutlineButton
               testID={'staff_login'}
               width={350}
-              name={'Login with IDFC'}
+              name={'Login'}
               onPress={callStaffLogin}
-              style={{backgroundColor: Colors.WHITE}}
-              textColor={"#9B1E26"}
+              style={{ backgroundColor: Colors.WHITE }}
+              textColor={"#50bfbf"}
             />
             <Text style={styles.versionText}>
               Version: {DeviceInfo?.getVersion()}

@@ -138,7 +138,7 @@ import { encryptedDataValue, decryptDataValue } from '../../Utils/CryptoHelper';
 import ErrorPopup from '../../Components/ErrorPopup';
 import CustomSearchInputDropdown from '../../Components/CustomSearchInputDropdown/CustomSearchInputDropdown';
 import { getPrivateString } from '../../Utils/CommonFunction';
-import SelectDropdown from 'react-native-select-dropdown';
+import CustomDropDown from '../../Components/CustomDropDown/CustomDropDown';
 
 const CustomerIdentificationDetails = props => {
   const [panVisible, setPanVisible] = useState(false);
@@ -1537,7 +1537,7 @@ const CustomerIdentificationDetails = props => {
                         CompanyRankList !== '' &&
                         CompanyRankList.length > 0 && (
                           <CardMargin>
-                            {/* <Select
+                            <CustomDropDown
                               style={selectStyle}
                               testID={TestIds.cid_cs_company_rank}
                               defaultSelectedItem={selectedRank}
@@ -1547,40 +1547,8 @@ const CustomerIdentificationDetails = props => {
                               iconColor={Colors.MAROON_DARK}
                               onChange={(value) => setSelectedRank(value)}
                               key={selectedRank.id}
-                            /> */}
-                            <SelectDropdown
-                              testID={TestIds.cid_cs_company_rank}
-                              data={CompanyRankList}
-                              defaultButtonText={StringsOfLanguages.CID.CID_FIELD_RANK}
-                              onSelect={(value) => setSelectedRank(value)}
-                              dropdownIconPosition={"right"}
-                              buttonStyle={{ width: '100%' }}
-                              buttonTextStyle={{
-                                fontSize: 14,
-                                fontFamily: FontFamily.Inter_SemiBold,
-                                lineHeight: 14,
-                                color: Colors.GRAY,
-                              }}
-                              rowTextStyle={dropdownTextStyle}
-                              renderDropdownIcon={() => {
-                                return <Image
-                                  source={chevronDown}
-                                  style={{
-                                    padding: 10,
-                                    margin: 5,
-                                    height: 25,
-                                    width: 25,
-                                    resizeMode: 'stretch',
-                                  }}
-                                />
-                              }}
-                              buttonTextAfterSelection={(selectedItem, index) => {
-                                return selectedItem.displayText
-                              }}
-                              rowTextForSelection={(item, index) => {
-                                return item.displayText
-                              }}
                             />
+
                           </CardMargin>
                         )}
                     </View>
@@ -1969,7 +1937,7 @@ const CustomerIdentificationDetails = props => {
                               setToggleMask(!toggleMask);
                             }}>
                             <Icon
-                              color={'maroon'}
+                              color={'#50bfbf'}
                               name={toggleMask ? 'eye-off' : 'eye'}
                               buttonSize={24}
                               transparent

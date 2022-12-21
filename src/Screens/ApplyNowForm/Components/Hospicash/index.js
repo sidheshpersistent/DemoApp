@@ -329,7 +329,7 @@ const Hospicash = ({ response }) => {
             <CheckBox
               testID={TestIds.hc_is_nomineeAddressSame}
               value={isNomineAddressSame}
-              tintColors={{ true: '#9b1e26' }}
+              tintColors={{ true: '#50bfbf' }}
               style={{ marginRight: 10 }}
               onValueChange={() => setIsNomineAddressSame(!isNomineAddressSame)}
             />
@@ -499,7 +499,7 @@ const Hospicash = ({ response }) => {
                   onValueChange={() =>
                     setIsGuardianAdrressSame(!isGuardianAdrressSame)
                   }
-                  tintColors={{ true: '#9b1e26' }}
+                  tintColors={{ true: '#50bfbf' }}
                   style={{ marginRight: 10 }}
                   value={isGuardianAdrressSame}
                 />
@@ -633,7 +633,7 @@ const Hospicash = ({ response }) => {
                 setTermsCheckbox(!termsCheckbox);
               }}
               style={{ marginRight: 10 }}
-              tintColors={{ true: '#9b1e26' }}
+              tintColors={{ true: '#50bfbf' }}
             />
             <CustomText
               fontSize={Font_Size.SIZE_14}
@@ -683,7 +683,7 @@ const Hospicash = ({ response }) => {
                 setConfirmCheckbox(!confirmCheckbox);
               }}
               style={{ marginRight: 10 }}
-              tintColors={{ true: '#9b1e26' }}
+              tintColors={{ true: '#50bfbf' }}
             />
             <View>
               <Text>{StringsOfLanguages.APPLYNOW_HOSPICASH.I_CONFIRM}</Text>

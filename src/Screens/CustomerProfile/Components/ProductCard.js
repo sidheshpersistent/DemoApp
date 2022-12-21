@@ -106,6 +106,6 @@ export const QRRight = styled.View`
 `;
 export const ScanNowText = styled.Text`
   font-size: 16px;
-  color: #9b1e26;
+  color: #50bfbf;
   font-weight: bold;
 `;

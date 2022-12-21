@@ -23,15 +23,18 @@ const CustomDropDown = props => {
                     fontSize: 14,
                     fontFamily: FontFamily.Inter_SemiBold,
                     lineHeight: 14,
-                    color: Colors.GRAY,
+                    color: Colors.NEW_GREY_800.code,
+                    textAlign: 'auto',
                 }}
                 rowTextStyle={{
                     fontSize: 14,
                     fontFamily: FontFamily.Inter_SemiBold,
                     lineHeight: 14,
-                    color: Colors.GRAY,
+                    color: Colors.NEW_GREY_800.code,
                     letterSpacing: -0.5,
                     marginTop: 6,
+                    marginLeft: 20,
+                    textAlign: 'auto',
                 }}
                 renderDropdownIcon={() => {
                     return <Image

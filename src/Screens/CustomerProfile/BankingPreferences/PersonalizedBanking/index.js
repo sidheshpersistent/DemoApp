@@ -458,7 +458,7 @@ const PersonalizedBanking = () => {
 
                   <Switch
                     testID={TestIds.ps_employee_reimbursement_switch}
-                    trackColor={{ false: Colors.NEW_RED_200.code, true: Colors.NEW_GREEN_100.code }}
+                    trackColor={{ false: Colors.GRAY, true: Colors.MAROON }}
                     thumbColor={Colors.WHITE}
                     onValueChange={() => {
                       bankingPreferenceContext.reimburseAccount =
@@ -542,6 +542,7 @@ const PersonalizedBanking = () => {
                   testID={TestIds.ps_checkbook_checkbox}
                   style={{ width: 24, height: 24, marginRight: 10 }}
                   value={checkbookOpted}
+                  tintColors={{ true: '#50bfbf' }}
                   onValueChange={() => {
                     bankingPreferenceContext.checkbookOpted =
                       !bankingPreferenceContext.checkbookOpted;
@@ -577,7 +578,7 @@ const PersonalizedBanking = () => {
                   testID={TestIds.ps_debitcard_checkbox}
                   style={debitCheckboxStyle}
                   value={debitOpted}
-                  // tintColors={{true: '#ff0000'}}
+                  tintColors={{ true: '#50bfbf' }}
                   onValueChange={() => {
                     bankingPreferenceContext.debitOpted =
                       !bankingPreferenceContext.debitOpted;

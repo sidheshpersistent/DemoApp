@@ -114,8 +114,8 @@ import {
 } from "./constants";
 import CustomSearchInputDropdown from "../../../Components/CustomSearchInputDropdown/CustomSearchInputDropdown";
 import ErrorPopup from "../../../Components/ErrorPopup";
-import SelectDropdown from "react-native-select-dropdown";
 import CustomDateInput from "../../../Components/CustomDateInput/CustomDateInput";
+import CustomDropDown from "../../../Components/CustomDropDown/CustomDropDown";
 
 const PersonalDetail = (props) => {
   const {
@@ -552,7 +552,7 @@ const PersonalDetail = (props) => {
 
   // function for increasing or decreasing progress bar
   function calculateProgressValue(value) {
-    setSession({ ...session, progressPercent: value });
+    setSession({ ...session, progressPercent: '33' });
   };
 
   function callSubmitApi() {
@@ -1464,7 +1464,7 @@ const PersonalDetail = (props) => {
         {session.accountType === Account_Type.ASSISTED_SA ? (
           <View>
             <CardMargin>
-              {/* <Select
+              <CustomDropDown
                 testID={TestIds.cp_occupation_type}
                 label={StringsOfLanguages.PERSONAL_DETAIL.OCCUPATION_TYPE}
                 defaultSelectedItem={
@@ -1478,33 +1478,6 @@ const PersonalDetail = (props) => {
                 labelStyle={{ color: Colors.NEW_GREY_800.text }}
                 iconColor={Colors.MAROON_DARK}
                 onChange={(value) => {
-                  let customSourceOfIncome = [];
-                  let defaultSourceOfIncome={};
-                  if (value.sourceOfIncome) {
-                    for (let i = 0; i < value.sourceOfIncome.length; i++) {
-                      customSourceOfIncome.push({
-                        id: value.sourceOfIncome[i].id,
-                        displayText: value.sourceOfIncome[i].source,
-                        value: value.sourceOfIncome[i].id,
-                      });
-                    }
-                  }
-                  personalcontextData.occupationType = value;
-                  personalcontextData.sourceOfIncomeDetails =
-                    customSourceOfIncome;
-                  defaultSourceOfIncome = customSourceOfIncome.find((obj) => obj.displayText.toUpperCase() == value.incomeSource.toUpperCase())
-                  personalcontextData.sourceOfIncome = defaultSourceOfIncome?defaultSourceOfIncome:null
-                  personalcontextData.CompanyValue = "";
-                  incomeHandler(value);
-                  setSession({ ...session, prevSessionData });
-                  section1Api.current = false;
-                }}
-              /> */}
-              <SelectDropdown
-                testID={TestIds.cp_occupation_type}
-                data={occupationDetails}
-                defaultButtonText={StringsOfLanguages.PERSONAL_DETAIL.OCCUPATION_TYPE}
-                onSelect={(value) => {
                   let customSourceOfIncome = [];
                   let defaultSourceOfIncome = {};
                   if (value.sourceOfIncome) {
@@ -1526,37 +1499,11 @@ const PersonalDetail = (props) => {
                   setSession({ ...session, prevSessionData });
                   section1Api.current = false;
                 }}
-                dropdownIconPosition={"right"}
-                buttonStyle={{ width: '100%' }}
-                buttonTextStyle={{
-                  fontSize: 14,
-                  fontFamily: FontFamily.Inter_SemiBold,
-                  lineHeight: 14,
-                  color: Colors.GRAY,
-                }}
-                rowTextStyle={dropdownTextStyle}
-                renderDropdownIcon={() => {
-                  return <Image
-                    source={chevronDown}
-                    style={{
-                      padding: 10,
-                      margin: 5,
-                      height: 25,
-                      width: 25,
-                      resizeMode: 'stretch',
-                    }}
-                  />
-                }}
-                buttonTextAfterSelection={(selectedItem, index) => {
-                  return selectedItem.displayText
-                }}
-                rowTextForSelection={(item, index) => {
-                  return item.displayText
-                }}
               />
+
             </CardMargin>
             <CardMargin>
-              {/* <Select
+              <CustomDropDown
                 defaultSelectedItem={
                   sourceOfIncomeDetails &&
                   sourceOfIncomeDetails.find(
@@ -1574,44 +1521,8 @@ const PersonalDetail = (props) => {
                 }}
                 labelStyle={{ color: Colors.NEW_GREY_800.text }}
                 iconColor={Colors.MAROON_DARK}
-              /> */}
-              <SelectDropdown
-                testID={TestIds.cp_source_of_income}
-                data={sourceOfIncomeDetails}
-                defaultButtonText={StringsOfLanguages.PERSONAL_DETAIL.SOURCE_OF_INCOME}
-                onSelect={(value) => {
-                  personalcontextData.sourceOfIncome = value;
-                  setSession({ ...session, prevSessionData });
-                  section1Api.current = true;
-                }}
-                dropdownIconPosition={"right"}
-                buttonStyle={{ width: '100%' }}
-                buttonTextStyle={{
-                  fontSize: 14,
-                  fontFamily: FontFamily.Inter_SemiBold,
-                  lineHeight: 14,
-                  color: Colors.GRAY,
-                }}
-                rowTextStyle={dropdownTextStyle}
-                renderDropdownIcon={() => {
-                  return <Image
-                    source={chevronDown}
-                    style={{
-                      padding: 10,
-                      margin: 5,
-                      height: 25,
-                      width: 25,
-                      resizeMode: 'stretch',
-                    }}
-                  />
-                }}
-                buttonTextAfterSelection={(selectedItem, index) => {
-                  return selectedItem.displayText
-                }}
-                rowTextForSelection={(item, index) => {
-                  return item.displayText
-                }}
               />
+
             </CardMargin>
             {showCompanyName ? (
               <CardMargin style={{ zIndex: 1 }}>
@@ -1784,8 +1695,8 @@ const PersonalDetail = (props) => {
                   <Switch
                     testID={TestIds.cp_have_you_applied_pan}
                     trackColor={{
-                      false: Colors.NEW_RED_200.code,
-                      true: Colors.NEW_GREEN_100.code,
+                      false: Colors.GRAY,
+                      true: Colors.MAROON,
                     }}
                     thumbColor={Colors.WHITE}
                     onValueChange={() => {
@@ -2012,8 +1923,8 @@ const PersonalDetail = (props) => {
               <Switch
                 testID={TestIds.cp_toogle_nominee}
                 trackColor={{
-                  false: Colors.NEW_RED_200.code,
-                  true: Colors.NEW_GREEN_100.code,
+                  false: Colors.GRAY,
+                  true: Colors.MAROON,
                 }}
                 thumbColor={Colors.WHITE}
                 onValueChange={() => nomineeTogglePress()}
@@ -2079,7 +1990,7 @@ const PersonalDetail = (props) => {
                 }}
               />
             </CardMargin>
-            {/* <Select
+            <CustomDropDown
               defaultSelectedItem={customerRelation}
               testID={TestIds.cp_relationship_with_customer}
               value={customerRelation}
@@ -2095,45 +2006,8 @@ const PersonalDetail = (props) => {
               }}
               labelStyle={{ color: Colors.NEW_GREY_800.text }}
               iconColor={Colors.MAROON_DARK}
-            /> */}
-            <SelectDropdown
-              testID={TestIds.cp_relationship_with_customer}
-              data={nomineeRelationData}
-              defaultButtonText={StringsOfLanguages.PERSONAL_DETAIL.RELATIONSHIP_WITH_CUSTOMER}
-              onSelect={(value) => {
-                personalcontextData.customerRelation = value;
-                setSession({ ...session, prevSessionData });
-                section3ProgressApi();
-                //setCostumerRelation(value)
-              }}
-              dropdownIconPosition={"right"}
-              buttonStyle={{ width: '100%' }}
-              buttonTextStyle={{
-                fontSize: 14,
-                fontFamily: FontFamily.Inter_SemiBold,
-                lineHeight: 14,
-                color: Colors.GRAY,
-              }}
-              rowTextStyle={dropdownTextStyle}
-              renderDropdownIcon={() => {
-                return <Image
-                  source={chevronDown}
-                  style={{
-                    padding: 10,
-                    margin: 5,
-                    height: 25,
-                    width: 25,
-                    resizeMode: 'stretch',
-                  }}
-                />
-              }}
-              buttonTextAfterSelection={(selectedItem, index) => {
-                return selectedItem.displayText
-              }}
-              rowTextForSelection={(item, index) => {
-                return item.displayText
-              }}
             />
+
             <CardMargin></CardMargin>
             <CardMargin>
               <CustomDateInput

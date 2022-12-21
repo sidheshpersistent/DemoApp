@@ -31,6 +31,7 @@ import { saveBankUseSection } from "../BankUseSectionForm/service";
 import LoaderComponent from "../../Components/LoaderComponent";
 import { modeOfPayementCheque, modeOfPayementNeft } from "../BankUseSectionForm/constants";
 import ErrorPopup from "../../Components/ErrorPopup";
+import CheckBox from '@react-native-community/checkbox';
 
 
 const { Popover } = renderers;
@@ -258,9 +259,8 @@ const SASuccess = (props) => {
 
                   <UnderLineItem></UnderLineItem>
 
-                  <View style={accAdsBox}>
+                  {/* <View style={accAdsBox}>
                     <View >
-                      {/* image */}
                       <CardImageStyle source={easy_buy} resizeMode="center" />
                     </View>
 
@@ -272,7 +272,7 @@ const SASuccess = (props) => {
 
                   <View style={adViewStyle}>
                     <Text style={deb2TextStyle}>{StringsOfLanguages.SAS.SAS_DEBIT_2}</Text>
-                  </View>
+                  </View> */}
                 </Card>
 
               </CardMargin>
@@ -421,21 +421,16 @@ const SASuccess = (props) => {
             <FullLengthBox>
               <AlignedContainer>
                 <View style={{ flexDirection: 'row', marginVertical: 20 }}>
-                  <TouchableOpacity
-                    onPress={() => setConfirmation(!isConfirmed)}
-                    style={checkBoxStyle}>
-                    {isConfirmed ? (
-                      <Image
-                        source={checked}
-                        style={checkBoxStyle}
-                      />
-                    ) : (
-                      <Image
-                        source={unchecked}
-                        style={checkBoxStyle}
-                      />
-                    )}
-                  </TouchableOpacity>
+                 
+                  <CheckBox
+                  
+                    style={{ width: 24, height: 24, marginRight: 10 }}
+                    value={isConfirmed}
+                    tintColors={{ true: '#50bfbf' }}
+                    onValueChange={() => {
+                      setConfirmation(!isConfirmed)
+                    }}
+                  />
                   <Text style={confirmationStyle}>{StringsOfLanguages.SAS.SAS_CONFIRM}</Text>
                 </View>
               </AlignedContainer>

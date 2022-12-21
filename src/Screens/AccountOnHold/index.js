@@ -139,7 +139,7 @@ const Button = {
   width: 200,
   height: 56,
   borderRadius: 27,
-  backgroundColor: '#9b1e26',
+  backgroundColor: '#50bfbf',
 };
 const image = {
   width: 48,

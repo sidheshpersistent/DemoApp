@@ -1,10 +1,10 @@
 
 export const userDetails = {
-  userName:"Sidhesh Manchekar",
+  userName:"Lionel Messi",
   custId:"5000006233",
-  ifscNo:"IDFB0040101",
+  ifscNo:"ABCD0040101",
   accNo:"100345678030",
-  branch:"BKC - Naman"
+  branch:"BKC - ABC"
 };
 
 

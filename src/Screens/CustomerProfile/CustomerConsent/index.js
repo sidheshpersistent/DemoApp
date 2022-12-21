@@ -57,7 +57,7 @@ import {
 } from "./styled";
 import ErrorPopup from "../../../Components/ErrorPopup";
 import CheckBox from "@react-native-community/checkbox";
-import SelectDropdown from "react-native-select-dropdown";
+import CustomDropDown from "../../../Components/CustomDropDown/CustomDropDown";
 
 
 const CustomerConsent = (props) => {
@@ -658,7 +658,7 @@ const CustomerConsent = (props) => {
             <CheckBox
               testID={TestIds.cc_indian_citizen_checkbox}
               style={{ marginRight: 12 }}
-              tintColors={{ true: '#9b1e26' }}
+              tintColors={{ true: '#50bfbf' }}
               value={isIndianCitizen}
               onValueChange={() => {
                 consentContextData.isIndianCitizen = !isIndianCitizen;
@@ -684,7 +684,7 @@ const CustomerConsent = (props) => {
       {!isIndianCitizen ? (
         <AlignedContainer>
           <CardMargin>
-            {/* <Select
+            <CustomDropDown
               testID={TestIds.cc_tax_country_select}
               defaultSelectedItem={country}
               label={
@@ -700,44 +700,6 @@ const CustomerConsent = (props) => {
               }}
               labelStyle={{ color: Colors.NEW_GREY_800.text }}
               iconColor={Colors.MAROON_DARK}
-            /> */}
-            <SelectDropdown
-              testID={TestIds.cc_tax_country_select}
-              data={cc_dropDown_Data}
-              defaultButtonText={StringsOfLanguages.CUSTOMERCONSENT.CC_COUNTRY_OF_TAX_RESIDENT}
-              onSelect={(value) => {
-                consentContextData.country = value;
-                setSession({ ...session, prevSessionData });
-                consentContextData.tinCountry = value.displayText;
-                setSession({ ...session, prevSessionData });
-              }}
-              dropdownIconPosition={"right"}
-              buttonStyle={{ width: '100%' }}
-              buttonTextStyle={{
-                fontSize: 14,
-                fontFamily: FontFamily.Inter_SemiBold,
-                lineHeight: 14,
-                color: Colors.GRAY,
-              }}
-              rowTextStyle={dropdownTextStyle}
-              renderDropdownIcon={() => {
-                return <Image
-                  source={chevronDown}
-                  style={{
-                    padding: 10,
-                    margin: 5,
-                    height: 25,
-                    width: 25,
-                    resizeMode: 'stretch',
-                  }}
-                />
-              }}
-              buttonTextAfterSelection={(selectedItem, index) => {
-                return selectedItem.displayText
-              }}
-              rowTextForSelection={(item, index) => {
-                return item.displayText
-              }}
             />
           </CardMargin>
 
@@ -806,7 +768,7 @@ const CustomerConsent = (props) => {
             <CheckBox
               testID={TestIds.cc_politically_exposed_checbox}
               style={{ marginRight: 12 }}
-              tintColors={{ true: '#9b1e26' }}
+              tintColors={{ true: '#50bfbf' }}
               value={!isPoliticalyExposed}
               onValueChange={() => {
                 consentContextData.isPoliticalyExposed = !isPoliticalyExposed;
@@ -841,7 +803,7 @@ const CustomerConsent = (props) => {
               testID={TestIds.cc_terms_and_conditions_checkbox}
               value={isTermsAgreed}
               style={{ marginRight: 12 }}
-              tintColors={{ true: '#9b1e26' }}
+              tintColors={{ true: '#50bfbf' }}
               onValueChange={() => {
                 consentContextData.isTermsAgreed = !isTermsAgreed;
                 setSession({ ...session, prevSessionData });
@@ -899,7 +861,7 @@ const CustomerConsent = (props) => {
               testID={TestIds.cc_consent_checkbox}
               value={isConsentGiven}
               style={{ marginRight: 12 }}
-              tintColors={{ true: '#9b1e26' }}
+              tintColors={{ true: '#50bfbf' }}
               onValueChange={() => {
                 consentContextData.isConsentGiven = !isConsentGiven;
                 setSession({ ...session, prevSessionData });

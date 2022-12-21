@@ -1,7 +1,9 @@
 const Colors = {
-  MAROON: 'maroon',
+  // MAROON: 'maroon',
+  MAROON: '#50bfbf',
+
   MAROON_DARK: '#fffdff',
-  PRIMARY_COLOR: 'maroon',
+  PRIMARY_COLOR: '#50bfbf',
   WHITE: 'white',
   BLACK: 'black',
   GRAY: '#25243B',
@@ -14,7 +16,7 @@ const Colors = {
   blue: '#0064b0',
   blueLight: '#007fe0',
   gray: 'grey',
-  ERROR: 'maroon', // '#9b1e26',
+  ERROR: '#50bfbf', // '#50bfbf',
   grey100: '#f7f7f7',
   grey150: '#f0f0f0',
   grey200: '#b8b8b8',

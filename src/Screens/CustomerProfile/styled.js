@@ -29,7 +29,7 @@ export const SaveAndExit = styled.Text`
   line-height: 20px;
   letter-spacing: -0.5px;
   text-align: right;
-  color: #9b1e26;
+  color: #50bfbf;
 `;
 export const LowerConatainer = styled.View`
   background-color: #f6f6f6;

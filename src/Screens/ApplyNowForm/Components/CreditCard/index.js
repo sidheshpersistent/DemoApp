@@ -1012,7 +1012,7 @@ const CreditCard = ({ response }) => {
                         setToggleMask(!toggleMask);
                       }}>
                       <Icon
-                        color={'maroon'}
+                        color={'#50bfbf'}
                         name={toggleMask ? 'eye-off' : 'eye'}
                         buttonSize={24}
                         transparent
@@ -1475,7 +1475,7 @@ const CreditCard = ({ response }) => {
           <CheckBox
             testID={TestIds.crc_terms_and_conditions_checkbox}
             style={{ marginLeft: 12 }}
-            tintColors={{ true: '#9b1e26' }}
+            tintColors={{ true: '#50bfbf' }}
             value={isAgree}
             onValueChange={() => {
               setIsAgree(!isAgree);
@@ -1504,7 +1504,7 @@ const CreditCard = ({ response }) => {
             >
               Terms & Conditions{"  "}
             </Text>
-            of IDFC FIRST Credit Card.
+            of ABC Credit Card.
           </CustomText>
         </CheckboxView>
       </FullLengthBox>

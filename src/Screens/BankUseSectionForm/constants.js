@@ -14,14 +14,14 @@ export const campaign_code = [
 export const met_customer_at = [
     { id: "1", displayText: "Residence", value: "1" },
     { id: "2", displayText: "Place of work", value: "2" },
-    { id: "3", displayText: "IDFC FIRST Bank branch", value: "3" },
+    { id: "3", displayText: "ABC Bank branch", value: "3" },
 ];
 
 
 export const bank_name_list = [
-    { id: "1", displayText: "IDFC first bank", value: "1" },
+    { id: "1", displayText: "ABC first bank", value: "1" },
     { id: "2", displayText: "HDFC bank", value: "2" },
-    { id: "3", displayText: "ICICI bank", value: "3" },
+    { id: "3", displayText: "XYZ bank", value: "3" },
 ];
 
 export const dateFormat = "dd MMMM yyyy";
@@ -30,4 +30,4 @@ export const minDate = "1990-01-01";
 export const modeOfPayementCheque = "Cheque";
 export const modeOfPayementNeft = "NEFT/RTGS";
 export const modeOfPayementGateway = "Payment gateway";
-export const bankNameIdfc = "IDFC FIRST BANK";
+export const bankNameIdfc = "ABC BANK";

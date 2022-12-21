@@ -206,7 +206,7 @@ const RightArrowButtonActive = styled.TouchableOpacity`
   border-radius: 40px;
   width: 80px;
   height: 80px;
-  background-color: #9b1e26;
+  background-color: #50bfbf;
   align-items: center;
   justify-content: center;
 `;

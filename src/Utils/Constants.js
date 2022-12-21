@@ -54,7 +54,7 @@ export const CUSTOMERDETAILS = {
   CID_FIELD_COMPANY: "Company Name",
   CID_FIELD_RANK: "Rank*",
   CID_LABEL_FOOTER:
-    "By proceeding, I am willing to give access to my identity, address, mobile number and email ID from Aadhaar database, for opening tablet-based account with IDFC FIRST Bank.",
+    "By proceeding, I am willing to give access to my identity, address, mobile number and email ID from Aadhaar database, for opening tablet-based account with ABC Bank.",
 };
 
 export const NEWCOMMUNICATIONADDRESS = {

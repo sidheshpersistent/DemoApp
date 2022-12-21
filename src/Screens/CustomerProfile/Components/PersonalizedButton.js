@@ -60,7 +60,7 @@ export const ButtonContainer = styled.View`
 export const RedButtonStyle = styled.View`
   border-radius: 24px;
   background-color: ${props =>
-    props.activeIndex === 0 ? '#6e0a0f' : '#e9e9e9'};
+    props.activeIndex === 0 ? '#50bfbf' : '#e9e9e9'};
   width: 150px;
   height: 38px;
   align-items: center;
@@ -69,14 +69,14 @@ export const RedButtonStyle = styled.View`
 `;
 export const ButtonTextWhite = styled.Text`
   font-size: 14px;
-  color: ${props => (props.activeIndex === 0 ? '#fff' : '#6e0a0f')};
+  color: ${props => (props.activeIndex === 0 ? '#fff' : '#50bfbf')};
   text-align: center;
   font-weight: 500;
 `;
 export const GrayButtonStyle = styled.View`
   border-radius: 24px;
   background-color: ${props =>
-    props.activeIndex === 1 ? '#6e0a0f' : '#e9e9e9'};
+    props.activeIndex === 1 ? '#50bfbf' : '#e9e9e9'};
   margin-left: -25px;
   width: 150px;
   height: 38px;
@@ -86,7 +86,7 @@ export const GrayButtonStyle = styled.View`
 `;
 export const ButtonTextRed = styled.Text`
   font-size: 14px;
-  color: ${props => (props.activeIndex === 1 ? '#fff' : '#6e0a0f')};
+  color: ${props => (props.activeIndex === 1 ? '#fff' : '#50bfbf')};
   text-align: center;
   font-weight: 500;
 `;
