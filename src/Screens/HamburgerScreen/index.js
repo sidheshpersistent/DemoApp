@@ -17,26 +17,26 @@ import { StringsOfLanguages } from "../../Localization";
 import useSession from '../../App/useSession';
 import { Endpoints, NetworkManager } from "../../API";
 
-import {NavigationStrings,HamburgerName} from "../../Utils/Constants"
+import { NavigationStrings, HamburgerName } from "../../Utils/Constants"
 const HamburgerScreen = (props) => {
   const navigation = useNavigation();
-  const {session, setSession} = useSession();
+  const { session, setSession } = useSession();
   const closeDrawer = () => {
     props.navigation.closeDrawer();
   };
-  const logOut = async () =>{
-    NetworkManager.IDFCNetworkPost(Endpoints.logOut,{},response =>{
-      if(response != ""){
+  const logOut = async () => {
+    NetworkManager.IDFCNetworkPost(Endpoints.logOut, {}, response => {
+      if (response != "") {
         AsyncStorageUtils.clearAll();
         setSession({ ...session, loginFlag: false })
-      }else{
+      } else {
         AsyncStorageUtils.clearAll();
         setSession({ ...session, loginFlag: false })
       }
-     
+
     })
-    
- 
+
+
   }
   const navigationToPage = (nav) => {
 
@@ -68,11 +68,11 @@ const HamburgerScreen = (props) => {
           StringsOfLanguages.COMMON.LOGOUT,
           '',
           [
-        
-            { text:  StringsOfLanguages.COMMON.YES, onPress:()=>{logOut()}}
+
+            { text: StringsOfLanguages.COMMON.YES, onPress: () => { logOut() } }
           ],
           { cancelable: true }
-          );
+        );
         break;
       default:
         break;
@@ -101,7 +101,7 @@ const HamburgerScreen = (props) => {
             lineHeight={Line_Height.HEIGHT_26}
             color={Colors.BLACK}
           >
-          {HamburgerName.OPEN_SAVINGS_ACCOUNT}
+            {HamburgerName.OPEN_SAVINGS_ACCOUNT}
           </CustomText>
         </TouchableOpacity>
       </BoxContainer>
@@ -119,7 +119,7 @@ const HamburgerScreen = (props) => {
             lineHeight={Line_Height.HEIGHT_26}
             color={Colors.BLACK}
           >
-           {HamburgerName.OPEN_CORPORATE_SALARY_ACCOUNT}
+            {HamburgerName.OPEN_CORPORATE_SALARY_ACCOUNT}
           </CustomText>
         </TouchableOpacity>
       </BoxContainer>
@@ -137,7 +137,7 @@ const HamburgerScreen = (props) => {
             lineHeight={Line_Height.HEIGHT_26}
             color={Colors.BLACK}
           >
-           {HamburgerName.BANK_USE_SECTION}
+            {HamburgerName.BANK_USE_SECTION}
           </CustomText>
         </TouchableOpacity>
       </BoxContainer>
@@ -161,9 +161,9 @@ const HamburgerScreen = (props) => {
       </BoxContainer>
       <BoxContainer>
         <View
-          
+
           style={{ flexDirection: "row" }}
-          
+
         >
           <Image resizeMode="contain" style={{ width: 24, height: 24 }} source={transfer} />
           <View style={{ marginLeft: 10 }}>
@@ -173,36 +173,36 @@ const HamburgerScreen = (props) => {
               lineHeight={Line_Height.HEIGHT_26}
               color={Colors.BLACK}
             >
-             {HamburgerName.TRANSACTIONS}
+              {HamburgerName.TRANSACTIONS}
             </CustomText>
             <TouchableOpacity
-            testID={TestIds.hm_transaction}
-            onPress={() => navigationToPage(NavigationStrings.TR)}
+              testID={TestIds.hm_transaction}
+              onPress={() => navigationToPage(NavigationStrings.TR)}
             >
-            <CustomText
-              fontFamily={FontFamily.Inter_Light}
-              fontSize={Font_Size.SIZE_16}
-              lineHeight={Line_Height.HEIGHT_26}
-              color={Colors.BLACK}
-            >
-            • {HamburgerName.AADHAAR_SEEDING} 
-            </CustomText>
+              <CustomText
+                fontFamily={FontFamily.Inter_Light}
+                fontSize={Font_Size.SIZE_16}
+                lineHeight={Line_Height.HEIGHT_26}
+                color={Colors.BLACK}
+              >
+                • {HamburgerName.AADHAAR_SEEDING}
+              </CustomText>
             </TouchableOpacity>
             <TouchableOpacity
-            testID={TestIds.hm_aadhar_linking}
-            onPress={() => navigationToPage(NavigationStrings.TR)}
+              testID={TestIds.hm_aadhar_linking}
+              onPress={() => navigationToPage(NavigationStrings.TR)}
             >
-            <CustomText
-              fontFamily={FontFamily.Inter_Light}
-              fontSize={Font_Size.SIZE_16}
-              lineHeight={Line_Height.HEIGHT_26}
-              color={Colors.BLACK}
-            >
-            • {HamburgerName.AADHAAR_LINKING}
-            </CustomText>
+              <CustomText
+                fontFamily={FontFamily.Inter_Light}
+                fontSize={Font_Size.SIZE_16}
+                lineHeight={Line_Height.HEIGHT_26}
+                color={Colors.BLACK}
+              >
+                • {HamburgerName.AADHAAR_LINKING}
+              </CustomText>
             </TouchableOpacity>
-            
-            
+
+
           </View>
         </View>
       </BoxContainer>
@@ -220,7 +220,7 @@ const HamburgerScreen = (props) => {
             lineHeight={Line_Height.HEIGHT_26}
             color={Colors.BLACK}
           >
-           {HamburgerName.LOGOUT}
+            {HamburgerName.LOGOUT}
           </CustomText>
         </TouchableOpacity>
       </BoxContainer>

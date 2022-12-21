@@ -156,7 +156,7 @@ const Endpoints = {
   emailVerify: `karza/emailVerify`,
   accountOpening: `account`,
   saveBankUseSection: `createBankUseSection`,
-  getPaymentDetails: `getPaymentDetails/`,
+  getPaymentDetails: `getPaymentDetails`,
 };
 
 export default Endpoints;

@@ -508,7 +508,7 @@ const SASuccess = (props) => {
           }}
         />
       }
-      {/* {
+      {
         <PopupShareDetails
           animationIn="bounceIn"
           isVisible={shareWithHrVisible}
@@ -525,7 +525,7 @@ const SASuccess = (props) => {
             }
           }}
           isError={emailError}
-          enableSubmit={enableSubmitButton}
+          enableSubmit={false}
           buttonPress={() => {
             // setEmailHR("");
             // setEmailError(false);
@@ -546,7 +546,7 @@ const SASuccess = (props) => {
           accNo={accNo}
           branch={branch}
         />
-      } */}
+      }
       {/* {
         <ErrorPopup
           popUpshow={errorPopup}

@@ -3593,5 +3593,328 @@
         "assistedCreateBankUseSection": null
       }
     ]
+  },
+  "bank": {
+    "data": [
+      {
+        "id": 16,
+        "displayText": "HDFC BANK LTD",
+        "debitCardCode": "10850",
+        "netbankingCode": "9660",
+        "popularity": 1
+      },
+      {
+        "id": 18,
+        "displayText": "ICICI BANK",
+        "debitCardCode": "10010",
+        "netbankingCode": "9460",
+        "popularity": 2
+      },
+      {
+        "id": 2,
+        "displayText": "AXIS BANK",
+        "debitCardCode": "12800",
+        "netbankingCode": "9480",
+        "popularity": 3
+      },
+      {
+        "id": 25,
+        "displayText": "KOTAK MAHINDRA BANK",
+        "debitCardCode": "9540",
+        "netbankingCode": "9530",
+        "popularity": 4
+      },
+      {
+        "id": 32,
+        "displayText": "STATE BANK OF INDIA",
+        "debitCardCode": "11060",
+        "netbankingCode": "11050",
+        "popularity": 5
+      },
+      {
+        "id": 1,
+        "displayText": "ANDHRA BANK",
+        "debitCardCode": "11100",
+        "netbankingCode": "10940",
+        "popularity": null
+      },
+      {
+        "id": 4,
+        "displayText": "AU SMALL FINANCE BANK",
+        "debitCardCode": "10870",
+        "netbankingCode": null,
+        "popularity": null
+      },
+      {
+        "id": 3,
+        "displayText": "BANDHAN BANK LTD",
+        "debitCardCode": null,
+        "netbankingCode": "13980",
+        "popularity": null
+      },
+      {
+        "id": 5,
+        "displayText": "BANK OF BARODA",
+        "debitCardCode": "12870",
+        "netbankingCode": "9490",
+        "popularity": null
+      },
+      {
+        "id": 6,
+        "displayText": "BANK OF MAHARASHTRA",
+        "debitCardCode": "10860",
+        "netbankingCode": "9820",
+        "popularity": null
+      },
+      {
+        "id": 7,
+        "displayText": "CENTRAL BANK OF INDIA",
+        "debitCardCode": null,
+        "netbankingCode": "9510",
+        "popularity": null
+      },
+      {
+        "id": 8,
+        "displayText": "CITI BANK",
+        "debitCardCode": "11220",
+        "netbankingCode": "13970",
+        "popularity": null
+      },
+      {
+        "id": 9,
+        "displayText": "CITY UNION BANK LTD",
+        "debitCardCode": null,
+        "netbankingCode": "9890",
+        "popularity": null
+      },
+      {
+        "id": 10,
+        "displayText": "DBS BANK INDIA LTD",
+        "debitCardCode": "11970",
+        "netbankingCode": "11960",
+        "popularity": null
+      },
+      {
+        "id": 11,
+        "displayText": "DCB BANK LTD",
+        "debitCardCode": "11410",
+        "netbankingCode": null,
+        "popularity": null
+      },
+      {
+        "id": 12,
+        "displayText": "DEUTSCHE BANK AG",
+        "debitCardCode": "10930",
+        "netbankingCode": "9830",
+        "popularity": null
+      },
+      {
+        "id": 13,
+        "displayText": "DHANALAXMI BANK",
+        "debitCardCode": "11920",
+        "netbankingCode": "11230",
+        "popularity": null
+      },
+      {
+        "id": 14,
+        "displayText": "EQUITAS SMALL FINANCE BANK LTD",
+        "debitCardCode": "9650",
+        "netbankingCode": "10020",
+        "popularity": null
+      },
+      {
+        "id": 15,
+        "displayText": "FEDERAL BANK",
+        "debitCardCode": "11030",
+        "netbankingCode": "10000",
+        "popularity": null
+      },
+      {
+        "id": 17,
+        "displayText": "HSBC",
+        "debitCardCode": null,
+        "netbankingCode": "11950",
+        "popularity": null
+      },
+      {
+        "id": 19,
+        "displayText": "IDBI BANK",
+        "debitCardCode": null,
+        "netbankingCode": "9620",
+        "popularity": null
+      },
+      {
+        "id": 20,
+        "displayText": "INDIAN OVERSEAS BANK",
+        "debitCardCode": null,
+        "netbankingCode": "9670",
+        "popularity": null
+      },
+      {
+        "id": 21,
+        "displayText": "INDUS IND BANK",
+        "debitCardCode": "9630",
+        "netbankingCode": "9470",
+        "popularity": null
+      },
+      {
+        "id": 22,
+        "displayText": "JANA SMALL FINANCE BANK LTD",
+        "debitCardCode": "13630",
+        "netbankingCode": "13640",
+        "popularity": null
+      },
+      {
+        "id": 23,
+        "displayText": "KARNATAKA BANK LTD",
+        "debitCardCode": "11150",
+        "netbankingCode": "10970",
+        "popularity": null
+      },
+      {
+        "id": 24,
+        "displayText": "KARUR VYSA BANK",
+        "debitCardCode": null,
+        "netbankingCode": "12860",
+        "popularity": null
+      },
+      {
+        "id": 26,
+        "displayText": "PAYTM PAYMENTS BANK LTD",
+        "debitCardCode": "11690",
+        "netbankingCode": "9880",
+        "popularity": null
+      },
+      {
+        "id": 27,
+        "displayText": "PUNJAB AND SIND BANK",
+        "debitCardCode": null,
+        "netbankingCode": "12840",
+        "popularity": null
+      },
+      {
+        "id": 28,
+        "displayText": "PUNJAB NATIONAL BANK",
+        "debitCardCode": "11140",
+        "netbankingCode": "9500",
+        "popularity": null
+      },
+      {
+        "id": 29,
+        "displayText": "RBL BANK LTD",
+        "debitCardCode": "11250",
+        "netbankingCode": "9780",
+        "popularity": null
+      },
+      {
+        "id": 30,
+        "displayText": "SOUTH INDIAN BANK",
+        "debitCardCode": "9680",
+        "netbankingCode": "11940",
+        "popularity": null
+      },
+      {
+        "id": 31,
+        "displayText": "STANDARD CHARTERED BANK",
+        "debitCardCode": null,
+        "netbankingCode": "11020",
+        "popularity": null
+      },
+      {
+        "id": 33,
+        "displayText": "SYNDICATE BANK",
+        "debitCardCode": null,
+        "netbankingCode": "12830",
+        "popularity": null
+      },
+      {
+        "id": 34,
+        "displayText": "TAMILNAD MERCANTILE BANK LTD",
+        "debitCardCode": "12030",
+        "netbankingCode": "9640",
+        "popularity": null
+      },
+      {
+        "id": 35,
+        "displayText": "THE COSMOS CO-OPERATIVE BANK LTD",
+        "debitCardCode": null,
+        "netbankingCode": "11240",
+        "popularity": null
+      },
+      {
+        "id": 36,
+        "displayText": "UJJIVAN SMALL FINANCE BANK LTD",
+        "debitCardCode": "9610",
+        "netbankingCode": "9600",
+        "popularity": null
+      },
+      {
+        "id": 37,
+        "displayText": "UNION BANK OF INDIA",
+        "debitCardCode": null,
+        "netbankingCode": "11390",
+        "popularity": null
+      },
+      {
+        "id": 38,
+        "displayText": "YES BANK",
+        "debitCardCode": "9570",
+        "netbankingCode": "9560",
+        "popularity": null
+      }
+    ],
+    "status": "SUCCESS"
+  },
+  "getCampaignList": [
+    {
+      "id": 1,
+      "displayText": "Doctors and CA Drive",
+      "campaignCode": "6569"
+    },
+    {
+      "id": 2,
+      "displayText": "Car Loan",
+      "campaignCode": "CARLN"
+    },
+    {
+      "id": 3,
+      "displayText": "Gold Loan",
+      "campaignCode": "GLDLN"
+    },
+    {
+      "id": 4,
+      "displayText": "SME X-sell to SA",
+      "campaignCode": "6686"
+    },
+    {
+      "id": 5,
+      "displayText": "Campaign",
+      "campaignCode": "120"
+    },
+    {
+      "id": 6,
+      "displayText": "Asset Liability Collaboration",
+      "campaignCode": "6621"
+    }
+  ],
+  "getPaymentDetails": {
+    "status": "SUCCESS",
+    "responseCd": "00",
+    "assistedBankUseSectionResp": {
+      "leadId": null,
+      "status": "SUCCESS",
+      "message": null,
+      "responseCd": "00",
+      "id": 201,
+      "userId": 3569,
+      "agentId": "sagar.bhat_tho@idfcbankqatest.com",
+      "custName": "ROHIT BABAR",
+      "acNumber": "0",
+      "custId": "1038731666",
+      "productName": "Savings Regular 25K",
+      "accountOpenDate": "25 Nov,2022 01:08 PM",
+      "isBuCompleted": false,
+      "assistedCreateBankUseSection": null
+    }
   }
 }

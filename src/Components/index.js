@@ -21,7 +21,7 @@ import CustomSearchInputCompany from './CustomSearchInputCompany/CustomSearchInp
 import OutlineButton from './Buttons/OutlineButton/OutlineButton';
 // import CustomActivityIndicator from './CustomActivityIndicator/CustomActivityIndicator';
 // import PopupCameraGallery from "./Popup/PopupCameraGallery";
-// import PopupShareDetails from "./Popup/PopupShareDetails";
+import PopupShareDetails from "./Popup/PopupShareDetails";
 // import PopupEmpVerification from "./Popup/PopupEmpVerification";
 // import PopupFailedOfficeMailVerification from "./Popup/PopupFailedOfficeMailVerification";
 import RadioButton from './RadioButton/RadioButton';
@@ -49,7 +49,7 @@ export {
   OutlineButton,
   // CustomActivityIndicator,
   // PopupCameraGallery,
-  // PopupShareDetails,
+  PopupShareDetails,
   // PopupEmpVerification,
   // PopupFailedOfficeMailVerification
 };

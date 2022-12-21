@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-// import {createDrawerNavigator} from '@react-navigation/drawer';
+// import { createDrawerNavigator } from '@react-navigation/drawer';
 import NavigationUrl from '../Utils/NavigationUrl';
 import useSession from './useSession';
 
@@ -21,8 +21,8 @@ import PreApprovedOffers from "../Screens/PreApprovedOffers";
 
 // import KnowMore from "../Screens/KnowMore";
 
-// import HamburgerScreen from "../Screens/HamburgerScreen";
-// import BankUseSectionForm from "../Screens/BankUseSectionForm";
+import HamburgerScreen from "../Screens/HamburgerScreen";
+import BankUseSectionForm from "../Screens/BankUseSectionForm";
 // import EAuth from '../Screens/AgentLogin_oAuth/EAuth';
 import BankUseSectionList from "../Screens/BankUseSectionList";
 // import WebViewComponent from "../Components/WebviewComponent/WebViewComponent";
@@ -37,18 +37,18 @@ const Stack = createNativeStackNavigator();
 // const Drawer = createDrawerNavigator();
 // drawerContent={props => <DrawerContainer {...props} />}
 
-// const DrawerStack = () => (
-//   <>
-//     <Drawer.Navigator
-//       drawerContent={props => <HamburgerScreen {...props} />}
-//       screenOptions={{
-//         headerShown: false,
-//         drawerStyle: {width: Dimensions.get('window').width / 1.4},
-//       }}>
-//       <Drawer.Screen name={NavigationUrl.dashboardId} component={Dashboard} />
-//     </Drawer.Navigator>
-//   </>
-// );
+const DrawerStack = () => (
+  <>
+    <Drawer.Navigator
+      drawerContent={props => <HamburgerScreen {...props} />}
+      screenOptions={{
+        headerShown: false,
+        drawerStyle: { width: Dimensions.get('window').width / 1.4 },
+      }}>
+      <Drawer.Screen name={NavigationUrl.dashboardId} component={Dashboard} />
+    </Drawer.Navigator>
+  </>
+);
 const AppContainer = ({ childFunc }) => {
   const { session, setSession } = useSession();
 
@@ -57,8 +57,8 @@ const AppContainer = ({ childFunc }) => {
   // }, []);
 
   // const navigateToLogin = () => {
-  //   setSession({...session, loginFlag: true});
-  //   setSession({...session, loginFlag: false});
+  //   setSession({ ...session, loginFlag: true });
+  //   setSession({ ...session, loginFlag: false });
   // };
 
   return (
@@ -97,7 +97,7 @@ const AppContainer = ({ childFunc }) => {
           {/* <Stack.Screen
             name={NavigationUrl.drawerId}
             component={DrawerStack}
-            options={{headerShown: false}}
+            options={{ headerShown: false }}
           /> */}
 
           <Stack.Screen
@@ -167,11 +167,11 @@ const AppContainer = ({ childFunc }) => {
             options={{ headerShown: false }}
           />
 
-          {/* <Stack.Screen
+          <Stack.Screen
             name={NavigationUrl.BankUseSectionForm}
             component={BankUseSectionForm}
-            options={{headerShown: false}}
-          /> */}
+            options={{ headerShown: false }}
+          />
 
           {/* <Stack.Screen
             name={NavigationUrl.WebViewComponent}
