@@ -46,7 +46,7 @@ import { MarginTopBox } from "../styled";
 
 const AadhaarSuccess = (props) => {
   const navigation = useNavigation();
-  const [userName] = useState("Astha Patil"); //TODO: get it from props
+  const [userName] = useState("Sidhesh Manchekar"); //TODO: get it from props
   const [popupVisible, setPopupVisible] = useState(false);
   let textData = '3ft56gfet643fv6hfth8gfrc7785';
   useEffect(() => {
@@ -55,7 +55,7 @@ const AadhaarSuccess = (props) => {
       BackHandler.removeEventListener("hardwareBackPress", handleBackPress);
     };
   }, []);
-  useEffect(() => {});
+  useEffect(() => { });
   const handleBackPress = () => {
     if (props.navigation.isFocused()) {
       setPopupVisible(true);
@@ -96,7 +96,7 @@ const AadhaarSuccess = (props) => {
           )}
         </View>
       </BackgroundImage>
-{/*TODO: Aligned container style to move*/}
+      {/*TODO: Aligned container style to move*/}
       <ScrollView style={{ marginTop: -15 }}>
         <AlignedContainer
           style={{

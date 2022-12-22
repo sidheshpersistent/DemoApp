@@ -38,7 +38,7 @@ const UserContainer = () => {
         }
         rightView={
           <NameAndGender>
-            <CustomerName style={capitalizeText}>{"Sidhesh M"}</CustomerName>
+            <CustomerName style={capitalizeText}>{"Sidhesh Manchekar"}</CustomerName>
             <View style={{ flexDirection: "row" }}>
               <NameAndAge>{"27"}</NameAndAge>
               <NameAndAge>|</NameAndAge>

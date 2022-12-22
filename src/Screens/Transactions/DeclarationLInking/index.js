@@ -38,10 +38,10 @@ const DeclarationLinking = () => {
             onPress={() => navigation.goBack()}>
             <IconClose source={arrowBack} />
           </TouchableOpacity>
-          <SaveAndExit 
-          onPress={()=>{
-            setPopupVisible(true)
-          }}
+          <SaveAndExit
+            onPress={() => {
+              setPopupVisible(true)
+            }}
           >{StringsOfLanguages.COMMON.EXIT}</SaveAndExit>
         </CloseAndSave>
 
@@ -84,16 +84,21 @@ const DeclarationLinking = () => {
           buttonPress={() => {
             navigation.goBack();
           }}
-          style={DeclineBtn}
+          style={[{
+            width: 240
+          }, DeclineBtn]}
           title={StringsOfLanguages.DECLARATION.DEC_DECLINE}
         />
 
         <CustomButton
-         maxWidth={"100%"}
+          maxWidth={"100%"}
           buttonPress={() => {
-            navigation.navigate(NavigationUrl.AadhaarSuccess,{type:"linking"});
+            navigation.navigate(NavigationUrl.AadhaarSuccess, { type: "linking" });
           }}
-          style={{  height: 60 }}
+          style={{
+            height: 60,
+            width: 240
+          }}
           title={StringsOfLanguages.DECLARATION.DEC_ACCEPT}
         />
       </BottomContainer>

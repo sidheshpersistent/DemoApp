@@ -28,10 +28,10 @@ import BankUseSectionList from "../Screens/BankUseSectionList";
 // import WebViewComponent from "../Components/WebviewComponent/WebViewComponent";
 import CustomWebPage from "../Components/CustomWebPage";
 import Transactions from "../Screens/Transactions";
-// import DeclarationLinking from "../Screens/Transactions/DeclarationLInking";
-// import DeclarationSeeding from "../Screens/Transactions/DeclarationSeeding";
+import DeclarationLinking from "../Screens/Transactions/DeclarationLInking";
+import DeclarationSeeding from "../Screens/Transactions/DeclarationSeeding";
 import ApplyNowForm from "../Screens/ApplyNowForm";
-// import AadhaarSuccess from "../Screens/Transactions/AadhaarSuccess";
+import AadhaarSuccess from "../Screens/Transactions/AadhaarSuccess";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -183,26 +183,26 @@ const AppContainer = ({ childFunc }) => {
           <Stack.Screen
             name={NavigationUrl.Transactions}
             component={Transactions}
-            options={{headerShown: false}}
+            options={{ headerShown: false }}
           />
 
-          {/* <Stack.Screen
+          <Stack.Screen
             name={NavigationUrl.DeclarationLinking}
             component={DeclarationLinking}
-            options={{headerShown: false}}
-          /> */}
+            options={{ headerShown: false }}
+          />
 
-          {/* <Stack.Screen
+          <Stack.Screen
             name={NavigationUrl.DeclarationSeeding}
             component={DeclarationSeeding}
-            options={{headerShown: false}}
-          /> */}
+            options={{ headerShown: false }}
+          />
 
-          {/* <Stack.Screen
+          <Stack.Screen
             name={NavigationUrl.AadhaarSuccess}
             component={AadhaarSuccess}
-            options={{headerShown: false}}
-          /> */}
+            options={{ headerShown: false }}
+          />
         </Stack.Navigator>
       )}
     </NavigationContainer>

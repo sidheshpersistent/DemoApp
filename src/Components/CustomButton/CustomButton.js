@@ -14,7 +14,7 @@ const CustomButton = props => {
         style={[{
           // maxWidth: maxWidth ? maxWidth : '90%',
           width: '90%',
-          backgroundColor: Colors.MAROON,
+          backgroundColor: buttonType == "secondary" ? Colors.GRAY : Colors.MAROON,
           borderRadius: 30,
           justifyContent: 'center',
           alignSelf: 'center'

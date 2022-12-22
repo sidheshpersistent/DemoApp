@@ -93,5 +93,5 @@ export const ComponentContainer = styled.View`
 
 export const DeclineBtn = {
   height: 60, 
-  backgroundColor: Colors.NEW_GREY_100.code 
+  backgroundColor: Colors.GRAY
 }

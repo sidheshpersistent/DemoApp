@@ -31,12 +31,12 @@ const LoginScreen = ()=> {
   
   const setLogInDetails = async ()  => {
     let agentData = {
-      "email": "sagar.bhat_tho@idfcbankqatest.com",
-      "firstName": "Sagar",
+      "email": "sidhesh.manchekar@idfcbankqatest.com",
+      "firstName": "Sidhesh",
       "groups": "CN=prime-auth-admin,OU=Groups,OU=IDFCBanktest,DC=IDFCbanktest,DC=com",
-      "lastName": "Bhat",
+      "lastName": "Manchekar",
       "loginMode": "PASSWORD",
-      "userId": "sagar.bhat_tho@IDFCbankqatest.com",
+      "userId": "sidhesh.manchekar@IDFCbankqatest.com",
       "userTypes": ["OPS"]
     }
     let headerData = {'authorization':'Bearer token','agentId':agentData?.email,'appName':'','mobileNumber':''}

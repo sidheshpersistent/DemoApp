@@ -4,6 +4,7 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import { arrowBack, help, info } from "../../Assets/Images";
 import {
   CustomButton,
+  CustomPasswordTextInput,
   CustomText,
   CustomTextInput,
   Popup,
@@ -42,7 +43,8 @@ import {
   HEADING,
   SUB_HEADING,
 } from "../CustomerIdentificationDetails/constants";
-import { AdharTooltipHindden } from "../CustomerIdentificationDetails/styled";
+import { AdharTooltipHindden, EyeButton } from "../CustomerIdentificationDetails/styled";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const Transactions = () => {
   const navigation = useNavigation();
@@ -68,9 +70,9 @@ const Transactions = () => {
       setIsErrorAadhar("error");
     }
   };
-//TODO: regex needs to be changed
+  //TODO: regex needs to be changed
   const setAccountNumValidation = async (number) => {
-    const test =  /^[0-9]*$/g.test(number);
+    const test = /^[0-9]*$/g.test(number);
     // alert(test);
     if (number.length > 8 && number.length < 19) {
       if (test) {
@@ -104,7 +106,7 @@ const Transactions = () => {
           </TitleContainer>
         </MarginBox>
       </HeaderContainer>
-{/*TODO: inline style remove*/}
+      {/*TODO: inline style remove*/}
       <AlignedContainer style={{ paddingLeft: 30, paddingRight: 30 }}>
         <MarginTopBox>
           <CustomText
@@ -118,6 +120,73 @@ const Transactions = () => {
           </CustomText>
         </MarginTopBox>
 
+        <MarginTopBox>
+          <CustomPasswordTextInput
+            value={aadharNo}
+            testID={TestIds.cid_aadhar}
+            onBlur={() => keyboardBlurHandle()}
+            onFocus={() => keyboardFocusHandle()}
+            // testID={TestIds.lg_password_input}
+            inputBorderProps={{
+              style:
+                isErrorAadhar == 'error' && aadharNo != ''
+                  ? { borderBottomColor: Colors.ERROR }
+                  : { borderBottomColor: Colors.GRAY },
+            }}
+            fontSize={16}
+            onChangeText={text => {
+              setAadharNo(text);
+              setAadharValidation(text);
+            }}
+            label={
+              aadharNo && aadharNo.length < 12
+                ? StringsOfLanguages.CID.CID_ERROR_ADHAR
+                : isErrorAadhar == 'error' && aadharNo
+                  ? StringsOfLanguages.CID.CID_ERROR_VID
+                  : StringsOfLanguages.CID.CID_FIELD_AADHAAR
+            }
+            labelStyle={
+              isErrorAadhar == 'error' && aadharNo != ''
+                ? { color: Colors.ERROR }
+                : { color: Colors.GRAY }
+            }
+            secureTextEntry={toggleMask}
+            passwordInputProps={{
+              style:
+                isErrorAadhar == 'error' && aadharNo != ''
+                  ? { color: Colors.ERROR }
+                  : { color: Colors.GRAY },
+              selectionColor: 'black',
+              maxLength: 16,
+            }}
+            suffix={
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}>
+                <EyeButton
+                  onPress={() => {
+                    setToggleMask(!toggleMask);
+                  }}>
+                  <Icon
+                    color={'maroon'}
+                    name={toggleMask ? 'eye-off' : 'eye'}
+                    buttonSize={24}
+                    transparent
+                    size={Icon_Size.NORMAL}
+                  />
+                </EyeButton>
+
+                <AdharTooltipHindden
+                  onPress={() => setAdharVisible(true)}>
+                  <Image style={infoIconStyle} source={help} />
+                </AdharTooltipHindden>
+              </View>
+            }
+          />
+        </MarginTopBox>
         {/* <MarginTopBox>
           <PasswordInput
             value={aadharNo}
@@ -208,9 +277,9 @@ const Transactions = () => {
               setAccountNumValidation(text);
               setAccNo(text);
 
-           
+
             }}
-       
+
             textInputProps={{
               style: {
                 color:
@@ -235,9 +304,8 @@ const Transactions = () => {
             aadharNo && !isErrorAadhar && accNo && !isAccNoError ? false : true
           }
           style={{
-            
             height: 60,
-            backgroundColor: Colors.NEW_GREY_100.code,
+            width: 240
           }}
           title={StringsOfLanguages.TRANSACTIONS.TRA_AADHAAR_LINKING}
         />
@@ -250,7 +318,10 @@ const Transactions = () => {
           disabled={
             aadharNo && !isErrorAadhar && accNo && !isAccNoError ? false : true
           }
-          style={{  height: 60 }}
+          style={{
+            height: 60,
+            width: 240,
+          }}
           title={StringsOfLanguages.TRANSACTIONS.TRA_SEEDING}
         />
       </BottomContainer>

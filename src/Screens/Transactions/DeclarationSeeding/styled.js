@@ -108,3 +108,13 @@ export const MarginBoxSelect = styled.View`
 export const AlignedContainerScroll = {
   margin: 32
 };
+
+
+export const dropdownTextStyle = {
+  fontSize: 14,
+  fontFamily: FontFamily.Inter_SemiBold,
+  lineHeight: 14,
+  color: Colors.GRAY,
+  letterSpacing: -0.5,
+  marginTop: 6,
+};
